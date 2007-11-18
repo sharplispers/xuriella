@@ -1,0 +1,138 @@
+;;; -*- mode:lisp -*-
+
+;;; Examples of s-expression syntax for XSLT templates.
+
+;;; (Only <template> itself and its instructions so far.
+;;; Not sure yet about <stylesheet> and its top level elements.)
+
+;;; I'm using symbols in the XSL package here instead of keywords.  One
+;;; advantage is that the XSL package could import COMMON-LISP, so that
+;;; symbols like IF and WHEN can be written as either XSL:IF or just IF.
+
+;;; The tricky part are forms with multiple different kinds of optional
+;;; stuff, like xsl:template which has both normal attributes, AND
+;;; parameters AND a body.  Or xsl:apply-templates with normal attributes AND
+;;; parameters AND sorting rules.  I think body and parameters should
+;;; have a syntax and is particularly easy to use, whereas sorting rules
+;;; are probably less common.
+
+
+((xsl:template :match "xpath" :name "foo" :priority 5 :mode "special")
+    (parameter1 (parameter2 default-value) parameter3)
+  . template-body)
+
+(xsl:apply-templates
+    (:select "/" 
+     :mode "special")
+  (declare (sort ...) (sort ...))  ;optional sorting declarations
+  (parameter1 value)
+  (parameter3 value)
+  . and-so-on)
+
+(xsl:apply-imports)
+
+(xsl:call-template name
+  (parameter1 value)
+  (parameter3 value)
+  . and-so-on)
+
+(xsl:element ("qname"
+	      :namespace "http://..."
+	      :use-attribute-sets ...)
+  . body)
+
+(xsl:attribute ("qname" :namespace "http://...")
+  . body)
+
+(xsl:text "foo")
+(xsl:unescaped-text "bar")
+
+(xsl:processing-instruction name
+  . body)
+
+(xsl:comment "foo")
+
+(xsl:copy (:use-attribute-sets ...)
+  . body)
+
+(xsl:value-of <xpath>)
+(xsl:unescaped-value-of <xpath>)
+
+(xsl:number :level ... :count ...  :bla bla bla)
+
+(xsl:for-each select
+  (declare (sort ...) (sort ...))  ;optional sorting declarations
+  . body)
+
+;; this is called <if> in XSLT, but that would be confusing in lisp
+(when "/test"
+  . body)
+
+;; XSLT doesn't have this, but it seems useful:
+(unless "/test"
+  . body)
+
+;; XSLT doesn't have this, but it seems useful:
+(if "/test"
+    form1
+    form2)
+
+;; XSLT doesn't have this, but it seems useful:
+(progn
+  . body)
+
+;; in XSLT, the children of <choose> are called <when> and <otherwise>,
+;; but we should better use a cond-like syntax:
+(cond
+  ("/test1" . body)
+  ("/test2" . body)
+  ("/test3" . body)
+  (t . otherwise-body))
+
+;; XSLT does this using Dylan-style <xsl:variable>
+(let ((var1 "/xpath")
+      (var2 "/xpath")
+      ;; this isn't ideal:
+      (var3 (progn (xsl:text "/xpath"))))
+  . body)
+(let* ((var1 "/xpath")
+       (var2 "$var1 + 1"))
+  . body)
+
+;; the following is done using xmlns attributes on XSLT elements.
+;; We need a similar mechanism to establish namespaces for the XPath
+;; strings and other QNames.
+(xsl:with-namespaces (("prefix1" "uri1")
+		      ("prefix2" "uri2"))
+  . body)
+ 
+(xsl:copy-of "/xpath")
+
+(xsl:message
+  . body)
+(xsl:terminate
+  . body)
+
+;; useful only when reading XSL stylesheets in XML syntax, I think.
+(xsl::fallback
+  . body)
+
+
+;;;; Tests
+
+
+#|
+
+(xuriella::test-instruction
+ '(xsl:element ("bla")
+   (xsl:text "number of children: ")
+   (xsl:value-of "count(test/child)"))
+ "<test><child/><child/></test>")
+
+(xuriella::test-instruction
+ '(let (("var" "1+2"))
+   (xsl:element ("bla")
+    (xsl:value-of "$var")))
+ "<test><child/><child/></test>")
+
+|#

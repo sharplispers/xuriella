@@ -1,0 +1,33 @@
+<page title="Xuriella XSLT">
+  <p>An XSLT processor written in Common Lisp.</p>
+
+  <h3>About</h3>
+
+  <p>
+    Xuriella was written by David Lichteblau.  It implements XSLT 1.0
+    and is available under an X11-style license.
+  </p>      
+
+  <p>
+    Please send bug reports
+    to <a href="mailto:cxml-devel@common-lisp.net">
+      cxml-devel@common-lisp.net</a>
+    (<a href="http://common-lisp.net/cgi-bin/mailman/listinfo/cxml-devel">list information</a>).
+  </p>
+
+  <h3>Related projects</h3>
+  <ul>
+    <li>
+      <a href="http://common-lisp.net/project/cxml/">Closure XML</a>
+    </li>
+    <li>
+      <a href="http://common-lisp.net/project/cxml/">Plexippus XPath</a>
+    </li>
+  </ul>
+
+  <h3>Recent Changes</h3>
+  <p><b>2007-xx-yy</b></p>
+  <ul>
+    <li>Initial public release.</li>
+  </ul>
+</page>

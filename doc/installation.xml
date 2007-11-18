@@ -1,0 +1,31 @@
+<page title="Installing Xuriella">
+
+  <h3>Download</h3>
+  <p>
+    <strike>
+      Download a
+      <a href="#tbd">tarball</a>.
+    </strike>
+  </p>
+  <p>
+    Get it from
+    <a href="http://repo.or.cz/w/xuriella.git">
+      repo.or.cz using git</a>.
+  </p>
+
+  <h3>Installation</h3>
+  <p>
+    Xuriella needs
+    <a href="http://common-lisp.net/project/cxml">cxml</a>,
+    <a href="http://www.lichteblau.com/cxml-stp/">cxml-stp</a>, and
+    <a href="http://common-lisp.net/project/plexippus-xpath">Plexippus XPath</a>
+  </p>
+  <p>
+    <a href="http://www.cliki.net/asdf">ASDF</a> is used for
+    compilation.  Register the .asd file, e.g. by symlinking it, then
+    compile xuriella using <tt>asdf:operate</tt>.
+  </p>
+  <pre>$ ln -sf `pwd`/xuriella.asd /path/to/your/registry/
+* (asdf:operate 'asdf:load-op :xuriella)</pre>
+
+</page>
