@@ -8,9 +8,9 @@
     </strike>
   </p>
   <p>
-    Get it from
-    <a href="http://repo.or.cz/w/xuriella.git">
-      repo.or.cz using git</a>.
+    Get it from repo.or.cz:
+    git://repo.or.cz/xuriella.git
+    (<a href="http://repo.or.cz/w/xuriella.git">gitweb</a>)
   </p>
 
   <h3>Installation</h3>
