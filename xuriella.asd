@@ -19,5 +19,6 @@
     ((:file "package")
      (:file "xslt")
      (:file "instructions")
+     (:file "parser")
      (:file "test"))
-    :depends-on (:cxml :cxml-stp :xpath))
+    :depends-on (:cxml :cxml-stp :closure-html :xpath))

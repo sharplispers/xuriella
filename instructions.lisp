@@ -75,7 +75,7 @@
 	  (funcall rest-thunk ctx)))
       (constantly nil)))
 
-(define-instruction element (args env)
+(define-instruction xsl:element (args env)
   (destructuring-bind ((name &key namespace use-attribute-sets)
 		       &body body)
       args
@@ -86,7 +86,7 @@
 	(cxml:with-element (funcall name-thunk ctx)
 	  (funcall body-thunk ctx))))))
 
-(define-instruction attribute (args env)
+(define-instruction xsl:attribute (args env)
   (destructuring-bind ((name &key namespace) &body body) args
     (declare (ignore namespace))	;fixme
     (let ((name-thunk (compile-attribute-value-template name env))
@@ -98,13 +98,33 @@
 	   (cxml:with-xml-output s
 	     (funcall value-thunk ctx))))))))
 
-(define-instruction text (args env)
+(define-instruction xsl:literal-element (args env)
+  (destructuring-bind ((name &optional (uri "")) &body body)
+      args
+    (declare (ignore uri))		;fixme
+    (let ((body-thunk (compile-instruction `(progn ,@body) env)))
+      (lambda (ctx)
+	(cxml:with-element name
+	  (funcall body-thunk ctx))))))
+
+(define-instruction xsl:literal-attribute (args env)
+  (destructuring-bind ((name &optional uri) &body body) args
+    (declare (ignore uri))		;fixme
+    (let ((value-thunk (compile-instruction `(progn ,@body) env)))
+      (lambda (ctx)
+	(cxml:attribute
+	    name
+	  (with-text-output-sink (s)
+	    (cxml:with-xml-output s
+	      (funcall value-thunk ctx))))))))
+
+(define-instruction xsl:text (args env)
   (destructuring-bind (str) args
     (lambda (ctx)
       (declare (ignore ctx))
       (cxml:text str))))
 
-(define-instruction processing-instruction (args env)
+(define-instruction xsl:processing-instruction (args env)
   (destructuring-bind (name &rest body) args
     (let ((name-thunk (compile-attribute-value-template name env))
 	  (value-thunk (compile-instruction `(progn ,@body) env)))
@@ -115,25 +135,25 @@
 	   (cxml:with-xml-output s
 	     (funcall value-thunk ctx))))))))
 
-(define-instruction comment (args env)
+(define-instruction xsl:comment (args env)
   (destructuring-bind (str) args
     (lambda (ctx)
       (declare (ignore ctx))
       (cxml:comment str))))
 
-(define-instruction value-of (args env)
+(define-instruction xsl:value-of (args env)
   (destructuring-bind (xpath) args
     (let ((thunk (xpath:compile-xpath (xpath:parse-xpath xpath) env)))
       (lambda (ctx)
 	(cxml:text (xpath:string-value (funcall thunk ctx)))))))
 
-(define-instruction unescaped-value-of (args env)
+(define-instruction xsl:unescaped-value-of (args env)
   (destructuring-bind (xpath) args
     (let ((thunk (xpath:compile-xpath (xpath:parse-xpath xpath) env)))
       (lambda (ctx)
 	(cxml:unescaped (xpath:string-value (funcall thunk ctx)))))))
 
-(define-instruction for-each (args env)
+(define-instruction xsl:for-each (args env)
   (destructuring-bind (select &optional decls &rest body) args
     (when (and (consp decls)
 	       (not (eq (car decls) 'declare)))
@@ -150,7 +170,7 @@
 	    (funcall body-thunk
 		     (make-xslt-context :node node :node-set node-set))))))))
 
-(define-instruction with-namespaces (args env)
+(define-instruction xsl:with-namespaces (args env)
   (destructuring-bind ((&rest forms) &rest body) args
     (let ((*namespaces* *namespaces*))
       (dolist (form forms)
@@ -195,10 +215,10 @@
 			     env)
 	(compile-instruction `(progn ,@body) env))))
 
-(define-instruction message (args env)
+(define-instruction xsl:message (args env)
   (compile-message #'warn args env))
 
-(define-instruction terminate (args env)
+(define-instruction xsl:terminate (args env)
   (compile-message #'error args env))
 
 (defun compile-message (fn args env)
@@ -208,8 +228,15 @@
 	       (cxml:with-xml-output (cxml:make-string-sink)
 		 (funcall thunk ctx))))))
 
+(define-instruction xsl:apply-templates (args env)
+  (lambda (ctx)
+    (apply-templates/list
+     (xpath::force
+      (xpath-protocol:child-pipe (xpath::context-node ctx))))))
+
 (defun compile-instruction (form env)
-  (funcall (get (car form) 'xslt-instruction)
+  (funcall (or (get (car form) 'xslt-instruction)
+	       (error "undefined instruction: ~A" (car form)))
 	   (cdr form)
 	   env))
 
@@ -219,10 +246,46 @@
   (constantly str))
 
 
+;;;; Indentation for slime
+
+(defmacro define-indentation (name (&rest args))
+  (labels ((collect-variables (list)
+	     (loop
+		for sub in list
+		append
+		(etypecase sub
+		  (list
+		   (collect-variables sub))
+		  (symbol
+		   (if (eql (mismatch "&" (symbol-name sub)) 1)
+		       nil
+		       (list sub)))))))
+    `(defmacro ,name (,@args)
+       (declare (ignorable ,@(collect-variables args)))
+       (error "XSL indentation helper ~A used literally in lisp code"
+	      ',name))))
+
+(define-indentation xsl:element
+    ((name &key namespace use-attribute-sets) &body body))
+(define-indentation xsl:literal-element ((name &optional uri) &body body))
+(define-indentation xsl:attribute ((name &key namespace) &body body))
+(define-indentation xsl:literal-attribute ((name &optional uri) &body body))
+(define-indentation xsl:text (str))
+(define-indentation xsl:processing-instruction (name &body body))
+(define-indentation xsl:comment (str))
+(define-indentation xsl:value-of (xpath))
+(define-indentation xsl:unescaped-value-of (xpath))
+(define-indentation xsl:for-each (select &body decls-and-body))
+(define-indentation xsl:message (&body body))
+(define-indentation xsl:terminate (&body body))
+(define-indentation xsl:apply-templates ((&key select mode) &body decls-and-body))
+(define-indentation xsl:call-template (name &rest parameters))
+(define-indentation xsl:copy-of (xpath))
+
 ;;;;
 
 (defun test-instruction (form document)
   (let ((thunk (compile-instruction form (make-xslt-environment)))
-	(root (cxml:parse document (cxml-dom:make-dom-builder))))
+	(root (cxml:parse document (stp:make-builder))))
     (cxml:with-xml-output (cxml:make-string-sink)
       (funcall thunk (make-xslt-context :node root)))))

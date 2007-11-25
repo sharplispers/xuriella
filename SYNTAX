@@ -5,9 +5,12 @@
 ;;; (Only <template> itself and its instructions so far.
 ;;; Not sure yet about <stylesheet> and its top level elements.)
 
-;;; I'm using symbols in the XSL package here instead of keywords.  One
-;;; advantage is that the XSL package could import COMMON-LISP, so that
-;;; symbols like IF and WHEN can be written as either XSL:IF or just IF.
+;;; I'm using symbols in the XSL package here instead of keywords (but that
+;;; doesn't really matter).
+;;;
+;;; There are currently no xsl:if/xsl:choose with XSLT semantics, only
+;;; the lisp-style forms if, when, unless, cond.  We could add the xsl:
+;;; forms if users want them, since XSL doesn't import CL anymore.
 
 ;;; The tricky part are forms with multiple different kinds of optional
 ;;; stuff, like xsl:template which has both normal attributes, AND
@@ -16,6 +19,20 @@
 ;;; have a syntax and is particularly easy to use, whereas sorting rules
 ;;; are probably less common.
 
+;;; FIXME: How can we distinguish between:
+;;;    (i) a pre-parsed XPath expression
+;;;   (ii) an XPath string (for example, in <xsl:variable select="foo"/>)
+;;;  (iii) an XSLT fragment (for example, in <xsl:variable>foo</xsl:variable>)
+;;; which all end up in the same position of (let ((name OOPS)) ...)
+;;;
+;;; Right now, we require (iii) to be written as (progn ...) while
+;;; (ii) is written literally.
+;;;
+;;; Alternatively, we could write (ii) as (:xpath ...) and (iii) literally.
+;;;
+;;; The problem with (i) and (ii) is whether "foo" is an XPath string
+;;; (the node test for "foo") or a literal string in a sexp, meaning "'foo'".
+;;; Currently we simply don't support (i), which is sad.
 
 ((xsl:template :match "xpath" :name "foo" :priority 5 :mode "special")
     (parameter1 (parameter2 default-value) parameter3)
@@ -117,6 +134,15 @@
 (xsl::fallback
   . body)
 
+;; literal element <foo>
+;; like xsl:element, but without attribute value template and namespace
+(xsl:literal-element ("local-name" "http://uri")
+  (xsl:literal-attribute ("name" "ouri")
+    "value")
+  (xsl:literal-attribute ("name")
+    "value")
+  . body)
+
 
 ;;;; Tests
 
@@ -124,15 +150,15 @@
 #|
 
 (xuriella::test-instruction
- '(xsl:element ("bla")
-   (xsl:text "number of children: ")
-   (xsl:value-of "count(test/child)"))
+ `(xsl:element ("bla")
+    (xsl:text "number of children: ")
+    (xsl:value-of "count(test/child)"))
  "<test><child/><child/></test>")
 
 (xuriella::test-instruction
- '(let (("var" "1+2"))
-   (xsl:element ("bla")
-    (xsl:value-of "$var")))
+ `(let (("var" "1+2"))
+    (xsl:element ("bla")
+      (xsl:value-of "$var")))
  "<test><child/><child/></test>")
 
 |#

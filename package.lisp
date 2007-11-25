@@ -1,12 +1,14 @@
 (defpackage :xsl
   (:nicknames :xslt)
-  (:use :cl)
+  (:use)
   (:export #:template
 	   #:apply-templates
 	   #:apply-imports
 	   #:call-template
 	   #:element
-	   #:attibute
+	   #:literal-element
+	   #:literal-attribute
+	   #:attribute
 	   #:text
 	   #:unescaped-text
 	   #:processing-instruction
@@ -14,14 +16,8 @@
 	   #:copy
 	   #:value-of
 	   #:unescaped-value-of
-	   #:number
+	   ;; #:number
 	   #:for-each
-	   #:when
-	   #:if
-	   #:progn
-	   #:cond
-	   #:let
-	   #:let*
 	   #:with-namespaces
 	   #:copy-of
 	   #:message
@@ -29,8 +25,8 @@
 	   #:fallback))
 
 (defpackage :xuriella
-  (:use :cl :xsl)
-  (:export )
+  (:use :cl)
+  (:export #:parse-stylesheet)
   (:documentation
    "Empty is an empty example.
 
