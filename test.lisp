@@ -37,7 +37,10 @@
    (operation :initarg :operation :accessor test-operation)
    (data-pathname :initarg :data-pathname :accessor test-data-pathname)
    (stylesheet-pathname :initarg :stylesheet-pathname
-			:accessor test-stylesheet-pathname)))
+			:accessor test-stylesheet-pathname)
+   (data-pathname-2 :initarg :data-pathname-2 :accessor test-data-pathname-2)
+   (stylesheet-pathname-2 :initarg :stylesheet-pathname-2
+			  :accessor test-stylesheet-pathname-2)))
 
 (defmethod print-object ((object test-case) stream)
   (print-unreadable-object (object stream :identity nil :type t)
@@ -124,15 +127,20 @@
 		   :category (stp:attribute-value <test-case> "category")
 		   :operation (stp:attribute-value scenario "operation")
 		   :data-pathname data
-		   :stylesheet-pathname stylesheet)))
+		   :stylesheet-pathname stylesheet
+		   :stylesheet-pathname-2 supplemental-stylesheet
+		   :data-pathname-2 supplemental-data)))
 
 (defun write-simplified-test (test-case operation)
   (cxml:with-element "test-case"
     (cxml:attribute "id" (test-id test-case))
     (cxml:attribute "category" (test-category test-case))
-    (cxml:attribute "data" (namestring (test-data-pathname test-case)))
-    (cxml:attribute "stylesheet"
-		    (namestring (test-stylesheet-pathname test-case)))
+    (flet ((p (l p)
+	     (cxml:attribute l (and p (namestring p)))))
+      (p "data" (test-data-pathname test-case))
+      (p "stylesheet" (test-stylesheet-pathname test-case))
+      (p "data-2" (test-data-pathname-2 test-case))
+      (p "stylesheet-2" (test-stylesheet-pathname-2 test-case)))
     (cxml:attribute "operation" operation)))
 
 (defun test-output-pathname (test type)
@@ -258,7 +266,10 @@
 		 :operation (stp:attribute-value <test-case> "operation")
 		 :data-pathname (stp:attribute-value <test-case> "data")
 		 :stylesheet-pathname (stp:attribute-value
-				       <test-case> "stylesheet")))
+				       <test-case> "stylesheet")
+		 :data-pathname-2 (stp:attribute-value <test-case> "data-2")
+		 :stylesheet-pathname-2 (stp:attribute-value
+					 <test-case> "stylesheet-2")))
 
 (defun output-equal-p (p q)
   (let ((r (cxml:parse p (stp:make-builder)))
@@ -268,21 +279,35 @@
 (defun run-test (test)
   (let ((expected (test-output-pathname test "xsltproc"))
 	(actual (test-output-pathname test "xuriella")))
-    (flet ((doit ()
-	     (with-open-file (s actual
-				:if-exists :rename-and-delete
-				:direction :output
-				:element-type '(unsigned-byte 8))
-	       (apply-stylesheet (pathname (test-stylesheet-pathname test))
-				 (pathname (test-data-pathname test))
-				 s)))
-	   (report (status &optional (fmt "") &rest args)
-	     (format t "~&~A ~A [~A]~?~%"
-		     status
-		     (test-id test)
-		     (test-category test)
-		     fmt
-		     args)))
+    (labels ((doit ()
+	       (with-open-file (s actual
+				  :if-exists :rename-and-delete
+				  :direction :output
+				  :element-type '(unsigned-byte 8))
+		 (apply-stylesheet (pathname (test-stylesheet-pathname test))
+				   (pathname (test-data-pathname test))
+				   s)))
+	     (pp (label pathname)
+	       (when pathname
+		 (format t "  ~A: ~A~%"
+			 label
+			 (enough-namestring pathname *tests-directory*))))
+	     (report (ok &optional (fmt "") &rest args)
+	       (format t "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
+		       ok
+		       (test-id test)
+		       (test-category test)
+		       fmt
+		       args)
+	       (unless ok
+		 (pp "Stylesheet" (test-stylesheet-pathname test))
+		 (pp "Data" (test-data-pathname test))
+		 (pp "Supplemental stylesheet"
+		     (test-stylesheet-pathname-2 test))
+		 (pp "Supplemental data" (test-data-pathname-2 test))
+		 (pp "Expected output" expected)
+		 (pp "Actual output" actual))
+	       ok))
       (cond
 	((equal (test-operation test) "standard")
 	 (handler-case
@@ -291,27 +316,27 @@
 	       (handler-case
 		   (cond
 		     ((output-equal-p expected actual)
-		      (report "PASS")
+		      (report t)
 		      t)
 		     (t
-		      (report "FAIL"
+		      (report nil
 			      ": expected output ~A but found ~A"
 			      expected
 			      actual)
 		      nil))
 		 ((or error parse-number::invalid-number) (c)
-		   (report "FAIL" ": comparison failed: ~A" c))))
+		   (report nil ": comparison failed: ~A" c))))
 	   ((or error parse-number::invalid-number) (c)
-	     (report "FAIL" ": ~A" c)
+	     (report nil ": ~A" c)
 	     nil)))
 	(t
 	 (handler-case
 	     (doit)
 	   ((or error parse-number::invalid-number) (c)
-	     (report "PASS" ": expected error ~A" c)
+	     (report t ": expected error ~A" c)
 	     t)
 	   (:no-error (result)
-	     (report "FAIL" ": expected error not signalled: " result)
+	     (report nil ": expected error not signalled: " result)
 	     nil)))))))
 
 (defun run-xpath-tests ()
