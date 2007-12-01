@@ -193,7 +193,13 @@
 
 ;;; Process katalog.xml
 
-(defun dribble-tests (&optional category (d *tests-directory*))
+;; temporary configuration until we support enough XSLT that it's worth
+;; running all tests:
+(defparameter *default-categories*
+  '("XSLT-Data-Model" "XPath-Expression"))
+
+(defun dribble-tests (&optional (category *default-categories*)
+		      (d *tests-directory*))
   (with-open-file (dribble
 		   (merge-pathnames "TEST"
 				    (slot-value (asdf:find-system :xuriella)
@@ -208,7 +214,8 @@
 	   (*terminal-io* (make-two-way-stream *standard-input* dribble)))
       (run-tests category d))))
 
-(defun run-tests (&optional categories (d *tests-directory*))
+(defun run-tests (&optional (categories *default-categories*)
+		  (d *tests-directory*))
   (unless (listp categories)
     (setf categories (list categories)))
   (klacks:with-open-source
@@ -253,48 +260,122 @@
 		 :stylesheet-pathname (stp:attribute-value
 				       <test-case> "stylesheet")))
 
-(defvar *collector* nil)
-
-(defun collect (x)
-  (when x (push x *collector*)))
-
-(defun save-collector ()
-  (with-open-file (s "/home/david/src/lisp/xuriella/XPATH"
-		     :direction :output
-		     :external-format :utf8
-		     :if-exists :supersede)
-    (write (remove-duplicates *collector* :test #'equal)
-	   :stream s
-	   :readably t
-	   :escape t))
-  nil)
+(defun output-equal-p (p q)
+  (let ((r (cxml:parse p (stp:make-builder)))
+	(s (cxml:parse q (stp:make-builder))))
+    (node= r s)))
 
 (defun run-test (test)
-  #+nil (print test)
-  (when (equal (test-operation test) "standard")
-    (handler-case
-	(klacks:with-open-source
-	    (s (cxml:make-source (pathname (test-stylesheet-pathname test))))
-	  (loop
-	     for event = (klacks:peek-next s)
-	     while event
-	     do
-	     (when (and (eq event :start-element)
-			(equal (klacks:current-uri s)
-			       "http://www.w3.org/1999/XSL/Transform"))
-	       (cond
-		 ((equal (klacks:current-lname s) "template")
-		  (collect (klacks:get-attribute s "match")))
-		 ((or (equal (klacks:current-lname s) "apply-templates")
-		      (equal (klacks:current-lname s) "value-of")
-		      (equal (klacks:current-lname s) "for-each"))
-		  (collect (klacks:get-attribute s "select")))
-		 ((or (equal (klacks:current-lname s) "when")
-		      (equal (klacks:current-lname s) "if"))
-		  (collect (klacks:get-attribute s "test")))))))
-      (error ()))
-    #+nil (print (test-output-pathname test "xsltproc"))))
-
+  (let ((expected (test-output-pathname test "xsltproc"))
+	(actual (test-output-pathname test "xuriella")))
+    (flet ((doit ()
+	     (with-open-file (s actual
+				:if-exists :rename-and-delete
+				:direction :output
+				:element-type '(unsigned-byte 8))
+	       (apply-stylesheet (pathname (test-stylesheet-pathname test))
+				 (pathname (test-data-pathname test))
+				 s)))
+	   (report (status &optional (fmt "") &rest args)
+	     (format t "~&~A ~A [~A]~?~%"
+		     status
+		     (test-id test)
+		     (test-category test)
+		     fmt
+		     args)))
+      (cond
+	((equal (test-operation test) "standard")
+	 (handler-case
+	     (progn
+	       (doit)
+	       (handler-case
+		   (cond
+		     ((output-equal-p expected actual)
+		      (report "PASS")
+		      t)
+		     (t
+		      (report "FAIL"
+			      ": expected output ~A but found ~A"
+			      expected
+			      actual)
+		      nil))
+		 ((or error parse-number::invalid-number) (c)
+		   (report "FAIL" ": comparison failed: ~A" c))))
+	   ((or error parse-number::invalid-number) (c)
+	     (report "FAIL" ": ~A" c)
+	     nil)))
+	(t
+	 (handler-case
+	     (doit)
+	   ((or error parse-number::invalid-number) (c)
+	     (report "PASS" ": expected error ~A" c)
+	     t)
+	   (:no-error (result)
+	     (report "FAIL" ": expected error not signalled: " result)
+	     nil)))))))
 
 (defun run-xpath-tests ()
   (run-tests '("XPath-Expression" "XSLT-Data-Model")))
+
+
+;;;; from cxml-stp-test
+
+(defun assert-node= (a b)
+  (unless (node= a b)
+    (error "assertion failed: ~S and ~S are not NODE=" a b)))
+
+(defun child-count (node)
+  (stp:count-children-if (constantly t) node))
+
+(defun named-node-= (a b)
+  (and (equal (stp:namespace-uri a) (stp:namespace-uri b))
+       (equal (stp:namespace-prefix a) (stp:namespace-prefix b))
+       (equal (stp:local-name a) (stp:local-name b))))
+
+(defun parent-node-= (e f)
+  (and (eql (child-count e)
+	    (child-count f))
+       (every #'node= (stp:list-children e) (stp:list-children f))))
+
+(defmethod node= ((e stp:element) (f stp:element))
+  (and (named-node-= e f)
+       (parent-node-= e f)
+       (null
+	(set-exclusive-or (stp:list-attributes e) (stp:list-attributes f)
+			  :test #'node=))
+       (flet ((collect-namespaces (elt)
+		(let ((result ()))
+		  (stp:map-extra-namespaces
+		   (lambda (k v) (push (cons k v) result))
+		   elt)
+		  result)))
+	 (null
+	  (set-exclusive-or (collect-namespaces e) (collect-namespaces f)
+			    :test #'equal)))))
+
+(defmethod node= ((a stp:node) (b stp:node))
+  nil)
+
+(defmethod node= ((e stp:document) (f stp:document))
+  (parent-node-= e f))
+
+(defmethod node= ((a stp:attribute) (b stp:attribute))
+  (and (named-node-= a b)
+       (equal (stp:value a) (stp:value b))))
+
+(defmethod node= ((a stp:comment) (b stp:comment))
+  (equal (stp:data a) (stp:data b)))
+
+(defmethod node= ((a stp:text) (b stp:text))
+  (equal (stp:data a) (stp:data b)))
+
+(defmethod node= ((a stp:processing-instruction)
+		  (b stp:processing-instruction))
+  (and (equal (stp:data a) (stp:data b))
+       (equal (stp:target a) (stp:target b))))
+
+(defmethod node= ((a stp:document-type) (b stp:document-type))
+  (and (equal (stp:root-element-name a) (stp:root-element-name b))
+       (equal (stp:public-id a) (stp:public-id b))
+       (equal (stp:system-id a) (stp:system-id b))
+       (equal (stp:internal-subset a) (stp:internal-subset b))))

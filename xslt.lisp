@@ -194,9 +194,12 @@
 
 (defvar *mode*)
 
+(deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
+
 (defun apply-stylesheet (stylesheet source-document &optional output-spec)
-  (when (typep source-document
-	       '(or runes:xstream runes:rod array stream pathname))
+  (when (typep stylesheet 'xml-designator)
+    (setf stylesheet (parse-stylesheet stylesheet)))
+  (when (typep source-document 'xml-designator)
     (setf source-document (cxml:parse source-document (stp:make-builder))))
   (invoke-with-output-sink
    (lambda ()
