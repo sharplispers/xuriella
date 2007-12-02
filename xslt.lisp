@@ -377,17 +377,17 @@
 	  (let ((et (stream-element-type stream)))
 	    (cond
 	      ((or (null et) (subtypep et '(unsigned-byte 8)))
-	       (chtml:make-character-stream-sink stream))
+	       (chtml:make-octet-stream-sink stream))
 	      ((subtypep et 'character)
-	       (chtml:make-octet-stream-sink stream))))
+	       (chtml:make-character-stream-sink stream))))
 	  (chtml:make-string-sink))
       (if stream
 	  (let ((et (stream-element-type stream)))
 	    (cond
 	      ((or (null et) (subtypep et '(unsigned-byte 8)))
-	       (cxml:make-character-stream-sink stream))
+	       (cxml:make-octet-stream-sink stream))
 	      ((subtypep et 'character)
-	       (cxml:make-octet-stream-sink stream))))
+	       (cxml:make-character-stream-sink stream))))
 	  (cxml:make-string-sink))))
 
 (defstruct template
