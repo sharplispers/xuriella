@@ -13,25 +13,22 @@ FAIL RTF_RTF_to_string_substring_function [XPath-Expression]: undeclared variabl
   Data: MSFT_Conformance_Tests/RTF/test.xml
   Expected output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.xsltproc
   Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.xuriella
-FAIL Whitespaces__84599 [XSLT-Data-Model]: The value " "
-                                           is not of type
-                                             LIST.
+FAIL Whitespaces__84599 [XSLT-Data-Model]: The value " " is not of type LIST.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/84599.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/84599.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__84599.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__84599.xuriella
-FAIL Whitespaces__91024 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xuriella" {1004219871}> is not a character output stream.
+FAIL Whitespaces__91024 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91024.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91024.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xuriella
 
-(:STACK (0)) 
-PASS Whitespaces__91025 [XSLT-Data-Model]: expected error Unexpected terminal YACC:YACC-EOF-SYMBOL (value NIL)
+(:STACK (0)) PASS Whitespaces__91025 [XSLT-Data-Model]: expected error Unexpected terminal YACC:YACC-EOF-SYMBOL (value NIL)
 Expected one of: (:- :PROCESSING-INSTRUCTION :NODE-TYPE-OR-FUNCTION-NAME
                   :FUNCTION-NAME :LITERAL :LPAREN :VARIABLE :NUMBER :/ ://
-                  :NCNAME :QNAME :NS-NAME :AND :DIV :MOD :OR :STAR
-                  :AXIS-NAME :AT :TWO-DOTS :DOT)
+                  :NCNAME :QNAME :NS-NAME :AND :DIV :MOD :OR :STAR :AXIS-NAME
+                  :AT :TWO-DOTS :DOT)
 FAIL Whitespaces__91221 [XSLT-Data-Model]: There is no applicable method for the generic function
                                              #<STANDARD-GENERIC-FUNCTION XURIELLA::PARSE-INSTRUCTION/XSL-ELEMENT (12)>
                                            when called with arguments
@@ -248,42 +245,42 @@ FAIL Whitespaces__91428 [XSLT-Data-Model]: undeclared variable: ws in namespace
   Data: MSFT_Conformance_Tests/Whitespaces/91428.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91428.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91428.xuriella
-FAIL Whitespaces__91429 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xuriella" {1002B424B1}> is not a character output stream.
+FAIL Whitespaces__91429 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91429.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91429.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xuriella
-FAIL Whitespaces__91430 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xuriella" {1002C75E81}> is not a character output stream.
+FAIL Whitespaces__91430 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91430.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91430.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xuriella
-FAIL Whitespaces__91431 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xuriella" {1002D0DE31}> is not a character output stream.
+FAIL Whitespaces__91431 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91431.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91431.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xuriella
-FAIL Whitespaces__91432 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xuriella" {1002EB1811}> is not a character output stream.
+FAIL Whitespaces__91432 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91432.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91432.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xuriella
-FAIL Whitespaces__91433 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xuriella" {1002F48C41}> is not a character output stream.
+FAIL Whitespaces__91433 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91433.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91433.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xuriella
-FAIL Whitespaces__91434 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xuriella" {1003103BD1}> is not a character output stream.
+FAIL Whitespaces__91434 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91434.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91434.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xuriella
-FAIL Whitespaces__91435 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xuriella" {10037037B1}> is not a character output stream.
+FAIL Whitespaces__91435 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91435.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91435.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xuriella
-FAIL Whitespaces__91436 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xuriella" {100377D021}> is not a character output stream.
+FAIL Whitespaces__91436 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91436.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91436.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xsltproc
@@ -360,22 +357,22 @@ FAIL Whitespaces__91448 [XSLT-Data-Model]: undeclared namespace: my
   Data: MSFT_Conformance_Tests/Whitespaces/91448.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xuriella
-FAIL Whitespaces__91449 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xuriella" {1004320A51}> is not a character output stream.
+FAIL Whitespaces__91449 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91449.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91449.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xuriella
-FAIL Whitespaces__91450 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xuriella" {10043BB361}> is not a character output stream.
+FAIL Whitespaces__91450 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91450.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91450.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xuriella
-FAIL Whitespaces__91451 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xuriella" {1004425741}> is not a character output stream.
+FAIL Whitespaces__91451 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91451.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91451.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xuriella
-FAIL Whitespaces__91452 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xuriella" {10044B5B51}> is not a character output stream.
+FAIL Whitespaces__91452 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91452.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91452.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xsltproc
@@ -395,6 +392,7 @@ FAIL Whitespaces__91453 [XSLT-Data-Model]: There is no applicable method for the
                                                  :NAMESPACE-URI "http://www.w3.org/1999/XSL/Transform")).
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91453.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91453.xml
+  Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.xuriella
 FAIL Whitespaces__91454 [XSLT-Data-Model]: There is no applicable method for the generic function
@@ -412,6 +410,7 @@ FAIL Whitespaces__91454 [XSLT-Data-Model]: There is no applicable method for the
                                                  :NAMESPACE-URI "http://www.w3.org/1999/XSL/Transform")).
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91454.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91454.xml
+  Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xuriella
 FAIL Whitespaces__91455 [XSLT-Data-Model]: There is no applicable method for the generic function
@@ -429,6 +428,7 @@ FAIL Whitespaces__91455 [XSLT-Data-Model]: There is no applicable method for the
                                                  :NAMESPACE-URI "http://www.w3.org/1999/XSL/Transform")).
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91455.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91455.xml
+  Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91455.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91455.xuriella
 FAIL Whitespaces__91456 [XSLT-Data-Model]: There is no applicable method for the generic function
@@ -446,14 +446,15 @@ FAIL Whitespaces__91456 [XSLT-Data-Model]: There is no applicable method for the
                                                  :NAMESPACE-URI "http://www.w3.org/1999/XSL/Transform")).
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91456.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91456.xml
+  Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91456.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91456.xuriella
-FAIL Whitespaces_WhitespaceStripTest1 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces_WhitespaceStripTest1.xuriella" {100253EC71}> is not a character output stream.
+FAIL Whitespaces_WhitespaceStripTest1 [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces_WhitespaceStripTest1.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/xslt_test_whitespace_preserve1.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/xslt_test_whitespace_preserve1.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_WhitespaceStripTest1.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_WhitespaceStripTest1.xuriella
-FAIL Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella" {1002744601}> is not a character output stream.
+FAIL Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: #<SB-SYS:FD-STREAM for "file /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella" {xxxxxxxx}> is not a character output stream.
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/xslt_strip_space_with_text_ws.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/xslt_strip_space_with_text_ws.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc

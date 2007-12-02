@@ -276,6 +276,9 @@
 	(s (cxml:parse q (stp:make-builder))))
     (node= r s)))
 
+(defun strip-addresses (str)
+  (cl-ppcre:regex-replace-all "{[0-9a-fA-F]+}\\>" str "{xxxxxxxx}>"))
+
 (defun run-test (test)
   (let ((expected (test-output-pathname test "xsltproc"))
 	(actual (test-output-pathname test "xuriella")))
@@ -293,12 +296,14 @@
 			 label
 			 (enough-namestring pathname *tests-directory*))))
 	     (report (ok &optional (fmt "") &rest args)
-	       (format t "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
-		       ok
-		       (test-id test)
-		       (test-category test)
-		       fmt
-		       args)
+	       (write-string
+		(strip-addresses
+		 (format nil "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
+			 ok
+			 (test-id test)
+			 (test-category test)
+			 fmt
+			 args)))
 	       (unless ok
 		 (pp "Stylesheet" (test-stylesheet-pathname test))
 		 (pp "Data" (test-data-pathname test))
