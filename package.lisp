@@ -26,7 +26,9 @@
 
 (defpackage :xuriella
   (:use :cl)
-  (:export #:parse-stylesheet)
+  (:export #:parse-stylesheet
+	   #:apply-stylesheet
+	   #:make-parameter)
   (:documentation
    "Empty is an empty example.
 
