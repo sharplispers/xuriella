@@ -39,7 +39,7 @@
 
 (define-instruction if (args env)
   (destructuring-bind (test then &optional else) args
-    (let ((test-thunk (xpath:compile-xpath (xpath:parse-xpath test) env))
+    (let ((test-thunk (xpath:compile-xpath test env))
 	  (then-thunk (compile-instruction then env))
 	  (else-thunk (when else (compile-instruction else env))))
       (lambda (ctx)
@@ -143,13 +143,13 @@
 
 (define-instruction xsl:value-of (args env)
   (destructuring-bind (xpath) args
-    (let ((thunk (xpath:compile-xpath (xpath:parse-xpath xpath) env)))
+    (let ((thunk (xpath:compile-xpath xpath env)))
       (lambda (ctx)
 	(cxml:text (xpath:string-value (funcall thunk ctx)))))))
 
 (define-instruction xsl:unescaped-value-of (args env)
   (destructuring-bind (xpath) args
-    (let ((thunk (xpath:compile-xpath (xpath:parse-xpath xpath) env)))
+    (let ((thunk (xpath:compile-xpath xpath env)))
       (lambda (ctx)
 	(cxml:unescaped (xpath:string-value (funcall thunk ctx)))))))
 
@@ -159,16 +159,23 @@
 	       (not (eq (car decls) 'declare)))
       (push decls body)
       (setf decls nil))
-    (let ((select-thunk (xpath:compile-xpath (xpath:parse-xpath select) env))
+    (let ((select-thunk (xpath:compile-xpath select env))
 	  (body-thunk (compile-instruction `(progn ,@body) env))
 	  (sorter
 	   ;; fixme: parse decls here
 	   #'identity))
       (lambda (ctx)
-	(let ((node-set (funcall sorter (funcall select-thunk ctx))))
-	  (dolist (node node-set)
-	    (funcall body-thunk
-		     (make-xslt-context :node node :node-set node-set))))))))
+	(let* ((node-set (funcall sorter (funcall select-thunk ctx)))
+	       (n (length node-set)))
+	  (loop
+	     for node in node-set
+	     for i from 1
+	     do
+	       (funcall body-thunk
+			(xpath::make-context
+			 :node node
+			 :position i
+			 :size-delayed (lambda () n)))))))))
 
 (define-instruction xsl:with-namespaces (args env)
   (destructuring-bind ((&rest forms) &rest body) args
@@ -180,30 +187,31 @@
 
 (define-instruction let (args env)
   (destructuring-bind ((&rest forms) &rest body) args
-    (let ((declared-variables *declared-variables*)
-	  (vars '()))
+    (let ((variable-declarations *variable-declarations*)
+	  (variable-gensyms '())
+	  (variable-thunks '()))
       (dolist (form forms)
 	(destructuring-bind (name value) form
 	  (multiple-value-bind (local-name uri)
 	      (decode-qname name env nil)
 	    (let ((pair (cons local-name uri))
-		  (var-thunk
+		  (thunk
 		   (if (and (listp value) (eq (car value) 'progn))
 		       (compile-instruction value env)
-		       (xpath:compile-xpath (xpath:parse-xpath value)
-					    env))))
-	      (when (find pair *declared-variables* :test 'equal)
+		       (xpath:compile-xpath value env)))
+		  (gensym (gensym local-name)))
+	      (when (assoc pair *variable-declarations* :test 'equal)
 		(error "duplicate definition of ~A" name))
-	      (push pair declared-variables)
-	      (push (cons pair var-thunk) vars)))))
-      (let* ((*declared-variables* declared-variables)
+	      (push (cons pair (lambda (ctx) ctx (symbol-value gensym)))
+		    variable-declarations)
+	      (push gensym variable-gensyms)
+	      (push thunk variable-thunks)))))
+      (let* ((*variable-declarations* variable-declarations)
 	     (thunk (compile-instruction `(progn ,@body) env)))
 	(lambda (ctx)
-	  (let ((*variable-values* *variable-values*))
-	    (loop
-	       for (pair . var-thunk) in vars
-	       do (push (cons pair (funcall var-thunk ctx))
-			*variable-values*))
+	  (progv
+	      variable-gensyms
+	      (mapcar (lambda (f) (funcall f ctx)) variable-thunks)
 	    (funcall thunk ctx)))))))
 
 (define-instruction let* (args env)

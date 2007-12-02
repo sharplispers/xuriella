@@ -30,26 +30,28 @@
 
 
 (defun parse-body (node &optional (start 0))
-  (let ((n (stp:count-children #'identity node)))
+  (let ((n (stp:count-children-if #'identity node)))
     (labels ((recurse (i)
 	       (when (< i n)
 		 (let ((child (stp:nth-child i node)))
 		   (if (namep child "variable")
 		       (stp:with-attributes (name select) child
+			 (when (and select (stp:list-children child))
+			   (error "variable with select and body"))
 			 `((let ((,name ,(or select
 					     `(progn ,@(parse-body child)))))
-			     ,@(recurse (1+ i))))))
-		   (cons (parse-instruction child)
-			 (recurse (1+ i)))))))
-      (recurse start)))
-  (stp:map-children 'list #'parse-instruction node))
+			     ,@(recurse (1+ i)))))
+		       (cons (parse-instruction child)
+			     (recurse (1+ i))))))))
+      (recurse start))))
 
 (defun parse-instruction (node)
   (typecase node
     (stp:element
      (if (equal (stp:namespace-uri node) *xsl*)
 	 (parse-instruction/xsl-element
-	  (find-symbol (stp:local-name node) :xuriella)
+	  (or (find-symbol (stp:local-name node) :xuriella)
+	      (error "undefined instruction: ~A" (stp:local-name node)))
 	  node)
 	 (parse-instruction/literal-element node)))
     (stp:text
@@ -65,7 +67,7 @@
 				    ,(stp:namespace-uri a))
 				,(stp:value a)))
 			   node)
-     ,@(stp:map-children 'list #'parse-instruction node)))
+     ,@(parse-body node)))
 
 (defmacro define-instruction-parser (name (node-var) &body body)
   `(defmethod parse-instruction/xsl-element
@@ -119,6 +121,9 @@
     (if disable-output-escaping
 	`(xsl:unescaped-value-of ,select)
 	`(xsl:value-of ,select))))
+
+(define-instruction-parser |variable| (node)
+  (error "unhandled xsl:variable"))
 
 (define-instruction-parser |for-each| (node)
   (stp:with-attributes (select) node

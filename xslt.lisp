@@ -38,8 +38,7 @@
   '((nil . "")
     ("xmlns" . #"http://www.w3.org/2000/xmlns/")
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
-(defparameter *declared-variables* '())
-(defparameter *variable-values* '())
+(defparameter *variable-declarations* '())
 
 (defclass xslt-environment () ())
 
@@ -57,15 +56,9 @@
 (defmethod xpath:environment-find-namespace ((env xslt-environment) prefix)
   (cdr (assoc prefix *namespaces* :test 'equal)))
 
-(defmethod xpath:environment-validate-variable
+(defmethod xpath:environment-find-variable
     ((env xslt-environment) lname uri)
-  (find (cons lname uri) *declared-variables* :test 'equal))
-
-
-(defstruct (xslt-context (:include xpath::context)))
-
-(defmethod xpath:context-variable-value ((ctx xslt-context) local-name uri)
-  (cdr (assoc (cons local-name uri) *variable-values* :test 'equal)))
+  (cdr (assoc (cons lname uri) *variable-declarations* :test 'equal)))
 
 
 ;;;; TEXT-OUTPUT-SINK
@@ -96,7 +89,8 @@
   (stp:of-name local-name *xsl*))
 
 (defun namep (node local-name)
-  (and (equal (stp:namespace-uri node) *xsl*)
+  (and (typep node '(or stp:element stp:attribute))
+       (equal (stp:namespace-uri node) *xsl*)
        (equal (stp:local-name node) local-name)))
 
 
@@ -369,7 +363,7 @@
 		(let ((body-thunk
 		       (compile-instruction `(progn ,@body) env))
 		      (match-thunk
-		       (xpath:compile-xpath expression env))
+		       (xpath:compile-xpath `(xpath:xpath ,expression) env))
 		      (p (if priority
 			     (parse-number:parse-number priority)
 			     (expression-priority expression))))
