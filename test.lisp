@@ -238,6 +238,16 @@
 				   categories
 				   :test #'equal)))))))
 
+(defun run-named-test (name &optional (d *tests-directory*))
+  (klacks:with-open-source
+      (source (klacks:make-tapping-source
+	       (cxml:make-source (merge-pathnames "katalog.xml" d))))
+    (let ((*default-pathname-defaults* (merge-pathnames d))
+	  (*break-on-signals* 'error))
+      (map-tests #'run-test
+		 source
+		 :test (lambda (test) (equal (test-id test) name))))))
+
 (defun map-tests (run-test source &key (test (constantly t)))
   (let ((total 0)
 	(pass 0))
