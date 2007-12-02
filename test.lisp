@@ -299,7 +299,7 @@
 				  :element-type '(unsigned-byte 8))
 		 (apply-stylesheet (pathname (test-stylesheet-pathname test))
 				   (pathname (test-data-pathname test))
-				   s)))
+				   :output s)))
 	     (pp (label pathname)
 	       (when pathname
 		 (format t "  ~A: ~A~%"

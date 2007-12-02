@@ -134,7 +134,7 @@
        ,@(parse-body node))))
 
 (define-instruction-parser |text| (node)
-  `(xsl:text ,@(stp:string-value node)))
+  `(xsl:text ,(stp:string-value node)))
 
 (define-instruction-parser |comment| (node)
   `(xsl:comment ,@(stp:string-value node)))

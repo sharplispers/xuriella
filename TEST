@@ -1,11 +1,18 @@
 PASS RTF_RTF_to_boolean_test [XPath-Expression]
-FAIL RTF_RTF_to_number_in_format_number [XPath-Expression]: undeclared variable: param1 in namespace 
+FAIL RTF_RTF_to_number_in_format_number [XPath-Expression]: no such function: (:FORMAT-NUMBER
+                                                                               (:VARIABLE
+                                                                                "variable1")
+                                                                               (:VARIABLE
+                                                                                "param1"))
   Stylesheet: MSFT_Conformance_Tests/RTF/RTF_to_number_in_format_number.xsl
   Data: MSFT_Conformance_Tests/RTF/test.xml
   Expected output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_number_in_format_number.xsltproc
   Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_number_in_format_number.xuriella
 PASS RTF_RTF_to_string_substring_function [XPath-Expression]
-FAIL Whitespaces__84599 [XSLT-Data-Model]: The value " " is not of type LIST.
+FAIL Whitespaces__84599 [XSLT-Data-Model]: comparison failed: Document not well-formed: element expected
+Context:
+  Line 4, column 5 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__84599.xsltproc
+
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/84599.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/84599.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__84599.xsltproc

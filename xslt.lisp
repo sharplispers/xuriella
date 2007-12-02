@@ -93,8 +93,9 @@
 
 ;;;; Names
 
-(defvar *xsl* "http://www.w3.org/1999/XSL/Transform")
-(defvar *xml* "http://www.w3.org/XML/1998/namespace")
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (defvar *xsl* "http://www.w3.org/1999/XSL/Transform")
+  (defvar *xml* "http://www.w3.org/XML/1998/namespace"))
 
 (defun of-name (local-name)
   (stp:of-name local-name *xsl*))
@@ -194,18 +195,34 @@
     (parse-templates! stylesheet <transform> env)
     stylesheet))
 
-(defun compile-global-variable (<variable> env)
+(defun compile-global-variable (<variable> env) ;; also for <param>
   (stp:with-attributes (name select) <variable>
     (when (and select (stp:list-children <variable>))
       (error "variable with select and body"))
-    (if select
-	(xpath:compile-xpath select env)
-	(let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
-	       (inner-thunk (compile-instruction inner-sexpr env)))
-	  (lambda (ctx)
-	    (apply-to-result-tree-fragment ctx inner-thunk))))))
+    (cond
+      (select
+	(xpath:compile-xpath select env))
+      ((stp:list-children <variable>)
+       (let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
+	      (inner-thunk (compile-instruction inner-sexpr env)))
+	 (lambda (ctx)
+	   (apply-to-result-tree-fragment ctx inner-thunk))))
+      (t
+       (lambda (ctx)
+	 (declare (ignore ctx))
+	 "")))))
 
-(defun parse-global-variable! (<variable> global-env)
+(defstruct (variable-information
+	     (:constructor make-variable)
+	     (:conc-name "VARIABLE-"))
+  gensym
+  thunk
+  local-name
+  uri
+  param-p
+  thunk-setter)
+
+(defun parse-global-variable! (<variable> global-env) ;; also for <param>
   (let ((*namespaces* (acons-namespaces <variable>))
 	(qname (stp:attribute-value <variable> "name")))
     (multiple-value-bind (local-name uri)
@@ -233,22 +250,27 @@
 			(compile-global-variable <variable> global-env)))))
 	  (setf (gethash key (global-variables global-env))
 		global-variable-thunk)
-	  (list gensym
-		global-variable-thunk
-		thunk-setter))))))
+	  (make-variable :gensym gensym
+			 :local-name local-name
+			 :uri uri
+			 :thunk global-variable-thunk
+			 :param-p (namep <variable> "param")
+			 :thunk-setter thunk-setter))))))
 
-(defun parse-global-variables! (stylesheet <transform>)
-  (let* ((table (make-hash-table :test 'equal))
-	 (global-env (make-instance 'global-variable-environment
-				    :global-variables table))
-	 (specs
-	  (mapcar (lambda (<variable>)
-		    (parse-global-variable! <variable> global-env))
-		  (stp:filter-children (of-name "variable") <transform>))))
-    ;; now that the global environment knows about all variables, run the
-    ;; thunk setters to perform thier compilation
-    (mapc (lambda (spec) (funcall (third spec))) specs)
-    (setf (stylesheet-global-variables stylesheet) specs)))
+(xpath:with-namespaces ((nil #.*xsl*))
+  (defun parse-global-variables! (stylesheet <transform>)
+    (let* ((table (make-hash-table :test 'equal))
+	   (global-env (make-instance 'global-variable-environment
+				      :global-variables table))
+	   (specs
+	    (mapcar (lambda (<variable>)
+		      (parse-global-variable! <variable> global-env))
+		    (xpath:all-nodes
+		     (xpath:evaluate "variable|param" <transform>)))))
+      ;; now that the global environment knows about all variables, run the
+      ;; thunk setters to perform their compilation
+      (mapc (lambda (spec) (funcall (variable-thunk-setter spec))) specs)
+      (setf (stylesheet-global-variables stylesheet) specs))))
 
 (defun parse-templates! (stylesheet <transform> env)
   (dolist (<template> (stp:filter-children (of-name "template") <transform>))
@@ -271,7 +293,20 @@
 
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
 
-(defun apply-stylesheet (stylesheet source-document &optional output-spec)
+(defstruct (parameter
+	     (:constructor make-parameter (value local-name &optional uri)))
+  (uri "")
+  local-name
+  value)
+
+(defun find-parameter-value (local-name uri parameters)
+  (dolist (p parameters)
+    (when (and (equal (parameter-local-name p) local-name)
+	       (equal (parameter-uri p) uri))
+      (return (parameter-value p)))))
+
+(defun apply-stylesheet
+    (stylesheet source-document &key output parameters)
   (when (typep stylesheet 'xml-designator)
     (setf stylesheet (parse-stylesheet stylesheet)))
   (when (typep source-document 'xml-designator)
@@ -282,12 +317,23 @@
 	   (globals (stylesheet-global-variables stylesheet))
 	   (ctx (xpath:make-context source-document)))
        (progv
-	   (mapcar #'car globals)
+	   (mapcar #'variable-gensym globals)
 	   (make-list (length globals) :initial-element nil)
-	 (mapc (lambda (spec) (funcall (second spec) ctx)) globals)
+	 (mapc (lambda (spec)
+		 (when (variable-param-p spec)
+		   (let ((value
+			  (find-parameter-value (variable-local-name spec)
+						(variable-uri spec)
+						parameters)))
+		     (when value
+		       (setf (symbol-value (variable-gensym spec)) value)))))
+	       globals)
+	 (mapc (lambda (spec)
+		 (funcall (variable-thunk spec) ctx))
+	       globals)
 	 (apply-templates ctx))))
    stylesheet
-   output-spec))
+   output))
 
 (defun apply-templates/list (list)
   (let* ((n (length list))
