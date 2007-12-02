@@ -280,10 +280,13 @@
 		 (funcall thunk ctx))))))
 
 (define-instruction xsl:apply-templates (args env)
-  (lambda (ctx)
-    (apply-templates/list
-     (xpath::force
-      (xpath-protocol:child-pipe (xpath::context-node ctx))))))
+  (destructuring-bind ((&key select mode)) args
+    (let ((select-thunk
+	   (xpath:compile-xpath (or select "child::node()") env)))
+      (lambda (ctx)
+	(let ((*mode* (if mode (find-mode mode *stylesheet*) *mode*)))
+	  (apply-templates/list
+	   (xpath:all-nodes (funcall select-thunk ctx))))))))
 
 (defun compile-instruction (form env)
   (funcall (or (get (car form) 'xslt-instruction)

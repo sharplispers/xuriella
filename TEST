@@ -34,49 +34,49 @@ PASS Whitespaces__91025 [XSLT-Data-Model]: expected error invalid xpath designat
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.xuriella
 
-FAIL Whitespaces__91221 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91221 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91221.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91221.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91221.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91221.xuriella
 
-FAIL Whitespaces__91222 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91222 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91222.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91222.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91222.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91222.xuriella
 
-FAIL Whitespaces__91223 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91223 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91223.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91223.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91223.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91223.xuriella
 
-FAIL Whitespaces__91224 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91224 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91224.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91224.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91224.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91224.xuriella
 
-FAIL Whitespaces__91225 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91225 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91225.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91225.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91225.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91225.xuriella
 
-FAIL Whitespaces__91226 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91226 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91226.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91226.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91226.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91226.xuriella
 
-FAIL Whitespaces__91227 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91227 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91227.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91227.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91227.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91227.xuriella
 
-FAIL Whitespaces__91228 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91228 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91228.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91228.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91228.xsltproc
@@ -326,4 +326,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 11/52 tests.
+Passed 19/52 tests.

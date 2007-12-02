@@ -318,6 +318,7 @@
 
 ;;;; APPLY-STYLESHEET
 
+(defvar *stylesheet*)
 (defvar *mode*)
 
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
@@ -342,7 +343,8 @@
     (setf source-document (cxml:parse source-document (stp:make-builder))))
   (invoke-with-output-sink
    (lambda ()
-     (let ((*mode* (find-mode "" stylesheet))
+     (let ((*stylesheet* stylesheet)
+	   (*mode* (find-mode "" stylesheet))
 	   (globals (stylesheet-global-variables stylesheet))
 	   (ctx (xpath:make-context source-document)))
        (progv
@@ -390,7 +392,8 @@
 	  (cond
 	    ((or (xpath-protocol:node-type-p node :processing-instruction)
 		 (xpath-protocol:node-type-p node :comment)))
-	    ((xpath-protocol:node-type-p node :text)
+	    ((or (xpath-protocol:node-type-p node :text)
+		 (xpath-protocol:node-type-p node :attribute))
 	     (cxml:text (xpath-protocol:string-value node)))
 	    (t
 	     (apply-templates/list
