@@ -150,6 +150,11 @@
 	`(xsl:unescaped-value-of ,select)
 	`(xsl:value-of ,select))))
 
+(define-instruction-parser |copy| (node)
+  (stp:with-attributes (use-attribute-sets) node
+    `(xsl:copy (:use-attribute-sets ,use-attribute-sets)
+	       ,@(parse-body node))))
+
 (define-instruction-parser |variable| (node)
   (error "unhandled xsl:variable"))
 

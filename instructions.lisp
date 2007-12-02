@@ -245,6 +245,33 @@
 (define-instruction xsl:terminate (args env)
   (compile-message #'error args env))
 
+(define-instruction xsl:copy (args env)
+  (destructuring-bind ((&key use-attribute-sets) &rest rest)
+      args
+    (let ((body (compile-instruction `(progn ,@rest) env)))
+      (lambda (ctx)
+	(let ((node (xpath:context-node ctx)))
+	  (cond
+	    ((xpath-protocol:node-type-p node :element)
+	     (cxml:with-element (xpath-protocol:qualified-name node)
+	       (funcall body ctx)))
+	    ((xpath-protocol:node-type-p node :text)
+	     (cxml:text (xpath-protocol:string-value node)))
+	    ((xpath-protocol:node-type-p node :comment)
+	     (cxml:comment (xpath-protocol:string-value node)))
+	    ((xpath-protocol:node-type-p node :processing-instruction)
+	     (cxml:processing-instruction
+		 (xpath-protocol:processing-instruction-target node)
+	       (xpath-protocol:string-value node)))
+	    ((xpath-protocol:node-type-p node :document)
+	     (funcall body ctx))
+	    ((xpath-protocol:node-type-p node :attribute)
+	     (cxml:attribute
+		 (xpath-protocol:qualified-name node)
+	       (xpath-protocol:string-value node)))
+	    (t
+	     (error "don't know how to copy node ~A" node))))))))
+
 (defun compile-message (fn args env)
   (let ((thunk (compile-instruction `(progn ,@args) env)))
     (lambda (ctx)
