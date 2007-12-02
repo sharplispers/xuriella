@@ -198,7 +198,7 @@
   (invoke-with-output-sink
    (lambda ()
      (let ((*mode* (find-mode "" stylesheet)))
-       (apply-templates (xpath::make-context source-document))))
+       (apply-templates (xpath:make-context source-document))))
    stylesheet
    output-spec))
 
@@ -209,13 +209,13 @@
        for i from 1
        for child in list
        do
-	 (apply-templates (xpath::make-context child s/d i)))))
+	 (apply-templates (xpath:make-context child s/d i)))))
 
 (defun apply-templates (ctx)
   (let ((template (find-template ctx)))
     (if template
 	(funcall (template-body template) ctx)
-	(let ((node (xpath::context-node ctx)))
+	(let ((node (xpath:context-node ctx)))
 	  (cond
 	    ((or (xpath-protocol:node-type-p node :processing-instruction)
 		 (xpath-protocol:node-type-p node :comment)))
@@ -228,7 +228,7 @@
 
 (defun find-template (ctx)
   (let* ((node
-	  (xpath::context-node ctx))
+	  (xpath:context-node ctx))
 	 (key
 	  (when (xpath-protocol:node-type-p node :element)
 	    (cons (xpath-protocol:local-name node)
@@ -266,7 +266,7 @@
       max)))
 
 (defun template-matches-p (template ctx)
-  (find (xpath::context-node ctx)
+  (find (xpath:context-node ctx)
 	(xpath:all-nodes (funcall (template-match-thunk template) ctx))))
 
 (defun invoke-with-output-sink (fn stylesheet output)

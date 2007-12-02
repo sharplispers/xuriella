@@ -172,10 +172,7 @@
 	     for i from 1
 	     do
 	       (funcall body-thunk
-			(xpath::make-context
-			 :node node
-			 :position i
-			 :size-delayed (lambda () n)))))))))
+			(xpath:make-context node (lambda () n) i ))))))))
 
 (define-instruction xsl:with-namespaces (args env)
   (destructuring-bind ((&rest forms) &rest body) args
@@ -296,4 +293,4 @@
   (let ((thunk (compile-instruction form (make-xslt-environment)))
 	(root (cxml:parse document (stp:make-builder))))
     (cxml:with-xml-output (cxml:make-string-sink)
-      (funcall thunk (make-xslt-context :node root)))))
+      (funcall thunk (xpath:make-context root)))))
