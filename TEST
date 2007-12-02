@@ -1,180 +1,183 @@
 PASS RTF_RTF_to_boolean_test [XPath-Expression]
-FAIL RTF_RTF_to_number_in_format_number [XPath-Expression]: no such function: (:FORMAT-NUMBER
-                                                                               (:VARIABLE
-                                                                                "variable1")
-                                                                               (:VARIABLE
-                                                                                "param1"))
+  Stylesheet: MSFT_Conformance_Tests/RTF/RTF_to_boolean_test.xsl
+  Data: MSFT_Conformance_Tests/RTF/test.xml
+  Expected output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_boolean_test.xsltproc
+  Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_boolean_test.xuriella
+
+FAIL RTF_RTF_to_number_in_format_number [XPath-Expression]: no such function: :FORMAT-NUMBER
   Stylesheet: MSFT_Conformance_Tests/RTF/RTF_to_number_in_format_number.xsl
   Data: MSFT_Conformance_Tests/RTF/test.xml
   Expected output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_number_in_format_number.xsltproc
   Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_number_in_format_number.xuriella
-PASS RTF_RTF_to_string_substring_function [XPath-Expression]
-FAIL Whitespaces__84599 [XSLT-Data-Model]: comparison failed: Document not well-formed: element expected
-Context:
-  Line 4, column 5 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__84599.xsltproc
 
+PASS RTF_RTF_to_string_substring_function [XPath-Expression]
+  Stylesheet: MSFT_Conformance_Tests/RTF/RTF_to_string_substring_function.xsl
+  Data: MSFT_Conformance_Tests/RTF/test.xml
+  Expected output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.xsltproc
+  Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.xuriella
+
+PASS Whitespaces__84599 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/84599.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/84599.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__84599.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__84599.xuriella
+
 PASS Whitespaces__91024 [XSLT-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Whitespaces/91024.xsl
+  Data: MSFT_Conformance_Tests/Whitespaces/91024.xml
+  Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xsltproc
+  Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xuriella
+
 PASS Whitespaces__91025 [XSLT-Data-Model]: expected error invalid xpath designator: NIL
+  Stylesheet: MSFT_Conformance_Tests/Whitespaces/91025.xsl
+  Data: MSFT_Conformance_Tests/Whitespaces/91025.xml
+  Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.xsltproc
+  Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.xuriella
+
 FAIL Whitespaces__91221 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91221.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91221.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91221.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91221.xuriella
+
 FAIL Whitespaces__91222 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91222.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91222.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91222.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91222.xuriella
+
 FAIL Whitespaces__91223 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91223.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91223.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91223.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91223.xuriella
+
 FAIL Whitespaces__91224 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91224.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91224.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91224.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91224.xuriella
+
 FAIL Whitespaces__91225 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91225.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91225.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91225.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91225.xuriella
+
 FAIL Whitespaces__91226 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91226.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91226.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91226.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91226.xuriella
+
 FAIL Whitespaces__91227 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91227.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91227.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91227.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91227.xuriella
+
 FAIL Whitespaces__91228 [XSLT-Data-Model]: undefined instruction: copy
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91228.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91228.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91228.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91228.xuriella
-FAIL Whitespaces__91421 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 15, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91421.xsltproc
 
+PASS Whitespaces__91421 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91421.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91421.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91421.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91421.xuriella
-FAIL Whitespaces__91422 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 15, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91422.xsltproc
 
+FAIL Whitespaces__91422 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91422.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91422.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91422.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91422.xuriella
-FAIL Whitespaces__91423 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 50 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91423.xsltproc
 
+FAIL Whitespaces__91423 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91423.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91423.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91423.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91423.xuriella
-FAIL Whitespaces__91424 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 58 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91424.xsltproc
 
+PASS Whitespaces__91424 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91424.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91424.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91424.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91424.xuriella
-FAIL Whitespaces__91425 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 50 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91425.xsltproc
 
+FAIL Whitespaces__91425 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91425.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91425.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91425.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91425.xuriella
-FAIL Whitespaces__91426 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 58 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91426.xsltproc
 
+PASS Whitespaces__91426 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91426.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91426.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91426.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91426.xuriella
-FAIL Whitespaces__91427 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 15, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91427.xsltproc
 
+PASS Whitespaces__91427 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91427.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91427.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91427.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91427.xuriella
-FAIL Whitespaces__91428 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 15, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91428.xsltproc
 
+FAIL Whitespaces__91428 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91428.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91428.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91428.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91428.xuriella
-FAIL Whitespaces__91429 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 55 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xsltproc
 
+FAIL Whitespaces__91429 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91429.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91429.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xuriella
-FAIL Whitespaces__91430 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 55 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xsltproc
 
+FAIL Whitespaces__91430 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91430.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91430.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xuriella
-FAIL Whitespaces__91431 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 56 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xsltproc
 
+FAIL Whitespaces__91431 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91431.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91431.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xuriella
-FAIL Whitespaces__91432 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 1, column 56 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xsltproc
 
+FAIL Whitespaces__91432 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91432.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91432.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xuriella
-FAIL Whitespaces__91433 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xuriella
+
+FAIL Whitespaces__91433 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91433.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91433.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xuriella
-FAIL Whitespaces__91434 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xuriella
+
+FAIL Whitespaces__91434 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91434.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91434.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xuriella
-FAIL Whitespaces__91435 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xuriella
+
+FAIL Whitespaces__91435 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91435.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91435.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xuriella
-FAIL Whitespaces__91436 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xuriella
+
+FAIL Whitespaces__91436 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91436.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91436.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xuriella
+
 FAIL Whitespaces__91437 [XSLT-Data-Model]: There is no applicable method for the generic function
                                              #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
                                            when called with arguments
@@ -183,6 +186,7 @@ FAIL Whitespaces__91437 [XSLT-Data-Model]: There is no applicable method for the
   Data: MSFT_Conformance_Tests/Whitespaces/91437.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91437.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91437.xuriella
+
 FAIL Whitespaces__91438 [XSLT-Data-Model]: There is no applicable method for the generic function
                                              #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
                                            when called with arguments
@@ -191,6 +195,7 @@ FAIL Whitespaces__91438 [XSLT-Data-Model]: There is no applicable method for the
   Data: MSFT_Conformance_Tests/Whitespaces/91438.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91438.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91438.xuriella
+
 FAIL Whitespaces__91439 [XSLT-Data-Model]: There is no applicable method for the generic function
                                              #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
                                            when called with arguments
@@ -199,6 +204,7 @@ FAIL Whitespaces__91439 [XSLT-Data-Model]: There is no applicable method for the
   Data: MSFT_Conformance_Tests/Whitespaces/91439.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91439.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91439.xuriella
+
 FAIL Whitespaces__91440 [XSLT-Data-Model]: There is no applicable method for the generic function
                                              #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
                                            when called with arguments
@@ -207,97 +213,117 @@ FAIL Whitespaces__91440 [XSLT-Data-Model]: There is no applicable method for the
   Data: MSFT_Conformance_Tests/Whitespaces/91440.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91440.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91440.xuriella
-FAIL Whitespaces__91441 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91441.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91441.xuriella
+
+FAIL Whitespaces__91441 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91441.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91441.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91441.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91441.xuriella
-FAIL Whitespaces__91442 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91442.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91442.xuriella
+
+FAIL Whitespaces__91442 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91442.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91442.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91442.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91442.xuriella
-FAIL Whitespaces__91443 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91443.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91443.xuriella
+
+FAIL Whitespaces__91443 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91443.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91443.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91443.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91443.xuriella
-FAIL Whitespaces__91444 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91444.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91444.xuriella
+
+FAIL Whitespaces__91444 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91444.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91444.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91444.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91444.xuriella
-FAIL Whitespaces__91445 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91445.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91445.xuriella
+
+FAIL Whitespaces__91445 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91445.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91445.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91445.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91445.xuriella
-FAIL Whitespaces__91446 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91446.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91446.xuriella
+
+FAIL Whitespaces__91446 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91446.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91446.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91446.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91446.xuriella
-FAIL Whitespaces__91447 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91447.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91447.xuriella
+
+FAIL Whitespaces__91447 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91447.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91447.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91447.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91447.xuriella
-FAIL Whitespaces__91448 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xuriella
+
+FAIL Whitespaces__91448 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91448.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91448.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xuriella
-FAIL Whitespaces__91449 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xuriella
+
+FAIL Whitespaces__91449 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91449.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91449.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xuriella
-FAIL Whitespaces__91450 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xuriella
+
+FAIL Whitespaces__91450 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91450.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91450.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xuriella
-FAIL Whitespaces__91451 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xuriella
+
+FAIL Whitespaces__91451 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91451.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91451.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xuriella
-FAIL Whitespaces__91452 [XSLT-Data-Model]: expected output /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xsltproc but found /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xuriella
+
+FAIL Whitespaces__91452 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91452.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91452.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xuriella
+
 FAIL Whitespaces__91453 [XSLT-Data-Model]: undefined instruction: copy-of
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91453.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91453.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.xuriella
+
 FAIL Whitespaces__91454 [XSLT-Data-Model]: undefined instruction: copy-of
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91454.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91454.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xuriella
+
 FAIL Whitespaces__91455 [XSLT-Data-Model]: undefined instruction: copy-of
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91455.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91455.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91455.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91455.xuriella
+
 FAIL Whitespaces__91456 [XSLT-Data-Model]: undefined instruction: copy-of
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91456.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91456.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91456.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91456.xuriella
-FAIL Whitespaces_WhitespaceStripTest1 [XSLT-Data-Model]: comparison failed: Document not well-formed: Garbage at end of document.
-Context:
-  Line 5, column 19 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Whitespaces/Whitespaces_WhitespaceStripTest1.xsltproc
 
+PASS Whitespaces_WhitespaceStripTest1 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/xslt_test_whitespace_preserve1.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/xslt_test_whitespace_preserve1.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_WhitespaceStripTest1.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_WhitespaceStripTest1.xuriella
+
 PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
-Passed 5/52 tests.
+  Stylesheet: MSFT_Conformance_Tests/Whitespaces/xslt_strip_space_with_text_ws.xsl
+  Data: MSFT_Conformance_Tests/Whitespaces/xslt_strip_space_with_text_ws.xml
+  Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
+  Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
+
+Passed 11/52 tests.

@@ -155,7 +155,8 @@
 (defstruct stylesheet
   (modes (make-hash-table :test 'equal))
   (html-output-p nil)
-  (global-variables ()))
+  (global-variables ())
+  (output-specification (make-output-specification)))
 
 (defstruct mode
   (named-templates (make-hash-table :test 'equal))
@@ -176,8 +177,6 @@
   bindings)
 
 (defun parse-stylesheet (d)
-  ;; FIXME: I was originally planning on rewriting this using klacks
-  ;; eventually, but now let's just build an STP document
   (let* ((d (cxml:parse d (cxml-stp:make-builder)))
 	 (<transform> (stp:document-element d))
 	 (*namespaces* (acons-namespaces <transform>))
@@ -193,7 +192,37 @@
     (ensure-mode "" stylesheet)
     (parse-global-variables! stylesheet <transform>)
     (parse-templates! stylesheet <transform> env)
+    (parse-output! stylesheet <transform>)
     stylesheet))
+
+(defstruct (output-specification
+	     (:conc-name "OUTPUT-"))
+  indent
+  omit-xml-declaration)
+
+(defun parse-output! (stylesheet <transform>)
+  (let ((outputs (stp:filter-children (of-name "output") <transform>)))
+    (when outputs
+      (when (cdr outputs)
+	;; FIXME:
+	;;   - concatenate cdata-section-elements
+	;;   - the others must not conflict
+	(error "oops, merging of output elements not supported yet"))
+      (let ((<output> (car outputs))
+	    (spec (stylesheet-output-specification stylesheet)))
+	(stp:with-attributes (;; version
+			      indent
+;;; 			      encoding
+;;; 			      media-type
+;;; 			      doctype-system
+;;; 			      doctype-public
+ 			      omit-xml-declaration
+;;; 			      standalone
+;;; 			      cdata-section-elements
+			      )
+	    <output>
+	  (setf (output-indent spec) indent)
+	  (setf (output-omit-xml-declaration spec) omit-xml-declaration))))))
 
 (defun compile-global-variable (<variable> env) ;; also for <param>
   (stp:with-attributes (name select) <variable>
@@ -331,7 +360,16 @@
 	 (mapc (lambda (spec)
 		 (funcall (variable-thunk spec) ctx))
 	       globals)
-	 (apply-templates ctx))))
+	 (apply-templates ctx)
+;;; 	 (when (equal (output-indent
+;;; 		       (stylesheet-output-specification stylesheet))
+;;; 		      "yes")
+;;; 	   Hack: We don't have indentation support yet, but at least make
+;;; 	   sure to add a newline at the end so that our output matches
+;;; 	   what xsltproc does.
+;;; 	   (cxml::sink-fresh-line cxml::*sink*))
+	 ;; Turns out xsltproc does it unconditionally:
+	 (cxml::%write-rune #\newline cxml::*sink*))))
    stylesheet
    output))
 
@@ -411,9 +449,14 @@
 			:if-exists :rename-and-delete)
        (invoke-with-output-sink fn stylesheet s)))
     ((or stream null)
-     (cxml:with-xml-output (make-output-sink stylesheet output)
-       (funcall fn)))
+     (invoke-with-output-sink fn
+			      stylesheet
+			      (make-output-sink stylesheet output)))
     ((or hax:abstract-handler sax:abstract-handler)
+     (when (equal (output-omit-xml-declaration
+		   (stylesheet-output-specification stylesheet))
+		  "yes")
+       (setf (cxml:omit-xml-declaration-p output) t))
      (cxml:with-xml-output output
        (funcall fn)))))
 

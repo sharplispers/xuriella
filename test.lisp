@@ -29,7 +29,7 @@
 (in-package :xuriella)
 
 (defparameter *tests-directory*
-    "/home/david/src/XSLT-testsuite-04/testsuite/TESTS/")
+  "/home/david/src/XSLT-testsuite-04/testsuite/TESTS/")
 
 (defclass test-case ()
   ((id :initarg :id :accessor test-id)
@@ -281,10 +281,37 @@
 		 :stylesheet-pathname-2 (stp:attribute-value
 					 <test-case> "stylesheet-2")))
 
+;; read from file P, skipping the XMLDecl or TextDecl and Doctype at the
+;; beginning, if any.
+(defun slurp-for-comparison (p)
+  (with-open-file (s p :element-type '(unsigned-byte 8))
+    (let ((xstream (runes:make-xstream s :speed 1)))
+      (setf (runes:xstream-name xstream)
+	    (cxml::make-stream-name
+	     :entity-name "main document"
+	     :entity-kind :main
+	     :uri (cxml::pathname-to-uri (merge-pathnames p))))
+      (let ((source (cxml:make-source xstream :pathname p)))
+	(loop
+	   for key = (klacks:peek-next source)
+	   until (eq key :start-document))
+	(with-output-to-string (r)
+	  (write-line "<wrapper>" r)
+	  (cxml::with-source (source cxml::context)
+	    (when (eq (cxml::zstream-token-category
+		       (cxml::main-zstream cxml::context))
+		      :seen-<)
+	      (write-char #\< r)))
+	  (loop
+	     for char = (runes:read-rune xstream)
+	     until (eq char :eof)
+	     do (write-char char r))
+	  (write-line "</wrapper>" r))))))
+
 (defun output-equal-p (p q)
-  (let ((r (cxml:parse p (stp:make-builder)))
-	(s (cxml:parse q (stp:make-builder))))
-    (node= r s)))
+  (let ((r (cxml:parse (slurp-for-comparison p) (stp:make-builder)))
+	(s (cxml:parse (slurp-for-comparison q) (stp:make-builder))))
+    (node= (stp:document-element r) (stp:document-element s))))
 
 (defun strip-addresses (str)
   (cl-ppcre:regex-replace-all "{[0-9a-fA-F]+}\\>" str "{xxxxxxxx}>"))
@@ -314,14 +341,14 @@
 			 (test-category test)
 			 fmt
 			 args)))
-	       (unless ok
-		 (pp "Stylesheet" (test-stylesheet-pathname test))
-		 (pp "Data" (test-data-pathname test))
-		 (pp "Supplemental stylesheet"
-		     (test-stylesheet-pathname-2 test))
-		 (pp "Supplemental data" (test-data-pathname-2 test))
-		 (pp "Expected output" expected)
-		 (pp "Actual output" actual))
+	       (pp "Stylesheet" (test-stylesheet-pathname test))
+	       (pp "Data" (test-data-pathname test))
+	       (pp "Supplemental stylesheet"
+		   (test-stylesheet-pathname-2 test))
+	       (pp "Supplemental data" (test-data-pathname-2 test))
+	       (pp "Expected output" expected)
+	       (pp "Actual output" actual)
+	       (terpri)
 	       ok))
       (cond
 	((equal (test-operation test) "standard")
@@ -334,10 +361,7 @@
 		      (report t)
 		      t)
 		     (t
-		      (report nil
-			      ": expected output ~A but found ~A"
-			      expected
-			      actual)
+		      (report nil ": output doesn't match")
 		      nil))
 		 ((or error parse-number::invalid-number) (c)
 		   (report nil ": comparison failed: ~A" c))))
