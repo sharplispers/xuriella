@@ -60,9 +60,11 @@
 (define-instruction cond (args env)
   (if args
       (destructuring-bind ((test &body body) &rest clauses) args
-	(compile-instruction `(if ,test
-				  (progn ,@body)
-				  (cond ,@clauses))
+	(compile-instruction (if (eq test t)
+				 `(progn ,@body)
+				 `(if ,test
+				      (progn ,@body)
+				      (cond ,@clauses)))
 			     env))
       (constantly nil)))
 
@@ -182,9 +184,25 @@
 	  (push (cons prefix uri) *namespaces*)))
       (compile-instruction `(progn ,@body) env))))
 
+;;; FIXME
+(defstruct (result-tree-fragment
+	     (:constructor make-result-tree-fragment (node)))
+  node)
+
+(defmethod xpath-protocol:string-value ((node result-tree-fragment))
+  (xpath-protocol:string-value (result-tree-fragment-node node)))
+
+(defun apply-to-result-tree-fragment (ctx thunk)
+  (let ((document
+	 (cxml:with-xml-output (stp:make-builder)
+	   (cxml:with-element "fragment"
+	     (funcall thunk ctx)))))
+    (xpath::make-node-set
+     (list (make-result-tree-fragment (stp:document-element document))))))
+
 (define-instruction let (args env)
   (destructuring-bind ((&rest forms) &rest body) args
-    (let ((variable-declarations *variable-declarations*)
+    (let ((variable-declarations *variables*)
 	  (variable-gensyms '())
 	  (variable-thunks '()))
       (dolist (form forms)
@@ -194,16 +212,17 @@
 	    (let ((pair (cons local-name uri))
 		  (thunk
 		   (if (and (listp value) (eq (car value) 'progn))
-		       (compile-instruction value env)
+		       (let ((inner-thunk (compile-instruction value env)))
+			 (lambda (ctx)
+			   (apply-to-result-tree-fragment ctx inner-thunk)))
 		       (xpath:compile-xpath value env)))
 		  (gensym (gensym local-name)))
-	      (when (assoc pair *variable-declarations* :test 'equal)
+	      (when (assoc pair variable-declarations :test 'equal)
 		(error "duplicate definition of ~A" name))
-	      (push (cons pair (lambda (ctx) ctx (symbol-value gensym)))
-		    variable-declarations)
+	      (push (cons pair gensym) variable-declarations)
 	      (push gensym variable-gensyms)
 	      (push thunk variable-thunks)))))
-      (let* ((*variable-declarations* variable-declarations)
+      (let* ((*variables* variable-declarations)
 	     (thunk (compile-instruction `(progn ,@body) env)))
 	(lambda (ctx)
 	  (progv
@@ -290,7 +309,7 @@
 ;;;;
 
 (defun test-instruction (form document)
-  (let ((thunk (compile-instruction form (make-xslt-environment)))
+  (let ((thunk (compile-instruction form (make-instance 'lexical-environment)))
 	(root (cxml:parse document (stp:make-builder))))
     (cxml:with-xml-output (cxml:make-string-sink)
       (funcall thunk (xpath:make-context root)))))

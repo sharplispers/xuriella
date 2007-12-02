@@ -28,21 +28,42 @@
 
 (in-package :xuriella)
 
+(defun map-namespace-declarations (fn element)
+  (let ((parent (stp:parent element)))
+    (maphash (lambda (prefix uri)
+	       (unless (and (typep parent 'stp:element)
+			    (equal (stp:find-namespace prefix parent) uri))
+		 (funcall fn prefix uri)))
+	     (cxml-stp-impl::collect-local-namespaces element))))
+
+(defun maybe-wrap-namespaces (child exprs)
+  (if (typep child 'stp:element)
+      (let ((bindings '()))
+	(map-namespace-declarations (lambda (prefix uri)
+				      (push (list prefix uri) bindings))
+				    child)
+	(if bindings
+	    `((xsl:with-namespaces ,bindings
+		,@exprs))
+	    exprs))
+      exprs))
 
 (defun parse-body (node &optional (start 0))
   (let ((n (stp:count-children-if #'identity node)))
     (labels ((recurse (i)
 	       (when (< i n)
 		 (let ((child (stp:nth-child i node)))
-		   (if (namep child "variable")
-		       (stp:with-attributes (name select) child
-			 (when (and select (stp:list-children child))
-			   (error "variable with select and body"))
-			 `((let ((,name ,(or select
-					     `(progn ,@(parse-body child)))))
-			     ,@(recurse (1+ i)))))
-		       (cons (parse-instruction child)
-			     (recurse (1+ i))))))))
+		   (maybe-wrap-namespaces
+		    child
+		    (if (namep child "variable")
+			(stp:with-attributes (name select) child
+			  (when (and select (stp:list-children child))
+			    (error "variable with select and body"))
+			  `((let ((,name ,(or select
+					      `(progn ,@(parse-body child)))))
+			      ,@(recurse (1+ i)))))
+			(cons (parse-instruction child)
+			      (recurse (1+ i)))))))))
       (recurse start))))
 
 (defun parse-instruction (node)
@@ -88,10 +109,17 @@
 (define-instruction-parser |choose| (node)
   `(cond
      ,@(stp:map-children 'list
-			 (lambda (<when>)
-			   (stp:with-attributes (test) <when>
-			     `(,test
-			       ,@(parse-body <when>))))
+			 (lambda (clause)
+			   (cond
+			     ((namep clause "when")
+			      (stp:with-attributes (test) clause
+				`(,test
+				  ,@(parse-body clause))))
+			     ((namep clause "otherwise")
+			      `(t ,@(parse-body clause)))
+			     (t
+			      (error "invalid <choose> clause: ~A"
+				     (stp:local-name clause)))))
 			 node)))
 
 (define-instruction-parser |element| (node)

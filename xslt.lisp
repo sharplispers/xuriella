@@ -38,12 +38,10 @@
   '((nil . "")
     ("xmlns" . #"http://www.w3.org/2000/xmlns/")
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
-(defparameter *variable-declarations* '())
+
+(defparameter *variables* '())
 
 (defclass xslt-environment () ())
-
-(defun make-xslt-environment ()
-  (make-instance 'xslt-environment))
 
 (defun decode-qname (qname env attributep)
   (multiple-value-bind (prefix local-name)
@@ -56,9 +54,22 @@
 (defmethod xpath:environment-find-namespace ((env xslt-environment) prefix)
   (cdr (assoc prefix *namespaces* :test 'equal)))
 
+(defclass lexical-xslt-environment (xslt-environment) ())
+
 (defmethod xpath:environment-find-variable
-    ((env xslt-environment) lname uri)
-  (cdr (assoc (cons lname uri) *variable-declarations* :test 'equal)))
+    ((env lexical-xslt-environment) lname uri)
+  (let ((gensym (cdr (assoc (cons lname uri) *variables* :test 'equal))))
+    (and gensym
+	 (lambda (ctx)
+	   (declare (ignore ctx))
+	   (symbol-value gensym)))))
+
+(defclass global-variable-environment (xslt-environment)
+  ((global-variables :initarg :global-variables :accessor global-variables)))
+
+(defmethod xpath:environment-find-variable
+    ((env global-variable-environment) lname uri)
+  (gethash (cons lname uri) (global-variables env)))
 
 
 ;;;; TEXT-OUTPUT-SINK
@@ -142,7 +153,8 @@
 
 (defstruct stylesheet
   (modes (make-hash-table :test 'equal))
-  (html-output-p nil))
+  (html-output-p nil)
+  (global-variables ()))
 
 (defstruct mode
   (named-templates (make-hash-table :test 'equal))
@@ -156,13 +168,21 @@
       (setf (gethash mode (stylesheet-modes stylesheet))
 	    (make-mode))))
 
+(defun acons-namespaces (element &optional (bindings *namespaces*))
+  (map-namespace-declarations (lambda (prefix uri)
+				(push (cons prefix uri) bindings))
+			      element)
+  bindings)
+
 (defun parse-stylesheet (d)
   ;; FIXME: I was originally planning on rewriting this using klacks
   ;; eventually, but now let's just build an STP document
   (let* ((d (cxml:parse d (cxml-stp:make-builder)))
 	 (<transform> (stp:document-element d))
+	 (*namespaces* (acons-namespaces <transform>))
+	 (*variables* nil)
 	 (stylesheet (make-stylesheet))
-	 (env (make-xslt-environment)))
+	 (env (make-instance 'lexical-xslt-environment)))
     (strip-stylesheet <transform>)
     ;; FIXME: handle embedded stylesheets
     (unless (and (equal (stp:namespace-uri <transform>) *xsl*)
@@ -170,7 +190,69 @@
 		     (equal (stp:local-name <transform>) "stylesheet")))
       (error "not a stylesheet"))
     (ensure-mode "" stylesheet)
-    (dolist (<template> (stp:filter-children (of-name "template") <transform>))
+    (parse-global-variables! stylesheet <transform>)
+    (parse-templates! stylesheet <transform> env)
+    stylesheet))
+
+(defun compile-global-variable (<variable> env)
+  (stp:with-attributes (name select) <variable>
+    (when (and select (stp:list-children <variable>))
+      (error "variable with select and body"))
+    (if select
+	(xpath:compile-xpath select env)
+	(let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
+	       (inner-thunk (compile-instruction inner-sexpr env)))
+	  (lambda (ctx)
+	    (apply-to-result-tree-fragment ctx inner-thunk))))))
+
+(defun parse-global-variable! (<variable> global-env)
+  (let ((*namespaces* (acons-namespaces <variable>))
+	(qname (stp:attribute-value <variable> "name")))
+    (multiple-value-bind (local-name uri)
+	(decode-qname qname global-env nil)
+      (let ((key (cons local-name uri))
+	    (gensym (gensym local-name)))
+	;; For the normal compilation environment of templates, install it
+	;; into *VARIABLES* using its gensym:
+	(push (cons key gensym) *variables*)
+	;; For the evaluation of a global variable itself, build a thunk
+	;; that lazily resolves other variables:
+	(let* ((value-thunk :unknown)
+	       (global-variable-thunk
+		(lambda (ctx)
+		  (when (eq (symbol-value gensym) 'seen)
+		    (error "recursive variable definition"))
+		  (or (symbol-value gensym)
+		      (progn
+			(setf (symbol-value gensym) 'seen)
+			(setf (symbol-value gensym)
+			      (funcall value-thunk ctx))))))
+	       (thunk-setter
+		(lambda ()
+		  (setf value-thunk
+			(compile-global-variable <variable> global-env)))))
+	  (setf (gethash key (global-variables global-env))
+		global-variable-thunk)
+	  (list gensym
+		global-variable-thunk
+		thunk-setter))))))
+
+(defun parse-global-variables! (stylesheet <transform>)
+  (let* ((table (make-hash-table :test 'equal))
+	 (global-env (make-instance 'global-variable-environment
+				    :global-variables table))
+	 (specs
+	  (mapcar (lambda (<variable>)
+		    (parse-global-variable! <variable> global-env))
+		  (stp:filter-children (of-name "variable") <transform>))))
+    ;; now that the global environment knows about all variables, run the
+    ;; thunk setters to perform thier compilation
+    (mapc (lambda (spec) (funcall (third spec))) specs)
+    (setf (stylesheet-global-variables stylesheet) specs)))
+
+(defun parse-templates! (stylesheet <transform> env)
+  (dolist (<template> (stp:filter-children (of-name "template") <transform>))
+    (let ((*namespaces* (acons-namespaces <template>)))
       (dolist (template (compile-template <template> env))
 	(let ((mode (ensure-mode (template-mode template) stylesheet))
 	      (name-test (template-qname-test template)))
@@ -180,8 +262,7 @@
 		(push template
 		      (gethash (cons local-name uri)
 			       (mode-named-templates mode))))
-	      (push template (mode-other-templates mode))))))
-    stylesheet))
+	      (push template (mode-other-templates mode))))))))
 
 
 ;;;; APPLY-STYLESHEET
@@ -197,8 +278,14 @@
     (setf source-document (cxml:parse source-document (stp:make-builder))))
   (invoke-with-output-sink
    (lambda ()
-     (let ((*mode* (find-mode "" stylesheet)))
-       (apply-templates (xpath:make-context source-document))))
+     (let ((*mode* (find-mode "" stylesheet))
+	   (globals (stylesheet-global-variables stylesheet))
+	   (ctx (xpath:make-context source-document)))
+       (progv
+	   (mapcar #'car globals)
+	   (make-list (length globals) :initial-element nil)
+	 (mapc (lambda (spec) (funcall (second spec) ctx)) globals)
+	 (apply-templates ctx))))
    stylesheet
    output-spec))
 
