@@ -40,7 +40,11 @@
 			:accessor test-stylesheet-pathname)
    (data-pathname-2 :initarg :data-pathname-2 :accessor test-data-pathname-2)
    (stylesheet-pathname-2 :initarg :stylesheet-pathname-2
-			  :accessor test-stylesheet-pathname-2)))
+			  :accessor test-stylesheet-pathname-2)
+   (output-pathname :initarg :output-pathname
+		    :accessor test-official-output-pathname)
+   (output-compare :initarg :output-compare
+		   :accessor test-output-compare)))
 
 (defmethod print-object ((object test-case) stream)
   (print-unreadable-object (object stream :identity nil :type t)
@@ -101,16 +105,19 @@
 	  (stp:string-value
 	   (stp:find-recursively-if (stp:of-name "file-path") <test-case>)))
 	 (base (concatenate 'string major-path "/" file-path))
+	 (out-base (concatenate 'string major-path "/REF_OUT/" file-path))
 	 (scenario
 	  (stp:find-recursively-if (stp:of-name "scenario") <test-case>))
 	 data
 	 stylesheet
 	 supplemental-stylesheet
-	 supplemental-data)
-    (dolist
-	(input (stp:filter-recursively (stp:of-name "input-file") <test-case>))
-      (let ((role (stp:attribute-value input "role"))
-	    (path (concatenate 'string base "/" (stp:string-value input))))
+	 supplemental-data
+	 output
+	 compare)
+    (dolist (<input> (stp:filter-recursively (stp:of-name "input-file")
+					     <test-case>))
+      (let ((role (stp:attribute-value <input> "role"))
+	    (path (concatenate 'string base "/" (stp:string-value <input>))))
 	(cond
 	  ((equal role "principal-data")
 	   (setf data path))
@@ -122,6 +129,18 @@
 	   (setf supplemental-data path))
 	  (t
 	   (error "unrecognized role: ~A" role)))))
+    (dolist (<output> (stp:filter-recursively (stp:of-name "output-file")
+					    <test-case>))
+      (let ((role (stp:attribute-value <output> "role"))
+	    (path (concatenate 'string out-base
+			       "/"
+			       (stp:string-value <output>))))
+	(cond
+	  ((equal role "principal")
+	   (setf output path)
+	   (setf compare (stp:attribute-value <output> "compare")))
+	  (t
+	   (error "unrecognized role: ~A" role)))))
     (make-instance 'test-case
 		   :id (stp:attribute-value <test-case> "id")
 		   :category (stp:attribute-value <test-case> "category")
@@ -129,7 +148,9 @@
 		   :data-pathname data
 		   :stylesheet-pathname stylesheet
 		   :stylesheet-pathname-2 supplemental-stylesheet
-		   :data-pathname-2 supplemental-data)))
+		   :data-pathname-2 supplemental-data
+		   :output-pathname output
+		   :output-compare compare)))
 
 (defun write-simplified-test (test-case operation)
   (cxml:with-element "test-case"
@@ -140,7 +161,9 @@
       (p "data" (test-data-pathname test-case))
       (p "stylesheet" (test-stylesheet-pathname test-case))
       (p "data-2" (test-data-pathname-2 test-case))
-      (p "stylesheet-2" (test-stylesheet-pathname-2 test-case)))
+      (p "stylesheet-2" (test-stylesheet-pathname-2 test-case))
+      (p "output" (test-official-output-pathname test-case))
+      (p "compare" (test-output-compare test-case)))
     (cxml:attribute "operation" operation)))
 
 (defun test-output-pathname (test type)
@@ -278,13 +301,18 @@
 				       (asdf:find-system :xuriella))))
 	 (xsl (merge-pathnames "test.xsl" target-dir))
 	 (xml (merge-pathnames "test.xml" target-dir))
+	 (txt (merge-pathnames "official-output.txt" target-dir))
 	 (expected (merge-pathnames "expected.xml" target-dir))
 	 (actual (merge-pathnames "actual.xml" target-dir)))
     (ensure-directories-exist target-dir)
     (copy-file (test-stylesheet-pathname test) xsl)
     (copy-file (test-data-pathname test) xml)
+    (when (test-official-output-pathname test)
+      (copy-file (test-official-output-pathname test) txt))
     (format t "Test stylesheet copied to:~%  ~A~%~%" xsl)
     (format t "Test data copied to:~%  ~A~%~%" xml)
+    (when (test-official-output-pathname test)
+      (format t "Official output file:~%  ~A~%~%" txt))
     (format t "Run xsltproc like this:~%  cd ~A~%  xsltproc ~A ~A >~A~%~%"
 	    (namestring target-dir)
 	    (enough-namestring xsl target-dir)
@@ -324,7 +352,9 @@
 				       <test-case> "stylesheet")
 		 :data-pathname-2 (stp:attribute-value <test-case> "data-2")
 		 :stylesheet-pathname-2 (stp:attribute-value
-					 <test-case> "stylesheet-2")))
+					 <test-case> "stylesheet-2")
+		 :output-pathname (stp:attribute-value <test-case> "output")
+		 :output-compare (stp:attribute-value <test-case> "compare")))
 
 ;; read from file P, skipping the XMLDecl or TextDecl and Doctype at the
 ;; beginning, if any.
