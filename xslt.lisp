@@ -361,16 +361,7 @@
 	 (mapc (lambda (spec)
 		 (funcall (variable-thunk spec) ctx))
 	       globals)
-	 (apply-templates ctx)
-;;; 	 (when (equal (output-indent
-;;; 		       (stylesheet-output-specification stylesheet))
-;;; 		      "yes")
-;;; 	   Hack: We don't have indentation support yet, but at least make
-;;; 	   sure to add a newline at the end so that our output matches
-;;; 	   what xsltproc does.
-;;; 	   (cxml::sink-fresh-line cxml::*sink*))
-	 ;; Turns out xsltproc does it unconditionally:
-	 (cxml::%write-rune #\newline cxml::*sink*))))
+	 (apply-templates ctx))))
    stylesheet
    output))
 

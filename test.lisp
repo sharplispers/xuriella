@@ -159,7 +159,7 @@
     (flet ((p (l p)
 	     (cxml:attribute l (and p (namestring p)))))
       (p "data" (test-data-pathname test-case))
-      (p "stylesheet" (test-stylesheet-pathname test-case))
+      (p "stylesheet" (noindent-stylesheet-pathname test-case))
       (p "data-2" (test-data-pathname-2 test-case))
       (p "stylesheet-2" (test-stylesheet-pathname-2 test-case))
       (p "output" (test-official-output-pathname test-case))
@@ -171,6 +171,29 @@
 		 :type type
 		 :defaults (test-data-pathname test)))
 
+(defun sanitize-stylesheet (in out)
+  (if (probe-file in)
+      (handler-case
+	  (let ((d (cxml:parse (pathname in) (stp:make-builder))))
+	    (xpath:with-namespaces ((nil #.*xsl*))
+	      (xpath:do-node-set (output (xpath:evaluate "//output" d))
+		(let ((a (stp:find-attribute-named output "indent")))
+		  (when a
+		    (stp:detach a)))))
+	    (with-open-file (s out
+			       :direction :output
+			       :if-exists :rename-and-delete
+			       :element-type '(unsigned-byte 8))
+	      (stp:serialize d (cxml:make-octet-stream-sink s))))
+	(error (c)
+	  (warn "ignoring bogus stylesheet ~A: ~A" in c)
+	  (copy-file in out)))
+      (warn "oops, ignoring missing stylesheet: ~A" in)))
+
+(defun noindent-stylesheet-pathname (test-case)
+  (make-pathname :type "noindent-xsl"
+		 :defaults (test-stylesheet-pathname test-case)))
+
 (defun simplify-test (test-case)
   (flet ((report (status &optional (fmt "") &rest args)
 	   (format t "~&~A ~A [~A]~?~%"
@@ -181,7 +204,9 @@
 		   args)))
     (let* ((data (test-data-pathname test-case))
 	   (stylesheet (test-stylesheet-pathname test-case))
+	   (noindent-stylesheet (noindent-stylesheet-pathname test-case))
 	   (out (test-output-pathname test-case "xsltproc")))
+      (sanitize-stylesheet stylesheet noindent-stylesheet)
       (if (equal (test-operation test-case) "standard")
 	  (handler-case
 	      (progn
@@ -383,9 +408,34 @@
 	     do (write-char char r))
 	  (write-line "</wrapper>" r))))))
 
+(defun parse-for-comparison (p)
+  (let* ((d (cxml:parse (slurp-for-comparison p) (stp:make-builder)))
+	 (de (stp:document-element d)))
+    (let ((first (stp:first-child de)))
+      (when (typep first 'stp:text)
+	(cond
+	  ((whitespacep (stp:data first))
+	   (stp:delete-child first de))
+	  (t
+	   (setf (stp:data first)
+		 (cl-ppcre:regex-replace #.(format nil "^[~A]+" *whitespace*)
+					 (stp:data first)
+					 ""))))))
+    (let ((last (stp:last-child de)))
+      (when (typep last 'stp:text)
+	(cond
+	  ((whitespacep (stp:data last))
+	   (stp:delete-child last de))
+	  (t
+	   (setf (stp:data last)
+		 (cl-ppcre:regex-replace #.(format nil "[~A]+$" *whitespace*)
+					 (stp:data last)
+					 ""))))))
+    d))
+
 (defun output-equal-p (p q)
-  (let ((r (cxml:parse (slurp-for-comparison p) (stp:make-builder)))
-	(s (cxml:parse (slurp-for-comparison q) (stp:make-builder))))
+  (let ((r (parse-for-comparison p))
+	(s (parse-for-comparison q)))
     (node= (stp:document-element r) (stp:document-element s))))
 
 (defun strip-addresses (str)
