@@ -20,5 +20,6 @@
      (:file "xslt")
      (:file "instructions")
      (:file "parser")
+     (:file "space")
      (:file "test"))
     :depends-on (:cxml :cxml-stp :closure-html :xpath))

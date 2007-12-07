@@ -178,37 +178,25 @@ FAIL Whitespaces__91436 [XSLT-Data-Model]: output doesn't match
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xuriella
 
-FAIL Whitespaces__91437 [XSLT-Data-Model]: There is no applicable method for the generic function
-                                             #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
-                                           when called with arguments
-                                             (NIL).
+FAIL Whitespaces__91437 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91437.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91437.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91437.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91437.xuriella
 
-FAIL Whitespaces__91438 [XSLT-Data-Model]: There is no applicable method for the generic function
-                                             #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
-                                           when called with arguments
-                                             (NIL).
+FAIL Whitespaces__91438 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91438.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91438.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91438.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91438.xuriella
 
-FAIL Whitespaces__91439 [XSLT-Data-Model]: There is no applicable method for the generic function
-                                             #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
-                                           when called with arguments
-                                             (NIL).
+FAIL Whitespaces__91439 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91439.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91439.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91439.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91439.xuriella
 
-FAIL Whitespaces__91440 [XSLT-Data-Model]: There is no applicable method for the generic function
-                                             #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (7)>
-                                           when called with arguments
-                                             (NIL).
+FAIL Whitespaces__91440 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91440.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91440.xml
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91440.xsltproc

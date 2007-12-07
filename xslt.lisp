@@ -106,57 +106,14 @@
        (equal (stp:local-name node) local-name)))
 
 
-;;;; Whitespace
-
-(eval-when (:compile-toplevel :load-toplevel :execute)
-  (defparameter *whitespace*
-    (format nil "~C~C~C~C"
-	    (code-char 9)
-	    (code-char 32)
-	    (code-char 13)
-	    (code-char 10))))
-
-(defun normalize-whitespace (str)
-  (cl-ppcre:regex-replace-all #.(format nil "[~A]+" *whitespace*)
-			      (string-trim *whitespace* str)
-			      " "))
-
-(defun whitespacep (str)
-  (cl-ppcre:all-matches #.(format nil "^[~A]+$" *whitespace*) str))
-
-;; For stylesheets, not source documents.  Also strips comments and PIs.
-(defun strip-stylesheet (parent &optional preserve)
-  (let ((i 0))
-    (loop while (< i (length (cxml-stp-impl::%children parent))) do
-	 (let ((child (stp:nth-child i parent)))
-	   (etypecase child
-	     (stp:text
-	      (if (and (whitespacep (stp:data child))
-		       (not preserve))
-		  (stp:delete-nth-child i parent)
-		  (incf i)))
-	     ((or stp:comment stp:processing-instruction)
-	      (stp:delete-nth-child i parent))
-	     (stp:element
-		 (stp:with-attributes ((space "space" *xml*))
-		     child
-		   (let ((new-preserve
-			  (cond
-			    ((namep child "text") t)
-			    ((not space) preserve)
-			    ((equal space "preserve") t)
-			    (t nil))))
-		     (strip-stylesheet child new-preserve)))
-	       (incf i)))))))
-
-
 ;;;; PARSE-STYLESHEET
 
 (defstruct stylesheet
   (modes (make-hash-table :test 'equal))
   (html-output-p nil)
   (global-variables ())
-  (output-specification (make-output-specification)))
+  (output-specification (make-output-specification))
+  (strip-tests nil))
 
 (defstruct mode
   (named-templates (make-hash-table :test 'equal))
@@ -193,7 +150,46 @@
     (parse-global-variables! stylesheet <transform>)
     (parse-templates! stylesheet <transform> env)
     (parse-output! stylesheet <transform>)
+    (parse-strip/preserve-space! stylesheet <transform> env)
     stylesheet))
+
+(xpath:with-namespaces ((nil #.*xsl*))
+  (defun parse-strip/preserve-space! (stylesheet <transform> env)
+    (xpath:do-node-set
+	(elt (xpath:evaluate "strip-space|preserve-space" <transform>))
+      (let ((*namespaces* (acons-namespaces elt))
+	    (mode
+	     (if (equal (stp:local-name elt) "strip-space")
+		 :strip
+		 :preserve)))
+	(dolist (name-test (words (stp:attribute-value elt "elements")))
+	  (let* ((pos (search ":*" name-test))
+		 (test-function
+		  (cond
+		    ((eql pos (- (length name-test) 2))
+		     (let* ((prefix (subseq name-test 0 pos))
+			    (name-test-uri
+			     (xpath:environment-find-namespace env prefix)))
+		       (unless (xpath::nc-name-p prefix)
+			 (error "not an NCName: ~A" prefix))
+		       (lambda (local-name uri)
+			 (declare (ignore local-name))
+			 (if (equal uri name-test-uri)
+			     mode
+			     nil))))
+		    ((equal name-test "*")
+		     (lambda (local-name uri)
+		       (declare (ignore local-name uri))
+		       mode))
+		    (t
+		     (multiple-value-bind (name-test-local-name name-test-uri)
+			 (decode-qname name-test env nil)
+		       (lambda (local-name uri)
+			 (if (and (equal local-name name-test-local-name)
+				  (equal uri name-test-uri))
+			     mode
+			     nil)))))))
+	    (push test-function (stylesheet-strip-tests stylesheet))))))))
 
 (defstruct (output-specification
 	     (:conc-name "OUTPUT-"))
@@ -346,7 +342,10 @@
      (let ((*stylesheet* stylesheet)
 	   (*mode* (find-mode "" stylesheet))
 	   (globals (stylesheet-global-variables stylesheet))
-	   (ctx (xpath:make-context source-document)))
+	   (ctx (xpath:make-context
+		 (make-whitespace-stripper
+		  source-document
+		  (stylesheet-strip-tests stylesheet)))))
        (progv
 	   (mapcar #'variable-gensym globals)
 	   (make-list (length globals) :initial-element nil)
