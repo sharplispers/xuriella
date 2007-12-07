@@ -110,15 +110,11 @@
 	  (funcall body-thunk ctx))))))
 
 (define-instruction xsl:literal-attribute (args env)
-  (destructuring-bind ((name &optional uri) &body body) args
+  (destructuring-bind ((name &optional uri) value) args
     (declare (ignore uri))		;fixme
-    (let ((value-thunk (compile-instruction `(progn ,@body) env)))
-      (lambda (ctx)
-	(cxml:attribute
-	    name
-	  (with-text-output-sink (s)
-	    (cxml:with-xml-output s
-	      (funcall value-thunk ctx))))))))
+    #'(lambda (ctx)
+	(declare (ignore ctx))
+	(cxml:attribute name value))))
 
 (define-instruction xsl:text (args env)
   (destructuring-bind (str) args
@@ -167,10 +163,10 @@
 	   ;; fixme: parse decls here
 	   #'identity))
       (lambda (ctx)
-	(let* ((node-set (funcall sorter (funcall select-thunk ctx)))
-	       (n (length node-set)))
+	(let* ((nodes (xpath:all-nodes (funcall sorter (funcall select-thunk ctx))))
+	       (n (length nodes)))
 	  (loop
-	     for node in node-set
+	     for node in nodes
 	     for i from 1
 	     do
 	       (funcall body-thunk
