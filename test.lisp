@@ -205,12 +205,14 @@
     (let* ((data (test-data-pathname test-case))
 	   (stylesheet (test-stylesheet-pathname test-case))
 	   (noindent-stylesheet (noindent-stylesheet-pathname test-case))
-	   (out (test-output-pathname test-case "xsltproc")))
+	   (out (test-output-pathname test-case "xsltproc"))
+	   (saxon-out (test-output-pathname test-case "saxon")))
       (sanitize-stylesheet stylesheet noindent-stylesheet)
       (if (equal (test-operation test-case) "standard")
 	  (handler-case
 	      (progn
 		(xsltproc stylesheet data out)
+		(saxon stylesheet data saxon-out)
 		(report "PASS")
 		(write-simplified-test test-case "standard")
 		t)
@@ -241,6 +243,21 @@
 		  (full-namestring output))))
       (unless (zerop code)
 	(error "running xsltproc failed with code ~A [~%~A~%]"
+	       code
+	       (get-output-stream-string asdf::*verbose-out*))))))
+
+(defun saxon (stylesheet input output)
+  (flet ((full-namestring (x)
+	   (namestring (merge-pathnames x))))
+    (let* ((asdf::*verbose-out* (make-string-output-stream))
+	   (code (asdf:run-shell-command
+		  "cd ~S && java -jar /usr/share/java/saxon.jar ~S ~S >~S"
+		  (full-namestring "")
+		  (full-namestring input)
+		  (full-namestring stylesheet)
+		  (full-namestring output))))
+      (unless (zerop code)
+	(error "running saxon failed with code ~A [~%~A~%]"
 	       code
 	       (get-output-stream-string asdf::*verbose-out*))))))
 
@@ -343,6 +360,11 @@
 	    (enough-namestring xsl target-dir)
 	    (enough-namestring xml target-dir)
 	    (enough-namestring expected target-dir))
+    (format t "Run saxon like this:~%  cd ~A~%  java -jar /usr/share/java/saxon.jar ~A ~A >~A~%~%"
+	    (namestring target-dir)
+	    (enough-namestring xml target-dir)
+	    (enough-namestring xsl target-dir)
+	    (enough-namestring expected target-dir))
     (format t "Run xuriella like this:~%")
     `(apply-stylesheet ,xsl ,xml :output ,actual)))
 
@@ -442,7 +464,8 @@
   (cl-ppcre:regex-replace-all "{[0-9a-fA-F]+}\\>" str "{xxxxxxxx}>"))
 
 (defun run-test (test)
-  (let ((expected (test-output-pathname test "xsltproc"))
+  (let ((expected-saxon (test-output-pathname test "saxon"))
+	(expected-xsltproc (test-output-pathname test "xsltproc"))
 	(actual (test-output-pathname test "xuriella")))
     (labels ((doit ()
 	       (with-open-file (s actual
@@ -471,7 +494,8 @@
 	       (pp "Supplemental stylesheet"
 		   (test-stylesheet-pathname-2 test))
 	       (pp "Supplemental data" (test-data-pathname-2 test))
-	       (pp "Expected output" expected)
+	       (pp "Expected output (1)" expected-saxon)
+	       (pp "Expected output (2)" expected-xsltproc)
 	       (pp "Actual output" actual)
 	       (terpri)
 	       ok))
@@ -480,16 +504,30 @@
 	 (handler-case
 	     (progn
 	       (doit)
-	       (handler-case
-		   (cond
-		     ((output-equal-p expected actual)
-		      (report t)
-		      t)
-		     (t
-		      (report nil ": output doesn't match")
-		      nil))
-		 ((or error parse-number::invalid-number) (c)
-		   (report nil ": comparison failed: ~A" c))))
+	       (let ((saxon-matches-p
+		      (handler-case
+			  (output-equal-p expected-saxon actual)
+			((or error parse-number::invalid-number) (c)
+			  (warn "comparison failed: ~A" c)
+			  nil)))
+		     (xsltproc-matches-p
+		      (handler-case
+			  (output-equal-p expected-xsltproc actual)
+			((or error parse-number::invalid-number) (c)
+			  (warn "comparison failed: ~A" c)
+			  nil))))
+		 (cond
+		   ((or saxon-matches-p xsltproc-matches-p)
+		    (report t ": saxon ~A, xsltproc ~A~:[~; (MISMATCH)~]"
+			    saxon-matches-p
+			    xsltproc-matches-p
+			    (if saxon-matches-p
+				(not xsltproc-matches-p)
+				xsltproc-matches-p))
+		    t)
+		   (t
+		    (report nil ": output doesn't match")
+		    nil))))
 	   ((or error parse-number::invalid-number) (c)
 	     (report nil ": ~A" c)
 	     nil)))
