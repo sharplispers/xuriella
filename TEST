@@ -16,6 +16,507 @@ PASS RTF_RTF_to_string_substring_function [XPath-Expression]
   Expected output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.xsltproc
   Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.xuriella
 
+WARNING: namespace URI does not look like an absolute URL: "Test"
+PASS Variables__78097 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21000.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78097.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78097.xuriella
+
+PASS Variables__78098 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21001.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78098.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78098.xuriella
+
+PASS Variables__78099 [XPath-Data-Model]: expected error The value NIL
+                                                         is not of type
+                                                           (SIMPLE-ARRAY
+                                                            CHARACTER).
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21003.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78099.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78099.xuriella
+
+PASS Variables__78100 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21200.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78100.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78100.xuriella
+
+PASS Variables__78101 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21201.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78101.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78101.xuriella
+
+PASS Variables__78110 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21203.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78110.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78110.xuriella
+
+PASS Variables__78111 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21205.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78111.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78111.xuriella
+
+PASS Variables__78112 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21206.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78112.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78112.xuriella
+
+PASS Variables__78115 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21207.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78115.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78115.xuriella
+
+PASS Variables__78116 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21208.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78116.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78116.xuriella
+
+PASS Variables__78117 [XPath-Data-Model]: expected error recursive variable definition
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21210.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78117.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78117.xuriella
+
+PASS Variables__78118 [XPath-Data-Model]: expected error variable with select and body
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21211.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78118.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78118.xuriella
+
+PASS Variables__78120 [XPath-Data-Model]: expected error recursive variable definition
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21212.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78120.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78120.xuriella
+
+PASS Variables__78121 [XPath-Data-Model]: expected error no such function: :FOO
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21213.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78121.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78121.xuriella
+
+FAIL Variables__78125 [XPath-Data-Model]: expected error not signalled: 
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21300.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78125.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78125.xuriella
+
+PASS Variables__78131 [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21304.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78131.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78131.xuriella
+
+FAIL Variables__78132 [XPath-Data-Model]: duplicate definition of x
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21306.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78132.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78132.xuriella
+
+FAIL Variables__78137 [XPath-Data-Model]: duplicate definition of x
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21307.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78137.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78137.xuriella
+
+PASS Variables__78153 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21301.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78153.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78153.xuriella
+
+PASS Variables__78154 [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21308.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78154.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78154.xuriella
+
+PASS Variables__78159 [XPath-Data-Model]: expected error undeclared variable: x in namespace 
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21400.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78159.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78159.xuriella
+
+FAIL Variables__78160 [XPath-Data-Model]: duplicate definition of x
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21401.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78160.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78160.xuriella
+
+PASS Variables__78161 [XPath-Data-Model]: expected error undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21402.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78161.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78161.xuriella
+
+PASS Variables__78162 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21403.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78162.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78162.xuriella
+
+PASS Variables__78163 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21404.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78163.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78163.xuriella
+
+PASS Variables__78164 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21405.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78164.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78164.xuriella
+
+PASS Variables__78292 [XPath-Data-Model]: expected error The value NIL
+                                                         is not of type
+                                                           MODE.
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21406.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78292.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78292.xuriella
+
+FAIL Variables__78304 [XPath-Data-Model]: expected error not signalled: 
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21407.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78304.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78304.xuriella
+
+PASS Variables__78305 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21410.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78305.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78305.xuriella
+
+PASS Variables__78306 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21411.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78306.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78306.xuriella
+
+PASS Variables__78314 [XPath-Data-Model]: expected error The value NIL
+                                                         is not of type
+                                                           (SIMPLE-ARRAY
+                                                            CHARACTER).
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22000.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78314.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78314.xuriella
+
+WARNING: namespace URI does not look like an absolute URL: "Test"
+PASS Variables__78316 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22001.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78316.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78316.xuriella
+
+PASS Variables__78317 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22002.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78317.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78317.xuriella
+
+PASS Variables__78348 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22200.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78348.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78348.xuriella
+
+PASS Variables__78349 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22201.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78349.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78349.xuriella
+
+PASS Variables__78350 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22203.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78350.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78350.xuriella
+
+PASS Variables__78352 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22205.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78352.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78352.xuriella
+
+PASS Variables__78353 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22206.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78353.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78353.xuriella
+
+PASS Variables__78354 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22208.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78354.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78354.xuriella
+
+PASS Variables__78355 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22207.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78355.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78355.xuriella
+
+PASS Variables__78356 [XPath-Data-Model]: expected error recursive variable definition
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22210.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78356.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78356.xuriella
+
+PASS Variables__78359 [XPath-Data-Model]: expected error no such function: :FOO
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22213.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78359.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78359.xuriella
+
+PASS Variables__78361 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22301.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78361.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78361.xuriella
+
+FAIL Variables__78371 [XPath-Data-Model]: expected error not signalled: 
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT03020.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78371.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78371.xuriella
+
+PASS Variables__78399 [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22303.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78399.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78399.xuriella
+
+PASS Variables__78400 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22306.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78400.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78400.xuriella
+
+FAIL Variables__78401 [XPath-Data-Model]: undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22307.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78401.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78401.xuriella
+
+PASS Variables__78402 [XPath-Data-Model]: expected error undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22308.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78402.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78402.xuriella
+
+PASS Variables__78403 [XPath-Data-Model]: expected error undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22400.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78403.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78403.xuriella
+
+FAIL Variables__78404 [XPath-Data-Model]: undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22401.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78404.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78404.xuriella
+
+FAIL Variables__78409 [XPath-Data-Model]: duplicate definition of X
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22411.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__78409.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__78409.xuriella
+
+WARNING: namespace URI does not look like an absolute URL: "URI"
+FAIL Variables__84026 [XPath-Data-Model]: undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23002.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84026.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84026.xuriella
+
+WARNING: namespace URI does not look like an absolute URL: "URI"
+FAIL Variables__84034 [XPath-Data-Model]: undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23001.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84034.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84034.xuriella
+
+WARNING: namespace URI does not look like an absolute URL: "URI"
+PASS Variables__84035 [XPath-Data-Model]: expected error undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23000.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84035.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84035.xuriella
+
+WARNING: namespace URI does not look like an absolute URL: "URI"
+FAIL Variables__84036 [XPath-Data-Model]: undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23200.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84036.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84036.xuriella
+
+FAIL Variables__84438 [XPath-Data-Model]: undefined instruction: call-template
+  Stylesheet: MSFT_Conformance_Tests/Variables/84438.xsl
+  Data: MSFT_Conformance_Tests/Variables/84438.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84438.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84438.xuriella
+
+FAIL Variables__84439 [XPath-Data-Model]: undefined instruction: call-template
+  Stylesheet: MSFT_Conformance_Tests/Variables/84439.xsl
+  Data: MSFT_Conformance_Tests/Variables/84439.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84439.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84439.xuriella
+
+PASS Variables__84632 [XPath-Data-Model]: expected error undeclared variable: var13 in namespace 
+  Stylesheet: MSFT_Conformance_Tests/Variables/84632.xsl
+  Data: MSFT_Conformance_Tests/Variables/84632.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84632.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84632.xuriella
+
+PASS Variables__84633 [XPath-Data-Model]: expected error recursive variable definition
+  Stylesheet: MSFT_Conformance_Tests/Variables/84633.xsl
+  Data: MSFT_Conformance_Tests/Variables/84633.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84633.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84633.xuriella
+
+FAIL Variables__84635 [XPath-Data-Model]: undefined instruction: param
+  Stylesheet: MSFT_Conformance_Tests/Variables/84635.xsl
+  Data: MSFT_Conformance_Tests/Variables/84635.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84635.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84635.xuriella
+
+FAIL Variables__84636 [XPath-Data-Model]: comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
+Context:
+  Line 7, column 8 in NIL
+
+  Stylesheet: MSFT_Conformance_Tests/Variables/84636.xsl
+  Data: MSFT_Conformance_Tests/Variables/84636.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84636.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84636.xuriella
+
+FAIL Variables__84637 [XPath-Data-Model]: comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
+Context:
+  Line 14, column 8 in NIL
+
+  Stylesheet: MSFT_Conformance_Tests/Variables/84637.xsl
+  Data: MSFT_Conformance_Tests/Variables/84637.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84637.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84637.xuriella
+
+PASS Variables__84697 [XPath-Data-Model]: expected error recursive variable definition
+  Stylesheet: MSFT_Conformance_Tests/Variables/84697.xsl
+  Data: MSFT_Conformance_Tests/Variables/84697.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84697.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84697.xuriella
+
+FAIL Variables__84709 [XPath-Data-Model]: comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
+Context:
+  Line 7, column 8 in NIL
+
+  Stylesheet: MSFT_Conformance_Tests/Variables/84709.xsl
+  Data: MSFT_Conformance_Tests/Variables/84709.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84709.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84709.xuriella
+
+FAIL Variables__84712 [XPath-Data-Model]: comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
+Context:
+  Line 14, column 8 in NIL
+
+  Stylesheet: MSFT_Conformance_Tests/Variables/84712.xsl
+  Data: MSFT_Conformance_Tests/Variables/84712.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__84712.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__84712.xuriella
+
+PASS Variables__91490 [XPath-Data-Model]: expected error SAX event START-DOCUMENT not implemented by this handler
+  Stylesheet: MSFT_Conformance_Tests/Variables/91490.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables__91490.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables__91490.xuriella
+
+FAIL Variables_GlobalVarHaveLocalVarDefinedWithin [XPath-Data-Model]: undeclared variable: y2 in namespace 
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variables_VarsDefinedInGlobalVars.xsl
+  Data: MSFT_Conformance_Tests/Variables/xslt_variables_VarsDefinedInGlobalVars.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_GlobalVarHaveLocalVarDefinedWithin.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_GlobalVarHaveLocalVarDefinedWithin.xuriella
+
+PASS Variables_InvalidVariableNameShouldProduceError [XPath-Data-Model]: expected error undefined instruction: call-template
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_InvalidVariableNameErrorMsg.xsl
+  Data: MSFT_Conformance_Tests/Variables/xslt_variable_InvalidVariableNameErrorMsg.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_InvalidVariableNameShouldProduceError.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_InvalidVariableNameShouldProduceError.xuriella
+
+PASS Variables_PositionAndLastComparisonShouldBeEqual [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_PositionAndLastComparison.xsl
+  Data: MSFT_Conformance_Tests/Variables/xslt_variable_PositionAndLastComparison.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_PositionAndLastComparisonShouldBeEqual.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_PositionAndLastComparisonShouldBeEqual.xuriella
+
+PASS Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]: expected error undefined instruction: call-template
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_SelectAttrAndWsBetweenElement.xsl
+  Data: MSFT_Conformance_Tests/Variables/xslt_variable_SelectAttrAndWsBetweenElement.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.xuriella
+
+FAIL Variables_UseDocumentFnToReturnRootNode [XPath-Data-Model]: no such function: :DOCUMENT
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_DocumentFnReturnRootNode.xsl
+  Data: MSFT_Conformance_Tests/Variables/xslt_variable_DocumentFnReturnRootNode.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_UseDocumentFnToReturnRootNode.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_UseDocumentFnToReturnRootNode.xuriella
+
+PASS Variables_VarDefinedEqualToAnotherVarNotYetDefined [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_DefineVarEqualVarNotYetDefined.xsl
+  Data: MSFT_Conformance_Tests/Variables/xslt_variable_DefineVarEqualVarNotYetDefined.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.xuriella
+
+PASS Variables_VariableAssignmentAfterIteration [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_VariableAssignmentInIteration.xsl
+  Data: MSFT_Conformance_Tests/Variables/xslt_variable_VariableAssignmentInIteration.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_VariableAssignmentAfterIteration.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_VariableAssignmentAfterIteration.xuriella
+
+FAIL Variables_VariableWithinVariable [XPath-Data-Model]: duplicate definition of foo
+  Stylesheet: MSFT_Conformance_Tests/Variables/VariableWithinVariable.xsl
+  Data: MSFT_Conformance_Tests/Variables/VariableWithinVariable.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_VariableWithinVariable.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_VariableWithinVariable.xuriella
+
+FAIL Variables_VarScopeInCallTemplate [XPath-Data-Model]: undefined instruction: copy-of
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_duplicate_variable_in_call_template.xsl
+  Data: MSFT_Conformance_Tests/Variables/foo.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.xuriella
+
+FAIL Variables_VarScopeInImportedStylesheet [XPath-Data-Model]: output doesn't match
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_duplicate_variable_in_imported_stylesheet.xsl
+  Data: MSFT_Conformance_Tests/Variables/foo.xml
+  Supplemental stylesheet: MSFT_Conformance_Tests/Variables/test2.xsl
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_VarScopeInImportedStylesheet.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_VarScopeInImportedStylesheet.xuriella
+
+PASS Variables_xslt_variable_qname_test1 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_qname_test1.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test1.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test1.xuriella
+
+PASS Variables_xslt_variable_qname_test2 [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_qname_test2.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test2.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test2.xuriella
+
+PASS Variables_VariableScopeWithinLRE [XPath-Data-Model]
+  Stylesheet: MSFT_Conformance_Tests/Variables/VariableScopeWithinLRE.xsl
+  Data: MSFT_Conformance_Tests/Variables/books.xml
+  Expected output: MSFT_Conformance_Tests/Variables/Variables_VariableScopeWithinLRE.xsltproc
+  Actual output: MSFT_Conformance_Tests/Variables/Variables_VariableScopeWithinLRE.xuriella
+
 PASS Whitespaces__84599 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/84599.xsl
   Data: MSFT_Conformance_Tests/Whitespaces/84599.xml
@@ -314,4 +815,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 19/52 tests.
+Passed 74/131 tests.

@@ -227,7 +227,7 @@
 ;; temporary configuration until we support enough XSLT that it's worth
 ;; running all tests:
 (defparameter *default-categories*
-  '("XSLT-Data-Model" "XPath-Expression"))
+  '("XSLT-Data-Model" "XPath-Expression" "XPath-Data-Model"))
 
 (defun dribble-tests (&optional (category *default-categories*)
 		      (d *tests-directory*))
