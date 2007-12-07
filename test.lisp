@@ -248,6 +248,51 @@
 		 source
 		 :test (lambda (test) (equal (test-id test) name))))))
 
+(defun copy-file (p q)
+  (with-open-file (in p :element-type '(unsigned-byte 8))
+    (with-open-file (out q
+			 :element-type '(unsigned-byte 8)
+			 :direction :output
+			 :if-exists :rename-and-delete)
+      (let ((buf (make-array 8192 :element-type '(unsigned-byte 8))))
+	(loop for pos = (read-sequence buf in)
+	   until (zerop pos)
+	   do (write-sequence buf out :end pos))))))
+
+(defun find-named-test (name &optional (d *tests-directory*))
+  (klacks:with-open-source
+      (source (klacks:make-tapping-source
+	       (cxml:make-source (merge-pathnames "katalog.xml" d))))
+    (block nil
+      (map-tests (lambda (test)
+		   (return test))
+		 source
+		 :test (lambda (test) (equal (test-id test) name))))))
+
+(defun copy-test-files (name &optional (d *tests-directory*))
+  (let* ((test (find-named-test name d))
+	 (*default-pathname-defaults* (merge-pathnames d))
+	 (*break-on-signals* 'error)
+	 (target-dir (merge-pathnames "copied-test/"
+				      (asdf:component-pathname
+				       (asdf:find-system :xuriella))))
+	 (xsl (merge-pathnames "test.xsl" target-dir))
+	 (xml (merge-pathnames "test.xml" target-dir))
+	 (expected (merge-pathnames "expected.xml" target-dir))
+	 (actual (merge-pathnames "actual.xml" target-dir)))
+    (ensure-directories-exist target-dir)
+    (copy-file (test-stylesheet-pathname test) xsl)
+    (copy-file (test-data-pathname test) xml)
+    (format t "Test stylesheet copied to:~%  ~A~%~%" xsl)
+    (format t "Test data copied to:~%  ~A~%~%" xml)
+    (format t "Run xsltproc like this:~%  cd ~A~%  xsltproc ~A ~A >~A~%~%"
+	    (namestring target-dir)
+	    (enough-namestring xsl target-dir)
+	    (enough-namestring xml target-dir)
+	    (enough-namestring expected target-dir))
+    (format t "Run xuriella like this:~%")
+    `(apply-stylesheet ,xsl ,xml :output ,actual)))
+
 (defun map-tests (run-test source &key (test (constantly t)))
   (let ((total 0)
 	(pass 0))
