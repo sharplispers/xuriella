@@ -151,6 +151,33 @@
       (lambda (ctx)
 	(cxml:unescaped (xpath:string-value (funcall thunk ctx)))))))
 
+(define-instruction xsl:copy-of (args env)
+  (destructuring-bind (xpath) args
+    (let ((thunk (xpath:compile-xpath xpath env)))
+      (lambda (ctx)
+	(let ((result (funcall thunk ctx)))
+	  (typecase result
+	    (xpath:node-set
+	     (xpath:map-node-set #'copy-into-result result))
+	    (result-tree-fragment
+	     (copy-into-result (result-tree-fragment-node result)))
+	    (t
+	     (cxml:text (xpath:string-value result)))))))))
+
+(defun copy-into-result (node)
+  (cond
+    ((xpath-protocol:node-type-p node :element)
+     (cxml:with-element (xpath-protocol:qualified-name node)
+       (map-pipe-eagerly #'copy-into-result
+			 (xpath-protocol:attribute-pipe node))
+       (map-pipe-eagerly #'copy-into-result
+			 (xpath-protocol:child-pipe node))))
+    ((xpath-protocol:node-type-p node :document)
+     (map-pipe-eagerly #'copy-into-result
+		       (xpath-protocol:child-pipe node)))
+    (t
+     (copy-leaf-node node))))
+
 (define-instruction xsl:for-each (args env)
   (destructuring-bind (select &optional decls &rest body) args
     (when (and (consp decls)
@@ -253,22 +280,27 @@
 	    ((xpath-protocol:node-type-p node :element)
 	     (cxml:with-element (xpath-protocol:qualified-name node)
 	       (funcall body ctx)))
-	    ((xpath-protocol:node-type-p node :text)
-	     (cxml:text (xpath-protocol:string-value node)))
-	    ((xpath-protocol:node-type-p node :comment)
-	     (cxml:comment (xpath-protocol:string-value node)))
-	    ((xpath-protocol:node-type-p node :processing-instruction)
-	     (cxml:processing-instruction
-		 (xpath-protocol:processing-instruction-target node)
-	       (xpath-protocol:string-value node)))
 	    ((xpath-protocol:node-type-p node :document)
 	     (funcall body ctx))
-	    ((xpath-protocol:node-type-p node :attribute)
-	     (cxml:attribute
-		 (xpath-protocol:qualified-name node)
-	       (xpath-protocol:string-value node)))
 	    (t
-	     (error "don't know how to copy node ~A" node))))))))
+	     (copy-leaf-node node))))))))
+
+(defun copy-leaf-node (node)
+  (cond
+    ((xpath-protocol:node-type-p node :text)
+     (cxml:text (xpath-protocol:string-value node)))
+    ((xpath-protocol:node-type-p node :comment)
+     (cxml:comment (xpath-protocol:string-value node)))
+    ((xpath-protocol:node-type-p node :processing-instruction)
+     (cxml:processing-instruction
+	 (xpath-protocol:processing-instruction-target node)
+       (xpath-protocol:string-value node)))
+    ((xpath-protocol:node-type-p node :attribute)
+     (cxml:attribute
+	 (xpath-protocol:qualified-name node)
+       (xpath-protocol:string-value node)))
+    (t
+     (error "don't know how to copy node ~A" node))))
 
 (defun compile-message (fn args env)
   (let ((thunk (compile-instruction `(progn ,@args) env)))

@@ -150,6 +150,10 @@
 	`(xsl:unescaped-value-of ,select)
 	`(xsl:value-of ,select))))
 
+(define-instruction-parser |copy-of| (node)
+  (stp:with-attributes (select) node
+    `(xsl:copy-of ,select)))
+				  
 (define-instruction-parser |copy| (node)
   (stp:with-attributes (use-attribute-sets) node
     `(xsl:copy (:use-attribute-sets ,use-attribute-sets)

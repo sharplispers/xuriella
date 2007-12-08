@@ -586,7 +586,7 @@ FAIL Variables_VariableWithinVariable [XPath-Data-Model]: duplicate definition o
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_VariableWithinVariable.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VariableWithinVariable.xuriella
 
-FAIL Variables_VarScopeInCallTemplate [XPath-Data-Model]: undefined instruction: copy-of
+FAIL Variables_VarScopeInCallTemplate [XPath-Data-Model]: undefined instruction: call-template
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_duplicate_variable_in_call_template.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.saxon
@@ -923,7 +923,7 @@ FAIL Whitespaces__91452 [XSLT-Data-Model]: output doesn't match
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xuriella
 
-FAIL Whitespaces__91453 [XSLT-Data-Model]: undefined instruction: copy-of
+FAIL Whitespaces__91453 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91453.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91453.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
@@ -931,7 +931,7 @@ FAIL Whitespaces__91453 [XSLT-Data-Model]: undefined instruction: copy-of
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.xuriella
 
-FAIL Whitespaces__91454 [XSLT-Data-Model]: undefined instruction: copy-of
+FAIL Whitespaces__91454 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91454.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91454.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
@@ -939,7 +939,7 @@ FAIL Whitespaces__91454 [XSLT-Data-Model]: undefined instruction: copy-of
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xuriella
 
-FAIL Whitespaces__91455 [XSLT-Data-Model]: undefined instruction: copy-of
+FAIL Whitespaces__91455 [XSLT-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91455.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91455.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
@@ -947,7 +947,7 @@ FAIL Whitespaces__91455 [XSLT-Data-Model]: undefined instruction: copy-of
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91455.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91455.xuriella
 
-FAIL Whitespaces__91456 [XSLT-Data-Model]: undefined instruction: copy-of
+PASS Whitespaces__91456 [XSLT-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91456.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91456.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
@@ -969,4 +969,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 76/131 tests.
+Passed 77/131 tests.
