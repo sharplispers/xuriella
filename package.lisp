@@ -19,6 +19,7 @@
 	   ;; #:number
 	   #:for-each
 	   #:with-namespaces
+	   #:with-excluded-namespaces
 	   #:copy-of
 	   #:message
 	   #:terminate

@@ -299,6 +299,11 @@
 	  (push (cons prefix uri) *namespaces*)))
       (compile-instruction `(progn ,@body) env))))
 
+(define-instruction xsl:with-excluded-namespaces (args env)
+  (destructuring-bind ((&rest uris) &rest body) args
+    (let ((*excluded-namespaces* (append uris *excluded-namespaces*)))
+      (compile-instruction `(progn ,@body) env))))
+
 ;;; FIXME
 (defstruct (result-tree-fragment
 	     (:constructor make-result-tree-fragment (node)))

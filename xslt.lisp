@@ -184,13 +184,16 @@
 			      element)
   bindings)
 
+(defvar *excluded-namespaces* (list *xsl*))
+
 (defun parse-stylesheet (d)
   (let* ((d (cxml:parse d (cxml-stp:make-builder)))
 	 (<transform> (stp:document-element d))
 	 (*namespaces* (acons-namespaces <transform>))
 	 (*variables* nil)
 	 (stylesheet (make-stylesheet))
-	 (env (make-instance 'lexical-xslt-environment)))
+	 (env (make-instance 'lexical-xslt-environment))
+	 (*excluded-namespaces* *excluded-namespaces*))
     (strip-stylesheet <transform>)
     ;; FIXME: handle embedded stylesheets
     (unless (and (equal (stp:namespace-uri <transform>) *xsl*)
@@ -202,7 +205,17 @@
     (parse-templates! stylesheet <transform> env)
     (parse-output! stylesheet <transform>)
     (parse-strip/preserve-space! stylesheet <transform> env)
+    (parse-exclude-result-prefixes! <transform> env)
     stylesheet))
+
+(defun parse-exclude-result-prefixes! (<transform> env)
+  (stp:with-attributes (exclude-result-prefixes) <transform>
+      (dolist (prefix (words (or exclude-result-prefixes "")))
+    (when (equal prefix "#default")
+      (setf prefix nil))
+    (push (or (xpath:environment-find-namespace env prefix)
+	      (xslt-error "namespace not found: ~A" prefix))
+	  *excluded-namespaces*))))
 
 (xpath:with-namespaces ((nil #.*xsl*))
   (defun parse-strip/preserve-space! (stylesheet <transform> env)
@@ -369,12 +382,6 @@
 
 (defvar *stylesheet*)
 (defvar *mode*)
-
-;; FIXME: this needs to be rebound to all namespaces specified by
-;; exclude-result-prefixes and xsl:exclude-result-prefixes, using a
-;; mechanism similar to with-namespaces to get that information from the
-;; parser into the instruction.
-(defvar *excluded-namespaces* (list *xsl*))
 
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
 

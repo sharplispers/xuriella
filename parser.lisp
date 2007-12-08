@@ -38,13 +38,23 @@
 
 (defun maybe-wrap-namespaces (child exprs)
   (if (typep child 'stp:element)
-      (let ((bindings '()))
+      (let ((bindings '())
+	    (excluded-uris '()))
 	(map-namespace-declarations (lambda (prefix uri)
 				      (push (list prefix uri) bindings))
 				    child)
+	(stp:with-attributes ((erp "exclude-result-prefixes" *xsl*))
+	    child
+	  (dolist (prefix (words (or erp "")))
+	    (when (equal prefix "#default")
+	      (setf prefix nil))
+	    (push (or (stp:find-namespace prefix child)
+		      (xslt-error "namespace not found: ~A" prefix))
+		  excluded-uris))) 
 	(if bindings
 	    `((xsl:with-namespaces ,bindings
-		,@exprs))
+		(xsl:with-excluded-namespaces ,excluded-uris
+		  ,@exprs)))
 	    exprs))
       exprs))
 
