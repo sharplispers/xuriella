@@ -76,6 +76,17 @@
 			      (recurse (1+ i)))))))))
       (recurse start))))
 
+(defun parse-param (node)
+  ;; FIXME: empty body?
+  (stp:with-attributes (name select) node
+    (unless name
+      (xslt-error "name not specified for parameter"))
+    (when (and select (stp:list-children node))
+      (xslt-error "param with select and body"))
+    (list name
+          (or select
+              `(progn ,@(parse-body node))))))
+
 (defun parse-instruction (node)
   (typecase node
     (stp:element
@@ -112,7 +123,31 @@
 (define-instruction-parser |apply-templates| (node)
   (stp:with-attributes (select mode) node
     `(xsl:apply-templates
-      (:select ,select :mode ,mode))))
+      (:select ,select :mode ,mode)
+       ,@(remove nil ;; FIXME: this will be no longer needed when xsl:sort is implemented
+                 (stp:map-children 'list
+                                   (lambda (clause)
+                                     (cond
+                                       ((namep clause "with-param")
+                                        (parse-param clause))
+                                       ((namep clause "sort")
+                                        (warn "sort: TBD")
+                                        nil)
+                                       (t
+                                        (xslt-error "undefined instruction: ~A"
+						    (stp:local-name clause)))))
+                                   node)))))
+
+(define-instruction-parser |call-template| (node)
+  (stp:with-attributes (name) node
+      `(xsl:call-template
+        ,name ,@(stp:map-children 'list
+                                  (lambda (clause)
+                                    (if (namep clause "with-param")
+                                        (parse-param clause)
+                                        (xslt-error "undefined instruction: ~A"
+						    (stp:local-name clause))))
+                                  node))))
 
 (define-instruction-parser |if| (node)
   (stp:with-attributes (test) node
@@ -166,14 +201,14 @@
 (define-instruction-parser |copy-of| (node)
   (stp:with-attributes (select) node
     `(xsl:copy-of ,select)))
-				  
+
 (define-instruction-parser |copy| (node)
   (stp:with-attributes (use-attribute-sets) node
     `(xsl:copy (:use-attribute-sets ,use-attribute-sets)
 	       ,@(parse-body node))))
 
 (define-instruction-parser |variable| (node)
-  (error "unhandled xsl:variable"))
+  (xslt-error "unhandled xsl:variable"))
 
 (define-instruction-parser |for-each| (node)
   (stp:with-attributes (select) node

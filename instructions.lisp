@@ -28,7 +28,7 @@
 
 (in-package :xuriella)
 
-
+(declaim (optimize (debug 3) (safety 3) (space 0) (speed 0)))
 ;;;; Instructions
 
 (defmacro define-instruction (name (args-var env-var) &body body)
@@ -43,11 +43,12 @@
 	  (then-thunk (compile-instruction then env))
 	  (else-thunk (when else (compile-instruction else env))))
       (lambda (ctx)
-	(cond
-	  ((xpath:boolean-value (funcall test-thunk ctx))
-	   (funcall then-thunk ctx))
-	  (else-thunk
-	   (funcall else-thunk ctx)))))))
+        (with-fresh-frame
+          (cond
+            ((xpath:boolean-value (funcall test-thunk ctx))
+             (funcall then-thunk ctx))
+            (else-thunk
+             (funcall else-thunk ctx))))))))
 
 (define-instruction when (args env)
   (destructuring-bind (test &rest body) args
@@ -61,9 +62,9 @@
   (if args
       (destructuring-bind ((test &body body) &rest clauses) args
 	(compile-instruction (if (eq test t)
-				 `(progn ,@body)
+				 `(scoped-progn ,@body)
 				 `(if ,test
-				      (progn ,@body)
+				      (scoped-progn ,@body)
 				      (cond ,@clauses)))
 			     env))
       (constantly nil)))
@@ -89,6 +90,16 @@
     (cxml:well-formedness-violation ()
       (xslt-error "not a qname: ~A" qname))))
 
+(define-instruction scoped-progn (args env)
+  (if args
+      (let ((first-thunk (compile-instruction (first args) env))
+	    (rest-thunk (compile-instruction `(progn ,@(rest args)) env)))
+	(lambda (ctx)
+          (with-fresh-frame
+            (funcall first-thunk ctx)
+            (funcall rest-thunk ctx))))
+      (constantly nil)))
+
 (define-instruction xsl:element (args env)
   (destructuring-bind ((name &key namespace use-attribute-sets)
 		       &body body)
@@ -96,7 +107,7 @@
     (declare (ignore use-attribute-sets)) ;fixme
     (multiple-value-bind (name-thunk constant-name-p)
 	(compile-attribute-value-template name env)
-      (let ((body-thunk (compile-instruction `(progn ,@body) env)))
+      (let ((body-thunk (compile-instruction `(scoped-progn ,@body) env)))
 	(if constant-name-p
 	    (compile-element/constant-name name namespace env body-thunk)
 	    (compile-element/runtime name-thunk namespace body-thunk))))))
@@ -129,7 +140,7 @@
   (destructuring-bind ((name &key namespace) &body body) args
     (multiple-value-bind (name-thunk constant-name-p)
 	(compile-attribute-value-template name env)
-      (let ((value-thunk (compile-instruction `(progn ,@body) env)))
+      (let ((value-thunk (compile-instruction `(scoped-progn ,@body) env)))
 	(if constant-name-p
 	    (compile-attribute/constant-name name namespace env value-thunk)
 	    (compile-attribute/runtime name-thunk namespace value-thunk))))))
@@ -212,7 +223,7 @@
 (define-instruction xsl:processing-instruction (args env)
   (destructuring-bind (name &rest body) args
     (let ((name-thunk (compile-attribute-value-template name env))
-	  (value-thunk (compile-instruction `(progn ,@body) env)))
+	  (value-thunk (compile-instruction `(scoped-progn ,@body) env)))
       (lambda (ctx)
 	(write-processing-instruction
 	 (funcall name-thunk ctx)
@@ -240,19 +251,24 @@
 
 (define-instruction xsl:copy-of (args env)
   (destructuring-bind (xpath) args
-    (let ((thunk (compile-xpath xpath env)))
+    (let ((thunk (compile-xpath xpath env))
+	  ;; FIXME: what was this for?  --david
+	  #+(or) (v (intern-variable "varName" "")))
       (lambda (ctx)
 	(let ((result (funcall thunk ctx)))
 	  (typecase result
-	    (xpath:node-set
+	    (xpath:node-set ;; FIXME: variables can contain node sets w/fragments inside. Maybe just fragments would do?
 	     (xpath:map-node-set #'copy-into-result result))
 	    (result-tree-fragment
-	     (copy-into-result (result-tree-fragment-node result)))
+	     (copy-into-result result))
 	    (t
 	     (write-text (xpath:string-value result)))))))))
 
 (defun copy-into-result (node)
   (cond
+    ((result-tree-fragment-p node)
+     (stp:do-children (child (result-tree-fragment-node node))
+       (copy-into-result child)))
     ((xpath-protocol:node-type-p node :element)
      (with-element ((xpath-protocol:local-name node)
 		    (xpath-protocol:namespace-uri node)
@@ -277,7 +293,7 @@
       (push decls body)
       (setf decls nil))
     (let ((select-thunk (compile-xpath select env))
-	  (body-thunk (compile-instruction `(progn ,@body) env))
+	  (body-thunk (compile-instruction `(scoped-progn ,@body) env))
 	  (sorter
 	   ;; fixme: parse decls here
 	   #'identity))
@@ -289,7 +305,7 @@
 	     for i from 1
 	     do
 	       (funcall body-thunk
-			(xpath:make-context node (lambda () n) i ))))))))
+			(xpath:make-context node (lambda () n) i))))))))
 
 (define-instruction xsl:with-namespaces (args env)
   (destructuring-bind ((&rest forms) &rest body) args
@@ -322,35 +338,16 @@
 
 (define-instruction let (args env)
   (destructuring-bind ((&rest forms) &rest body) args
-    (let ((variable-declarations *variables*)
-	  (variable-gensyms '())
-	  (variable-thunks '()))
-      (dolist (form forms)
-	(destructuring-bind (name value) form
-	  (unless name
-	    (xslt-error "name missing in xsl:variable"))
-	  (multiple-value-bind (local-name uri)
-	      (decode-qname name env nil)
-	    (let ((pair (cons local-name uri))
-		  (thunk
-		   (if (and (listp value) (eq (car value) 'progn))
-		       (let ((inner-thunk (compile-instruction value env)))
-			 (lambda (ctx)
-			   (apply-to-result-tree-fragment ctx inner-thunk)))
-		       (compile-xpath value env)))
-		  (gensym (gensym local-name)))
-	      (when (assoc pair variable-declarations :test 'equal)
-		(xslt-error "duplicate definition of ~A" name))
-	      (push (cons pair gensym) variable-declarations)
-	      (push gensym variable-gensyms)
-	      (push thunk variable-thunks)))))
-      (let* ((*variables* variable-declarations)
-	     (thunk (compile-instruction `(progn ,@body) env)))
-	(lambda (ctx)
-	  (progv
-	      variable-gensyms
-	      (mapcar (lambda (f) (funcall f ctx)) variable-thunks)
-	    (funcall thunk ctx)))))))
+    (let* ((var-bindings (compile-var-bindings forms env))
+           (thunk (compile-instruction `(progn ,@body) env)))
+      (lambda (ctx)
+        ;; FIXME: should (again) detect duplicate definitions at compile time
+        (loop for (gensym var-thunk) in var-bindings
+              do (if (has-inner-binding-p gensym)
+                     (xslt-error "duplicate definition of ~A" gensym) ;; FIXME (find name by gensym)
+                     (setf (get-frame-value gensym)
+                           (funcall var-thunk ctx))))
+        (funcall thunk ctx)))))
 
 (define-instruction let* (args env)
   (destructuring-bind ((&rest forms) &rest body) args
@@ -378,7 +375,7 @@
 (define-instruction xsl:copy (args env)
   (destructuring-bind ((&key use-attribute-sets) &rest rest)
       args
-    (let ((body (compile-instruction `(progn ,@rest) env)))
+    (let ((body (compile-instruction `(scoped-progn ,@rest) env)))
       (lambda (ctx)
 	(let ((node (xpath:context-node ctx)))
 	  (cond
@@ -414,20 +411,36 @@
      (error "don't know how to copy node ~A" node))))
 
 (defun compile-message (fn args env)
-  (let ((thunk (compile-instruction `(progn ,@args) env)))
+  (let ((thunk (compile-instruction `(scoped-progn ,@args) env)))
     (lambda (ctx)
       (funcall fn
 	       (with-xml-output (cxml:make-string-sink)
 		 (funcall thunk ctx))))))
 
 (define-instruction xsl:apply-templates (args env)
-  (destructuring-bind ((&key select mode)) args
+  (destructuring-bind ((&key select mode) &rest param-binding-specs) args
     (let ((select-thunk
-	   (compile-xpath (or select "child::node()") env)))
+	   (compile-xpath (or select "child::node()") env))
+	  (param-bindings
+           (compile-var-bindings param-binding-specs env)))
       (lambda (ctx)
 	(let ((*mode* (if mode (find-mode mode *stylesheet*) *mode*)))
 	  (apply-templates/list
-	   (xpath:all-nodes (funcall select-thunk ctx))))))))
+	   (xpath:all-nodes (funcall select-thunk ctx))
+	   (loop for (name value-thunk) in param-bindings
+	         collect (list name (funcall value-thunk ctx)))))))))
+
+(define-instruction xsl:call-template (args env)
+  (destructuring-bind (name &rest param-binding-specs) args
+      (let ((param-bindings
+             (compile-var-bindings param-binding-specs env)))
+        (multiple-value-bind (local-name uri)
+            (decode-qname name env nil)
+          (setf name (cons local-name uri)))
+        (lambda (ctx)
+          (call-template ctx name
+                         (loop for (name value-thunk) in param-bindings
+                               collect (list name (funcall value-thunk ctx))))))))
 
 (defun compile-instruction (form env)
   (funcall (or (get (car form) 'xslt-instruction)

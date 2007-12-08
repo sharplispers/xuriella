@@ -132,14 +132,14 @@ PASS Variables__78131 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78131.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78131.xuriella
 
-FAIL Variables__78132 [XPath-Data-Model]: duplicate definition of x
+PASS Variables__78132 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21306.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78132.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78132.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78132.xuriella
 
-FAIL Variables__78137 [XPath-Data-Model]: duplicate definition of x
+PASS Variables__78137 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21307.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78137.saxon
@@ -167,7 +167,7 @@ PASS Variables__78159 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78159.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78159.xuriella
 
-FAIL Variables__78160 [XPath-Data-Model]: duplicate definition of x
+PASS Variables__78160 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21401.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78160.saxon
@@ -195,6 +195,7 @@ PASS Variables__78163 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78163.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78163.xuriella
 
+WARNING: sort: TBD
 PASS Variables__78164 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21405.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
@@ -344,7 +345,7 @@ PASS Variables__78400 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78400.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78400.xuriella
 
-FAIL Variables__78401 [XPath-Data-Model]: undefined instruction: param
+PASS Variables__78401 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22307.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78401.saxon
@@ -365,14 +366,14 @@ PASS Variables__78403 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78403.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78403.xuriella
 
-FAIL Variables__78404 [XPath-Data-Model]: undefined instruction: param
+PASS Variables__78404 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22401.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78404.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78404.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78404.xuriella
 
-FAIL Variables__78409 [XPath-Data-Model]: duplicate definition of X
+FAIL Variables__78409 [XPath-Data-Model]: SAX event START-DOCUMENT not implemented by this handler
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22411.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78409.saxon
@@ -380,7 +381,7 @@ FAIL Variables__78409 [XPath-Data-Model]: duplicate definition of X
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78409.xuriella
 
 WARNING: namespace URI does not look like an absolute URL: "URI"
-FAIL Variables__84026 [XPath-Data-Model]: undefined instruction: param
+PASS Variables__84026 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23002.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84026.saxon
@@ -388,7 +389,7 @@ FAIL Variables__84026 [XPath-Data-Model]: undefined instruction: param
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84026.xuriella
 
 WARNING: namespace URI does not look like an absolute URL: "URI"
-FAIL Variables__84034 [XPath-Data-Model]: undefined instruction: param
+PASS Variables__84034 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23001.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84034.saxon
@@ -404,21 +405,21 @@ PASS Variables__84035 [XPath-Data-Model]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84035.xuriella
 
 WARNING: namespace URI does not look like an absolute URL: "URI"
-FAIL Variables__84036 [XPath-Data-Model]: undefined instruction: param
+FAIL Variables__84036 [XPath-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23200.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84036.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84036.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84036.xuriella
 
-FAIL Variables__84438 [XPath-Data-Model]: undefined instruction: call-template
+FAIL Variables__84438 [XPath-Data-Model]: undefined instruction: sort
   Stylesheet: MSFT_Conformance_Tests/Variables/84438.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84438.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84438.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84438.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84438.xuriella
 
-FAIL Variables__84439 [XPath-Data-Model]: undefined instruction: call-template
+PASS Variables__84439 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/84439.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84439.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84439.saxon
@@ -439,7 +440,7 @@ PASS Variables__84633 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84633.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84633.xuriella
 
-FAIL Variables__84635 [XPath-Data-Model]: undefined instruction: param
+PASS Variables__84635 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/84635.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84635.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84635.saxon
@@ -570,7 +571,7 @@ PASS Variables_PositionAndLastComparisonShouldBeEqual [XPath-Data-Model]: saxon 
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_PositionAndLastComparisonShouldBeEqual.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_PositionAndLastComparisonShouldBeEqual.xuriella
 
-PASS Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]: raised an xslt-error as expected
+FAIL Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_SelectAttrAndWsBetweenElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_SelectAttrAndWsBetweenElement.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.saxon
@@ -598,14 +599,15 @@ PASS Variables_VariableAssignmentAfterIteration [XPath-Data-Model]: saxon T, xsl
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_VariableAssignmentAfterIteration.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VariableAssignmentAfterIteration.xuriella
 
-FAIL Variables_VariableWithinVariable [XPath-Data-Model]: duplicate definition of foo
+WARNING: There is no such encoding: "windows-1251".
+PASS Variables_VariableWithinVariable [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/VariableWithinVariable.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/VariableWithinVariable.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VariableWithinVariable.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_VariableWithinVariable.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VariableWithinVariable.xuriella
 
-FAIL Variables_VarScopeInCallTemplate [XPath-Data-Model]: undefined instruction: call-template
+PASS Variables_VarScopeInCallTemplate [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_duplicate_variable_in_call_template.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.saxon
@@ -638,7 +640,7 @@ FAIL Variables_xslt_variable_qname_test2 [XPath-Data-Model]: output doesn't matc
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test2.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test2.xuriella
 
-PASS Variables_VariableScopeWithinLRE [XPath-Data-Model]: saxon T, xsltproc T
+FAIL Variables_VariableScopeWithinLRE [XPath-Data-Model]: duplicate definition of G4954
   Stylesheet: MSFT_Conformance_Tests/Variables/VariableScopeWithinLRE.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VariableScopeWithinLRE.saxon
@@ -992,4 +994,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 93/131 tests.
+Passed 102/131 tests.

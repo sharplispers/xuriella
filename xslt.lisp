@@ -88,6 +88,43 @@
 
 (defparameter *variables* '())
 
+(defun intern-variable (local-name uri)
+  (let ((gensym (cdr (assoc (cons local-name uri) *variables* :test 'equal))))
+    (unless gensym
+      (push (cons (cons local-name uri) (setf gensym (gensym))) *variables*))
+    gensym))
+
+(defparameter *binding-frames* '())
+
+(defun empty-bindings () (list nil))
+
+(defmacro with-fresh-frame (&body body)
+  `(let ((*binding-frames* (cons '() *binding-frames*)))
+     ,@body))
+
+(defun get-frame-value (name &optional (error-if-not-found-p t))
+  (labels ((get-it (frames)
+             (let ((pair (assoc name (first frames))))
+               (cond ((not (null pair)) (values (cdr pair) t))
+                     ((not (null (rest frames)))
+                      (get-it (rest frames)))
+                     (error-if-not-found-p
+                      (xslt-error "unknown variable: ~s" name))
+                     (t (values nil nil))))))
+    (get-it *binding-frames*)))
+
+(defun has-inner-binding-p (name)
+  (and (assoc name (first *binding-frames*)) t))
+
+(defun (setf get-frame-value) (value name)
+  (let ((existing-pair (assoc name (first *binding-frames*))))
+    (if existing-pair
+        (setf (cdr existing-pair) value)
+        (push (cons name value) (first *binding-frames*)))
+    value))
+
+(defun global-bindings () (last *binding-frames* 1))
+
 (defclass xslt-environment () ())
 
 (defun decode-qname (qname env attributep)
@@ -113,7 +150,7 @@
     (and gensym
 	 (lambda (ctx)
 	   (declare (ignore ctx))
-	   (symbol-value gensym)))))
+	   (get-frame-value gensym)))))
 
 (defclass global-variable-environment (xslt-environment)
   ((global-variables :initarg :global-variables :accessor global-variables)))
@@ -164,11 +201,10 @@
   (html-output-p nil)
   (global-variables ())
   (output-specification (make-output-specification))
-  (strip-tests nil))
+  (strip-tests nil)
+  (named-templates (make-hash-table :test 'equal)))
 
-(defstruct mode
-  (named-templates (make-hash-table :test 'equal))
-  (other-templates nil))
+(defstruct mode (templates nil))
 
 (defun find-mode (mode stylesheet)
   (gethash mode (stylesheet-modes stylesheet)))
@@ -318,35 +354,33 @@
       (xslt-error "name missing in ~A" (stp:local-name <variable>)))
     (multiple-value-bind (local-name uri)
 	(decode-qname qname global-env nil)
-      (let ((key (cons local-name uri))
-	    (gensym (gensym local-name)))
-	;; For the normal compilation environment of templates, install it
-	;; into *VARIABLES* using its gensym:
-	(push (cons key gensym) *variables*)
-	;; For the evaluation of a global variable itself, build a thunk
-	;; that lazily resolves other variables:
-	(let* ((value-thunk :unknown)
-	       (global-variable-thunk
-		(lambda (ctx)
-		  (when (eq (symbol-value gensym) 'seen)
-		    (xslt-error "recursive variable definition"))
-		  (or (symbol-value gensym)
-		      (progn
-			(setf (symbol-value gensym) 'seen)
-			(setf (symbol-value gensym)
-			      (funcall value-thunk ctx))))))
-	       (thunk-setter
-		(lambda ()
-		  (setf value-thunk
-			(compile-global-variable <variable> global-env)))))
-	  (setf (gethash key (global-variables global-env))
-		global-variable-thunk)
-	  (make-variable :gensym gensym
-			 :local-name local-name
-			 :uri uri
-			 :thunk global-variable-thunk
-			 :param-p (namep <variable> "param")
-			 :thunk-setter thunk-setter))))))
+      ;; For the normal compilation environment of templates, install it
+      ;; into *VARIABLES*:
+      (let ((gensym (intern-variable local-name uri)))
+        ;; For the evaluation of a global variable itself, build a thunk
+        ;; that lazily resolves other variables:
+        (let* ((value-thunk :unknown)
+               (global-variable-thunk
+                (lambda (ctx)
+                  (when (eq (get-frame-value gensym nil) 'seen)
+                    (xslt-error "recursive variable definition"))
+                  (or (get-frame-value gensym nil)
+                      (progn
+                        (setf (get-frame-value gensym) 'seen)
+                        (setf (get-frame-value gensym)
+                              (funcall value-thunk ctx))))))
+               (thunk-setter
+                (lambda ()
+                  (setf value-thunk
+                        (compile-global-variable <variable> global-env)))))
+          (setf (gethash (cons local-name uri) (global-variables global-env))
+                global-variable-thunk)
+          (make-variable :gensym gensym
+                         :local-name local-name
+                         :uri uri
+                         :thunk global-variable-thunk
+                         :param-p (namep <variable> "param")
+                         :thunk-setter thunk-setter))))))
 
 (xpath:with-namespaces ((nil #.*xsl*))
   (defun parse-global-variables! (stylesheet <transform>)
@@ -367,15 +401,14 @@
   (dolist (<template> (stp:filter-children (of-name "template") <transform>))
     (let ((*namespaces* (acons-namespaces <template>)))
       (dolist (template (compile-template <template> env))
-	(let ((mode (ensure-mode (template-mode template) stylesheet))
-	      (name-test (template-qname-test template)))
-	  (if name-test
-	      (multiple-value-bind (local-name uri)
-		  (decode-qname name-test env nil)
-		(push template
-		      (gethash (cons local-name uri)
-			       (mode-named-templates mode))))
-	      (push template (mode-other-templates mode))))))))
+        (when (template-name template)
+          (setf (gethash (template-name template)
+                         (stylesheet-named-templates stylesheet))
+                template))
+	(push template
+              (mode-templates
+               (ensure-mode (template-mode template)
+                            stylesheet)))))))
 
 
 ;;;; APPLY-STYLESHEET
@@ -405,7 +438,8 @@
     (setf source-document (cxml:parse source-document (stp:make-builder))))
   (invoke-with-output-sink
    (lambda ()
-     (let ((*stylesheet* stylesheet)
+     (let ((*binding-frames* (empty-bindings))
+	   (*stylesheet* stylesheet)
 	   (*mode* (find-mode "" stylesheet))
 	   (globals (stylesheet-global-variables stylesheet))
 	   (ctx (xpath:make-context
@@ -417,12 +451,10 @@
 	   (make-list (length globals) :initial-element nil)
 	 (mapc (lambda (spec)
 		 (when (variable-param-p spec)
-		   (let ((value
-			  (find-parameter-value (variable-local-name spec)
-						(variable-uri spec)
-						parameters)))
-		     (when value
-		       (setf (symbol-value (variable-gensym spec)) value)))))
+		   (setf (get-frame-value (variable-gensym spec))
+			 (find-parameter-value (variable-local-name spec)
+					       (variable-uri spec)
+					       parameters))))
 	       globals)
 	 (mapc (lambda (spec)
 		 (funcall (variable-thunk spec) ctx))
@@ -431,19 +463,27 @@
    stylesheet
    output))
 
-(defun apply-templates/list (list)
+(defun apply-templates/list (list &optional param-bindings)
   (let* ((n (length list))
 	 (s/d (lambda () n)))
     (loop
        for i from 1
        for child in list
        do
-	 (apply-templates (xpath:make-context child s/d i)))))
+	 (apply-templates (xpath:make-context child s/d i)
+           param-bindings))))
 
-(defun apply-templates (ctx)
+(defun invoke-template (ctx template param-bindings)
+  (let ((*binding-frames* (global-bindings)))
+    (with-fresh-frame
+      (loop for (name value) in param-bindings
+            do (setf (get-frame-value name) value))
+      (funcall (template-body template) ctx))))
+
+(defun apply-templates (ctx &optional param-bindings)
   (let ((template (find-template ctx)))
     (if template
-	(funcall (template-body template) ctx)
+	(invoke-template ctx template param-bindings)
 	(let ((node (xpath:context-node ctx)))
 	  (cond
 	    ((or (xpath-protocol:node-type-p node :processing-instruction)
@@ -456,21 +496,19 @@
 	      (xpath::force
 	       (xpath-protocol:child-pipe node)))))))))
 
+(defun call-template (ctx name &optional param-bindings)
+  (invoke-template ctx (find-named-template name) param-bindings))
+
 (defun find-template (ctx)
-  (let* ((node
-	  (xpath:context-node ctx))
-	 (key
-	  (when (xpath-protocol:node-type-p node :element)
-	    (cons (xpath-protocol:local-name node)
-		  (xpath-protocol:namespace-uri node))))
-	 (templates
-	  (append (and key (gethash key (mode-named-templates *mode*)))
-		  (mode-other-templates *mode*)))
-	 (matching-candidates
+  (let* ((matching-candidates
 	  (remove-if-not (lambda (template)
 			   (template-matches-p template ctx))
-			 templates)))
+			 (mode-templates *mode*))))
     (maximize #'template< matching-candidates)))
+
+(defun find-named-template (name)
+  (or (gethash name (stylesheet-named-templates *stylesheet*))
+      (error "cannot find named template: ~s" name)))
 
 (defun template< (a b)
   (let ((i (template-import-precedence a))
@@ -544,19 +582,13 @@
   name
   priority
   mode
+  params
   body)
 
 (defun template-import-precedence (template)
   template
   ;; fixme
   0)
-
-(defun template-qname-test (template)
-  (let* ((form (template-match-expression template))
-	 (first-step (second form)))
-    (when (and (null (cddr form))
-	       (eq :child (car first-step)))
-      (second first-step))))
 
 (defun expression-priority (form)
   (let ((first-step (second form)))
@@ -589,26 +621,73 @@
 		(cdr form)
 		(list form)))))
 
+(defun force-scoped-progn (value)
+  (if (eq (first value) 'scoped-progn)
+      value
+      (cons 'scoped-progn (rest value))))
+
+(defun compile-value-thunk (value env)
+  (if (and (listp value)
+           (or (eq (car value) 'progn)
+               (eq (car value) 'scoped-progn)))
+      (let ((inner-thunk (compile-instruction
+                          (force-scoped-progn value)
+                          env)))
+        (lambda (ctx)
+          (apply-to-result-tree-fragment ctx inner-thunk)))
+      (compile-xpath value env)))
+
+(defun compile-var-bindings (forms env)
+  (loop
+    for (name value) in forms
+    collect (multiple-value-bind (local-name uri)
+                (decode-qname name env nil)
+              (list (intern-variable local-name uri)
+                    (compile-value-thunk value env)))))
+
 (defun compile-template (<template> env)
   (stp:with-attributes (match name priority mode) <template>
     (unless (or name match)
       (xslt-error "missing match in template"))
-    (let ((body (parse-body <template>)))
-      (mapcar (lambda (expression)
-		(let ((body-thunk
-		       (compile-instruction `(progn ,@body) env))
-		      (match-thunk
-		       (compile-xpath `(xpath:xpath ,expression) env))
-		      (p (if priority
-			     (parse-number:parse-number priority)
-			     (expression-priority expression))))
-		  (make-template :match-expression expression
-				 :match-thunk match-thunk
-				 :name name
-				 :priority p
-				 :mode (or mode "")
-				 :body body-thunk)))
-	      (parse-pattern match)))))
-
+    (multiple-value-bind (params body-pos)
+        (loop
+          for i from 0
+          for child in (stp:list-children <template>)
+          while (namep child "param")
+          collect (parse-param child) into params
+          finally (return (values params i)))
+      (let* ((body (parse-body <template> body-pos))
+             (param-bindings (compile-var-bindings params env))
+             (body-thunk (compile-instruction `(progn ,@body) env)) ; progn instead of scoped-progn as a frame with params is added by invoke-template
+             (outer-body-thunk
+              #'(lambda (ctx)
+                  ;; set params that weren't initialized by apply-templates
+                  (loop for (gensym param-thunk) in param-bindings
+                        unless (has-inner-binding-p gensym)
+                          do (setf (get-frame-value gensym)
+                                   (funcall param-thunk ctx)))
+                  (funcall body-thunk ctx))))
+        (append
+         (when name
+           (multiple-value-bind (local-name uri)
+               (decode-qname name env nil)
+             (list
+              (make-template :name (cons local-name uri)
+                             :params param-bindings
+                             :body outer-body-thunk))))
+         (when match
+           (mapcar (lambda (expression)
+                     (let ((match-thunk
+                            (compile-xpath `(xpath:xpath ,expression) env))
+                           (p (if priority
+                                  (parse-number:parse-number priority)
+                                  (expression-priority expression))))
+                       (make-template :match-expression expression
+                                      :match-thunk match-thunk
+                                      :priority p
+                                      :mode (or mode "")
+                                      :params param-bindings
+                                      :body outer-body-thunk)))
+                   (parse-pattern match))))))))
 #+(or)
 (xuriella::parse-stylesheet #p"/home/david/src/lisp/xuriella/test.xsl")
