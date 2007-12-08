@@ -36,13 +36,34 @@
 
 (define-condition xslt-error (simple-error)
   ()
-  (:documentation "The class of all STP errors."))
+  (:documentation "The class of all XSLT errors."))
 
 (defun xslt-error (fmt &rest args)
   (error 'xslt-error :format-control fmt :format-arguments args))
 
 (defun xslt-cerror (fmt &rest args)
   (cerror "recover" 'xslt-error :format-control fmt :format-arguments args))
+
+(defvar *debug* nil)
+
+(defmacro handler-case* (form &rest clauses)
+  ;; like HANDLER-CASE if *DEBUG* is off.  If it's on, don't establish
+  ;; a handler at all so that we see the real stack traces.  (We could use
+  ;; HANDLER-BIND here and check at signalling time, but doesn't seem
+  ;; important.)
+  (let ((doit (gensym)))
+    `(flet ((,doit () ,form))
+       (if *debug*
+	   (,doit)
+	   (handler-case
+	       (,doit)
+	     ,@clauses)))))
+
+(defun compile-xpath (xpath &optional env)
+  (handler-case*
+      (xpath:compile-xpath xpath env)
+    (xpath:xpath-error (c)
+      (xslt-error "~A" c))))
 
 
 ;;;; XSLT-ENVIRONMENT and XSLT-CONTEXT
@@ -242,7 +263,7 @@
       (xslt-error "variable with select and body"))
     (cond
       (select
-	(xpath:compile-xpath select env))
+	(compile-xpath select env))
       ((stp:list-children <variable>)
        (let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
 	      (inner-thunk (compile-instruction inner-sexpr env)))
@@ -550,7 +571,7 @@
 		(let ((body-thunk
 		       (compile-instruction `(progn ,@body) env))
 		      (match-thunk
-		       (xpath:compile-xpath `(xpath:xpath ,expression) env))
+		       (compile-xpath `(xpath:xpath ,expression) env))
 		      (p (if priority
 			     (parse-number:parse-number priority)
 			     (expression-priority expression))))

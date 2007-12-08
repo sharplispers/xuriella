@@ -111,7 +111,7 @@ PASS Variables__78120 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78120.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78120.xuriella
 
-FAIL Variables__78121 [XPath-Data-Model]: condition of incorrect type no such function: :FOO
+PASS Variables__78121 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21213.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78121.saxon
@@ -125,7 +125,7 @@ FAIL Variables__78125 [XPath-Data-Model]: expected error not signalled:
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78125.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78125.xuriella
 
-FAIL Variables__78131 [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
+PASS Variables__78131 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21304.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78131.saxon
@@ -153,14 +153,14 @@ PASS Variables__78153 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78153.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78153.xuriella
 
-FAIL Variables__78154 [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
+PASS Variables__78154 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21308.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78154.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78154.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78154.xuriella
 
-FAIL Variables__78159 [XPath-Data-Model]: condition of incorrect type undeclared variable: x in namespace 
+PASS Variables__78159 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21400.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78159.saxon
@@ -311,7 +311,7 @@ PASS Variables__78356 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78356.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78356.xuriella
 
-FAIL Variables__78359 [XPath-Data-Model]: condition of incorrect type no such function: :FOO
+PASS Variables__78359 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22213.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78359.saxon
@@ -332,7 +332,7 @@ FAIL Variables__78371 [XPath-Data-Model]: expected error not signalled:
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78371.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78371.xuriella
 
-FAIL Variables__78399 [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
+PASS Variables__78399 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22303.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78399.saxon
@@ -427,7 +427,7 @@ FAIL Variables__84439 [XPath-Data-Model]: undefined instruction: call-template
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84439.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84439.xuriella
 
-FAIL Variables__84632 [XPath-Data-Model]: condition of incorrect type undeclared variable: var13 in namespace 
+PASS Variables__84632 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/84632.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84632.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84632.saxon
@@ -565,7 +565,7 @@ FAIL Variables_UseDocumentFnToReturnRootNode [XPath-Data-Model]: no such functio
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_UseDocumentFnToReturnRootNode.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_UseDocumentFnToReturnRootNode.xuriella
 
-FAIL Variables_VarDefinedEqualToAnotherVarNotYetDefined [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
+PASS Variables_VarDefinedEqualToAnotherVarNotYetDefined [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_DefineVarEqualVarNotYetDefined.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_DefineVarEqualVarNotYetDefined.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.saxon
@@ -636,7 +636,7 @@ PASS Whitespaces__91024 [XSLT-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xuriella
 
-FAIL Whitespaces__91025 [XSLT-Data-Model]: condition of incorrect type invalid xpath designator: NIL
+PASS Whitespaces__91025 [XSLT-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91025.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91025.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.saxon
@@ -969,4 +969,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 66/131 tests.
+Passed 75/131 tests.

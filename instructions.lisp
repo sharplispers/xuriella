@@ -39,7 +39,7 @@
 
 (define-instruction if (args env)
   (destructuring-bind (test then &optional else) args
-    (let ((test-thunk (xpath:compile-xpath test env))
+    (let ((test-thunk (compile-xpath test env))
 	  (then-thunk (compile-instruction then env))
 	  (else-thunk (when else (compile-instruction else env))))
       (lambda (ctx)
@@ -141,19 +141,19 @@
 
 (define-instruction xsl:value-of (args env)
   (destructuring-bind (xpath) args
-    (let ((thunk (xpath:compile-xpath xpath env)))
+    (let ((thunk (compile-xpath xpath env)))
       (lambda (ctx)
 	(cxml:text (xpath:string-value (funcall thunk ctx)))))))
 
 (define-instruction xsl:unescaped-value-of (args env)
   (destructuring-bind (xpath) args
-    (let ((thunk (xpath:compile-xpath xpath env)))
+    (let ((thunk (compile-xpath xpath env)))
       (lambda (ctx)
 	(cxml:unescaped (xpath:string-value (funcall thunk ctx)))))))
 
 (define-instruction xsl:copy-of (args env)
   (destructuring-bind (xpath) args
-    (let ((thunk (xpath:compile-xpath xpath env)))
+    (let ((thunk (compile-xpath xpath env)))
       (lambda (ctx)
 	(let ((result (funcall thunk ctx)))
 	  (typecase result
@@ -184,7 +184,7 @@
 	       (not (eq (car decls) 'declare)))
       (push decls body)
       (setf decls nil))
-    (let ((select-thunk (xpath:compile-xpath select env))
+    (let ((select-thunk (compile-xpath select env))
 	  (body-thunk (compile-instruction `(progn ,@body) env))
 	  (sorter
 	   ;; fixme: parse decls here
@@ -240,7 +240,7 @@
 		       (let ((inner-thunk (compile-instruction value env)))
 			 (lambda (ctx)
 			   (apply-to-result-tree-fragment ctx inner-thunk)))
-		       (xpath:compile-xpath value env)))
+		       (compile-xpath value env)))
 		  (gensym (gensym local-name)))
 	      (when (assoc pair variable-declarations :test 'equal)
 		(xslt-error "duplicate definition of ~A" name))
@@ -312,7 +312,7 @@
 (define-instruction xsl:apply-templates (args env)
   (destructuring-bind ((&key select mode)) args
     (let ((select-thunk
-	   (xpath:compile-xpath (or select "child::node()") env)))
+	   (compile-xpath (or select "child::node()") env)))
       (lambda (ctx)
 	(let ((*mode* (if mode (find-mode mode *stylesheet*) *mode*)))
 	  (apply-templates/list
