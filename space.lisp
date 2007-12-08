@@ -125,14 +125,6 @@
 	(when result
 	  (return (eq result :strip)))))))
 
-(defun map-pipe-eagerly (fn pipe)
-  (xpath::enumerate pipe :key fn :result nil))
-
-(defmacro do-pipe ((var pipe &optional result) &body body)
-  `(block nil
-     (map-pipe-eagerly #'(lambda (,var) ,@body) ,pipe)
-     ,result))
-
 (defun xpath-protocol/attribute-value (node local-name uri)
   (do-pipe (a (xpath-protocol:attribute-pipe node))
     (when (and (equal (xpath-protocol:local-name a) local-name)
@@ -167,6 +159,7 @@
 		(,name (stripping-node-target node) ,@args))))
   (defproxy xpath-protocol:local-name)
   (defproxy xpath-protocol:namespace-uri)
+  (defproxy xpath-protocol:namespace-prefix)
   (defproxy xpath-protocol:qualified-name)
   (defproxy xpath-protocol:attribute-pipe)
   (defproxy xpath-protocol:namespace-pipe)

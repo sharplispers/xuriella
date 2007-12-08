@@ -211,8 +211,8 @@
       (if (equal (test-operation test-case) "standard")
 	  (handler-case
 	      (progn
-		(xsltproc stylesheet data out)
-		(saxon stylesheet data saxon-out)
+		(xsltproc noindent-stylesheet data out)
+		(saxon noindent-stylesheet data saxon-out)
 		(report "PASS")
 		(write-simplified-test test-case "standard")
 		t)
@@ -222,7 +222,7 @@
 	      nil))
 	  (handler-case
 	      (progn
-		(xsltproc stylesheet data "/dev/null")
+		(xsltproc noindent-stylesheet data "/dev/null")
 		(report "FAIL" ": expected error not signalled")
 		;; let's ignore unexpected successes for now
 		nil)
@@ -273,19 +273,20 @@
 
 (defun dribble-tests (&optional (category *default-categories*)
 		      (d *tests-directory*))
-  (with-open-file (dribble
-		   (merge-pathnames "TEST"
-				    (slot-value (asdf:find-system :xuriella)
-						'asdf::relative-pathname))
-		   :direction :output
-		   :if-exists :supersede
-		   :external-format :utf8)
-    (let* ((dribble (make-broadcast-stream dribble *standard-output*))
-	   (*standard-output* dribble)
-	   (*trace-output* dribble)
-	   (*error-output* dribble)
-	   (*terminal-io* (make-two-way-stream *standard-input* dribble)))
-      (run-tests category d))))
+  (let ((*package* (find-package 'cl-user)))
+    (with-open-file (dribble
+		     (merge-pathnames "TEST"
+				      (slot-value (asdf:find-system :xuriella)
+						  'asdf::relative-pathname))
+		     :direction :output
+		     :if-exists :supersede
+		     :external-format :utf8)
+      (let* ((dribble (make-broadcast-stream dribble *standard-output*))
+	     (*standard-output* dribble)
+	     (*trace-output* dribble)
+	     (*error-output* dribble)
+	     (*terminal-io* (make-two-way-stream *standard-input* dribble)))
+	(run-tests category d)))))
 
 (defun run-tests (&optional (categories *default-categories*)
 		  (d *tests-directory*))
@@ -534,7 +535,7 @@
 	   (xslt-error (c)
 	     (report t ": raised an xslt-error as expected" c))
 	   ((or error parse-number::invalid-number) (c)
-	     (report nil ": condition of incorrect type ~A" c))
+	     (report nil ": condition of incorrect type: ~%~A" c))
 	   (:no-error (result)
 	     (report nil ": expected error not signalled: " result))))))))
 

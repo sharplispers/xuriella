@@ -66,12 +66,25 @@
       (xslt-error "~A" c))))
 
 
+;;;; Helper function and macro
+
+(defun map-pipe-eagerly (fn pipe)
+  (xpath::enumerate pipe :key fn :result nil))
+
+(defmacro do-pipe ((var pipe &optional result) &body body)
+  `(block nil
+     (map-pipe-eagerly #'(lambda (,var) ,@body) ,pipe)
+     ,result))
+
+
 ;;;; XSLT-ENVIRONMENT and XSLT-CONTEXT
 
-(defparameter *namespaces*
+(defparameter *initial-namespaces*
   '((nil . "")
     ("xmlns" . #"http://www.w3.org/2000/xmlns/")
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
+
+(defparameter *namespaces* *initial-namespaces*)
 
 (defparameter *variables* '())
 
@@ -84,7 +97,8 @@
 	(values local-name
 		(if (or prefix (not attributep))
 		    (xpath:environment-find-namespace env prefix)
-		    "")))
+		    "")
+		prefix))
     (cxml:well-formedness-violation ()
       (xslt-error "not a qname: ~A" qname))))
 
@@ -356,6 +370,12 @@
 (defvar *stylesheet*)
 (defvar *mode*)
 
+;; FIXME: this needs to be rebound to all namespaces specified by
+;; exclude-result-prefixes and xsl:exclude-result-prefixes, using a
+;; mechanism similar to with-namespaces to get that information from the
+;; parser into the instruction.
+(defvar *excluded-namespaces* (list *xsl*))
+
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
 
 (defstruct (parameter
@@ -423,7 +443,7 @@
 		 (xpath-protocol:node-type-p node :comment)))
 	    ((or (xpath-protocol:node-type-p node :text)
 		 (xpath-protocol:node-type-p node :attribute))
-	     (cxml:text (xpath-protocol:string-value node)))
+	     (write-text (xpath-protocol:string-value node)))
 	    (t
 	     (apply-templates/list
 	      (xpath::force
@@ -489,7 +509,7 @@
 		   (stylesheet-output-specification stylesheet))
 		  "yes")
        (setf (cxml:omit-xml-declaration-p output) t))
-     (cxml:with-xml-output output
+     (with-xml-output output
        (funcall fn)))))
 
 (defun make-output-sink (stylesheet stream)

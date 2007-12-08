@@ -80,12 +80,15 @@
 
 (defun parse-instruction/literal-element (node)
   `(xsl:literal-element
-       (,(stp:local-name node) ,(stp:namespace-uri node))
+       (,(stp:local-name node)
+	 ,(stp:namespace-uri node)
+	 ,(stp:namespace-prefix node))
      ,@(stp:map-attributes 'list
 			   (lambda (a)
 			     `(xsl:literal-attribute
 				  (,(stp:local-name a)
-				    ,(stp:namespace-uri a))
+				    ,(stp:namespace-uri a)
+				    ,(stp:namespace-prefix a))
 				,(stp:value a)))
 			   node)
      ,@(parse-body node)))

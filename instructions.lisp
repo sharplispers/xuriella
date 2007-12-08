@@ -77,79 +77,166 @@
 	  (funcall rest-thunk ctx)))
       (constantly nil)))
 
+(defun decode-qname/runtime (qname namespaces attributep)
+  (handler-case
+      (multiple-value-bind (prefix local-name)
+	  (cxml::split-qname qname)
+	(values local-name
+		(if (or prefix (not attributep))
+		    (cdr (assoc prefix namespaces :test 'equal))
+		    "")
+		prefix))
+    (cxml:well-formedness-violation ()
+      (xslt-error "not a qname: ~A" qname))))
+
 (define-instruction xsl:element (args env)
   (destructuring-bind ((name &key namespace use-attribute-sets)
 		       &body body)
       args
-    (declare (ignore namespace use-attribute-sets))	;fixme
-    (let ((name-thunk (compile-attribute-value-template name env))
-	  (body-thunk (compile-instruction `(progn ,@body) env)))
-      (lambda (ctx)
-	(cxml:with-element (funcall name-thunk ctx)
-	  (funcall body-thunk ctx))))))
+    (declare (ignore use-attribute-sets)) ;fixme
+    (multiple-value-bind (name-thunk constant-name-p)
+	(compile-attribute-value-template name env)
+      (let ((body-thunk (compile-instruction `(progn ,@body) env)))
+	(if constant-name-p
+	    (compile-element/constant-name name namespace env body-thunk)
+	    (compile-element/runtime name-thunk namespace body-thunk))))))
+
+(defun compile-element/constant-name (qname namespace env body-thunk)
+  ;; the simple case: compile-time decoding of the QName
+  (multiple-value-bind (local-name uri prefix)
+      (decode-qname qname env nil)
+    (when namespace
+      (setf uri namespace))
+    (lambda (ctx)
+      (with-element (local-name uri :suggested-prefix prefix)
+	(funcall body-thunk ctx)))))
+
+(defun compile-element/runtime (name-thunk namespace body-thunk)
+  ;; run-time decoding of the QName, but using the same namespaces
+  ;; that would have been known at compilation time.
+  (let ((namespaces *namespaces*))
+    (lambda (ctx)
+      (let ((qname (funcall name-thunk ctx)))
+	(multiple-value-bind (local-name uri prefix)
+	    (decode-qname/runtime qname namespaces nil)
+	  (when namespace
+	    (setf uri namespace))
+	  (lambda (ctx)
+	    (with-element (local-name uri :suggested-prefix prefix)
+	      (funcall body-thunk ctx))))))))
 
 (define-instruction xsl:attribute (args env)
   (destructuring-bind ((name &key namespace) &body body) args
-    (declare (ignore namespace))	;fixme
-    (let ((name-thunk (compile-attribute-value-template name env))
-	  (value-thunk (compile-instruction `(progn ,@body) env)))
-      (lambda (ctx)
-	(cxml:attribute
-	 (funcall name-thunk ctx)
-	 (with-text-output-sink (s)
-	   (cxml:with-xml-output s
-	     (funcall value-thunk ctx))))))))
+    (multiple-value-bind (name-thunk constant-name-p)
+	(compile-attribute-value-template name env)
+      (let ((value-thunk (compile-instruction `(progn ,@body) env)))
+	(if constant-name-p
+	    (compile-attribute/constant-name name namespace env value-thunk)
+	    (compile-attribute/runtime name-thunk namespace value-thunk))))))
+
+(defun compile-attribute/constant-name (qname namespace env value-thunk)
+  ;; the simple case: compile-time decoding of the QName
+  (multiple-value-bind (local-name uri prefix)
+      (decode-qname qname env nil)
+    (when namespace
+      (setf uri namespace))
+    (lambda (ctx)
+      (write-attribute local-name
+		       uri
+		       (with-text-output-sink (s)
+			 (with-xml-output s
+			   (funcall value-thunk ctx)))
+		       :suggested-prefix prefix))))
+
+(defun compile-attribute/runtime (name-thunk namespace value-thunk)
+  ;; run-time decoding of the QName, but using the same namespaces
+  ;; that would have been known at compilation time.
+  (let ((namespaces *namespaces*))
+    (lambda (ctx)
+      (let ((qname (funcall name-thunk ctx)))
+	(multiple-value-bind (local-name uri prefix)
+	    (decode-qname/runtime qname namespaces nil)
+	  (when namespace
+	    (setf uri namespace))
+	  (lambda (ctx)
+	    (write-attribute local-name
+			     uri
+			     (with-text-output-sink (s)
+			       (with-xml-output s
+				 (funcall value-thunk ctx)))
+			     :suggested-prefix prefix)))))))
+
+(defun remove-excluded-namespaces
+    (namespaces &optional (excluded-uris *excluded-namespaces*))
+  (let ((koerbchen '())
+	(kroepfchen '()))
+    (loop
+       for cons in namespaces
+       for (prefix . uri) = cons
+       do
+	 (cond
+	   ((find prefix kroepfchen))
+	   ((find uri *excluded-namespaces* :test #'equal)
+	    (push prefix kroepfchen))
+	   (t
+	    (push cons koerbchen))))
+    koerbchen))
 
 (define-instruction xsl:literal-element (args env)
-  (destructuring-bind ((name &optional (uri "")) &body body)
+  (destructuring-bind
+	((local-name &optional (uri "") suggested-prefix) &body body)
       args
-    (declare (ignore uri))		;fixme
-    (let ((body-thunk (compile-instruction `(progn ,@body) env)))
+    (let ((body-thunk (compile-instruction `(progn ,@body) env))
+	  (namespaces (remove-excluded-namespaces *namespaces*)))
       (lambda (ctx)
-	(cxml:with-element name
+	(with-element (local-name uri
+				  :suggested-prefix suggested-prefix
+				  :extra-namespaces namespaces)
 	  (funcall body-thunk ctx))))))
 
 (define-instruction xsl:literal-attribute (args env)
-  (destructuring-bind ((name &optional uri) value) args
-    (declare (ignore uri))		;fixme
+  (destructuring-bind ((local-name &optional uri suggested-prefix) value) args
     #'(lambda (ctx)
 	(declare (ignore ctx))
-	(cxml:attribute name value))))
+	(write-attribute local-name
+			 uri
+			 value
+			 :suggested-prefix suggested-prefix))))
 
 (define-instruction xsl:text (args env)
   (destructuring-bind (str) args
     (lambda (ctx)
       (declare (ignore ctx))
-      (cxml:text str))))
+      (write-text str))))
 
 (define-instruction xsl:processing-instruction (args env)
   (destructuring-bind (name &rest body) args
     (let ((name-thunk (compile-attribute-value-template name env))
 	  (value-thunk (compile-instruction `(progn ,@body) env)))
       (lambda (ctx)
-	(cxml:processing-instruction
+	(write-processing-instruction
 	 (funcall name-thunk ctx)
 	 (with-text-output-sink (s)
-	   (cxml:with-xml-output s
+	   (with-xml-output s
 	     (funcall value-thunk ctx))))))))
 
 (define-instruction xsl:comment (args env)
   (destructuring-bind (str) args
     (lambda (ctx)
       (declare (ignore ctx))
-      (cxml:comment str))))
+      (write-comment str))))
 
 (define-instruction xsl:value-of (args env)
   (destructuring-bind (xpath) args
     (let ((thunk (compile-xpath xpath env)))
       (lambda (ctx)
-	(cxml:text (xpath:string-value (funcall thunk ctx)))))))
+	(write-text (xpath:string-value (funcall thunk ctx)))))))
 
 (define-instruction xsl:unescaped-value-of (args env)
   (destructuring-bind (xpath) args
     (let ((thunk (compile-xpath xpath env)))
       (lambda (ctx)
-	(cxml:unescaped (xpath:string-value (funcall thunk ctx)))))))
+	(write-unescaped (xpath:string-value (funcall thunk ctx)))))))
 
 (define-instruction xsl:copy-of (args env)
   (destructuring-bind (xpath) args
@@ -162,12 +249,17 @@
 	    (result-tree-fragment
 	     (copy-into-result (result-tree-fragment-node result)))
 	    (t
-	     (cxml:text (xpath:string-value result)))))))))
+	     (write-text (xpath:string-value result)))))))))
 
 (defun copy-into-result (node)
   (cond
     ((xpath-protocol:node-type-p node :element)
-     (cxml:with-element (xpath-protocol:qualified-name node)
+     (with-element ((xpath-protocol:local-name node)
+		    (xpath-protocol:namespace-uri node)
+		    :suggested-prefix (xpath-protocol:namespace-prefix node)
+		    ;; FIXME: is remove-excluded-namespaces correct here?
+		    :extra-namespaces (remove-excluded-namespaces
+				       (namespaces-as-alist node)))
        (map-pipe-eagerly #'copy-into-result
 			 (xpath-protocol:attribute-pipe node))
        (map-pipe-eagerly #'copy-into-result
@@ -217,8 +309,8 @@
 
 (defun apply-to-result-tree-fragment (ctx thunk)
   (let ((document
-	 (cxml:with-xml-output (stp:make-builder)
-	   (cxml:with-element "fragment"
+	 (with-xml-output (stp:make-builder)
+	   (with-element ("fragment" "")
 	     (funcall thunk ctx)))))
     (xpath::make-node-set
      (list (make-result-tree-fragment (stp:document-element document))))))
@@ -270,6 +362,14 @@
 (define-instruction xsl:terminate (args env)
   (compile-message #'error args env))
 
+(defun namespaces-as-alist (element)
+  (let ((namespaces '()))
+    (do-pipe (ns (xpath-protocol:namespace-pipe element))
+      (push (cons (xpath-protocol:local-name ns)
+		  (xpath-protocol:namespace-uri ns))
+	    namespaces))
+    namespaces))
+
 (define-instruction xsl:copy (args env)
   (destructuring-bind ((&key use-attribute-sets) &rest rest)
       args
@@ -278,7 +378,11 @@
 	(let ((node (xpath:context-node ctx)))
 	  (cond
 	    ((xpath-protocol:node-type-p node :element)
-	     (cxml:with-element (xpath-protocol:qualified-name node)
+	     (with-element
+		 ((xpath-protocol:local-name node)
+		  (xpath-protocol:namespace-uri node)
+		  :suggested-prefix (xpath-protocol:namespace-prefix node)
+		  :extra-namespaces (namespaces-as-alist node))
 	       (funcall body ctx)))
 	    ((xpath-protocol:node-type-p node :document)
 	     (funcall body ctx))
@@ -288,17 +392,19 @@
 (defun copy-leaf-node (node)
   (cond
     ((xpath-protocol:node-type-p node :text)
-     (cxml:text (xpath-protocol:string-value node)))
+     (write-text (xpath-protocol:string-value node)))
     ((xpath-protocol:node-type-p node :comment)
-     (cxml:comment (xpath-protocol:string-value node)))
+     (write-comment (xpath-protocol:string-value node)))
     ((xpath-protocol:node-type-p node :processing-instruction)
-     (cxml:processing-instruction
+     (write-processing-instruction
 	 (xpath-protocol:processing-instruction-target node)
        (xpath-protocol:string-value node)))
     ((xpath-protocol:node-type-p node :attribute)
-     (cxml:attribute
-	 (xpath-protocol:qualified-name node)
-       (xpath-protocol:string-value node)))
+     (write-attribute
+      (xpath-protocol:local-name node)
+      (xpath-protocol:namespace-uri node)
+      (xpath-protocol:string-value node)
+      :suggested-prefix (xpath-protocol:namespace-prefix node)))
     (t
      (error "don't know how to copy node ~A" node))))
 
@@ -306,7 +412,7 @@
   (let ((thunk (compile-instruction `(progn ,@args) env)))
     (lambda (ctx)
       (funcall fn
-	       (cxml:with-xml-output (cxml:make-string-sink)
+	       (with-xml-output (cxml:make-string-sink)
 		 (funcall thunk ctx))))))
 
 (define-instruction xsl:apply-templates (args env)
@@ -324,10 +430,31 @@
 	   (cdr form)
 	   env))
 
-(defun compile-attribute-value-template (str env)
-  (declare (ignore env))
-  ;; fixme
-  (constantly str))
+(xpath::deflexer make-attribute-template-lexer
+  ("([^{]+)" (data) (values :data data))
+  ("{([^}]+)}" (xpath) (values :xpath xpath)))
+
+(defun compile-attribute-value-template (template-string env)
+  (let* ((lexer (make-attribute-template-lexer template-string))
+	 (constantp t)
+	 (fns
+	  (loop
+	     collect
+	       (multiple-value-bind (kind str) (funcall lexer)
+		 (ecase kind
+		   (:data
+		    (constantly str))
+		   (:xpath
+		    (setf constantp nil)
+		    (xpath:compile-xpath str env))
+		   ((nil)
+		    (return result))))
+	     into result)))
+    (values (lambda (ctx)
+	      (with-output-to-string (s)
+		(dolist (fn fns)
+		  (write-string (xpath:string-value (funcall fn ctx)) s))))
+	    constantp)))
 
 
 ;;;; Indentation for slime
@@ -371,5 +498,5 @@
 (defun test-instruction (form document)
   (let ((thunk (compile-instruction form (make-instance 'lexical-environment)))
 	(root (cxml:parse document (stp:make-builder))))
-    (cxml:with-xml-output (cxml:make-string-sink)
+    (with-xml-output (cxml:make-string-sink)
       (funcall thunk (xpath:make-context root)))))

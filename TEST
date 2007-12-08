@@ -202,10 +202,8 @@ PASS Variables__78164 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78164.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78164.xuriella
 
-FAIL Variables__78292 [XPath-Data-Model]: condition of incorrect type The value
-                                                                        NIL
-                                                                      is not of type
-                                                                        XURIELLA::MODE.
+FAIL Variables__78292 [XPath-Data-Model]: condition of incorrect type: 
+The value NIL is not of type XURIELLA::MODE.
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21406.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78292.saxon
@@ -523,7 +521,28 @@ FAIL Variables__84712 [XPath-Data-Model]: output doesn't match
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84712.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84712.xuriella
 
-FAIL Variables__91490 [XPath-Data-Model]: condition of incorrect type SAX event START-DOCUMENT not implemented by this handler
+FAIL Variables__91490 [XPath-Data-Model]: condition of incorrect type: 
+There is no applicable method for the generic function
+  #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (8)>
+when called with arguments
+  (#S(XURIELLA::RESULT-TREE-FRAGMENT
+      :NODE #.(CXML-STP:ELEMENT
+               #| :PARENT of type DOCUMENT |#
+               :CHILDREN '(#.(CXML-STP:ELEMENT
+                              #| :PARENT of type ELEMENT |#
+                              :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                               #| :PARENT of type ELEMENT |#
+                                               :VALUE "test"
+                                               :LOCAL-NAME "name"))
+                              :CHILDREN '(#.(CXML-STP:ELEMENT
+                                             #| :PARENT of type ELEMENT |#
+                                             :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                              #| :PARENT of type ELEMENT |#
+                                                              :VALUE "attrtest"
+                                                              :LOCAL-NAME "name"))
+                                             :LOCAL-NAME "AttributeType"))
+                              :LOCAL-NAME "ElementType"))
+               :LOCAL-NAME "fragment"))).
   Stylesheet: MSFT_Conformance_Tests/Variables/91490.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__91490.saxon
@@ -593,7 +612,11 @@ FAIL Variables_VarScopeInCallTemplate [XPath-Data-Model]: undefined instruction:
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.xuriella
 
-FAIL Variables_VarScopeInImportedStylesheet [XPath-Data-Model]: output doesn't match
+FAIL Variables_VarScopeInImportedStylesheet [XPath-Data-Model]: The value
+                                                                  XURIELLA::NAMESPACE
+                                                                is not of type
+                                                                  (OR NULL
+                                                                      VECTOR).
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_duplicate_variable_in_imported_stylesheet.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/foo.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Variables/test2.xsl
@@ -601,14 +624,14 @@ FAIL Variables_VarScopeInImportedStylesheet [XPath-Data-Model]: output doesn't m
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_VarScopeInImportedStylesheet.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VarScopeInImportedStylesheet.xuriella
 
-PASS Variables_xslt_variable_qname_test1 [XPath-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+PASS Variables_xslt_variable_qname_test1 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_qname_test1.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test1.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test1.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test1.xuriella
 
-PASS Variables_xslt_variable_qname_test2 [XPath-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+FAIL Variables_xslt_variable_qname_test2 [XPath-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_qname_test2.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test2.saxon
@@ -643,14 +666,14 @@ PASS Whitespaces__91025 [XSLT-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.xuriella
 
-PASS Whitespaces__91221 [XSLT-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+PASS Whitespaces__91221 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91221.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91221.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91221.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91221.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91221.xuriella
 
-PASS Whitespaces__91222 [XSLT-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+PASS Whitespaces__91222 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91222.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91222.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91222.saxon
@@ -671,14 +694,14 @@ PASS Whitespaces__91224 [XSLT-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91224.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91224.xuriella
 
-PASS Whitespaces__91225 [XSLT-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+PASS Whitespaces__91225 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91225.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91225.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91225.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91225.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91225.xuriella
 
-PASS Whitespaces__91226 [XSLT-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+PASS Whitespaces__91226 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91226.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91226.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91226.saxon
@@ -699,28 +722,28 @@ PASS Whitespaces__91228 [XSLT-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91228.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91228.xuriella
 
-PASS Whitespaces__91421 [XSLT-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+PASS Whitespaces__91421 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91421.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91421.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91421.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91421.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91421.xuriella
 
-FAIL Whitespaces__91422 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91422 [XSLT-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91422.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91422.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91422.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91422.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91422.xuriella
 
-FAIL Whitespaces__91423 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91423 [XSLT-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91423.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91423.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91423.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91423.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91423.xuriella
 
-PASS Whitespaces__91424 [XSLT-Data-Model]: saxon NIL, xsltproc T (MISMATCH)
+PASS Whitespaces__91424 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91424.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91424.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91424.saxon
@@ -755,56 +778,56 @@ PASS Whitespaces__91428 [XSLT-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91428.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91428.xuriella
 
-FAIL Whitespaces__91429 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91429 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91429.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91429.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91429.xuriella
 
-FAIL Whitespaces__91430 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91430 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91430.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91430.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91430.xuriella
 
-FAIL Whitespaces__91431 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91431 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91431.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91431.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91431.xuriella
 
-FAIL Whitespaces__91432 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91432 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91432.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91432.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91432.xuriella
 
-FAIL Whitespaces__91433 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91433 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91433.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91433.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91433.xuriella
 
-FAIL Whitespaces__91434 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91434 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91434.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91434.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91434.xuriella
 
-FAIL Whitespaces__91435 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91435 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91435.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91435.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91435.xuriella
 
-FAIL Whitespaces__91436 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91436 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91436.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91436.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.saxon
@@ -867,56 +890,56 @@ FAIL Whitespaces__91444 [XSLT-Data-Model]: output doesn't match
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91444.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91444.xuriella
 
-FAIL Whitespaces__91445 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91445 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91445.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91445.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91445.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91445.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91445.xuriella
 
-FAIL Whitespaces__91446 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91446 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91446.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91446.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91446.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91446.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91446.xuriella
 
-FAIL Whitespaces__91447 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91447 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91447.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91447.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91447.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91447.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91447.xuriella
 
-FAIL Whitespaces__91448 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91448 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91448.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91448.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91448.xuriella
 
-FAIL Whitespaces__91449 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91449 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91449.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91449.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91449.xuriella
 
-FAIL Whitespaces__91450 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91450 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91450.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91450.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91450.xuriella
 
-FAIL Whitespaces__91451 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91451 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91451.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91451.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.saxon
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91451.xuriella
 
-FAIL Whitespaces__91452 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91452 [XSLT-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91452.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91452.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.saxon
@@ -939,7 +962,7 @@ FAIL Whitespaces__91454 [XSLT-Data-Model]: output doesn't match
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91454.xuriella
 
-FAIL Whitespaces__91455 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91455 [XSLT-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91455.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91455.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
@@ -969,4 +992,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 75/131 tests.
+Passed 93/131 tests.
