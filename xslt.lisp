@@ -32,6 +32,19 @@
 (declaim (optimize (debug 2)))
 
 
+;;;; XSLT-ERROR
+
+(define-condition xslt-error (simple-error)
+  ()
+  (:documentation "The class of all STP errors."))
+
+(defun xslt-error (fmt &rest args)
+  (error 'xslt-error :format-control fmt :format-arguments args))
+
+(defun xslt-cerror (fmt &rest args)
+  (cerror "recover" 'xslt-error :format-control fmt :format-arguments args))
+
+
 ;;;; XSLT-ENVIRONMENT and XSLT-CONTEXT
 
 (defparameter *namespaces*
@@ -44,12 +57,15 @@
 (defclass xslt-environment () ())
 
 (defun decode-qname (qname env attributep)
-  (multiple-value-bind (prefix local-name)
-      (cxml::split-qname qname)
-    (values local-name
-	    (if (or prefix (not attributep))
-		(xpath:environment-find-namespace env prefix)
-		""))))
+  (handler-case
+      (multiple-value-bind (prefix local-name)
+	  (cxml::split-qname qname)
+	(values local-name
+		(if (or prefix (not attributep))
+		    (xpath:environment-find-namespace env prefix)
+		    "")))
+    (cxml:well-formedness-violation ()
+      (xslt-error "not a qname: ~A" qname))))
 
 (defmethod xpath:environment-find-namespace ((env xslt-environment) prefix)
   (cdr (assoc prefix *namespaces* :test 'equal)))
@@ -145,7 +161,7 @@
     (unless (and (equal (stp:namespace-uri <transform>) *xsl*)
 		 (or (equal (stp:local-name <transform>) "transform")
 		     (equal (stp:local-name <transform>) "stylesheet")))
-      (error "not a stylesheet"))
+      (xslt-error "not a stylesheet"))
     (ensure-mode "" stylesheet)
     (parse-global-variables! stylesheet <transform>)
     (parse-templates! stylesheet <transform> env)
@@ -171,7 +187,7 @@
 			    (name-test-uri
 			     (xpath:environment-find-namespace env prefix)))
 		       (unless (xpath::nc-name-p prefix)
-			 (error "not an NCName: ~A" prefix))
+			 (xslt-error "not an NCName: ~A" prefix))
 		       (lambda (local-name uri)
 			 (declare (ignore local-name))
 			 (if (equal uri name-test-uri)
@@ -223,7 +239,7 @@
 (defun compile-global-variable (<variable> env) ;; also for <param>
   (stp:with-attributes (name select) <variable>
     (when (and select (stp:list-children <variable>))
-      (error "variable with select and body"))
+      (xslt-error "variable with select and body"))
     (cond
       (select
 	(xpath:compile-xpath select env))
@@ -250,6 +266,8 @@
 (defun parse-global-variable! (<variable> global-env) ;; also for <param>
   (let ((*namespaces* (acons-namespaces <variable>))
 	(qname (stp:attribute-value <variable> "name")))
+    (unless qname
+      (xslt-error "name missing in ~A" (stp:local-name <variable>)))
     (multiple-value-bind (local-name uri)
 	(decode-qname qname global-env nil)
       (let ((key (cons local-name uri))
@@ -263,7 +281,7 @@
 	       (global-variable-thunk
 		(lambda (ctx)
 		  (when (eq (symbol-value gensym) 'seen)
-		    (error "recursive variable definition"))
+		    (xslt-error "recursive variable definition"))
 		  (or (symbol-value gensym)
 		      (progn
 			(setf (symbol-value gensym) 'seen)
@@ -419,7 +437,7 @@
 	 ((< p q) t)
 	 ((> p q) nil)
 	 (t
-	  (error "conflicting templates: ~A, ~A" a b)))))))
+	  (xslt-error "conflicting templates: ~A, ~A" a b)))))))
 
 (defun maximize (< things)
   (when things
@@ -514,10 +532,10 @@
   ;; zzz can we hack id() and key() here?
   (let ((form (xpath:parse-xpath str)))
     (unless (consp form)
-      (error "not a valid pattern: ~A" str))
+      (xslt-error "not a valid pattern: ~A" str))
     (mapcar (lambda (case)
 	      (unless (eq (car case) :path) ;zzz: filter statt path
-		(error "not a valid pattern: ~A" str))
+		(xslt-error "not a valid pattern: ~A" str))
 	      `(:path (:ancestor-or-self :node) ,@(cdr case)))
 	    (if (eq (car form) :union)
 		(cdr form)
@@ -526,7 +544,7 @@
 (defun compile-template (<template> env)
   (stp:with-attributes (match name priority mode) <template>
     (unless (or name match)
-      (error "missing match in template"))
+      (xslt-error "missing match in template"))
     (let ((body (parse-body <template>)))
       (mapcar (lambda (expression)
 		(let ((body-thunk

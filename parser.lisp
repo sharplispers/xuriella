@@ -58,7 +58,7 @@
 		    (if (namep child "variable")
 			(stp:with-attributes (name select) child
 			  (when (and select (stp:list-children child))
-			    (error "variable with select and body"))
+			    (xslt-error "variable with select and body"))
 			  `((let ((,name ,(or select
 					      `(progn ,@(parse-body child)))))
 			      ,@(recurse (1+ i)))))
@@ -72,7 +72,7 @@
      (if (equal (stp:namespace-uri node) *xsl*)
 	 (parse-instruction/xsl-element
 	  (or (find-symbol (stp:local-name node) :xuriella)
-	      (error "undefined instruction: ~A" (stp:local-name node)))
+	      (xslt-error "undefined instruction: ~A" (stp:local-name node)))
 	  node)
 	 (parse-instruction/literal-element node)))
     (stp:text
@@ -118,8 +118,8 @@
 			     ((namep clause "otherwise")
 			      `(t ,@(parse-body clause)))
 			     (t
-			      (error "invalid <choose> clause: ~A"
-				     (stp:local-name clause)))))
+			      (xslt-error "invalid <choose> clause: ~A"
+					  (stp:local-name clause)))))
 			 node)))
 
 (define-instruction-parser |element| (node)

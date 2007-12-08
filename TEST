@@ -34,10 +34,7 @@ PASS Variables__78098 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78098.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78098.xuriella
 
-PASS Variables__78099 [XPath-Data-Model]: expected error The value NIL
-                                                         is not of type
-                                                           (SIMPLE-ARRAY
-                                                            CHARACTER).
+PASS Variables__78099 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21003.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78099.saxon
@@ -93,28 +90,28 @@ PASS Variables__78116 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78116.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78116.xuriella
 
-PASS Variables__78117 [XPath-Data-Model]: expected error recursive variable definition
+PASS Variables__78117 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21210.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78117.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78117.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78117.xuriella
 
-PASS Variables__78118 [XPath-Data-Model]: expected error variable with select and body
+PASS Variables__78118 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21211.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78118.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78118.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78118.xuriella
 
-PASS Variables__78120 [XPath-Data-Model]: expected error recursive variable definition
+PASS Variables__78120 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21212.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78120.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78120.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78120.xuriella
 
-PASS Variables__78121 [XPath-Data-Model]: expected error no such function: :FOO
+FAIL Variables__78121 [XPath-Data-Model]: condition of incorrect type no such function: :FOO
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21213.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78121.saxon
@@ -128,7 +125,7 @@ FAIL Variables__78125 [XPath-Data-Model]: expected error not signalled:
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78125.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78125.xuriella
 
-PASS Variables__78131 [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+FAIL Variables__78131 [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21304.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78131.saxon
@@ -156,14 +153,14 @@ PASS Variables__78153 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78153.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78153.xuriella
 
-PASS Variables__78154 [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+FAIL Variables__78154 [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21308.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78154.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78154.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78154.xuriella
 
-PASS Variables__78159 [XPath-Data-Model]: expected error undeclared variable: x in namespace 
+FAIL Variables__78159 [XPath-Data-Model]: condition of incorrect type undeclared variable: x in namespace 
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21400.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78159.saxon
@@ -177,7 +174,7 @@ FAIL Variables__78160 [XPath-Data-Model]: duplicate definition of x
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78160.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78160.xuriella
 
-PASS Variables__78161 [XPath-Data-Model]: expected error undefined instruction: param
+PASS Variables__78161 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21402.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78161.saxon
@@ -205,9 +202,10 @@ PASS Variables__78164 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78164.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78164.xuriella
 
-PASS Variables__78292 [XPath-Data-Model]: expected error The value NIL
-                                                         is not of type
-                                                           XURIELLA::MODE.
+FAIL Variables__78292 [XPath-Data-Model]: condition of incorrect type The value
+                                                                        NIL
+                                                                      is not of type
+                                                                        XURIELLA::MODE.
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21406.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78292.saxon
@@ -235,10 +233,7 @@ PASS Variables__78306 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78306.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78306.xuriella
 
-PASS Variables__78314 [XPath-Data-Model]: expected error The value NIL
-                                                         is not of type
-                                                           (SIMPLE-ARRAY
-                                                            CHARACTER).
+PASS Variables__78314 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22000.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78314.saxon
@@ -309,14 +304,14 @@ PASS Variables__78355 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78355.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78355.xuriella
 
-PASS Variables__78356 [XPath-Data-Model]: expected error recursive variable definition
+PASS Variables__78356 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22210.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78356.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78356.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78356.xuriella
 
-PASS Variables__78359 [XPath-Data-Model]: expected error no such function: :FOO
+FAIL Variables__78359 [XPath-Data-Model]: condition of incorrect type no such function: :FOO
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22213.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78359.saxon
@@ -337,7 +332,7 @@ FAIL Variables__78371 [XPath-Data-Model]: expected error not signalled:
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78371.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78371.xuriella
 
-PASS Variables__78399 [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+FAIL Variables__78399 [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22303.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78399.saxon
@@ -358,14 +353,14 @@ FAIL Variables__78401 [XPath-Data-Model]: undefined instruction: param
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78401.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78401.xuriella
 
-PASS Variables__78402 [XPath-Data-Model]: expected error undefined instruction: param
+PASS Variables__78402 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22308.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78402.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78402.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78402.xuriella
 
-PASS Variables__78403 [XPath-Data-Model]: expected error undefined instruction: param
+PASS Variables__78403 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22400.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78403.saxon
@@ -403,7 +398,7 @@ FAIL Variables__84034 [XPath-Data-Model]: undefined instruction: param
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84034.xuriella
 
 WARNING: namespace URI does not look like an absolute URL: "URI"
-PASS Variables__84035 [XPath-Data-Model]: expected error undefined instruction: param
+PASS Variables__84035 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23000.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84035.saxon
@@ -432,14 +427,14 @@ FAIL Variables__84439 [XPath-Data-Model]: undefined instruction: call-template
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84439.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84439.xuriella
 
-PASS Variables__84632 [XPath-Data-Model]: expected error undeclared variable: var13 in namespace 
+FAIL Variables__84632 [XPath-Data-Model]: condition of incorrect type undeclared variable: var13 in namespace 
   Stylesheet: MSFT_Conformance_Tests/Variables/84632.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84632.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84632.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84632.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84632.xuriella
 
-PASS Variables__84633 [XPath-Data-Model]: expected error recursive variable definition
+PASS Variables__84633 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/84633.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84633.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84633.saxon
@@ -487,7 +482,7 @@ FAIL Variables__84637 [XPath-Data-Model]: output doesn't match
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84637.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84637.xuriella
 
-PASS Variables__84697 [XPath-Data-Model]: expected error recursive variable definition
+PASS Variables__84697 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/84697.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84697.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84697.saxon
@@ -528,7 +523,7 @@ FAIL Variables__84712 [XPath-Data-Model]: output doesn't match
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84712.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84712.xuriella
 
-PASS Variables__91490 [XPath-Data-Model]: expected error SAX event START-DOCUMENT not implemented by this handler
+FAIL Variables__91490 [XPath-Data-Model]: condition of incorrect type SAX event START-DOCUMENT not implemented by this handler
   Stylesheet: MSFT_Conformance_Tests/Variables/91490.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__91490.saxon
@@ -542,7 +537,7 @@ FAIL Variables_GlobalVarHaveLocalVarDefinedWithin [XPath-Data-Model]: undeclared
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_GlobalVarHaveLocalVarDefinedWithin.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_GlobalVarHaveLocalVarDefinedWithin.xuriella
 
-PASS Variables_InvalidVariableNameShouldProduceError [XPath-Data-Model]: expected error undefined instruction: call-template
+PASS Variables_InvalidVariableNameShouldProduceError [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_InvalidVariableNameErrorMsg.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_InvalidVariableNameErrorMsg.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_InvalidVariableNameShouldProduceError.saxon
@@ -556,7 +551,7 @@ PASS Variables_PositionAndLastComparisonShouldBeEqual [XPath-Data-Model]: saxon 
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_PositionAndLastComparisonShouldBeEqual.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_PositionAndLastComparisonShouldBeEqual.xuriella
 
-PASS Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]: expected error undefined instruction: call-template
+PASS Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_SelectAttrAndWsBetweenElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_SelectAttrAndWsBetweenElement.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.saxon
@@ -570,7 +565,7 @@ FAIL Variables_UseDocumentFnToReturnRootNode [XPath-Data-Model]: no such functio
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_UseDocumentFnToReturnRootNode.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_UseDocumentFnToReturnRootNode.xuriella
 
-PASS Variables_VarDefinedEqualToAnotherVarNotYetDefined [XPath-Data-Model]: expected error undeclared variable: y in namespace 
+FAIL Variables_VarDefinedEqualToAnotherVarNotYetDefined [XPath-Data-Model]: condition of incorrect type undeclared variable: y in namespace 
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_DefineVarEqualVarNotYetDefined.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_DefineVarEqualVarNotYetDefined.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.saxon
@@ -641,7 +636,7 @@ PASS Whitespaces__91024 [XSLT-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91024.xuriella
 
-PASS Whitespaces__91025 [XSLT-Data-Model]: expected error invalid xpath designator: NIL
+FAIL Whitespaces__91025 [XSLT-Data-Model]: condition of incorrect type invalid xpath designator: NIL
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91025.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91025.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91025.saxon

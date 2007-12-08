@@ -534,8 +534,11 @@
 	(t
 	 (handler-case
 	     (doit)
+	   (xslt-error (c)
+	     (report t ": raised an xslt-error as expected" c)
+	     t)
 	   ((or error parse-number::invalid-number) (c)
-	     (report t ": expected error ~A" c)
+	     (report nil ": condition of incorrect type ~A" c)
 	     t)
 	   (:no-error (result)
 	     (report nil ": expected error not signalled: " result)

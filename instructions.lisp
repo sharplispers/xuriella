@@ -203,6 +203,8 @@
 	  (variable-thunks '()))
       (dolist (form forms)
 	(destructuring-bind (name value) form
+	  (unless name
+	    (xslt-error "name missing in xsl:variable"))
 	  (multiple-value-bind (local-name uri)
 	      (decode-qname name env nil)
 	    (let ((pair (cons local-name uri))
@@ -214,7 +216,7 @@
 		       (xpath:compile-xpath value env)))
 		  (gensym (gensym local-name)))
 	      (when (assoc pair variable-declarations :test 'equal)
-		(error "duplicate definition of ~A" name))
+		(xslt-error "duplicate definition of ~A" name))
 	      (push (cons pair gensym) variable-declarations)
 	      (push gensym variable-gensyms)
 	      (push thunk variable-thunks)))))
