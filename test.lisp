@@ -523,26 +523,20 @@
 			    xsltproc-matches-p
 			    (if saxon-matches-p
 				(not xsltproc-matches-p)
-				xsltproc-matches-p))
-		    t)
+				xsltproc-matches-p)))
 		   (t
-		    (report nil ": output doesn't match")
-		    nil))))
+		    (report nil ": output doesn't match")))))
 	   ((or error parse-number::invalid-number) (c)
-	     (report nil ": ~A" c)
-	     nil)))
+	     (report nil ": ~A" c))))
 	(t
 	 (handler-case
 	     (doit)
 	   (xslt-error (c)
-	     (report t ": raised an xslt-error as expected" c)
-	     t)
+	     (report t ": raised an xslt-error as expected" c))
 	   ((or error parse-number::invalid-number) (c)
-	     (report nil ": condition of incorrect type ~A" c)
-	     t)
+	     (report nil ": condition of incorrect type ~A" c))
 	   (:no-error (result)
-	     (report nil ": expected error not signalled: " result)
-	     nil)))))))
+	     (report nil ": expected error not signalled: " result))))))))
 
 (defun run-xpath-tests ()
   (run-tests '("XPath-Expression" "XSLT-Data-Model")))
