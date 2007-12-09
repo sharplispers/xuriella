@@ -372,7 +372,7 @@ PASS Variables__78404 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78404.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78404.xuriella
 
-FAIL Variables__78409 [XPath-Data-Model]: SAX event START-DOCUMENT not implemented by this handler
+PASS Variables__78409 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22411.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78409.saxon
@@ -613,11 +613,7 @@ PASS Variables_VarScopeInCallTemplate [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VarScopeInCallTemplate.xuriella
 
-FAIL Variables_VarScopeInImportedStylesheet [XPath-Data-Model]: The value
-                                                                  XURIELLA::NAMESPACE
-                                                                is not of type
-                                                                  (OR NULL
-                                                                      VECTOR).
+PASS Variables_VarScopeInImportedStylesheet [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_duplicate_variable_in_imported_stylesheet.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/foo.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Variables/test2.xsl
@@ -993,4 +989,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 106/131 tests.
+Passed 108/131 tests.

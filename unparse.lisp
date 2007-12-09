@@ -159,6 +159,9 @@
 
 (defun invoke-with-element
     (fn local-name uri &key suggested-prefix extra-namespaces)
+  (check-type local-name string)
+  (check-type uri string)
+  (check-type suggested-prefix (or null string))
   (maybe-emit-start-tag)
   (let* ((parent *current-element*)
 	 (elt (make-sink-element
@@ -200,6 +203,10 @@
 	     (push cons (sink-element-new-namespaces elt))))))))
 
 (defun write-attribute (local-name uri value &key suggested-prefix)
+  (check-type local-name string)
+  (check-type uri string)
+  (check-type value string)
+  (check-type suggested-prefix (or null string))
   (cond
     ((null *current-element*)
      (xslt-cerror "attribute outside of element"))

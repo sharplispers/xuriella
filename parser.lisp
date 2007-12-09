@@ -172,13 +172,13 @@
 
 (define-instruction-parser |element| (node)
   (stp:with-attributes (name namespace use-attribute-sets) node
-    `(xsl:element (,name :namespace namespace
-			 :use-attribute-sets use-attribute-sets)
+    `(xsl:element (,name :namespace ,namespace
+			 :use-attribute-sets ,use-attribute-sets)
        ,@(parse-body node))))
 
 (define-instruction-parser |attribute| (node)
   (stp:with-attributes (name namespace) node
-    `(xsl:attribute (,name :namespace namespace)
+    `(xsl:attribute (,name :namespace ,namespace)
        ,@(parse-body node))))
 
 (define-instruction-parser |text| (node)
