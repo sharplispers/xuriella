@@ -22,5 +22,6 @@
      (:file "instructions")
      (:file "parser")
      (:file "space")
+     (:file "html")
      (:file "test"))
     :depends-on (:cxml :cxml-stp :closure-html :xpath))
