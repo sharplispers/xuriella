@@ -50,7 +50,7 @@
 	      (setf prefix nil))
 	    (push (or (stp:find-namespace prefix child)
 		      (xslt-error "namespace not found: ~A" prefix))
-		  excluded-uris))) 
+		  excluded-uris)))
 	(if bindings
 	    `((xsl:with-namespaces ,bindings
 		(xsl:with-excluded-namespaces ,excluded-uris

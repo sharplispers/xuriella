@@ -205,13 +205,14 @@
     (let* ((data (test-data-pathname test-case))
 	   (stylesheet (test-stylesheet-pathname test-case))
 	   (noindent-stylesheet (noindent-stylesheet-pathname test-case))
+	   #+xuriella::xsltproc
 	   (out (test-output-pathname test-case "xsltproc"))
 	   (saxon-out (test-output-pathname test-case "saxon")))
       (sanitize-stylesheet stylesheet noindent-stylesheet)
       (if (equal (test-operation test-case) "standard")
 	  (handler-case
 	      (progn
-		(xsltproc noindent-stylesheet data out)
+		#+xuriella::xsltproc (xsltproc noindent-stylesheet data out)
 		(saxon noindent-stylesheet data saxon-out)
 		(report "PASS")
 		(write-simplified-test test-case "standard")
@@ -222,7 +223,9 @@
 	      nil))
 	  (handler-case
 	      (progn
+		#+xuriella::xsltproc
 		(xsltproc noindent-stylesheet data "/dev/null")
+		(saxon noindent-stylesheet data "/dev/null")
 		(report "FAIL" ": expected error not signalled")
 		;; let's ignore unexpected successes for now
 		nil)
@@ -530,6 +533,7 @@
 
 (defun run-test (test)
   (let ((expected-saxon (test-output-pathname test "saxon"))
+	#+xuriella::xsltproc
 	(expected-xsltproc (test-output-pathname test "xsltproc"))
 	(actual (test-output-pathname test "xuriella")))
     (labels ((doit ()
@@ -560,6 +564,7 @@
 		   (test-stylesheet-pathname-2 test))
 	       (pp "Supplemental data" (test-data-pathname-2 test))
 	       (pp "Expected output (1)" expected-saxon)
+	       #+xuriella::xsltproc
 	       (pp "Expected output (2)" expected-xsltproc)
 	       (pp "Actual output" actual)
 	       (terpri)
@@ -574,12 +579,16 @@
 		      (output-equal-p output-method
 				      expected-saxon
 				      actual))
+		     #+xuriella::xsltproc
 		     (xsltproc-matches-p
 		      (output-equal-p output-method
 				      expected-xsltproc
 				      actual)))
 		 (cond
-		   ((or saxon-matches-p xsltproc-matches-p)
+		   ((or saxon-matches-p
+			#+xuriella::xsltproc xsltproc-matches-p)
+		    (report t)
+		    #+xuriella::xsltproc
 		    (report t ": saxon ~A, xsltproc ~A~:[~; (MISMATCH)~]"
 			    saxon-matches-p
 			    xsltproc-matches-p
