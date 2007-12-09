@@ -387,11 +387,20 @@
     (let* ((table (make-hash-table :test 'equal))
 	   (global-env (make-instance 'global-variable-environment
 				      :global-variables table))
-	   (specs
-	    (mapcar (lambda (<variable>)
-		      (parse-global-variable! <variable> global-env))
-		    (xpath:all-nodes
-		     (xpath:evaluate "variable|param" <transform>)))))
+	   (specs '()))
+      (xpath:do-node-set
+	  (<variable> (xpath:evaluate "variable|param" <transform>))
+	(let ((var (parse-global-variable! <variable> global-env)))
+	  (when (find var
+		      specs
+		      :test (lambda (a b)
+			      (and (equal (variable-local-name a)
+					  (variable-local-name b))
+				   (equal (variable-uri a)
+					  (variable-uri b)))))
+	    (xslt-error "duplicate definition for global variable ~A"
+			(variable-local-name var)))
+	  (push var specs)))
       ;; now that the global environment knows about all variables, run the
       ;; thunk setters to perform their compilation
       (mapc (lambda (spec) (funcall (variable-thunk-setter spec))) specs)
