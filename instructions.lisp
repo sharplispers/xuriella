@@ -81,7 +81,7 @@
 (defun decode-qname/runtime (qname namespaces attributep)
   (handler-case
       (multiple-value-bind (prefix local-name)
-	  (cxml::split-qname qname)
+	  (split-qname qname)
 	(values local-name
 		(if (or prefix (not attributep))
 		    (cdr (assoc prefix namespaces :test 'equal))
@@ -423,12 +423,19 @@
 	   (compile-xpath (or select "child::node()") env))
 	  (param-bindings
            (compile-var-bindings param-binding-specs env)))
-      (lambda (ctx)
-	(let ((*mode* (if mode (find-mode mode *stylesheet*) *mode*)))
-	  (apply-templates/list
-	   (xpath:all-nodes (funcall select-thunk ctx))
-	   (loop for (name value-thunk) in param-bindings
-	         collect (list name (funcall value-thunk ctx)))))))))
+      (multiple-value-bind (mode-local-name mode-uri)
+	  (and mode (decode-qname mode env nil))
+	(lambda (ctx)
+	  (let ((*mode* (if mode
+			    (or (find-mode *stylesheet*
+					   mode-local-name
+					   mode-uri)
+				*empty-mode*)
+			    *mode*)))
+	    (apply-templates/list
+	     (xpath:all-nodes (funcall select-thunk ctx))
+	     (loop for (name value-thunk) in param-bindings
+		collect (list name (funcall value-thunk ctx))))))))))
 
 (define-instruction xsl:call-template (args env)
   (destructuring-bind (name &rest param-binding-specs) args

@@ -203,8 +203,7 @@ PASS Variables__78164 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__78164.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78164.xuriella
 
-FAIL Variables__78292 [XPath-Data-Model]: condition of incorrect type: 
-The value NIL is not of type XURIELLA::MODE.
+PASS Variables__78292 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21406.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78292.saxon
@@ -994,4 +993,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 105/131 tests.
+Passed 106/131 tests.

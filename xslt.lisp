@@ -127,17 +127,31 @@
 
 (defclass xslt-environment () ())
 
-(defun decode-qname (qname env attributep)
+(defun split-qname (str)
   (handler-case
       (multiple-value-bind (prefix local-name)
-	  (cxml::split-qname qname)
-	(values local-name
-		(if (or prefix (not attributep))
-		    (xpath:environment-find-namespace env prefix)
-		    "")
-		prefix))
+	  (cxml::split-qname str)
+	(unless
+	    ;; FIXME: cxml should really offer a function that does
+	    ;; checks for NCName and QName in a sensible way for user code.
+	    ;; cxml::split-qname is tailored to the needs of the parser.
+	    ;;
+	    ;; For now, let's just check the syntax explicitly.
+	    (and (or (null prefix) (xpath::nc-name-p prefix))
+		 (xpath::nc-name-p local-name))
+	  (xslt-error "not a qname: ~A" str))
+	(values prefix local-name))
     (cxml:well-formedness-violation ()
-      (xslt-error "not a qname: ~A" qname))))
+      (xslt-error "not a qname: ~A" str))))
+
+(defun decode-qname (qname env attributep)
+  (multiple-value-bind (prefix local-name)
+      (split-qname qname)
+    (values local-name
+	    (if (or prefix (not attributep))
+		(xpath:environment-find-namespace env prefix)
+		"")
+	    prefix)))
 
 (defmethod xpath:environment-find-namespace ((env xslt-environment) prefix)
   (cdr (assoc prefix *namespaces* :test 'equal)))
@@ -206,13 +220,20 @@
 
 (defstruct mode (templates nil))
 
-(defun find-mode (mode stylesheet)
-  (gethash mode (stylesheet-modes stylesheet)))
+(defun find-mode (stylesheet local-name &optional uri)
+  (gethash (cons local-name uri) (stylesheet-modes stylesheet)))
 
-(defun ensure-mode (mode stylesheet)
-  (or (find-mode mode stylesheet)
-      (setf (gethash mode (stylesheet-modes stylesheet))
+(defun ensure-mode (stylesheet &optional local-name uri)
+  (or (find-mode stylesheet local-name uri)
+      (setf (gethash (cons local-name uri) (stylesheet-modes stylesheet))
 	    (make-mode))))
+
+(defun ensure-mode/qname (stylesheet qname env)
+  (if qname
+      (multiple-value-bind (local-name uri)
+	  (decode-qname qname env)
+	(ensure-mode stylesheet local-name uri))
+      (find-mode stylesheet nil)))
 
 (defun acons-namespaces (element &optional (bindings *namespaces*))
   (map-namespace-declarations (lambda (prefix uri)
@@ -221,6 +242,7 @@
   bindings)
 
 (defvar *excluded-namespaces* (list *xsl*))
+(defvar *empty-mode*)
 
 (defun parse-stylesheet (d)
   (let* ((d (cxml:parse d (cxml-stp:make-builder)))
@@ -236,7 +258,7 @@
 		 (or (equal (stp:local-name <transform>) "transform")
 		     (equal (stp:local-name <transform>) "stylesheet")))
       (xslt-error "not a stylesheet"))
-    (ensure-mode "" stylesheet)
+    (ensure-mode stylesheet nil)
     (parse-exclude-result-prefixes! <transform> env)
     (parse-global-variables! stylesheet <transform>)
     (parse-templates! stylesheet <transform> env)
@@ -410,14 +432,15 @@
   (dolist (<template> (stp:filter-children (of-name "template") <transform>))
     (let ((*namespaces* (acons-namespaces <template>)))
       (dolist (template (compile-template <template> env))
-        (when (template-name template)
-          (setf (gethash (template-name template)
-                         (stylesheet-named-templates stylesheet))
-                template))
-	(push template
-              (mode-templates
-               (ensure-mode (template-mode template)
-                            stylesheet)))))))
+        (if (template-name template)
+	    (setf (gethash (template-name template)
+			   (stylesheet-named-templates stylesheet))
+		  template)
+	    (let ((mode (ensure-mode/qname stylesheet
+					   (template-mode-qname template)
+					   env)))
+	      (setf (template-mode template) mode)
+	      (push template (mode-templates mode))))))))
 
 
 ;;;; APPLY-STYLESHEET
@@ -449,7 +472,8 @@
    (lambda ()
      (let ((*binding-frames* (empty-bindings))
 	   (*stylesheet* stylesheet)
-	   (*mode* (find-mode "" stylesheet))
+	   (*mode* (find-mode stylesheet nil))
+	   (*empty-mode* (make-mode))
 	   (globals (stylesheet-global-variables stylesheet))
 	   (ctx (xpath:make-context
 		 (make-whitespace-stripper
@@ -591,6 +615,7 @@
   name
   priority
   mode
+  mode-qname
   params
   body)
 
@@ -694,7 +719,7 @@
                        (make-template :match-expression expression
                                       :match-thunk match-thunk
                                       :priority p
-                                      :mode (or mode "")
+                                      :mode-qname mode
                                       :params param-bindings
                                       :body outer-body-thunk)))
                    (parse-pattern match))))))))
