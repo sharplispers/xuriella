@@ -58,8 +58,9 @@
 	    exprs))
       exprs))
 
-(defun parse-body (node &optional (start 0))
-  (let ((n (stp:count-children-if #'identity node)))
+(defun parse-body (node &optional (start 0) (param-names '()))
+  (let ((n (stp:count-children-if #'identity node))
+	(all-names param-names))
     (labels ((recurse (i)
 	       (when (< i n)
 		 (let ((child (stp:nth-child i node)))
@@ -69,12 +70,17 @@
 			(stp:with-attributes (name select) child
 			  (when (and select (stp:list-children child))
 			    (xslt-error "variable with select and body"))
+			  (push name all-names)
 			  `((let ((,name ,(or select
 					      `(progn ,@(parse-body child)))))
 			      ,@(recurse (1+ i)))))
 			(cons (parse-instruction child)
 			      (recurse (1+ i)))))))))
-      (recurse start))))
+      (let ((result (recurse start)))
+	(if all-names
+	    `((xsl:with-duplicates-check (,@all-names)
+		,@result))
+	    result)))))
 
 (defun parse-param (node)
   ;; FIXME: empty body?

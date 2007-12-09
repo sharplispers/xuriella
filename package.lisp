@@ -20,6 +20,7 @@
 	   #:for-each
 	   #:with-namespaces
 	   #:with-excluded-namespaces
+	   #:with-duplicates-check
 	   #:copy-of
 	   #:message
 	   #:terminate

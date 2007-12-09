@@ -389,7 +389,7 @@ PASS Variables__84633 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84633.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84633.xuriella
 
-FAIL Variables__84634 [XPath-Data-Model]: expected error not signalled: 
+PASS Variables__84634 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/84634.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84634.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84634.saxon
@@ -425,7 +425,7 @@ PASS Variables__84709 [XPath-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84709.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84709.xuriella
 
-FAIL Variables__84710 [XPath-Data-Model]: expected error not signalled: 
+PASS Variables__84710 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/84710.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84710.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84710.saxon
@@ -821,4 +821,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 118/135 tests.
+Passed 120/135 tests.

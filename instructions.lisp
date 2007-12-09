@@ -321,6 +321,18 @@
     (let ((*excluded-namespaces* (append uris *excluded-namespaces*)))
       (compile-instruction `(progn ,@body) env))))
 
+(define-instruction xsl:with-duplicates-check (args env)
+  (destructuring-bind ((&rest qnames) &rest body) args
+    (let ((seen '()))
+      (dolist (qname qnames)
+	(multiple-value-bind (local-name uri)
+	    (decode-qname qname env nil)
+	  (let ((key (cons local-name uri)))
+	    (when (find key seen :test #'equal)
+	      (xslt-error "duplicate variable: ~A, ~A" local-name uri))
+	    (push key seen)))))
+    (compile-instruction `(progn ,@body) env)))
+
 (defstruct (result-tree-fragment
 	     (:constructor make-result-tree-fragment (node)))
   node)

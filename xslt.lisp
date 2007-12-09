@@ -707,7 +707,7 @@
           while (namep child "param")
           collect (parse-param child) into params
           finally (return (values params i)))
-      (let* ((body (parse-body <template> body-pos))
+      (let* ((body (parse-body <template> body-pos (mapcar #'car params)))
              (param-bindings (compile-var-bindings params env))
              (body-thunk (compile-instruction `(progn ,@body) env)) ; progn instead of scoped-progn as a frame with params is added by invoke-template
              (outer-body-thunk
