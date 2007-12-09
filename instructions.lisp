@@ -320,10 +320,12 @@
     (let ((*excluded-namespaces* (append uris *excluded-namespaces*)))
       (compile-instruction `(progn ,@body) env))))
 
-;;; FIXME
 (defstruct (result-tree-fragment
 	     (:constructor make-result-tree-fragment (node)))
   node)
+
+(defmethod xpath-protocol:node-p ((node result-tree-fragment))
+  t)
 
 (defmethod xpath-protocol:string-value ((node result-tree-fragment))
   (xpath-protocol:string-value (result-tree-fragment-node node)))
@@ -333,8 +335,7 @@
 	 (with-xml-output (stp:make-builder)
 	   (with-element ("fragment" "")
 	     (funcall thunk ctx)))))
-    (xpath::make-node-set
-     (list (make-result-tree-fragment (stp:document-element document))))))
+    (make-result-tree-fragment (stp:document-element document))))
 
 (define-instruction let (args env)
   (destructuring-bind ((&rest forms) &rest body) args

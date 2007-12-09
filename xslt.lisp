@@ -475,29 +475,32 @@
     (setf source-document (cxml:parse source-document (stp:make-builder))))
   (invoke-with-output-sink
    (lambda ()
-     (let ((*binding-frames* (empty-bindings))
-	   (*stylesheet* stylesheet)
-	   (*mode* (find-mode stylesheet nil))
-	   (*empty-mode* (make-mode))
-	   (globals (stylesheet-global-variables stylesheet))
-	   (ctx (xpath:make-context
-		 (make-whitespace-stripper
-		  source-document
-		  (stylesheet-strip-tests stylesheet)))))
-       (progv
-	   (mapcar #'variable-gensym globals)
-	   (make-list (length globals) :initial-element nil)
-	 (mapc (lambda (spec)
-		 (when (variable-param-p spec)
-		   (setf (get-frame-value (variable-gensym spec))
-			 (find-parameter-value (variable-local-name spec)
-					       (variable-uri spec)
-					       parameters))))
-	       globals)
-	 (mapc (lambda (spec)
-		 (funcall (variable-thunk spec) ctx))
-	       globals)
-	 (apply-templates ctx))))
+     (handler-case*
+	 (let ((*binding-frames* (empty-bindings))
+	       (*stylesheet* stylesheet)
+	       (*mode* (find-mode stylesheet nil))
+	       (*empty-mode* (make-mode))
+	       (globals (stylesheet-global-variables stylesheet))
+	       (ctx (xpath:make-context
+		     (make-whitespace-stripper
+		      source-document
+		      (stylesheet-strip-tests stylesheet)))))
+	   (progv
+	       (mapcar #'variable-gensym globals)
+	       (make-list (length globals) :initial-element nil)
+	     (mapc (lambda (spec)
+		     (when (variable-param-p spec)
+		       (setf (get-frame-value (variable-gensym spec))
+			     (find-parameter-value (variable-local-name spec)
+						   (variable-uri spec)
+						   parameters))))
+		   globals)
+	     (mapc (lambda (spec)
+		     (funcall (variable-thunk spec) ctx))
+		   globals)
+	     (apply-templates ctx)))
+       (xpath:xpath-error (c)
+			  (xslt-error "~A" c))))
    stylesheet
    output))
 

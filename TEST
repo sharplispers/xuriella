@@ -481,28 +481,7 @@ PASS Variables__84712 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84712.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84712.xuriella
 
-FAIL Variables__91490 [XPath-Data-Model]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:CHILD-PIPE (8)>
-when called with arguments
-  (#S(XURIELLA::RESULT-TREE-FRAGMENT
-      :NODE #.(CXML-STP:ELEMENT
-               #| :PARENT of type DOCUMENT |#
-               :CHILDREN '(#.(CXML-STP:ELEMENT
-                              #| :PARENT of type ELEMENT |#
-                              :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
-                                               #| :PARENT of type ELEMENT |#
-                                               :VALUE "test"
-                                               :LOCAL-NAME "name"))
-                              :CHILDREN '(#.(CXML-STP:ELEMENT
-                                             #| :PARENT of type ELEMENT |#
-                                             :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
-                                                              #| :PARENT of type ELEMENT |#
-                                                              :VALUE "attrtest"
-                                                              :LOCAL-NAME "name"))
-                                             :LOCAL-NAME "AttributeType"))
-                              :LOCAL-NAME "ElementType"))
-               :LOCAL-NAME "fragment"))).
+PASS Variables__91490 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/91490.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__91490.saxon
@@ -949,4 +928,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 113/131 tests.
+Passed 114/131 tests.
