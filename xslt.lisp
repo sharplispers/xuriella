@@ -197,7 +197,8 @@
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defvar *xsl* "http://www.w3.org/1999/XSL/Transform")
-  (defvar *xml* "http://www.w3.org/XML/1998/namespace"))
+  (defvar *xml* "http://www.w3.org/XML/1998/namespace")
+  (defvar *html* "http://www.w3.org/1999/xhtml"))
 
 (defun of-name (local-name)
   (stp:of-name local-name *xsl*))
@@ -212,7 +213,6 @@
 
 (defstruct stylesheet
   (modes (make-hash-table :test 'equal))
-  (html-output-p nil)
   (global-variables ())
   (output-specification (make-output-specification))
   (strip-tests nil)
@@ -315,8 +315,10 @@
 
 (defstruct (output-specification
 	     (:conc-name "OUTPUT-"))
+  method
   indent
-  omit-xml-declaration)
+  omit-xml-declaration
+  encoding)
 
 (defun parse-output! (stylesheet <transform>)
   (let ((outputs (stp:filter-children (of-name "output") <transform>)))
@@ -329,8 +331,9 @@
       (let ((<output> (car outputs))
 	    (spec (stylesheet-output-specification stylesheet)))
 	(stp:with-attributes (;; version
+			      method
 			      indent
-;;; 			      encoding
+ 			      encoding
 ;;; 			      media-type
 ;;; 			      doctype-system
 ;;; 			      doctype-public
@@ -339,7 +342,9 @@
 ;;; 			      cdata-section-elements
 			      )
 	    <output>
+	  (setf (output-method spec) method)
 	  (setf (output-indent spec) indent)
+	  (setf (output-encoding spec) encoding)
 	  (setf (output-omit-xml-declaration spec) omit-xml-declaration))))))
 
 (defun compile-global-variable (<variable> env) ;; also for <param>
@@ -583,31 +588,34 @@
 			      stylesheet
 			      (make-output-sink stylesheet output)))
     ((or hax:abstract-handler sax:abstract-handler)
-     (when (equal (output-omit-xml-declaration
-		   (stylesheet-output-specification stylesheet))
-		  "yes")
-       (setf (cxml:omit-xml-declaration-p output) t))
      (with-xml-output output
        (funcall fn)))))
 
 (defun make-output-sink (stylesheet stream)
-  (if (stylesheet-html-output-p stylesheet)
-      (if stream
-	  (let ((et (stream-element-type stream)))
-	    (cond
-	      ((or (null et) (subtypep et '(unsigned-byte 8)))
-	       (chtml:make-octet-stream-sink stream))
-	      ((subtypep et 'character)
-	       (chtml:make-character-stream-sink stream))))
-	  (chtml:make-string-sink))
-      (if stream
-	  (let ((et (stream-element-type stream)))
-	    (cond
-	      ((or (null et) (subtypep et '(unsigned-byte 8)))
-	       (cxml:make-octet-stream-sink stream))
-	      ((subtypep et 'character)
-	       (cxml:make-character-stream-sink stream))))
-	  (cxml:make-string-sink))))
+  (let* ((ystream
+	  (if stream
+	      (let ((et (stream-element-type stream)))
+		(cond
+		  ((or (null et) (subtypep et '(unsigned-byte 8)))
+		   (runes:make-octet-stream-ystream stream))
+		  ((subtypep et 'character)
+		   (runes:make-character-stream-ystream stream))))
+	      (runes:make-rod-ystream)))
+	 (output-spec (stylesheet-output-specification stylesheet))
+	 (omit-xml-declaration-p
+	  (equal (output-omit-xml-declaration output-spec) "yes"))
+	 (sax-target
+	  (make-instance 'cxml::sink
+			 :ystream ystream
+			 :omit-xml-declaration-p omit-xml-declaration-p)))
+    (if (equalp (output-method (stylesheet-output-specification stylesheet))
+		"HTML")
+	(make-instance 'combi-sink
+		       :hax-target (make-instance 'chtml::sink
+						  :ystream ystream)
+		       :sax-target sax-target
+		       :encoding (output-encoding output-spec))
+	sax-target)))
 
 (defstruct template
   match-expression

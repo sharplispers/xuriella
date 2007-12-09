@@ -446,32 +446,12 @@ PASS Variables__84635 [XPath-Data-Model]: saxon T, xsltproc T
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84635.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84635.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 8, column 11 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 7, column 8 in NIL
-
-FAIL Variables__84636 [XPath-Data-Model]: output doesn't match
+PASS Variables__84636 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Variables/84636.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84636.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84636.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84636.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84636.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 15, column 11 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 14, column 8 in NIL
 
 FAIL Variables__84637 [XPath-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Variables/84637.noindent-xsl
@@ -487,32 +467,12 @@ PASS Variables__84697 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84697.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84697.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 8, column 11 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 7, column 8 in NIL
-
-FAIL Variables__84709 [XPath-Data-Model]: output doesn't match
+PASS Variables__84709 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Variables/84709.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84709.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84709.saxon
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84709.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84709.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 15, column 11 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "meta" / (:ETAG "head")
-Context:
-  Line 14, column 8 in NIL
 
 FAIL Variables__84712 [XPath-Data-Model]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Variables/84712.noindent-xsl
@@ -989,4 +949,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 109/131 tests.
+Passed 111/131 tests.

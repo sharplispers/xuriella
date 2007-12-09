@@ -391,18 +391,20 @@
     (format t "~&Passed ~D/~D tests.~%" pass total)))
 
 (defun parse-test (<test-case>)
-  (make-instance 'test-case
-		 :id (stp:attribute-value <test-case> "id")
-		 :category (stp:attribute-value <test-case> "category")
-		 :operation (stp:attribute-value <test-case> "operation")
-		 :data-pathname (stp:attribute-value <test-case> "data")
-		 :stylesheet-pathname (stp:attribute-value
-				       <test-case> "stylesheet")
-		 :data-pathname-2 (stp:attribute-value <test-case> "data-2")
-		 :stylesheet-pathname-2 (stp:attribute-value
-					 <test-case> "stylesheet-2")
-		 :output-pathname (stp:attribute-value <test-case> "output")
-		 :output-compare (stp:attribute-value <test-case> "compare")))
+  (stp:with-attributes (id category operation
+			   data stylesheet data-2 stylesheet-2
+			   output compare)
+      <test-case>
+    (make-instance 'test-case
+		   :id id
+		   :category category
+		   :operation operation
+		   :data-pathname data
+		   :stylesheet-pathname stylesheet
+		   :data-pathname-2 data-2
+		   :stylesheet-pathname-2 stylesheet-2
+		   :output-pathname output
+		   :output-compare compare)))
 
 ;; read from file P, skipping the XMLDecl or TextDecl and Doctype at the
 ;; beginning, if any.
@@ -457,13 +459,66 @@
 					 ""))))))
     d))
 
-(defun output-equal-p (p q)
+(defun output-equal-p (compare p q)
+  (handler-case
+      (ecase compare
+	(:xml (xml-output-equal-p p q))
+	(:html (html-output-equal-p p q)))
+    ((or error parse-number::invalid-number) (c)
+      (warn "comparison failed: ~A" c)
+      nil)))
+
+(defun xml-output-equal-p (p q)
   (let ((r (parse-for-comparison p))
 	(s (parse-for-comparison q)))
     (node= (stp:document-element r) (stp:document-element s))))
 
+;; FIXME: don't do this in <pre> etc.
+(defun normalize-html-whitespace (node)
+  (when (typep node 'stp:parent-node)
+    ;; ignore newlines after start tags completely
+    (let ((first (stp:first-child node)))
+      (when (and (typep first 'stp:text)
+		 (alexandria:starts-with #\newline (stp:data first)))
+	(setf (stp:data first) (subseq (stp:data first) 1))))
+    ;; ignore newlines before end tags completely
+    (let ((last (stp:last-child node)))
+      (when (and (typep last 'stp:text)
+		 (alexandria:ends-with #\newline (stp:data last)))
+	(setf (stp:data last)
+	      (subseq (stp:data last) 0 (length (stp:data last))))))
+    ;; normalize sequences of whitespace
+    (stp:do-children (child node)
+      (if (typep child 'stp:text)
+	  (setf (stp:data child) (normalize-whitespace (stp:data child)))
+	  (normalize-html-whitespace child)))
+    ;; just to be sure, join adjacent nodes
+    (cxml-stp-impl::normalize-text-nodes! node)))
+
+;; FIXME: this check is too lenient, because chtml is an error-correcting
+;; parser.
+(defun html-output-equal-p (p q)
+  (let ((r (chtml:parse (pathname p) (stp:make-builder)))
+	(s (chtml:parse (pathname q) (stp:make-builder))))
+    (normalize-html-whitespace r)
+    (normalize-html-whitespace s)
+    (node= (stp:document-element r) (stp:document-element s))))
+
 (defun strip-addresses (str)
   (cl-ppcre:regex-replace-all "{[0-9a-fA-F]+}\\>" str "{xxxxxxxx}>"))
+
+(xpath:with-namespaces ((nil #.*xsl*))
+  (defun slurp-output-method (p)
+    (let* ((d (handler-bind
+		  ((warning #'muffle-warning))
+		(cxml:parse (pathname p) (stp:make-builder))))
+	   (output (xpath:first-node (xpath:evaluate "//output" d))))
+      (if output
+	  (let ((method (stp:attribute-value output "method")))
+	    (if method
+		(intern (string-upcase method) :keyword)
+		:xml))
+	  :xml))))
 
 (defun run-test (test)
   (let ((expected-saxon (test-output-pathname test "saxon"))
@@ -504,20 +559,17 @@
       (cond
 	((equal (test-operation test) "standard")
 	 (handler-case
-	     (progn
+	     (let ((output-method
+		    (slurp-output-method (test-stylesheet-pathname test))))
 	       (doit)
 	       (let ((saxon-matches-p
-		      (handler-case
-			  (output-equal-p expected-saxon actual)
-			((or error parse-number::invalid-number) (c)
-			  (warn "comparison failed: ~A" c)
-			  nil)))
+		      (output-equal-p output-method
+				      expected-saxon
+				      actual))
 		     (xsltproc-matches-p
-		      (handler-case
-			  (output-equal-p expected-xsltproc actual)
-			((or error parse-number::invalid-number) (c)
-			  (warn "comparison failed: ~A" c)
-			  nil))))
+		      (output-equal-p output-method
+				      expected-xsltproc
+				      actual)))
 		 (cond
 		   ((or saxon-matches-p xsltproc-matches-p)
 		    (report t ": saxon ~A, xsltproc ~A~:[~; (MISMATCH)~]"
