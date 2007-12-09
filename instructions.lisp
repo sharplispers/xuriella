@@ -197,7 +197,7 @@
   (destructuring-bind
 	((local-name &optional (uri "") suggested-prefix) &body body)
       args
-    (let ((body-thunk (compile-instruction `(progn ,@body) env))
+    (let ((body-thunk (compile-instruction `(scoped-progn ,@body) env))
 	  (namespaces (remove-excluded-namespaces *namespaces*)))
       (lambda (ctx)
 	(with-element (local-name uri

@@ -640,7 +640,7 @@ FAIL Variables_xslt_variable_qname_test2 [XPath-Data-Model]: output doesn't matc
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test2.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables_xslt_variable_qname_test2.xuriella
 
-FAIL Variables_VariableScopeWithinLRE [XPath-Data-Model]: duplicate definition of G4954
+PASS Variables_VariableScopeWithinLRE [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/VariableScopeWithinLRE.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VariableScopeWithinLRE.saxon
@@ -994,4 +994,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 102/131 tests.
+Passed 103/131 tests.
