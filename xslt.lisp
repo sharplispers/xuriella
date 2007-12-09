@@ -182,7 +182,7 @@
 (defmacro with-text-output-sink ((var) &body body)
   `(invoke-with-text-output-sink (lambda (,var) ,@body)))
 
-(defclass text-output-sink (sax:content-handler)
+(defclass text-output-sink (sax:default-handler)
   ((target :initarg :target :accessor text-output-sink-target)))
 
 (defmethod sax:characters ((sink text-output-sink) data)
