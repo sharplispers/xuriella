@@ -101,7 +101,9 @@
 ;;;; Strip whitespace in source documents
 
 (defun make-whitespace-stripper (node tests)
-  (make-stripping-node nil node tests nil))
+  (if tests
+      (make-stripping-node nil node tests nil)
+      node))
 
 (defstruct (stripping-node
 	     (:constructor make-stripping-node/low (parent target)))
