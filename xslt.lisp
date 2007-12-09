@@ -161,17 +161,21 @@
 (defmethod xpath:environment-find-variable
     ((env lexical-xslt-environment) lname uri)
   (let ((gensym (cdr (assoc (cons lname uri) *variables* :test 'equal))))
-    (and gensym
-	 (lambda (ctx)
-	   (declare (ignore ctx))
-	   (get-frame-value gensym)))))
+    (when gensym
+      (values (lambda (ctx)
+		(declare (ignore ctx))
+		(get-frame-value gensym))
+	      gensym))))
 
-(defclass global-variable-environment (xslt-environment)
+(defclass global-variable-environment (lexical-xslt-environment)
   ((global-variables :initarg :global-variables :accessor global-variables)))
 
 (defmethod xpath:environment-find-variable
     ((env global-variable-environment) lname uri)
-  (gethash (cons lname uri) (global-variables env)))
+  (multiple-value-bind (lexical gensym) (call-next-method)
+    (if (and lexical (not (get gensym 'globalp)))
+	lexical
+	(gethash (cons lname uri) (global-variables env)))))
 
 
 ;;;; TEXT-OUTPUT-SINK
@@ -384,6 +388,7 @@
       ;; For the normal compilation environment of templates, install it
       ;; into *VARIABLES*:
       (let ((gensym (intern-variable local-name uri)))
+	(setf (get gensym 'globalp) t)
         ;; For the evaluation of a global variable itself, build a thunk
         ;; that lazily resolves other variables:
         (let* ((value-thunk :unknown)
@@ -399,7 +404,8 @@
                (thunk-setter
                 (lambda ()
                   (setf value-thunk
-                        (compile-global-variable <variable> global-env)))))
+                        (let ((*variables* *variables*))
+			  (compile-global-variable <variable> global-env))))))
           (setf (gethash (cons local-name uri) (global-variables global-env))
                 global-variable-thunk)
           (make-variable :gensym gensym

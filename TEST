@@ -488,7 +488,7 @@ PASS Variables__91490 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__91490.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__91490.xuriella
 
-FAIL Variables_GlobalVarHaveLocalVarDefinedWithin [XPath-Data-Model]: undeclared variable: y2 in namespace 
+PASS Variables_GlobalVarHaveLocalVarDefinedWithin [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variables_VarsDefinedInGlobalVars.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variables_VarsDefinedInGlobalVars.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_GlobalVarHaveLocalVarDefinedWithin.saxon
@@ -928,4 +928,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 114/131 tests.
+Passed 115/131 tests.
