@@ -86,44 +86,11 @@
 
 (defparameter *namespaces* *initial-namespaces*)
 
-(defparameter *variables* '())
+(defvar *global-variable-declarations*)
+(defvar *lexical-variable-declarations*)
 
-(defun intern-variable (local-name uri)
-  (let ((gensym (cdr (assoc (cons local-name uri) *variables* :test 'equal))))
-    (unless gensym
-      (push (cons (cons local-name uri) (setf gensym (gensym))) *variables*))
-    gensym))
-
-(defparameter *binding-frames* '())
-
-(defun empty-bindings () (list nil))
-
-(defmacro with-fresh-frame (&body body)
-  `(let ((*binding-frames* (cons '() *binding-frames*)))
-     ,@body))
-
-(defun get-frame-value (name &optional (error-if-not-found-p t))
-  (labels ((get-it (frames)
-             (let ((pair (assoc name (first frames))))
-               (cond ((not (null pair)) (values (cdr pair) t))
-                     ((not (null (rest frames)))
-                      (get-it (rest frames)))
-                     (error-if-not-found-p
-                      (xslt-error "unknown variable: ~s" name))
-                     (t (values nil nil))))))
-    (get-it *binding-frames*)))
-
-(defun has-inner-binding-p (name)
-  (and (assoc name (first *binding-frames*)) t))
-
-(defun (setf get-frame-value) (value name)
-  (let ((existing-pair (assoc name (first *binding-frames*))))
-    (if existing-pair
-        (setf (cdr existing-pair) value)
-        (push (cons name value) (first *binding-frames*)))
-    value))
-
-(defun global-bindings () (last *binding-frames* 1))
+(defvar *global-variable-values*)
+(defvar *lexical-variable-values*)
 
 (defclass xslt-environment () ())
 
@@ -156,26 +123,68 @@
 (defmethod xpath:environment-find-namespace ((env xslt-environment) prefix)
   (cdr (assoc prefix *namespaces* :test 'equal)))
 
+(defun find-variable-index (local-name uri table)
+  (position (cons local-name uri) table :test 'equal))
+
+(defun intern-global-variable (local-name uri)
+  (or (find-variable-index local-name uri *global-variable-declarations*)
+      (push-variable local-name uri *global-variable-declarations*)))
+
+(defun push-variable (local-name uri table)
+  (prog1
+      (length table)
+    (vector-push-extend (cons local-name uri) table)))
+
+(defun lexical-variable-value (index &optional (errorp t))
+  (let ((result (svref *lexical-variable-values* index)))
+    (when errorp
+      (assert (not (eq result 'unbound))))
+    result))
+
+(defun (setf lexical-variable-value) (newval index)
+  (assert (not (eq newval 'unbound)))
+  (setf (svref *lexical-variable-values* index) newval))
+
+(defun global-variable-value (index &optional (errorp t))
+  (let ((result (svref *global-variable-values* index)))
+    (when errorp
+      (assert (not (eq result 'unbound))))
+    result))
+
+(defun (setf global-variable-value) (newval index)
+  (assert (not (eq newval 'unbound)))
+  (setf (svref *global-variable-values* index) newval))
+
+(defmethod xpath:environment-find-variable
+    ((env xslt-environment) lname uri)
+  (let ((index
+	 (find-variable-index lname uri *lexical-variable-declarations*)))
+    (when index
+      (lambda (ctx)
+	(declare (ignore ctx))
+	(svref *lexical-variable-values* index)))))
+
 (defclass lexical-xslt-environment (xslt-environment) ())
 
 (defmethod xpath:environment-find-variable
     ((env lexical-xslt-environment) lname uri)
-  (let ((gensym (cdr (assoc (cons lname uri) *variables* :test 'equal))))
-    (when gensym
-      (values (lambda (ctx)
-		(declare (ignore ctx))
-		(get-frame-value gensym))
-	      gensym))))
+  (or (call-next-method)
+      (let ((index
+	     (find-variable-index lname uri *global-variable-declarations*)))
+	(when index
+	  (lambda (ctx)
+	    (declare (ignore ctx))
+	    (svref *global-variable-values* index))))))
 
-(defclass global-variable-environment (lexical-xslt-environment)
-  ((global-variables :initarg :global-variables :accessor global-variables)))
+(defclass global-variable-environment (xslt-environment)
+  ((initial-global-variable-thunks
+    :initarg :initial-global-variable-thunks
+    :accessor initial-global-variable-thunks)))
 
 (defmethod xpath:environment-find-variable
     ((env global-variable-environment) lname uri)
-  (multiple-value-bind (lexical gensym) (call-next-method)
-    (if (and lexical (not (get gensym 'globalp)))
-	lexical
-	(gethash (cons lname uri) (global-variables env)))))
+  (or (call-next-method)
+      (gethash (cons lname uri) (initial-global-variable-thunks env))))
 
 
 ;;;; TEXT-OUTPUT-SINK
@@ -252,10 +261,10 @@
   (let* ((d (cxml:parse d (make-text-normalizer (cxml-stp:make-builder))))
 	 (<transform> (stp:document-element d))
 	 (*namespaces* (acons-namespaces <transform>))
-	 (*variables* nil)
 	 (stylesheet (make-stylesheet))
 	 (env (make-instance 'lexical-xslt-environment))
-	 (*excluded-namespaces* *excluded-namespaces*))
+	 (*excluded-namespaces* *excluded-namespaces*)
+	 (*global-variable-declarations* (make-empty-declaration-array)))
     (strip-stylesheet <transform>)
     ;; FIXME: handle embedded stylesheets
     (unless (and (equal (stp:namespace-uri <transform>) *xsl*)
@@ -351,27 +360,39 @@
 	  (setf (output-encoding spec) encoding)
 	  (setf (output-omit-xml-declaration spec) omit-xml-declaration))))))
 
+(defun make-empty-declaration-array ()
+  (make-array 1 :fill-pointer 0 :adjustable t))
+
+(defun make-variable-value-array (n-lexical-variables)
+  (make-array n-lexical-variables :initial-element 'unbound))
+
 (defun compile-global-variable (<variable> env) ;; also for <param>
   (stp:with-attributes (name select) <variable>
     (when (and select (stp:list-children <variable>))
       (xslt-error "variable with select and body"))
-    (cond
-      (select
-	(compile-xpath select env))
-      ((stp:list-children <variable>)
-       (let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
-	      (inner-thunk (compile-instruction inner-sexpr env)))
-	 (lambda (ctx)
-	   (apply-to-result-tree-fragment ctx inner-thunk))))
-      (t
-       (lambda (ctx)
-	 (declare (ignore ctx))
-	 "")))))
+    (let* ((*lexical-variable-declarations* (make-empty-declaration-array))
+	   (inner (cond
+		    (select
+		     (compile-xpath select env))
+		    ((stp:list-children <variable>)
+		     (let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
+			    (inner-thunk (compile-instruction inner-sexpr env)))
+		       (lambda (ctx)
+			 (apply-to-result-tree-fragment ctx inner-thunk))))
+		    (t
+		     (lambda (ctx)
+		       (declare (ignore ctx))
+		       ""))))
+	   (n-lexical-variables (length *lexical-variable-declarations*)))
+      (lambda (ctx)
+	(let ((*lexical-variable-values*
+	       (make-variable-value-array n-lexical-variables)))
+	  (funcall inner ctx))))))
 
 (defstruct (variable-information
 	     (:constructor make-variable)
 	     (:conc-name "VARIABLE-"))
-  gensym
+  index
   thunk
   local-name
   uri
@@ -386,29 +407,38 @@
     (multiple-value-bind (local-name uri)
 	(decode-qname qname global-env nil)
       ;; For the normal compilation environment of templates, install it
-      ;; into *VARIABLES*:
-      (let ((gensym (intern-variable local-name uri)))
-	(setf (get gensym 'globalp) t)
+      ;; into *GLOBAL-VARIABLE-DECLARATIONS*:
+      (let ((index (intern-global-variable local-name uri)))
         ;; For the evaluation of a global variable itself, build a thunk
-        ;; that lazily resolves other variables:
+        ;; that lazily resolves other variables, stored into
+	;; INITIAL-GLOBAL-VARIABLE-THUNKS:
         (let* ((value-thunk :unknown)
                (global-variable-thunk
                 (lambda (ctx)
-                  (when (eq (get-frame-value gensym nil) 'seen)
-                    (xslt-error "recursive variable definition"))
-                  (or (get-frame-value gensym nil)
-                      (progn
-                        (setf (get-frame-value gensym) 'seen)
-                        (setf (get-frame-value gensym)
-                              (funcall value-thunk ctx))))))
+                  (let ((v (global-variable-value index nil)))
+		    (when (eq v 'seen)
+		      (xslt-error "recursive variable definition"))
+		    (cond
+		      ((eq v 'unbound)
+		       ;; (print (list :computing index))
+		       (setf (global-variable-value index) 'seen)
+		       (setf (global-variable-value index)
+			     (funcall value-thunk ctx))
+		       #+nil (print (list :done-computing index
+				    (global-variable-value index)))
+		       #+nil (global-variable-value index))
+		      (t
+		       #+nil(print (list :have
+				    index v))
+		       v)))))
                (thunk-setter
                 (lambda ()
                   (setf value-thunk
-                        (let ((*variables* *variables*))
-			  (compile-global-variable <variable> global-env))))))
-          (setf (gethash (cons local-name uri) (global-variables global-env))
+                        (compile-global-variable <variable> global-env)))))
+          (setf (gethash (cons local-name uri)
+			 (initial-global-variable-thunks global-env))
                 global-variable-thunk)
-          (make-variable :gensym gensym
+          (make-variable :index index
                          :local-name local-name
                          :uri uri
                          :thunk global-variable-thunk
@@ -419,7 +449,7 @@
   (defun parse-global-variables! (stylesheet <transform>)
     (let* ((table (make-hash-table :test 'equal))
 	   (global-env (make-instance 'global-variable-environment
-				      :global-variables table))
+				      :initial-global-variable-thunks table))
 	   (specs '()))
       (xpath:do-node-set
 	  (<variable> (xpath:evaluate "variable|param" <transform>))
@@ -482,29 +512,33 @@
   (invoke-with-output-sink
    (lambda ()
      (handler-case*
-	 (let ((*binding-frames* (empty-bindings))
-	       (*stylesheet* stylesheet)
-	       (*mode* (find-mode stylesheet nil))
-	       (*empty-mode* (make-mode))
-	       (globals (stylesheet-global-variables stylesheet))
-	       (ctx (xpath:make-context
-		     (make-whitespace-stripper
-		      source-document
-		      (stylesheet-strip-tests stylesheet)))))
-	   (progv
-	       (mapcar #'variable-gensym globals)
-	       (make-list (length globals) :initial-element nil)
-	     (mapc (lambda (spec)
-		     (when (variable-param-p spec)
-		       (setf (get-frame-value (variable-gensym spec))
-			     (find-parameter-value (variable-local-name spec)
-						   (variable-uri spec)
-						   parameters))))
-		   globals)
-	     (mapc (lambda (spec)
-		     (funcall (variable-thunk spec) ctx))
-		   globals)
-	     (apply-templates ctx)))
+	 (let* ((*stylesheet* stylesheet)
+		(*mode* (find-mode stylesheet nil))
+		(*empty-mode* (make-mode))
+		(global-variable-specs
+		 (stylesheet-global-variables stylesheet))
+		(*global-variable-values*
+		 (make-variable-value-array (length global-variable-specs)))
+		(ctx (xpath:make-context
+		      (make-whitespace-stripper
+		       source-document
+		       (stylesheet-strip-tests stylesheet)))))
+	   (mapc (lambda (spec)
+		   (when (variable-param-p spec)
+		     (let ((value
+			    (find-parameter-value (variable-local-name spec)
+						  (variable-uri spec)
+						  parameters)))
+		       (when value
+			 (setf (global-variable-value (variable-index spec))
+			       value)))))
+		 global-variable-specs)
+	   (mapc (lambda (spec)
+		   (funcall (variable-thunk spec) ctx))
+		 global-variable-specs)
+	   #+nil (print global-variable-specs)
+	   #+nil (print *global-variable-values*)
+	   (apply-templates ctx))
        (xpath:xpath-error (c)
 			  (xslt-error "~A" c))))
    stylesheet
@@ -521,11 +555,19 @@
            param-bindings))))
 
 (defun invoke-template (ctx template param-bindings)
-  (let ((*binding-frames* (global-bindings)))
-    (with-fresh-frame
-      (loop for (name value) in param-bindings
-            do (setf (get-frame-value name) value))
-      (funcall (template-body template) ctx))))
+  (let ((*lexical-variable-values*
+	 (make-variable-value-array (template-n-variables template))))
+    (loop
+       for (name-cons value) in param-bindings
+       for (nil index nil) = (find name-cons
+				   (template-params template)
+				   :test #'equal
+				   :key #'car)
+       do
+	 (unless index
+	   (xslt-error "invalid template parameter ~A" name-cons))
+	 (setf (lexical-variable-value index) value))
+    (funcall (template-body template) ctx)))
 
 (defun apply-templates (ctx &optional param-bindings)
   (let ((template (find-template ctx)))
@@ -634,7 +676,8 @@
   mode
   mode-qname
   params
-  body)
+  body
+  n-variables)
 
 (defun template-import-precedence (template)
   template
@@ -672,29 +715,30 @@
 		(cdr form)
 		(list form)))))
 
-(defun force-scoped-progn (value)
-  (if (eq (first value) 'scoped-progn)
-      value
-      (cons 'scoped-progn (rest value))))
-
 (defun compile-value-thunk (value env)
-  (if (and (listp value)
-           (or (eq (car value) 'progn)
-               (eq (car value) 'scoped-progn)))
-      (let ((inner-thunk (compile-instruction
-                          (force-scoped-progn value)
-                          env)))
+  (if (and (listp value) (eq (car value) 'progn))
+      (let ((inner-thunk (compile-instruction value env)))
         (lambda (ctx)
           (apply-to-result-tree-fragment ctx inner-thunk)))
       (compile-xpath value env)))
 
-(defun compile-var-bindings (forms env)
+(defun compile-var-bindings/nointern (forms env)
   (loop
     for (name value) in forms
     collect (multiple-value-bind (local-name uri)
                 (decode-qname name env nil)
-              (list (intern-variable local-name uri)
+              (list (cons local-name uri)
                     (compile-value-thunk value env)))))
+
+(defun compile-var-bindings (forms env)
+  (loop
+     for (cons thunk) in (compile-var-bindings/nointern forms env)
+     for (local-name . uri) = cons
+     collect (list cons
+		   (push-variable local-name
+				  uri
+				  *lexical-variable-declarations*)
+		   thunk)))
 
 (defun compile-template (<template> env)
   (stp:with-attributes (match name priority mode) <template>
@@ -707,17 +751,19 @@
           while (namep child "param")
           collect (parse-param child) into params
           finally (return (values params i)))
-      (let* ((body (parse-body <template> body-pos (mapcar #'car params)))
+      (let* ((*lexical-variable-declarations* (make-empty-declaration-array))
              (param-bindings (compile-var-bindings params env))
-             (body-thunk (compile-instruction `(progn ,@body) env)) ; progn instead of scoped-progn as a frame with params is added by invoke-template
+	     (body (parse-body <template> body-pos (mapcar #'car params)))
+             (body-thunk (compile-instruction `(progn ,@body) env))
              (outer-body-thunk
               #'(lambda (ctx)
                   ;; set params that weren't initialized by apply-templates
-                  (loop for (gensym param-thunk) in param-bindings
-                        unless (has-inner-binding-p gensym)
-                          do (setf (get-frame-value gensym)
+                  (loop for (name index param-thunk) in param-bindings
+                        when (eq (lexical-variable-value index nil) 'unbound)
+                          do (setf (lexical-variable-value index)
                                    (funcall param-thunk ctx)))
-                  (funcall body-thunk ctx))))
+                  (funcall body-thunk ctx)))
+	     (n-variables (length *lexical-variable-declarations*)))
         (append
          (when name
            (multiple-value-bind (local-name uri)
@@ -725,7 +771,8 @@
              (list
               (make-template :name (cons local-name uri)
                              :params param-bindings
-                             :body outer-body-thunk))))
+                             :body outer-body-thunk
+			     :n-variables n-variables))))
          (when match
            (mapcar (lambda (expression)
                      (let ((match-thunk
@@ -738,7 +785,8 @@
                                       :priority p
                                       :mode-qname mode
                                       :params param-bindings
-                                      :body outer-body-thunk)))
+                                      :body outer-body-thunk
+				      :n-variables n-variables)))
                    (parse-pattern match))))))))
 #+(or)
 (xuriella::parse-stylesheet #p"/home/david/src/lisp/xuriella/test.xsl")

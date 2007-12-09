@@ -43,12 +43,11 @@
 	  (then-thunk (compile-instruction then env))
 	  (else-thunk (when else (compile-instruction else env))))
       (lambda (ctx)
-        (with-fresh-frame
-          (cond
-            ((xpath:boolean-value (funcall test-thunk ctx))
-             (funcall then-thunk ctx))
-            (else-thunk
-             (funcall else-thunk ctx))))))))
+        (cond
+	  ((xpath:boolean-value (funcall test-thunk ctx))
+	   (funcall then-thunk ctx))
+	  (else-thunk
+	   (funcall else-thunk ctx)))))))
 
 (define-instruction when (args env)
   (destructuring-bind (test &rest body) args
@@ -62,9 +61,9 @@
   (if args
       (destructuring-bind ((test &body body) &rest clauses) args
 	(compile-instruction (if (eq test t)
-				 `(scoped-progn ,@body)
+				 `(progn ,@body)
 				 `(if ,test
-				      (scoped-progn ,@body)
+				      (progn ,@body)
 				      (cond ,@clauses)))
 			     env))
       (constantly nil)))
@@ -90,16 +89,6 @@
     (cxml:well-formedness-violation ()
       (xslt-error "not a qname: ~A" qname))))
 
-(define-instruction scoped-progn (args env)
-  (if args
-      (let ((first-thunk (compile-instruction (first args) env))
-	    (rest-thunk (compile-instruction `(progn ,@(rest args)) env)))
-	(lambda (ctx)
-          (with-fresh-frame
-            (funcall first-thunk ctx)
-            (funcall rest-thunk ctx))))
-      (constantly nil)))
-
 (define-instruction xsl:element (args env)
   (destructuring-bind ((name &key namespace use-attribute-sets)
 		       &body body)
@@ -107,7 +96,7 @@
     (declare (ignore use-attribute-sets)) ;fixme
     (multiple-value-bind (name-thunk constant-name-p)
 	(compile-attribute-value-template name env)
-      (let ((body-thunk (compile-instruction `(scoped-progn ,@body) env)))
+      (let ((body-thunk (compile-instruction `(progn ,@body) env)))
 	(if constant-name-p
 	    (compile-element/constant-name name namespace env body-thunk)
 	    (compile-element/runtime name-thunk namespace body-thunk))))))
@@ -140,7 +129,7 @@
   (destructuring-bind ((name &key namespace) &body body) args
     (multiple-value-bind (name-thunk constant-name-p)
 	(compile-attribute-value-template name env)
-      (let ((value-thunk (compile-instruction `(scoped-progn ,@body) env)))
+      (let ((value-thunk (compile-instruction `(progn ,@body) env)))
 	(if constant-name-p
 	    (compile-attribute/constant-name name namespace env value-thunk)
 	    (compile-attribute/runtime name-thunk namespace value-thunk))))))
@@ -197,7 +186,7 @@
   (destructuring-bind
 	((local-name &optional (uri "") suggested-prefix) &body body)
       args
-    (let ((body-thunk (compile-instruction `(scoped-progn ,@body) env))
+    (let ((body-thunk (compile-instruction `(progn ,@body) env))
 	  (namespaces (remove-excluded-namespaces *namespaces*)))
       (lambda (ctx)
 	(with-element (local-name uri
@@ -209,7 +198,6 @@
   (destructuring-bind ((local-name &optional uri suggested-prefix) value) args
     (let ((value-thunk (compile-attribute-value-template value env)))
       (lambda (ctx)
-	(declare (ignore ctx))
 	(write-attribute local-name
 			 uri
 			 (funcall value-thunk ctx)
@@ -224,7 +212,7 @@
 (define-instruction xsl:processing-instruction (args env)
   (destructuring-bind (name &rest body) args
     (let ((name-thunk (compile-attribute-value-template name env))
-	  (value-thunk (compile-instruction `(scoped-progn ,@body) env)))
+	  (value-thunk (compile-instruction `(progn ,@body) env)))
       (lambda (ctx)
 	(write-processing-instruction
 	 (funcall name-thunk ctx)
@@ -294,7 +282,7 @@
       (push decls body)
       (setf decls nil))
     (let ((select-thunk (compile-xpath select env))
-	  (body-thunk (compile-instruction `(scoped-progn ,@body) env))
+	  (body-thunk (compile-instruction `(progn ,@body) env))
 	  (sorter
 	   ;; fixme: parse decls here
 	   #'identity))
@@ -352,16 +340,22 @@
 
 (define-instruction let (args env)
   (destructuring-bind ((&rest forms) &rest body) args
-    (let* ((var-bindings (compile-var-bindings forms env))
-           (thunk (compile-instruction `(progn ,@body) env)))
-      (lambda (ctx)
-        ;; FIXME: should (again) detect duplicate definitions at compile time
-        (loop for (gensym var-thunk) in var-bindings
-              do (if (has-inner-binding-p gensym)
-                     (xslt-error "duplicate definition of ~A" gensym) ;; FIXME (find name by gensym)
-                     (setf (get-frame-value gensym)
-                           (funcall var-thunk ctx))))
-        (funcall thunk ctx)))))
+    (let* ((old-top (length *lexical-variable-declarations*))
+	   (vars-and-names (compile-var-bindings/nointern forms env))
+	   (vars-and-positions
+	    (loop for ((local-name . uri) thunk) in vars-and-names
+	       collect
+		 (list (push-variable local-name
+				      uri
+				      *lexical-variable-declarations*)
+		       thunk))))
+      (let ((thunk (compile-instruction `(progn ,@body) env)))
+	(fill *lexical-variable-declarations* nil :start old-top)
+	(lambda (ctx)
+	  (loop for (index var-thunk) in vars-and-positions
+	     do (setf (lexical-variable-value index)
+		      (funcall var-thunk ctx)))
+	  (funcall thunk ctx))))))
 
 (define-instruction let* (args env)
   (destructuring-bind ((&rest forms) &rest body) args
@@ -389,7 +383,8 @@
 (define-instruction xsl:copy (args env)
   (destructuring-bind ((&key use-attribute-sets) &rest rest)
       args
-    (let ((body (compile-instruction `(scoped-progn ,@rest) env)))
+    (declare (ignore use-attribute-sets))
+    (let ((body (compile-instruction `(progn ,@rest) env)))
       (lambda (ctx)
 	(let ((node (xpath:context-node ctx)))
 	  (cond
@@ -425,7 +420,7 @@
      (error "don't know how to copy node ~A" node))))
 
 (defun compile-message (fn args env)
-  (let ((thunk (compile-instruction `(scoped-progn ,@args) env)))
+  (let ((thunk (compile-instruction `(progn ,@args) env)))
     (lambda (ctx)
       (funcall fn
 	       (with-xml-output (cxml:make-string-sink)
@@ -448,7 +443,7 @@
 			    *mode*)))
 	    (apply-templates/list
 	     (xpath:all-nodes (funcall select-thunk ctx))
-	     (loop for (name value-thunk) in param-bindings
+	     (loop for (name nil value-thunk) in param-bindings
 		collect (list name (funcall value-thunk ctx))))))))))
 
 (define-instruction xsl:call-template (args env)
@@ -460,7 +455,7 @@
           (setf name (cons local-name uri)))
         (lambda (ctx)
           (call-template ctx name
-                         (loop for (name value-thunk) in param-bindings
+                         (loop for (name nil value-thunk) in param-bindings
                                collect (list name (funcall value-thunk ctx))))))))
 
 (defun compile-instruction (form env)
