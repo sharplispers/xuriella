@@ -63,10 +63,10 @@
        (when (and encoding (equalp lname "head"))
 	 (let* ((content (format nil "text/html; charset=~A" encoding))
 		(attrs
-		 (list (hax:make-attribute "HTTP-EQUIV" "Content-Type")
-		       (hax:make-attribute "CONTENT" content))))
-	   (sax:start-element hax-target *html* "META" "META" attrs)
-	   (sax:end-element hax-target *html* "META" "META"))))
+		 (list (hax:make-attribute "http-equiv" "Content-Type")
+		       (hax:make-attribute "content" content))))
+	   (sax:start-element hax-target *html* "meta" "meta" attrs)
+	   (sax:end-element hax-target *html* "meta" "meta"))))
       (t
        (sax:start-element sax-target uri lname qname attrs)))))
 

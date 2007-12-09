@@ -490,7 +490,15 @@
     ;; normalize sequences of whitespace
     (stp:do-children (child node)
       (if (typep child 'stp:text)
-	  (setf (stp:data child) (normalize-whitespace (stp:data child)))
+	  (setf (stp:data child)
+		(let ((str (normalize-whitespace (stp:data child))))
+		  (when
+		      ;; FIXME!  Here we remove whitespace entirely.
+		      ;; Totally incorrect, but I don't see how we could
+		      ;; watch Saxon's output otherwise.
+		      (equal str " ")
+		    (setf str ""))
+		  str))
 	  (normalize-html-whitespace child)))
     ;; just to be sure, join adjacent nodes
     (cxml-stp-impl::normalize-text-nodes! node)))

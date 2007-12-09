@@ -453,7 +453,7 @@ PASS Variables__84636 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84636.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84636.xuriella
 
-FAIL Variables__84637 [XPath-Data-Model]: output doesn't match
+PASS Variables__84637 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Variables/84637.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84637.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84637.saxon
@@ -474,7 +474,7 @@ PASS Variables__84709 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Expected output (2): MSFT_Conformance_Tests/Variables/Variables__84709.xsltproc
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84709.xuriella
 
-FAIL Variables__84712 [XPath-Data-Model]: output doesn't match
+PASS Variables__84712 [XPath-Data-Model]: saxon T, xsltproc NIL (MISMATCH)
   Stylesheet: MSFT_Conformance_Tests/Variables/84712.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84712.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84712.saxon
@@ -949,4 +949,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 111/131 tests.
+Passed 113/131 tests.
