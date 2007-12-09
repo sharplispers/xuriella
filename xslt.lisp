@@ -231,7 +231,7 @@
 (defun ensure-mode/qname (stylesheet qname env)
   (if qname
       (multiple-value-bind (local-name uri)
-	  (decode-qname qname env)
+	  (decode-qname qname env nil)
 	(ensure-mode stylesheet local-name uri))
       (find-mode stylesheet nil)))
 
@@ -245,7 +245,7 @@
 (defvar *empty-mode*)
 
 (defun parse-stylesheet (d)
-  (let* ((d (cxml:parse d (cxml-stp:make-builder)))
+  (let* ((d (cxml:parse d (make-text-normalizer (cxml-stp:make-builder))))
 	 (<transform> (stp:document-element d))
 	 (*namespaces* (acons-namespaces <transform>))
 	 (*variables* nil)

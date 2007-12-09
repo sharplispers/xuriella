@@ -432,7 +432,8 @@
 	  (write-line "</wrapper>" r))))))
 
 (defun parse-for-comparison (p)
-  (let* ((d (cxml:parse (slurp-for-comparison p) (stp:make-builder)))
+  (let* ((d (cxml:parse (slurp-for-comparison p)
+			(make-text-normalizer (stp:make-builder))))
 	 (de (stp:document-element d)))
     (let ((first (stp:first-child de)))
       (when (typep first 'stp:text)

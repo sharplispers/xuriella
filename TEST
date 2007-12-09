@@ -404,7 +404,7 @@ PASS Variables__84035 [XPath-Data-Model]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84035.xuriella
 
 WARNING: namespace URI does not look like an absolute URL: "URI"
-FAIL Variables__84036 [XPath-Data-Model]: output doesn't match
+PASS Variables__84036 [XPath-Data-Model]: saxon T, xsltproc T
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23200.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84036.saxon
@@ -989,4 +989,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]: saxon T, 
   Expected output (2): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xsltproc
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 108/131 tests.
+Passed 109/131 tests.

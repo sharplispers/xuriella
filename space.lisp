@@ -185,3 +185,33 @@
 
 (defmethod write-string-value (node stream)
   (write-string (xpath-protocol:string-value node) stream))
+
+
+;;;; TEXT NORMALIZER, from cxml-rng
+
+;;; FIXME: cxml should do that
+
+(defun make-text-normalizer (next)
+  (make-instance 'text-normalizer :chained-handler next))
+
+(defclass text-normalizer (cxml:sax-proxy)
+  ((pending-text-node :initform (make-string-output-stream)
+		      :accessor pending-text-node)))
+
+(defmethod sax:characters ((handler text-normalizer) data)
+  (write-string data (pending-text-node handler)))
+
+(defun flush-pending (handler)
+  (let ((str (get-output-stream-string (pending-text-node handler))))
+    (unless (zerop (length str))
+      (sax:characters (cxml:proxy-chained-handler handler) str))))
+
+(defmethod sax:start-element :before
+    ((handler text-normalizer) uri lname qname attributes)
+  (declare (ignore uri lname qname attributes))
+  (flush-pending handler))
+
+(defmethod sax:end-element :before
+    ((handler text-normalizer) uri lname qname)
+  (declare (ignore uri lname qname))
+  (flush-pending handler))
