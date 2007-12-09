@@ -207,12 +207,13 @@
 
 (define-instruction xsl:literal-attribute (args env)
   (destructuring-bind ((local-name &optional uri suggested-prefix) value) args
-    #'(lambda (ctx)
+    (let ((value-thunk (compile-attribute-value-template value env)))
+      (lambda (ctx)
 	(declare (ignore ctx))
 	(write-attribute local-name
 			 uri
-			 value
-			 :suggested-prefix suggested-prefix))))
+			 (funcall value-thunk ctx)
+			 :suggested-prefix suggested-prefix)))))
 
 (define-instruction xsl:text (args env)
   (destructuring-bind (str) args
