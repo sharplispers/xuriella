@@ -186,8 +186,8 @@
        for (prefix . uri) = cons
        do
 	 (cond
-	   ((find prefix kroepfchen))
-	   ((find uri *excluded-namespaces* :test #'equal)
+	   ((find prefix kroepfchen :test #'equal))
+	   ((find uri excluded-uris :test #'equal)
 	    (push prefix kroepfchen))
 	   (t
 	    (push cons koerbchen))))

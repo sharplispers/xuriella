@@ -237,11 +237,11 @@
 		     (equal (stp:local-name <transform>) "stylesheet")))
       (xslt-error "not a stylesheet"))
     (ensure-mode "" stylesheet)
+    (parse-exclude-result-prefixes! <transform> env)
     (parse-global-variables! stylesheet <transform>)
     (parse-templates! stylesheet <transform> env)
     (parse-output! stylesheet <transform>)
     (parse-strip/preserve-space! stylesheet <transform> env)
-    (parse-exclude-result-prefixes! <transform> env)
     stylesheet))
 
 (defun parse-exclude-result-prefixes! (<transform> env)
