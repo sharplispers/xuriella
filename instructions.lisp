@@ -309,17 +309,24 @@
     (let ((*excluded-namespaces* (append uris *excluded-namespaces*)))
       (compile-instruction `(progn ,@body) env))))
 
+;; XSLT disallows multiple definitions of the same variable within a
+;; template.  Local variables can shadow global variables though.
+;; Since our LET syntax makes it natural to shadow local variables the
+;; Lisp way, we check for duplicate variables only where instructed to
+;; by the XML syntax parser using WITH-DUPLICATES-CHECK:
+(defvar *template-variables* nil)
+
 (define-instruction xsl:with-duplicates-check (args env)
-  (destructuring-bind ((&rest qnames) &rest body) args
-    (let ((seen '()))
+  (let ((*template-variables* *template-variables*))
+    (destructuring-bind ((&rest qnames) &rest body) args
       (dolist (qname qnames)
 	(multiple-value-bind (local-name uri)
 	    (decode-qname qname env nil)
 	  (let ((key (cons local-name uri)))
-	    (when (find key seen :test #'equal)
+	    (when (find key *template-variables* :test #'equal)
 	      (xslt-error "duplicate variable: ~A, ~A" local-name uri))
-	    (push key seen)))))
-    (compile-instruction `(progn ,@body) env)))
+	    (push key *template-variables*))))
+      (compile-instruction `(progn ,@body) env))))
 
 (defstruct (result-tree-fragment
 	     (:constructor make-result-tree-fragment (node)))
