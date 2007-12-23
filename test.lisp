@@ -369,6 +369,11 @@
 	    (enough-namestring xml target-dir)
 	    (enough-namestring xsl target-dir)
 	    (enough-namestring expected target-dir))
+    (format t "Run MSXSL like this:~%  cd ~A~%  wine msxsl.exe ~A ~A >~A~%~%"
+	    (namestring target-dir)
+	    (enough-namestring xml target-dir)
+	    (enough-namestring xsl target-dir)
+	    (enough-namestring expected target-dir))
     (format t "Run xuriella like this:~%")
     `(apply-stylesheet ,xsl ,xml :output ,actual)))
 
