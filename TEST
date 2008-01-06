@@ -685,13 +685,13 @@ PASS Whitespaces__91436 [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91436.xuriella
 
-FAIL Whitespaces__91437 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91437 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91437.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91437.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91437.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91437.xuriella
 
-FAIL Whitespaces__91438 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91438 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91438.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91438.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91438.saxon
@@ -709,25 +709,25 @@ FAIL Whitespaces__91440 [XSLT-Data-Model]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91440.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91440.xuriella
 
-FAIL Whitespaces__91441 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91441 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91441.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91441.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91441.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91441.xuriella
 
-FAIL Whitespaces__91442 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91442 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91442.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91442.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91442.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91442.xuriella
 
-FAIL Whitespaces__91443 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91443 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91443.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91443.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91443.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91443.xuriella
 
-FAIL Whitespaces__91444 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91444 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91444.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91444.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91444.saxon
@@ -821,4 +821,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 120/135 tests.
+Passed 126/135 tests.
