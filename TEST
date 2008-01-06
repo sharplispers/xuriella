@@ -4,7 +4,7 @@ PASS RTF_RTF_to_boolean_test [XPath-Expression]
   Expected output (1): MSFT_Conformance_Tests/RTF/RTF_RTF_to_boolean_test.saxon
   Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_boolean_test.xuriella
 
-FAIL RTF_RTF_to_number_in_format_number [XPath-Expression]: no such function: :FORMAT-NUMBER
+PASS RTF_RTF_to_number_in_format_number [XPath-Expression]
   Stylesheet: MSFT_Conformance_Tests/RTF/RTF_to_number_in_format_number.noindent-xsl
   Data: MSFT_Conformance_Tests/RTF/test.xml
   Expected output (1): MSFT_Conformance_Tests/RTF/RTF_RTF_to_number_in_format_number.saxon
@@ -821,4 +821,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 126/135 tests.
+Passed 127/135 tests.

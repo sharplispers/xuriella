@@ -24,4 +24,4 @@
      (:file "space")
      (:file "html")
      (:file "test"))
-    :depends-on (:cxml :cxml-stp :closure-html :xpath))
+    :depends-on (:cxml :cxml-stp :closure-html :xpath :split-sequence))
