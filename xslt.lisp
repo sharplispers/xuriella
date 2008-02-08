@@ -272,7 +272,7 @@
       (let* ((uri (puri:merge-uris (stp:attribute-value include "href")
 				   (stp:base-uri include)))
 	     (uri (if uri-resolver
-		      (funcall uri-resolver uri)
+		      (funcall uri-resolver (puri:render-uri uri nil))
 		      uri))
 	     (str (puri:render-uri uri nil))
 	     (pathname
@@ -299,8 +299,12 @@
 	    (stp:detach include)))))
     <transform>))
 
+(defvar *instruction-base-uri*)
+
 (defun parse-stylesheet (designator &key uri-resolver)
-  (let* ((<transform> (parse-stylesheet-to-stp designator uri-resolver))
+  (let* ((puri:*strict-parse* nil)
+	 (<transform> (parse-stylesheet-to-stp designator uri-resolver))
+	 (*instruction-base-uri* (stp:base-uri <transform>))
 	 (*namespaces* (acons-namespaces <transform>))
 	 (stylesheet (make-stylesheet))
 	 (env (make-instance 'lexical-xslt-environment))
@@ -538,8 +542,65 @@
 	       (equal (parameter-uri p) uri))
       (return (parameter-value p)))))
 
+(defvar *uri-resolver*)
+
+(defun parse-allowing-microsoft-bom (pathname handler)
+  (with-open-file (s pathname :element-type '(unsigned-byte 8))
+    (unless (and (eql (read-byte s nil) #xef)
+		 (eql (read-byte s nil) #xbb)
+		 (eql (read-byte s nil) #xbf))
+      (file-position s 0))
+    (cxml:parse s handler)))
+
+(defun %document (uri-string base-uri)
+  (let* ((absolute-uri
+	  (puri:merge-uris uri-string base-uri))
+	 (resolved-uri
+	  (if *uri-resolver*
+	      (funcall *uri-resolver* (puri:render-uri absolute-uri nil))
+	      absolute-uri))
+	 (pathname
+	  (handler-case
+	      (cxml::uri-to-pathname resolved-uri)
+	    (cxml:xml-parse-error (c)
+	      (xslt-error "cannot find referenced document ~A: ~A"
+			  resolved-uri c))))
+	 (document
+	  (handler-case
+	      (parse-allowing-microsoft-bom pathname (stp:make-builder))
+	    ((or file-error cxml:xml-parse-error) (c)
+	      (xslt-error "cannot parse referenced document ~A: ~A"
+			  pathname c)))))
+    (when (puri:uri-fragment absolute-uri)
+      (xslt-error "use of fragment identifiers in document() not supported"))
+    (make-whitespace-stripper document
+			      (stylesheet-strip-tests *stylesheet*))))
+
+(xpath::define-xpath-function/lazy
+    :document
+    (object &optional node-set)
+  (let ((instruction-base-uri *instruction-base-uri*))
+    (lambda (ctx)
+      (declare (ignore ctx))
+      (let* ((object (funcall object))
+	     (node-set (and node-set (funcall node-set)))
+	     (uri
+	      (when node-set
+		;; FIXME: should use first node of the node set
+		;; _in document order_
+		(xpath-protocol:base-uri (xpath:first-node node-set)))))
+	(xpath::make-node-set
+	 (if (xpath:node-set-p object)
+	     (xpath:map-node-set->list
+	      (lambda (node)
+		(%document (xpath:string-value node)
+			   (or uri (xpath-protocol:base-uri node))))
+	      object)
+	     (list (%document (xpath:string-value object)
+			      (or uri instruction-base-uri)))))))))
+
 (defun apply-stylesheet
-    (stylesheet source-document &key output parameters)
+    (stylesheet source-document &key output parameters uri-resolver)
   (when (typep stylesheet 'xml-designator)
     (setf stylesheet (parse-stylesheet stylesheet)))
   (when (typep source-document 'xml-designator)
@@ -547,13 +608,15 @@
   (invoke-with-output-sink
    (lambda ()
      (handler-case*
-	 (let* ((*stylesheet* stylesheet)
+	 (let* ((puri:*strict-parse* nil)
+		(*stylesheet* stylesheet)
 		(*mode* (find-mode stylesheet nil))
 		(*empty-mode* (make-mode))
 		(global-variable-specs
 		 (stylesheet-global-variables stylesheet))
 		(*global-variable-values*
 		 (make-variable-value-array (length global-variable-specs)))
+		(*uri-resolver* uri-resolver)
 		(ctx (xpath:make-context
 		      (make-whitespace-stripper
 		       source-document

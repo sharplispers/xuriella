@@ -418,28 +418,34 @@
 ;; beginning, if any.
 (defun slurp-for-comparison (p)
   (with-open-file (s p :element-type '(unsigned-byte 8))
-    (let ((xstream (runes:make-xstream s :speed 1)))
-      (setf (runes:xstream-name xstream)
-	    (cxml::make-stream-name
-	     :entity-name "main document"
-	     :entity-kind :main
-	     :uri (cxml::pathname-to-uri (merge-pathnames p))))
-      (let ((source (cxml:make-source xstream :pathname p)))
-	(loop
-	   for key = (klacks:peek-next source)
-	   until (eq key :start-document))
-	(with-output-to-string (r)
-	  (write-line "<wrapper>" r)
-	  (cxml::with-source (source cxml::context)
-	    (when (eq (cxml::zstream-token-category
-		       (cxml::main-zstream cxml::context))
-		      :seen-<)
-	      (write-char #\< r)))
-	  (loop
-	     for char = (runes:read-rune xstream)
-	     until (eq char :eof)
-	     do (write-char char r))
-	  (write-line "</wrapper>" r))))))
+    (unless (and (eql (read-byte s nil) #xef)
+		 (eql (read-byte s nil) #xbb)
+		 (eql (read-byte s nil) #xbf))
+      (file-position s 0))
+    (if (plusp (file-length s))
+	(let ((xstream (runes:make-xstream s :speed 1)))
+	  (setf (runes:xstream-name xstream)
+		(cxml::make-stream-name
+		 :entity-name "main document"
+		 :entity-kind :main
+		 :uri (cxml::pathname-to-uri (merge-pathnames p))))
+	  (let ((source (cxml:make-source xstream :pathname p)))
+	    (loop
+	       for key = (klacks:peek-next source)
+	       until (eq key :start-document))
+	    (with-output-to-string (r)
+	      (write-line "<wrapper>" r)
+	      (cxml::with-source (source cxml::context)
+		(when (eq (cxml::zstream-token-category
+			   (cxml::main-zstream cxml::context))
+			  :seen-<)
+		  (write-char #\< r)))
+	      (loop
+		 for char = (runes:read-rune xstream)
+		 until (eq char :eof)
+		 do (write-char char r))
+	      (write-line "</wrapper>" r))))
+	"<wrapper/>")))
 
 (defun parse-for-comparison (p)
   (let* ((d (cxml:parse (slurp-for-comparison p)
@@ -540,15 +546,26 @@
   (let ((expected-saxon (test-output-pathname test "saxon"))
 	#+xuriella::xsltproc
 	(expected-xsltproc (test-output-pathname test "xsltproc"))
-	(actual (test-output-pathname test "xuriella")))
-    (labels ((doit ()
+	(actual (test-output-pathname test "xuriella"))
+	(official (test-official-output-pathname test)))
+    (labels ((uri-resolver (uri)
+	       (describe uri)
+	       (if (search "%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml"
+			   uri)
+		   (cxml::pathname-to-uri
+		    (merge-pathnames
+		     "MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml"
+		     *tests-directory*))
+		   uri))
+	     (doit ()
 	       (with-open-file (s actual
 				  :if-exists :rename-and-delete
 				  :direction :output
 				  :element-type '(unsigned-byte 8))
 		 (apply-stylesheet (pathname (test-stylesheet-pathname test))
 				   (pathname (test-data-pathname test))
-				   :output s)))
+				   :output s
+				   :uri-resolver #'uri-resolver)))
 	     (pp (label pathname)
 	       (when pathname
 		 (format t "  ~A: ~A~%"
@@ -588,10 +605,15 @@
 		     (xsltproc-matches-p
 		      (output-equal-p output-method
 				      expected-xsltproc
+				      actual))
+		     (official-matches-p
+		      (output-equal-p output-method
+				      official
 				      actual)))
 		 (cond
 		   ((or saxon-matches-p
-			#+xuriella::xsltproc xsltproc-matches-p)
+			#+xuriella::xsltproc xsltproc-matches-p
+			official-matches-p)
 		    (report t)
 		    #+xuriella::xsltproc
 		    (report t ": saxon ~A, xsltproc ~A~:[~; (MISMATCH)~]"

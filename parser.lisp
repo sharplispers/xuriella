@@ -95,12 +95,18 @@
 (defun parse-instruction (node)
   (typecase node
     (stp:element
-     (if (equal (stp:namespace-uri node) *xsl*)
-	 (parse-instruction/xsl-element
-	  (or (find-symbol (stp:local-name node) :xuriella)
-	      (xslt-error "undefined instruction: ~A" (stp:local-name node)))
-	  node)
-	 (parse-instruction/literal-element node)))
+     (let ((expr
+	    (if (equal (stp:namespace-uri node) *xsl*)
+		(parse-instruction/xsl-element
+		 (or (find-symbol (stp:local-name node) :xuriella)
+		     (xslt-error "undefined instruction: ~A"
+				 (stp:local-name node)))
+		 node)
+		(parse-instruction/literal-element node))))
+       (if (equal (stp:base-uri node) (stp:base-uri (stp:parent node)))
+	   expr
+	   (print`(xsl:with-base-uri ,(stp:base-uri node)
+	      ,expr)))))
     (stp:text
      `(xsl:text ,(stp:data node)))))
 

@@ -369,6 +369,11 @@
 	    (push key *template-variables*))))
       (compile-instruction `(progn ,@body) env))))
 
+(define-instruction xsl:with-base-uri (args env)
+  (destructuring-bind (uri &rest body) args
+    (let ((*instruction-base-uri* uri))
+      (compile-instruction `(progn ,@body) env))))
+
 (defstruct (result-tree-fragment
 	     (:constructor make-result-tree-fragment (node)))
   node)

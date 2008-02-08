@@ -21,6 +21,7 @@
 	   #:with-namespaces
 	   #:with-excluded-namespaces
 	   #:with-duplicates-check
+	   #:with-base-uri
 	   #:copy-of
 	   #:message
 	   #:terminate

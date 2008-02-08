@@ -16,7 +16,6 @@ PASS RTF_RTF_to_string_substring_function [XPath-Expression]
   Expected output (1): MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.saxon
   Actual output: MSFT_Conformance_Tests/RTF/RTF_RTF_to_string_substring_function.xuriella
 
-WARNING: namespace URI does not look like an absolute URL: "Test"
 PASS Variables__78097 [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21000.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
@@ -203,7 +202,6 @@ PASS Variables__78314 [XPath-Data-Model]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78314.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78314.xuriella
 
-WARNING: namespace URI does not look like an absolute URL: "Test"
 PASS Variables__78316 [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT22001.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
@@ -336,28 +334,24 @@ PASS Variables__78409 [XPath-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78409.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78409.xuriella
 
-WARNING: namespace URI does not look like an absolute URL: "URI"
 PASS Variables__84026 [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23002.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84026.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84026.xuriella
 
-WARNING: namespace URI does not look like an absolute URL: "URI"
 PASS Variables__84034 [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23001.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84034.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84034.xuriella
 
-WARNING: namespace URI does not look like an absolute URL: "URI"
 PASS Variables__84035 [XPath-Data-Model]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23000.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84035.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84035.xuriella
 
-WARNING: namespace URI does not look like an absolute URL: "URI"
 PASS Variables__84036 [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT23200.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
@@ -466,7 +460,9 @@ PASS Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.xuriella
 
-FAIL Variables_UseDocumentFnToReturnRootNode [XPath-Data-Model]: no such function: :DOCUMENT
+"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Variables/%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml" is a vector with 214 elements.
+Its element type is specialized to CHARACTER.
+PASS Variables_UseDocumentFnToReturnRootNode [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_DocumentFnReturnRootNode.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_DocumentFnReturnRootNode.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_UseDocumentFnToReturnRootNode.saxon
@@ -478,6 +474,7 @@ PASS Variables_VarDefinedEqualToAnotherVarNotYetDefined [XPath-Data-Model]: rais
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 PASS Variables_VariableAssignmentAfterIteration [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_VariableAssignmentInIteration.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_VariableAssignmentInIteration.xml
@@ -820,4 +817,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 130/135 tests.
+Passed 131/135 tests.
