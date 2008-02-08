@@ -275,20 +275,61 @@
     (t
      (copy-leaf-node node))))
 
+(defun make-sorter (spec env)
+  (destructuring-bind (&key select lang data-type order case-order)
+      (cdr spec)
+    ;; FIXME: implement case-order
+    (declare (ignore lang case-order))
+    (let ((select-thunk (compile-xpath (or select ".") env))
+	  (numberp (equal data-type "number"))
+	  (f (if (equal order "descending") -1 1)))
+      (lambda (a b)
+	(let ((i (xpath:string-value
+		  (funcall select-thunk (xpath:make-context a))))
+	      (j (xpath:string-value
+		  (funcall select-thunk (xpath:make-context b)))))
+	  (* f
+	     (if numberp
+		 (signum (- (xpath:number-value i) (xpath:number-value j)))
+		 (cond
+		   ((string< i j) -1)
+		   ((equal i j) 0)
+		   (t 1)))))))))
+
+(defun compose-sorters (sorters)
+  (if sorters
+      (let ((this (car sorters))
+	    (next (compose-sorters (rest sorters))))
+	(lambda (a b)
+	  (let ((d (funcall this a b)))
+	    (if (zerop d)
+		(funcall next a b)
+		d))))
+      (constantly 0)))
+
+(defun make-sort-predicate (decls env)
+  (let ((sorter
+	 (compose-sorters
+	  (mapcar (lambda (x) (make-sorter x env)) decls))))
+    (lambda (a b)
+      (minusp (funcall sorter a b)))))
+
 (define-instruction xsl:for-each (args env)
   (destructuring-bind (select &optional decls &rest body) args
-    (when (and (consp decls)
-	       (not (eq (car decls) 'declare)))
+    (unless (and (consp decls)
+		 (eq (car decls) 'declare))
       (push decls body)
       (setf decls nil))
     (let ((select-thunk (compile-xpath select env))
 	  (body-thunk (compile-instruction `(progn ,@body) env))
-	  (sorter
-	   ;; fixme: parse decls here
-	   #'identity))
+	  (sort-predicate
+	   (when decls
+	     (make-sort-predicate (cdr decls) env))))
       (lambda (ctx)
-	(let* ((nodes (xpath:all-nodes (funcall sorter (funcall select-thunk ctx))))
+	(let* ((nodes (xpath:all-nodes (funcall select-thunk ctx)))
 	       (n (length nodes)))
+	  (when sort-predicate
+	    (setf nodes (sort nodes sort-predicate)))
 	  (loop
 	     for node in nodes
 	     for i from 1
@@ -435,10 +476,17 @@
 
 (define-instruction xsl:apply-templates (args env)
   (destructuring-bind ((&key select mode) &rest param-binding-specs) args
-    (let ((select-thunk
-	   (compile-xpath (or select "child::node()") env))
-	  (param-bindings
-           (compile-var-bindings param-binding-specs env)))
+    (let* ((decls
+	    (when (and (consp (car param-binding-specs))
+		       (eq (caar param-binding-specs) 'declare))
+	      (cdr (pop param-binding-specs))))
+	   (select-thunk
+	    (compile-xpath (or select "child::node()") env))
+	   (param-bindings
+	    (compile-var-bindings param-binding-specs env))
+	   (sort-predicate
+	    (when decls
+	      (make-sort-predicate decls env))))
       (multiple-value-bind (mode-local-name mode-uri)
 	  (and mode (decode-qname mode env nil))
 	(lambda (ctx)
@@ -451,7 +499,8 @@
 	    (apply-templates/list
 	     (xpath:all-nodes (funcall select-thunk ctx))
 	     (loop for (name nil value-thunk) in param-bindings
-		collect (list name (funcall value-thunk ctx))))))))))
+		collect (list name (funcall value-thunk ctx)))
+	     sort-predicate)))))))
 
 (define-instruction xsl:call-template (args env)
   (destructuring-bind (name &rest param-binding-specs) args

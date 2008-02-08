@@ -579,7 +579,9 @@
    stylesheet
    output))
 
-(defun apply-templates/list (list &optional param-bindings)
+(defun apply-templates/list (list &optional param-bindings sort-predicate)
+  (when sort-predicate
+    (setf list (sort list sort-predicate)))
   (let* ((n (length list))
 	 (s/d (lambda () n)))
     (loop

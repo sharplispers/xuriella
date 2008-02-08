@@ -127,21 +127,23 @@
 
 (define-instruction-parser |apply-templates| (node)
   (stp:with-attributes (select mode) node
-    `(xsl:apply-templates
-      (:select ,select :mode ,mode)
-       ,@(remove nil ;; FIXME: this will be no longer needed when xsl:sort is implemented
-                 (stp:map-children 'list
-                                   (lambda (clause)
-                                     (cond
-                                       ((namep clause "with-param")
-                                        (parse-param clause))
-                                       ((namep clause "sort")
-                                        (warn "sort: TBD")
-                                        nil)
-                                       (t
-                                        (xslt-error "undefined instruction: ~A"
-						    (stp:local-name clause)))))
-                                   node)))))
+    (multiple-value-bind (decls rest)
+	(loop
+	   for i from 0
+	   for cons on (stp:list-children node)
+	   for (child . nil) = cons
+	   while (namep child "sort")
+	   collect (parse-sort child) into decls
+	   finally (return (values decls cons)))
+      `(xsl:apply-templates
+	   (:select ,select :mode ,mode)
+	 (declare ,@decls)
+	 ,@(mapcar (lambda (clause)
+		     (unless (namep clause "with-param")
+		       (xslt-error "undefined instruction: ~A"
+				   (stp:local-name clause)))
+		     (parse-param clause))
+		   rest)))))
 
 (define-instruction-parser |call-template| (node)
   (stp:with-attributes (name) node
@@ -221,8 +223,8 @@
 	(loop
 	   for i from 0
 	   for child in (stp:list-children node)
-	   while (namep node "sort")
-	   collect (parse-sort node) into decls
+	   while (namep child "sort")
+	   collect (parse-sort child) into decls
 	   finally (return (values decls i)))
       `(xsl:for-each ,select
 	 (declare ,@decls)

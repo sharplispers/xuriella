@@ -167,7 +167,6 @@ PASS Variables__78163 [XPath-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__78163.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__78163.xuriella
 
-WARNING: sort: TBD
 PASS Variables__78164 [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/XSLT21405.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/books.xml
@@ -365,7 +364,7 @@ PASS Variables__84036 [XPath-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84036.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables__84036.xuriella
 
-FAIL Variables__84438 [XPath-Data-Model]: undefined instruction: sort
+PASS Variables__84438 [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/84438.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/84438.xml
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables__84438.saxon
@@ -821,4 +820,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 129/135 tests.
+Passed 130/135 tests.
