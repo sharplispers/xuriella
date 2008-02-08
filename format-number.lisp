@@ -268,12 +268,12 @@
       (when (plusp wanted-right)
 	(write-char (df/decimal-separator df) s)
 	(loop
-	   for i from 0 below wanted-right 
+	   for i from 0 below wanted-right
 	   for index from (+ left 1)
 	   do
 	     (when (funcall right-test i)
 	       (write-char (df/grouping-separator df) s))
 	     (if (< i right)
 		 (write-char (elt str index) s)
-		 (write-char zero s)))) 
+		 (write-char zero s))))
       (write-string (pic/suffix picture) s))))
