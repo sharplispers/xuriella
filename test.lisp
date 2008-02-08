@@ -701,3 +701,16 @@
        (equal (stp:public-id a) (stp:public-id b))
        (equal (stp:system-id a) (stp:system-id b))
        (equal (stp:internal-subset a) (stp:internal-subset b))))
+
+(xpath::define-xpath-function/eager
+    :print
+    (thing)
+  (if (xpath:node-set-p thing)
+      (loop
+	 initially (format t ";;; node set:~%")
+	 for i from 0
+	 for node in (xpath:all-nodes thing)
+	 do
+	   (format t ";;;   ~D: ~A~%" i (type-of node)))
+      (format t ";;; ~A~%" thing))
+  thing)

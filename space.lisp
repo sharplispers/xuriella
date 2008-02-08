@@ -105,11 +105,18 @@
       (make-stripping-node nil node tests nil)
       node))
 
-(defstruct (stripping-node
-	     (:constructor make-stripping-node/low (parent target)))
+(defstruct stripping-node
   parent
   target
   children)
+
+(defstruct (leaf-stripping-node
+	     (:constructor make-leaf-stripping-node (parent target))
+	     (:include stripping-node)))
+
+(defstruct (parent-stripping-node
+	     (:constructor make-parent-stripping-node (parent target))
+	     (:include stripping-node)))
 
 (defmethod print-object ((object stripping-node) stream)
   (print-unreadable-object (object stream :type t :identity nil)
@@ -134,14 +141,14 @@
       (return (xpath-protocol:string-value a)))))
 
 (defun make-stripping-node (parent target tests force-preserve)
-  (let ((result (make-stripping-node/low parent target))
+  (let ((result (make-parent-stripping-node parent target))
 	(xml-space (xpath-protocol/attribute-value target "space" *xml*)))
     (when xml-space
       (setf force-preserve (equal xml-space "preserve")))
     (labels ((recurse (child-node)
 	       (if (xpath-protocol:node-type-p child-node :element)
 		   (make-stripping-node result child-node tests force-preserve)
-		   child-node))
+		   (make-leaf-stripping-node result child-node)))
 	     (maybe-recurse (child-node)
 	       (if (and (xpath-protocol:node-type-p child-node :text)
 			(whitespacep (xpath-protocol:string-value child-node)))
@@ -177,11 +184,14 @@
   (with-output-to-string (s)
     (write-string-value node s)))
 
-(defmethod write-string-value ((node stripping-node) stream)
+(defmethod write-string-value ((node parent-stripping-node) stream)
   (do-pipe (child (xpath-protocol:child-pipe node))
     (unless (or (xpath-protocol:node-type-p child :comment)
 		(xpath-protocol:node-type-p child :processing-instruction))
       (write-string-value child stream))))
+
+(defmethod write-string-value ((node leaf-stripping-node) stream)
+  (write-string-value (stripping-node-target node) stream))
 
 (defmethod write-string-value (node stream)
   (write-string (xpath-protocol:string-value node) stream))

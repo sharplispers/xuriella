@@ -693,13 +693,13 @@ PASS Whitespaces__91438 [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91438.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91438.xuriella
 
-FAIL Whitespaces__91439 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91439 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91439.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91439.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91439.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91439.xuriella
 
-FAIL Whitespaces__91440 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91440 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91440.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91440.xml
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91440.saxon
@@ -817,4 +817,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 131/135 tests.
+Passed 133/135 tests.
