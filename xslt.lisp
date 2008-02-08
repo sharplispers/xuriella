@@ -257,6 +257,8 @@
 (defvar *excluded-namespaces* (list *xsl*))
 (defvar *empty-mode*)
 
+(defvar *xsl-include-stack* nil)
+
 (defun parse-stylesheet-to-stp (input uri-resolver)
   (let* ((d (cxml:parse input (make-text-normalizer (cxml-stp:make-builder))))
 	 (<transform> (stp:document-element d)))
@@ -268,17 +270,28 @@
       (xslt-error "not a stylesheet"))
     (dolist (include (stp:filter-children (of-name "include") <transform>))
       (let* ((uri (puri:merge-uris (stp:attribute-value include "href")
-				   (stp:base-uri include))))
-	(with-open-stream
-	    (stream
-	     (handler-case
-		 (or (and uri-resolver (funcall uri-resolver uri))
-		     (open (cxml::uri-to-pathname uri)
-			   :element-type '(unsigned-byte 8)))
-	       ((or file-error cxml:xml-parse-error) (c)
-		 (xslt-error "cannot find included stylesheet ~A: ~A"
-			     uri c))))
-	  (let ((<transform>2 (parse-stylesheet-to-stp stream uri-resolver)))
+				   (stp:base-uri include)))
+	     (uri (if uri-resolver
+		      (funcall uri-resolver uri)
+		      uri))
+	     (str (puri:render-uri uri nil))
+	     (pathname
+	      (handler-case
+		  (cxml::uri-to-pathname uri)
+		(cxml:xml-parse-error (c)
+		  (xslt-error "cannot find included stylesheet ~A: ~A"
+			      uri c)))))
+	(with-open-file
+	    (stream pathname
+		    :element-type '(unsigned-byte 8)
+		    :if-does-not-exist nil)
+	  (unless stream
+	    (xslt-error "cannot find included stylesheet ~A at ~A"
+			uri pathname))
+	  (when (find str *xsl-include-stack* :test #'equal)
+	    (xslt-error "recursive inclusion of ~A" uri))
+	  (let* ((*xsl-include-stack* (cons str *xsl-include-stack*))
+		 (<transform>2 (parse-stylesheet-to-stp stream uri-resolver)))
 	    (stp:do-children (child <transform>2)
 	      (stp:insert-child-after <transform>
 				      (stp:copy child)
