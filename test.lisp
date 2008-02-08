@@ -283,7 +283,7 @@
 						  'asdf::relative-pathname))
 		     :direction :output
 		     :if-exists :supersede
-		     :external-format :utf8)
+		     :external-format :utf-8)
       (let* ((dribble (make-broadcast-stream dribble *standard-output*))
 	     (*standard-output* dribble)
 	     (*trace-output* dribble)
