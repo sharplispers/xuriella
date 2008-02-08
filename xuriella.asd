@@ -23,5 +23,6 @@
      (:file "parser")
      (:file "space")
      (:file "html")
+     (:file "format-number")
      (:file "test"))
     :depends-on (:cxml :cxml-stp :closure-html :xpath :split-sequence))
