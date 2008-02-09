@@ -301,22 +301,59 @@
     <transform>))
 
 (defvar *instruction-base-uri*)
+(defvar *apply-imports-limit*)
+(defvar *import-priority*)
 
-(defun parse-stylesheet (designator &key uri-resolver)
-  (let* ((puri:*strict-parse* nil)
-	 (<transform> (parse-stylesheet-to-stp designator uri-resolver))
+(defun parse-1-stylesheet (env stylesheet designator uri-resolver)
+  (let* ((<transform> (parse-stylesheet-to-stp designator uri-resolver))
 	 (*instruction-base-uri* (stp:base-uri <transform>))
 	 (*namespaces* (acons-namespaces <transform>))
+	 (*apply-imports-limit* (1+ *import-priority*)))
+    (dolist (import (stp:filter-children (of-name "import") <transform>))
+      (let ((uri (puri:merge-uris (stp:attribute-value import "href")
+				  (stp:base-uri import))))
+	(parse-imported-stylesheet env stylesheet uri uri-resolver)))
+    (incf *import-priority*)
+    (parse-exclude-result-prefixes! <transform> env)
+    (parse-global-variables! stylesheet <transform>)
+    (parse-templates! stylesheet <transform> env)
+    (parse-output! stylesheet <transform>)
+    (parse-strip/preserve-space! stylesheet <transform> env)))
+
+(defvar *xsl-import-stack* nil)
+
+(defun parse-imported-stylesheet (env stylesheet uri uri-resolver)
+  (let* ((uri (if uri-resolver
+		  (funcall uri-resolver (puri:render-uri uri nil))
+		  uri))
+	 (str (puri:render-uri uri nil))
+	 (pathname
+	  (handler-case
+	      (cxml::uri-to-pathname uri)
+	    (cxml:xml-parse-error (c)
+	      (xslt-error "cannot find imported stylesheet ~A: ~A"
+			  uri c)))))
+    (with-open-file
+	(stream pathname
+		:element-type '(unsigned-byte 8)
+		:if-does-not-exist nil)
+      (unless stream
+	(xslt-error "cannot find imported stylesheet ~A at ~A"
+		    uri pathname))
+      (when (find str *xsl-import-stack* :test #'equal)
+	(xslt-error "recursive inclusion of ~A" uri))
+      (let ((*xsl-import-stack* (cons str *xsl-import-stack*)))
+	(parse-1-stylesheet env stylesheet stream uri-resolver)))))
+
+(defun parse-stylesheet (designator &key uri-resolver)
+  (let* ((*import-priority* 0)
+	 (puri:*strict-parse* nil)
 	 (stylesheet (make-stylesheet))
 	 (env (make-instance 'lexical-xslt-environment))
 	 (*excluded-namespaces* *excluded-namespaces*)
 	 (*global-variable-declarations* (make-empty-declaration-array)))
     (ensure-mode stylesheet nil)
-    (parse-exclude-result-prefixes! <transform> env)
-    (parse-global-variables! stylesheet <transform>)
-    (parse-templates! stylesheet <transform> env)
-    (parse-output! stylesheet <transform>)
-    (parse-strip/preserve-space! stylesheet <transform> env)
+    (parse-1-stylesheet env stylesheet designator uri-resolver)
     stylesheet))
 
 (defun parse-exclude-result-prefixes! (<transform> env)
@@ -330,8 +367,10 @@
 
 (xpath:with-namespaces ((nil #.*xsl*))
   (defun parse-strip/preserve-space! (stylesheet <transform> env)
-    (xpath:do-node-set
-	(elt (xpath:evaluate "strip-space|preserve-space" <transform>))
+    (dolist (elt (stp:filter-children (lambda (x)
+					(or (namep x "strip-space")
+					    (namep x "preserve-space")))
+				      <transform>))
       (let ((*namespaces* (acons-namespaces elt))
 	    (mode
 	     (if (equal (stp:local-name elt) "strip-space")
@@ -513,15 +552,20 @@
   (dolist (<template> (stp:filter-children (of-name "template") <transform>))
     (let ((*namespaces* (acons-namespaces <template>)))
       (dolist (template (compile-template <template> env))
-        (if (template-name template)
-	    (setf (gethash (template-name template)
-			   (stylesheet-named-templates stylesheet))
-		  template)
-	    (let ((mode (ensure-mode/qname stylesheet
-					   (template-mode-qname template)
-					   env)))
-	      (setf (template-mode template) mode)
-	      (push template (mode-templates mode))))))))
+        (let ((name (template-name template)))
+	  (if name
+	      (let* ((table (stylesheet-named-templates stylesheet))
+		     (head (car (gethash name table))))
+		(when (and head (eql (template-import-priority head)
+				     (template-import-priority template)))
+		  ;; fixme: is this supposed to be a run-time error?
+		  (xslt-error "conflicting templates for ~A" name))
+		(push template (gethash name table)))
+	      (let ((mode (ensure-mode/qname stylesheet
+					     (template-mode-qname template)
+					     env)))
+		(setf (template-mode template) mode)
+		(push template (mode-templates mode)))))))))
 
 
 ;;;; APPLY-STYLESHEET
@@ -670,50 +714,85 @@
 	 (setf (lexical-variable-value index) value))
     (funcall (template-body template) ctx)))
 
+(defun apply-default-templates (ctx)
+  (let ((node (xpath:context-node ctx)))
+    (cond
+      ((or (xpath-protocol:node-type-p node :processing-instruction)
+	   (xpath-protocol:node-type-p node :comment)))
+      ((or (xpath-protocol:node-type-p node :text)
+	   (xpath-protocol:node-type-p node :attribute))
+       (write-text (xpath-protocol:string-value node)))
+      (t
+       (apply-templates/list
+	(xpath::force
+	 (xpath-protocol:child-pipe node)))))))
+
+(defvar *apply-imports*)
+
+(defun apply-applicable-templates (ctx templates param-bindings finally)
+  (labels ((apply-imports ()
+	     (if templates
+		 (let* ((this (pop templates))
+			(low (template-apply-imports-limit this))
+			(high (template-import-priority this)))
+		   (setf templates
+			 (remove-if-not
+			  (lambda (x)
+			    (<= low (template-import-priority x) high))
+			  templates))
+		   (invoke-template ctx this param-bindings))
+		 (funcall finally))))
+    (let ((*apply-imports* #'apply-imports))
+      (apply-imports))))
+
 (defun apply-templates (ctx &optional param-bindings)
-  (let ((template (find-template ctx)))
-    (if template
-	(invoke-template ctx template param-bindings)
-	(let ((node (xpath:context-node ctx)))
-	  (cond
-	    ((or (xpath-protocol:node-type-p node :processing-instruction)
-		 (xpath-protocol:node-type-p node :comment)))
-	    ((or (xpath-protocol:node-type-p node :text)
-		 (xpath-protocol:node-type-p node :attribute))
-	     (write-text (xpath-protocol:string-value node)))
-	    (t
-	     (apply-templates/list
-	      (xpath::force
-	       (xpath-protocol:child-pipe node)))))))))
+  (apply-applicable-templates ctx
+			      (find-templates ctx)
+			      param-bindings
+			      (lambda ()
+				(apply-default-templates ctx))))
 
 (defun call-template (ctx name &optional param-bindings)
-  (invoke-template ctx (find-named-template name) param-bindings))
+  (apply-applicable-templates ctx
+			      (find-named-templates name)
+			      param-bindings
+			      (lambda ()
+				(error "cannot find named template: ~s"
+				       name))))
 
-(defun find-template (ctx)
+(defun find-templates (ctx)
   (let* ((matching-candidates
 	  (remove-if-not (lambda (template)
 			   (template-matches-p template ctx))
-			 (mode-templates *mode*))))
-    (maximize #'template< matching-candidates)))
+			 (mode-templates *mode*)))
+	 (npriorities
+	  (if matching-candidates
+	      (1+ (reduce #'max
+			  matching-candidates
+			  :key #'template-import-priority))
+	      0))
+	 (priority-groups (make-array npriorities :initial-element nil)))
+    (dolist (template matching-candidates)
+      (push template
+	    (elt priority-groups (template-import-priority template))))
+    (loop
+       for i from (1- npriorities) downto 0
+       for group = (elt priority-groups i)
+       for template = (maximize #'template< group)
+       when template
+       collect template)))
 
-(defun find-named-template (name)
-  (or (gethash name (stylesheet-named-templates *stylesheet*))
-      (error "cannot find named template: ~s" name)))
+(defun find-named-templates (name)
+  (gethash name (stylesheet-named-templates *stylesheet*)))
 
-(defun template< (a b)
-  (let ((i (template-import-precedence a))
-	(j (template-import-precedence b))
-	(p (template-priority a))
+(defun template< (a b)			;assuming same import priority
+  (let ((p (template-priority a))
 	(q (template-priority b)))
     (cond
-      ((< i j) t)
-      ((> i j) nil)
+      ((< p q) t)
+      ((> p q) nil)
       (t
-       (cond
-	 ((< p q) t)
-	 ((> p q) nil)
-	 (t
-	  (xslt-error "conflicting templates: ~A, ~A" a b)))))))
+       (xslt-error "conflicting templates: ~A, ~A" a b)))))
 
 (defun maximize (< things)
   (when things
@@ -773,17 +852,14 @@
   match-expression
   match-thunk
   name
+  import-priority
+  apply-imports-limit
   priority
   mode
   mode-qname
   params
   body
   n-variables)
-
-(defun template-import-precedence (template)
-  template
-  ;; fixme
-  0)
 
 (defun expression-priority (form)
   (let ((first-step (second form)))
@@ -871,6 +947,8 @@
                (decode-qname name env nil)
              (list
               (make-template :name (cons local-name uri)
+			     :import-priority *import-priority*
+			     :apply-imports-limit *apply-imports-limit*
                              :params param-bindings
                              :body outer-body-thunk
 			     :n-variables n-variables))))
@@ -883,6 +961,8 @@
                                   (expression-priority expression))))
                        (make-template :match-expression expression
                                       :match-thunk match-thunk
+				      :import-priority *import-priority*
+				      :apply-imports-limit *apply-imports-limit*
                                       :priority p
                                       :mode-qname mode
                                       :params param-bindings

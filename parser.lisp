@@ -152,6 +152,9 @@
 		     (parse-param clause))
 		   rest)))))
 
+(define-instruction-parser |apply-imports| (node)
+  `(xsl:apply-imports))
+
 (define-instruction-parser |call-template| (node)
   (stp:with-attributes (name) node
       `(xsl:call-template

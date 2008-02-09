@@ -508,6 +508,11 @@
 		collect (list name (funcall value-thunk ctx)))
 	     sort-predicate)))))))
 
+(define-instruction xsl:apply-imports (args env)
+  (lambda (ctx)
+    (declare (ignore ctx))
+    (funcall *apply-imports*)))
+
 (define-instruction xsl:call-template (args env)
   (destructuring-bind (name &rest param-binding-specs) args
       (let ((param-bindings

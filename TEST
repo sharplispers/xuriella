@@ -777,14 +777,14 @@ PASS Whitespaces__91452 [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91452.xuriella
 
-FAIL Whitespaces__91453 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91453 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91453.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91453.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces__91453.xuriella
 
-FAIL Whitespaces__91454 [XSLT-Data-Model]: output doesn't match
+PASS Whitespaces__91454 [XSLT-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Whitespaces/91454.noindent-xsl
   Data: MSFT_Conformance_Tests/Whitespaces/91454.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Whitespaces/include-strip.inc
@@ -817,4 +817,4 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-Passed 133/135 tests.
+Passed 135/135 tests.
