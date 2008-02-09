@@ -246,13 +246,13 @@ PASS attribset_attribset41 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset41.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset41.xuriella
 
-FAIL attribset_attribset42 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset42 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset42.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset42.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset42.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset42.xuriella
 
-FAIL attribset_attribset43 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset43 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset43.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset43.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset43.saxon
@@ -264,14 +264,14 @@ FAIL attribset_attribset44 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-V
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset44.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset44.xuriella
 
-FAIL attribset_attribset45 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset45 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset45.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset45.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/attribset/impattset45b.xsl
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset45.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset45.xuriella
 
-FAIL attribset_attribset46 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset46 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset46.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset46.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/attribset/impattset46b.xsl
@@ -11420,14 +11420,14 @@ PASS AttributeSets_AttributeSets_EmptyAttribSet [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_EmptyAttribSet.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_EmptyAttribSet.xuriella
 
-FAIL AttributeSets_AttributeSets_ImportAttributeSetOfSameName [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets_AttributeSets_ImportAttributeSetOfSameName [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_ImportSameName.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_ImportSameName.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_ImportSameName1.xsl
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_ImportAttributeSetOfSameName.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_ImportAttributeSetOfSameName.xuriella
 
-FAIL AttributeSets_AttributeSets_IncludeAttributeSetOfSamePrecedence [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets_AttributeSets_IncludeAttributeSetOfSamePrecedence [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_ImportSamePrec.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_ImportSamePrec.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_ImportSamePrec1.xsl
@@ -11811,7 +11811,7 @@ FAIL BVTs_bvt039 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt039.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt039.xuriella
 
-FAIL BVTs_bvt040 [Mixed]: output doesn't match
+PASS BVTs_bvt040 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-attrset.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-attrset.inc
@@ -21734,4 +21734,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1558/3092 tests.
+Passed 1565/3092 tests.

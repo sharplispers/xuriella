@@ -366,6 +366,11 @@
 	 (*global-variable-declarations* (make-empty-declaration-array)))
     (ensure-mode stylesheet nil)
     (parse-1-stylesheet env stylesheet designator uri-resolver)
+    ;; reverse attribute sets:
+    (let ((table (stylesheet-attribute-sets stylesheet)))
+      (maphash (lambda (k v)
+		 (setf (gethash k table) (nreverse v)))
+	       table))
     stylesheet))
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
