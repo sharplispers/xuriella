@@ -1,7 +1,8 @@
 ;;; -*- show-trailing-whitespace: t; indent-tabs: nil -*-
 
+;;; Copyright (c) 2007,2008 David Lichteblau, Ivan Shvedunov.
 ;;; Copyright (c) 2004 David Lichteblau (for headcraft.de)
-;;; Copyright (c) 2007 David Lichteblau. All rights reserved.
+;;; All rights reserved.
 
 ;;; Redistribution and use in source and binary forms, with or without
 ;;; modification, are permitted provided that the following conditions
