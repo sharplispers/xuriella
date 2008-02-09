@@ -936,18 +936,24 @@
   body
   n-variables)
 
+;;; FIXME: the specs says "if the pattern has the form...", but the test suite
+;;; leads me to believe that they mean "if the last step in the pattern has
+;;; the form..."  For now, do the latter.
 (defun expression-priority (form)
-  (let ((first-step (second form)))
-    (if (and (null (cddr form))
-	     (eq :child (car first-step))
-	     (null (cddr first-step)))
-	(let ((name (second first-step)))
+  (let ((step (car (last form))))
+    (if (and (listp step)
+	     (eq :child (car step))
+	     (null (cddr step)))
+	(let ((name (second step)))
 	  (cond
 	    ((or (stringp name)
-		 (eq (car name) :qname)
-		 (eq (car name) :processing-instruction))
+		 (and (consp name)
+		      (or (eq (car name) :qname)
+			  (eq (car name) :processing-instruction))))
 	     0.0)
-	    ((eq (car name) :namespace)
+	    ((and (consp name)
+		  (or (eq (car name) :namespace)
+		      (eq (car name) '*)))
 	     -0.25)
 	    (t
 	     -0.5)))
@@ -962,7 +968,7 @@
     (mapcar (lambda (case)
 	      (unless (eq (car case) :path) ;zzz: filter statt path
 		(xslt-error "not a valid pattern: ~A" str))
-	      `(:path (:ancestor-or-self :node) ,@(cdr case)))
+	      case)
 	    (if (eq (car form) :union)
 		(cdr form)
 		(list form)))))
@@ -1030,7 +1036,11 @@
          (when match
            (mapcar (lambda (expression)
                      (let ((match-thunk
-                            (compile-xpath `(xpath:xpath ,expression) env))
+                            (compile-xpath
+			     `(xpath:xpath
+			       (:path (:ancestor-or-self :node)
+				      ,@(cdr expression)))
+			     env))
                            (p (if priority
                                   (parse-number:parse-number priority)
                                   (expression-priority expression))))

@@ -112,9 +112,7 @@ PASS attribset_attribset19 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset19.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset19.xuriella
 
-FAIL attribset_attribset20 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD docs)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS attribset_attribset20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset20.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset20.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset20.saxon
@@ -686,9 +684,7 @@ FAIL axes_axes46 [XSLT-Result-Tree-Testing]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes46.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes46.xuriella
 
-FAIL axes_axes47 [XSLT-Result-Tree-Testing]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD docs)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS axes_axes47 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes47.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes47.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes47.saxon
@@ -1870,25 +1866,23 @@ FAIL conditional_conditional23 [XSLT-Result-Tree]: no such function: :ROUND
   Expected output (1): Xalan_Conformance_Tests/conditional/conditional_conditional23.saxon
   Actual output: Xalan_Conformance_Tests/conditional/conditional_conditional23.xuriella
 
-FAIL conflictres_conflictres01 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS conflictres_conflictres01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres01.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres01.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres01.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres01.xuriella
 
 FAIL conflictres_conflictres02 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+(PATH (CHILD NODE)),
+(PATH (CHILD *))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres02.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres02.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres02.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres02.xuriella
 
 FAIL conflictres_conflictres03 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+(PATH (CHILD *)),
+(PATH (CHILD NODE))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres03.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres03.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres03.saxon
@@ -1901,56 +1895,50 @@ PASS conflictres_conflictres04 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres04.xuriella
 
 FAIL conflictres_conflictres05 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+(PATH (CHILD doc) (CHILD foo)),
+(PATH (CHILD foo))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres05.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres05.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres05.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres05.xuriella
 
-FAIL conflictres_conflictres06 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS conflictres_conflictres06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres06.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres06.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres06.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres06.xuriella
 
-FAIL conflictres_conflictres07 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+FAIL conflictres_conflictres07 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres07.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres07.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres07.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres07.xuriella
 
-FAIL conflictres_conflictres08 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS conflictres_conflictres08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres08.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres08.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres08.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres08.xuriella
 
 FAIL conflictres_conflictres10 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+(PATH (CHILD *)),
+(PATH (CHILD *))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres10.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres10.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres10.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres10.xuriella
 
 FAIL conflictres_conflictres11 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+(PATH (CHILD NODE)),
+(PATH (CHILD TEXT))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres11.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres11.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres11.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres11.xuriella
 
 FAIL conflictres_conflictres12 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD a) (DESCENDANT-OR-SELF NODE) (CHILD b)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD a) (CHILD b))
+(PATH (CHILD a) (DESCENDANT-OR-SELF NODE) (CHILD b)),
+(PATH (CHILD a) (CHILD b))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres12.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres12.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres12.saxon
@@ -1974,17 +1962,15 @@ FAIL conflictres_conflictres15 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres15.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres15.xuriella
 
-FAIL conflictres_conflictres16 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS conflictres_conflictres16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres16.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres16.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres16.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres16.xuriella
 
 FAIL conflictres_conflictres17 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD file (= (PATH (ATTRIBUTE test)) false))),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD file))
+(PATH (CHILD file (= (PATH (ATTRIBUTE test)) false))),
+(PATH (CHILD file))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres17.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres17.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres17.saxon
@@ -2008,18 +1994,13 @@ FAIL conflictres_conflictres20 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres20.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres20.xuriella
 
-FAIL conflictres_conflictres21 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD TEXT)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD TEXT (= (PATH (SELF NODE)) a-text)))
+PASS conflictres_conflictres21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres21.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres21.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres21.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres21.xuriella
 
-FAIL conflictres_conflictres22 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD COMMENT)),
-(PATH (ANCESTOR-OR-SELF NODE)
- (CHILD COMMENT (= (PATH (SELF NODE))  a-comment )))
+PASS conflictres_conflictres22 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres22.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres22.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres22.saxon
@@ -2032,8 +2013,8 @@ FAIL conflictres_conflictres23 [XSLT-Result-Tree]: no such function: :NAME
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres23.xuriella
 
 FAIL conflictres_conflictres24 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD a)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+(PATH (CHILD a)),
+(PATH (CHILD NODE))
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres24.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres24.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres24.saxon
@@ -2075,9 +2056,7 @@ FAIL conflictres_conflictres30 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres30.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres30.xuriella
 
-FAIL conflictres_conflictres31 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD * (PATH (ATTRIBUTE x1)))),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD a))
+PASS conflictres_conflictres31 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres31.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres31.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres31.saxon
@@ -2089,9 +2068,7 @@ FAIL conflictres_conflictres32 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres32.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres32.xuriella
 
-FAIL conflictres_conflictres33 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+PASS conflictres_conflictres33 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres33.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres33.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres33.saxon
@@ -3457,8 +3434,8 @@ PASS impincl_impincl05 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl05.xuriella
 
 FAIL impincl_impincl06 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD title)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD title))
+(PATH (CHILD title)),
+(PATH (CHILD title))
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl06.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl06.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/e.xsl
@@ -3507,8 +3484,8 @@ FAIL impincl_impincl11 [XSLT-Result-Tree]: invalid array index 3 for #() (should
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl11.xuriella
 
 FAIL impincl_impincl12 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD title)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD title))
+(PATH (CHILD title)),
+(PATH (CHILD title))
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl12.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl12.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/e.xsl
@@ -3516,8 +3493,8 @@ FAIL impincl_impincl12 [XSLT-Result-Tree]: conflicting templates:
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl12.xuriella
 
 FAIL impincl_impincl13 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD title)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD title))
+(PATH (CHILD title)),
+(PATH (CHILD title))
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl13.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl13.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/i13incl.xsl
@@ -3854,7 +3831,7 @@ FAIL match_match13 [XSLT-Result-Tree]: not a valid pattern: aac|llh|oop|aah|ssb|
   Expected output (1): Xalan_Conformance_Tests/match/match_match13.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match13.xuriella
 
-PASS match_match14 [XSLT-Result-Tree]: raised an xslt-error as expected
+FAIL match_match14 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: Xalan_Conformance_Tests/match/match14.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match14.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match14.saxon
@@ -3938,13 +3915,17 @@ PASS match_match27 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/match/match_match27.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match27.xuriella
 
-PASS match_match28 [XSLT-Result-Tree]
+FAIL match_match28 [XSLT-Result-Tree]: conflicting templates:
+(PATH (CHILD B) (CHILD X)),
+(PATH (CHILD X))
   Stylesheet: Xalan_Conformance_Tests/match/match28.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match28.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match28.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match28.xuriella
 
-PASS match_match29 [XSLT-Result-Tree]
+FAIL match_match29 [XSLT-Result-Tree]: conflicting templates:
+(PATH (CHILD B) (DESCENDANT-OR-SELF NODE) (CHILD X)),
+(PATH (CHILD X))
   Stylesheet: Xalan_Conformance_Tests/match/match29.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match29.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match29.saxon
@@ -4945,9 +4926,7 @@ PASS modes_modes07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes07.saxon
   Actual output: Xalan_Conformance_Tests/modes/modes_modes07.xuriella
 
-FAIL modes_modes08 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD a)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS modes_modes08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/modes/modes08.noindent-xsl
   Data: Xalan_Conformance_Tests/modes/modes08.xml
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes08.saxon
@@ -4977,9 +4956,7 @@ PASS modes_modes12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes12.saxon
   Actual output: Xalan_Conformance_Tests/modes/modes_modes12.xuriella
 
-FAIL modes_modes13 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+PASS modes_modes13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/modes/modes13.noindent-xsl
   Data: Xalan_Conformance_Tests/modes/modes13.xml
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes13.saxon
@@ -4992,8 +4969,8 @@ PASS modes_modes14 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/modes/modes_modes14.xuriella
 
 FAIL modes_modes15 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD sss) (CHILD *)),
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD sss) (CHILD *))
+(PATH (CHILD sss) (CHILD *)),
+(PATH (ROOT NODE) (CHILD sss) (CHILD *))
   Stylesheet: Xalan_Conformance_Tests/modes/modes15.noindent-xsl
   Data: Xalan_Conformance_Tests/modes/modes15.xml
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes15.saxon
@@ -5260,8 +5237,8 @@ PASS namespace_namespace22 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace22.xuriella
 
 FAIL namespace_namespace23 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE)),
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE))
+(PATH (ROOT NODE)),
+(PATH (ROOT NODE))
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace23.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace23.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/namespace/test2.xsl
@@ -7110,9 +7087,13 @@ PASS output_output24 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output24.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output24.xuriella
 
-FAIL output_output25 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD Sprs)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+FAIL output_output25 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output25.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output25.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output25.saxon
@@ -8171,9 +8152,7 @@ FAIL position_position76 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/position/position_position76.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position76.xuriella
 
-FAIL position_position77 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD metadata)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS position_position77 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position77.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position77.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position77.saxon
@@ -8630,10 +8609,8 @@ PASS predicate_predicate37 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate37.xuriella
 
 FAIL predicate_predicate38 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE)
- (CHILD foo (PATH (CHILD bar (= (PATH (CHILD baz 2)) goodbye))))),
-(PATH (ANCESTOR-OR-SELF NODE)
- (CHILD foo (PATH (CHILD bar 2 (= (PATH (CHILD baz 2)) goodbye)))))
+(PATH (CHILD foo (PATH (CHILD bar (= (PATH (CHILD baz 2)) goodbye))))),
+(PATH (CHILD foo (PATH (CHILD bar 2 (= (PATH (CHILD baz 2)) goodbye)))))
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate38.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate38.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate38.saxon
@@ -8890,17 +8867,13 @@ FAIL select_select07 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/select/select_select07.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select07.xuriella
 
-FAIL select_select08 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+PASS select_select08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select08.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select08.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select08.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select08.xuriella
 
-FAIL select_select09 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+PASS select_select09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select09.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select09.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select09.saxon
@@ -9126,9 +9099,7 @@ PASS select_select44 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select44.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select44.xuriella
 
-FAIL select_select45 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select45 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select45.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select45.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select45.saxon
@@ -9140,9 +9111,7 @@ PASS select_select47 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select47.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select47.xuriella
 
-FAIL select_select48 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select48 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select48.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select48.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select48.saxon
@@ -9154,25 +9123,19 @@ PASS select_select49 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select49.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select49.xuriella
 
-FAIL select_select50 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select50 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select50.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select50.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select50.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select50.xuriella
 
-FAIL select_select51 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select51 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select51.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select51.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select51.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select51.xuriella
 
-FAIL select_select52 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select52 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select52.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select52.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select52.saxon
@@ -9196,25 +9159,19 @@ FAIL select_select55 [XSLT-Result-Tree]: no such function: :KEY
   Expected output (1): Xalan_Conformance_Tests/select/select_select55.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select55.xuriella
 
-FAIL select_select56 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select56 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select56.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select56.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select56.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select56.xuriella
 
-FAIL select_select57 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select57 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select57.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select57.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select57.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select57.xuriella
 
-FAIL select_select58 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select58 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select58.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select58.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select58.saxon
@@ -9232,17 +9189,13 @@ PASS select_select60 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select60.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select60.xuriella
 
-FAIL select_select61 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select61 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select61.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select61.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select61.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select61.xuriella
 
-FAIL select_select62 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select62 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select62.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select62.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select62.saxon
@@ -9260,17 +9213,13 @@ FAIL select_select64 [XSLT-Result-Tree]: no such function: :KEY
   Expected output (1): Xalan_Conformance_Tests/select/select_select64.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select64.xuriella
 
-FAIL select_select65 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select65 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select65.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select65.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select65.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select65.xuriella
 
-FAIL select_select66 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD doc)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS select_select66 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select66.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select66.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select66.saxon
@@ -11785,8 +11734,8 @@ FAIL AttributeSets__91042 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VA
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91042.xuriella
 
 FAIL AttributeSets__91043 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD *)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+(PATH (ROOT NODE) (CHILD *)),
+(PATH (CHILD NODE))
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91043.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91043.saxon
@@ -15530,9 +15479,7 @@ FAIL BVTs_bvt070 [Mixed]: oops, merging of output elements not supported yet
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt070.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt070.xuriella
 
-FAIL BVTs_bvt072 [Mixed]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD bookstore))
+FAIL BVTs_bvt072 [Mixed]: invalid template parameter (not-there . )
   Stylesheet: MSFT_Conformance_Tests/BVTs/param-simple.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt072.saxon
@@ -15551,8 +15498,8 @@ PASS BVTs_bvt075 [Mixed]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt075.xuriella
 
 FAIL BVTs_bvt076 [Mixed]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD book)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD book))
+(PATH (CHILD book)),
+(PATH (CHILD book))
   Stylesheet: MSFT_Conformance_Tests/BVTs/pri-explicit.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt076.saxon
@@ -15916,16 +15863,16 @@ PASS ConflictResolution__77619 [XSLT-Template]
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77619.xuriella
 
 FAIL ConflictResolution__77621 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD last-name)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD last-name))
+(PATH (CHILD last-name)),
+(PATH (CHILD last-name))
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08006a.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77621.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77621.xuriella
 
 FAIL ConflictResolution__77622 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD last-name)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD last-name))
+(PATH (CHILD last-name)),
+(PATH (CHILD last-name))
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08007.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77622.saxon
@@ -15952,40 +15899,40 @@ FAIL ConflictResolution__77746 [XSLT-Template]: not a valid pattern: x|z
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77746.xuriella
 
 FAIL ConflictResolution__77781 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE)),
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE))
+(PATH (ROOT NODE)),
+(PATH (ROOT NODE))
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09103.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77781.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77781.xuriella
 
 FAIL ConflictResolution__77782 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE)),
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE))
+(PATH (ROOT NODE)),
+(PATH (ROOT NODE))
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09102.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77782.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77782.xuriella
 
 FAIL ConflictResolution__77783 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE)),
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE))
+(PATH (ROOT NODE)),
+(PATH (ROOT NODE))
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09104.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77783.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77783.xuriella
 
 FAIL ConflictResolution__77784 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE)),
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE))
+(PATH (ROOT NODE)),
+(PATH (ROOT NODE))
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09105.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77784.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77784.xuriella
 
 FAIL ConflictResolution__77802 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD last-name)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD last-name))
+(PATH (CHILD last-name)),
+(PATH (CHILD last-name))
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT09000.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77802.saxon
@@ -19060,9 +19007,7 @@ PASS Import__84614 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__84614.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__84614.xuriella
 
-FAIL Import__84615 [XSLT-Structure]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD bookstore)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS Import__84615 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/84615.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/84615a.xsl
@@ -19443,9 +19388,7 @@ PASS Include__77750 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Include/Include__77750.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include__77750.xuriella
 
-FAIL Include__77751 [XSLT-Structure]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD bookstore)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD *))
+PASS Include__77751 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Include/xslt03023a.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/stylesheet1.dtd
@@ -20405,9 +20348,7 @@ PASS NamedTemplates__84032 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84032.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84032.xuriella
 
-FAIL NamedTemplates__84037 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD bookstore) (CHILD *)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD (QNAME my book)))
+PASS NamedTemplates__84037 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84037.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84037.saxon
@@ -20438,9 +20379,7 @@ cannot find named template: ("book" . "")
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84042.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84042.xuriella
 
-FAIL NamedTemplates__84043 [XSLT-Template]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD bookstore) (CHILD *)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD book))
+PASS NamedTemplates__84043 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84043.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84043.saxon
@@ -31313,4 +31252,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1470/3092 tests.
+Passed 1498/3092 tests.
