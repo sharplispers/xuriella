@@ -82,13 +82,14 @@ PASS attribset_attribset14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset14.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset14.xuriella
 
-PASS attribset_attribset15 [XSLT-Result-Tree]: raised an xslt-error as expected
+FAIL attribset_attribset15 [XSLT-Result-Tree]: condition of incorrect type: 
+The value of XURIELLA::URI is NIL, which is not of type STRING.
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset15.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset15.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset15.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset15.xuriella
 
-FAIL attribset_attribset16 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset16.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset16.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset16.saxon
@@ -132,13 +133,13 @@ PASS attribset_attribset22 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset22.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset22.xuriella
 
-FAIL attribset_attribset23 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset23 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset23.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset23.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset23.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset23.xuriella
 
-FAIL attribset_attribset24 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset24.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset24.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset24.saxon
@@ -276,7 +277,7 @@ PASS attribset_attribset39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset39.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset39.xuriella
 
-FAIL attribset_attribset40 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset40 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset40.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset40.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset40.saxon
@@ -3497,7 +3498,7 @@ FAIL impincl_impincl08 [XSLT-Result-Tree]: There is no applicable method for the
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl08.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl08.xuriella
 
-FAIL impincl_impincl09 [XSLT-Result-Tree]: output doesn't match
+PASS impincl_impincl09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl09.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl09.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/q.xsl
@@ -5140,13 +5141,13 @@ PASS namedtemplate_namedtemplate19 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate19.saxon
   Actual output: Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate19.xuriella
 
-FAIL namespace_namespace01 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace01.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace01.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace01.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace01.xuriella
 
-FAIL namespace_namespace02 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace02.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace02.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace02.saxon
@@ -5230,7 +5231,7 @@ FAIL namespace_namespace16 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace16.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace16.xuriella
 
-FAIL namespace_namespace17 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace17 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace17.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace17.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace17.saxon
@@ -5352,25 +5353,25 @@ FAIL namespace_namespace35 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace35.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace35.xuriella
 
-FAIL namespace_namespace36 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace36 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace36.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace36.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace36.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace36.xuriella
 
-FAIL namespace_namespace37 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace37 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace37.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace37.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace37.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace37.xuriella
 
-FAIL namespace_namespace38 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace38 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace38.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace38.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace38.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace38.xuriella
 
-FAIL namespace_namespace39 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace39 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace39.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace39.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace39.saxon
@@ -5420,7 +5421,7 @@ FAIL namespace_namespace46 [XSLT-Result-Tree]: undefined instruction: number
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace46.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace46.xuriella
 
-FAIL namespace_namespace47 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace47 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace47.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace47.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace47.saxon
@@ -5438,13 +5439,13 @@ PASS namespace_namespace49 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace49.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace49.xuriella
 
-FAIL namespace_namespace50 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace50 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace50.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace50.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace50.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace50.xuriella
 
-FAIL namespace_namespace51 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace51 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace51.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace51.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace51.saxon
@@ -5486,7 +5487,7 @@ PASS namespace_namespace57 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace57.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace57.xuriella
 
-FAIL namespace_namespace58 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace58 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace58.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace58.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace58.saxon
@@ -5511,13 +5512,13 @@ FAIL namespace_namespace61 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace61.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace61.xuriella
 
-FAIL namespace_namespace62 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace62 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace62.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace62.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace62.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace62.xuriella
 
-FAIL namespace_namespace63 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace63 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace63.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace63.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace63.saxon
@@ -5535,7 +5536,7 @@ PASS namespace_namespace65 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace65.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace65.xuriella
 
-FAIL namespace_namespace66 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace66 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace66.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace66.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace66.saxon
@@ -5571,7 +5572,7 @@ PASS namespace_namespace71 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace71.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace71.xuriella
 
-FAIL namespace_namespace72 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace72 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace72.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace72.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace72.saxon
@@ -5596,13 +5597,13 @@ PASS namespace_namespace75 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace75.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace75.xuriella
 
-FAIL namespace_namespace77 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace77 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace77.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace77.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace77.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace77.xuriella
 
-FAIL namespace_namespace78 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace78 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace78.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace78.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace78.saxon
@@ -5639,7 +5640,7 @@ FAIL namespace_namespace83 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace83.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace83.xuriella
 
-FAIL namespace_namespace84 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace84 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace84.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace84.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace84.saxon
@@ -5657,7 +5658,7 @@ PASS namespace_namespace87 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace87.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace87.xuriella
 
-FAIL namespace_namespace88 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace88 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace88.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace88.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace88.saxon
@@ -5669,7 +5670,7 @@ FAIL namespace_namespace89 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace89.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace89.xuriella
 
-FAIL namespace_namespace90 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace90 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace90.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace90.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace90.saxon
@@ -5687,13 +5688,13 @@ PASS namespace_namespace92 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace92.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace92.xuriella
 
-FAIL namespace_namespace93 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace93 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace93.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace93.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace93.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace93.xuriella
 
-FAIL namespace_namespace94 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace94 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace94.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace94.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace94.saxon
@@ -5705,7 +5706,7 @@ PASS namespace_namespace95 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace95.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace95.xuriella
 
-FAIL namespace_namespace96 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace96 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace96.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace96.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace96.saxon
@@ -5771,7 +5772,7 @@ PASS namespace_namespace106 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace106.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace106.xuriella
 
-FAIL namespace_namespace107 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace107 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace107.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace107.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace107.saxon
@@ -5783,7 +5784,7 @@ PASS namespace_namespace108 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace108.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace108.xuriella
 
-FAIL namespace_namespace109 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace109 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace109.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace109.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace109.saxon
@@ -5814,7 +5815,7 @@ FAIL namespace_namespace113 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace113.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace113.xuriella
 
-FAIL namespace_namespace115 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace115 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace115.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace115.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace115.saxon
@@ -5838,13 +5839,13 @@ PASS namespace_namespace119 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace119.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace119.xuriella
 
-FAIL namespace_namespace120 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace120 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace120.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace120.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace120.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace120.xuriella
 
-FAIL namespace_namespace121 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace121 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace121.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace121.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace121.saxon
@@ -5856,13 +5857,13 @@ PASS namespace_namespace122 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace122.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace122.xuriella
 
-FAIL namespace_namespace123 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace123 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace123.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace123.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace123.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace123.xuriella
 
-FAIL namespace_namespace124 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace124 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace124.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace124.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace124.saxon
@@ -5880,7 +5881,7 @@ PASS namespace_namespace126 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace126.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace126.xuriella
 
-FAIL namespace_namespace127 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace127 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace127.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace127.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace127.saxon
@@ -5910,25 +5911,25 @@ PASS namespace_namespace132 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace132.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace132.xuriella
 
-FAIL namespace_namespace134 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace134 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace134.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace134.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace134.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace134.xuriella
 
-FAIL namespace_namespace137 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace137 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace137.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace137.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace137.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace137.xuriella
 
-FAIL namespace_namespace138 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace138 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace138.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace138.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace138.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace138.xuriella
 
-FAIL namespace_namespace139 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace139 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace139.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace139.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace139.saxon
@@ -5940,7 +5941,7 @@ FAIL namespace_namespace140 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace140.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace140.xuriella
 
-FAIL namespace_namespace141 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace141 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace141.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace141.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace141.saxon
@@ -11104,13 +11105,13 @@ FAIL whitespace_whitespace35 [XSLT-Result-Tree]: There is no applicable method f
   Expected output (1): Xalan_Conformance_Tests/whitespace/whitespace_whitespace35.saxon
   Actual output: Xalan_Conformance_Tests/whitespace/whitespace_whitespace35.xuriella
 
-FAIL Attributes_SpecExample [XSLT-Result-Tree]: output doesn't match
+PASS Attributes_SpecExample [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/SpecExample.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_SpecExample.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_SpecExample.xuriella
 
-FAIL Attributes__78365 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__78365 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78365.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78365.saxon
@@ -11128,7 +11129,7 @@ FAIL Attributes__78367 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78367.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78367.xuriella
 
-FAIL Attributes__78368 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__78368 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78368.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78368.saxon
@@ -11146,13 +11147,13 @@ PASS Attributes__78372 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78372.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78372.xuriella
 
-FAIL Attributes__78373 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__78373 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78373.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78373.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78373.xuriella
 
-FAIL Attributes__78375 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__78375 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78375.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78375.saxon
@@ -16267,31 +16268,31 @@ PASS Elements__78318 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78318.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78318.xuriella
 
-FAIL Elements__78319 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__78319 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/78319.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78319.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78319.xuriella
 
-FAIL Elements__78320 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__78320 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/78320.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78320.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78320.xuriella
 
-FAIL Elements__78344 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__78344 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/78344.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78344.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78344.xuriella
 
-FAIL Elements__78345 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__78345 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/78345.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78345.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78345.xuriella
 
-FAIL Elements__78346 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__78346 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/78346.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78346.saxon
@@ -16302,7 +16303,7 @@ WARNING:
 Location:
   Line 3, column 3 in NIL
 
-FAIL Elements__78347 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__78347 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/78347.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78347.saxon
@@ -27659,7 +27660,7 @@ PASS Output__78182 [XSLT-Output]
   Actual output: MSFT_Conformance_Tests/Output/Output__78182.xuriella
 
 WARNING: There is no such encoding: "unicode".
-FAIL Output__78183 [XSLT-Output]: output doesn't match
+PASS Output__78183 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29008.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78183.saxon
@@ -28419,7 +28420,7 @@ Context:
   Actual output: MSFT_Conformance_Tests/Output/Output__84462.xuriella
 
 WARNING: There is no such encoding: "unicode".
-FAIL Output__84480 [XSLT-Output]: output doesn't match
+PASS Output__84480 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84480.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84480.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84480.saxon
@@ -31361,4 +31362,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1409/3094 tests.
+Passed 1462/3094 tests.

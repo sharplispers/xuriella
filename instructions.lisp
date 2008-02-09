@@ -140,10 +140,14 @@
   (destructuring-bind ((name &key namespace) &body body) args
     (multiple-value-bind (name-thunk constant-name-p)
 	(compile-attribute-value-template name env)
-      (let ((value-thunk (compile-instruction `(progn ,@body) env)))
-	(if constant-name-p
-	    (compile-attribute/constant-name name namespace env value-thunk)
-	    (compile-attribute/runtime name-thunk namespace value-thunk))))))
+      (multiple-value-bind (ns-thunk constant-ns-p)
+	  (if namespace
+	      (compile-attribute-value-template namespace env)
+	      (values nil t))
+	(let ((value-thunk (compile-instruction `(progn ,@body) env)))
+	  (if (and constant-name-p constant-ns-p)
+	      (compile-attribute/constant-name name namespace env value-thunk)
+	      (compile-attribute/runtime name-thunk ns-thunk value-thunk)))))))
 
 (defun compile-attribute/constant-name (qname namespace env value-thunk)
   ;; the simple case: compile-time decoding of the QName
@@ -159,7 +163,7 @@
 			   (funcall value-thunk ctx)))
 		       :suggested-prefix prefix))))
 
-(defun compile-attribute/runtime (name-thunk namespace value-thunk)
+(defun compile-attribute/runtime (name-thunk ns-thunk value-thunk)
   ;; run-time decoding of the QName, but using the same namespaces
   ;; that would have been known at compilation time.
   (let ((namespaces *namespaces*))
@@ -167,15 +171,14 @@
       (let ((qname (funcall name-thunk ctx)))
 	(multiple-value-bind (local-name uri prefix)
 	    (decode-qname/runtime qname namespaces nil)
-	  (when namespace
-	    (setf uri namespace))
-	  (lambda (ctx)
-	    (write-attribute local-name
-			     uri
-			     (with-text-output-sink (s)
-			       (with-xml-output s
-				 (funcall value-thunk ctx)))
-			     :suggested-prefix prefix)))))))
+	  (when ns-thunk
+	    (setf uri (funcall ns-thunk ctx)))
+	  (write-attribute local-name
+			   uri
+			   (with-text-output-sink (s)
+			     (with-xml-output s
+			       (funcall value-thunk ctx)))
+			   :suggested-prefix prefix))))))
 
 (defun remove-excluded-namespaces
     (namespaces &optional (excluded-uris *excluded-namespaces*))
