@@ -657,7 +657,7 @@
 
 (defun named-node-= (a b)
   (and (equal (stp:namespace-uri a) (stp:namespace-uri b))
-       (equal (stp:namespace-prefix a) (stp:namespace-prefix b))
+       ;; (equal (stp:namespace-prefix a) (stp:namespace-prefix b))
        (equal (stp:local-name a) (stp:local-name b))))
 
 (defun parent-node-= (e f)
