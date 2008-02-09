@@ -8185,7 +8185,7 @@ PASS position_position78 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position78.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position78.xuriella
 
-FAIL position_position79 [XSLT-Result-Tree]: output doesn't match
+PASS position_position79 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position79.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position79.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position79.saxon
@@ -8860,7 +8860,7 @@ FAIL select_select03 [XSLT-Result-Tree]: no such function: :CURRENT
   Expected output (1): Xalan_Conformance_Tests/select/select_select03.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select03.xuriella
 
-FAIL select_select04 [XSLT-Result-Tree]: output doesn't match
+PASS select_select04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select04.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select04.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select04.saxon
@@ -9375,7 +9375,7 @@ PASS select_select80 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select80.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select80.xuriella
 
-FAIL select_select81 [XSLT-Result-Tree]: output doesn't match
+PASS select_select81 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select81.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select81.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select81.saxon
@@ -10785,7 +10785,7 @@ PASS variable_variable47 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable47.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable47.xuriella
 
-FAIL variable_variable48 [XSLT-Result-Tree]: output doesn't match
+PASS variable_variable48 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable48.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable48.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable48.saxon
@@ -11483,7 +11483,7 @@ PASS Attributes__89446 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89446.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__89446.xuriella
 
-FAIL Attributes__89459 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__89459 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-7-use-templates_order-by.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89459.saxon
@@ -13515,13 +13515,7 @@ FAIL BVTs_bvt012 [Mixed]: don't know how to copy node #.(DOCUMENT
                                                                                                                  BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                  CHILDREN '(#.(TEXT
                                                                                                                                #| :PARENT of type ELEMENT |#
-                                                                                                                               DATA It was a dark )
-                                                                                                                            #.(TEXT
-                                                                                                                               #| :PARENT of type ELEMENT |#
-                                                                                                                               DATA &)
-                                                                                                                            #.(TEXT
-                                                                                                                               #| :PARENT of type ELEMENT |#
-                                                                                                                               DATA  stormy night.))
+                                                                                                                               DATA It was a dark & stormy night.))
                                                                                                                  LOCAL-NAME p)
                                                                                                               #.(TEXT
                                                                                                                  #| :PARENT of type ELEMENT |#
@@ -13532,13 +13526,7 @@ FAIL BVTs_bvt012 [Mixed]: don't know how to copy node #.(DOCUMENT
                                                                                                                  BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                  CHILDREN '(#.(TEXT
                                                                                                                                #| :PARENT of type ELEMENT |#
-                                                                                                                               DATA But then all nights in Trenton seem dark )
-                                                                                                                            #.(TEXT
-                                                                                                                               #| :PARENT of type ELEMENT |#
-                                                                                                                               DATA &)
-                                                                                                                            #.(TEXT
-                                                                                                                               #| :PARENT of type ELEMENT |#
-                                                                                                                               DATA 
+                                                                                                                               DATA But then all nights in Trenton seem dark &
 			stormy to someone who has gone through what
 			)
                                                                                                                             #.(ELEMENT
@@ -15197,13 +15185,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA It was a dark )
-                                                                                                                               #.(TEXT
-                                                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA &)
-                                                                                                                               #.(TEXT
-                                                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA  stormy night.))
+                                                                                                                                  DATA It was a dark & stormy night.))
                                                                                                                     LOCAL-NAME p)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
@@ -15214,13 +15196,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA But then all nights in Trenton seem dark )
-                                                                                                                               #.(TEXT
-                                                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA &)
-                                                                                                                               #.(TEXT
-                                                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA 
+                                                                                                                                  DATA But then all nights in Trenton seem dark &
 			stormy to someone who has gone through what
 			)
                                                                                                                                #.(ELEMENT
@@ -18307,13 +18283,7 @@ don't know how to copy node #.(DOCUMENT
                                                                                        BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Errors/data.xml
                                                                                        CHILDREN '(#.(TEXT
                                                                                                      #| :PARENT of type ELEMENT |#
-                                                                                                     DATA It was a dark )
-                                                                                                  #.(TEXT
-                                                                                                     #| :PARENT of type ELEMENT |#
-                                                                                                     DATA &)
-                                                                                                  #.(TEXT
-                                                                                                     #| :PARENT of type ELEMENT |#
-                                                                                                     DATA  stormy night.))
+                                                                                                     DATA It was a dark & stormy night.))
                                                                                        LOCAL-NAME p)
                                                                                     #.(TEXT
                                                                                        #| :PARENT of type ELEMENT |#
@@ -18324,13 +18294,7 @@ don't know how to copy node #.(DOCUMENT
                                                                                        BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Errors/data.xml
                                                                                        CHILDREN '(#.(TEXT
                                                                                                      #| :PARENT of type ELEMENT |#
-                                                                                                     DATA But then all nights in Trenton seem dark )
-                                                                                                  #.(TEXT
-                                                                                                     #| :PARENT of type ELEMENT |#
-                                                                                                     DATA &)
-                                                                                                  #.(TEXT
-                                                                                                     #| :PARENT of type ELEMENT |#
-                                                                                                     DATA 
+                                                                                                     DATA But then all nights in Trenton seem dark &
 			stormy to someone who has gone through what
 			)
                                                                                                   #.(ELEMENT
@@ -31349,4 +31313,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1465/3092 tests.
+Passed 1470/3092 tests.

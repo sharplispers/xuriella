@@ -348,8 +348,9 @@
       (lambda (ctx)
 	(let* ((nodes (xpath:all-nodes (funcall select-thunk ctx)))
 	       (n (length nodes)))
-	  (when sort-predicate
-	    (setf nodes (sort nodes sort-predicate)))
+	  (if sort-predicate
+	      (setf nodes (sort nodes sort-predicate))
+	      (setf nodes (sort nodes #'< :key #'document-order)))
 	  (loop
 	     for node in nodes
 	     for i from 1
@@ -517,9 +518,11 @@
 					   mode-local-name
 					   mode-uri)
 				*empty-mode*)
-			    *mode*)))
+			    *mode*))
+		(nodes (xpath:all-nodes (funcall select-thunk ctx))))
+	    (setf nodes (sort nodes #'< :key #'document-order))
 	    (apply-templates/list
-	     (xpath:all-nodes (funcall select-thunk ctx))
+	     nodes
 	     (loop for (name nil value-thunk) in param-bindings
 		collect (list name (funcall value-thunk ctx)))
 	     sort-predicate)))))))

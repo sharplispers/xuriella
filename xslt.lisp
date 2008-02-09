@@ -643,11 +643,14 @@
 	      (parse-allowing-microsoft-bom pathname (stp:make-builder))
 	    ((or file-error cxml:xml-parse-error) (c)
 	      (xslt-error "cannot parse referenced document ~A: ~A"
-			  pathname c)))))
+			  pathname c))))
+	 (xpath-root-node
+	  (make-whitespace-stripper document
+				    (stylesheet-strip-tests *stylesheet*))))
     (when (puri:uri-fragment absolute-uri)
       (xslt-error "use of fragment identifiers in document() not supported"))
-    (make-whitespace-stripper document
-			      (stylesheet-strip-tests *stylesheet*))))
+    (record-document-order xpath-root-node)
+    xpath-root-node))
 
 (xpath::define-xpath-function/lazy
     :document
@@ -672,6 +675,8 @@
 	     (list (%document (xpath:string-value object)
 			      (or uri instruction-base-uri)))))))))
 
+(defvar *document-order*)
+
 (defun apply-stylesheet
     (stylesheet source-document &key output parameters uri-resolver)
   (when (typep stylesheet 'xml-designator)
@@ -684,16 +689,19 @@
 	 (let* ((puri:*strict-parse* nil)
 		(*stylesheet* stylesheet)
 		(*mode* (find-mode stylesheet nil))
+		(*document-order* (make-hash-table))
 		(*empty-mode* (make-mode))
 		(global-variable-specs
 		 (stylesheet-global-variables stylesheet))
 		(*global-variable-values*
 		 (make-variable-value-array (length global-variable-specs)))
 		(*uri-resolver* uri-resolver)
-		(ctx (xpath:make-context
-		      (make-whitespace-stripper
-		       source-document
-		       (stylesheet-strip-tests stylesheet)))))
+		(xpath-root-node
+		 (make-whitespace-stripper
+		  source-document
+		  (stylesheet-strip-tests stylesheet)))
+		(ctx (xpath:make-context xpath-root-node)))
+	   (record-document-order xpath-root-node)
 	   (mapc (lambda (spec)
 		   (when (variable-param-p spec)
 		     (let ((value
@@ -714,6 +722,28 @@
 			  (xslt-error "~A" c))))
    stylesheet
    output))
+
+;;; FIXME: this completely negates the benefits of doing whitespace stripping
+;;; incrementally.  If we need to handle the ordering issues like this, we
+;;; should also do whitespace stripping right here.
+(defun record-document-order (node)
+  (let ((n (hash-table-count *document-order* )))
+    (labels ((recurse (node)
+	       (setf (gethash node *document-order*) n)
+	       (incf n)
+	       (mapc #'recurse
+		     (xpath::force
+		      (xpath-protocol:namespace-pipe node)))
+	       (mapc #'recurse
+		     (xpath::force
+		      (xpath-protocol:attribute-pipe node)))
+	       (mapc #'recurse
+		     (xpath::force
+		      (xpath-protocol:child-pipe node)))))
+      (recurse node))))
+
+(defun document-order (node)
+  (gethash node *document-order*))
 
 (defun find-attribute-set (local-name uri)
   (or (gethash (cons local-name uri) (stylesheet-attribute-sets *stylesheet*))
