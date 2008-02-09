@@ -126,6 +126,8 @@
 	    (decode-qname/runtime qname namespaces nil)
 	  (when ns-thunk
 	    (setf uri (funcall ns-thunk ctx)))
+	  (unless uri
+	    (setf uri ""))
 	  (lambda (ctx)
 	    (with-element (local-name uri :suggested-prefix prefix)
 	      (funcall body-thunk ctx))))))))
@@ -178,7 +180,7 @@
 	  (when ns-thunk
 	    (setf uri (funcall ns-thunk ctx)))
 	  (write-attribute local-name
-			   uri
+			   (or uri "")
 			   (with-text-output-sink (s)
 			     (with-xml-output s
 			       (funcall value-thunk ctx)))

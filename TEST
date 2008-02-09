@@ -82,8 +82,7 @@ PASS attribset_attribset14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset14.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset14.xuriella
 
-FAIL attribset_attribset15 [XSLT-Result-Tree]: condition of incorrect type: 
-The value of XURIELLA::URI is NIL, which is not of type STRING.
+PASS attribset_attribset15 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset15.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset15.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset15.saxon
@@ -31362,4 +31361,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1462/3094 tests.
+Passed 1463/3094 tests.
