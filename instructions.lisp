@@ -552,7 +552,8 @@
 
 (xpath::deflexer make-attribute-template-lexer
   ("([^{]+)" (data) (values :data data))
-  ("{([^}]+)}" (xpath) (values :xpath xpath)))
+  ("{{" () (values :data "{"))
+  ("{([^{}][^}]*)}" (xpath) (values :xpath xpath)))
 
 (defun compile-attribute-value-template (template-string env)
   (let* ((lexer (make-attribute-template-lexer template-string))
