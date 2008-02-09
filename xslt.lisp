@@ -699,9 +699,14 @@
 	 (apply-templates (xpath:make-context child s/d i)
            param-bindings))))
 
+(defvar *invoke-template-limit* 200)
+
 (defun invoke-template (ctx template param-bindings)
   (let ((*lexical-variable-values*
-	 (make-variable-value-array (template-n-variables template))))
+	 (make-variable-value-array (template-n-variables template)))
+	(*invoke-template-limit* (1- *invoke-template-limit*)))
+    (unless (plusp *invoke-template-limit*)
+      (xslt-error "*invoke-template-limit* reached; stack overflow"))
     (loop
        for (name-cons value) in param-bindings
        for (nil index nil) = (find name-cons
@@ -775,6 +780,8 @@
     (dolist (template matching-candidates)
       (push template
 	    (elt priority-groups (template-import-priority template))))
+;;;     (print (map 'list #'length priority-groups))
+;;;     (force-output)
     (loop
        for i from (1- npriorities) downto 0
        for group = (elt priority-groups i)
@@ -792,7 +799,9 @@
       ((< p q) t)
       ((> p q) nil)
       (t
-       (xslt-error "conflicting templates: ~A, ~A" a b)))))
+       (xslt-error "conflicting templates:~_~A,~_~A"
+		   (template-match-expression a)
+		   (template-match-expression b))))))
 
 (defun maximize (< things)
   (when things

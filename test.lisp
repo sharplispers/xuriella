@@ -273,7 +273,8 @@
 ;; temporary configuration until we support enough XSLT that it's worth
 ;; running all tests:
 (defparameter *default-categories*
-  '("XSLT-Data-Model" "XPath-Expression" "XPath-Data-Model"))
+  ;; '("XSLT-Data-Model" "XPath-Expression" "XPath-Data-Model")
+  nil)
 
 (defun dribble-tests (&optional (category *default-categories*)
 		      (d *tests-directory*))
@@ -597,6 +598,10 @@
 	 (handler-case
 	     (let ((output-method
 		    (slurp-output-method (test-stylesheet-pathname test))))
+	       (when (find (test-id test)
+			   nil ;;'("axes_axes47" "attribset_attribset20")
+			   :test #'equal)
+		 (error "skipping problematic test"))
 	       (doit)
 	       (let ((saxon-matches-p
 		      (output-equal-p output-method
@@ -626,7 +631,7 @@
 		   (t
 		    (report nil ": output doesn't match")))))
 	   ((or error parse-number::invalid-number) (c)
-	     (report nil ": ~A" c))))
+	    (report nil ": ~A" c))))
 	(t
 	 (handler-case
 	     (doit)
