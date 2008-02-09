@@ -39,12 +39,18 @@
   ()
   (:documentation "The class of all XSLT errors."))
 
+(define-condition recoverable-xslt-error (xslt-error)
+  ()
+  (:documentation "The class of recoverable XSLT errors."))
+
 (defun xslt-error (fmt &rest args)
   (error 'xslt-error :format-control fmt :format-arguments args))
 
 (defun xslt-cerror (fmt &rest args)
   (with-simple-restart (recover "recover")
-    (error 'xslt-error :format-control fmt :format-arguments args)))
+    (error 'recoverable-xslt-error
+	   :format-control fmt
+	   :format-arguments args)))
 
 (defvar *debug* nil)
 
@@ -577,23 +583,25 @@
       (setf (stylesheet-global-variables stylesheet) specs))))
 
 (defun parse-templates! (stylesheet <transform> env)
-  (dolist (<template> (stp:filter-children (of-name "template") <transform>))
-    (let ((*namespaces* (acons-namespaces <template>)))
-      (dolist (template (compile-template <template> env))
-        (let ((name (template-name template)))
-	  (if name
-	      (let* ((table (stylesheet-named-templates stylesheet))
-		     (head (car (gethash name table))))
-		(when (and head (eql (template-import-priority head)
-				     (template-import-priority template)))
-		  ;; fixme: is this supposed to be a run-time error?
-		  (xslt-error "conflicting templates for ~A" name))
-		(push template (gethash name table)))
-	      (let ((mode (ensure-mode/qname stylesheet
-					     (template-mode-qname template)
-					     env)))
-		(setf (template-mode template) mode)
-		(push template (mode-templates mode)))))))))
+  (let ((i 0))
+    (dolist (<template> (stp:filter-children (of-name "template") <transform>))
+      (let ((*namespaces* (acons-namespaces <template>)))
+	(dolist (template (compile-template <template> env i))
+	  (let ((name (template-name template)))
+	    (if name
+		(let* ((table (stylesheet-named-templates stylesheet))
+		       (head (car (gethash name table))))
+		  (when (and head (eql (template-import-priority head)
+				       (template-import-priority template)))
+		    ;; fixme: is this supposed to be a run-time error?
+		    (xslt-error "conflicting templates for ~A" name))
+		  (push template (gethash name table)))
+		(let ((mode (ensure-mode/qname stylesheet
+					       (template-mode-qname template)
+					       env)))
+		  (setf (template-mode template) mode)
+		  (push template (mode-templates mode)))))))
+      (incf i))))
 
 
 ;;;; APPLY-STYLESHEET
@@ -865,9 +873,10 @@
       ((< p q) t)
       ((> p q) nil)
       (t
-       (xslt-error "conflicting templates:~_~A,~_~A"
-		   (template-match-expression a)
-		   (template-match-expression b))))))
+       (xslt-cerror "conflicting templates:~_~A,~_~A"
+		    (template-match-expression a)
+		    (template-match-expression b))
+       (< (template-position a) (template-position b))))))
 
 (defun maximize (< things)
   (when things
@@ -930,18 +939,17 @@
   import-priority
   apply-imports-limit
   priority
+  position
   mode
   mode-qname
   params
   body
   n-variables)
 
-;;; FIXME: the specs says "if the pattern has the form...", but the test suite
-;;; leads me to believe that they mean "if the last step in the pattern has
-;;; the form..."  For now, do the latter.
 (defun expression-priority (form)
-  (let ((step (car (last form))))
-    (if (and (listp step)
+  (let ((step (second form)))
+    (if (and (null (cddr form))
+	     (listp step)
 	     (eq :child (car step))
 	     (null (cddr step)))
 	(let ((name (second step)))
@@ -1013,7 +1021,7 @@
 				  *lexical-variable-declarations*)
 		   thunk)))
 
-(defun compile-template (<template> env)
+(defun compile-template (<template> env position)
   (stp:with-attributes (match name priority mode) <template>
     (unless (or name match)
       (xslt-error "missing match in template"))
@@ -1064,6 +1072,7 @@
 				      :import-priority *import-priority*
 				      :apply-imports-limit *apply-imports-limit*
                                       :priority p
+				      :position position
                                       :mode-qname mode
                                       :params param-bindings
                                       :body outer-body-thunk

@@ -1872,17 +1872,13 @@ PASS conflictres_conflictres01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres01.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres01.xuriella
 
-FAIL conflictres_conflictres02 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD NODE)),
-(PATH (CHILD *))
+PASS conflictres_conflictres02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres02.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres02.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres02.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres02.xuriella
 
-FAIL conflictres_conflictres03 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD *)),
-(PATH (CHILD NODE))
+PASS conflictres_conflictres03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres03.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres03.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres03.saxon
@@ -1894,9 +1890,7 @@ PASS conflictres_conflictres04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres04.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres04.xuriella
 
-FAIL conflictres_conflictres05 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD doc) (CHILD foo)),
-(PATH (CHILD foo))
+PASS conflictres_conflictres05 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres05.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres05.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres05.saxon
@@ -1908,7 +1902,7 @@ PASS conflictres_conflictres06 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres06.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres06.xuriella
 
-FAIL conflictres_conflictres07 [XSLT-Result-Tree]: output doesn't match
+PASS conflictres_conflictres07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres07.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres07.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres07.saxon
@@ -1920,25 +1914,19 @@ PASS conflictres_conflictres08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres08.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres08.xuriella
 
-FAIL conflictres_conflictres10 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD *)),
-(PATH (CHILD *))
+PASS conflictres_conflictres10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres10.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres10.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres10.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres10.xuriella
 
-FAIL conflictres_conflictres11 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD NODE)),
-(PATH (CHILD TEXT))
+PASS conflictres_conflictres11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres11.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres11.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres11.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres11.xuriella
 
-FAIL conflictres_conflictres12 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD a) (DESCENDANT-OR-SELF NODE) (CHILD b)),
-(PATH (CHILD a) (CHILD b))
+PASS conflictres_conflictres12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres12.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres12.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres12.saxon
@@ -1968,9 +1956,7 @@ PASS conflictres_conflictres16 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres16.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres16.xuriella
 
-FAIL conflictres_conflictres17 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD file (= (PATH (ATTRIBUTE test)) false))),
-(PATH (CHILD file))
+PASS conflictres_conflictres17 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres17.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres17.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres17.saxon
@@ -2012,9 +1998,7 @@ FAIL conflictres_conflictres23 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres23.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres23.xuriella
 
-FAIL conflictres_conflictres24 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD a)),
-(PATH (CHILD NODE))
+PASS conflictres_conflictres24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres24.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres24.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres24.saxon
@@ -3433,9 +3417,7 @@ PASS impincl_impincl05 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl05.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl05.xuriella
 
-FAIL impincl_impincl06 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD title)),
-(PATH (CHILD title))
+PASS impincl_impincl06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl06.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl06.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/e.xsl
@@ -3483,18 +3465,14 @@ FAIL impincl_impincl11 [XSLT-Result-Tree]: invalid array index 3 for #() (should
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl11.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl11.xuriella
 
-FAIL impincl_impincl12 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD title)),
-(PATH (CHILD title))
+PASS impincl_impincl12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl12.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl12.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/e.xsl
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl12.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl12.xuriella
 
-FAIL impincl_impincl13 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD title)),
-(PATH (CHILD title))
+FAIL impincl_impincl13 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl13.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl13.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/i13incl.xsl
@@ -3651,7 +3629,7 @@ FAIL lre_lre06 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre06.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre06.xuriella
 
-FAIL lre_lre07 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL lre_lre07 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: Xalan_Conformance_Tests/lre/lre07.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre07.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre07.saxon
@@ -3915,17 +3893,13 @@ PASS match_match27 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/match/match_match27.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match27.xuriella
 
-FAIL match_match28 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD B) (CHILD X)),
-(PATH (CHILD X))
+PASS match_match28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/match/match28.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match28.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match28.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match28.xuriella
 
-FAIL match_match29 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD B) (DESCENDANT-OR-SELF NODE) (CHILD X)),
-(PATH (CHILD X))
+PASS match_match29 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/match/match29.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match29.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match29.saxon
@@ -4968,9 +4942,7 @@ PASS modes_modes14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes14.saxon
   Actual output: Xalan_Conformance_Tests/modes/modes_modes14.xuriella
 
-FAIL modes_modes15 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD sss) (CHILD *)),
-(PATH (ROOT NODE) (CHILD sss) (CHILD *))
+PASS modes_modes15 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/modes/modes15.noindent-xsl
   Data: Xalan_Conformance_Tests/modes/modes15.xml
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes15.saxon
@@ -5236,9 +5208,7 @@ PASS namespace_namespace22 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace22.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace22.xuriella
 
-FAIL namespace_namespace23 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ROOT NODE)),
-(PATH (ROOT NODE))
+FAIL namespace_namespace23 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace23.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace23.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/namespace/test2.xsl
@@ -6189,7 +6159,7 @@ FAIL numberformat_numberformat24 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat24.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat24.xuriella
 
-FAIL numberformat_numberformat25 [XSLT-Result-Tree]: expected error not signalled: 
+PASS numberformat_numberformat25 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat25.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat25.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat25.saxon
@@ -7430,7 +7400,12 @@ The value NIL is not of type SGML::ELEMENT.
   Expected output (1): Xalan_Conformance_Tests/output/output_output74.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output74.xuriella
 
-FAIL output_output75 [XSLT-Result-Tree]: expected error not signalled: 
+WARNING:
+   comparison failed: Document not well-formed: Expected '!' or '?' after '<' in DTD.
+Context:
+  Line 6, column 9 in NIL
+
+FAIL output_output75 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: Xalan_Conformance_Tests/output/output75.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output75.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output75.saxon
@@ -8608,9 +8583,7 @@ PASS predicate_predicate37 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate37.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate37.xuriella
 
-FAIL predicate_predicate38 [XSLT-Result-Tree]: conflicting templates:
-(PATH (CHILD foo (PATH (CHILD bar (= (PATH (CHILD baz 2)) goodbye))))),
-(PATH (CHILD foo (PATH (CHILD bar 2 (= (PATH (CHILD baz 2)) goodbye)))))
+PASS predicate_predicate38 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate38.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate38.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate38.saxon
@@ -11639,7 +11612,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_AttributeWithEmptyName.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_Attribute_AttributeWithEmptyName.xuriella
 
-FAIL Attributes_Attribute_DoeWithTextAndValueOf [XSLT-Result-Tree]: expected error not signalled: 
+FAIL Attributes_Attribute_DoeWithTextAndValueOf [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Attributes/DoeOnAttributes.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/DoeOnAttributes.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_DoeWithTextAndValueOf.saxon
@@ -11701,7 +11674,7 @@ PASS Attributes_xsl_attribute_dup_attr_with_namespace_conflict [XSLT-Result-Tree
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_xsl_attribute_dup_attr_with_namespace_conflict.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_xsl_attribute_dup_attr_with_namespace_conflict.xuriella
 
-FAIL AttributeSets__91035 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL AttributeSets__91035 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91035.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91035.saxon
@@ -11733,9 +11706,8 @@ FAIL AttributeSets__91042 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VA
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91042.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91042.xuriella
 
-FAIL AttributeSets__91043 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ROOT NODE) (CHILD *)),
-(PATH (CHILD NODE))
+WARNING: There is no such encoding: "UTF-16".
+PASS AttributeSets__91043 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91043.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91043.saxon
@@ -11768,7 +11740,7 @@ PASS AttributeSets__91078 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91078.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91078.xuriella
 
-FAIL AttributeSets__91080 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL AttributeSets__91080 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91080.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91080.saxon
@@ -11837,7 +11809,7 @@ FAIL AttributeSets__91097 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91097.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91097.xuriella
 
-FAIL AttributeSets__91098 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91098 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91098.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91098.saxon
@@ -13689,13 +13661,17 @@ The value NIL is not of type SGML::ELEMENT.
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt017.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt017.xuriella
 
-FAIL BVTs_bvt018 [Mixed]: expected error not signalled: 
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+FAIL BVTs_bvt018 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding01.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt018.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt018.xuriella
 
-FAIL BVTs_bvt019 [Mixed]: expected error not signalled: 
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+FAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding02.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt019.saxon
@@ -15334,7 +15310,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt044.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt044.xuriella
 
-FAIL BVTs_bvt045 [Mixed]: expected error not signalled: 
+FAIL BVTs_bvt045 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/include.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt045.saxon
@@ -15491,15 +15467,13 @@ FAIL BVTs_bvt073 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt073.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt073.xuriella
 
-PASS BVTs_bvt075 [Mixed]: raised an xslt-error as expected
+FAIL BVTs_bvt075 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/pri-defaults.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt075.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt075.xuriella
 
-FAIL BVTs_bvt076 [Mixed]: conflicting templates:
-(PATH (CHILD book)),
-(PATH (CHILD book))
+FAIL BVTs_bvt076 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/pri-explicit.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt076.saxon
@@ -15862,17 +15836,13 @@ PASS ConflictResolution__77619 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77619.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77619.xuriella
 
-FAIL ConflictResolution__77621 [XSLT-Template]: conflicting templates:
-(PATH (CHILD last-name)),
-(PATH (CHILD last-name))
+FAIL ConflictResolution__77621 [XSLT-Template]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08006a.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77621.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77621.xuriella
 
-FAIL ConflictResolution__77622 [XSLT-Template]: conflicting templates:
-(PATH (CHILD last-name)),
-(PATH (CHILD last-name))
+FAIL ConflictResolution__77622 [XSLT-Template]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08007.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77622.saxon
@@ -15898,41 +15868,31 @@ FAIL ConflictResolution__77746 [XSLT-Template]: not a valid pattern: x|z
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77746.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77746.xuriella
 
-FAIL ConflictResolution__77781 [XSLT-Template]: conflicting templates:
-(PATH (ROOT NODE)),
-(PATH (ROOT NODE))
+PASS ConflictResolution__77781 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09103.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77781.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77781.xuriella
 
-FAIL ConflictResolution__77782 [XSLT-Template]: conflicting templates:
-(PATH (ROOT NODE)),
-(PATH (ROOT NODE))
+PASS ConflictResolution__77782 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09102.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77782.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77782.xuriella
 
-FAIL ConflictResolution__77783 [XSLT-Template]: conflicting templates:
-(PATH (ROOT NODE)),
-(PATH (ROOT NODE))
+PASS ConflictResolution__77783 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09104.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77783.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77783.xuriella
 
-FAIL ConflictResolution__77784 [XSLT-Template]: conflicting templates:
-(PATH (ROOT NODE)),
-(PATH (ROOT NODE))
+PASS ConflictResolution__77784 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09105.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77784.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77784.xuriella
 
-FAIL ConflictResolution__77802 [XSLT-Template]: conflicting templates:
-(PATH (CHILD last-name)),
-(PATH (CHILD last-name))
+FAIL ConflictResolution__77802 [XSLT-Template]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT09000.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77802.saxon
@@ -18861,7 +18821,7 @@ PASS ForwardComp__91839 [XSLT-Extendability]
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91839.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91839.xuriella
 
-FAIL ForwardComp__91840 [XSLT-Extendability]: expected error not signalled: 
+PASS ForwardComp__91840 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91840.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91840.saxon
@@ -21405,7 +21365,10 @@ FAIL Output__77930 [XSLT-Output]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77930.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77930.xuriella
 
-FAIL Output__77931 [XSLT-Output]: expected error not signalled: 
+WARNING:
+   comparison failed: :|MY:XML| fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+FAIL Output__77931 [XSLT-Output]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29506.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77931.saxon
@@ -28424,7 +28387,7 @@ FAIL Output_DoctypeSystemAttribute [XSLT-Output]: Element :OUT is not defined.
   Expected output (1): MSFT_Conformance_Tests/Output/Output_DoctypeSystemAttribute.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_DoctypeSystemAttribute.xuriella
 
-FAIL Output_EmptyElement1 [XSLT-Output]: expected error not signalled: 
+FAIL Output_EmptyElement1 [XSLT-Output]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_out_html_empty_tag.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_out_html_empty_tag.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_EmptyElement1.saxon
@@ -28593,7 +28556,7 @@ FAIL ProcessingInstruction_InvalidPIName2 [XSLT-Result-Tree]: output doesn't mat
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_InvalidPIName2.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_InvalidPIName2.xuriella
 
-FAIL ProcessingInstruction_ValueOfandTextWithDoeInProcInstr [XSLT-Result-Tree]: expected error not signalled: 
+FAIL ProcessingInstruction_ValueOfandTextWithDoeInProcInstr [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/xslt_pi_PIWithTextDoeEscapeChars.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/xslt_pi_PIWithTextDoeEscapeChars.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_ValueOfandTextWithDoeInProcInstr.saxon
@@ -29482,7 +29445,7 @@ FAIL Stylesheet__91815 [XSLT-Structure]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91815.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91815.xuriella
 
-FAIL Stylesheet__91816 [XSLT-Structure]: expected error not signalled: 
+PASS Stylesheet__91816 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91816.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91816.saxon
@@ -29703,7 +29666,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78273.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78273.xuriella
 
-FAIL Text__78274 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL Text__78274 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04108.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78274.saxon
@@ -29715,7 +29678,7 @@ PASS Text__78275 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78275.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78275.xuriella
 
-FAIL Text__78276 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL Text__78276 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04110.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78276.saxon
@@ -31252,4 +31215,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1499/3092 tests.
+Passed 1522/3092 tests.

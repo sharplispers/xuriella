@@ -653,7 +653,16 @@
 	   ((or error parse-number::invalid-number) (c)
 	     (report nil ": condition of incorrect type: ~%~A" c))
 	   (:no-error (result)
-	     (report nil ": expected error not signalled: " result))))))))
+	     (cond
+	       ((not (and official (probe-file official)))
+		(report nil ": expected error not signalled: " result))
+	       ((output-equal-p
+		 (slurp-output-method (test-stylesheet-pathname test))
+		 official
+		 actual)
+		(report t))
+	       (t
+		(report nil ": saxon error not signalled and official output not a match"))))))))))
 
 (defun run-xpath-tests ()
   (run-tests '("XPath-Expression" "XSLT-Data-Model")))
