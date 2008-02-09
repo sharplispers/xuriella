@@ -43,7 +43,8 @@
   (error 'xslt-error :format-control fmt :format-arguments args))
 
 (defun xslt-cerror (fmt &rest args)
-  (cerror "recover" 'xslt-error :format-control fmt :format-arguments args))
+  (with-simple-restart (recover "recover")
+    (error 'xslt-error :format-control fmt :format-arguments args)))
 
 (defvar *debug* nil)
 

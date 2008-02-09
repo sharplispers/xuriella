@@ -106,7 +106,7 @@ PASS attribset_attribset18 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset18.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset18.xuriella
 
-FAIL attribset_attribset19 [XSLT-Result-Tree]: attribute after start tag
+PASS attribset_attribset19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset19.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset19.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset19.saxon
@@ -242,7 +242,7 @@ PASS attribset_attribset34 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset34.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset34.xuriella
 
-FAIL attribset_attribset35 [XSLT-Result-Tree]: attribute after start tag
+PASS attribset_attribset35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset35.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset35.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset35.saxon
@@ -2957,18 +2957,6 @@ FAIL copy_copy60 [XSLT-Result-Tree]: don't know how to copy node #.(DOCUMENT
   Data: Xalan_Conformance_Tests/copy/copy60.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy60.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy60.xuriella
-
-PASS copy_copy61 [XSLT-Result-Tree]: raised an xslt-error as expected
-  Stylesheet: Xalan_Conformance_Tests/copy/copy61.noindent-xsl
-  Data: Xalan_Conformance_Tests/copy/copy61.xml
-  Expected output (1): Xalan_Conformance_Tests/copy/copy_copy61.saxon
-  Actual output: Xalan_Conformance_Tests/copy/copy_copy61.xuriella
-
-PASS copy_copy62 [XSLT-Result-Tree]: raised an xslt-error as expected
-  Stylesheet: Xalan_Conformance_Tests/copy/copy62.noindent-xsl
-  Data: Xalan_Conformance_Tests/copy/copy62.xml
-  Expected output (1): Xalan_Conformance_Tests/copy/copy_copy62.saxon
-  Actual output: Xalan_Conformance_Tests/copy/copy_copy62.xuriella
 
 PASS dflt_dflt01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/dflt/dflt01.noindent-xsl
@@ -10797,7 +10785,7 @@ PASS variable_variable47 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable47.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable47.xuriella
 
-FAIL variable_variable48 [XSLT-Result-Tree]: attribute after start tag
+FAIL variable_variable48 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/variable/variable48.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable48.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable48.saxon
@@ -11171,7 +11159,7 @@ PASS Attributes__78378 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78378.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78378.xuriella
 
-FAIL Attributes__78379 [XSLT-Result-Tree]: attribute after start tag
+PASS Attributes__78379 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78379.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78379.saxon
@@ -11187,7 +11175,7 @@ is not of type
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78380.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78380.xuriella
 
-FAIL Attributes__78381 [XSLT-Result-Tree]: attribute after start tag
+PASS Attributes__78381 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78381.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78381.saxon
@@ -31361,4 +31349,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1463/3094 tests.
+Passed 1465/3092 tests.
