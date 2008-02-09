@@ -214,11 +214,16 @@
     (*start-tag-written-p*
      (xslt-cerror "attribute after start tag"))
     (t
-     (push (make-sink-attribute :local-name local-name
-				:uri uri
-				:suggested-prefix suggested-prefix
-				:value value)
-	   (sink-element-attributes *current-element*)))))
+     (setf (sink-element-attributes *current-element*)
+	   (cons (make-sink-attribute :local-name local-name
+				      :uri uri
+				      :suggested-prefix suggested-prefix
+				      :value value)
+		 (delete-if (lambda (x)
+			      (and (equal (sink-attribute-local-name x)
+					  local-name)
+				   (equal (sink-attribute-uri x) uri)))
+			    (sink-element-attributes *current-element*)))))))
 
 (defun write-text (data)
   (maybe-emit-start-tag)

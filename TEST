@@ -28,65 +28,25 @@ PASS attribset_attribset05 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset05.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset05.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test1".
-Context:
-  Line 3, column 94 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test1".
-Context:
-  Line 3, column 94 in NIL
-
-FAIL attribset_attribset06 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset06.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset06.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset06.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset06.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "test1".
-Context:
-  Line 3, column 53 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "test1".
-Context:
-  Line 3, column 53 in NIL
-
-FAIL attribset_attribset07 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset07.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset07.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset07.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset07.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test".
-Context:
-  Line 3, column 93 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test".
-Context:
-  Line 3, column 93 in NIL
-
-FAIL attribset_attribset08 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset08.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset08.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset08.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset08.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "foo".
-Context:
-  Line 4, column 102 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "foo".
-Context:
-  Line 4, column 102 in NIL
-
-FAIL attribset_attribset09 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset09.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset09.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset09.saxon
@@ -98,33 +58,13 @@ FAIL attribset_attribset10 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset10.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset10.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
-Context:
-  Line 3, column 79 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
-Context:
-  Line 3, column 79 in NIL
-
-FAIL attribset_attribset11 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset11.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset11.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset11.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset11.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
-Context:
-  Line 3, column 96 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
-Context:
-  Line 3, column 96 in NIL
-
-FAIL attribset_attribset12 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset12.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset12.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset12.saxon
@@ -160,17 +100,7 @@ PASS attribset_attribset17 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset17.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset17.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "attr1" has two definitions in element "Out".
-Context:
-  Line 4, column 155 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "attr1" has two definitions in element "Out".
-Context:
-  Line 4, column 155 in NIL
-
-FAIL attribset_attribset18 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset18 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset18.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset18.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset18.saxon
@@ -220,17 +150,7 @@ PASS attribset_attribset25 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset25.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset25.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
-Context:
-  Line 3, column 60 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
-Context:
-  Line 3, column 60 in NIL
-
-FAIL attribset_attribset26 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset26 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset26.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset26.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset26.saxon
@@ -261,17 +181,7 @@ FAIL attribset_attribset27 [XSLT-Result-Tree]: don't know how to copy node #.(DO
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset27.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset27.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
-Context:
-  Line 3, column 60 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
-Context:
-  Line 3, column 60 in NIL
-
-FAIL attribset_attribset28 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset28.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset28.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset28.saxon
@@ -326,17 +236,7 @@ PASS attribset_attribset33 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset33.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset33.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "element1".
-Context:
-  Line 3, column 56 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "element1".
-Context:
-  Line 3, column 56 in NIL
-
-FAIL attribset_attribset34 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset34 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset34.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset34.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset34.saxon
@@ -5252,17 +5152,7 @@ FAIL namespace_namespace02 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace02.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace02.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "L" has two definitions in element "foo".
-Context:
-  Line 5, column 67 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "L" has two definitions in element "foo".
-Context:
-  Line 5, column 67 in NIL
-
-FAIL namespace_namespace03 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace03.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace03.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace03.saxon
@@ -11868,17 +11758,7 @@ PASS Attributes_AttrNameBeginsWithXml [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_AttrNameBeginsWithXml.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_AttrNameBeginsWithXml.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Attribute "foo:attr" has two definitions in element "p".
-Context:
-  Line 2, column 53 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "foo:attr" has two definitions in element "p".
-Context:
-  Line 2, column 53 in NIL
-
-FAIL Attributes_xsl_attribute_dup_attr_with_namespace_conflict [XSLT-Result-Tree]: output doesn't match
+PASS Attributes_xsl_attribute_dup_attr_with_namespace_conflict [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_xsl_attribute_dup_attr_with_namespace_conflict.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_xsl_attribute_dup_attr_with_namespace_conflict.saxon
@@ -11938,17 +11818,7 @@ FAIL AttributeSets__91046 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VA
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91046.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
-WARNING:
-   comparison failed: Document not well-formed: Attribute "attr" has two definitions in element "foo".
-Context:
-  Line 2, column 27 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "attr" has two definitions in element "foo".
-Context:
-  Line 2, column 27 in NIL
-
-FAIL AttributeSets__91077 [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets__91077 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91077.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91077.saxon
@@ -11980,17 +11850,7 @@ PASS AttributeSets__91083 [XSLT-Result-Tree]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91083.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
-WARNING:
-   comparison failed: Document not well-formed: Attribute "att1" has two definitions in element "elem".
-Context:
-  Line 2, column 55 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "att1" has two definitions in element "elem".
-Context:
-  Line 2, column 55 in NIL
-
-FAIL AttributeSets__91084 [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets__91084 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91084.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91084.saxon
@@ -14008,16 +13868,6 @@ FAIL BVTs_bvt039 [Mixed]: output doesn't match
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-nsalias.inc
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt039.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt039.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "attr1" has two definitions in element "x".
-Context:
-  Line 3, column 91 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Attribute "attr1" has two definitions in element "x".
-Context:
-  Line 3, column 91 in NIL
 
 FAIL BVTs_bvt040 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-attrset.noindent-xsl
@@ -31511,4 +31361,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1392/3094 tests.
+Passed 1406/3094 tests.
