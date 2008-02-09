@@ -97,10 +97,14 @@
     (declare (ignore use-attribute-sets)) ;fixme
     (multiple-value-bind (name-thunk constant-name-p)
 	(compile-attribute-value-template name env)
-      (let ((body-thunk (compile-instruction `(progn ,@body) env)))
-	(if constant-name-p
-	    (compile-element/constant-name name namespace env body-thunk)
-	    (compile-element/runtime name-thunk namespace body-thunk))))))
+      (multiple-value-bind (ns-thunk constant-ns-p)
+	  (if namespace
+	      (compile-attribute-value-template namespace env)
+	      (values nil t))
+	(let ((body-thunk (compile-instruction `(progn ,@body) env)))
+	  (if (and constant-name-p constant-ns-p)
+	      (compile-element/constant-name name namespace env body-thunk)
+	      (compile-element/runtime name-thunk ns-thunk body-thunk)))))))
 
 (defun compile-element/constant-name (qname namespace env body-thunk)
   ;; the simple case: compile-time decoding of the QName
@@ -112,7 +116,7 @@
       (with-element (local-name uri :suggested-prefix prefix)
 	(funcall body-thunk ctx)))))
 
-(defun compile-element/runtime (name-thunk namespace body-thunk)
+(defun compile-element/runtime (name-thunk ns-thunk body-thunk)
   ;; run-time decoding of the QName, but using the same namespaces
   ;; that would have been known at compilation time.
   (let ((namespaces *namespaces*))
@@ -120,8 +124,8 @@
       (let ((qname (funcall name-thunk ctx)))
 	(multiple-value-bind (local-name uri prefix)
 	    (decode-qname/runtime qname namespaces nil)
-	  (when namespace
-	    (setf uri namespace))
+	  (when ns-thunk
+	    (setf uri (funcall ns-thunk ctx)))
 	  (lambda (ctx)
 	    (with-element (local-name uri :suggested-prefix prefix)
 	      (funcall body-thunk ctx))))))))
