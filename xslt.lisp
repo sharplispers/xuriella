@@ -382,14 +382,19 @@
 			   (stp:attribute-value elt "use-attribute-sets"))))
 		 (instructions
 		  (stp:map-children 'list #'parse-instruction elt))
+		 (*lexical-variable-declarations*
+		  (make-empty-declaration-array))
 		 (thunk
-		  (compile-instruction `(progn ,@instructions) env)))
+		  (compile-instruction `(progn ,@instructions) env))
+		 (n-variables (length *lexical-variable-declarations*)))
 	    (lambda (ctx)
 	      (with-stack-limit ()
 		(loop for (local-name uri nil) in sets do
 		     (dolist (thunk (find-attribute-set local-name uri))
 		       (funcall thunk ctx)))
-		(funcall thunk ctx))))
+		(let ((*lexical-variable-values*
+		       (make-variable-value-array n-variables)))
+		  (funcall thunk ctx)))))
 	  (gethash (multiple-value-bind (local-name uri)
 		       (decode-qname (stp:attribute-value elt "name") env nil)
 		     (cons local-name uri))

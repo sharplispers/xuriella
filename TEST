@@ -258,7 +258,7 @@ PASS attribset_attribset43 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset43.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset43.xuriella
 
-FAIL attribset_attribset44 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+PASS attribset_attribset44 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset44.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset44.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset44.saxon
@@ -11198,7 +11198,8 @@ PASS Attributes_Attribute_WhitespaceInUseAttributeSets [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_WhitespaceInUseAttributeSets.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_Attribute_WhitespaceInUseAttributeSets.xuriella
 
-FAIL Attributes_EmptyStringInUseAttribSets [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+WARNING: There is no such encoding: "UTF-16".
+PASS Attributes_EmptyStringInUseAttribSets [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_empty_name_in_use_attribute_sets.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_EmptyStringInUseAttribSets.saxon
@@ -11222,27 +11223,27 @@ FAIL AttributeSets__91035 [XSLT-Result-Tree]: saxon error not signalled and offi
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91035.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91035.xuriella
 
-FAIL AttributeSets__91036 [XSLT-Result-Tree]: condition of incorrect type: 
-The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+FAIL AttributeSets__91036 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91036.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91036.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91036.xuriella
 
-FAIL AttributeSets__91037 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+WARNING: There is no such encoding: "UTF-16".
+PASS AttributeSets__91037 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91037.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.xuriella
 
-FAIL AttributeSets__91038 [XSLT-Result-Tree]: condition of incorrect type: 
-The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+FAIL AttributeSets__91038 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91038.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.xuriella
 
-FAIL AttributeSets__91042 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+WARNING: There is no such encoding: "UTF-16".
+PASS AttributeSets__91042 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91042.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91042.saxon
@@ -11262,7 +11263,8 @@ PASS AttributeSets__91045 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91045.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91045.xuriella
 
-FAIL AttributeSets__91046 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+WARNING: There is no such encoding: "UTF-16".
+PASS AttributeSets__91046 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91046.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91046.saxon
@@ -11307,7 +11309,8 @@ PASS AttributeSets__91084 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91084.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91084.xuriella
 
-FAIL AttributeSets__91085 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+WARNING: There is no such encoding: "UTF-16".
+PASS AttributeSets__91085 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91085.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91085.saxon
@@ -11389,7 +11392,7 @@ PASS AttributeSets__91120 [XSLT-Result-Tree]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91120.xuriella
 
 FAIL AttributeSets__91139 [XSLT-Result-Tree]: condition of incorrect type: 
-The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+undeclared variable: x in namespace 
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91139.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91139.saxon
@@ -11620,7 +11623,7 @@ FAIL BVTs_bvt002 [Mixed]: not a stylesheet
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt002.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt002.xuriella
 
-FAIL BVTs_bvt003 [Mixed]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+PASS BVTs_bvt003 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/attrset.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt003.saxon
@@ -21734,4 +21737,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1565/3092 tests.
+Passed 1572/3092 tests.
