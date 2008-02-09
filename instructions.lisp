@@ -133,7 +133,8 @@
 			(words str))))
       (lambda (ctx)
 	(loop for (local-name uri nil) in sets do
-	     (funcall (find-attribute-set local-name uri) ctx))))))
+	     (dolist (thunk (find-attribute-set local-name uri))
+	       (funcall thunk ctx)))))))
 
 (define-instruction xsl:attribute (args env)
   (destructuring-bind ((name &key namespace) &body body) args

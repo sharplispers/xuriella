@@ -363,11 +363,7 @@
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
   (dolist (elt (stp:filter-children (of-name "attribute-set") <transform>))
-    (setf (gethash (multiple-value-bind (local-name uri)
-		       (decode-qname (stp:attribute-value elt "name") env nil)
-		     (cons local-name uri))
-		   (stylesheet-attribute-sets stylesheet))
-	  (let* ((sets
+    (push (let* ((sets
 		  (mapcar (lambda (qname)
 			    (multiple-value-list (decode-qname qname env nil)))
 			  (words
@@ -379,8 +375,13 @@
 	    (lambda (ctx)
 	      (with-stack-limit ()
 		(loop for (local-name uri nil) in sets do
-		     (funcall (find-attribute-set local-name uri) ctx))
-		(funcall thunk ctx)))))))
+		     (dolist (thunk (find-attribute-set local-name uri))
+		       (funcall thunk ctx)))
+		(funcall thunk ctx))))
+	  (gethash (multiple-value-bind (local-name uri)
+		       (decode-qname (stp:attribute-value elt "name") env nil)
+		     (cons local-name uri))
+		   (stylesheet-attribute-sets stylesheet)))))
 
 (defun parse-exclude-result-prefixes! (<transform> env)
   (stp:with-attributes (exclude-result-prefixes) <transform>

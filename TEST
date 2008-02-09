@@ -52,7 +52,7 @@ PASS attribset_attribset09 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset09.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset09.xuriella
 
-FAIL attribset_attribset10 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset10.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset10.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset10.saxon
@@ -218,13 +218,13 @@ PASS attribset_attribset30 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset30.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset30.xuriella
 
-FAIL attribset_attribset31 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset31 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset31.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset31.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset31.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset31.xuriella
 
-FAIL attribset_attribset32 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset32 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset32.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset32.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset32.saxon
@@ -282,13 +282,13 @@ FAIL attribset_attribset40 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset40.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset40.xuriella
 
-FAIL attribset_attribset41 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset41 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset41.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset41.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset41.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset41.xuriella
 
-PASS attribset_attribset42 [XSLT-Result-Tree]
+FAIL attribset_attribset42 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset42.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset42.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset42.saxon
@@ -306,7 +306,7 @@ FAIL attribset_attribset44 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-V
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset44.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset44.xuriella
 
-PASS attribset_attribset45 [XSLT-Result-Tree]
+FAIL attribset_attribset45 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset45.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset45.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/attribset/impattset45b.xsl
@@ -31361,4 +31361,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1406/3094 tests.
+Passed 1408/3094 tests.
