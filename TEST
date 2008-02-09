@@ -3831,7 +3831,7 @@ FAIL match_match13 [XSLT-Result-Tree]: not a valid pattern: aac|llh|oop|aah|ssb|
   Expected output (1): Xalan_Conformance_Tests/match/match_match13.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match13.xuriella
 
-FAIL match_match14 [XSLT-Result-Tree]: expected error not signalled: 
+PASS match_match14 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: Xalan_Conformance_Tests/match/match14.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match14.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match14.saxon
@@ -31252,4 +31252,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1498/3092 tests.
+Passed 1499/3092 tests.

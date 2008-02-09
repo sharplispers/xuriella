@@ -959,6 +959,19 @@
 	     -0.5)))
 	0.5)))
 
+(defun valid-expression-p (expr)
+  (cond
+    ((atom expr) t)
+    ((eq (first expr) :path)
+     (every (lambda (x)
+	      (let ((filter (third x)))
+		(or (null filter) (valid-expression-p filter))))
+	    (cdr expr)))
+    ((eq (first expr) :variable)	;(!)
+     nil)
+    (t
+     (every #'valid-expression-p (cdr expr)))))
+
 (defun parse-pattern (str)
   ;; zzz check here for anything not allowed as an XSLT pattern
   ;; zzz can we hack id() and key() here?
@@ -968,6 +981,8 @@
     (mapcar (lambda (case)
 	      (unless (eq (car case) :path) ;zzz: filter statt path
 		(xslt-error "not a valid pattern: ~A" str))
+	      (unless (valid-expression-p case)
+		(xslt-error "invalid filter"))
 	      case)
 	    (if (eq (car form) :union)
 		(cdr form)
