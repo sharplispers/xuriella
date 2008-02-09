@@ -25,7 +25,8 @@
 	   #:copy-of
 	   #:message
 	   #:terminate
-	   #:fallback))
+	   #:fallback
+	   #:use-attribute-sets))
 
 (defpackage :xuriella
   (:use :cl)

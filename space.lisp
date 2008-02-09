@@ -67,8 +67,9 @@
   (cl-ppcre:all-matches #.(format nil "^[~A]+$" *whitespace*) str))
 
 (defun words (str)
-  (cl-ppcre:split #.(format nil "[~A]+" *whitespace*)
-		  (string-trim *whitespace* str)))
+  (when str
+    (cl-ppcre:split #.(format nil "[~A]+" *whitespace*)
+		    (string-trim *whitespace* str))))
 
 
 ;;;; Strip whitespace in stylesheets

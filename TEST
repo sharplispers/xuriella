@@ -1,32 +1,42 @@
-FAIL attribset_attribset01 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset01.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset01.xuriella
 
-FAIL attribset_attribset02 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset02.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset02.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset02.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset02.xuriella
 
-FAIL attribset_attribset03 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset03.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset03.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset03.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset03.xuriella
 
-FAIL attribset_attribset04 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset04.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset04.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset04.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset04.xuriella
 
-FAIL attribset_attribset05 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset05 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset05.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset05.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset05.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset05.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test1".
+Context:
+  Line 3, column 94 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test1".
+Context:
+  Line 3, column 94 in NIL
 
 FAIL attribset_attribset06 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset06.noindent-xsl
@@ -34,17 +44,47 @@ FAIL attribset_attribset06 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset06.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset06.xuriella
 
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "test1".
+Context:
+  Line 3, column 53 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "test1".
+Context:
+  Line 3, column 53 in NIL
+
 FAIL attribset_attribset07 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset07.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset07.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset07.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset07.xuriella
 
+WARNING:
+   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test".
+Context:
+  Line 3, column 93 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "test".
+Context:
+  Line 3, column 93 in NIL
+
 FAIL attribset_attribset08 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset08.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset08.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset08.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset08.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "foo".
+Context:
+  Line 4, column 102 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "text-decoration" has two definitions in element "foo".
+Context:
+  Line 4, column 102 in NIL
 
 FAIL attribset_attribset09 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset09.noindent-xsl
@@ -58,6 +98,16 @@ FAIL attribset_attribset10 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset10.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset10.xuriella
 
+WARNING:
+   comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
+Context:
+  Line 3, column 79 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
+Context:
+  Line 3, column 79 in NIL
+
 FAIL attribset_attribset11 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset11.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset11.xml
@@ -67,12 +117,12 @@ FAIL attribset_attribset11 [XSLT-Result-Tree]: output doesn't match
 WARNING:
    comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
 Context:
-  Line 3, column 125 in NIL
+  Line 3, column 96 in NIL
 
 WARNING:
    comparison failed: Document not well-formed: Attribute "font-size" has two definitions in element "test1".
 Context:
-  Line 3, column 125 in NIL
+  Line 3, column 96 in NIL
 
 FAIL attribset_attribset12 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset12.noindent-xsl
@@ -140,7 +190,7 @@ FAIL attribset_attribset20 [XSLT-Result-Tree]: conflicting templates:
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset20.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset20.xuriella
 
-FAIL attribset_attribset21 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset21.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset21.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset21.saxon
@@ -169,6 +219,16 @@ PASS attribset_attribset25 [XSLT-Result-Tree]
   Data: Xalan_Conformance_Tests/attribset/attribset25.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset25.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset25.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
+Context:
+  Line 3, column 60 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
+Context:
+  Line 3, column 60 in NIL
 
 FAIL attribset_attribset26 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset26.noindent-xsl
@@ -201,6 +261,16 @@ FAIL attribset_attribset27 [XSLT-Result-Tree]: don't know how to copy node #.(DO
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset27.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset27.xuriella
 
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
+Context:
+  Line 3, column 60 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "doc".
+Context:
+  Line 3, column 60 in NIL
+
 FAIL attribset_attribset28 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset28.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset28.xml
@@ -232,7 +302,7 @@ FAIL attribset_attribset29 [XSLT-Result-Tree]: don't know how to copy node #.(DO
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset29.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset29.xuriella
 
-FAIL attribset_attribset30 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset30 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset30.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset30.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset30.saxon
@@ -250,11 +320,21 @@ FAIL attribset_attribset32 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset32.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset32.xuriella
 
-FAIL attribset_attribset33 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset33 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset33.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset33.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset33.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset33.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "element1".
+Context:
+  Line 3, column 56 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "color" has two definitions in element "element1".
+Context:
+  Line 3, column 56 in NIL
 
 FAIL attribset_attribset34 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset34.noindent-xsl
@@ -276,21 +356,21 @@ FAIL attribset_attribset36 [XSLT-Result-Tree]: The value "Should not break"
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset36.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset36.xuriella
 
-FAIL attribset_attribset37 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset37 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset37.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset37.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/attribset/impattset37t.xsl
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset37.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset37.xuriella
 
-FAIL attribset_attribset38 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset38 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset38.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset38.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/attribset/inclattset38t.xsl
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset38.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset38.xuriella
 
-FAIL attribset_attribset39 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset39 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset39.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset39.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset39.saxon
@@ -308,7 +388,7 @@ FAIL attribset_attribset41 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset41.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset41.xuriella
 
-FAIL attribset_attribset42 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset42 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset42.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset42.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset42.saxon
@@ -320,13 +400,13 @@ FAIL attribset_attribset43 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset43.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset43.xuriella
 
-FAIL attribset_attribset44 [XSLT-Result-Tree]: output doesn't match
+FAIL attribset_attribset44 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset44.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset44.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset44.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset44.xuriella
 
-FAIL attribset_attribset45 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset45 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset45.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset45.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/attribset/impattset45b.xsl
@@ -340,13 +420,13 @@ FAIL attribset_attribset46 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset46.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset46.xuriella
 
-FAIL attribset_attribset47 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset47 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset47.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset47.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset47.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset47.xuriella
 
-FAIL attribset_attribset48 [XSLT-Result-Tree]: output doesn't match
+PASS attribset_attribset48 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset48.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset48.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset48.saxon
@@ -11770,15 +11850,13 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_UseXmlnsAsNamespaceForAttributeImplicitly.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_Attribute_UseXmlnsAsNamespaceForAttributeImplicitly.xuriella
 
-FAIL Attributes_Attribute_WhitespaceInUseAttributeSets [XSLT-Result-Tree]: output doesn't match
+PASS Attributes_Attribute_WhitespaceInUseAttributeSets [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/Attribute_WhitespaceInUseAttributeSets.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Attribute_WhitespaceInUseAttributeSets.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_WhitespaceInUseAttributeSets.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_Attribute_WhitespaceInUseAttributeSets.xuriella
 
-FAIL Attributes_EmptyStringInUseAttribSets [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD *)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+FAIL Attributes_EmptyStringInUseAttribSets [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_empty_name_in_use_attribute_sets.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_EmptyStringInUseAttribSets.saxon
@@ -11812,28 +11890,27 @@ FAIL AttributeSets__91035 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91035.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91035.xuriella
 
-FAIL AttributeSets__91036 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL AttributeSets__91036 [XSLT-Result-Tree]: condition of incorrect type: 
+The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91036.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91036.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91036.xuriella
 
-WARNING: There is no such encoding: "UTF-16".
-FAIL AttributeSets__91037 [XSLT-Result-Tree]: output doesn't match
+FAIL AttributeSets__91037 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91037.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.xuriella
 
-FAIL AttributeSets__91038 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL AttributeSets__91038 [XSLT-Result-Tree]: condition of incorrect type: 
+The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91038.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.xuriella
 
-FAIL AttributeSets__91042 [XSLT-Result-Tree]: conflicting templates:
-(PATH (ANCESTOR-OR-SELF NODE) (ROOT NODE) (CHILD *)),
-(PATH (ANCESTOR-OR-SELF NODE) (CHILD NODE))
+FAIL AttributeSets__91042 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91042.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91042.saxon
@@ -11848,20 +11925,29 @@ FAIL AttributeSets__91043 [XSLT-Result-Tree]: conflicting templates:
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91043.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
-FAIL AttributeSets__91045 [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets__91045 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91045.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91045.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91045.xuriella
 
-WARNING: There is no such encoding: "UTF-16".
-FAIL AttributeSets__91046 [XSLT-Result-Tree]: output doesn't match
+FAIL AttributeSets__91046 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91046.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91046.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91046.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING:
+   comparison failed: Document not well-formed: Attribute "attr" has two definitions in element "foo".
+Context:
+  Line 2, column 27 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "attr" has two definitions in element "foo".
+Context:
+  Line 2, column 27 in NIL
+
 FAIL AttributeSets__91077 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91077.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
@@ -11869,7 +11955,7 @@ FAIL AttributeSets__91077 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91077.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
-FAIL AttributeSets__91078 [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets__91078 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91078.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91078.saxon
@@ -11894,20 +11980,29 @@ PASS AttributeSets__91083 [XSLT-Result-Tree]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91083.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING:
+   comparison failed: Document not well-formed: Attribute "att1" has two definitions in element "elem".
+Context:
+  Line 2, column 55 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "att1" has two definitions in element "elem".
+Context:
+  Line 2, column 55 in NIL
+
 FAIL AttributeSets__91084 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91084.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91084.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91084.xuriella
 
-WARNING: There is no such encoding: "UTF-16".
-FAIL AttributeSets__91085 [XSLT-Result-Tree]: output doesn't match
+FAIL AttributeSets__91085 [XSLT-Result-Tree]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91085.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91085.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91085.xuriella
 
-FAIL AttributeSets__91091 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91091 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91091.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/AttributeSets/91091a.xsl
@@ -11926,7 +12021,8 @@ FAIL AttributeSets__91094 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91094.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91094.xuriella
 
-FAIL AttributeSets__91095 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL AttributeSets__91095 [XSLT-Result-Tree]: condition of incorrect type: 
+The value "comment is not allow here " is not of type LIST.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91095.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91095.saxon
@@ -11971,19 +12067,20 @@ FAIL AttributeSets__91101 [XSLT-Result-Tree]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91101.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
-FAIL AttributeSets__91119 [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets__91119 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91119.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91119.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91119.xuriella
 
-FAIL AttributeSets__91120 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91120 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91120.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91120.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91120.xuriella
 
-FAIL AttributeSets__91139 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL AttributeSets__91139 [XSLT-Result-Tree]: condition of incorrect type: 
+The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91139.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91139.saxon
@@ -12002,7 +12099,7 @@ PASS AttributeSets__91141 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91141.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91141.xuriella
 
-FAIL AttributeSets__91142 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91142 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91142.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91142.saxon
@@ -12028,13 +12125,13 @@ FAIL AttributeSets_AttributeSets_IncludeAttributeSetOfSamePrecedence [XSLT-Resul
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_IncludeAttributeSetOfSamePrecedence.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_IncludeAttributeSetOfSamePrecedence.xuriella
 
-FAIL AttributeSets_AttributeSets_WithPI [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets_AttributeSets_WithPI [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_with_pi.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_with_pi.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_WithPI.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets_AttributeSets_WithPI.xuriella
 
-FAIL AttributeSets_DoeInAttributeWithinAttributeSet [XSLT-Result-Tree]: output doesn't match
+PASS AttributeSets_DoeInAttributeWithinAttributeSet [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/DoeWithAttributeSets.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/DoeWithAttributeSets.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets_DoeInAttributeWithinAttributeSet.saxon
@@ -12214,7 +12311,7 @@ FAIL BVTs_bvt002 [Mixed]: not a stylesheet
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt002.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt002.xuriella
 
-FAIL BVTs_bvt003 [Mixed]: output doesn't match
+FAIL BVTs_bvt003 [Mixed]: The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
   Stylesheet: MSFT_Conformance_Tests/BVTs/attrset.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt003.saxon
@@ -13912,6 +14009,16 @@ FAIL BVTs_bvt039 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt039.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt039.xuriella
 
+WARNING:
+   comparison failed: Document not well-formed: Attribute "attr1" has two definitions in element "x".
+Context:
+  Line 3, column 91 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Attribute "attr1" has two definitions in element "x".
+Context:
+  Line 3, column 91 in NIL
+
 FAIL BVTs_bvt040 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-attrset.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
@@ -15488,7 +15595,7 @@ PASS BVTs_bvt052 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt052.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt052.xuriella
 
-FAIL BVTs_bvt053 [Mixed]: *call-template-limit* reached; stack overflow
+FAIL BVTs_bvt053 [Mixed]: *stack-limit* reached; stack overflow
   Stylesheet: MSFT_Conformance_Tests/BVTs/mode.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt053.saxon
@@ -16801,7 +16908,8 @@ FAIL Errors_err007 [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err007.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err007.xuriella
 
-FAIL Errors_err008 [Mixed]: expected error not signalled: 
+FAIL Errors_err008 [Mixed]: condition of incorrect type: 
+The value NIL is not of type (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/Errors/attrset-noname.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err008.saxon
@@ -31403,4 +31511,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1368/3094 tests.
+Passed 1392/3094 tests.

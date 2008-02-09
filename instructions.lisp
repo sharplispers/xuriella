@@ -126,6 +126,15 @@
 	    (with-element (local-name uri :suggested-prefix prefix)
 	      (funcall body-thunk ctx))))))))
 
+(define-instruction xsl:use-attribute-sets (args env)
+  (destructuring-bind (str) args
+    (let ((sets (mapcar (lambda (qname)
+			  (multiple-value-list (decode-qname qname env nil)))
+			(words str))))
+      (lambda (ctx)
+	(loop for (local-name uri nil) in sets do
+	     (funcall (find-attribute-set local-name uri) ctx))))))
+
 (define-instruction xsl:attribute (args env)
   (destructuring-bind ((name &key namespace) &body body) args
     (multiple-value-bind (name-thunk constant-name-p)
@@ -435,24 +444,21 @@
     namespaces))
 
 (define-instruction xsl:copy (args env)
-  (destructuring-bind ((&key use-attribute-sets) &rest rest)
-      args
-    (declare (ignore use-attribute-sets))
-    (let ((body (compile-instruction `(progn ,@rest) env)))
-      (lambda (ctx)
-	(let ((node (xpath:context-node ctx)))
-	  (cond
-	    ((xpath-protocol:node-type-p node :element)
-	     (with-element
-		 ((xpath-protocol:local-name node)
-		  (xpath-protocol:namespace-uri node)
-		  :suggested-prefix (xpath-protocol:namespace-prefix node)
-		  :extra-namespaces (namespaces-as-alist node))
-	       (funcall body ctx)))
-	    ((xpath-protocol:node-type-p node :document)
-	     (funcall body ctx))
-	    (t
-	     (copy-leaf-node node))))))))
+  (let ((body (compile-instruction `(progn ,@args) env)))
+    (lambda (ctx)
+      (let ((node (xpath:context-node ctx)))
+	(cond
+	  ((xpath-protocol:node-type-p node :element)
+	   (with-element
+	       ((xpath-protocol:local-name node)
+		(xpath-protocol:namespace-uri node)
+		:suggested-prefix (xpath-protocol:namespace-prefix node)
+		:extra-namespaces (namespaces-as-alist node))
+	     (funcall body ctx)))
+	  ((xpath-protocol:node-type-p node :document)
+	   (funcall body ctx))
+	  (t
+	   (copy-leaf-node node)))))))
 
 (defun copy-leaf-node (node)
   (cond

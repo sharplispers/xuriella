@@ -66,6 +66,9 @@
     (xpath:xpath-error (c)
       (xslt-error "~A" c))))
 
+(defmacro with-stack-limit ((&optional) &body body)
+  `(invoke-with-stack-limit (lambda () ,@body)))
+
 
 ;;;; Helper function and macro
 
@@ -230,7 +233,8 @@
   (global-variables ())
   (output-specification (make-output-specification))
   (strip-tests nil)
-  (named-templates (make-hash-table :test 'equal)))
+  (named-templates (make-hash-table :test 'equal))
+  (attribute-sets (make-hash-table :test 'equal)))
 
 (defstruct mode (templates nil))
 
@@ -318,7 +322,8 @@
     (parse-global-variables! stylesheet <transform>)
     (parse-templates! stylesheet <transform> env)
     (parse-output! stylesheet <transform>)
-    (parse-strip/preserve-space! stylesheet <transform> env)))
+    (parse-strip/preserve-space! stylesheet <transform> env)
+    (parse-attribute-sets! stylesheet <transform> env)))
 
 (defvar *xsl-import-stack* nil)
 
@@ -355,6 +360,27 @@
     (ensure-mode stylesheet nil)
     (parse-1-stylesheet env stylesheet designator uri-resolver)
     stylesheet))
+
+(defun parse-attribute-sets! (stylesheet <transform> env)
+  (dolist (elt (stp:filter-children (of-name "attribute-set") <transform>))
+    (setf (gethash (multiple-value-bind (local-name uri)
+		       (decode-qname (stp:attribute-value elt "name") env nil)
+		     (cons local-name uri))
+		   (stylesheet-attribute-sets stylesheet))
+	  (let* ((sets
+		  (mapcar (lambda (qname)
+			    (multiple-value-list (decode-qname qname env nil)))
+			  (words
+			   (stp:attribute-value elt "use-attribute-sets"))))
+		 (instructions
+		  (stp:map-children 'list #'parse-instruction elt))
+		 (thunk
+		  (compile-instruction `(progn ,@instructions) env)))
+	    (lambda (ctx)
+	      (with-stack-limit ()
+		(loop for (local-name uri nil) in sets do
+		     (funcall (find-attribute-set local-name uri) ctx))
+		(funcall thunk ctx)))))))
 
 (defun parse-exclude-result-prefixes! (<transform> env)
   (stp:with-attributes (exclude-result-prefixes) <transform>
@@ -687,6 +713,10 @@
    stylesheet
    output))
 
+(defun find-attribute-set (local-name uri)
+  (or (gethash (cons local-name uri) (stylesheet-attribute-sets *stylesheet*))
+      (xslt-error "no such attribute set: ~A/~A" local-name uri)))
+
 (defun apply-templates/list (list &optional param-bindings sort-predicate)
   (when sort-predicate
     (setf list (sort list sort-predicate)))
@@ -699,25 +729,29 @@
 	 (apply-templates (xpath:make-context child s/d i)
            param-bindings))))
 
-(defvar *invoke-template-limit* 200)
+(defvar *stack-limit* 200)
+
+(defun invoke-with-stack-limit (fn)
+  (let ((*stack-limit* (1- *stack-limit*)))
+    (unless (plusp *stack-limit*)
+      (xslt-error "*stack-limit* reached; stack overflow"))
+    (funcall fn)))
 
 (defun invoke-template (ctx template param-bindings)
   (let ((*lexical-variable-values*
-	 (make-variable-value-array (template-n-variables template)))
-	(*invoke-template-limit* (1- *invoke-template-limit*)))
-    (unless (plusp *invoke-template-limit*)
-      (xslt-error "*invoke-template-limit* reached; stack overflow"))
-    (loop
-       for (name-cons value) in param-bindings
-       for (nil index nil) = (find name-cons
-				   (template-params template)
-				   :test #'equal
-				   :key #'car)
-       do
+	 (make-variable-value-array (template-n-variables template))))
+    (with-stack-limit ()
+      (loop
+	 for (name-cons value) in param-bindings
+	 for (nil index nil) = (find name-cons
+				     (template-params template)
+				     :test #'equal
+				     :key #'car)
+	 do
 	 (unless index
 	   (xslt-error "invalid template parameter ~A" name-cons))
 	 (setf (lexical-variable-value index) value))
-    (funcall (template-body template) ctx)))
+      (funcall (template-body template) ctx))))
 
 (defun apply-default-templates (ctx)
   (let ((node (xpath:context-node ctx)))

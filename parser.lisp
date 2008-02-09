@@ -116,14 +116,15 @@
        (,(stp:local-name node)
 	 ,(stp:namespace-uri node)
 	 ,(stp:namespace-prefix node))
-     ,@(stp:map-attributes 'list
-			   (lambda (a)
-			     `(xsl:literal-attribute
-				  (,(stp:local-name a)
-				    ,(stp:namespace-uri a)
-				    ,(stp:namespace-prefix a))
-				,(stp:value a)))
-			   node)
+     (xsl:use-attribute-sets
+      ,(stp:attribute-value node "use-attribute-sets" *xsl*))
+     ,@(loop for a in (stp:list-attributes node)
+	    unless (and (namep a "use-attribute-sets"))
+	    collect `(xsl:literal-attribute
+			 (,(stp:local-name a)
+			   ,(stp:namespace-uri a)
+			   ,(stp:namespace-prefix a))
+		       ,(stp:value a)))
      ,@(parse-body node)))
 
 (defmacro define-instruction-parser (name (node-var) &body body)
@@ -189,8 +190,8 @@
 
 (define-instruction-parser |element| (node)
   (stp:with-attributes (name namespace use-attribute-sets) node
-    `(xsl:element (,name :namespace ,namespace
-			 :use-attribute-sets ,use-attribute-sets)
+    `(xsl:element (,name :namespace ,namespace)
+       (xsl:use-attribute-sets ,use-attribute-sets)
        ,@(parse-body node))))
 
 (define-instruction-parser |attribute| (node)
@@ -221,8 +222,9 @@
 
 (define-instruction-parser |copy| (node)
   (stp:with-attributes (use-attribute-sets) node
-    `(xsl:copy (:use-attribute-sets ,use-attribute-sets)
-	       ,@(parse-body node))))
+    `(xsl:copy
+      (xsl:use-attribute-sets ,use-attribute-sets)
+      ,@(parse-body node))))
 
 (define-instruction-parser |variable| (node)
   (xslt-error "unhandled xsl:variable"))
