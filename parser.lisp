@@ -203,7 +203,7 @@
   `(xsl:text ,(stp:string-value node)))
 
 (define-instruction-parser |comment| (node)
-  `(xsl:comment ,@(stp:string-value node)))
+  `(xsl:comment ,(stp:string-value node)))
 
 (define-instruction-parser |processing-instruction| (node)
   (stp:with-attributes (name) node

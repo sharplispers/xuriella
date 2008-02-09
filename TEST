@@ -208,9 +208,7 @@ PASS attribset_attribset35 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset35.saxon
   Actual output: Xalan_Conformance_Tests/attribset/attribset_attribset35.xuriella
 
-FAIL attribset_attribset36 [XSLT-Result-Tree]: The value "Should not break"
-                                               is not of type
-                                                 LIST.
+PASS attribset_attribset36 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset36.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset36.xml
   Expected output (1): Xalan_Conformance_Tests/attribset/attribset_attribset36.saxon
@@ -2471,7 +2469,7 @@ FAIL copy_copy58 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy58.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy58.xuriella
 
-FAIL copy_copy59 [XSLT-Result-Tree]: The value "" is not of type LIST.
+FAIL copy_copy59 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/copy/copy59.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy59.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy59.saxon
@@ -4380,7 +4378,9 @@ PASS message_message10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/message/message_message10.saxon
   Actual output: Xalan_Conformance_Tests/message/message_message10.xuriella
 
-FAIL message_message11 [XSLT-Result-Tree]: The value "" is not of type LIST.
+WARNING: <?xml version="1.0" encoding="UTF-8"?>
+Message from MESSAGE11: <!---->Anything between the colon and this?
+PASS message_message11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/message/message11.noindent-xsl
   Data: Xalan_Conformance_Tests/message/message11.xml
   Expected output (1): Xalan_Conformance_Tests/message/message_message11.saxon
@@ -6791,45 +6791,37 @@ PASS output_output52 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output52.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output52.xuriella
 
-FAIL output_output53 [XSLT-Result-Tree]: The value
-                                           "This should be inserted as-is."
-                                         is not of type
-                                           LIST.
+PASS output_output53 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output53.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output53.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output53.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output53.xuriella
 
-FAIL output_output54 [XSLT-Result-Tree]: The value "" is not of type LIST.
+FAIL output_output54 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output54.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output54.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output54.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output54.xuriella
 
-FAIL output_output55 [XSLT-Result-Tree]: The value "" is not of type LIST.
+FAIL output_output55 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output55.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output55.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output55.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output55.xuriella
 
-FAIL output_output56 [XSLT-Result-Tree]: The value "" is not of type LIST.
+FAIL output_output56 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output56.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output56.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output56.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output56.xuriella
 
-FAIL output_output57 [XSLT-Result-Tree]: The value "Comment content"
-                                         is not of type
-                                           LIST.
+PASS output_output57 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output57.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output57.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output57.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output57.xuriella
 
-FAIL output_output58 [XSLT-Result-Tree]: The value
-                                           "This should be inserted as-is."
-                                         is not of type
-                                           LIST.
+PASS output_output58 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output58.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output58.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output58.saxon
@@ -6919,7 +6911,7 @@ PASS output_output67 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output67.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output67.xuriella
 
-FAIL output_output68 [XSLT-Result-Tree]: The value "" is not of type LIST.
+FAIL output_output68 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output68.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output68.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output68.saxon
@@ -7058,18 +7050,33 @@ PASS output_output88 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output88.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output88.xuriella
 
-FAIL output_output89 [XSLT-Result-Tree]: The value
-                                           "This cannot be inserted as--is."
-                                         is not of type
-                                           LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 3, column 39 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 3, column 39 in NIL
+
+FAIL output_output89 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output89.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output89.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output89.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output89.xuriella
 
-FAIL output_output90 [XSLT-Result-Tree]: The value "This needs a space after-"
-                                         is not of type
-                                           LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 3, column 37 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 3, column 37 in NIL
+
+FAIL output_output90 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output90.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output90.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output90.saxon
@@ -7093,9 +7100,7 @@ PASS output_output93 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output93.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output93.xuriella
 
-FAIL output_output94 [XSLT-Result-Tree]: The value "Comment in between"
-                                         is not of type
-                                           LIST.
+PASS output_output94 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output94.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output94.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output94.saxon
@@ -7179,9 +7184,13 @@ PASS output_output107 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output107.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output107.xuriella
 
-FAIL output_output109 [XSLT-Result-Tree]: The value "Here is my comment"
-                                          is not of type
-                                            LIST.
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+FAIL output_output109 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output109.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output109.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output109.saxon
@@ -7229,7 +7238,7 @@ FAIL output_output113 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output113.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output113.xuriella
 
-FAIL output_output114 [XSLT-Result-Tree]: The value "" is not of type LIST.
+PASS output_output114 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output114.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output114.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output114.saxon
@@ -10214,9 +10223,7 @@ PASS variable_variable38 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable38.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable38.xuriella
 
-FAIL variable_variable39 [XSLT-Result-Tree]: The value "remarks"
-                                             is not of type
-                                               LIST.
+PASS variable_variable39 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable39.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable39.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable39.saxon
@@ -10651,11 +10658,7 @@ PASS Attributes__78379 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78379.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78379.xuriella
 
-FAIL Attributes__78380 [XSLT-Result-Tree]: condition of incorrect type: 
-The value " comment 1 
-			abcabcabcabc"
-is not of type
-  LIST.
+PASS Attributes__78380 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/78380.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78380.saxon
@@ -10685,10 +10688,7 @@ PASS Attributes__78387 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78387.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78387.xuriella
 
-FAIL Attributes__81430 [XSLT-Result-Tree]: The value
-                                             "This is the end of the template section of the stylesheet"
-                                           is not of type
-                                             LIST.
+PASS Attributes__81430 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-1-template_for.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81430.saxon
@@ -10736,21 +10736,13 @@ PASS Attributes__81487 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81487.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81487.xuriella
 
-FAIL Attributes__81488 [XSLT-Result-Tree]: condition of incorrect type: 
-The value "
-This comment has a name attribute
-   "
-is not of type
-  LIST.
+FAIL Attributes__81488 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-1-comment_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81488.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81488.xuriella
 
-FAIL Attributes__81489 [XSLT-Result-Tree]: The value
-                                             "This is the end of the template section of the stylesheet"
-                                           is not of type
-                                             LIST.
+PASS Attributes__81489 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-2-template_for.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81489.saxon
@@ -10804,20 +10796,13 @@ FAIL Attributes__81498 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81498.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81498.xuriella
 
-FAIL Attributes__81499 [XSLT-Result-Tree]: The value "
-Why does a comment need a name, anyways?
-   "
-                                           is not of type
-                                             LIST.
+PASS Attributes__81499 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-2-comment_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81499.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81499.xuriella
 
-FAIL Attributes__81543 [XSLT-Result-Tree]: The value
-                                             "This is the end of the template section of the stylesheet"
-                                           is not of type
-                                             LIST.
+PASS Attributes__81543 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-8-template_for.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81543.saxon
@@ -10865,12 +10850,7 @@ PASS Attributes__81551 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81551.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81551.xuriella
 
-FAIL Attributes__81552 [XSLT-Result-Tree]: condition of incorrect type: 
-The value "
-Why does a comment need a name, anyways?
-   "
-is not of type
-  LIST.
+FAIL Attributes__81552 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-8-comment_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81552.saxon
@@ -10948,9 +10928,7 @@ PASS Attributes__89441 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89441.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__89441.xuriella
 
-FAIL Attributes__89442 [XSLT-Result-Tree]: The value "invalid comment"
-                                           is not of type
-                                             LIST.
+PASS Attributes__89442 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-3-comment_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89442.saxon
@@ -11160,7 +11138,7 @@ PASS Attributes__89464 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89464.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__89464.xuriella
 
-FAIL Attributes__89466 [XSLT-Result-Tree]: The value "&&&" is not of type LIST.
+PASS Attributes__89466 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-7-comment_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89466.saxon
@@ -11354,8 +11332,7 @@ FAIL AttributeSets__91094 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91094.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91094.xuriella
 
-FAIL AttributeSets__91095 [XSLT-Result-Tree]: condition of incorrect type: 
-The value "comment is not allow here " is not of type LIST.
+FAIL AttributeSets__91095 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91095.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91095.saxon
@@ -11379,8 +11356,7 @@ PASS AttributeSets__91098 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91098.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91098.xuriella
 
-FAIL AttributeSets__91099 [XSLT-Result-Tree]: condition of incorrect type: 
-The value "text" is not of type LIST.
+FAIL AttributeSets__91099 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91099.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.saxon
@@ -11780,7 +11756,7 @@ FAIL BVTs_bvt027 [Mixed]: not a valid pattern: / | author
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt027.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt027.xuriella
 
-FAIL BVTs_bvt029 [Mixed]: The value "commentText" is not of type LIST.
+PASS BVTs_bvt029 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/frag-types.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt029.saxon
@@ -11822,7 +11798,7 @@ PASS BVTs_bvt037 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt037.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt037.xuriella
 
-FAIL BVTs_bvt038 [Mixed]: The value "" is not of type LIST.
+FAIL BVTs_bvt038 [Mixed]: attribute outside of element
   Stylesheet: MSFT_Conformance_Tests/BVTs/ignore.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt038.saxon
@@ -13452,7 +13428,7 @@ FAIL BVTs_bvt061 [Mixed]: undefined instruction: number
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt061.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt061.xuriella
 
-FAIL BVTs_bvt062 [Mixed]: The value "" is not of type LIST.
+FAIL BVTs_bvt062 [Mixed]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-cdata.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt062.saxon
@@ -13508,7 +13484,7 @@ FAIL BVTs_bvt067 [Mixed]: not a well-formed XPath expression: lexer failed at po
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt067.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt067.xuriella
 
-FAIL BVTs_bvt069 [Mixed]: The value "A comment" is not of type LIST.
+FAIL BVTs_bvt069 [Mixed]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-text.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt069.saxon
@@ -13597,10 +13573,15 @@ FAIL BVTs_bvt085 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt085.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt085.xuriella
 
-FAIL BVTs_bvt086 [Mixed]: The value
-                            "disable-output-escaping=\"no\" should be ignored"
-                          is not of type
-                            LIST.
+WARNING: comparison failed: Document not well-formed: Expected "=".
+Context:
+  Line 2, column 189 in NIL
+
+WARNING: comparison failed: Document not well-formed: Expected "=".
+Context:
+  Line 9, column 33 in NIL
+
+FAIL BVTs_bvt086 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/text.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt086.saxon
@@ -13676,10 +13657,7 @@ FAIL BVTs_bvt098 [Mixed]: not a stylesheet
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt098.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt098.xuriella
 
-FAIL BVTs_bvt099 [Mixed]: The value
-                            "bookstore[@specialty='novel'][1]/book[position() < 4][title != 'Book 1']"
-                          is not of type
-                            LIST.
+FAIL BVTs_bvt099 [Mixed]: no such function: :NAME
   Stylesheet: MSFT_Conformance_Tests/BVTs/filtermatch.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt099.saxon
@@ -13691,113 +13669,149 @@ PASS BVTs_bvt100 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt100.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt100.xuriella
 
-FAIL Comment_Comment_CDATAWithDoubleHyphen [XSLT-Result-Tree]: The value
-                                                                 " --> "
-                                                               is not of type
-                                                                 LIST.
+FAIL Comment_Comment_CDATAWithDoubleHyphen [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_CdataHyphen.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithDoubleHyphen.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithDoubleHyphen.xuriella
 
-FAIL Comment_Comment_CDATAWithDoubleHyphenEntities [XSLT-Result-Tree]: The value
-                                                                         "&#x02D;&#x02D;"
-                                                                       is not of type
-                                                                         LIST.
+PASS Comment_Comment_CDATAWithDoubleHyphenEntities [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_HyphenCdataEntity.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithDoubleHyphenEntities.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithDoubleHyphenEntities.xuriella
 
-FAIL Comment_Comment_CDATAWithSingleHyphen [XSLT-Result-Tree]: The value "---"
-                                                               is not of type
-                                                                 LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
+
+FAIL Comment_Comment_CDATAWithSingleHyphen [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_CdataHyphenEntityMix.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
 
-FAIL Comment_Comment_CommentWithCDATAValidText [XSLT-Result-Tree]: The value
-                                                                     " This is a cdata section  a!=b foo!"
-                                                                   is not of type
-                                                                     LIST.
+PASS Comment_Comment_CommentWithCDATAValidText [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_CdataWithValidEntities.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithCDATAValidText.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithCDATAValidText.xuriella
 
-FAIL Comment_Comment_CommentWithForeignCharacters [XSLT-Result-Tree]: The value
-                                                                        "ʝ Ӟ"
-                                                                      is not of type
-                                                                        LIST.
+PASS Comment_Comment_CommentWithForeignCharacters [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_ForeignLanguageCharacters.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithForeignCharacters.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithForeignCharacters.xuriella
 
-FAIL Comment_Comment_CommentWithOnlyValidText [XSLT-Result-Tree]: The value
-                                                                    "Foo bar is foo 4763 bar is foo bar is foo bar 12 !!! ; @#$ "
-                                                                  is not of type
-                                                                    LIST.
+PASS Comment_Comment_CommentWithOnlyValidText [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_ValidText.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithOnlyValidText.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithOnlyValidText.xuriella
 
-FAIL Comment_Comment_DoubleHypenEntitywithDelCharacter [XSLT-Result-Tree]: The value
-                                                                             "- -"
-                                                                           is not of type
-                                                                             LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 11 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 11 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
+
+FAIL Comment_Comment_DoubleHypenEntitywithDelCharacter [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleEntityHyphen.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
 
-FAIL Comment_Comment_DoubleHypenInText [XSLT-Result-Tree]: The value
-                                                             " foo -- bar "
-                                                           is not of type
-                                                             LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 13 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 13 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
+
+FAIL Comment_Comment_DoubleHypenInText [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleHyphen.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
 
-FAIL Comment_Comment_DoubleHyphenONLY [XSLT-Result-Tree]: The value "--"
-                                                          is not of type
-                                                            LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
+
+FAIL Comment_Comment_DoubleHyphenONLY [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleHyphenOnly.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
 
-FAIL Comment_Comment_EmptyComment [XSLT-Result-Tree]: The value ""
-                                                      is not of type
-                                                        LIST.
+PASS Comment_Comment_EmptyComment [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_EmptyComment.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_EmptyComment.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_EmptyComment.xuriella
 
-FAIL Comment_Comment_HyphenEntityAndHyphen [XSLT-Result-Tree]: The value
-                                                                 "foo -- bar"
-                                                               is not of type
-                                                                 LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
+
+FAIL Comment_Comment_HyphenEntityAndHyphen [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleHyphenEntity.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
 
-FAIL Comment_Comment_LineOfAllHyphens [XSLT-Result-Tree]: The value "---------"
-                                                          is not of type
-                                                            LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
+
+FAIL Comment_Comment_LineOfAllHyphens [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_LineOfHyphens.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
 
-FAIL Comment_Comment_SingleHyphenOnly [XSLT-Result-Tree]: The value "-"
-                                                          is not of type
-                                                            LIST.
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: '--' not allowed in a comment
+Location:
+  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
+
+FAIL Comment_Comment_SingleHyphenOnly [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_SingleHyphen.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.saxon
@@ -13860,7 +13874,7 @@ PASS Completeness__84357 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Completeness/Completeness__84357.saxon
   Actual output: MSFT_Conformance_Tests/Completeness/Completeness__84357.xuriella
 
-FAIL Completeness__84358 [Mixed]: The value "1" is not of type LIST.
+PASS Completeness__84358 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Completeness/84358.noindent-xsl
   Data: MSFT_Conformance_Tests/Completeness/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Completeness/Completeness__84358.saxon
@@ -13878,7 +13892,7 @@ PASS Completeness__84360 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Completeness/Completeness__84360.saxon
   Actual output: MSFT_Conformance_Tests/Completeness/Completeness__84360.xuriella
 
-FAIL Completeness__84361 [Mixed]: The value "+++X" is not of type LIST.
+PASS Completeness__84361 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Completeness/84361.noindent-xsl
   Data: MSFT_Conformance_Tests/Completeness/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Completeness/Completeness__84361.saxon
@@ -14220,8 +14234,7 @@ PASS Elements__78347 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78347.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78347.xuriella
 
-FAIL Elements__78351 [XSLT-Result-Tree]: condition of incorrect type: 
-The value "comment 1" is not of type LIST.
+FAIL Elements__78351 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Elements/78351.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78351.saxon
@@ -14233,13 +14246,7 @@ PASS Elements__78358 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78358.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78358.xuriella
 
-FAIL Elements__78362 [XSLT-Result-Tree]: The value " 
-			&abc; <  > 
-			 cdata node should not be ignored 
-			
-			xxxxxx"
-                                         is not of type
-                                           LIST.
+FAIL Elements__78362 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Elements/78362.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78362.saxon
@@ -14311,9 +14318,7 @@ PASS Elements__89071 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89071.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89071.xuriella
 
-FAIL Elements__89072 [XSLT-Result-Tree]: The value "comment"
-                                         is not of type
-                                           LIST.
+PASS Elements__89072 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-a-comment.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89072.saxon
@@ -14361,7 +14366,7 @@ PASS Elements__89112 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89112.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89112.xuriella
 
-FAIL Elements__89113 [XSLT-Result-Tree]: The value "" is not of type LIST.
+PASS Elements__89113 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-e-comment.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89113.saxon
@@ -14415,7 +14420,7 @@ PASS Elements__89205 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89205.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89205.xuriella
 
-FAIL Elements__89207 [XSLT-Result-Tree]: The value "." is not of type LIST.
+PASS Elements__89207 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/2_3_c_comment.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/recurse.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89207.saxon
@@ -14475,7 +14480,7 @@ PASS Elements__89286 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89286.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89286.xuriella
 
-FAIL Elements__89287 [XSLT-Result-Tree]: The value "howdy" is not of type LIST.
+PASS Elements__89287 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-f-comment.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89287.saxon
@@ -14547,7 +14552,7 @@ PASS Elements__89717 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89717.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89717.xuriella
 
-FAIL Elements__89718 [XSLT-Result-Tree]: The value "" is not of type LIST.
+PASS Elements__89718 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-g-comment.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89718.saxon
@@ -14793,8 +14798,7 @@ PASS Errors_err033 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err033.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err033.xuriella
 
-FAIL Errors_err034 [Mixed]: condition of incorrect type: 
-The value " No fallback defined " is not of type LIST.
+FAIL Errors_err034 [Mixed]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Errors/extelem-bad.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err034.saxon
@@ -15109,9 +15113,10 @@ PASS Errors_err103 [Mixed]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err103.xuriella
 
 FAIL Errors_err104 [Mixed]: condition of incorrect type: 
-The value " Parameter used in select must return a node-set "
-is not of type
-  LIST.
+There is no applicable method for the generic function
+  #<STANDARD-GENERIC-FUNCTION XPATH::PIPE-OF (1)>
+when called with arguments
+  (5).
   Stylesheet: MSFT_Conformance_Tests/Errors/var-nodelist.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err104.saxon
@@ -17008,11 +17013,8 @@ FAIL Namespace__77658 [XSLT-Structure]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77658.xuriella
 
 FAIL Namespace__77659 [XSLT-Structure]: condition of incorrect type: 
-The value "
-Why does a comment need a name, anyways?
-   "
-is not of type
-  LIST.
+error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Plants.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Namespace/comment10.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77659.saxon
@@ -21732,4 +21734,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1530/3092 tests.
+Passed 1558/3092 tests.
