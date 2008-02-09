@@ -314,7 +314,7 @@ PASS attribvaltemplate_attribvaltemplate03 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate03.saxon
   Actual output: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate03.xuriella
 
-FAIL attribvaltemplate_attribvaltemplate04 [XSLT-Result-Tree]: output doesn't match
+PASS attribvaltemplate_attribvaltemplate04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate04.noindent-xsl
   Data: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate04.xml
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate04.saxon
@@ -356,13 +356,13 @@ FAIL attribvaltemplate_attribvaltemplate11 [XSLT-Result-Tree]: no such function:
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate11.saxon
   Actual output: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate11.xuriella
 
-FAIL attribvaltemplate_attribvaltemplate12 [XSLT-Result-Tree]: output doesn't match
+PASS attribvaltemplate_attribvaltemplate12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate12.noindent-xsl
   Data: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate12.xml
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate12.saxon
   Actual output: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate12.xuriella
 
-FAIL attribvaltemplate_attribvaltemplate12 [XSLT-Result-Tree]: output doesn't match
+PASS attribvaltemplate_attribvaltemplate12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate12.noindent-xsl
   Data: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate12.xml
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate12.saxon
@@ -6695,7 +6695,7 @@ PASS output_output36 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output36.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output36.xuriella
 
-FAIL output_output37 [XSLT-Result-Tree]: output doesn't match
+PASS output_output37 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output37.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output37.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output37.saxon
@@ -10640,7 +10640,7 @@ PASS Attributes__78375 [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78375.xuriella
 
 FAIL Attributes__78377 [XSLT-Result-Tree]: condition of incorrect type: 
-The value NIL is not of type (SIMPLE-ARRAY CHARACTER).
+The value NIL is not of type STRING.
   Stylesheet: MSFT_Conformance_Tests/Attributes/78377.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78377.saxon
@@ -10790,7 +10790,8 @@ PASS Attributes__81497 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81497.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81497.xuriella
 
-FAIL Attributes__81498 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL Attributes__81498 [XSLT-Result-Tree]: condition of incorrect type: 
+The value NIL is not of type STRING.
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-2-pi_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81498.saxon
@@ -11521,7 +11522,7 @@ PASS AVTs__77579 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77579.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77579.xuriella
 
-FAIL AVTs__77580 [XSLT-Result-Tree]: output doesn't match
+FAIL AVTs__77580 [XSLT-Result-Tree]: not a well-formed XPath expression: lexer failed at position 7
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17012.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/XSLT17010.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77580.saxon
@@ -11533,13 +11534,13 @@ PASS AVTs__77582 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77582.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77582.xuriella
 
-FAIL AVTs__77588 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AVTs__77588 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17015.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/XSLT17014.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77588.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77588.xuriella
 
-FAIL AVTs__77589 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AVTs__77589 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17016.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/XSLT17014.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77589.saxon
@@ -11551,8 +11552,7 @@ PASS AVTs__77591 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77591.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77591.xuriella
 
-FAIL AVTs__77592 [XSLT-Result-Tree]: condition of incorrect type: 
-not a well-formed XPath expression: lexer failed at position 0
+PASS AVTs__77592 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17100.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/books.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77592.saxon
@@ -11571,14 +11571,13 @@ PASS AVTs__77594 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77594.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77594.xuriella
 
-FAIL AVTs__77595 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AVTs__77595 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17103.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/books.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77595.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77595.xuriella
 
-FAIL AVTs__77596 [XSLT-Result-Tree]: condition of incorrect type: 
-not a well-formed XPath expression: lexer failed at position 0
+PASS AVTs__77596 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17104.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/books.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77596.saxon
@@ -11635,7 +11634,7 @@ FAIL BVTs_bvt004 [Mixed]: not a stylesheet
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt004.xuriella
 
 FAIL BVTs_bvt005 [Mixed]: condition of incorrect type: 
-no such function: :CURRENT
+not a well-formed XPath expression: lexer failed at position 11
   Stylesheet: MSFT_Conformance_Tests/BVTs/avt.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt005.saxon
@@ -14696,14 +14695,13 @@ FAIL Errors_err011 [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err011.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err011.xuriella
 
-FAIL Errors_err012 [Mixed]: condition of incorrect type: 
-not a well-formed XPath expression: lexer failed at position 0
+PASS Errors_err012 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/avt-no-rbrace.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err012.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err012.xuriella
 
-FAIL Errors_err013 [Mixed]: expected error not signalled: 
+PASS Errors_err013 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/avt-rbrace.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err013.saxon
@@ -14830,8 +14828,7 @@ PASS Errors_err038 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err038.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err038.xuriella
 
-FAIL Errors_err044 [Mixed]: condition of incorrect type: 
-not a well-formed XPath expression: lexer failed at position 0
+PASS Errors_err044 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/fwdcompat-avt.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err044.saxon
@@ -19018,7 +19015,8 @@ FAIL ProcessingInstruction__78198 [XSLT-Result-Tree]: expected error not signall
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78198.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78198.xuriella
 
-FAIL ProcessingInstruction__78199 [XSLT-Result-Tree]: expected error not signalled: 
+FAIL ProcessingInstruction__78199 [XSLT-Result-Tree]: condition of incorrect type: 
+The value NIL is not of type STRING.
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT16005.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78199.saxon
@@ -21736,4 +21734,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1577/3092 tests.
+Passed 1589/3092 tests.

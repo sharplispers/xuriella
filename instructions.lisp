@@ -550,27 +550,128 @@
 	   (cdr form)
 	   env))
 
-(xpath::deflexer make-attribute-template-lexer
-  ("([^{]+)" (data) (values :data data))
-  ("{{" () (values :data "{"))
-  ("{([^{}][^}]*)}" (xpath) (values :xpath xpath)))
+;;: WTF: "A right curly brace inside a Literal in an expression is not
+;;; recognized as terminating the expression."
+;;;
+;;; Da hilft nur tagbody.
+(defun parse-attribute-value-template (template-string)
+  (with-input-from-string (input template-string)
+    (let ((ordinary (make-string-output-stream))
+	  (xpath (make-string-output-stream))
+	  (tokens '())
+	  (c (read-char input nil :eof)))
+      (flet ((emit ()
+	       (let ((o (get-output-stream-string ordinary)))
+		 (when (plusp (length o))
+		   (push (list :data o) tokens)))
+	       (let ((x (get-output-stream-string xpath)))
+		 (when (plusp (length x))
+		   (push (list :xpath x) tokens))))
+	     (collect-ordinary ()
+	       (write-char c ordinary))
+	     (collect-xpath ()
+	       (write-char c xpath)))
+	(macrolet ((goto (target)
+		     `(progn
+			(setf c (read-char input nil :eof))
+			(go ,target))))
+	  (tagbody
+	   ordinary
+	     (case c
+	       (#\{
+		(goto seen{))
+	       (#\}
+		(goto seen-stray-}))
+	       (:eof
+		(go done)))
+	     (collect-ordinary)
+	     (goto ordinary)
+
+	   seen{
+	     (case c
+	       (#\{
+		(collect-ordinary)
+		(goto ordinary))
+	       (#\'
+		(collect-xpath)
+		(goto in-single-quote))
+	       (:eof
+		(xslt-error "unexpected end of avt")))
+	     (emit)
+	     (collect-xpath)
+	     (goto xpath)
+
+	   xpath
+	     (case c
+	       (#\'
+		(collect-xpath)
+		(goto in-single-quote))
+	       (#\"
+		(collect-xpath)
+		(goto in-double-quote))
+	       (#\}
+		(goto seen-closing-}))
+	       (:eof
+		(xslt-error "unexpected end of avt")))
+	     (collect-xpath)
+	     (goto xpath)
+
+	   in-single-quote
+	     (case c
+	       (#\'
+		(collect-xpath)
+		(goto xpath))
+	       (:eof
+		(xslt-error "unexpected end of avt")))
+	     (collect-xpath)
+	     (goto in-single-quote)
+
+	   in-double-quote
+	     (case c
+	       (#\"
+		(collect-xpath)
+		(goto xpath))
+	       (:eof
+		(xslt-error "unexpected end of avt")))
+	     (collect-xpath)
+	     (goto in-double-quote)
+
+	   seen-closing-}
+	     (case c
+	       (#\}
+		(collect-xpath)
+		(goto xpath))
+	       (#\{
+		(emit)
+		(goto xpath))
+	       (:eof
+		(goto done)))
+	     (emit)
+	     (collect-ordinary)
+	     (goto ordinary)
+
+	   seen-stray-}
+	     (case c
+	       (#\}
+		(collect-ordinary)
+		(goto ordinary)))
+	     (xslt-error "unexpected closing brace in avt")
+
+	   done
+	     (emit))))
+      (nreverse tokens))))
 
 (defun compile-attribute-value-template (template-string env)
-  (let* ((lexer (make-attribute-template-lexer template-string))
-	 (constantp t)
+  (let* ((constantp t)
 	 (fns
-	  (loop
-	     collect
-	       (multiple-value-bind (kind str) (funcall lexer)
-		 (ecase kind
-		   (:data
-		    (constantly str))
-		   (:xpath
-		    (setf constantp nil)
-		    (xpath:compile-xpath str env))
-		   ((nil)
-		    (return result))))
-	     into result)))
+	  (mapcar (lambda (x)
+		    (ecase (car x)
+		      (:data
+		       (constantly (second x)))
+		      (:xpath
+		       (setf constantp nil)
+		       (xpath:compile-xpath (second x) env))))
+		  (parse-attribute-value-template template-string))))
     (values (lambda (ctx)
 	      (with-output-to-string (s)
 		(dolist (fn fns)
