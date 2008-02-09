@@ -213,6 +213,8 @@
      (xslt-cerror "attribute outside of element"))
     (*start-tag-written-p*
      (xslt-cerror "attribute after start tag"))
+    ((equal local-name "xmlns")
+     (xslt-cerror "attribute named xmlns"))
     (t
      (setf (sink-element-attributes *current-element*)
 	   (cons (make-sink-attribute :local-name local-name
