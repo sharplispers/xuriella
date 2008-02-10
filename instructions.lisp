@@ -343,14 +343,14 @@
     (let ((select-thunk (compile-xpath select env))
 	  (body-thunk (compile-instruction `(progn ,@body) env))
 	  (sort-predicate
-	   (when decls
+	   (when (cdr decls)
 	     (make-sort-predicate (cdr decls) env))))
       (lambda (ctx)
 	(let* ((nodes (xpath:all-nodes (funcall select-thunk ctx)))
 	       (n (length nodes)))
 	  (if sort-predicate
 	      (setf nodes (sort nodes sort-predicate))
-	      (setf nodes (sort nodes #'< :key #'document-order)))
+	      (setf nodes (sort nodes #'xpath::node<)))
 	  (loop
 	     for node in nodes
 	     for i from 1
@@ -520,7 +520,7 @@
 				*empty-mode*)
 			    *mode*))
 		(nodes (xpath:all-nodes (funcall select-thunk ctx))))
-	    (setf nodes (sort nodes #'< :key #'document-order))
+	    (setf nodes (sort nodes #'xpath::node<))
 	    (apply-templates/list
 	     nodes
 	     (loop for (name nil value-thunk) in param-bindings

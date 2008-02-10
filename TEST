@@ -7467,7 +7467,7 @@ PASS position_position36 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position36.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position36.xuriella
 
-FAIL position_position37 [XSLT-Result-Tree]: output doesn't match
+PASS position_position37 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position37.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position37.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position37.saxon
@@ -7683,7 +7683,7 @@ PASS position_position72 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position72.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position72.xuriella
 
-FAIL position_position73 [XSLT-Result-Tree]: output doesn't match
+PASS position_position73 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position73.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position73.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position73.saxon
@@ -7767,7 +7767,7 @@ PASS position_position86 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position86.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position86.xuriella
 
-FAIL position_position87 [XSLT-Result-Tree]: output doesn't match
+PASS position_position87 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position87.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position87.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position87.saxon
@@ -7779,7 +7779,7 @@ PASS position_position88 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position88.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position88.xuriella
 
-FAIL position_position89 [XSLT-Result-Tree]: output doesn't match
+PASS position_position89 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position89.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position89.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position89.saxon
@@ -7916,26 +7916,27 @@ FAIL position_position111 [XSLT-Result-Tree]: There is no applicable method for 
                                                 #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
                                               when called with arguments
                                                 (#S(CXML-STP-IMPL::STP-NAMESPACE
-                                                    :PARENT #.(CXML-STP:ELEMENT
-                                                               #| :PARENT of type DOCUMENT |#
-                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
-                                                                                #| :PARENT of type ELEMENT |#
-                                                                                :VALUE "attr1"
-                                                                                :LOCAL-NAME "foo1"
-                                                                                :NAMESPACE-PREFIX "bar"
-                                                                                :NAMESPACE-URI "http://example.org/bar")
-                                                                             #.(CXML-STP:ATTRIBUTE
-                                                                                #| :PARENT of type ELEMENT |#
-                                                                                :VALUE "attr2"
-                                                                                :LOCAL-NAME "foo2"
-                                                                                :NAMESPACE-PREFIX "bar"
-                                                                                :NAMESPACE-URI "http://example.org/bar"))
-                                                               :EXTRA-NAMESPACES '(("foo"
-                                                                                    "http://example.org/foo"))
-                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/position/position111.xml"
-                                                               :LOCAL-NAME "Doc")
-                                                    :PREFIX "bar"
-                                                    :URI "http://example.org/bar")).
+                                                    :PARENT #.(CXML-STP-IMPL::DOCUMENT
+                                                               :CHILDREN '(#.(CXML-STP:ELEMENT
+                                                                              #| :PARENT of type DOCUMENT |#
+                                                                              :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                               #| :PARENT of type ELEMENT |#
+                                                                                               :VALUE "attr1"
+                                                                                               :LOCAL-NAME "foo1"
+                                                                                               :NAMESPACE-PREFIX "bar"
+                                                                                               :NAMESPACE-URI "http://example.org/bar")
+                                                                                            #.(CXML-STP:ATTRIBUTE
+                                                                                               #| :PARENT of type ELEMENT |#
+                                                                                               :VALUE "attr2"
+                                                                                               :LOCAL-NAME "foo2"
+                                                                                               :NAMESPACE-PREFIX "bar"
+                                                                                               :NAMESPACE-URI "http://example.org/bar"))
+                                                                              :EXTRA-NAMESPACES '(("foo"
+                                                                                                   "http://example.org/foo"))
+                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/position/position111.xml"
+                                                                              :LOCAL-NAME "Doc")))
+                                                    :PREFIX "xml"
+                                                    :URI "http://www.w3.org/XML/1998/namespace")).
   Stylesheet: Xalan_Conformance_Tests/position/position111.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position111.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position111.saxon
@@ -8450,7 +8451,7 @@ PASS select_select12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select12.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select12.xuriella
 
-FAIL select_select13 [XSLT-Result-Tree]: output doesn't match
+PASS select_select13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select13.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select13.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select13.saxon
@@ -8744,7 +8745,7 @@ PASS select_select62 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select62.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select62.xuriella
 
-FAIL select_select63 [XSLT-Result-Tree]: output doesn't match
+PASS select_select63 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select63.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select63.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select63.saxon
@@ -10267,7 +10268,7 @@ FAIL variable_variable49 [XSLT-Result-Tree]: undeclared variable: p1 in namespac
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable49.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable49.xuriella
 
-FAIL variable_variable50 [XSLT-Result-Tree]: output doesn't match
+PASS variable_variable50 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable50.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable50.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable50.saxon
@@ -13136,7 +13137,13 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA It was a dark & stormy night.))
+                                                                                                                                  DATA It was a dark )
+                                                                                                                               #.(TEXT
+                                                                                                                                  #| :PARENT of type ELEMENT |#
+                                                                                                                                  DATA &)
+                                                                                                                               #.(TEXT
+                                                                                                                                  #| :PARENT of type ELEMENT |#
+                                                                                                                                  DATA  stormy night.))
                                                                                                                     LOCAL-NAME p)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
@@ -13147,7 +13154,13 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
-                                                                                                                                  DATA But then all nights in Trenton seem dark &
+                                                                                                                                  DATA But then all nights in Trenton seem dark )
+                                                                                                                               #.(TEXT
+                                                                                                                                  #| :PARENT of type ELEMENT |#
+                                                                                                                                  DATA &)
+                                                                                                                               #.(TEXT
+                                                                                                                                  #| :PARENT of type ELEMENT |#
+                                                                                                                                  DATA 
 ???stormy to someone who has gone through what
 ???)
                                                                                                                                #.(ELEMENT
@@ -14317,7 +14330,7 @@ PASS Elements__89104 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89104.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89104.xuriella
 
-FAIL Elements__89107 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__89107 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-e-repeat.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89107.saxon
@@ -16467,7 +16480,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84001.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84001.xuriella
 
-FAIL Miscellaneous__84002 [Mixed]: output doesn't match
+PASS Miscellaneous__84002 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/bug43954.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/bug43954.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84002.saxon
@@ -17210,12 +17223,57 @@ FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: There is no applica
                                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
                                                              when called with arguments
                                                                (#S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                   :PARENT #.(CXML-STP:ELEMENT
-                                                                              #| :PARENT of type ELEMENT |#
-                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
-                                                                              :LOCAL-NAME "foo")
-                                                                   :PREFIX ""
-                                                                   :URI "")).
+                                                                   :PARENT #.(CXML-STP-IMPL::DOCUMENT
+                                                                              :CHILDREN '(#.(CXML-STP:ELEMENT
+                                                                                             #| :PARENT of type DOCUMENT |#
+                                                                                             :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
+                                                                                             :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                                            :DATA "
+?")
+                                                                                                         #.(CXML-STP:ELEMENT
+                                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                                            :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                                                             #| :PARENT of type ELEMENT |#
+                                                                                                                             :VALUE "12"
+                                                                                                                             :LOCAL-NAME "blah"))
+                                                                                                            :EXTRA-NAMESPACES '(("bar"
+                                                                                                                                 "urn:bar"))
+                                                                                                            :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
+                                                                                                            :LOCAL-NAME "chapter"
+                                                                                                            :NAMESPACE-PREFIX "n"
+                                                                                                            :NAMESPACE-URI "urn:foo")
+                                                                                                         #.(CXML-STP:TEXT
+                                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                                            :DATA "
+?")
+                                                                                                         #.(CXML-STP:ELEMENT
+                                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                                            :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
+                                                                                                            :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           :DATA "
+??")
+                                                                                                                        #.(CXML-STP:ELEMENT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
+                                                                                                                           :LOCAL-NAME "foo")
+                                                                                                                        #.(CXML-STP:TEXT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           :DATA "
+?"))
+                                                                                                            :LOCAL-NAME "chapter"
+                                                                                                            :NAMESPACE-PREFIX "n"
+                                                                                                            :NAMESPACE-URI "urn:foo")
+                                                                                                         #.(CXML-STP:TEXT
+                                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                                            :DATA "
+"))
+                                                                                             :LOCAL-NAME "book"
+                                                                                             :NAMESPACE-PREFIX "n"
+                                                                                             :NAMESPACE-URI "urn:foo")))
+                                                                   :PREFIX "xml"
+                                                                   :URI "http://www.w3.org/XML/1998/namespace")).
   Stylesheet: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.saxon
@@ -21721,4 +21779,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1705/3092 tests.
+Passed 1714/3092 tests.
