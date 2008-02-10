@@ -176,6 +176,9 @@
   (defproxy xpath-protocol:namespace-pipe)
   (defproxy xpath-protocol:node-type-p type))
 
+(defmethod xpath-protocol:node-p ((node stripping-node))
+  t)
+
 (defmethod xpath-protocol:child-pipe ((node stripping-node))
   (stripping-node-children node))
 

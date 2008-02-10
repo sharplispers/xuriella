@@ -8486,13 +8486,13 @@ PASS select_select18 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select18.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select18.xuriella
 
-FAIL select_select19 [XSLT-Result-Tree]: output doesn't match
+PASS select_select19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select19.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select19.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select19.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select19.xuriella
 
-FAIL select_select20 [XSLT-Result-Tree]: output doesn't match
+PASS select_select20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select20.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select20.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select20.saxon
@@ -9173,7 +9173,7 @@ PASS string_string02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string02.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string02.xuriella
 
-FAIL string_string04 [XSLT-Result-Tree]: output doesn't match
+PASS string_string04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string04.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string04.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string04.saxon
@@ -21732,4 +21732,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1699/3092 tests.
+Passed 1702/3092 tests.
