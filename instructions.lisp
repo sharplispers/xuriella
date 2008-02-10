@@ -346,12 +346,12 @@
 	   (when (cdr decls)
 	     (make-sort-predicate (cdr decls) env))))
       (lambda (ctx)
-	(let* ((nodes (xpath:all-nodes (funcall select-thunk ctx)))
-	       (n (length nodes)))
-	  (if sort-predicate
-	      (setf nodes (sort nodes sort-predicate))
-	      (setf nodes (sort nodes #'xpath::node<)))
+	(let* ((nodes (xpath::force
+		       (xpath::sorted-pipe-of (funcall select-thunk ctx)))))
+	  (when sort-predicate
+	    (setf nodes (sort (copy-list nodes) sort-predicate)))
 	  (loop
+	     with n = (length nodes)
 	     for node in nodes
 	     for i from 1
 	     do
@@ -518,16 +518,16 @@
 					   mode-local-name
 					   mode-uri)
 				*empty-mode*)
-			    *mode*))
-		(nodes (xpath:all-nodes (funcall select-thunk ctx))))
-	    (setf nodes (sort nodes #'xpath::node<))
+			    *mode*)))
 	    (apply-templates/list
-	     nodes
+	     (xpath::force
+	      (xpath::sorted-pipe-of (funcall select-thunk ctx)))
 	     (loop for (name nil value-thunk) in param-bindings
 		collect (list name (funcall value-thunk ctx)))
 	     sort-predicate)))))))
 
 (define-instruction xsl:apply-imports (args env)
+  (declare (ignore args env))
   (lambda (ctx)
     (declare (ignore ctx))
     (funcall *apply-imports*)))

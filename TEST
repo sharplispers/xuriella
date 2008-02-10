@@ -1058,7 +1058,7 @@ PASS axes_axes113 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes113.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes113.xuriella
 
-FAIL axes_axes114 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes114 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes114.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes114.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes114.saxon
@@ -5631,51 +5631,7 @@ PASS node_node16 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/node/node_node16.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node16.xuriella
 
-FAIL node_node17 [XSLT-Result-Tree]: There is no applicable method for the generic function
-                                       #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
-                                     when called with arguments
-                                       (#S(CXML-STP-IMPL::STP-NAMESPACE
-                                           :PARENT #.(CXML-STP-IMPL::DOCUMENT
-                                                      :CHILDREN '(#.(CXML-STP:ELEMENT
-                                                                     #| :PARENT of type DOCUMENT |#
-                                                                     :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/node/node17.xml"
-                                                                     :CHILDREN '(#.(CXML-STP:TEXT
-                                                                                    #| :PARENT of type ELEMENT |#
-                                                                                    :DATA "
-  ")
-                                                                                 #.(CXML-STP:ELEMENT
-                                                                                    #| :PARENT of type ELEMENT |#
-                                                                                    :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
-                                                                                                     #| :PARENT of type ELEMENT |#
-                                                                                                     :VALUE "x"
-                                                                                                     :LOCAL-NAME "x")
-                                                                                                  #.(CXML-STP:ATTRIBUTE
-                                                                                                     #| :PARENT of type ELEMENT |#
-                                                                                                     :VALUE "y"
-                                                                                                     :LOCAL-NAME "y")
-                                                                                                  #.(CXML-STP:ATTRIBUTE
-                                                                                                     #| :PARENT of type ELEMENT |#
-                                                                                                     :VALUE "z"
-                                                                                                     :LOCAL-NAME "z"))
-                                                                                    :EXTRA-NAMESPACES '(("ext"
-                                                                                                         "http://somebody.elses.extension")
-                                                                                                        ("java"
-                                                                                                         "http://xml.apache.org/xslt/java")
-                                                                                                        ("ped"
-                                                                                                         "http://tester.com")
-                                                                                                        ("bdd"
-                                                                                                         "http://buster.com")
-                                                                                                        ("jad"
-                                                                                                         "http://administrator.com"))
-                                                                                    :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/node/node17.xml"
-                                                                                    :LOCAL-NAME "doc")
-                                                                                 #.(CXML-STP:TEXT
-                                                                                    #| :PARENT of type ELEMENT |#
-                                                                                    :DATA "
-"))
-                                                                     :LOCAL-NAME "docs")))
-                                           :PREFIX "xml"
-                                           :URI "http://www.w3.org/XML/1998/namespace")).
+FAIL node_node17 [XSLT-Result-Tree]: not a qname: 
   Stylesheet: Xalan_Conformance_Tests/node/node17.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node17.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node17.saxon
@@ -8069,8 +8025,8 @@ FAIL position_position111 [XSLT-Result-Tree]: There is no applicable method for 
                                                                                                    "http://example.org/foo"))
                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/position/position111.xml"
                                                                               :LOCAL-NAME "Doc")))
-                                                    :PREFIX "xmlns"
-                                                    :URI "http://www.w3.org/2000/xmlns/")).
+                                                    :PREFIX "xml"
+                                                    :URI "http://www.w3.org/XML/1998/namespace")).
   Stylesheet: Xalan_Conformance_Tests/position/position111.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position111.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position111.saxon
@@ -15964,13 +15920,6 @@ PASS Import__91163 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91163.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91163.xuriella
 
-PASS Import__91164 [XSLT-Structure]
-  Stylesheet: MSFT_Conformance_Tests/Import/91164.noindent-xsl
-  Data: MSFT_Conformance_Tests/Import/books.xml
-  Supplemental stylesheet: MSFT_Conformance_Tests/Import/91164a.xsl
-  Expected output (1): MSFT_Conformance_Tests/Import/Import__91164.saxon
-  Actual output: MSFT_Conformance_Tests/Import/Import__91164.xuriella
-
 PASS Import__91165 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Import/91165.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
@@ -17465,57 +17414,12 @@ FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: There is no applica
                                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
                                                              when called with arguments
                                                                (#S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                   :PARENT #.(CXML-STP-IMPL::DOCUMENT
-                                                                              :CHILDREN '(#.(CXML-STP:ELEMENT
-                                                                                             #| :PARENT of type DOCUMENT |#
-                                                                                             :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
-                                                                                             :CHILDREN '(#.(CXML-STP:TEXT
-                                                                                                            #| :PARENT of type ELEMENT |#
-                                                                                                            :DATA "
-?")
-                                                                                                         #.(CXML-STP:ELEMENT
-                                                                                                            #| :PARENT of type ELEMENT |#
-                                                                                                            :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
-                                                                                                                             #| :PARENT of type ELEMENT |#
-                                                                                                                             :VALUE "12"
-                                                                                                                             :LOCAL-NAME "blah"))
-                                                                                                            :EXTRA-NAMESPACES '(("bar"
-                                                                                                                                 "urn:bar"))
-                                                                                                            :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
-                                                                                                            :LOCAL-NAME "chapter"
-                                                                                                            :NAMESPACE-PREFIX "n"
-                                                                                                            :NAMESPACE-URI "urn:foo")
-                                                                                                         #.(CXML-STP:TEXT
-                                                                                                            #| :PARENT of type ELEMENT |#
-                                                                                                            :DATA "
-?")
-                                                                                                         #.(CXML-STP:ELEMENT
-                                                                                                            #| :PARENT of type ELEMENT |#
-                                                                                                            :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
-                                                                                                            :CHILDREN '(#.(CXML-STP:TEXT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           :DATA "
-??")
-                                                                                                                        #.(CXML-STP:ELEMENT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
-                                                                                                                           :LOCAL-NAME "foo")
-                                                                                                                        #.(CXML-STP:TEXT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           :DATA "
-?"))
-                                                                                                            :LOCAL-NAME "chapter"
-                                                                                                            :NAMESPACE-PREFIX "n"
-                                                                                                            :NAMESPACE-URI "urn:foo")
-                                                                                                         #.(CXML-STP:TEXT
-                                                                                                            #| :PARENT of type ELEMENT |#
-                                                                                                            :DATA "
-"))
-                                                                                             :LOCAL-NAME "book"
-                                                                                             :NAMESPACE-PREFIX "n"
-                                                                                             :NAMESPACE-URI "urn:foo")))
-                                                                   :PREFIX "xml"
-                                                                   :URI "http://www.w3.org/XML/1998/namespace")).
+                                                                   :PARENT #.(CXML-STP:ELEMENT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
+                                                                              :LOCAL-NAME "foo")
+                                                                   :PREFIX ""
+                                                                   :URI "")).
   Stylesheet: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.saxon
@@ -22037,4 +21941,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1901/3092 tests.
+Passed 1901/3091 tests.

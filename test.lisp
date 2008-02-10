@@ -296,7 +296,10 @@
 (defparameter *bad-tests*
   '( ;; some tests wants us to recover from this error, yet this one doesn't:
     "copy_copy61"
-    "copy_copy62"))
+    "copy_copy62"
+    ;; the following test is actually okay, but running it takes longer
+    ;; than I'm willing to wait before every checkin:
+    "Import__91164"))
 
 (defun run-tests (&optional (categories *default-categories*)
 		  (d *tests-directory*))
