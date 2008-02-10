@@ -380,7 +380,7 @@ PASS axes_axes02 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes02.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes02.xuriella
 
-FAIL axes_axes03 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
+PASS axes_axes03 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes03.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes03.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes03.saxon
@@ -470,19 +470,19 @@ PASS axes_axes17 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes17.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes17.xuriella
 
-FAIL axes_axes18 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
+PASS axes_axes18 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes18.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes18.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes18.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes18.xuriella
 
-FAIL axes_axes19 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
+PASS axes_axes19 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes19.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes19.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes19.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes19.xuriella
 
-FAIL axes_axes20 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
+PASS axes_axes20 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes20.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes20.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes20.saxon
@@ -632,7 +632,7 @@ PASS axes_axes44 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes44.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes44.xuriella
 
-FAIL axes_axes45 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
+PASS axes_axes45 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes45.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes45.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes45.saxon
@@ -2186,7 +2186,13 @@ FAIL copy_copy16 [XSLT-Result-Tree]: no such function: :ID
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy16.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy16.xuriella
 
-FAIL copy_copy17 [XSLT-Result-Tree]: not a valid pattern: @*|node()
+FAIL copy_copy17 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:PROCESSING-INSTRUCTION-TARGET (1)>
+                                     when called with arguments
+                                       (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                           #| :PARENT of type ELEMENT |#
+                                           :DATA "some data"
+                                           :TARGET "a-pi")).
   Stylesheet: Xalan_Conformance_Tests/copy/copy17.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy17.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy17.saxon
@@ -2210,13 +2216,30 @@ PASS copy_copy20 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy20.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy20.xuriella
 
-FAIL copy_copy21 [XSLT-Result-Tree]: not a valid pattern: @*|node()
+FAIL copy_copy21 [XSLT-Result-Tree]: don't know how to copy node #.(DOCUMENT-TYPE
+                                                                    #| :PARENT of type DOCUMENT |#
+                                                                    ROOT-ELEMENT-NAME test
+                                                                    SYSTEM-ID NIL
+                                                                    PUBLIC-ID NIL
+                                                                    INTERNAL-SUBSET <!ELEMENT test (extEnt)>
+<!ELEMENT extEnt (sub2)>
+<!ATTLIST extEnt attr CDATA #REQUIRED>
+<!ELEMENT sub2 #PCDATA>
+<!ENTITY extEnt SYSTEM 'ent21.xml'>
+)
   Stylesheet: Xalan_Conformance_Tests/copy/copy21.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy21.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy21.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy21.xuriella
 
-FAIL copy_copy22 [XSLT-Result-Tree]: not a valid pattern: @*|node()
+FAIL copy_copy22 [XSLT-Result-Tree]: don't know how to copy node #.(DOCUMENT-TYPE
+                                                                    #| :PARENT of type DOCUMENT |#
+                                                                    ROOT-ELEMENT-NAME test
+                                                                    SYSTEM-ID NIL
+                                                                    PUBLIC-ID NIL
+                                                                    INTERNAL-SUBSET <!ELEMENT test #PCDATA>
+<!ENTITY extEnt SYSTEM 'ent22.xml'>
+)
   Stylesheet: Xalan_Conformance_Tests/copy/copy22.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy22.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy22.saxon
@@ -2281,7 +2304,7 @@ FAIL copy_copy30 [XSLT-Result-Tree]: no such function: :KEY
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy30.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy30.xuriella
 
-FAIL copy_copy31 [XSLT-Result-Tree]: not a valid pattern: node()|@*
+PASS copy_copy31 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy31.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy31.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy31.saxon
@@ -2317,7 +2340,7 @@ FAIL copy_copy35 [XSLT-Result-Tree]: not a valid pattern: *|@*|comment()|process
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy35.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy35.xuriella
 
-FAIL copy_copy36 [XSLT-Result-Tree]: not a valid pattern: @*|node()
+PASS copy_copy36 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy36.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy36.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy36.saxon
@@ -7076,7 +7099,10 @@ PASS output_output77 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output77.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output77.xuriella
 
-FAIL output_output80 [XSLT-Result-Tree]: not a valid pattern: @*|node()
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+PASS output_output80 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output80.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output80.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output80.saxon
@@ -7905,7 +7931,7 @@ PASS position_position94 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position94.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position94.xuriella
 
-FAIL position_position95 [XSLT-Result-Tree]: not a valid pattern: alpha|z
+PASS position_position95 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position95.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position95.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position95.saxon
@@ -7935,13 +7961,13 @@ FAIL position_position99 [XSLT-Result-Tree]: not a valid pattern: text()|comment
   Expected output (1): Xalan_Conformance_Tests/position/position_position99.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position99.xuriella
 
-FAIL position_position100 [XSLT-Result-Tree]: not a valid pattern: comment()|processing-instruction()
+PASS position_position100 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position100.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position100.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position100.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position100.xuriella
 
-FAIL position_position101 [XSLT-Result-Tree]: not a valid pattern: text()|processing-instruction()
+PASS position_position101 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position101.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position101.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position101.saxon
@@ -7996,7 +8022,7 @@ PASS position_position109 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position109.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position109.xuriella
 
-FAIL position_position101 [XSLT-Result-Tree]: not a valid pattern: text()|processing-instruction()
+PASS position_position101 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position101.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position101.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position101.saxon
@@ -8487,7 +8513,38 @@ PASS select_select04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select04.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select04.xuriella
 
-FAIL select_select05 [XSLT-Result-Tree]: not a valid pattern: * | /
+FAIL select_select05 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                           #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                         when called with arguments
+                                           (#.(CXML-STP-IMPL::DOCUMENT
+                                               :CHILDREN '(#.(CXML-STP:ELEMENT
+                                                              #| :PARENT of type DOCUMENT |#
+                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select05.xml"
+                                                              :CHILDREN '(#.(CXML-STP:TEXT
+                                                                             #| :PARENT of type ELEMENT |#
+                                                                             :DATA "
+  ")
+                                                                          #.(CXML-STP:ELEMENT
+                                                                             #| :PARENT of type ELEMENT |#
+                                                                             :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select05.xml"
+                                                                             :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                            :DATA "
+    ")
+                                                                                         #.(CXML-STP:ELEMENT
+                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                            :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select05.xml"
+                                                                                            :LOCAL-NAME "way-inside")
+                                                                                         #.(CXML-STP:TEXT
+                                                                                            #| :PARENT of type ELEMENT |#
+                                                                                            :DATA "
+  "))
+                                                                             :LOCAL-NAME "inside")
+                                                                          #.(CXML-STP:TEXT
+                                                                             #| :PARENT of type ELEMENT |#
+                                                                             :DATA "
+"))
+                                                              :LOCAL-NAME "document-element")))).
   Stylesheet: Xalan_Conformance_Tests/select/select05.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select05.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select05.saxon
@@ -9166,13 +9223,13 @@ PASS sort_sort26 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort26.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort26.xuriella
 
-FAIL sort_sort27 [XSLT-Result-Tree]: not a valid pattern: sub | text()
+PASS sort_sort27 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort27.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort27.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort27.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort27.xuriella
 
-FAIL sort_sort28 [XSLT-Result-Tree]: not a valid pattern: sub | text()
+FAIL sort_sort28 [XSLT-Result-Tree]: Argument Y is not a NUMBER: :NAN
   Stylesheet: Xalan_Conformance_Tests/sort/sort28.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort28.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort28.saxon
@@ -10319,7 +10376,7 @@ PASS variable_variable39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable39.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable39.xuriella
 
-FAIL variable_variable40 [XSLT-Result-Tree]: not a valid pattern: a|d
+PASS variable_variable40 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable40.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable40.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable40.saxon
@@ -10772,7 +10829,11 @@ FAIL Attributes__78386 [XSLT-Result-Tree]: not a stylesheet
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78386.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78386.xuriella
 
-PASS Attributes__78387 [XSLT-Result-Tree]: raised an xslt-error as expected
+FAIL Attributes__78387 [XSLT-Result-Tree]: condition of incorrect type: 
+Document not well-formed: Processing instruction target "xml:namespace" is not a valid NcName.
+Context:
+  Line 6, column 52 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/domtest1.xml
+
   Stylesheet: MSFT_Conformance_Tests/Attributes/78387.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/domtest1.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78387.saxon
@@ -11925,7 +11986,7 @@ PASS BVTs_bvt024 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt024.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt024.xuriella
 
-FAIL BVTs_bvt027 [Mixed]: not a valid pattern: / | author
+PASS BVTs_bvt027 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/frag-params.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt027.saxon
@@ -13716,7 +13777,7 @@ FAIL BVTs_bvt077 [Mixed]: not a stylesheet
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt077.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt077.xuriella
 
-FAIL BVTs_bvt078 [Mixed]: not a valid pattern: / | bookstore
+FAIL BVTs_bvt078 [Mixed]: not a valid pattern: book | my:book | * | my:*
   Stylesheet: MSFT_Conformance_Tests/BVTs/pri-union.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt078.saxon
@@ -13728,7 +13789,7 @@ PASS BVTs_bvt079 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt079.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt079.xuriella
 
-FAIL BVTs_bvt080 [Mixed]: not a valid pattern: / | bookstore
+PASS BVTs_bvt080 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/recursion.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt080.saxon
@@ -13816,7 +13877,7 @@ PASS BVTs_bvt092 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt092.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt092.xuriella
 
-FAIL BVTs_bvt093 [Mixed]: not a valid pattern: bookstore | book
+PASS BVTs_bvt093 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/var-query2.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt093.saxon
@@ -14132,7 +14193,7 @@ Argument Y is not a REAL: NIL
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77626.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77626.xuriella
 
-FAIL ConflictResolution__77746 [XSLT-Template]: not a valid pattern: x|z
+PASS ConflictResolution__77746 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08112.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/xslt08112.XML
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77746.saxon
@@ -14212,38 +14273,38 @@ FAIL ConflictResolution__77875 [XSLT-Template]: not a valid pattern: *|comment()
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77875.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77875.xuriella
 
-FAIL ConflictResolution__77876 [XSLT-Template]: not a valid pattern: book|magazine
+PASS ConflictResolution__77876 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08107.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77876.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77876.xuriella
 
-FAIL ConflictResolution__77877 [XSLT-Template]: not a valid pattern: book|book/title
+PASS ConflictResolution__77877 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08110.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77877.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77877.xuriella
 
-FAIL ConflictResolution__77878 [XSLT-Template]: not a valid pattern: book|book/title
+PASS ConflictResolution__77878 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08109.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77878.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77878.xuriella
 
-FAIL ConflictResolution__77879 [XSLT-Template]: not a valid pattern: book|book/title
+PASS ConflictResolution__77879 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08109.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77879.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77879.xuriella
 
-FAIL ConflictResolution__77881 [XSLT-Template]: not a valid pattern: magazine|magazine/title
+PASS ConflictResolution__77881 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08114.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/ConflictResolution/lowpribooks17.xsl
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77881.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77881.xuriella
 
-FAIL ConflictResolution__77882 [XSLT-Template]: not a valid pattern: magazine|magazine/title
+FAIL ConflictResolution__77882 [XSLT-Template]: not a valid pattern: book|book/title|magazine/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08108.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/ConflictResolution/lowpribooks17.xsl
@@ -14275,13 +14336,13 @@ PASS ConflictResolution__77886 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77886.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77886.xuriella
 
-FAIL ConflictResolution__77889 [XSLT-Template]: not a valid pattern: magazine|magazine/title
+PASS ConflictResolution__77889 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09007.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77889.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77889.xuriella
 
-FAIL ConflictResolution__77891 [XSLT-Template]: not a valid pattern: magazine|magazine/title
+FAIL ConflictResolution__77891 [XSLT-Template]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09008.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77891.saxon
@@ -14314,7 +14375,7 @@ PASS ConflictResolution__77902 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77902.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77902.xuriella
 
-FAIL ConflictResolution__77904 [XSLT-Template]: not a valid pattern: magazine|magazine/title
+FAIL ConflictResolution__77904 [XSLT-Template]: not a valid pattern: magazine/title|my:magazine|processing-instruction()
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09013.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/ConflictResolution/lowpribooks17.xsl
@@ -16857,7 +16918,7 @@ FAIL Miscellaneous__84435 [Mixed]: no such function: :ID
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.xuriella
 
-FAIL Miscellaneous__84475 [Mixed]: not a valid pattern: *[string(descendant::*) = concat(substring-before(//sibprec/p, 'sibling'), //child/desc/p)] | @*[string-length(self::*) != ((3 + 6 - 8) * 5)]
+FAIL Miscellaneous__84475 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84475.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84475.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84475.saxon
@@ -17081,13 +17142,13 @@ PASS NamedTemplates__84043 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84043.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84043.xuriella
 
-FAIL NamedTemplates__84044 [XSLT-Template]: not a valid pattern: *|text()
+PASS NamedTemplates__84044 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84044.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84044.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84044.xuriella
 
-PASS NamedTemplates__84045 [XSLT-Template]: raised an xslt-error as expected
+FAIL NamedTemplates__84045 [XSLT-Template]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84045.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84045.saxon
@@ -17168,7 +17229,7 @@ PASS NamedTemplates_NamedTemplate_NameTemplateWithEscapeCharacterInName [XSLT-Te
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates_NamedTemplate_NameTemplateWithEscapeCharacterInName.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates_NamedTemplate_NameTemplateWithEscapeCharacterInName.xuriella
 
-FAIL NamedTemplates_NamedTemplate_Bug85244 [XSLT-Template]: not a valid pattern: a | b
+PASS NamedTemplates_NamedTemplate_Bug85244 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/NamedTemplate_Bug85244.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates_NamedTemplate_Bug85244.saxon
@@ -17326,13 +17387,13 @@ FAIL Namespace__77806 [XSLT-Structure]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77806.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77806.xuriella
 
-FAIL Namespace__77983 [XSLT-Structure]: not a valid pattern: book|book/title
+PASS Namespace__77983 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace/xslt01402.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77983.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77983.xuriella
 
-PASS Namespace__77984 [XSLT-Structure]: raised an xslt-error as expected
+FAIL Namespace__77984 [XSLT-Structure]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Namespace/xslt01412.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Namespace/lowpribooks17.xsl
@@ -20248,37 +20309,37 @@ FAIL Template_MatchFirstElementBelowDocRootWithExpression [XSLT-Template]: There
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchFirstElementBelowDocRootWithExpression.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_MatchFirstElementBelowDocRootWithExpression.xuriella
 
-FAIL Template_MatchPatternVariation1 [XSLT-Template]: not a valid pattern: doc/foo/bar | //bar
+PASS Template_MatchPatternVariation1 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_pattern1.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_pattern1.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation1.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_MatchPatternVariation1.xuriella
 
-FAIL Template_MatchPatternVariation2 [XSLT-Template]: not a valid pattern: //bar[1] | foo/bar[2]
+PASS Template_MatchPatternVariation2 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_pattern2.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_pattern2.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation2.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_MatchPatternVariation2.xuriella
 
-FAIL Template_MatchPatternVariation3 [XSLT-Template]: not a valid pattern: doc/foo | doc/bar
+PASS Template_MatchPatternVariation3 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_pattern3.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_pattern3.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation3.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_MatchPatternVariation3.xuriella
 
-FAIL Template_MatchPatternVariation4 [XSLT-Template]: not a valid pattern: foo[position()<2] | foo[position()=4]
+PASS Template_MatchPatternVariation4 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_pattern4.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_pattern4.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation4.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_MatchPatternVariation4.xuriella
 
-FAIL Template_MatchPatternVariation5 [XSLT-Template]: not a valid pattern: foo[@att1='b'][@att2='ok'] | foo[@att1='b'][@att2='no']
+PASS Template_MatchPatternVariation5 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_pattern5.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_pattern5.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation5.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_MatchPatternVariation5.xuriella
 
-FAIL Template_MatchPatternVariation6 [XSLT-Template]: not a valid pattern: letter[position()=last()] | letter[position()=1]
+PASS Template_MatchPatternVariation6 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_pattern6.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_pattern6.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation6.saxon
@@ -21941,4 +22002,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1901/3091 tests.
+Passed 1931/3091 tests.

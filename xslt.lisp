@@ -975,7 +975,7 @@
 	      (unless (valid-expression-p case)
 		(xslt-error "invalid filter"))
 	      case)
-	    (if (eq (car form) :union)
+	    (if (eq (car form) 'union)
 		(cdr form)
 		(list form)))))
 
