@@ -368,79 +368,79 @@ PASS attribvaltemplate_attribvaltemplate12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate12.saxon
   Actual output: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate12.xuriella
 
-FAIL axes_axes01 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes01 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes01.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes01.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes01.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes01.xuriella
 
-FAIL axes_axes02 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes02 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes02.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes02.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes02.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes02.xuriella
 
-FAIL axes_axes03 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes03 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
   Stylesheet: Xalan_Conformance_Tests/axes/axes03.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes03.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes03.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes03.xuriella
 
-FAIL axes_axes04 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes04 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes04.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes04.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes04.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes04.xuriella
 
-FAIL axes_axes05 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes05 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes05.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes05.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes05.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes05.xuriella
 
-FAIL axes_axes06 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes06 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes06.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes06.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes06.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes06.xuriella
 
-FAIL axes_axes07 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes07 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes07.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes07.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes07.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes07.xuriella
 
-FAIL axes_axes08 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes08 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes08.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes08.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes08.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes08.xuriella
 
-FAIL axes_axes09 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes09 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes09.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes09.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes09.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes09.xuriella
 
-FAIL axes_axes10 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes10 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes10.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes10.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes10.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes10.xuriella
 
-FAIL axes_axes11 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes11 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes11.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes11.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes11.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes11.xuriella
 
-FAIL axes_axes12 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes12 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes12.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes12.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes12.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes12.xuriella
 
-FAIL axes_axes13 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes13 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes13.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes13.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes13.saxon
@@ -452,193 +452,193 @@ PASS axes_axes14 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes14.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes14.xuriella
 
-FAIL axes_axes15 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes15 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes15.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes15.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes15.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes15.xuriella
 
-FAIL axes_axes16 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes16 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes16.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes16.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes16.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes16.xuriella
 
-FAIL axes_axes17 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes17 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes17.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes17.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes17.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes17.xuriella
 
-FAIL axes_axes18 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes18 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
   Stylesheet: Xalan_Conformance_Tests/axes/axes18.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes18.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes18.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes18.xuriella
 
-FAIL axes_axes19 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes19 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
   Stylesheet: Xalan_Conformance_Tests/axes/axes19.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes19.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes19.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes19.xuriella
 
-FAIL axes_axes20 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes20 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
   Stylesheet: Xalan_Conformance_Tests/axes/axes20.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes20.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes20.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes20.xuriella
 
-FAIL axes_axes21 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes21 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes21.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes21.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes21.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes21.xuriella
 
-FAIL axes_axes22 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes22 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes22.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes22.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes22.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes22.xuriella
 
-FAIL axes_axes23 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes23 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes23.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes23.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes23.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes23.xuriella
 
-FAIL axes_axes24 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes24 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes24.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes24.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes24.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes24.xuriella
 
-FAIL axes_axes25 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes25 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes25.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes25.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes25.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes25.xuriella
 
-FAIL axes_axes26 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes26 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes26.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes26.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes26.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes26.xuriella
 
-FAIL axes_axes27 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes27 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes27.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes27.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes27.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes27.xuriella
 
-FAIL axes_axes28 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes28 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes28.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes28.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes28.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes28.xuriella
 
-FAIL axes_axes29 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes29 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes29.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes29.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes29.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes29.xuriella
 
-FAIL axes_axes30 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes30 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes30.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes30.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes30.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes30.xuriella
 
-FAIL axes_axes31 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes31 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes31.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes31.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes31.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes31.xuriella
 
-FAIL axes_axes32 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes32 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes32.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes32.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes32.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes32.xuriella
 
-FAIL axes_axes33 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes33 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes33.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes33.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes33.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes33.xuriella
 
-FAIL axes_axes34 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes34 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes34.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes34.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes34.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes34.xuriella
 
-FAIL axes_axes35 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes35 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes35.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes35.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes35.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes35.xuriella
 
-FAIL axes_axes36 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes36 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes36.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes36.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes36.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes36.xuriella
 
-FAIL axes_axes37 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes37 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes37.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes37.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes37.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes37.xuriella
 
-FAIL axes_axes38 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes38 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes38.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes38.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes38.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes38.xuriella
 
-FAIL axes_axes39 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes39 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes39.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes39.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes39.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes39.xuriella
 
-FAIL axes_axes40 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes40 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes40.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes40.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes40.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes40.xuriella
 
-FAIL axes_axes41 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes41 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes41.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes41.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes41.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes41.xuriella
 
-FAIL axes_axes42 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes42 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes42.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes42.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes42.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes42.xuriella
 
-FAIL axes_axes43 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes43 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes43.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes43.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes43.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes43.xuriella
 
-FAIL axes_axes44 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes44 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes44.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes44.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes44.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes44.xuriella
 
-FAIL axes_axes45 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes45 [XSLT-Result-Tree-Testing]: not a valid pattern: *|@*
   Stylesheet: Xalan_Conformance_Tests/axes/axes45.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes45.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes45.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes45.xuriella
 
-FAIL axes_axes46 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes46 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes46.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes46.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes46.saxon
@@ -650,55 +650,55 @@ PASS axes_axes47 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes47.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes47.xuriella
 
-FAIL axes_axes48 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes48 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes48.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes48.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes48.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes48.xuriella
 
-FAIL axes_axes49 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes49 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes49.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes49.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes49.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes49.xuriella
 
-FAIL axes_axes50 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes50 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes50.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes50.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes50.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes50.xuriella
 
-FAIL axes_axes51 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes51 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes51.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes51.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes51.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes51.xuriella
 
-FAIL axes_axes52 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes52 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes52.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes52.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes52.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes52.xuriella
 
-FAIL axes_axes53 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes53 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes53.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes53.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes53.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes53.xuriella
 
-FAIL axes_axes54 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes54 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes54.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes54.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes54.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes54.xuriella
 
-FAIL axes_axes55 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes55 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes55.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes55.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes55.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes55.xuriella
 
-FAIL axes_axes56 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes56 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes56.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes56.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes56.saxon
@@ -722,157 +722,157 @@ FAIL axes_axes59 [XSLT-Result-Tree-Testing]: undefined instruction: number
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes59.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes59.xuriella
 
-FAIL axes_axes60 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes60 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes60.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes60.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes60.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes60.xuriella
 
-FAIL axes_axes61 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes61 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes61.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes61.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes61.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes61.xuriella
 
-FAIL axes_axes62 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes62 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes62.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes62.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes62.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes62.xuriella
 
-FAIL axes_axes63 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes63 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes63.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes63.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes63.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes63.xuriella
 
-FAIL axes_axes64 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes64 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes64.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes64.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes64.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes64.xuriella
 
-FAIL axes_axes65 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes65 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes65.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes65.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes65.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes65.xuriella
 
-FAIL axes_axes66 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes66 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes66.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes66.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes66.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes66.xuriella
 
-FAIL axes_axes67 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes67 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes67.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes67.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes67.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes67.xuriella
 
-FAIL axes_axes68 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes68 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes68.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes68.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes68.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes68.xuriella
 
-FAIL axes_axes69 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes69 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes69.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes69.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes69.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes69.xuriella
 
-FAIL axes_axes70 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes70 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes70.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes70.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes70.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes70.xuriella
 
-FAIL axes_axes71 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes71 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes71.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes71.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes71.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes71.xuriella
 
-FAIL axes_axes72 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes72 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes72.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes72.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes72.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes72.xuriella
 
-FAIL axes_axes73 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes73 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes73.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes73.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes73.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes73.xuriella
 
-FAIL axes_axes74 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes74 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes74.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes74.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes74.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes74.xuriella
 
-FAIL axes_axes75 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes75 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes75.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes75.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes75.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes75.xuriella
 
-FAIL axes_axes76 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes76 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes76.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes76.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes76.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes76.xuriella
 
-FAIL axes_axes77 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes77 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes77.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes77.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes77.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes77.xuriella
 
-FAIL axes_axes78 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes78 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes78.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes78.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes78.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes78.xuriella
 
-FAIL axes_axes79 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes79 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes79.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes79.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes79.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes79.xuriella
 
-FAIL axes_axes80 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes80 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes80.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes80.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes80.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes80.xuriella
 
-FAIL axes_axes81 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes81 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes81.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes81.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes81.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes81.xuriella
 
-FAIL axes_axes82 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes82 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes82.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes82.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes82.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes82.xuriella
 
-FAIL axes_axes83 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes83 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes83.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes83.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes83.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes83.xuriella
 
-FAIL axes_axes84 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes84 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes84.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes84.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes84.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes84.xuriella
 
-FAIL axes_axes85 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes85 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes85.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes85.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes85.saxon
@@ -884,103 +884,103 @@ FAIL axes_axes86 [XSLT-Result-Tree-Testing]: no such function: :CURRENT
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes86.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes86.xuriella
 
-FAIL axes_axes87 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes87 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes87.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes87.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes87.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes87.xuriella
 
-FAIL axes_axes88 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes88 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes88.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes88.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes88.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes88.xuriella
 
-FAIL axes_axes89 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes89 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes89.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes89.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes89.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes89.xuriella
 
-FAIL axes_axes90 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes90 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes90.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes90.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes90.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes90.xuriella
 
-FAIL axes_axes91 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes91 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes91.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes91.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes91.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes91.xuriella
 
-FAIL axes_axes92 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes92 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes92.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes92.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes92.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes92.xuriella
 
-FAIL axes_axes93 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes93 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes93.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes93.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes93.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes93.xuriella
 
-FAIL axes_axes94 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes94 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes94.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes94.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes94.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes94.xuriella
 
-FAIL axes_axes95 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes95 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes95.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes95.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes95.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes95.xuriella
 
-FAIL axes_axes96 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes96 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes96.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes96.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes96.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes96.xuriella
 
-FAIL axes_axes97 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes97 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes97.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes97.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes97.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes97.xuriella
 
-FAIL axes_axes98 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes98 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes98.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes98.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes98.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes98.xuriella
 
-FAIL axes_axes99 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes99 [XSLT-Result-Tree-Testing]: not a valid pattern: @* | * | node()
   Stylesheet: Xalan_Conformance_Tests/axes/axes99.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes99.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes99.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes99.xuriella
 
-FAIL axes_axes100 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes100 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes100.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes100.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes100.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes100.xuriella
 
-FAIL axes_axes101 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes101 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes101.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes101.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes101.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes101.xuriella
 
-FAIL axes_axes102 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes102 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes102.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes102.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes102.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes102.xuriella
 
-FAIL axes_axes103 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes103 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes103.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes103.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes103.saxon
@@ -1004,7 +1004,13 @@ FAIL axes_axes106 [XSLT-Result-Tree-Testing]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes106.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes106.xuriella
 
-FAIL axes_axes107 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes107 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
+                                                #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                              when called with arguments
+                                                (#.(CXML-STP:TEXT
+                                                    #| :PARENT of type ELEMENT |#
+                                                    :DATA " Level-1
+  ")).
   Stylesheet: Xalan_Conformance_Tests/axes/axes107.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes107.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes107.saxon
@@ -1016,7 +1022,7 @@ FAIL axes_axes108 [XSLT-Result-Tree-Testing]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes108.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes108.xuriella
 
-FAIL axes_axes109 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes109 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes109.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes109.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes109.saxon
@@ -1028,7 +1034,13 @@ FAIL axes_axes110 [XSLT-Result-Tree-Testing]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes110.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes110.xuriella
 
-FAIL axes_axes111 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes111 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
+                                                #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                              when called with arguments
+                                                (#.(CXML-STP:TEXT
+                                                    #| :PARENT of type ELEMENT |#
+                                                    :DATA "
+      ")).
   Stylesheet: Xalan_Conformance_Tests/axes/axes111.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes111.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes111.saxon
@@ -1040,7 +1052,7 @@ FAIL axes_axes112 [XSLT-Result-Tree-Testing]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes112.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes112.xuriella
 
-FAIL axes_axes113 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes113 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes113.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes113.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes113.saxon
@@ -1058,31 +1070,31 @@ PASS axes_axes115 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes115.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes115.xuriella
 
-FAIL axes_axes116 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes116 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes116.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes116.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes116.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes116.xuriella
 
-FAIL axes_axes116 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes116 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes116.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes116.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes116.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes116.xuriella
 
-FAIL axes_axes119 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes119 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes119.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes119.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes119.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes119.xuriella
 
-FAIL axes_axes120 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes120 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes120.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes120.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes120.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes120.xuriella
 
-FAIL axes_axes121 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes121 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes121.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes121.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes121.saxon
@@ -1094,43 +1106,67 @@ PASS axes_axes122 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes122.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes122.xuriella
 
-FAIL axes_axes123 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes123 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes123.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes123.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes123.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes123.xuriella
 
-FAIL axes_axes123 [XSLT-Result-Tree-Testing]: no such function: :NAME
+PASS axes_axes123 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes123.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes123.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes123.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes123.xuriella
 
-FAIL axes_axes125 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes125 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
+                                                #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                              when called with arguments
+                                                (#.(CXML-STP:TEXT
+                                                    #| :PARENT of type ELEMENT |#
+                                                    :DATA "D
+  ")).
   Stylesheet: Xalan_Conformance_Tests/axes/axes125.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes125.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes125.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes125.xuriella
 
-FAIL axes_axes126 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes126 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
+                                                #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                              when called with arguments
+                                                (#.(CXML-STP:TEXT
+                                                    #| :PARENT of type ELEMENT |#
+                                                    :DATA "D
+  ")).
   Stylesheet: Xalan_Conformance_Tests/axes/axes126.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes126.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes126.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes126.xuriella
 
-FAIL axes_axes127 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes127 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
+                                                #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                              when called with arguments
+                                                (#.(CXML-STP:TEXT
+                                                    #| :PARENT of type ELEMENT |#
+                                                    :DATA "I
+  ")).
   Stylesheet: Xalan_Conformance_Tests/axes/axes127.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes127.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes127.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes127.xuriella
 
-FAIL axes_axes128 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes128 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
+                                                #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                              when called with arguments
+                                                (#.(CXML-STP:TEXT
+                                                    #| :PARENT of type ELEMENT |#
+                                                    :DATA "D
+  ")).
   Stylesheet: Xalan_Conformance_Tests/axes/axes128.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes128.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes128.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes128.xuriella
 
-FAIL axes_axes129 [XSLT-Result-Tree-Testing]: no such function: :NAME
+FAIL axes_axes129 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes129.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes129.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes129.saxon
@@ -1790,13 +1826,13 @@ PASS conditional_conditional17 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conditional/conditional_conditional17.saxon
   Actual output: Xalan_Conformance_Tests/conditional/conditional_conditional17.xuriella
 
-FAIL conditional_conditional18 [XSLT-Result-Tree]: no such function: :NAME
+PASS conditional_conditional18 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conditional/conditional18.noindent-xsl
   Data: Xalan_Conformance_Tests/conditional/conditional18.xml
   Expected output (1): Xalan_Conformance_Tests/conditional/conditional_conditional18.saxon
   Actual output: Xalan_Conformance_Tests/conditional/conditional_conditional18.xuriella
 
-FAIL conditional_conditional19 [XSLT-Result-Tree]: no such function: :NAME
+PASS conditional_conditional19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conditional/conditional19.noindent-xsl
   Data: Xalan_Conformance_Tests/conditional/conditional19.xml
   Expected output (1): Xalan_Conformance_Tests/conditional/conditional_conditional19.saxon
@@ -1892,19 +1928,19 @@ PASS conflictres_conflictres12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres12.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres12.xuriella
 
-FAIL conflictres_conflictres13 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres13 [XSLT-Result-Tree]: not a valid pattern: a|b|e
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres13.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres13.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres13.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres13.xuriella
 
-FAIL conflictres_conflictres14 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres14 [XSLT-Result-Tree]: not a valid pattern: a|b|d
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres14.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres14.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres14.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres14.xuriella
 
-FAIL conflictres_conflictres15 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres15 [XSLT-Result-Tree]: not a valid pattern: a|b|d|e
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres15.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres15.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres15.saxon
@@ -1922,19 +1958,19 @@ PASS conflictres_conflictres17 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres17.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres17.xuriella
 
-FAIL conflictres_conflictres18 [XSLT-Result-Tree]: no such function: :NAME
+PASS conflictres_conflictres18 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres18.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres18.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres18.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres18.xuriella
 
-FAIL conflictres_conflictres19 [XSLT-Result-Tree]: no such function: :NAME
+PASS conflictres_conflictres19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres19.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres19.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres19.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres19.xuriella
 
-FAIL conflictres_conflictres20 [XSLT-Result-Tree]: no such function: :NAME
+PASS conflictres_conflictres20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres20.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres20.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres20.saxon
@@ -1952,7 +1988,13 @@ PASS conflictres_conflictres22 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres22.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres22.xuriella
 
-FAIL conflictres_conflictres23 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres23 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                                     #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:PROCESSING-INSTRUCTION-TARGET (1)>
+                                                   when called with arguments
+                                                     (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                                         #| :PARENT of type ELEMENT |#
+                                                         :DATA "some data"
+                                                         :TARGET "a-pi")).
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres23.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres23.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres23.saxon
@@ -1964,37 +2006,37 @@ PASS conflictres_conflictres24 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres24.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres24.xuriella
 
-FAIL conflictres_conflictres25 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres25 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres25.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres25.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres25.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres25.xuriella
 
-FAIL conflictres_conflictres26 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres26 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres26.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres26.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres26.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres26.xuriella
 
-FAIL conflictres_conflictres27 [XSLT-Result-Tree]: no such function: :NAME
+PASS conflictres_conflictres27 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres27.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres27.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres27.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres27.xuriella
 
-FAIL conflictres_conflictres28 [XSLT-Result-Tree]: no such function: :NAME
+PASS conflictres_conflictres28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres28.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres28.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres28.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres28.xuriella
 
-FAIL conflictres_conflictres29 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres29 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres29.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres29.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres29.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres29.xuriella
 
-FAIL conflictres_conflictres30 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres30 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres30.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres30.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres30.saxon
@@ -2006,7 +2048,7 @@ PASS conflictres_conflictres31 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres31.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres31.xuriella
 
-FAIL conflictres_conflictres32 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres32 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres32.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres32.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres32.saxon
@@ -2018,19 +2060,25 @@ PASS conflictres_conflictres33 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres33.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres33.xuriella
 
-FAIL conflictres_conflictres34 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres34 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                                     #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:PROCESSING-INSTRUCTION-TARGET (1)>
+                                                   when called with arguments
+                                                     (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                                         #| :PARENT of type ELEMENT |#
+                                                         :DATA "some data"
+                                                         :TARGET "a-pi")).
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres34.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres34.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres34.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres34.xuriella
 
-FAIL conflictres_conflictres35 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres35 [XSLT-Result-Tree]: not a valid pattern: a|c|d|e
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres35.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres35.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres35.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres35.xuriella
 
-FAIL conflictres_conflictres36 [XSLT-Result-Tree]: no such function: :NAME
+FAIL conflictres_conflictres36 [XSLT-Result-Tree]: not a valid pattern: a|b|d
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres36.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres36.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres36.saxon
@@ -2072,7 +2120,7 @@ PASS copy_copy06 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy06.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy06.xuriella
 
-FAIL copy_copy07 [XSLT-Result-Tree]: no such function: :NAME
+PASS copy_copy07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy07.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy07.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy07.saxon
@@ -2487,7 +2535,13 @@ PASS dflt_dflt01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/dflt/dflt_dflt01.saxon
   Actual output: Xalan_Conformance_Tests/dflt/dflt_dflt01.xuriella
 
-FAIL dflt_dflt02 [XSLT-Result-Tree]: no such function: :NAME
+FAIL dflt_dflt02 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                     when called with arguments
+                                       (#.(CXML-STP:TEXT
+                                           #| :PARENT of type ELEMENT |#
+                                           :DATA "
+")).
   Stylesheet: Xalan_Conformance_Tests/dflt/dflt02.noindent-xsl
   Data: Xalan_Conformance_Tests/dflt/dflt02.xml
   Expected output (1): Xalan_Conformance_Tests/dflt/dflt_dflt02.saxon
@@ -3091,7 +3145,7 @@ PASS impincl_impincl20 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl20.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl20.xuriella
 
-FAIL impincl_impincl21 [XSLT-Result-Tree]: no such function: :NAME
+PASS impincl_impincl21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl21.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl21.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/imp21d.xsl
@@ -3119,14 +3173,14 @@ FAIL impincl_impincl24 [XSLT-Result-Tree]: undeclared variable: color in namespa
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl24.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl24.xuriella
 
-FAIL impincl_impincl25 [XSLT-Result-Tree]: no such function: :NAME
+PASS impincl_impincl25 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl25.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl25.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/imp21c.xsl
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl25.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl25.xuriella
 
-FAIL impincl_impincl26 [XSLT-Result-Tree]: no such function: :NAME
+PASS impincl_impincl26 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl26.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl26.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/imp26d.xsl
@@ -3185,7 +3239,7 @@ FAIL lre_lre05 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre05.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre05.xuriella
 
-FAIL lre_lre06 [XSLT-Result-Tree]: no such function: :NAME
+PASS lre_lre06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/lre/lre06.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre06.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre06.saxon
@@ -3197,7 +3251,7 @@ FAIL lre_lre07 [XSLT-Result-Tree]: saxon error not signalled and official output
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre07.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre07.xuriella
 
-FAIL lre_lre08 [XSLT-Result-Tree]: no such function: :NAME
+FAIL lre_lre08 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/lre/lre08.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre08.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre08.saxon
@@ -3299,13 +3353,13 @@ PASS match_match01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/match/match_match01.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match01.xuriella
 
-FAIL match_match02 [XSLT-Result-Tree]: no such function: :NAME
+PASS match_match02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/match/match02.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match02.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match02.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match02.xuriella
 
-FAIL match_match03 [XSLT-Result-Tree]: no such function: :NAME
+PASS match_match03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/match/match03.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match03.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match03.saxon
@@ -3341,7 +3395,7 @@ PASS match_match08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/match/match_match08.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match08.xuriella
 
-FAIL match_match09 [XSLT-Result-Tree]: no such function: :NAME
+PASS match_match09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/match/match09.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match09.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match09.saxon
@@ -3353,7 +3407,7 @@ PASS match_match10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/match/match_match10.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match10.xuriella
 
-FAIL match_match11 [XSLT-Result-Tree]: no such function: :NAME
+FAIL match_match11 [XSLT-Result-Tree]: not a valid pattern: id('b')
   Stylesheet: Xalan_Conformance_Tests/match/match11.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match11.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match11.saxon
@@ -4476,7 +4530,7 @@ PASS modes_modes09 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes09.saxon
   Actual output: Xalan_Conformance_Tests/modes/modes_modes09.xuriella
 
-FAIL modes_modes10 [XSLT-Result-Tree]: no such function: :NAME
+FAIL modes_modes10 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/modes/modes10.noindent-xsl
   Data: Xalan_Conformance_Tests/modes/modes10.xml
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes10.saxon
@@ -4536,7 +4590,7 @@ PASS namedtemplate_namedtemplate02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate02.saxon
   Actual output: Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate02.xuriella
 
-FAIL namedtemplate_namedtemplate03 [XSLT-Result-Tree]: no such function: :NAME
+PASS namedtemplate_namedtemplate03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namedtemplate/namedtemplate03.noindent-xsl
   Data: Xalan_Conformance_Tests/namedtemplate/namedtemplate03.xml
   Expected output (1): Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate03.saxon
@@ -4578,7 +4632,7 @@ PASS namedtemplate_namedtemplate09 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate09.saxon
   Actual output: Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate09.xuriella
 
-FAIL namedtemplate_namedtemplate10 [XSLT-Result-Tree]: no such function: :NAME
+PASS namedtemplate_namedtemplate10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namedtemplate/namedtemplate10.noindent-xsl
   Data: Xalan_Conformance_Tests/namedtemplate/namedtemplate10.xml
   Expected output (1): Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate10.saxon
@@ -4683,7 +4737,7 @@ PASS namespace_namespace07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace07.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace07.xuriella
 
-FAIL namespace_namespace08 [XSLT-Result-Tree]: no such function: :NAME
+FAIL namespace_namespace08 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace08.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace08.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace08.saxon
@@ -4809,19 +4863,19 @@ FAIL namespace_namespace28 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace28.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace28.xuriella
 
-FAIL namespace_namespace29 [XSLT-Result-Tree]: no such function: :NAME
+FAIL namespace_namespace29 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace29.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace29.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace29.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace29.xuriella
 
-FAIL namespace_namespace30 [XSLT-Result-Tree]: no such function: :NAME
+FAIL namespace_namespace30 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace30.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace30.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace30.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace30.xuriella
 
-FAIL namespace_namespace31 [XSLT-Result-Tree]: no such function: :NAME
+FAIL namespace_namespace31 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace31.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace31.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace31.saxon
@@ -4833,7 +4887,7 @@ PASS namespace_namespace32 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace32.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace32.xuriella
 
-FAIL namespace_namespace33 [XSLT-Result-Tree]: no such function: :NAME
+FAIL namespace_namespace33 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace33.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace33.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace33.saxon
@@ -5445,7 +5499,7 @@ PASS namespace_namespace141 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace141.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace141.xuriella
 
-FAIL namespace_namespace142 [XSLT-Result-Tree]: no such function: :NAME
+FAIL namespace_namespace142 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace142.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace142.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace142.saxon
@@ -5463,7 +5517,13 @@ PASS node_node02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/node/node_node02.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node02.xuriella
 
-FAIL node_node03 [XSLT-Result-Tree]: no such function: :NAME
+FAIL node_node03 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:PROCESSING-INSTRUCTION-TARGET (1)>
+                                     when called with arguments
+                                       (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                           #| :PARENT of type DOCUMENT |#
+                                           :DATA "some data"
+                                           :TARGET "a-pi")).
   Stylesheet: Xalan_Conformance_Tests/node/node03.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node03.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node03.saxon
@@ -5481,7 +5541,7 @@ FAIL node_node05 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Expected output (1): Xalan_Conformance_Tests/node/node_node05.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node05.xuriella
 
-FAIL node_node06 [XSLT-Result-Tree]: no such function: :NAME
+PASS node_node06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/node/node06.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node06.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node06.saxon
@@ -5511,13 +5571,25 @@ PASS node_node10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/node/node_node10.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node10.xuriella
 
-FAIL node_node11 [XSLT-Result-Tree]: no such function: :NAME
+FAIL node_node11 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                     when called with arguments
+                                       (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                           #| :PARENT of type ELEMENT |#
+                                           :DATA "some data"
+                                           :TARGET "a-pi")).
   Stylesheet: Xalan_Conformance_Tests/node/node11.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node11.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node11.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node11.xuriella
 
-FAIL node_node12 [XSLT-Result-Tree]: no such function: :NAME
+FAIL node_node12 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                     when called with arguments
+                                       (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                           #| :PARENT of type ELEMENT |#
+                                           :DATA "some data"
+                                           :TARGET "mypi")).
   Stylesheet: Xalan_Conformance_Tests/node/node12.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node12.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node12.saxon
@@ -5529,25 +5601,81 @@ PASS node_node13 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/node/node_node13.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node13.xuriella
 
-FAIL node_node14 [XSLT-Result-Tree]: no such function: :NAME
+FAIL node_node14 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                     when called with arguments
+                                       (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                           #| :PARENT of type DOCUMENT |#
+                                           :DATA "some data"
+                                           :TARGET "a-pi")).
   Stylesheet: Xalan_Conformance_Tests/node/node14.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node14.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node14.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node14.xuriella
 
-FAIL node_node15 [XSLT-Result-Tree]: no such function: :NAME
+FAIL node_node15 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                     when called with arguments
+                                       (#.(CXML-STP:TEXT
+                                           #| :PARENT of type ELEMENT |#
+                                           :DATA "
+  ")).
   Stylesheet: Xalan_Conformance_Tests/node/node15.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node15.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node15.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node15.xuriella
 
-FAIL node_node16 [XSLT-Result-Tree]: no such function: :NAME
+PASS node_node16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/node/node16.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node16.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node16.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node16.xuriella
 
-FAIL node_node17 [XSLT-Result-Tree]: no such function: :NAME
+FAIL node_node17 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
+                                     when called with arguments
+                                       (#S(CXML-STP-IMPL::STP-NAMESPACE
+                                           :PARENT #.(CXML-STP-IMPL::DOCUMENT
+                                                      :CHILDREN '(#.(CXML-STP:ELEMENT
+                                                                     #| :PARENT of type DOCUMENT |#
+                                                                     :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/node/node17.xml"
+                                                                     :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                    #| :PARENT of type ELEMENT |#
+                                                                                    :DATA "
+  ")
+                                                                                 #.(CXML-STP:ELEMENT
+                                                                                    #| :PARENT of type ELEMENT |#
+                                                                                    :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                                     #| :PARENT of type ELEMENT |#
+                                                                                                     :VALUE "x"
+                                                                                                     :LOCAL-NAME "x")
+                                                                                                  #.(CXML-STP:ATTRIBUTE
+                                                                                                     #| :PARENT of type ELEMENT |#
+                                                                                                     :VALUE "y"
+                                                                                                     :LOCAL-NAME "y")
+                                                                                                  #.(CXML-STP:ATTRIBUTE
+                                                                                                     #| :PARENT of type ELEMENT |#
+                                                                                                     :VALUE "z"
+                                                                                                     :LOCAL-NAME "z"))
+                                                                                    :EXTRA-NAMESPACES '(("ext"
+                                                                                                         "http://somebody.elses.extension")
+                                                                                                        ("java"
+                                                                                                         "http://xml.apache.org/xslt/java")
+                                                                                                        ("ped"
+                                                                                                         "http://tester.com")
+                                                                                                        ("bdd"
+                                                                                                         "http://buster.com")
+                                                                                                        ("jad"
+                                                                                                         "http://administrator.com"))
+                                                                                    :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/node/node17.xml"
+                                                                                    :LOCAL-NAME "doc")
+                                                                                 #.(CXML-STP:TEXT
+                                                                                    #| :PARENT of type ELEMENT |#
+                                                                                    :DATA "
+"))
+                                                                     :LOCAL-NAME "docs")))
+                                           :PREFIX "xml"
+                                           :URI "http://www.w3.org/XML/1998/namespace")).
   Stylesheet: Xalan_Conformance_Tests/node/node17.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node17.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node17.saxon
@@ -5559,19 +5687,19 @@ PASS node_node18 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/node/node_node18.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node18.xuriella
 
-FAIL node_node19 [XSLT-Result-Tree]: no such function: :NAME
+PASS node_node19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/node/node19.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node19.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node19.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node19.xuriella
 
-FAIL node_node20 [XSLT-Result-Tree]: no such function: :NAME
+PASS node_node20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/node/node20.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node20.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node20.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node20.xuriella
 
-FAIL node_node21 [XSLT-Result-Tree]: no such function: :NAME
+PASS node_node21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/node/node21.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node21.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node21.saxon
@@ -7431,7 +7559,7 @@ PASS position_position30 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position30.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position30.xuriella
 
-FAIL position_position31 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position31 [XSLT-Result-Tree]: not a valid pattern: bracket|button|dial|light
   Stylesheet: Xalan_Conformance_Tests/position/position31.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position31.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position31.saxon
@@ -7665,13 +7793,19 @@ PASS position_position69 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position69.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position69.xuriella
 
-FAIL position_position70 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position70 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/position/position70.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position70.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position70.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position70.xuriella
 
-FAIL position_position71 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position71 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                               #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                             when called with arguments
+                                               (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                                   #| :PARENT of type DOCUMENT |#
+                                                   :DATA "some data"
+                                                   :TARGET "b-pi")).
   Stylesheet: Xalan_Conformance_Tests/position/position71.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position71.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position71.saxon
@@ -7701,7 +7835,7 @@ PASS position_position75 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position75.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position75.xuriella
 
-FAIL position_position76 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position76 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/position/position76.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position76.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position76.saxon
@@ -7725,7 +7859,7 @@ PASS position_position79 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position79.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position79.xuriella
 
-FAIL position_position80 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position80 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position80.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position80.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position80.saxon
@@ -7737,19 +7871,19 @@ PASS position_position81 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position81.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position81.xuriella
 
-FAIL position_position82 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position82 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position82.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position82.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position82.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position82.xuriella
 
-FAIL position_position83 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position83 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position83.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position83.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position83.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position83.xuriella
 
-FAIL position_position83 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position83 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position83.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position83.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position83.saxon
@@ -7791,7 +7925,7 @@ PASS position_position90 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position90.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position90.xuriella
 
-FAIL position_position91 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position91 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position91.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position91.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position91.saxon
@@ -7833,25 +7967,25 @@ PASS position_position97 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position97.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position97.xuriella
 
-FAIL position_position98 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position98 [XSLT-Result-Tree]: not a valid pattern: text()|comment()|processing-instruction()
   Stylesheet: Xalan_Conformance_Tests/position/position98.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position98.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position98.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position98.xuriella
 
-FAIL position_position99 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position99 [XSLT-Result-Tree]: not a valid pattern: text()|comment()|processing-instruction()
   Stylesheet: Xalan_Conformance_Tests/position/position99.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position99.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position99.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position99.xuriella
 
-FAIL position_position100 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position100 [XSLT-Result-Tree]: not a valid pattern: comment()|processing-instruction()
   Stylesheet: Xalan_Conformance_Tests/position/position100.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position100.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position100.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position100.xuriella
 
-FAIL position_position101 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position101 [XSLT-Result-Tree]: not a valid pattern: text()|processing-instruction()
   Stylesheet: Xalan_Conformance_Tests/position/position101.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position101.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position101.saxon
@@ -7888,25 +8022,25 @@ FAIL position_position106 [XSLT-Result-Tree]: no such function: :GENERATE-ID
   Expected output (1): Xalan_Conformance_Tests/position/position_position106.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position106.xuriella
 
-FAIL position_position107 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position107 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position107.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position107.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position107.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position107.xuriella
 
-FAIL position_position108 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position108 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position108.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position108.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position108.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position108.xuriella
 
-FAIL position_position109 [XSLT-Result-Tree]: no such function: :NAME
+PASS position_position109 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position109.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position109.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position109.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position109.xuriella
 
-FAIL position_position101 [XSLT-Result-Tree]: no such function: :NAME
+FAIL position_position101 [XSLT-Result-Tree]: not a valid pattern: text()|processing-instruction()
   Stylesheet: Xalan_Conformance_Tests/position/position101.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position101.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position101.saxon
@@ -8044,13 +8178,13 @@ PASS predicate_predicate17 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate17.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate17.xuriella
 
-FAIL predicate_predicate18 [XSLT-Result-Tree]: no such function: :NAME
+PASS predicate_predicate18 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate18.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate18.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate18.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate18.xuriella
 
-FAIL predicate_predicate19 [XSLT-Result-Tree]: no such function: :NAME
+PASS predicate_predicate19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate19.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate19.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate19.saxon
@@ -8397,7 +8531,7 @@ PASS select_select04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select04.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select04.xuriella
 
-FAIL select_select05 [XSLT-Result-Tree]: no such function: :NAME
+FAIL select_select05 [XSLT-Result-Tree]: not a valid pattern: * | /
   Stylesheet: Xalan_Conformance_Tests/select/select05.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select05.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select05.saxon
@@ -8769,19 +8903,29 @@ PASS select_select66 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select66.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select66.xuriella
 
-FAIL select_select67 [XSLT-Result-Tree]: no such function: :NAME
+"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select67.noindent-xsl" is a vector with 110 elements.
+Its element type is specialized to CHARACTER.
+FAIL select_select67 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                           #<STANDARD-GENERIC-FUNCTION PURI:URI-SCHEME (1)>
+                                         when called with arguments
+                                           ("file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select67.noindent-xsl").
   Stylesheet: Xalan_Conformance_Tests/select/select67.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select67.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select67.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select67.xuriella
 
-FAIL select_select68 [XSLT-Result-Tree]: no such function: :NAME
+"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.noindent-xsl" is a vector with 110 elements.
+Its element type is specialized to CHARACTER.
+FAIL select_select68 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                           #<STANDARD-GENERIC-FUNCTION PURI:URI-SCHEME (1)>
+                                         when called with arguments
+                                           ("file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.noindent-xsl").
   Stylesheet: Xalan_Conformance_Tests/select/select68.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select68.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select68.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select68.xuriella
 
-FAIL select_select69 [XSLT-Result-Tree]: no such function: :NAME
+PASS select_select69 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select69.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select69.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select69.saxon
@@ -8874,19 +9018,19 @@ PASS select_select81 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select81.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select81.xuriella
 
-FAIL select_select82 [XSLT-Result-Tree]: no such function: :NAME
+PASS select_select82 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select82.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select82.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select82.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select82.xuriella
 
-FAIL select_select83 [XSLT-Result-Tree]: no such function: :NAME
+PASS select_select83 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select83.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select83.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select83.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select83.xuriella
 
-FAIL select_select84 [XSLT-Result-Tree]: no such function: :NAME
+PASS select_select84 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select84.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select84.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select84.saxon
@@ -9126,7 +9270,13 @@ FAIL sort_sort34 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort34.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort34.xuriella
 
-FAIL sort_sort35 [XSLT-Result-Tree]: no such function: :NAME
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+FAIL sort_sort35 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort35.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort35.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort35.saxon
@@ -9138,7 +9288,13 @@ FAIL sort_sort36 [XSLT-Result-Tree]: Invalid number: "trud" [Reason: Exponent-ma
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort36.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort36.xuriella
 
-FAIL sort_sort37 [XSLT-Result-Tree]: no such function: :NAME
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+WARNING:
+   comparison failed: :TEXT fell through ECASE expression.
+                      Wanted one of (:HTML :XML).
+FAIL sort_sort37 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort37.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort37.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort37.saxon
@@ -9300,31 +9456,31 @@ FAIL string_string31 [XSLT-Result-Tree]: no such function: :NAMESPACE-URI
   Expected output (1): Xalan_Conformance_Tests/string/string_string31.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string31.xuriella
 
-FAIL string_string32 [XSLT-Result-Tree]: no such function: :NAME
+PASS string_string32 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string32.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string32.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string32.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string32.xuriella
 
-FAIL string_string33 [XSLT-Result-Tree]: no such function: :NAME
+PASS string_string33 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string33.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string33.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string33.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string33.xuriella
 
-FAIL string_string34 [XSLT-Result-Tree]: no such function: :NAME
+PASS string_string34 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string34.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string34.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string34.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string34.xuriella
 
-FAIL string_string35 [XSLT-Result-Tree]: no such function: :NAME
+PASS string_string35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string35.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string35.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string35.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string35.xuriella
 
-FAIL string_string36 [XSLT-Result-Tree]: no such function: :NAME
+PASS string_string36 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string36.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string36.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string36.saxon
@@ -10207,7 +10363,7 @@ PASS variable_variable39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable39.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable39.xuriella
 
-FAIL variable_variable40 [XSLT-Result-Tree]: no such function: :NAME
+FAIL variable_variable40 [XSLT-Result-Tree]: not a valid pattern: a|d
   Stylesheet: Xalan_Conformance_Tests/variable/variable40.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable40.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable40.saxon
@@ -10841,19 +10997,96 @@ PASS Attributes__83030 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__83030.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__83030.xuriella
 
-FAIL Attributes__83822 [XSLT-Result-Tree]: no such function: :NAME
+PASS Attributes__83822 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/dtdd.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/dtdd.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__83822.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__83822.xuriella
 
-FAIL Attributes__84169 [XSLT-Result-Tree]: no such function: :NAME
+FAIL Attributes__84169 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                             #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                                           when called with arguments
+                                             (#.(CXML-STP-IMPL::DOCUMENT
+                                                 :CHILDREN '(#.(CXML-STP:ELEMENT
+                                                                #| :PARENT of type DOCUMENT |#
+                                                                :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/84169.xml"
+                                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :DATA "
+?")
+                                                                            #.(CXML-STP:ELEMENT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/84169.xml"
+                                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                              #| :PARENT of type ELEMENT |#
+                                                                                              :DATA "Cool"))
+                                                                               :LOCAL-NAME "DT")
+                                                                            #.(CXML-STP:TEXT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :DATA "
+?")
+                                                                            #.(CXML-STP:ELEMENT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/84169.xml"
+                                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                              #| :PARENT of type ELEMENT |#
+                                                                                              :DATA "means phat"))
+                                                                               :LOCAL-NAME "DD")
+                                                                            #.(CXML-STP:TEXT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :DATA "
+?")
+                                                                            #.(CXML-STP:ELEMENT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/84169.xml"
+                                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                              #| :PARENT of type ELEMENT |#
+                                                                                              :DATA "phat"))
+                                                                               :LOCAL-NAME "DT")
+                                                                            #.(CXML-STP:TEXT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :DATA "
+?")
+                                                                            #.(CXML-STP:ELEMENT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/84169.xml"
+                                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                              #| :PARENT of type ELEMENT |#
+                                                                                              :DATA "means all that"))
+                                                                               :LOCAL-NAME "DD")
+                                                                            #.(CXML-STP:TEXT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :DATA "
+?")
+                                                                            #.(CXML-STP:ELEMENT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/84169.xml"
+                                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                              #| :PARENT of type ELEMENT |#
+                                                                                              :DATA "all that"))
+                                                                               :LOCAL-NAME "DT")
+                                                                            #.(CXML-STP:TEXT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :DATA "
+?")
+                                                                            #.(CXML-STP:ELEMENT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/84169.xml"
+                                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                                              #| :PARENT of type ELEMENT |#
+                                                                                              :DATA "means cool"))
+                                                                               :LOCAL-NAME "DD")
+                                                                            #.(CXML-STP:TEXT
+                                                                               #| :PARENT of type ELEMENT |#
+                                                                               :DATA "
+"))
+                                                                :LOCAL-NAME "DL")))).
   Stylesheet: MSFT_Conformance_Tests/Attributes/84169.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/84169.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__84169.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__84169.xuriella
 
-FAIL Attributes__89433 [XSLT-Result-Tree]: no such function: :NAME
+PASS Attributes__89433 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-3-template_for.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89433.saxon
@@ -13627,7 +13860,7 @@ PASS BVTs_bvt092 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt092.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt092.xuriella
 
-FAIL BVTs_bvt093 [Mixed]: no such function: :NAME
+FAIL BVTs_bvt093 [Mixed]: not a valid pattern: bookstore | book
   Stylesheet: MSFT_Conformance_Tests/BVTs/var-query2.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt093.saxon
@@ -13657,7 +13890,13 @@ FAIL BVTs_bvt098 [Mixed]: not a stylesheet
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt098.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt098.xuriella
 
-FAIL BVTs_bvt099 [Mixed]: no such function: :NAME
+FAIL BVTs_bvt099 [Mixed]: There is no applicable method for the generic function
+                            #<STANDARD-GENERIC-FUNCTION CXML-STP:NAMESPACE-PREFIX (1)>
+                          when called with arguments
+                            (#.(CXML-STP:TEXT
+                                #| :PARENT of type ELEMENT |#
+                                :DATA "
+?")).
   Stylesheet: MSFT_Conformance_Tests/BVTs/filtermatch.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt099.saxon
@@ -13844,7 +14083,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_DisableOutputEscaping_XslTextInXslComment.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_DisableOutputEscaping_XslTextInXslComment.xuriella
 
-FAIL Completeness__84351 [Mixed]: no such function: :NAME
+PASS Completeness__84351 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Completeness/84351.noindent-xsl
   Data: MSFT_Conformance_Tests/Completeness/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Completeness/Completeness__84351.saxon
@@ -13981,74 +14220,74 @@ error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conforma
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77833.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77833.xuriella
 
-FAIL ConflictResolution__77847 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77847 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08104.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77847.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77847.xuriella
 
-FAIL ConflictResolution__77870 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77870 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08101.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77870.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77870.xuriella
 
-FAIL ConflictResolution__77871 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77871 [XSLT-Template]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08102.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77871.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77871.xuriella
 
-FAIL ConflictResolution__77872 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77872 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08106.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77872.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77872.xuriella
 
-FAIL ConflictResolution__77874 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77874 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08100.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77874.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77874.xuriella
 
-FAIL ConflictResolution__77875 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77875 [XSLT-Template]: not a valid pattern: *|comment()|processing-instruction()|node()
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08105.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77875.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77875.xuriella
 
-FAIL ConflictResolution__77876 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77876 [XSLT-Template]: not a valid pattern: book|magazine
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08107.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77876.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77876.xuriella
 
-FAIL ConflictResolution__77877 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77877 [XSLT-Template]: not a valid pattern: book|book/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08110.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77877.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77877.xuriella
 
-FAIL ConflictResolution__77878 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77878 [XSLT-Template]: not a valid pattern: book|book/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08109.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77878.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77878.xuriella
 
-FAIL ConflictResolution__77879 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77879 [XSLT-Template]: not a valid pattern: book|book/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08109.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77879.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77879.xuriella
 
-FAIL ConflictResolution__77881 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77881 [XSLT-Template]: not a valid pattern: magazine|magazine/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08114.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/ConflictResolution/lowpribooks17.xsl
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77881.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77881.xuriella
 
-FAIL ConflictResolution__77882 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77882 [XSLT-Template]: not a valid pattern: magazine|magazine/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08108.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/ConflictResolution/lowpribooks17.xsl
@@ -14062,37 +14301,37 @@ PASS ConflictResolution__77883 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77883.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77883.xuriella
 
-FAIL ConflictResolution__77884 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77884 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09001.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77884.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77884.xuriella
 
-FAIL ConflictResolution__77885 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77885 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09002.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77885.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77885.xuriella
 
-FAIL ConflictResolution__77886 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77886 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09005.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77886.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77886.xuriella
 
-FAIL ConflictResolution__77889 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77889 [XSLT-Template]: not a valid pattern: magazine|magazine/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09007.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77889.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77889.xuriella
 
-FAIL ConflictResolution__77891 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77891 [XSLT-Template]: not a valid pattern: magazine|magazine/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09008.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77891.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77891.xuriella
 
-FAIL ConflictResolution__77893 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__77893 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09005a.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77893.saxon
@@ -14119,26 +14358,26 @@ PASS ConflictResolution__77902 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77902.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77902.xuriella
 
-FAIL ConflictResolution__77904 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__77904 [XSLT-Template]: not a valid pattern: magazine|magazine/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09013.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/ConflictResolution/lowpribooks17.xsl
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77904.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77904.xuriella
 
-FAIL ConflictResolution__84476 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__84476 [XSLT-Template]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/84476.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/84476.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84476.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84476.xuriella
 
-FAIL ConflictResolution__84477 [XSLT-Template]: no such function: :NAME
+FAIL ConflictResolution__84477 [XSLT-Template]: not a valid pattern: processing-instruction() | book | book/title
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/84477.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/84477.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84477.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84477.xuriella
 
-FAIL ConflictResolution__84478 [XSLT-Template]: no such function: :NAME
+PASS ConflictResolution__84478 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/84478.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/84478.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84478.saxon
@@ -14486,13 +14725,13 @@ PASS Elements__89287 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89287.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89287.xuriella
 
-FAIL Elements__89605 [XSLT-Result-Tree]: no such function: :NAME
+FAIL Elements__89605 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-e-nodename.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89605.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89605.xuriella
 
-FAIL Elements__89705 [XSLT-Result-Tree]: no such function: :NAME
+FAIL Elements__89705 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-f-nodename.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89705.saxon
@@ -14558,7 +14797,7 @@ PASS Elements__89718 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89718.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89718.xuriella
 
-FAIL Elements__89723 [XSLT-Result-Tree]: no such function: :NAME
+FAIL Elements__89723 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-g-nodename.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89723.saxon
@@ -14597,7 +14836,10 @@ Context:
   Actual output: MSFT_Conformance_Tests/Elements/Elements_Element_ElementWithNoNameSpecifiedButValidNS.xuriella
 
 FAIL Elements_Element_ElementWithNSFromNameFn [XSLT-Result-Tree]: condition of incorrect type: 
-no such function: :NAME
+Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
+Context:
+  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml
+
   Stylesheet: MSFT_Conformance_Tests/Elements/xslt_element_NoElementNS.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements_Element_ElementWithNSFromNameFn.saxon
@@ -15542,49 +15784,49 @@ PASS Import__91033 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91033.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91033.xuriella
 
-FAIL Import__91048 [XSLT-Structure]: no such function: :NAME
+FAIL Import__91048 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Import/91048a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91048e.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91048.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91048.xuriella
 
-FAIL Import__91116 [XSLT-Structure]: no such function: :NAME
+FAIL Import__91116 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Import/91116a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91116c.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91116.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91116.xuriella
 
-FAIL Import__91117 [XSLT-Structure]: no such function: :NAME
+PASS Import__91117 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91117a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91117c.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91117.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91117.xuriella
 
-FAIL Import__91118 [XSLT-Structure]: no such function: :NAME
+PASS Import__91118 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91118a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91118c.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91118.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91118.xuriella
 
-FAIL Import__91134 [XSLT-Structure]: no such function: :NAME
+FAIL Import__91134 [XSLT-Structure]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Import/91134a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91134b.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91134.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91134.xuriella
 
-FAIL Import__91135 [XSLT-Structure]: no such function: :NAME
+FAIL Import__91135 [XSLT-Structure]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Import/91135a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91135c.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91135.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91135.xuriella
 
-FAIL Import__91136 [XSLT-Structure]: no such function: :NAME
+FAIL Import__91136 [XSLT-Structure]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Import/91136a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91136c.xsl
@@ -15722,7 +15964,7 @@ PASS Import__91163 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91163.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91163.xuriella
 
-FAIL Import__91164 [XSLT-Structure]: no such function: :NAME
+PASS Import__91164 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91164.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91164a.xsl
@@ -15741,7 +15983,7 @@ PASS Import__91166 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91166.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91166.xuriella
 
-FAIL Import__91173 [XSLT-Structure]: no such function: :NAME
+FAIL Import__91173 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Import/91173.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91173a.xsl
@@ -16254,7 +16496,7 @@ FAIL Keys__91859 [XSLT-Data-Manipulation]: no such function: :KEY
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91859.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91859.xuriella
 
-FAIL Keys__91860 [XSLT-Data-Manipulation]: no such function: :NAME
+FAIL Keys__91860 [XSLT-Data-Manipulation]: not a valid pattern: key('x','Redmond')
   Stylesheet: MSFT_Conformance_Tests/Keys/91860.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91860.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91860.saxon
@@ -16380,7 +16622,7 @@ FAIL Miscellaneous__78298 [Mixed]: no such function: :CURRENT
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__78298.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__78298.xuriella
 
-FAIL Miscellaneous__78302 [Mixed]: no such function: :NAME
+FAIL Miscellaneous__78302 [Mixed]: no such function: :CURRENT
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/XSLT25001.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/XSLT25001.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__78302.saxon
@@ -16576,73 +16818,73 @@ PASS Miscellaneous__84362 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84362.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84362.xuriella
 
-FAIL Miscellaneous__84406 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84406 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84406.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84406.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84406.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84406.xuriella
 
-FAIL Miscellaneous__84407 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84407 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84407.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84407.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84407.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84407.xuriella
 
-FAIL Miscellaneous__84408 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84408 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84408.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84408.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84408.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84408.xuriella
 
-FAIL Miscellaneous__84409 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84409 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84409.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84409.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84409.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84409.xuriella
 
-FAIL Miscellaneous__84410 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84410 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84410.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84410.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84410.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84410.xuriella
 
-FAIL Miscellaneous__84411 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84411 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84411.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84411.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84411.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84411.xuriella
 
-FAIL Miscellaneous__84412 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84412 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84412.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84412.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84412.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84412.xuriella
 
-FAIL Miscellaneous__84420 [Mixed]: no such function: :NAME
+PASS Miscellaneous__84420 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84420.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84420.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84420.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84420.xuriella
 
-FAIL Miscellaneous__84423 [Mixed]: no such function: :NAME
+FAIL Miscellaneous__84423 [Mixed]: no such function: :CURRENT
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84423.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84423.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84423.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84423.xuriella
 
-FAIL Miscellaneous__84424 [Mixed]: no such function: :NAME
+FAIL Miscellaneous__84424 [Mixed]: no such function: :CURRENT
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84424.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84424.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84424.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84424.xuriella
 
-FAIL Miscellaneous__84425 [Mixed]: no such function: :NAME
+FAIL Miscellaneous__84425 [Mixed]: no such function: :CURRENT
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84425.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84425.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84425.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84425.xuriella
 
-FAIL Miscellaneous__84426 [Mixed]: no such function: :NAME
+FAIL Miscellaneous__84426 [Mixed]: no such function: :CURRENT
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84426.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84426.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84426.saxon
@@ -16666,7 +16908,7 @@ FAIL Miscellaneous__84435 [Mixed]: no such function: :ID
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.xuriella
 
-FAIL Miscellaneous__84475 [Mixed]: no such function: :NAME
+FAIL Miscellaneous__84475 [Mixed]: not a valid pattern: *[string(descendant::*) = concat(substring-before(//sibprec/p, 'sibling'), //child/desc/p)] | @*[string-length(self::*) != ((3 + 6 - 8) * 5)]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84475.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84475.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84475.saxon
@@ -16720,7 +16962,7 @@ FAIL Modes__78322 [XSLT-Template]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78322.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78322.xuriella
 
-FAIL Modes__78323 [XSLT-Template]: no such function: :NAME
+PASS Modes__78323 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11103.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78323.saxon
@@ -16732,13 +16974,13 @@ PASS Modes__78324 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78324.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78324.xuriella
 
-FAIL Modes__78325 [XSLT-Template]: no such function: :NAME
+PASS Modes__78325 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11101.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78325.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78325.xuriella
 
-FAIL Modes__78327 [XSLT-Template]: no such function: :NAME
+PASS Modes__78327 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11011.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78327.saxon
@@ -16774,13 +17016,13 @@ PASS Modes__78332 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78332.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78332.xuriella
 
-FAIL Modes__78333 [XSLT-Template]: no such function: :NAME
+PASS Modes__78333 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11007.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78333.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78333.xuriella
 
-FAIL Modes__78334 [XSLT-Template]: no such function: :NAME
+PASS Modes__78334 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11006.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78334.saxon
@@ -16792,37 +17034,37 @@ PASS Modes__78340 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78340.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78340.xuriella
 
-FAIL Modes__78341 [XSLT-Template]: no such function: :NAME
+PASS Modes__78341 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11003.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78341.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78341.xuriella
 
-FAIL Modes__78342 [XSLT-Template]: no such function: :NAME
+PASS Modes__78342 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11000.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78342.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78342.xuriella
 
-FAIL Modes__78343 [XSLT-Template]: no such function: :NAME
+PASS Modes__78343 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11001.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78343.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78343.xuriella
 
-FAIL Modes__84413 [XSLT-Template]: no such function: :NAME
+PASS Modes__84413 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/84413.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/84413.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__84413.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__84413.xuriella
 
-FAIL Modes__84414 [XSLT-Template]: no such function: :NAME
+PASS Modes__84414 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Modes/84414.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/84414.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__84414.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__84414.xuriella
 
-PASS NamedTemplates__84027 [XSLT-Template]: raised an xslt-error as expected
+FAIL NamedTemplates__84027 [XSLT-Template]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84027.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84027.saxon
@@ -16835,7 +17077,7 @@ The value NIL is not of type (SIMPLE-ARRAY CHARACTER).
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84028.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84028.xuriella
 
-FAIL NamedTemplates__84029 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84029 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84029.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84029.saxon
@@ -16859,7 +17101,7 @@ PASS NamedTemplates__84037 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84037.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84037.xuriella
 
-FAIL NamedTemplates__84038 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84038 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84038.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84038.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84038.saxon
@@ -16902,49 +17144,49 @@ PASS NamedTemplates__84045 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84045.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84045.xuriella
 
-FAIL NamedTemplates__84046 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84046 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84046.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84046.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84046.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84046.xuriella
 
-FAIL NamedTemplates__84047 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84047 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84047.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84047.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84047.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84047.xuriella
 
-FAIL NamedTemplates__84416 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84416 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84416.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84416.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84416.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84416.xuriella
 
-FAIL NamedTemplates__84417 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84417 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84417.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84417.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84417.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84417.xuriella
 
-FAIL NamedTemplates__84418 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84418 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84418.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84418.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84418.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84418.xuriella
 
-FAIL NamedTemplates__84419 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84419 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84419.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84419.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84419.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84419.xuriella
 
-FAIL NamedTemplates__84436 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84436 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84436.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84436.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84436.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84436.xuriella
 
-FAIL NamedTemplates__84437 [XSLT-Template]: no such function: :NAME
+PASS NamedTemplates__84437 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84437.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/84437.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84437.saxon
@@ -17135,7 +17377,7 @@ FAIL Namespace__77806 [XSLT-Structure]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77806.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77806.xuriella
 
-FAIL Namespace__77983 [XSLT-Structure]: no such function: :NAME
+FAIL Namespace__77983 [XSLT-Structure]: not a valid pattern: book|book/title
   Stylesheet: MSFT_Conformance_Tests/Namespace/xslt01402.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77983.saxon
@@ -17971,13 +18213,13 @@ PASS Output__77932 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77932.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77932.xuriella
 
-FAIL Output__77933 [XSLT-Output]: no such function: :NAME
+PASS Output__77933 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29101.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77933.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77933.xuriella
 
-FAIL Output__77934 [XSLT-Output]: no such function: :NAME
+PASS Output__77934 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29100.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77934.saxon
@@ -17989,31 +18231,34 @@ PASS Output__77935 [XSLT-Output]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77935.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77935.xuriella
 
-FAIL Output__77936 [XSLT-Output]: no such function: :NAME
+WARNING: There is no such encoding: "utf-16".
+PASS Output__77936 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29304.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77936.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77936.xuriella
 
-PASS Output__77937 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__77937 [XSLT-Output]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29404.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77937.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77937.xuriella
 
-PASS Output__77938 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__77938 [XSLT-Output]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29403.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77938.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77938.xuriella
 
-FAIL Output__77939 [XSLT-Output]: no such function: :NAME
+WARNING: There is no such encoding: "UTF-16".
+PASS Output__77939 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29402.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77939.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77939.xuriella
 
-FAIL Output__77940 [XSLT-Output]: no such function: :NAME
+WARNING: There is no such encoding: "UTF-16".
+PASS Output__77940 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29401.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77940.saxon
@@ -18043,19 +18288,19 @@ FAIL Output__77967 [XSLT-Output]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77967.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77967.xuriella
 
-FAIL Output__78175 [XSLT-Output]: no such function: :NAME
+PASS Output__78175 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29000.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78175.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78175.xuriella
 
-FAIL Output__78177 [XSLT-Output]: no such function: :NAME
+FAIL Output__78177 [XSLT-Output]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29002.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78177.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78177.xuriella
 
-FAIL Output__78180 [XSLT-Output]: no such function: :NAME
+PASS Output__78180 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29003.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Output/xslt29003a.xsl
@@ -18156,13 +18401,13 @@ oops, merging of output elements not supported yet
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78229.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78229.xuriella
 
-FAIL Output__84008 [XSLT-Output]: no such function: :NAME
+FAIL Output__84008 [XSLT-Output]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Output/84009.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/Outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84008.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84008.xuriella
 
-FAIL Output__84009 [XSLT-Output]: no such function: :NAME
+FAIL Output__84009 [XSLT-Output]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Output/84008.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/Outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84009.saxon
@@ -18188,19 +18433,24 @@ error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conforma
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84011.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84011.xuriella
 
-PASS Output__84012 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__84012 [XSLT-Output]: condition of incorrect type: 
+error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Output/84012.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84012.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84012.xuriella
 
-PASS Output__84013 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__84013 [XSLT-Output]: condition of incorrect type: 
+error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Output/84013.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84013.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84013.xuriella
 
-PASS Output__84014 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__84014 [XSLT-Output]: condition of incorrect type: 
+oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Output/84014.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84014.saxon
@@ -18218,19 +18468,25 @@ FAIL Output__84015 [XSLT-Output]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84015.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84015.xuriella
 
-PASS Output__84016 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__84016 [XSLT-Output]: condition of incorrect type: 
+error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Output/84016.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84016.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84016.xuriella
 
-PASS Output__84017 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__84017 [XSLT-Output]: condition of incorrect type: 
+error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Output/84017.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84017.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84017.xuriella
 
-PASS Output__84018 [XSLT-Output]: raised an xslt-error as expected
+FAIL Output__84018 [XSLT-Output]: condition of incorrect type: 
+error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Output/84018.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84018.saxon
@@ -18848,7 +19104,7 @@ PASS Output__84580 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84580.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84580.xuriella
 
-FAIL Output__84616 [XSLT-Output]: no such function: :NAME
+PASS Output__84616 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84616.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84616.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84616.saxon
@@ -18860,31 +19116,31 @@ FAIL Output__84617 [XSLT-Output]: oops, merging of output elements not supported
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84617.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84617.xuriella
 
-FAIL Output__84618 [XSLT-Output]: no such function: :NAME
+PASS Output__84618 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84618.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84618.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84618.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84618.xuriella
 
-FAIL Output__84619 [XSLT-Output]: no such function: :NAME
+FAIL Output__84619 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84619.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84619.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84619.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84619.xuriella
 
-FAIL Output__84620 [XSLT-Output]: no such function: :NAME
+FAIL Output__84620 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84620.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84620.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84620.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84620.xuriella
 
-FAIL Output__84621 [XSLT-Output]: no such function: :NAME
+PASS Output__84621 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84621.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84621.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84621.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84621.xuriella
 
-FAIL Output__84622 [XSLT-Output]: no such function: :NAME
+PASS Output__84622 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84622.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84622.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84622.saxon
@@ -18896,7 +19152,7 @@ PASS Output__84623 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84623.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84623.xuriella
 
-FAIL Output__84624 [XSLT-Output]: no such function: :NAME
+FAIL Output__84624 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84624.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84624.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84624.saxon
@@ -19094,13 +19350,13 @@ URI scheme :HTTP not supported
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78203.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78203.xuriella
 
-FAIL ProcessingInstruction__78393 [XSLT-Result-Tree]: no such function: :NAME
+PASS ProcessingInstruction__78393 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT12004.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78393.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78393.xuriella
 
-FAIL ProcessingInstruction__78394 [XSLT-Result-Tree]: no such function: :NAME
+PASS ProcessingInstruction__78394 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT12003.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78394.saxon
@@ -19234,7 +19490,7 @@ PASS Sorting__77541 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77541.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77541.xuriella
 
-FAIL Sorting__77544 [XSLT-Data-Manipulation]: no such function: :NAME
+PASS Sorting__77544 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT20001.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sort2.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77544.saxon
@@ -19368,13 +19624,15 @@ PASS Sorting__77982 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77982.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77982.xuriella
 
-FAIL Sorting__77985 [XSLT-Data-Manipulation]: no such function: :NAME
+PASS Sorting__77985 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt18109.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/XSLT18109.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77985.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77985.xuriella
 
-PASS Sorting__77986 [XSLT-Data-Manipulation]: raised an xslt-error as expected
+FAIL Sorting__77986 [XSLT-Data-Manipulation]: condition of incorrect type: 
+error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt18109.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt18117.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt18109.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77986.saxon
@@ -20110,7 +20368,7 @@ FAIL Template_MatchPatternVariation4 [XSLT-Template]: not a valid pattern: foo[p
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation4.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_MatchPatternVariation4.xuriella
 
-FAIL Template_MatchPatternVariation5 [XSLT-Template]: no such function: :NAME
+FAIL Template_MatchPatternVariation5 [XSLT-Template]: not a valid pattern: foo[@att1='b'][@att2='ok'] | foo[@att1='b'][@att2='no']
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_pattern5.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_pattern5.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_MatchPatternVariation5.saxon
@@ -21384,7 +21642,7 @@ FAIL XSLTFunctions__84179 [Mixed]: no such function: :CURRENT
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84179.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84179.xuriella
 
-FAIL XSLTFunctions__84415 [Mixed]: no such function: :NAME
+PASS XSLTFunctions__84415 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84415.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/84415.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84415.saxon
@@ -21396,13 +21654,13 @@ FAIL XSLTFunctions__84421 [Mixed]: no such function: :CURRENT
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84421.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84421.xuriella
 
-FAIL XSLTFunctions__84422 [Mixed]: no such function: :NAME
+FAIL XSLTFunctions__84422 [Mixed]: no such function: :CURRENT
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84422.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/84422.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84422.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84422.xuriella
 
-FAIL XSLTFunctions__84484 [Mixed]: no such function: :NAME
+FAIL XSLTFunctions__84484 [Mixed]: no such function: :CURRENT
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84484.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/84484.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84484.saxon
@@ -21745,7 +22003,7 @@ FAIL XSLTFunctions_TestIdFuncInComplexStruct [Mixed]: no such function: :ID
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestIdFuncInComplexStruct.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestIdFuncInComplexStruct.xuriella
 
-FAIL XSLTFunctions_TestOfIdFunction [Mixed]: no such function: :NAME
+FAIL XSLTFunctions_TestOfIdFunction [Mixed]: not a valid pattern: id('b')
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_test_id_literal.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_test_id_literal.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestOfIdFunction.saxon
@@ -21779,4 +22037,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1720/3092 tests.
+Passed 1901/3092 tests.
