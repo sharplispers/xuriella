@@ -9623,12 +9623,7 @@ PASS string_string85 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string85.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string85.xuriella
 
-FAIL string_string86 [XSLT-Result-Tree]: error while parsing arguments to DESTRUCTURING-BIND:
-                                           invalid number of elements in
-                                             ()
-                                           to satisfy lambda list
-                                             (STRING):
-                                           exactly 1 expected, but 0 found
+PASS string_string86 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string86.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string86.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string86.saxon
@@ -9850,12 +9845,7 @@ PASS string_string122 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string122.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string122.xuriella
 
-FAIL string_string123 [XSLT-Result-Tree]: error while parsing arguments to DESTRUCTURING-BIND:
-                                            invalid number of elements in
-                                              ()
-                                            to satisfy lambda list
-                                              (STRING):
-                                            exactly 1 expected, but 0 found
+PASS string_string123 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string123.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string123.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string123.saxon
@@ -9903,12 +9893,7 @@ FAIL string_string130 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/string/string_string130.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string130.xuriella
 
-FAIL string_string131 [XSLT-Result-Tree]: error while parsing arguments to DESTRUCTURING-BIND:
-                                            invalid number of elements in
-                                              ()
-                                            to satisfy lambda list
-                                              (STRING):
-                                            exactly 1 expected, but 0 found
+PASS string_string131 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string131.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string131.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string131.saxon
@@ -17221,12 +17206,16 @@ PASS Namespace__84474 [XSLT-Structure]
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__84474.xuriella
 
 WARNING: There is no such encoding: "windows-1251".
-FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: error while parsing arguments to DESTRUCTURING-BIND:
-                                                               invalid number of elements in
-                                                                 ()
-                                                               to satisfy lambda list
-                                                                 (STRING):
-                                                               exactly 1 expected, but 0 found
+FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: There is no applicable method for the generic function
+                                                               #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
+                                                             when called with arguments
+                                                               (#S(CXML-STP-IMPL::STP-NAMESPACE
+                                                                   :PARENT #.(CXML-STP:ELEMENT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
+                                                                              :LOCAL-NAME "foo")
+                                                                   :PREFIX ""
+                                                                   :URI "")).
   Stylesheet: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.saxon
@@ -21732,4 +21721,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1702/3092 tests.
+Passed 1705/3092 tests.
