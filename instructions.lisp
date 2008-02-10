@@ -128,9 +128,8 @@
 	    (setf uri (funcall ns-thunk ctx)))
 	  (unless uri
 	    (setf uri ""))
-	  (lambda (ctx)
-	    (with-element (local-name uri :suggested-prefix prefix)
-	      (funcall body-thunk ctx))))))))
+	  (with-element (local-name uri :suggested-prefix prefix)
+	    (funcall body-thunk ctx)))))))
 
 (define-instruction xsl:use-attribute-sets (args env)
   (destructuring-bind (str) args

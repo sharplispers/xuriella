@@ -452,7 +452,7 @@ PASS axes_axes14 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes14.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes14.xuriella
 
-FAIL axes_axes15 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes15 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes15.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes15.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes15.saxon
@@ -770,7 +770,7 @@ PASS axes_axes67 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes67.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes67.xuriella
 
-FAIL axes_axes68 [XSLT-Result-Tree-Testing]: output doesn't match
+FAIL axes_axes68 [XSLT-Result-Tree-Testing]: not a qname: 
   Stylesheet: Xalan_Conformance_Tests/axes/axes68.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes68.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes68.saxon
@@ -1088,7 +1088,42 @@ PASS axes_axes119 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes119.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes119.xuriella
 
-FAIL axes_axes120 [XSLT-Result-Tree-Testing]: output doesn't match
+FAIL axes_axes120 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
+                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
+                                              when called with arguments
+                                                (#S(CXML-STP-IMPL::STP-NAMESPACE
+                                                    :PARENT #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type DOCUMENT |#
+                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "
+  ")
+                                                                           #.(CXML-STP:ELEMENT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
+                                                                              :LOCAL-NAME "sub"
+                                                                              :NAMESPACE-PREFIX "b"
+                                                                              :NAMESPACE-URI "http://name-b")
+                                                                           #.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "
+  ")
+                                                                           #.(CXML-STP:ELEMENT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
+                                                                              :LOCAL-NAME "sub"
+                                                                              :NAMESPACE-PREFIX "c"
+                                                                              :NAMESPACE-URI "http://name-c")
+                                                                           #.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "
+"))
+                                                               :LOCAL-NAME "root"
+                                                               :NAMESPACE-PREFIX "a"
+                                                               :NAMESPACE-URI "http://name-a")
+                                                    :PREFIX "a"
+                                                    :URI "http://name-a")).
   Stylesheet: Xalan_Conformance_Tests/axes/axes120.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes120.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes120.saxon
@@ -3111,7 +3146,7 @@ PASS impincl_impincl12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl12.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl12.xuriella
 
-FAIL impincl_impincl13 [XSLT-Result-Tree]: output doesn't match
+PASS impincl_impincl13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl13.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl13.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/i13incl.xsl
@@ -3274,7 +3309,7 @@ FAIL lre_lre07 [XSLT-Result-Tree]: saxon error not signalled and official output
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre07.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre07.xuriella
 
-FAIL lre_lre08 [XSLT-Result-Tree]: output doesn't match
+PASS lre_lre08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/lre/lre08.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre08.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre08.saxon
@@ -3340,7 +3375,7 @@ FAIL lre_lre18 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre18.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre18.xuriella
 
-FAIL lre_lre19 [XSLT-Result-Tree]: output doesn't match
+PASS lre_lre19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/lre/lre19.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre19.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre19.saxon
@@ -5026,19 +5061,19 @@ PASS namespace_namespace51 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace51.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace51.xuriella
 
-FAIL namespace_namespace52 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace52 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace52.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace52.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace52.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace52.xuriella
 
-FAIL namespace_namespace53 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace53 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace53.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace53.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace53.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace53.xuriella
 
-FAIL namespace_namespace54 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace54 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace54.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace54.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace54.saxon
@@ -5510,7 +5545,7 @@ PASS namespace_namespace139 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace139.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace139.xuriella
 
-FAIL namespace_namespace140 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace140 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace140.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace140.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace140.saxon
@@ -11696,7 +11731,7 @@ PASS AVTs__77536 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77536.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77536.xuriella
 
-FAIL AVTs__77558 [XSLT-Result-Tree]: output doesn't match
+PASS AVTs__77558 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17002.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/books.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77558.saxon
@@ -13752,7 +13787,7 @@ FAIL BVTs_bvt072 [Mixed]: invalid template parameter (not-there . )
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt072.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt072.xuriella
 
-FAIL BVTs_bvt073 [Mixed]: output doesn't match
+PASS BVTs_bvt073 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/param.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt073.saxon
@@ -14742,13 +14777,13 @@ PASS Elements__89287 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89287.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89287.xuriella
 
-FAIL Elements__89605 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__89605 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-e-nodename.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89605.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89605.xuriella
 
-FAIL Elements__89705 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__89705 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-f-nodename.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89705.saxon
@@ -14814,7 +14849,7 @@ PASS Elements__89718 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89718.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89718.xuriella
 
-FAIL Elements__89723 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__89723 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-g-nodename.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89723.saxon
@@ -16918,7 +16953,7 @@ FAIL Miscellaneous__84435 [Mixed]: no such function: :ID
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.xuriella
 
-FAIL Miscellaneous__84475 [Mixed]: output doesn't match
+PASS Miscellaneous__84475 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84475.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84475.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84475.saxon
@@ -20698,7 +20733,7 @@ PASS Value-of_ValueOf_BooleanExpressionsConvertedToStringEquivalent [XSLT-Result
   Expected output (1): MSFT_Conformance_Tests/Valueof/Value-of_ValueOf_BooleanExpressionsConvertedToStringEquivalent.saxon
   Actual output: MSFT_Conformance_Tests/Valueof/Value-of_ValueOf_BooleanExpressionsConvertedToStringEquivalent.xuriella
 
-FAIL Value-of_ValueOf_ConcatTextNodesIntoSingle [XSLT-Result-Tree]: output doesn't match
+PASS Value-of_ValueOf_ConcatTextNodesIntoSingle [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Valueof/xslt_valueof_ConcatTextNodes.noindent-xsl
   Data: MSFT_Conformance_Tests/Valueof/xslt_valueof_ConcatTextNodes.xml
   Expected output (1): MSFT_Conformance_Tests/Valueof/Value-of_ValueOf_ConcatTextNodesIntoSingle.saxon
@@ -22002,4 +22037,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1931/3091 tests.
+Passed 1946/3091 tests.
