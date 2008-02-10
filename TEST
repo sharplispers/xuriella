@@ -1088,7 +1088,7 @@ FAIL axes_axes121 [XSLT-Result-Tree-Testing]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes121.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes121.xuriella
 
-FAIL axes_axes122 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes122 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes122.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes122.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes122.saxon
@@ -21779,4 +21779,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1719/3092 tests.
+Passed 1720/3092 tests.
