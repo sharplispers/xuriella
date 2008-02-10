@@ -446,7 +446,7 @@ FAIL axes_axes13 [XSLT-Result-Tree-Testing]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes13.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes13.xuriella
 
-FAIL axes_axes14 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes14 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes14.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes14.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes14.saxon
@@ -1052,7 +1052,7 @@ FAIL axes_axes114 [XSLT-Result-Tree-Testing]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes114.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes114.xuriella
 
-FAIL axes_axes115 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes115 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes115.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes115.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes115.saxon
@@ -2347,13 +2347,13 @@ PASS copy_copy46 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy46.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy46.xuriella
 
-FAIL copy_copy47 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy47 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy47.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy47.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy47.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy47.xuriella
 
-FAIL copy_copy48 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy48 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy48.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy48.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy48.saxon
@@ -7755,7 +7755,7 @@ FAIL position_position83 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/position/position_position83.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position83.xuriella
 
-FAIL position_position85 [XSLT-Result-Tree]: output doesn't match
+PASS position_position85 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position85.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position85.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position85.saxon
@@ -7935,8 +7935,8 @@ FAIL position_position111 [XSLT-Result-Tree]: There is no applicable method for 
                                                                                                    "http://example.org/foo"))
                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/position/position111.xml"
                                                                               :LOCAL-NAME "Doc")))
-                                                    :PREFIX "xml"
-                                                    :URI "http://www.w3.org/XML/1998/namespace")).
+                                                    :PREFIX "xmlns"
+                                                    :URI "http://www.w3.org/2000/xmlns/")).
   Stylesheet: Xalan_Conformance_Tests/position/position111.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position111.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position111.saxon
@@ -21779,4 +21779,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1714/3092 tests.
+Passed 1719/3092 tests.
