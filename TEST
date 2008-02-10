@@ -350,7 +350,7 @@ PASS attribvaltemplate_attribvaltemplate10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate10.saxon
   Actual output: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate10.xuriella
 
-FAIL attribvaltemplate_attribvaltemplate11 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS attribvaltemplate_attribvaltemplate11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate11.noindent-xsl
   Data: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate11.xml
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate11.saxon
@@ -2499,7 +2499,7 @@ PASS dflt_dflt03 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/dflt/dflt_dflt03.saxon
   Actual output: Xalan_Conformance_Tests/dflt/dflt_dflt03.xuriella
 
-FAIL dflt_dflt04 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS dflt_dflt04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/dflt/dflt04.noindent-xsl
   Data: Xalan_Conformance_Tests/dflt/dflt04.xml
   Expected output (1): Xalan_Conformance_Tests/dflt/dflt_dflt04.saxon
@@ -8486,23 +8486,13 @@ PASS select_select18 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select18.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select18.xuriella
 
-FAIL select_select19 [XSLT-Result-Tree]: error while parsing arguments to DESTRUCTURING-BIND:
-                                           invalid number of elements in
-                                             ()
-                                           to satisfy lambda list
-                                             (STRING):
-                                           exactly 1 expected, but 0 found
+FAIL select_select19 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/select/select19.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select19.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select19.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select19.xuriella
 
-FAIL select_select20 [XSLT-Result-Tree]: error while parsing arguments to DESTRUCTURING-BIND:
-                                           invalid number of elements in
-                                             ()
-                                           to satisfy lambda list
-                                             (STRING):
-                                           exactly 1 expected, but 0 found
+FAIL select_select20 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/select/select20.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select20.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select20.saxon
@@ -9141,7 +9131,7 @@ FAIL sort_sort35 [XSLT-Result-Tree]: no such function: :NAME
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort35.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort35.xuriella
 
-FAIL sort_sort36 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+FAIL sort_sort36 [XSLT-Result-Tree]: Invalid number: "trud" [Reason: Exponent-marker at end of number]
   Stylesheet: Xalan_Conformance_Tests/sort/sort36.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort36.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort36.saxon
@@ -9183,12 +9173,7 @@ PASS string_string02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string02.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string02.xuriella
 
-FAIL string_string04 [XSLT-Result-Tree]: error while parsing arguments to DESTRUCTURING-BIND:
-                                           invalid number of elements in
-                                             ()
-                                           to satisfy lambda list
-                                             (STRING):
-                                           exactly 1 expected, but 0 found
+FAIL string_string04 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/string/string04.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string04.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string04.saxon
@@ -9200,7 +9185,7 @@ PASS string_string05 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string05.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string05.xuriella
 
-FAIL string_string06 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string06.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string06.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string06.saxon
@@ -9230,7 +9215,7 @@ PASS string_string10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string10.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string10.xuriella
 
-FAIL string_string11 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string11.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string11.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string11.saxon
@@ -9386,67 +9371,67 @@ PASS string_string43 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string43.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string43.xuriella
 
-FAIL string_string44 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string44 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string44.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string44.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string44.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string44.xuriella
 
-FAIL string_string45 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string45 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string45.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string45.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string45.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string45.xuriella
 
-FAIL string_string46 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string46 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string46.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string46.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string46.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string46.xuriella
 
-FAIL string_string47 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string47 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string47.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string47.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string47.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string47.xuriella
 
-FAIL string_string48 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string48 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string48.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string48.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string48.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string48.xuriella
 
-FAIL string_string49 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string49 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string49.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string49.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string49.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string49.xuriella
 
-FAIL string_string50 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string50 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string50.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string50.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string50.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string50.xuriella
 
-FAIL string_string51 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string51 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string51.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string51.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string51.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string51.xuriella
 
-FAIL string_string52 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string52 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string52.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string52.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string52.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string52.xuriella
 
-FAIL string_string53 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string53 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string53.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string53.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string53.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string53.xuriella
 
-FAIL string_string54 [XSLT-Result-Tree]: no such function: :STARTS-WITH
+PASS string_string54 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string54.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string54.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string54.saxon
@@ -9649,61 +9634,61 @@ FAIL string_string86 [XSLT-Result-Tree]: error while parsing arguments to DESTRU
   Expected output (1): Xalan_Conformance_Tests/string/string_string86.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string86.xuriella
 
-FAIL string_string87 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string87 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string87.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string87.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string87.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string87.xuriella
 
-FAIL string_string88 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string88 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string88.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string88.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string88.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string88.xuriella
 
-FAIL string_string89 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string89 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string89.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string89.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string89.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string89.xuriella
 
-FAIL string_string90 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string90 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string90.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string90.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string90.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string90.xuriella
 
-FAIL string_string91 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string91 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string91.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string91.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string91.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string91.xuriella
 
-FAIL string_string92 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string92 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string92.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string92.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string92.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string92.xuriella
 
-FAIL string_string93 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string93 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string93.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string93.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string93.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string93.xuriella
 
-FAIL string_string94 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string94 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string94.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string94.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string94.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string94.xuriella
 
-FAIL string_string95 [XSLT-Result-Tree]: no such function: :TRANSLATE
+FAIL string_string95 [XSLT-Result-Tree]: The index 3 is too large.
   Stylesheet: Xalan_Conformance_Tests/string/string95.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string95.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string95.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string95.xuriella
 
-FAIL string_string96 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string96 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string96.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string96.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string96.saxon
@@ -9853,7 +9838,7 @@ FAIL string_string120 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/string/string_string120.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string120.xuriella
 
-FAIL string_string121 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string121 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string121.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string121.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string121.saxon
@@ -9953,25 +9938,25 @@ FAIL string_string135 [XSLT-Result-Tree]: invalid XPath syntax: arithmetic error
   Expected output (1): Xalan_Conformance_Tests/string/string_string135.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string135.xuriella
 
-FAIL string_string136 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string136 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string136.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string136.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string136.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string136.xuriella
 
-FAIL string_string137 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string137 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string137.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string137.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string137.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string137.xuriella
 
-FAIL string_string138 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string138 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string138.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string138.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string138.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string138.xuriella
 
-FAIL string_string139 [XSLT-Result-Tree]: no such function: :TRANSLATE
+PASS string_string139 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string139.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string139.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string139.saxon
@@ -16671,7 +16656,7 @@ PASS Miscellaneous__84427 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84427.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84427.xuriella
 
-FAIL Miscellaneous__84430 [Mixed]: no such function: :TRANSLATE
+PASS Miscellaneous__84430 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84430.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84430.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84430.saxon
@@ -21747,4 +21732,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1669/3092 tests.
+Passed 1699/3092 tests.

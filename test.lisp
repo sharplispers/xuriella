@@ -555,7 +555,7 @@
 (defun replace-junk (str)
   (map 'string
        (lambda (c)
-	 (if (<= 32 (char-code c) 126)
+	 (if (or (eql c #\newline) (<= 32 (char-code c) 126))
 	     c
 	     #\?))
        str))
