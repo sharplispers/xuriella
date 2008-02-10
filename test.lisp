@@ -552,6 +552,14 @@
 		:xml))
 	  :xml))))
 
+(defun replace-junk (str)
+  (map 'string
+       (lambda (c)
+	 (if (<= 32 (char-code c) 126)
+	     c
+	     #\?))
+       str))
+
 (defun run-test (test)
   (let ((expected-saxon (test-output-pathname test "saxon"))
 	#+xuriella::xsltproc
@@ -588,13 +596,14 @@
 			 (enough-namestring pathname *tests-directory*))))
 	     (report (ok &optional (fmt "") &rest args)
 	       (write-string
-		(strip-addresses
-		 (format nil "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
-			 ok
-			 (test-id test)
-			 (test-category test)
-			 fmt
-			 args)))
+		(replace-junk
+		 (strip-addresses
+		  (format nil "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
+			  ok
+			  (test-id test)
+			  (test-category test)
+			  fmt
+			  args))))
 	       (pp "Stylesheet" (test-stylesheet-pathname test))
 	       (pp "Data" (test-data-pathname test))
 	       (pp "Supplemental stylesheet"

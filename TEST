@@ -332,7 +332,7 @@ PASS attribvaltemplate_attribvaltemplate06 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate06.saxon
   Actual output: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate06.xuriella
 
-FAIL attribvaltemplate_attribvaltemplate08 [XSLT-Result-Tree]: Element :OUT is not defined.
+PASS attribvaltemplate_attribvaltemplate08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate08.noindent-xsl
   Data: Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate08.xml
   Expected output (1): Xalan_Conformance_Tests/attribvaltemplate/attribvaltemplate_attribvaltemplate08.saxon
@@ -2944,7 +2944,7 @@ FAIL idkey_idkey63 [XSLT-Result-Tree]: no such function: :ID
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey63.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey63.xuriella
 
-FAIL impincl_impincl01 [XSLT-Result-Tree]: Element :OUT is not defined.
+PASS impincl_impincl01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl01.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl01.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/j.xsl
@@ -6713,7 +6713,7 @@ PASS output_output39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output39.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output39.xuriella
 
-FAIL output_output40 [XSLT-Result-Tree]: Element :ROOT is not defined.
+PASS output_output40 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output40.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output40.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output40.saxon
@@ -6755,25 +6755,25 @@ FAIL output_output46 [XSLT-Result-Tree]: oops, merging of output elements not su
   Expected output (1): Xalan_Conformance_Tests/output/output_output46.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output46.xuriella
 
-FAIL output_output47 [XSLT-Result-Tree]: Element :OUT is not defined.
+PASS output_output47 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output47.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output47.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output47.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output47.xuriella
 
-FAIL output_output48 [XSLT-Result-Tree]: Element :ROOT is not defined.
+PASS output_output48 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output48.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output48.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output48.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output48.xuriella
 
-FAIL output_output49 [XSLT-Result-Tree]: Element :FOO is not defined.
+PASS output_output49 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output49.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output49.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output49.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output49.xuriella
 
-FAIL output_output50 [XSLT-Result-Tree]: Element :OUT is not defined.
+FAIL output_output50 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output50.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output50.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output50.saxon
@@ -6855,7 +6855,11 @@ FAIL output_output61 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output61.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output61.xuriella
 
-FAIL output_output62 [XSLT-Result-Tree]: Element :OUT is not defined.
+FAIL output_output62 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                           #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
+                                         when called with arguments
+                                           (#<CLOSURE-HTML::SINK {xxxxxxxx}>
+                                            "<P>&nbsp;</P>").
   Stylesheet: Xalan_Conformance_Tests/output/output62.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output62.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output62.saxon
@@ -6950,7 +6954,10 @@ PASS output_output73 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/output/output_output73.xuriella
 
 FAIL output_output74 [XSLT-Result-Tree]: condition of incorrect type: 
-The value NIL is not of type SGML::ELEMENT.
+There is no applicable method for the generic function
+  #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
+when called with arguments
+  (#<CLOSURE-HTML::SINK {xxxxxxxx}> "<<<P>>>").
   Stylesheet: Xalan_Conformance_Tests/output/output74.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output74.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output74.saxon
@@ -10959,7 +10966,7 @@ Invalid number: "Waynd Stddld
 Jund 24, 1998
 List of Flora
 
-			
+???
 Nativd
 
 Acorus amdricanus (Raf.)
@@ -11070,9 +11077,9 @@ Pdganum harmala L.Syrian rud
 Tribulus tdrrdstris L.puncturdvind
 Zygophyllum fabago L.Syrian bdancapdr
 
-			
+???
 
-			
+???
 Exotic or Introducdd
 
 Picda pungdns Engdlm
@@ -11086,9 +11093,9 @@ Hondy Locust
 Galium aparind L.
 Cldavdrs; Strangldwddd
 
-			
+???
 
-			
+???
 Fungi
 
 
@@ -11608,8 +11615,8 @@ when called with arguments
   (#.(CXML-STP:TEXT
       #| :PARENT of type ELEMENT |#
       :DATA "
-			
-			")).
+???
+???")).
   Stylesheet: MSFT_Conformance_Tests/BVTs/apply-templ.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt001.saxon
@@ -11697,7 +11704,14 @@ Operation was SB-KERNEL::DIVISION, operands (1 0).
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt015.xuriella
 
 FAIL BVTs_bvt017 [Mixed]: condition of incorrect type: 
-The value NIL is not of type SGML::ELEMENT.
+There is no applicable method for the generic function
+  #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
+when called with arguments
+  (#<CLOSURE-HTML::SINK {xxxxxxxx}> "
+<
+? This is ? a test. ?
+? This is ? a test. ?
+>").
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding00.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt017.saxon
@@ -11859,7 +11873,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                           CHILDREN '(#.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -11881,7 +11895,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	)
+?)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -11892,7 +11906,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -11903,7 +11917,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -11914,7 +11928,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -11925,7 +11939,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -11936,12 +11950,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -11952,12 +11966,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -11979,7 +11993,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -11990,7 +12004,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -12001,7 +12015,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12012,7 +12026,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12023,15 +12037,15 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				Publication 1
-				)
+????Publication 1
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12042,7 +12056,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12053,17 +12067,17 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-			))
+???))
                                                                                                                     LOCAL-NAME publication)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-   		)
+   ??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -12074,7 +12088,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12085,7 +12099,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12096,12 +12110,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12112,7 +12126,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12123,12 +12137,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12143,7 +12157,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12154,7 +12168,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12165,7 +12179,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -12181,7 +12195,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -12196,12 +12210,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME magazine)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12216,7 +12230,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12227,7 +12241,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12238,7 +12252,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12249,12 +12263,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME magazine)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12269,7 +12283,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12280,7 +12294,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12291,7 +12305,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12302,21 +12316,21 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA Create a dream PC
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12327,19 +12341,19 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-			))
+???))
                                                                                                                     LOCAL-NAME story1)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA The future of the web
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12350,7 +12364,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12361,7 +12375,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12372,34 +12386,34 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-			))
+???))
                                                                                                                     LOCAL-NAME story2)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA Visual Basic 5.0 - Will it stand the test of time?
-			))
+???))
                                                                                                                     LOCAL-NAME story3)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME articles)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME magazine)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12414,36 +12428,36 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA Sport Cars - Can you really dream?
-			))
+???))
                                                                                                                     LOCAL-NAME story1)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME articles)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME magazine)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12458,7 +12472,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12469,12 +12483,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME magazine)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12496,7 +12510,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12507,14 +12521,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12525,7 +12539,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12536,15 +12550,15 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				Publication 2
-				)
+????Publication 2
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12555,7 +12569,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12566,17 +12580,17 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-			))
+???))
                                                                                                                     LOCAL-NAME publication)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-   		)
+   ??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -12587,7 +12601,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12598,7 +12612,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12609,12 +12623,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12625,7 +12639,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12636,12 +12650,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12663,7 +12677,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12674,14 +12688,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12692,7 +12706,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12703,7 +12717,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12714,15 +12728,15 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				Selected Short Stories of
-				)
+????Selected Short Stories of
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12733,7 +12747,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12744,17 +12758,17 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-			))
+???))
                                                                                                                     LOCAL-NAME publication)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12765,12 +12779,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12792,7 +12806,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12803,14 +12817,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12821,7 +12835,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12832,7 +12846,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     ATTRIBUTES '(#.(ATTRIBUTE
@@ -12847,12 +12861,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12863,12 +12877,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12883,7 +12897,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12894,7 +12908,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12905,7 +12919,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -12921,12 +12935,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME magazine)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -12941,7 +12955,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12952,7 +12966,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -12963,7 +12977,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -12979,14 +12993,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME magazine
                                                                                         NAMESPACE-PREFIX my
                                                                                         NAMESPACE-URI http://my.com)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -13012,7 +13026,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13023,14 +13037,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13041,7 +13055,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13052,7 +13066,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     ATTRIBUTES '(#.(ATTRIBUTE
@@ -13067,7 +13081,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     ATTRIBUTES '(#.(ATTRIBUTE
@@ -13082,7 +13096,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13093,7 +13107,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13104,7 +13118,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13115,12 +13129,12 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME author)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
@@ -13139,14 +13153,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                       CHILDREN '(#.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13157,15 +13171,15 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA But then all nights in Trenton seem dark &
-			stormy to someone who has gone through what
-			)
+???stormy to someone who has gone through what
+???)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13176,19 +13190,19 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA  have.
-			))
+???))
                                                                                                                     LOCAL-NAME p)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-			)
+???)
                                                                                                                  #.(ELEMENT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
                                                                                                                     CHILDREN '(#.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13199,7 +13213,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-				)
+????)
                                                                                                                                #.(ELEMENT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13210,22 +13224,22 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                                                #.(TEXT
                                                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                                                   DATA 
-			))
+???))
                                                                                                                     LOCAL-NAME definition-list)
                                                                                                                  #.(TEXT
                                                                                                                     #| :PARENT of type ELEMENT |#
                                                                                                                     DATA 
-		))
+??))
                                                                                                       LOCAL-NAME excerpt)
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -13240,7 +13254,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13253,7 +13267,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13266,14 +13280,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book
                                                                                         NAMESPACE-PREFIX my
                                                                                         NAMESPACE-URI http://my.com)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -13288,7 +13302,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13301,14 +13315,14 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book
                                                                                         NAMESPACE-PREFIX my
                                                                                         NAMESPACE-URI http://my.com)
                                                                                      #.(TEXT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         DATA 
-	)
+?)
                                                                                      #.(ELEMENT
                                                                                         #| :PARENT of type ELEMENT |#
                                                                                         ATTRIBUTES '(#.(ATTRIBUTE
@@ -13323,7 +13337,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                         CHILDREN '(#.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-		)
+??)
                                                                                                    #.(ELEMENT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/data.xml
@@ -13336,7 +13350,7 @@ FAIL BVTs_bvt044 [Mixed]: invalid array index 9 for #(XURIELLA::UNBOUND
                                                                                                    #.(TEXT
                                                                                                       #| :PARENT of type ELEMENT |#
                                                                                                       DATA 
-	))
+?))
                                                                                         LOCAL-NAME book
                                                                                         NAMESPACE-PREFIX my
                                                                                         NAMESPACE-URI http://my.com)
@@ -13479,7 +13493,9 @@ FAIL BVTs_bvt066 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt066.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt066.xuriella
 
-FAIL BVTs_bvt067 [Mixed]: The value NIL is not of type SGML::ELEMENT.
+WARNING: comparison failed: not a valid code point: #x3BFEF2F
+WARNING: comparison failed: not a valid code point: #x3BFEF2F
+FAIL BVTs_bvt067 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-html.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt067.saxon
@@ -14616,7 +14632,7 @@ There is no applicable method for the generic function
 when called with arguments
   (#.(CXML-STP:TEXT
       #| :PARENT of type ELEMENT |#
-      :DATA " 	
+      :DATA " ?
 
 foo
 
@@ -16067,50 +16083,43 @@ FAIL Keys__91690 [XSLT-Data-Manipulation]: no such function: :KEY
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91690.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91690.xuriella
 
-FAIL Keys__91706 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91706 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91706.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91706.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91706.xuriella
 
-FAIL Keys__91707 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91707 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91707.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91707.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91707.xuriella
 
-FAIL Keys__91708 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91708 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91708.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91708.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91708.xuriella
 
-FAIL Keys__91709 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91709 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91709.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91709.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91709.xuriella
 
-FAIL Keys__91710 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91710 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91710.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91710.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91710.xuriella
 
-FAIL Keys__91711 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91711 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91711.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91711.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91711.xuriella
 
-FAIL Keys__91712 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91712 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91712.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91712.saxon
@@ -16122,15 +16131,13 @@ PASS Keys__91713 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91713.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91713.xuriella
 
-FAIL Keys__91714 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91714 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91714.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91714.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91714.xuriella
 
-FAIL Keys__91715 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Element :TEST is not defined.
+FAIL Keys__91715 [XSLT-Data-Manipulation]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Keys/91715.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91715.saxon
@@ -16694,7 +16701,7 @@ PASS Miscellaneous__91177 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__91177.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__91177.xuriella
 
-FAIL Miscellaneous__91178 [Mixed]: The value NIL is not of type SGML::ELEMENT.
+PASS Miscellaneous__91178 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/91178.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/91178.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__91178.saxon
@@ -17247,7 +17254,7 @@ FAIL Namespace_Bug85356 [XSLT-Structure]: don't know how to copy node #S(CXML-ST
                                                                                     CHILDREN '(#.(TEXT
                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                   DATA 
-	)
+?)
                                                                                                #.(ELEMENT
                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                   EXTRA-NAMESPACES '((foo
@@ -17899,7 +17906,7 @@ PASS Output__77928 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77928.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77928.xuriella
 
-FAIL Output__77929 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__77929 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29504.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77929.saxon
@@ -18249,385 +18256,391 @@ no such function: :CURRENT
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84025.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84025.xuriella
 
-FAIL Output__84143 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84143 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockADDRESS.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84143.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84143.xuriella
 
-FAIL Output__84144 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84144 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockBLOCKQUOTE.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84144.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84144.xuriella
 
-FAIL Output__84145 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84145 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockDIV.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84145.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84145.xuriella
 
-FAIL Output__84146 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84146 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockDL.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84146.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84146.xuriella
 
-FAIL Output__84147 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84147 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockFIELDSET.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84147.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84147.xuriella
 
-FAIL Output__84148 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84148 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockFORM.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84148.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84148.xuriella
 
-FAIL Output__84149 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84149 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockH1.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84149.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84149.xuriella
 
-FAIL Output__84150 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84150 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockH2.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84150.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84150.xuriella
 
-FAIL Output__84151 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84151 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockH3.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84151.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84151.xuriella
 
-FAIL Output__84152 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84152 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockH4.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84152.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84152.xuriella
 
-FAIL Output__84153 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84153 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockH5.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84153.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84153.xuriella
 
-FAIL Output__84154 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84154 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockH6.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84154.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84154.xuriella
 
-FAIL Output__84155 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84155 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockNOSCRIPT.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84155.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84155.xuriella
 
-FAIL Output__84156 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84156 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockOL.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84156.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84156.xuriella
 
-FAIL Output__84160 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84160 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockP.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84160.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84160.xuriella
 
-FAIL Output__84161 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84161 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockPRE.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84161.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84161.xuriella
 
-FAIL Output__84162 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84162 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockTABLE.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84162.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84162.xuriella
 
-FAIL Output__84163 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84163 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/BlockUL.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84163.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84163.xuriella
 
-FAIL Output__84164 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84164 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84164.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84164.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84164.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84164.xuriella
 
-FAIL Output__84165 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84165 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84165.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84165.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84165.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84165.xuriella
 
-FAIL Output__84259 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84259 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84259.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84259.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84259.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84259.xuriella
 
-FAIL Output__84260 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84260 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84260.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84260.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84260.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84260.xuriella
 
-FAIL Output__84261 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84261 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84261.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84261.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84261.xuriella
 
-FAIL Output__84262 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84262 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84262.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84262.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84262.xuriella
 
-FAIL Output__84263 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84263 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84263.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84263.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84263.xuriella
 
-FAIL Output__84264 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84264 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84264.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84264.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84264.xuriella
 
-FAIL Output__84265 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84265 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84265.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84265.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84265.xuriella
 
-FAIL Output__84266 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84266 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84266.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84266.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84266.xuriella
 
-FAIL Output__84267 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84267 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84267.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84267.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84267.xuriella
 
-FAIL Output__84268 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84268 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84268.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84268.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84268.xuriella
 
-FAIL Output__84269 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84269 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84269.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84269.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84269.xuriella
 
-FAIL Output__84270 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84270 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84270.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84270.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84270.xuriella
 
-FAIL Output__84271 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84271 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84271.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84271.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84271.xuriella
 
-FAIL Output__84272 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84272 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84272.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84272.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84272.xuriella
 
-FAIL Output__84273 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84273 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84273.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84273.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84273.xuriella
 
-FAIL Output__84274 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84274 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84274.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84274.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84274.xuriella
 
-FAIL Output__84275 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84275 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84275.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84275.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84275.xuriella
 
-FAIL Output__84276 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84276 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84276.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84276.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84276.xuriella
 
-FAIL Output__84277 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84277 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84277.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84277.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84277.xuriella
 
-FAIL Output__84278 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84278 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84278.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84278.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84278.xuriella
 
-FAIL Output__84279 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84279 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84279.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84279.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84279.xuriella
 
-FAIL Output__84280 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84280 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84280.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84280.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84280.xuriella
 
-FAIL Output__84281 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84281 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84281.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84281.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84281.xuriella
 
-FAIL Output__84282 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84282 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84282.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84282.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84282.xuriella
 
-FAIL Output__84283 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84283 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84283.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84283.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84283.xuriella
 
-FAIL Output__84284 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84284 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84284.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84284.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84284.xuriella
 
-FAIL Output__84285 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84285 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84285.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84285.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84285.xuriella
 
-FAIL Output__84286 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84286 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84286.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84286.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84286.xuriella
 
-FAIL Output__84287 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84287 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84287.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84287.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84287.xuriella
 
-FAIL Output__84288 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84288 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84288.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84288.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84288.xuriella
 
-FAIL Output__84289 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84289 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84289.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84289.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84289.xuriella
 
-FAIL Output__84290 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84290 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84290.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84290.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84290.xuriella
 
-FAIL Output__84291 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84291 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84291.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84291.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84291.xuriella
 
-FAIL Output__84292 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84292 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84292.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84292.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84292.xuriella
 
-FAIL Output__84293 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84293 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84293.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84293.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84293.xuriella
 
-FAIL Output__84294 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84294 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84294.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84294.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84294.xuriella
 
-FAIL Output__84295 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84295 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84295.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84295.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84295.xuriella
 
-FAIL Output__84296 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84296 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/BLOCKElemTest.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84296.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84296.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84296.xuriella
 
-FAIL Output__84304 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84304 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84304.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84304.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84304.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84304.xuriella
 
-FAIL Output__84305 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84305 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84305.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84305.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84305.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84305.xuriella
 
-FAIL Output__84306 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84306 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84306.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84306.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84306.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84306.xuriella
 
-FAIL Output__84309 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+FAIL Output__84309 [XSLT-Output]: There is no applicable method for the generic function
+                                    #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:PROCESSING-INSTRUCTION-TARGET (1)>
+                                  when called with arguments
+                                    (#.(CXML-STP:PROCESSING-INSTRUCTION
+                                        #| :PARENT of type ELEMENT |#
+                                        :DATA ""
+                                        :TARGET "p")).
   Stylesheet: MSFT_Conformance_Tests/Output/84309.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84309.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84309.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84309.xuriella
 
-FAIL Output__84312 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84312 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84312.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84312.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84312.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84312.xuriella
 
-FAIL Output__84313 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84313 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84313.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84313.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84313.saxon
@@ -18857,13 +18870,13 @@ FAIL Output__84624 [XSLT-Output]: no such function: :NAME
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84624.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84624.xuriella
 
-FAIL Output__84625 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84625 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84625.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84625.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84625.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84625.xuriella
 
-FAIL Output__84626 [XSLT-Output]: The value NIL is not of type SGML::ELEMENT.
+PASS Output__84626 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84626.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84626.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84626.saxon
@@ -18881,25 +18894,25 @@ PASS Output_AmpersandWithinHtmlAttribute [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_AmpersandWithinHtmlAttribute.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_AmpersandWithinHtmlAttribute.xuriella
 
-FAIL Output_CdataSectionOnHtmlModeShouldBeIgnored [XSLT-Output]: Element :FOO is not defined.
+PASS Output_CdataSectionOnHtmlModeShouldBeIgnored [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_CdataSectElementAttrWithHtml.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_CdataSectElementAttrWithHtml.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_CdataSectionOnHtmlModeShouldBeIgnored.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_CdataSectionOnHtmlModeShouldBeIgnored.xuriella
 
-FAIL Output_DoctypePublicAndSystemAttribute [XSLT-Output]: Element :OUT is not defined.
+PASS Output_DoctypePublicAndSystemAttribute [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_HTML_DocType_SystemAndPublic.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_HTML_DocType.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_DoctypePublicAndSystemAttribute.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_DoctypePublicAndSystemAttribute.xuriella
 
-FAIL Output_DoctypePublicAttribute [XSLT-Output]: Element :OUT is not defined.
+PASS Output_DoctypePublicAttribute [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_HTML_DocType_Public.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_HTML_DocType.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_DoctypePublicAttribute.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_DoctypePublicAttribute.xuriella
 
-FAIL Output_DoctypeSystemAttribute [XSLT-Output]: Element :OUT is not defined.
+PASS Output_DoctypeSystemAttribute [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_HTML_DocType_System.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_HTML_DocType.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_DoctypeSystemAttribute.saxon
@@ -18911,7 +18924,7 @@ FAIL Output_EmptyElement1 [XSLT-Output]: saxon error not signalled and official 
   Expected output (1): MSFT_Conformance_Tests/Output/Output_EmptyElement1.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_EmptyElement1.xuriella
 
-FAIL Output_EntityRefInAttribHtml [XSLT-Output]: Element :OUT is not defined.
+PASS Output_EntityRefInAttribHtml [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/EntityRefInAttribHtml.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_EntityRefInAttribHtml.saxon
@@ -18929,7 +18942,7 @@ PASS Output_HtmlOutputWithAmpersandCurlyBracket [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_HtmlOutputWithAmpersandCurlyBracket.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_HtmlOutputWithAmpersandCurlyBracket.xuriella
 
-FAIL Output_HtmlOutputWithLessThanInAttribute [XSLT-Output]: Element :FOO is not defined.
+PASS Output_HtmlOutputWithLessThanInAttribute [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_NoEscapedLessThanWithHtmlOutput.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_NoEscapedLessThanWithHtmlOutput.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_HtmlOutputWithLessThanInAttribute.saxon
@@ -18959,7 +18972,7 @@ FAIL Output_MethodEqualsHtmlWithoutIndentSet [XSLT-Output]: undefined instructio
   Expected output (1): MSFT_Conformance_Tests/Output/Output_MethodEqualsHtmlWithoutIndentSet.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_MethodEqualsHtmlWithoutIndentSet.xuriella
 
-FAIL Output_Modified84433 [XSLT-Output]: Element :ROOT is not defined.
+FAIL Output_Modified84433 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/output_DoeOnAmpersandXslText.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84433.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_Modified84433.saxon
@@ -18972,7 +18985,7 @@ PASS Output_Output_PreserveImportPrecedenceOnOuputElement [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_Output_PreserveImportPrecedenceOnOuputElement.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_Output_PreserveImportPrecedenceOnOuputElement.xuriella
 
-FAIL Output_OutputHTMLWithForcedXmlDeclaration [XSLT-Output]: Element :FOO is not defined.
+PASS Output_OutputHTMLWithForcedXmlDeclaration [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_ForcedXmlDeclOnHtml.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_ForcedXmlDeclOnHtml.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_OutputHTMLWithForcedXmlDeclaration.saxon
@@ -19667,13 +19680,13 @@ FAIL Sorting__91703 [XSLT-Data-Manipulation]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91703.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91703.xuriella
 
-FAIL Sorting__91704 [XSLT-Data-Manipulation]: Invalid number: "LÜE" [Reason: Exponent-marker at beginning of number]
+FAIL Sorting__91704 [XSLT-Data-Manipulation]: Invalid number: "L?E" [Reason: Exponent-marker at beginning of number]
   Stylesheet: MSFT_Conformance_Tests/Sorting/91704.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91704.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91704.xuriella
 
-FAIL Sorting__91705 [XSLT-Data-Manipulation]: Invalid number: "LÜE" [Reason: Exponent-marker at beginning of number]
+FAIL Sorting__91705 [XSLT-Data-Manipulation]: Invalid number: "L?E" [Reason: Exponent-marker at beginning of number]
   Stylesheet: MSFT_Conformance_Tests/Sorting/91705.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91705.saxon
@@ -21734,4 +21747,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: There is no applicable meth
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 1589/3092 tests.
+Passed 1669/3092 tests.
