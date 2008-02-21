@@ -183,9 +183,11 @@
       (let ((index
 	     (find-variable-index lname uri *global-variable-declarations*)))
 	(when index
-	  (lambda (ctx)
-	    (declare (ignore ctx))
-	    (svref *global-variable-values* index))))))
+	  (xslt-trace-thunk
+	   (lambda (ctx)
+	     (declare (ignore ctx))
+	     (svref *global-variable-values* index))
+	   "global ~s (uri ~s) = ~s" lname uri :result)))))
 
 (defclass global-variable-environment (xslt-environment)
   ((initial-global-variable-thunks
@@ -271,6 +273,9 @@
 
 (defvar *xsl-include-stack* nil)
 
+(defun uri-to-pathname (uri)
+  (cxml::uri-to-pathname (puri:parse-uri uri)))
+
 (defun parse-stylesheet-to-stp (input uri-resolver)
   (let* ((d (cxml:parse input (make-text-normalizer (cxml-stp:make-builder))))
 	 (<transform> (stp:document-element d)))
@@ -289,7 +294,7 @@
 	     (str (puri:render-uri uri nil))
 	     (pathname
 	      (handler-case
-		  (cxml::uri-to-pathname uri)
+		  (uri-to-pathname uri)
 		(cxml:xml-parse-error (c)
 		  (xslt-error "cannot find included stylesheet ~A: ~A"
 			      uri c)))))
@@ -341,7 +346,7 @@
 	 (str (puri:render-uri uri nil))
 	 (pathname
 	  (handler-case
-	      (cxml::uri-to-pathname uri)
+	      (uri-to-pathname uri)
 	    (cxml:xml-parse-error (c)
 	      (xslt-error "cannot find imported stylesheet ~A: ~A"
 			  uri c)))))
@@ -409,8 +414,8 @@
 	      (xslt-error "namespace not found: ~A" prefix))
 	  *excluded-namespaces*))))
 
-(xpath:with-namespaces ((nil #.*xsl*))
-  (defun parse-strip/preserve-space! (stylesheet <transform> env)
+(defun parse-strip/preserve-space! (stylesheet <transform> env)
+  (xpath:with-namespaces ((nil #.*xsl*))
     (dolist (elt (stp:filter-children (lambda (x)
 					(or (namep x "strip-space")
 					    (namep x "preserve-space")))
@@ -507,10 +512,12 @@
 		       (declare (ignore ctx))
 		       ""))))
 	   (n-lexical-variables (length *lexical-variable-declarations*)))
-      (lambda (ctx)
-	(let ((*lexical-variable-values*
-	       (make-variable-value-array n-lexical-variables)))
-	  (funcall inner ctx))))))
+      (xslt-trace-thunk
+       (lambda (ctx)
+	 (let* ((*lexical-variable-values*
+		 (make-variable-value-array n-lexical-variables)))
+	   (funcall inner ctx)))
+       "global ~s (~s) = ~s" name select :result))))
 
 (defstruct (variable-information
 	     (:constructor make-variable)
@@ -568,8 +575,8 @@
                          :param-p (namep <variable> "param")
                          :thunk-setter thunk-setter))))))
 
-(xpath:with-namespaces ((nil #.*xsl*))
-  (defun parse-global-variables! (stylesheet <transform>)
+(defun parse-global-variables! (stylesheet <transform>)
+  (xpath:with-namespaces ((nil #.*xsl*))
     (let* ((table (make-hash-table :test 'equal))
 	   (global-env (make-instance 'global-variable-environment
 				      :initial-global-variable-thunks table))
@@ -577,6 +584,9 @@
       (xpath:do-node-set
 	  (<variable> (xpath:evaluate "variable|param" <transform>))
 	(let ((var (parse-global-variable! <variable> global-env)))
+	  (xslt-trace "parsing global variable ~s (uri ~s)"
+		      (variable-local-name var)
+		      (variable-uri var))
 	  (when (find var
 		      specs
 		      :test (lambda (a b)
@@ -589,6 +599,7 @@
 	  (push var specs)))
       ;; now that the global environment knows about all variables, run the
       ;; thunk setters to perform their compilation
+      (setf specs (nreverse specs))
       (mapc (lambda (spec) (funcall (variable-thunk-setter spec))) specs)
       (setf (stylesheet-global-variables stylesheet) specs))))
 
@@ -652,7 +663,7 @@
 	      absolute-uri))
 	 (pathname
 	  (handler-case
-	      (cxml::uri-to-pathname resolved-uri)
+	      (uri-to-pathname resolved-uri)
 	    (cxml:xml-parse-error (c)
 	      (xslt-error "cannot find referenced document ~A: ~A"
 			  resolved-uri c))))
@@ -963,6 +974,7 @@
     (t
      (every #'valid-expression-p (cdr expr)))))
 
+#+nil
 (defun parse-pattern (str)
   ;; zzz check here for anything not allowed as an XSLT pattern
   ;; zzz can we hack id() and key() here?
@@ -975,9 +987,25 @@
 	      (unless (valid-expression-p case)
 		(xslt-error "invalid filter"))
 	      case)
-	    (if (eq (car form) 'union)
+	    (if (eq (car form) 'xpath::union)
 		(cdr form)
 		(list form)))))
+
+(defun parse-pattern (str)
+  ;; zzz check here for anything not allowed as an XSLT pattern
+  ;; zzz can we hack id() and key() here?
+  (let ((form (xpath:parse-xpath str)))
+    (unless (consp form)
+      (xslt-error "not a valid pattern: ~A" str))
+    (labels ((process-form (form)
+	       (cond ((eq (car form) 'xpath::union)
+		      (alexandria:mappend #'process-form (rest form)))
+		     ((not (eq (car form) :path)) ;zzz: filter statt path
+		      (xslt-error "not a valid pattern: ~A" str))
+		     ((not (valid-expression-p form))
+		      (xslt-error "invalid filter"))
+		     (t (list form)))))
+      (process-form form))))
 
 (defun compile-value-thunk (value env)
   (if (and (listp value) (eq (car value) 'progn))
@@ -992,7 +1020,9 @@
     collect (multiple-value-bind (local-name uri)
                 (decode-qname name env nil)
               (list (cons local-name uri)
-                    (compile-value-thunk value env)))))
+		    (xslt-trace-thunk
+		     (compile-value-thunk value env)
+		     "local variable ~s = ~s" name :result)))))
 
 (defun compile-var-bindings (forms env)
   (loop
@@ -1020,13 +1050,17 @@
 	     (body (parse-body <template> body-pos (mapcar #'car params)))
              (body-thunk (compile-instruction `(progn ,@body) env))
              (outer-body-thunk
-              #'(lambda (ctx)
-                  ;; set params that weren't initialized by apply-templates
-                  (loop for (name index param-thunk) in param-bindings
-                        when (eq (lexical-variable-value index nil) 'unbound)
-                          do (setf (lexical-variable-value index)
-                                   (funcall param-thunk ctx)))
-                  (funcall body-thunk ctx)))
+	      (xslt-trace-thunk
+	       #'(lambda (ctx)
+		   (unwind-protect
+		       (progn
+			 ;; set params that weren't initialized by apply-templates
+			 (loop for (name index param-thunk) in param-bindings
+			       when (eq (lexical-variable-value index nil) 'unbound)
+				 do (setf (lexical-variable-value index)
+					  (funcall param-thunk ctx)))
+			 (funcall body-thunk ctx))))
+	       "template: match = ~s name = ~s" match name))
 	     (n-variables (length *lexical-variable-declarations*)))
         (append
          (when name
@@ -1042,11 +1076,14 @@
          (when match
            (mapcar (lambda (expression)
                      (let ((match-thunk
-                            (compile-xpath
-			     `(xpath:xpath
-			       (:path (:ancestor-or-self :node)
-				      ,@(cdr expression)))
-			     env))
+			    (xslt-trace-thunk
+			     (compile-xpath
+			      `(xpath:xpath
+				(:path (:ancestor-or-self :node)
+				       ,@(cdr expression)))
+			      env)
+			     "match-thunk for template (match ~s): ~s --> ~s"
+			     match expression :result))
                            (p (if priority
                                   (parse-number:parse-number priority)
                                   (expression-priority expression))))

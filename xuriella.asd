@@ -17,6 +17,7 @@
     :serial t
     :components
     ((:file "package")
+     (:file "trace")
      (:file "unparse")
      (:file "xslt")
      (:file "instructions")

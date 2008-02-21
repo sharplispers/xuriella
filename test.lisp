@@ -297,6 +297,9 @@
   '( ;; some tests wants us to recover from this error, yet this one doesn't:
     "copy_copy61"
     "copy_copy62"
+    ;; the following tests take a lot of time due to the problems of current matching algorithm:
+    "impincl_impincl16"
+    "match_match13"
     ;; the following test is actually okay, but running it takes longer
     ;; than I'm willing to wait before every checkin:
     "Import__91164"))
@@ -542,8 +545,8 @@
 (defun strip-addresses (str)
   (cl-ppcre:regex-replace-all "{[0-9a-fA-F]+}\\>" str "{xxxxxxxx}>"))
 
-(xpath:with-namespaces ((nil #.*xsl*))
-  (defun slurp-output-method (p)
+(defun slurp-output-method (p)
+  (xpath:with-namespaces ((nil #.*xsl*))
     (let* ((d (handler-bind
 		  ((warning #'muffle-warning))
 		(cxml:parse (pathname p) (stp:make-builder))))

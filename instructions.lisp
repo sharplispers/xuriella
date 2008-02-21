@@ -248,8 +248,10 @@
 (define-instruction xsl:value-of (args env)
   (destructuring-bind (xpath) args
     (let ((thunk (compile-xpath xpath env)))
-      (lambda (ctx)
-	(write-text (xpath:string-value (funcall thunk ctx)))))))
+      (xslt-trace-thunk
+       (lambda (ctx)
+	 (write-text (xpath:string-value (funcall thunk ctx))))
+       "value-of ~s = ~s" xpath :result))))
 
 (define-instruction xsl:unescaped-value-of (args env)
   (destructuring-bind (xpath) args
@@ -345,17 +347,20 @@
 	   (when (cdr decls)
 	     (make-sort-predicate (cdr decls) env))))
       (lambda (ctx)
-	(let* ((nodes (xpath::force
-		       (xpath::sorted-pipe-of (funcall select-thunk ctx)))))
-	  (when sort-predicate
-	    (setf nodes (sort (copy-list nodes) sort-predicate)))
-	  (loop
-	     with n = (length nodes)
-	     for node in nodes
-	     for i from 1
-	     do
-	       (funcall body-thunk
-			(xpath:make-context node (lambda () n) i))))))))
+	(let ((selected (funcall select-thunk ctx)))
+	  (unless (xpath:node-set-p selected)
+	    (xslt-error "for-each select expression should yield a node-set"))
+	  (let ((nodes (xpath::force
+			(xpath::sorted-pipe-of selected))))
+	    (when sort-predicate
+	      (setf nodes (sort (copy-list nodes) sort-predicate)))
+	    (loop
+	      with n = (length nodes)
+	      for node in nodes
+	      for i from 1
+	      do
+	   (funcall body-thunk
+		    (xpath:make-context node (lambda () n) i)))))))))
 
 (define-instruction xsl:with-namespaces (args env)
   (destructuring-bind ((&rest forms) &rest body) args
@@ -544,10 +549,12 @@
                                collect (list name (funcall value-thunk ctx))))))))
 
 (defun compile-instruction (form env)
-  (funcall (or (get (car form) 'xslt-instruction)
-	       (error "undefined instruction: ~A" (car form)))
-	   (cdr form)
-	   env))
+  (xslt-trace-thunk
+   (funcall (or (get (car form) 'xslt-instruction)
+		(error "undefined instruction: ~A" (car form)))
+	    (cdr form)
+	    env)
+   "instruction ~s" (car form)))
 
 ;;: WTF: "A right curly brace inside a Literal in an expression is not
 ;;; recognized as terminating the expression."
