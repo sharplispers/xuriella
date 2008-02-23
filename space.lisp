@@ -107,7 +107,7 @@
       (make-stripping-node nil node tests nil)
       node))
 
-(defstruct stripping-node
+(defstruct (stripping-node (:constructor #:ignore))
   parent
   target
   children)
