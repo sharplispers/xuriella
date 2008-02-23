@@ -4,8 +4,10 @@
   <h3>About</h3>
 
   <p>
-    Xuriella was written by David Lichteblau.  It implements XSLT 1.0
-    and is available under an X11-style license.
+    Xuriella was written by David Lichteblau and Ivan Shvedunov.
+  </p>      
+  <p>
+    It implements XSLT 1.0 and is available under an X11-style license.
   </p>      
 
   <p>

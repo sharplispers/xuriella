@@ -1,15 +1,15 @@
 a {
   text-decoration: none;
   color: black;
-  border-bottom: 1px solid #707070 /* default color */;
+  border-bottom: 1px solid #0070a0 /* default color */;
 }
 
-colored {
-  background-color: #707070 /* default color */;
+.colored {
+  color: #0070a0 /* default color */;
 }
 
 a:hover {
-  color: #707070 /* default color */;
+  color: #0070a0 /* default color */;
   border-bottom: 1px solid #aaaaaa;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 h1,h2,h3 {
-  color: #707070 /* default color */;
+  color: #0070a0 /* default color */;
   margin-top: 2em;
   margin-left: -30px;
 }
@@ -43,7 +43,7 @@ h1,h2,h3 {
 }
 
 .def:hover {
-  background-color: #707070 /* default color */;
+  background-color: #0070a0 /* default color */;
 }
 
 .def a {
@@ -56,7 +56,7 @@ h1,h2,h3 {
 }
 
 .def a:hover {
-  background-color: #707070 /* default color */;
+  background-color: #0070a0 /* default color */;
   color: #000000;
   text-decoration: none;
   border-bottom: 0px solid white;
@@ -114,8 +114,8 @@ div.sidebar {
 
 div.sidebar-title {
   font-weight: bold;
-  background-color: #707070 /* default color */;
-  border: solid #707070 /* default color */;
+  background-color: #0070a0 /* default color */;
+  border: solid #0070a0 /* default color */;
   border-top-width: 1px;
   border-bottom-width: 2px;
   border-left-width: 4px;
@@ -130,7 +130,7 @@ div.sidebar-title a {
 
 div.sidebar-main {
   background-color: #f7f7f7;
-  border: solid #707070 /* default color */;
+  border: solid #0070a0 /* default color */;
   border-top-width: 0px;
   border-bottom-width: 0px;
   border-left-width: 4px;
