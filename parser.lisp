@@ -32,55 +32,55 @@
 (defun map-namespace-declarations (fn element)
   (let ((parent (stp:parent element)))
     (maphash (lambda (prefix uri)
-	       (unless (and (typep parent 'stp:element)
-			    (equal (stp:find-namespace prefix parent) uri))
-		 (funcall fn prefix uri)))
-	     (cxml-stp-impl::collect-local-namespaces element))))
+               (unless (and (typep parent 'stp:element)
+                            (equal (stp:find-namespace prefix parent) uri))
+                 (funcall fn prefix uri)))
+             (cxml-stp-impl::collect-local-namespaces element))))
 
 (defun maybe-wrap-namespaces (child exprs)
   (if (typep child 'stp:element)
       (let ((bindings '())
-	    (excluded-uris '()))
-	(map-namespace-declarations (lambda (prefix uri)
-				      (push (list prefix uri) bindings))
-				    child)
-	(stp:with-attributes ((erp "exclude-result-prefixes" *xsl*))
-	    child
-	  (dolist (prefix (words (or erp "")))
-	    (when (equal prefix "#default")
-	      (setf prefix nil))
-	    (push (or (stp:find-namespace prefix child)
-		      (xslt-error "namespace not found: ~A" prefix))
-		  excluded-uris)))
-	(if bindings
-	    `((xsl:with-namespaces ,bindings
-		(xsl:with-excluded-namespaces ,excluded-uris
-		  ,@exprs)))
-	    exprs))
+            (excluded-uris '()))
+        (map-namespace-declarations (lambda (prefix uri)
+                                      (push (list prefix uri) bindings))
+                                    child)
+        (stp:with-attributes ((erp "exclude-result-prefixes" *xsl*))
+            child
+          (dolist (prefix (words (or erp "")))
+            (when (equal prefix "#default")
+              (setf prefix nil))
+            (push (or (stp:find-namespace prefix child)
+                      (xslt-error "namespace not found: ~A" prefix))
+                  excluded-uris)))
+        (if bindings
+            `((xsl:with-namespaces ,bindings
+                (xsl:with-excluded-namespaces ,excluded-uris
+                  ,@exprs)))
+            exprs))
       exprs))
 
 (defun parse-body (node &optional (start 0) (param-names '()))
   (let ((n (stp:count-children-if #'identity node)))
     (labels ((recurse (i)
-	       (when (< i n)
-		 (let ((child (stp:nth-child i node)))
-		   (maybe-wrap-namespaces
-		    child
-		    (if (namep child "variable")
-			(stp:with-attributes (name select) child
-			  (when (and select (stp:list-children child))
-			    (xslt-error "variable with select and body"))
-			  `((let ((,name ,(or select
-					      `(progn ,@(parse-body child)))))
-			      (xsl:with-duplicates-check (,name)
-				,@(recurse (1+ i))))))
-			(cons (parse-instruction child)
-			      (recurse (1+ i)))))))))
+               (when (< i n)
+                 (let ((child (stp:nth-child i node)))
+                   (maybe-wrap-namespaces
+                    child
+                    (if (namep child "variable")
+                        (stp:with-attributes (name select) child
+                          (when (and select (stp:list-children child))
+                            (xslt-error "variable with select and body"))
+                          `((let ((,name ,(or select
+                                              `(progn ,@(parse-body child)))))
+                              (xsl:with-duplicates-check (,name)
+                                ,@(recurse (1+ i))))))
+                        (cons (parse-instruction child)
+                              (recurse (1+ i)))))))))
       (let ((result (recurse start)))
-	(if param-names
-	    `((xsl:with-duplicates-check (,@param-names)
-		,@result))
-	    result)))))
+        (if param-names
+            `((xsl:with-duplicates-check (,@param-names)
+                ,@result))
+            result)))))
 
 (defun parse-param (node)
   ;; FIXME: empty body?
@@ -97,34 +97,34 @@
   (typecase node
     (stp:element
      (let ((expr
-	    (if (equal (stp:namespace-uri node) *xsl*)
-		(parse-instruction/xsl-element
-		 (or (find-symbol (stp:local-name node) :xuriella)
-		     (xslt-error "undefined instruction: ~A"
-				 (stp:local-name node)))
-		 node)
-		(parse-instruction/literal-element node))))
+            (if (equal (stp:namespace-uri node) *xsl*)
+                (parse-instruction/xsl-element
+                 (or (find-symbol (stp:local-name node) :xuriella)
+                     (xslt-error "undefined instruction: ~A"
+                                 (stp:local-name node)))
+                 node)
+                (parse-instruction/literal-element node))))
        (if (equal (stp:base-uri node) (stp:base-uri (stp:parent node)))
-	   expr
-	   (print`(xsl:with-base-uri ,(stp:base-uri node)
-	      ,expr)))))
+           expr
+           (print`(xsl:with-base-uri ,(stp:base-uri node)
+              ,expr)))))
     (stp:text
      `(xsl:text ,(stp:data node)))))
 
 (defun parse-instruction/literal-element (node)
   `(xsl:literal-element
        (,(stp:local-name node)
-	 ,(stp:namespace-uri node)
-	 ,(stp:namespace-prefix node))
+         ,(stp:namespace-uri node)
+         ,(stp:namespace-prefix node))
      (xsl:use-attribute-sets
       ,(stp:attribute-value node "use-attribute-sets" *xsl*))
      ,@(loop for a in (stp:list-attributes node)
-	    unless (and (namep a "use-attribute-sets"))
-	    collect `(xsl:literal-attribute
-			 (,(stp:local-name a)
-			   ,(stp:namespace-uri a)
-			   ,(stp:namespace-prefix a))
-		       ,(stp:value a)))
+            unless (and (namep a "use-attribute-sets"))
+            collect `(xsl:literal-attribute
+                         (,(stp:local-name a)
+                           ,(stp:namespace-uri a)
+                           ,(stp:namespace-prefix a))
+                       ,(stp:value a)))
      ,@(parse-body node)))
 
 (defmacro define-instruction-parser (name (node-var) &body body)
@@ -136,22 +136,22 @@
 (define-instruction-parser |apply-templates| (node)
   (stp:with-attributes (select mode) node
     (multiple-value-bind (decls rest)
-	(loop
-	   for i from 0
-	   for cons on (stp:list-children node)
-	   for (child . nil) = cons
-	   while (namep child "sort")
-	   collect (parse-sort child) into decls
-	   finally (return (values decls cons)))
+        (loop
+           for i from 0
+           for cons on (stp:list-children node)
+           for (child . nil) = cons
+           while (namep child "sort")
+           collect (parse-sort child) into decls
+           finally (return (values decls cons)))
       `(xsl:apply-templates
-	   (:select ,select :mode ,mode)
-	 (declare ,@decls)
-	 ,@(mapcar (lambda (clause)
-		     (unless (namep clause "with-param")
-		       (xslt-error "undefined instruction: ~A"
-				   (stp:local-name clause)))
-		     (parse-param clause))
-		   rest)))))
+           (:select ,select :mode ,mode)
+         (declare ,@decls)
+         ,@(mapcar (lambda (clause)
+                     (unless (namep clause "with-param")
+                       (xslt-error "undefined instruction: ~A"
+                                   (stp:local-name clause)))
+                     (parse-param clause))
+                   rest)))))
 
 (define-instruction-parser |apply-imports| (node)
   `(xsl:apply-imports))
@@ -164,7 +164,7 @@
                                     (if (namep clause "with-param")
                                         (parse-param clause)
                                         (xslt-error "undefined instruction: ~A"
-						    (stp:local-name clause))))
+                                                    (stp:local-name clause))))
                                   node))))
 
 (define-instruction-parser |if| (node)
@@ -175,18 +175,18 @@
 (define-instruction-parser |choose| (node)
   `(cond
      ,@(stp:map-children 'list
-			 (lambda (clause)
-			   (cond
-			     ((namep clause "when")
-			      (stp:with-attributes (test) clause
-				`(,test
-				  ,@(parse-body clause))))
-			     ((namep clause "otherwise")
-			      `(t ,@(parse-body clause)))
-			     (t
-			      (xslt-error "invalid <choose> clause: ~A"
-					  (stp:local-name clause)))))
-			 node)))
+                         (lambda (clause)
+                           (cond
+                             ((namep clause "when")
+                              (stp:with-attributes (test) clause
+                                `(,test
+                                  ,@(parse-body clause))))
+                             ((namep clause "otherwise")
+                              `(t ,@(parse-body clause)))
+                             (t
+                              (xslt-error "invalid <choose> clause: ~A"
+                                          (stp:local-name clause)))))
+                         node)))
 
 (define-instruction-parser |element| (node)
   (stp:with-attributes (name namespace use-attribute-sets) node
@@ -213,8 +213,8 @@
 (define-instruction-parser |value-of| (node)
   (stp:with-attributes (select disable-output-escaping) node
     (if disable-output-escaping
-	`(xsl:unescaped-value-of ,select)
-	`(xsl:value-of ,select))))
+        `(xsl:unescaped-value-of ,select)
+        `(xsl:value-of ,select))))
 
 (define-instruction-parser |copy-of| (node)
   (stp:with-attributes (select) node
@@ -232,23 +232,23 @@
 (define-instruction-parser |for-each| (node)
   (stp:with-attributes (select) node
     (multiple-value-bind (decls body-position)
-	(loop
-	   for i from 0
-	   for child in (stp:list-children node)
-	   while (namep child "sort")
-	   collect (parse-sort child) into decls
-	   finally (return (values decls i)))
+        (loop
+           for i from 0
+           for child in (stp:list-children node)
+           while (namep child "sort")
+           collect (parse-sort child) into decls
+           finally (return (values decls i)))
       `(xsl:for-each ,select
-	 (declare ,@decls)
-	 ,@(parse-body node body-position)))))
+         (declare ,@decls)
+         ,@(parse-body node body-position)))))
 
 (defun parse-sort (node)
   (stp:with-attributes (select lang data-type order case-order) node
     `(sort :select ,select
-	   :lang ,lang
-	   :data-type ,data-type
-	   :order ,order
-	   :case-order ,case-order)))
+           :lang ,lang
+           :data-type ,data-type
+           :order ,order
+           :case-order ,case-order)))
 
 (define-instruction-parser |message| (node)
   `(xsl:message ,@(parse-body node)))
@@ -258,14 +258,14 @@
 
 (define-instruction-parser |number| (node)
   (stp:with-attributes (level count from value format lang letter-value
-			      grouping-separator grouping-size)
+                              grouping-separator grouping-size)
       node
     `(xsl:number :level ,level
-		 :count ,count
-		 :from ,from
-		 :value ,value
-		 :format ,format
-		 :lang ,lang
-		 :letter-value ,letter-value
-		 :grouping-separator ,grouping-separator
-		 :grouping-size ,grouping-size)))
+                 :count ,count
+                 :from ,from
+                 :value ,value
+                 :format ,format
+                 :lang ,lang
+                 :letter-value ,letter-value
+                 :grouping-separator ,grouping-separator
+                 :grouping-size ,grouping-size)))

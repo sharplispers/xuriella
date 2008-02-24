@@ -44,7 +44,7 @@
 
 (defmethod initialize-instance :after ((handler combi-sink) &key)
   (setf (sink-encoding handler)
-	(or (sink-encoding handler) "utf-8")))
+        (or (sink-encoding handler) "utf-8")))
 
 (defmethod sax:start-document ((handler combi-sink))
   nil)
@@ -62,12 +62,12 @@
       ((equal uri "")
        (sax:start-element hax-target *html* lname qname attrs)
        (when (and encoding (equalp lname "head"))
-	 (let* ((content (format nil "text/html; charset=~A" encoding))
-		(attrs
-		 (list (hax:make-attribute "http-equiv" "Content-Type")
-		       (hax:make-attribute "content" content))))
-	   (sax:start-element hax-target *html* "meta" "meta" attrs)
-	   (sax:end-element hax-target *html* "meta" "meta"))))
+         (let* ((content (format nil "text/html; charset=~A" encoding))
+                (attrs
+                 (list (hax:make-attribute "http-equiv" "Content-Type")
+                       (hax:make-attribute "content" content))))
+           (sax:start-element hax-target *html* "meta" "meta" attrs)
+           (sax:end-element hax-target *html* "meta" "meta"))))
       (t
        (sax:start-element sax-target uri lname qname attrs)))))
 
@@ -75,8 +75,8 @@
   (with-slots (hax-target sax-target) handler
     (maybe-close-tag handler)
     (if (equal uri "")
-	(sax:end-element hax-target *html* lname qname)
-	(sax:end-element sax-target uri lname qname))))
+        (sax:end-element hax-target *html* lname qname)
+        (sax:end-element sax-target uri lname qname))))
 
 (defmethod sax:end-document ((handler combi-sink))
   (hax:end-document (sink-hax-target handler)))

@@ -47,7 +47,7 @@
 (defun invoke-with-xml-output (fn sink)
   (let ((*sink* sink)
         (*current-element* nil)
-	(*start-tag-written-p* t))
+        (*start-tag-written-p* t))
     (sax:start-document *sink*)
     (funcall fn)
     (sax:end-document *sink*)))
@@ -57,12 +57,12 @@
   (funcall fn *sink*))
 
 (defmacro with-element ((local-name uri &key suggested-prefix extra-namespaces)
-			&body body)
+                        &body body)
   `(invoke-with-element (lambda () ,@body)
-			,local-name
-			,uri
-			:suggested-prefix ,suggested-prefix
-			:extra-namespaces ,extra-namespaces))
+                        ,local-name
+                        ,uri
+                        :suggested-prefix ,suggested-prefix
+                        :extra-namespaces ,extra-namespaces))
 
 (defun doctype (name public-id system-id &optional internal-subset)
   (sax:start-dtd *sink* name public-id system-id)
@@ -75,72 +75,72 @@
     (when (and elt (not *start-tag-written-p*))
       (setf *start-tag-written-p* t)
       (let* ((local-name (sink-element-local-name elt))
-	     (uri (sink-element-uri elt))
-	     (suggested-prefix (sink-element-suggested-prefix elt))
-	     (prefix (ensure-prefix-for-uri elt uri suggested-prefix))
-	     (qname (if (plusp (length prefix))
-			(concatenate 'string prefix ":" local-name)
-			local-name))
-	     (attrs '()))
-	(setf (sink-element-actual-qname elt) qname)
-	(dolist (attr (sink-element-attributes elt))
-	  (push (convert-attribute elt attr) attrs))
-	(loop
-	   for (prefix . uri) in (sink-element-new-namespaces elt) do
-	     (sax:start-prefix-mapping *sink* prefix uri)
-	     (push (make-xmlns-attribute prefix uri) attrs))
-	(sax:start-element *sink* uri local-name qname attrs)))))
+             (uri (sink-element-uri elt))
+             (suggested-prefix (sink-element-suggested-prefix elt))
+             (prefix (ensure-prefix-for-uri elt uri suggested-prefix))
+             (qname (if (plusp (length prefix))
+                        (concatenate 'string prefix ":" local-name)
+                        local-name))
+             (attrs '()))
+        (setf (sink-element-actual-qname elt) qname)
+        (dolist (attr (sink-element-attributes elt))
+          (push (convert-attribute elt attr) attrs))
+        (loop
+           for (prefix . uri) in (sink-element-new-namespaces elt) do
+             (sax:start-prefix-mapping *sink* prefix uri)
+             (push (make-xmlns-attribute prefix uri) attrs))
+        (sax:start-element *sink* uri local-name qname attrs)))))
 
 (defun convert-attribute (elt attr)
   (let* ((local-name (sink-attribute-local-name attr))
-	 (uri (sink-attribute-uri attr))
-	 (suggested-prefix (sink-attribute-suggested-prefix attr))
-	 (prefix (ensure-prefix-for-uri elt uri suggested-prefix))
-	 (qname (if (plusp (length prefix))
-		    (concatenate 'string prefix ":" local-name)
-		    local-name)))
+         (uri (sink-attribute-uri attr))
+         (suggested-prefix (sink-attribute-suggested-prefix attr))
+         (prefix (ensure-prefix-for-uri elt uri suggested-prefix))
+         (qname (if (plusp (length prefix))
+                    (concatenate 'string prefix ":" local-name)
+                    local-name)))
     (sax:make-attribute :namespace-uri uri
-			:local-name local-name
-			:qname qname
-			:value (sink-attribute-value attr))))
+                        :local-name local-name
+                        :qname qname
+                        :value (sink-attribute-value attr))))
 
 (defun sink-element-find-uri (prefix elt)
   (cdr
    (find prefix
-	 (sink-element-all-namespaces elt)
-	 :key #'car
-	 :test #'equal)))
+         (sink-element-all-namespaces elt)
+         :key #'car
+         :test #'equal)))
 
 (defun ensure-prefix-for-uri (elt uri &optional suggested-prefix)
   (let* ((prefix-cons
-	  (find uri
-		(sink-element-all-namespaces elt)
-		:key #'cdr
-		:test #'equal))
-	 (prefix (car prefix-cons))
-	 (cross-check
-	  (when prefix-cons
-	    (sink-element-find-uri prefix elt))))
+          (find uri
+                (sink-element-all-namespaces elt)
+                :key #'cdr
+                :test #'equal))
+         (prefix (car prefix-cons))
+         (cross-check
+          (when prefix-cons
+            (sink-element-find-uri prefix elt))))
     (if (and prefix-cons (equal cross-check uri))
-	prefix
-	(loop
-	   for i from 0
-	   for prefix = suggested-prefix then (format nil "ns-~D" i)
-	   while
-	     (sink-element-find-uri prefix elt)
-	   finally
-	     (let ((cons (cons prefix uri)))
-	       (push cons (sink-element-all-namespaces elt))
-	       (push cons (sink-element-new-namespaces elt)))
-	     (return prefix)))))
+        prefix
+        (loop
+           for i from 0
+           for prefix = suggested-prefix then (format nil "ns-~D" i)
+           while
+             (sink-element-find-uri prefix elt)
+           finally
+             (let ((cons (cons prefix uri)))
+               (push cons (sink-element-all-namespaces elt))
+               (push cons (sink-element-new-namespaces elt)))
+             (return prefix)))))
 
 (defun make-xmlns-attribute (prefix uri)
   (sax:make-attribute
    :namespace-uri #"http://www.w3.org/2000/xmlns/"
    :local-name prefix
    :qname (if (zerop (length prefix))
-	      "xmlns"
-	      (concatenate 'string "xmlns:" prefix))
+              "xmlns"
+              (concatenate 'string "xmlns:" prefix))
    :value uri))
 
 (defstruct sink-element
@@ -165,43 +165,43 @@
   (check-type suggested-prefix (or null string))
   (maybe-emit-start-tag)
   (let* ((parent *current-element*)
-	 (elt (make-sink-element
-	       :local-name local-name
-	       :uri uri
-	       :suggested-prefix suggested-prefix
-	       :all-namespaces (if parent
-				   (sink-element-all-namespaces parent)
-				   *initial-namespaces*)
-	       :new-namespaces nil
-	       :attributes nil))
-	 (*current-element* elt)
-	 (*start-tag-written-p* nil))
+         (elt (make-sink-element
+               :local-name local-name
+               :uri uri
+               :suggested-prefix suggested-prefix
+               :all-namespaces (if parent
+                                   (sink-element-all-namespaces parent)
+                                   *initial-namespaces*)
+               :new-namespaces nil
+               :attributes nil))
+         (*current-element* elt)
+         (*start-tag-written-p* nil))
     (process-extra-namespaces elt extra-namespaces)
     (multiple-value-prog1
         (funcall fn)
       (maybe-emit-start-tag)
       (sax:end-element *sink* uri local-name (sink-element-actual-qname elt))
       (loop
-	 for (prefix . uri) in (sink-element-new-namespaces elt) do
-	 (sax:end-prefix-mapping *sink* prefix)))))
+         for (prefix . uri) in (sink-element-new-namespaces elt) do
+         (sax:end-prefix-mapping *sink* prefix)))))
 
 (defun process-extra-namespaces (elt extra-namespaces)
   (loop
      for (prefix . uri) in extra-namespaces
      do
      (unless
-	 ;; allow earlier conses in extra-namespaces to hide later ones.
-	 (find prefix
-	       (sink-element-new-namespaces elt)
-	       :key #'car
-	       :test #'equal)
+         ;; allow earlier conses in extra-namespaces to hide later ones.
+         (find prefix
+               (sink-element-new-namespaces elt)
+               :key #'car
+               :test #'equal)
        (let ((previous (sink-element-find-uri prefix elt)))
-	 (unless
-	     ;; no need to declare what has already been done
-	     (equal uri previous)
-	   (let ((cons (cons prefix uri)))
-	     (push cons (sink-element-all-namespaces elt))
-	     (push cons (sink-element-new-namespaces elt))))))))
+         (unless
+             ;; no need to declare what has already been done
+             (equal uri previous)
+           (let ((cons (cons prefix uri)))
+             (push cons (sink-element-all-namespaces elt))
+             (push cons (sink-element-new-namespaces elt))))))))
 
 (defun write-attribute (local-name uri value &key suggested-prefix)
   (check-type local-name string)
@@ -217,15 +217,15 @@
      (xslt-error "attribute named xmlns"))
     (t
      (setf (sink-element-attributes *current-element*)
-	   (cons (make-sink-attribute :local-name local-name
-				      :uri uri
-				      :suggested-prefix suggested-prefix
-				      :value value)
-		 (delete-if (lambda (x)
-			      (and (equal (sink-attribute-local-name x)
-					  local-name)
-				   (equal (sink-attribute-uri x) uri)))
-			    (sink-element-attributes *current-element*)))))))
+           (cons (make-sink-attribute :local-name local-name
+                                      :uri uri
+                                      :suggested-prefix suggested-prefix
+                                      :value value)
+                 (delete-if (lambda (x)
+                              (and (equal (sink-attribute-local-name x)
+                                          local-name)
+                                   (equal (sink-attribute-uri x) uri)))
+                            (sink-element-attributes *current-element*)))))))
 
 (defun write-text (data)
   (maybe-emit-start-tag)

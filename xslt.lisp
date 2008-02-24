@@ -49,8 +49,8 @@
 (defun xslt-cerror (fmt &rest args)
   (with-simple-restart (recover "recover")
     (error 'recoverable-xslt-error
-	   :format-control fmt
-	   :format-arguments args)))
+           :format-control fmt
+           :format-arguments args)))
 
 (defvar *debug* nil)
 
@@ -62,10 +62,10 @@
   (let ((doit (gensym)))
     `(flet ((,doit () ,form))
        (if *debug*
-	   (,doit)
-	   (handler-case
-	       (,doit)
-	     ,@clauses)))))
+           (,doit)
+           (handler-case
+               (,doit)
+             ,@clauses)))))
 
 (defun compile-xpath (xpath &optional env)
   (handler-case*
@@ -108,17 +108,17 @@
 (defun split-qname (str)
   (handler-case
       (multiple-value-bind (prefix local-name)
-	  (cxml::split-qname str)
-	(unless
-	    ;; FIXME: cxml should really offer a function that does
-	    ;; checks for NCName and QName in a sensible way for user code.
-	    ;; cxml::split-qname is tailored to the needs of the parser.
-	    ;;
-	    ;; For now, let's just check the syntax explicitly.
-	    (and (or (null prefix) (xpath::nc-name-p prefix))
-		 (xpath::nc-name-p local-name))
-	  (xslt-error "not a qname: ~A" str))
-	(values prefix local-name))
+          (cxml::split-qname str)
+        (unless
+            ;; FIXME: cxml should really offer a function that does
+            ;; checks for NCName and QName in a sensible way for user code.
+            ;; cxml::split-qname is tailored to the needs of the parser.
+            ;;
+            ;; For now, let's just check the syntax explicitly.
+            (and (or (null prefix) (xpath::nc-name-p prefix))
+                 (xpath::nc-name-p local-name))
+          (xslt-error "not a qname: ~A" str))
+        (values prefix local-name))
     (cxml:well-formedness-violation ()
       (xslt-error "not a qname: ~A" str))))
 
@@ -126,10 +126,10 @@
   (multiple-value-bind (prefix local-name)
       (split-qname qname)
     (values local-name
-	    (if (or prefix (not attributep))
-		(xpath:environment-find-namespace env prefix)
-		"")
-	    prefix)))
+            (if (or prefix (not attributep))
+                (xpath:environment-find-namespace env prefix)
+                "")
+            prefix)))
 
 (defmethod xpath:environment-find-namespace ((env xslt-environment) prefix)
   (cdr (assoc prefix *namespaces* :test 'equal)))
@@ -170,17 +170,17 @@
     ((env xslt-environment) lname uri)
   (if (string= uri "")
       (or (xpath:find-xpath-function lname *xsl*)
-	  (xpath:find-xpath-function lname uri))
+          (xpath:find-xpath-function lname uri))
       (xpath:find-xpath-function lname uri)))
 
 (defmethod xpath:environment-find-variable
     ((env xslt-environment) lname uri)
   (let ((index
-	 (find-variable-index lname uri *lexical-variable-declarations*)))
+         (find-variable-index lname uri *lexical-variable-declarations*)))
     (when index
       (lambda (ctx)
-	(declare (ignore ctx))
-	(svref *lexical-variable-values* index)))))
+        (declare (ignore ctx))
+        (svref *lexical-variable-values* index)))))
 
 (defclass lexical-xslt-environment (xslt-environment) ())
 
@@ -188,13 +188,13 @@
     ((env lexical-xslt-environment) lname uri)
   (or (call-next-method)
       (let ((index
-	     (find-variable-index lname uri *global-variable-declarations*)))
-	(when index
-	  (xslt-trace-thunk
-	   (lambda (ctx)
-	     (declare (ignore ctx))
-	     (svref *global-variable-values* index))
-	   "global ~s (uri ~s) = ~s" lname uri :result)))))
+             (find-variable-index lname uri *global-variable-declarations*)))
+        (when index
+          (xslt-trace-thunk
+           (lambda (ctx)
+             (declare (ignore ctx))
+             (svref *global-variable-values* index))
+           "global ~s (uri ~s) = ~s" lname uri :result)))))
 
 (defclass global-variable-environment (xslt-environment)
   ((initial-global-variable-thunks
@@ -260,19 +260,19 @@
 (defun ensure-mode (stylesheet &optional local-name uri)
   (or (find-mode stylesheet local-name uri)
       (setf (gethash (cons local-name uri) (stylesheet-modes stylesheet))
-	    (make-mode))))
+            (make-mode))))
 
 (defun ensure-mode/qname (stylesheet qname env)
   (if qname
       (multiple-value-bind (local-name uri)
-	  (decode-qname qname env nil)
-	(ensure-mode stylesheet local-name uri))
+          (decode-qname qname env nil)
+        (ensure-mode stylesheet local-name uri))
       (find-mode stylesheet nil)))
 
 (defun acons-namespaces (element &optional (bindings *namespaces*))
   (map-namespace-declarations (lambda (prefix uri)
-				(push (cons prefix uri) bindings))
-			      element)
+                                (push (cons prefix uri) bindings))
+                              element)
   bindings)
 
 (defvar *excluded-namespaces* (list *xsl*))
@@ -285,42 +285,42 @@
 
 (defun parse-stylesheet-to-stp (input uri-resolver)
   (let* ((d (cxml:parse input (make-text-normalizer (cxml-stp:make-builder))))
-	 (<transform> (stp:document-element d)))
+         (<transform> (stp:document-element d)))
     (strip-stylesheet <transform>)
     ;; FIXME: handle embedded stylesheets
     (unless (and (equal (stp:namespace-uri <transform>) *xsl*)
-		 (or (equal (stp:local-name <transform>) "transform")
-		     (equal (stp:local-name <transform>) "stylesheet")))
+                 (or (equal (stp:local-name <transform>) "transform")
+                     (equal (stp:local-name <transform>) "stylesheet")))
       (xslt-error "not a stylesheet"))
     (dolist (include (stp:filter-children (of-name "include") <transform>))
       (let* ((uri (puri:merge-uris (stp:attribute-value include "href")
-				   (stp:base-uri include)))
-	     (uri (if uri-resolver
-		      (funcall uri-resolver (puri:render-uri uri nil))
-		      uri))
-	     (str (puri:render-uri uri nil))
-	     (pathname
-	      (handler-case
-		  (uri-to-pathname uri)
-		(cxml:xml-parse-error (c)
-		  (xslt-error "cannot find included stylesheet ~A: ~A"
-			      uri c)))))
-	(with-open-file
-	    (stream pathname
-		    :element-type '(unsigned-byte 8)
-		    :if-does-not-exist nil)
-	  (unless stream
-	    (xslt-error "cannot find included stylesheet ~A at ~A"
-			uri pathname))
-	  (when (find str *xsl-include-stack* :test #'equal)
-	    (xslt-error "recursive inclusion of ~A" uri))
-	  (let* ((*xsl-include-stack* (cons str *xsl-include-stack*))
-		 (<transform>2 (parse-stylesheet-to-stp stream uri-resolver)))
-	    (stp:do-children (child <transform>2)
-	      (stp:insert-child-after <transform>
-				      (stp:copy child)
-				      include))
-	    (stp:detach include)))))
+                                   (stp:base-uri include)))
+             (uri (if uri-resolver
+                      (funcall uri-resolver (puri:render-uri uri nil))
+                      uri))
+             (str (puri:render-uri uri nil))
+             (pathname
+              (handler-case
+                  (uri-to-pathname uri)
+                (cxml:xml-parse-error (c)
+                  (xslt-error "cannot find included stylesheet ~A: ~A"
+                              uri c)))))
+        (with-open-file
+            (stream pathname
+                    :element-type '(unsigned-byte 8)
+                    :if-does-not-exist nil)
+          (unless stream
+            (xslt-error "cannot find included stylesheet ~A at ~A"
+                        uri pathname))
+          (when (find str *xsl-include-stack* :test #'equal)
+            (xslt-error "recursive inclusion of ~A" uri))
+          (let* ((*xsl-include-stack* (cons str *xsl-include-stack*))
+                 (<transform>2 (parse-stylesheet-to-stp stream uri-resolver)))
+            (stp:do-children (child <transform>2)
+              (stp:insert-child-after <transform>
+                                      (stp:copy child)
+                                      include))
+            (stp:detach include)))))
     <transform>))
 
 (defvar *instruction-base-uri*)
@@ -329,13 +329,13 @@
 
 (defun parse-1-stylesheet (env stylesheet designator uri-resolver)
   (let* ((<transform> (parse-stylesheet-to-stp designator uri-resolver))
-	 (*instruction-base-uri* (stp:base-uri <transform>))
-	 (*namespaces* (acons-namespaces <transform>))
-	 (*apply-imports-limit* (1+ *import-priority*)))
+         (*instruction-base-uri* (stp:base-uri <transform>))
+         (*namespaces* (acons-namespaces <transform>))
+         (*apply-imports-limit* (1+ *import-priority*)))
     (dolist (import (stp:filter-children (of-name "import") <transform>))
       (let ((uri (puri:merge-uris (stp:attribute-value import "href")
-				  (stp:base-uri import))))
-	(parse-imported-stylesheet env stylesheet uri uri-resolver)))
+                                  (stp:base-uri import))))
+        (parse-imported-stylesheet env stylesheet uri uri-resolver)))
     (incf *import-priority*)
     (parse-exclude-result-prefixes! <transform> env)
     (parse-global-variables! stylesheet <transform>)
@@ -348,69 +348,69 @@
 
 (defun parse-imported-stylesheet (env stylesheet uri uri-resolver)
   (let* ((uri (if uri-resolver
-		  (funcall uri-resolver (puri:render-uri uri nil))
-		  uri))
-	 (str (puri:render-uri uri nil))
-	 (pathname
-	  (handler-case
-	      (uri-to-pathname uri)
-	    (cxml:xml-parse-error (c)
-	      (xslt-error "cannot find imported stylesheet ~A: ~A"
-			  uri c)))))
+                  (funcall uri-resolver (puri:render-uri uri nil))
+                  uri))
+         (str (puri:render-uri uri nil))
+         (pathname
+          (handler-case
+              (uri-to-pathname uri)
+            (cxml:xml-parse-error (c)
+              (xslt-error "cannot find imported stylesheet ~A: ~A"
+                          uri c)))))
     (with-open-file
-	(stream pathname
-		:element-type '(unsigned-byte 8)
-		:if-does-not-exist nil)
+        (stream pathname
+                :element-type '(unsigned-byte 8)
+                :if-does-not-exist nil)
       (unless stream
-	(xslt-error "cannot find imported stylesheet ~A at ~A"
-		    uri pathname))
+        (xslt-error "cannot find imported stylesheet ~A at ~A"
+                    uri pathname))
       (when (find str *xsl-import-stack* :test #'equal)
-	(xslt-error "recursive inclusion of ~A" uri))
+        (xslt-error "recursive inclusion of ~A" uri))
       (let ((*xsl-import-stack* (cons str *xsl-import-stack*)))
-	(parse-1-stylesheet env stylesheet stream uri-resolver)))))
+        (parse-1-stylesheet env stylesheet stream uri-resolver)))))
 
 (defun parse-stylesheet (designator &key uri-resolver)
   (let* ((*import-priority* 0)
-	 (puri:*strict-parse* nil)
-	 (stylesheet (make-stylesheet))
-	 (env (make-instance 'lexical-xslt-environment))
-	 (*excluded-namespaces* *excluded-namespaces*)
-	 (*global-variable-declarations* (make-empty-declaration-array)))
+         (puri:*strict-parse* nil)
+         (stylesheet (make-stylesheet))
+         (env (make-instance 'lexical-xslt-environment))
+         (*excluded-namespaces* *excluded-namespaces*)
+         (*global-variable-declarations* (make-empty-declaration-array)))
     (ensure-mode stylesheet nil)
     (parse-1-stylesheet env stylesheet designator uri-resolver)
     ;; reverse attribute sets:
     (let ((table (stylesheet-attribute-sets stylesheet)))
       (maphash (lambda (k v)
-		 (setf (gethash k table) (nreverse v)))
-	       table))
+                 (setf (gethash k table) (nreverse v)))
+               table))
     stylesheet))
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
   (dolist (elt (stp:filter-children (of-name "attribute-set") <transform>))
     (push (let* ((sets
-		  (mapcar (lambda (qname)
-			    (multiple-value-list (decode-qname qname env nil)))
-			  (words
-			   (stp:attribute-value elt "use-attribute-sets"))))
-		 (instructions
-		  (stp:map-children 'list #'parse-instruction elt))
-		 (*lexical-variable-declarations*
-		  (make-empty-declaration-array))
-		 (thunk
-		  (compile-instruction `(progn ,@instructions) env))
-		 (n-variables (length *lexical-variable-declarations*)))
-	    (lambda (ctx)
-	      (with-stack-limit ()
-		(loop for (local-name uri nil) in sets do
-		     (dolist (thunk (find-attribute-set local-name uri))
-		       (funcall thunk ctx)))
-		(let ((*lexical-variable-values*
-		       (make-variable-value-array n-variables)))
-		  (funcall thunk ctx)))))
-	  (gethash (multiple-value-bind (local-name uri)
-		       (decode-qname (stp:attribute-value elt "name") env nil)
-		     (cons local-name uri))
-		   (stylesheet-attribute-sets stylesheet)))))
+                  (mapcar (lambda (qname)
+                            (multiple-value-list (decode-qname qname env nil)))
+                          (words
+                           (stp:attribute-value elt "use-attribute-sets"))))
+                 (instructions
+                  (stp:map-children 'list #'parse-instruction elt))
+                 (*lexical-variable-declarations*
+                  (make-empty-declaration-array))
+                 (thunk
+                  (compile-instruction `(progn ,@instructions) env))
+                 (n-variables (length *lexical-variable-declarations*)))
+            (lambda (ctx)
+              (with-stack-limit ()
+                (loop for (local-name uri nil) in sets do
+                     (dolist (thunk (find-attribute-set local-name uri))
+                       (funcall thunk ctx)))
+                (let ((*lexical-variable-values*
+                       (make-variable-value-array n-variables)))
+                  (funcall thunk ctx)))))
+          (gethash (multiple-value-bind (local-name uri)
+                       (decode-qname (stp:attribute-value elt "name") env nil)
+                     (cons local-name uri))
+                   (stylesheet-attribute-sets stylesheet)))))
 
 (defun parse-exclude-result-prefixes! (<transform> env)
   (stp:with-attributes (exclude-result-prefixes) <transform>
@@ -418,51 +418,51 @@
     (when (equal prefix "#default")
       (setf prefix nil))
     (push (or (xpath:environment-find-namespace env prefix)
-	      (xslt-error "namespace not found: ~A" prefix))
-	  *excluded-namespaces*))))
+              (xslt-error "namespace not found: ~A" prefix))
+          *excluded-namespaces*))))
 
 (defun parse-strip/preserve-space! (stylesheet <transform> env)
   (xpath:with-namespaces ((nil #.*xsl*))
     (dolist (elt (stp:filter-children (lambda (x)
-					(or (namep x "strip-space")
-					    (namep x "preserve-space")))
-				      <transform>))
+                                        (or (namep x "strip-space")
+                                            (namep x "preserve-space")))
+                                      <transform>))
       (let ((*namespaces* (acons-namespaces elt))
-	    (mode
-	     (if (equal (stp:local-name elt) "strip-space")
-		 :strip
-		 :preserve)))
-	(dolist (name-test (words (stp:attribute-value elt "elements")))
-	  (let* ((pos (search ":*" name-test))
-		 (test-function
-		  (cond
-		    ((eql pos (- (length name-test) 2))
-		     (let* ((prefix (subseq name-test 0 pos))
-			    (name-test-uri
-			     (xpath:environment-find-namespace env prefix)))
-		       (unless (xpath::nc-name-p prefix)
-			 (xslt-error "not an NCName: ~A" prefix))
-		       (lambda (local-name uri)
-			 (declare (ignore local-name))
-			 (if (equal uri name-test-uri)
-			     mode
-			     nil))))
-		    ((equal name-test "*")
-		     (lambda (local-name uri)
-		       (declare (ignore local-name uri))
-		       mode))
-		    (t
-		     (multiple-value-bind (name-test-local-name name-test-uri)
-			 (decode-qname name-test env nil)
-		       (lambda (local-name uri)
-			 (if (and (equal local-name name-test-local-name)
-				  (equal uri name-test-uri))
-			     mode
-			     nil)))))))
-	    (push test-function (stylesheet-strip-tests stylesheet))))))))
+            (mode
+             (if (equal (stp:local-name elt) "strip-space")
+                 :strip
+                 :preserve)))
+        (dolist (name-test (words (stp:attribute-value elt "elements")))
+          (let* ((pos (search ":*" name-test))
+                 (test-function
+                  (cond
+                    ((eql pos (- (length name-test) 2))
+                     (let* ((prefix (subseq name-test 0 pos))
+                            (name-test-uri
+                             (xpath:environment-find-namespace env prefix)))
+                       (unless (xpath::nc-name-p prefix)
+                         (xslt-error "not an NCName: ~A" prefix))
+                       (lambda (local-name uri)
+                         (declare (ignore local-name))
+                         (if (equal uri name-test-uri)
+                             mode
+                             nil))))
+                    ((equal name-test "*")
+                     (lambda (local-name uri)
+                       (declare (ignore local-name uri))
+                       mode))
+                    (t
+                     (multiple-value-bind (name-test-local-name name-test-uri)
+                         (decode-qname name-test env nil)
+                       (lambda (local-name uri)
+                         (if (and (equal local-name name-test-local-name)
+                                  (equal uri name-test-uri))
+                             mode
+                             nil)))))))
+            (push test-function (stylesheet-strip-tests stylesheet))))))))
 
 (defstruct (output-specification
-	     (:conc-name "OUTPUT-"))
+             (:conc-name "OUTPUT-"))
   method
   indent
   omit-xml-declaration
@@ -472,28 +472,28 @@
   (let ((outputs (stp:filter-children (of-name "output") <transform>)))
     (when outputs
       (when (cdr outputs)
-	;; FIXME:
-	;;   - concatenate cdata-section-elements
-	;;   - the others must not conflict
-	(error "oops, merging of output elements not supported yet"))
+        ;; FIXME:
+        ;;   - concatenate cdata-section-elements
+        ;;   - the others must not conflict
+        (error "oops, merging of output elements not supported yet"))
       (let ((<output> (car outputs))
-	    (spec (stylesheet-output-specification stylesheet)))
-	(stp:with-attributes (;; version
-			      method
-			      indent
- 			      encoding
-;;; 			      media-type
-;;; 			      doctype-system
-;;; 			      doctype-public
- 			      omit-xml-declaration
-;;; 			      standalone
-;;; 			      cdata-section-elements
-			      )
-	    <output>
-	  (setf (output-method spec) method)
-	  (setf (output-indent spec) indent)
-	  (setf (output-encoding spec) encoding)
-	  (setf (output-omit-xml-declaration spec) omit-xml-declaration))))))
+            (spec (stylesheet-output-specification stylesheet)))
+        (stp:with-attributes (;; version
+                              method
+                              indent
+                              encoding
+;;;                           media-type
+;;;                           doctype-system
+;;;                           doctype-public
+                              omit-xml-declaration
+;;;                           standalone
+;;;                           cdata-section-elements
+                              )
+            <output>
+          (setf (output-method spec) method)
+          (setf (output-indent spec) indent)
+          (setf (output-encoding spec) encoding)
+          (setf (output-omit-xml-declaration spec) omit-xml-declaration))))))
 
 (defun make-empty-declaration-array ()
   (make-array 1 :fill-pointer 0 :adjustable t))
@@ -506,29 +506,29 @@
     (when (and select (stp:list-children <variable>))
       (xslt-error "variable with select and body"))
     (let* ((*lexical-variable-declarations* (make-empty-declaration-array))
-	   (inner (cond
-		    (select
-		     (compile-xpath select env))
-		    ((stp:list-children <variable>)
-		     (let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
-			    (inner-thunk (compile-instruction inner-sexpr env)))
-		       (lambda (ctx)
-			 (apply-to-result-tree-fragment ctx inner-thunk))))
-		    (t
-		     (lambda (ctx)
-		       (declare (ignore ctx))
-		       ""))))
-	   (n-lexical-variables (length *lexical-variable-declarations*)))
+           (inner (cond
+                    (select
+                     (compile-xpath select env))
+                    ((stp:list-children <variable>)
+                     (let* ((inner-sexpr `(progn ,@(parse-body <variable>)))
+                            (inner-thunk (compile-instruction inner-sexpr env)))
+                       (lambda (ctx)
+                         (apply-to-result-tree-fragment ctx inner-thunk))))
+                    (t
+                     (lambda (ctx)
+                       (declare (ignore ctx))
+                       ""))))
+           (n-lexical-variables (length *lexical-variable-declarations*)))
       (xslt-trace-thunk
        (lambda (ctx)
-	 (let* ((*lexical-variable-values*
-		 (make-variable-value-array n-lexical-variables)))
-	   (funcall inner ctx)))
+         (let* ((*lexical-variable-values*
+                 (make-variable-value-array n-lexical-variables)))
+           (funcall inner ctx)))
        "global ~s (~s) = ~s" name select :result))))
 
 (defstruct (variable-information
-	     (:constructor make-variable)
-	     (:conc-name "VARIABLE-"))
+             (:constructor make-variable)
+             (:conc-name "VARIABLE-"))
   index
   thunk
   local-name
@@ -538,42 +538,42 @@
 
 (defun parse-global-variable! (<variable> global-env) ;; also for <param>
   (let ((*namespaces* (acons-namespaces <variable>))
-	(qname (stp:attribute-value <variable> "name")))
+        (qname (stp:attribute-value <variable> "name")))
     (unless qname
       (xslt-error "name missing in ~A" (stp:local-name <variable>)))
     (multiple-value-bind (local-name uri)
-	(decode-qname qname global-env nil)
+        (decode-qname qname global-env nil)
       ;; For the normal compilation environment of templates, install it
       ;; into *GLOBAL-VARIABLE-DECLARATIONS*:
       (let ((index (intern-global-variable local-name uri)))
         ;; For the evaluation of a global variable itself, build a thunk
         ;; that lazily resolves other variables, stored into
-	;; INITIAL-GLOBAL-VARIABLE-THUNKS:
+        ;; INITIAL-GLOBAL-VARIABLE-THUNKS:
         (let* ((value-thunk :unknown)
                (global-variable-thunk
                 (lambda (ctx)
                   (let ((v (global-variable-value index nil)))
-		    (when (eq v 'seen)
-		      (xslt-error "recursive variable definition"))
-		    (cond
-		      ((eq v 'unbound)
-		       ;; (print (list :computing index))
-		       (setf (global-variable-value index) 'seen)
-		       (setf (global-variable-value index)
-			     (funcall value-thunk ctx))
-		       #+nil (print (list :done-computing index
-				    (global-variable-value index)))
-		       #+nil (global-variable-value index))
-		      (t
-		       #+nil(print (list :have
-				    index v))
-		       v)))))
+                    (when (eq v 'seen)
+                      (xslt-error "recursive variable definition"))
+                    (cond
+                      ((eq v 'unbound)
+                       ;; (print (list :computing index))
+                       (setf (global-variable-value index) 'seen)
+                       (setf (global-variable-value index)
+                             (funcall value-thunk ctx))
+                       #+nil (print (list :done-computing index
+                                    (global-variable-value index)))
+                       #+nil (global-variable-value index))
+                      (t
+                       #+nil(print (list :have
+                                    index v))
+                       v)))))
                (thunk-setter
                 (lambda ()
                   (setf value-thunk
                         (compile-global-variable <variable> global-env)))))
           (setf (gethash (cons local-name uri)
-			 (initial-global-variable-thunks global-env))
+                         (initial-global-variable-thunks global-env))
                 global-variable-thunk)
           (make-variable :index index
                          :local-name local-name
@@ -585,25 +585,25 @@
 (defun parse-global-variables! (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
     (let* ((table (make-hash-table :test 'equal))
-	   (global-env (make-instance 'global-variable-environment
-				      :initial-global-variable-thunks table))
-	   (specs '()))
+           (global-env (make-instance 'global-variable-environment
+                                      :initial-global-variable-thunks table))
+           (specs '()))
       (xpath:do-node-set
-	  (<variable> (xpath:evaluate "variable|param" <transform>))
-	(let ((var (parse-global-variable! <variable> global-env)))
-	  (xslt-trace "parsing global variable ~s (uri ~s)"
-		      (variable-local-name var)
-		      (variable-uri var))
-	  (when (find var
-		      specs
-		      :test (lambda (a b)
-			      (and (equal (variable-local-name a)
-					  (variable-local-name b))
-				   (equal (variable-uri a)
-					  (variable-uri b)))))
-	    (xslt-error "duplicate definition for global variable ~A"
-			(variable-local-name var)))
-	  (push var specs)))
+          (<variable> (xpath:evaluate "variable|param" <transform>))
+        (let ((var (parse-global-variable! <variable> global-env)))
+          (xslt-trace "parsing global variable ~s (uri ~s)"
+                      (variable-local-name var)
+                      (variable-uri var))
+          (when (find var
+                      specs
+                      :test (lambda (a b)
+                              (and (equal (variable-local-name a)
+                                          (variable-local-name b))
+                                   (equal (variable-uri a)
+                                          (variable-uri b)))))
+            (xslt-error "duplicate definition for global variable ~A"
+                        (variable-local-name var)))
+          (push var specs)))
       ;; now that the global environment knows about all variables, run the
       ;; thunk setters to perform their compilation
       (setf specs (nreverse specs))
@@ -614,21 +614,21 @@
   (let ((i 0))
     (dolist (<template> (stp:filter-children (of-name "template") <transform>))
       (let ((*namespaces* (acons-namespaces <template>)))
-	(dolist (template (compile-template <template> env i))
-	  (let ((name (template-name template)))
-	    (if name
-		(let* ((table (stylesheet-named-templates stylesheet))
-		       (head (car (gethash name table))))
-		  (when (and head (eql (template-import-priority head)
-				       (template-import-priority template)))
-		    ;; fixme: is this supposed to be a run-time error?
-		    (xslt-error "conflicting templates for ~A" name))
-		  (push template (gethash name table)))
-		(let ((mode (ensure-mode/qname stylesheet
-					       (template-mode-qname template)
-					       env)))
-		  (setf (template-mode template) mode)
-		  (push template (mode-templates mode)))))))
+        (dolist (template (compile-template <template> env i))
+          (let ((name (template-name template)))
+            (if name
+                (let* ((table (stylesheet-named-templates stylesheet))
+                       (head (car (gethash name table))))
+                  (when (and head (eql (template-import-priority head)
+                                       (template-import-priority template)))
+                    ;; fixme: is this supposed to be a run-time error?
+                    (xslt-error "conflicting templates for ~A" name))
+                  (push template (gethash name table)))
+                (let ((mode (ensure-mode/qname stylesheet
+                                               (template-mode-qname template)
+                                               env)))
+                  (setf (template-mode template) mode)
+                  (push template (mode-templates mode)))))))
       (incf i))))
 
 
@@ -640,7 +640,7 @@
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
 
 (defstruct (parameter
-	     (:constructor make-parameter (value local-name &optional uri)))
+             (:constructor make-parameter (value local-name &optional uri)))
   (uri "")
   local-name
   value)
@@ -648,7 +648,7 @@
 (defun find-parameter-value (local-name uri parameters)
   (dolist (p parameters)
     (when (and (equal (parameter-local-name p) local-name)
-	       (equal (parameter-uri p) uri))
+               (equal (parameter-uri p) uri))
       (return (parameter-value p)))))
 
 (defvar *uri-resolver*)
@@ -656,33 +656,33 @@
 (defun parse-allowing-microsoft-bom (pathname handler)
   (with-open-file (s pathname :element-type '(unsigned-byte 8))
     (unless (and (eql (read-byte s nil) #xef)
-		 (eql (read-byte s nil) #xbb)
-		 (eql (read-byte s nil) #xbf))
+                 (eql (read-byte s nil) #xbb)
+                 (eql (read-byte s nil) #xbf))
       (file-position s 0))
     (cxml:parse s handler)))
 
 (defun %document (uri-string base-uri)
   (let* ((absolute-uri
-	  (puri:merge-uris uri-string base-uri))
-	 (resolved-uri
-	  (if *uri-resolver*
-	      (funcall *uri-resolver* (puri:render-uri absolute-uri nil))
-	      absolute-uri))
-	 (pathname
-	  (handler-case
-	      (uri-to-pathname resolved-uri)
-	    (cxml:xml-parse-error (c)
-	      (xslt-error "cannot find referenced document ~A: ~A"
-			  resolved-uri c))))
-	 (document
-	  (handler-case
-	      (parse-allowing-microsoft-bom pathname (stp:make-builder))
-	    ((or file-error cxml:xml-parse-error) (c)
-	      (xslt-error "cannot parse referenced document ~A: ~A"
-			  pathname c))))
-	 (xpath-root-node
-	  (make-whitespace-stripper document
-				    (stylesheet-strip-tests *stylesheet*))))
+          (puri:merge-uris uri-string base-uri))
+         (resolved-uri
+          (if *uri-resolver*
+              (funcall *uri-resolver* (puri:render-uri absolute-uri nil))
+              absolute-uri))
+         (pathname
+          (handler-case
+              (uri-to-pathname resolved-uri)
+            (cxml:xml-parse-error (c)
+              (xslt-error "cannot find referenced document ~A: ~A"
+                          resolved-uri c))))
+         (document
+          (handler-case
+              (parse-allowing-microsoft-bom pathname (stp:make-builder))
+            ((or file-error cxml:xml-parse-error) (c)
+              (xslt-error "cannot parse referenced document ~A: ~A"
+                          pathname c))))
+         (xpath-root-node
+          (make-whitespace-stripper document
+                                    (stylesheet-strip-tests *stylesheet*))))
     (when (puri:uri-fragment absolute-uri)
       (xslt-error "use of fragment identifiers in document() not supported"))
     xpath-root-node))
@@ -696,28 +696,28 @@
     (lambda (ctx)
       (declare (ignore ctx))
       (let* ((object (funcall object))
-	     (node-set (and node-set (funcall node-set)))
-	     (uri
-	      (when node-set
-		;; FIXME: should use first node of the node set
-		;; _in document order_
-		(xpath-protocol:base-uri (xpath:first-node node-set)))))
-	(xpath::make-node-set
-	 (if (xpath:node-set-p object)
-	     (xpath:map-node-set->list
-	      (lambda (node)
-		(%document (xpath:string-value node)
-			   (or uri (xpath-protocol:base-uri node))))
-	      object)
-	     (list (%document (xpath:string-value object)
-			      (or uri instruction-base-uri)))))))))
+             (node-set (and node-set (funcall node-set)))
+             (uri
+              (when node-set
+                ;; FIXME: should use first node of the node set
+                ;; _in document order_
+                (xpath-protocol:base-uri (xpath:first-node node-set)))))
+        (xpath::make-node-set
+         (if (xpath:node-set-p object)
+             (xpath:map-node-set->list
+              (lambda (node)
+                (%document (xpath:string-value node)
+                           (or uri (xpath-protocol:base-uri node))))
+              object)
+             (list (%document (xpath:string-value object)
+                              (or uri instruction-base-uri)))))))))
 
 (xpath:define-xpath-function/lazy xslt current ()
   #'(lambda (ctx)
       (xpath:make-node-set
        (xpath:make-pipe
-	(xpath:context-starting-node ctx)
-	nil))))
+        (xpath:context-starting-node ctx)
+        nil))))
 
 (defun apply-stylesheet
     (stylesheet source-document
@@ -729,39 +729,39 @@
   (invoke-with-output-sink
    (lambda ()
      (handler-case*
-	 (let* ((xpath:*navigator* (or navigator :default-navigator))
-		(puri:*strict-parse* nil)
-		(*stylesheet* stylesheet)
-		(*mode* (find-mode stylesheet nil))
-		(*empty-mode* (make-mode))
-		(global-variable-specs
-		 (stylesheet-global-variables stylesheet))
-		(*global-variable-values*
-		 (make-variable-value-array (length global-variable-specs)))
-		(*uri-resolver* uri-resolver)
-		(xpath-root-node
-		 (make-whitespace-stripper
-		  source-document
-		  (stylesheet-strip-tests stylesheet)))
-		(ctx (xpath:make-context xpath-root-node)))
-	   (mapc (lambda (spec)
-		   (when (variable-param-p spec)
-		     (let ((value
-			    (find-parameter-value (variable-local-name spec)
-						  (variable-uri spec)
-						  parameters)))
-		       (when value
-			 (setf (global-variable-value (variable-index spec))
-			       value)))))
-		 global-variable-specs)
-	   (mapc (lambda (spec)
-		   (funcall (variable-thunk spec) ctx))
-		 global-variable-specs)
-	   #+nil (print global-variable-specs)
-	   #+nil (print *global-variable-values*)
-	   (apply-templates ctx))
+         (let* ((xpath:*navigator* (or navigator :default-navigator))
+                (puri:*strict-parse* nil)
+                (*stylesheet* stylesheet)
+                (*mode* (find-mode stylesheet nil))
+                (*empty-mode* (make-mode))
+                (global-variable-specs
+                 (stylesheet-global-variables stylesheet))
+                (*global-variable-values*
+                 (make-variable-value-array (length global-variable-specs)))
+                (*uri-resolver* uri-resolver)
+                (xpath-root-node
+                 (make-whitespace-stripper
+                  source-document
+                  (stylesheet-strip-tests stylesheet)))
+                (ctx (xpath:make-context xpath-root-node)))
+           (mapc (lambda (spec)
+                   (when (variable-param-p spec)
+                     (let ((value
+                            (find-parameter-value (variable-local-name spec)
+                                                  (variable-uri spec)
+                                                  parameters)))
+                       (when value
+                         (setf (global-variable-value (variable-index spec))
+                               value)))))
+                 global-variable-specs)
+           (mapc (lambda (spec)
+                   (funcall (variable-thunk spec) ctx))
+                 global-variable-specs)
+           #+nil (print global-variable-specs)
+           #+nil (print *global-variable-values*)
+           (apply-templates ctx))
        (xpath:xpath-error (c)
-			  (xslt-error "~A" c))))
+                          (xslt-error "~A" c))))
    stylesheet
    output))
 
@@ -773,12 +773,12 @@
   (when sort-predicate
     (setf list (sort list sort-predicate)))
   (let* ((n (length list))
-	 (s/d (lambda () n)))
+         (s/d (lambda () n)))
     (loop
        for i from 1
        for child in list
        do
-	 (apply-templates (xpath:make-context child s/d i)
+         (apply-templates (xpath:make-context child s/d i)
            param-bindings))))
 
 (defvar *stack-limit* 200)
@@ -791,81 +791,81 @@
 
 (defun invoke-template (ctx template param-bindings)
   (let ((*lexical-variable-values*
-	 (make-variable-value-array (template-n-variables template))))
+         (make-variable-value-array (template-n-variables template))))
     (with-stack-limit ()
       (loop
-	 for (name-cons value) in param-bindings
-	 for (nil index nil) = (find name-cons
-				     (template-params template)
-				     :test #'equal
-				     :key #'car)
-	 do
-	 (unless index
-	   (xslt-error "invalid template parameter ~A" name-cons))
-	 (setf (lexical-variable-value index) value))
+         for (name-cons value) in param-bindings
+         for (nil index nil) = (find name-cons
+                                     (template-params template)
+                                     :test #'equal
+                                     :key #'car)
+         do
+         (unless index
+           (xslt-error "invalid template parameter ~A" name-cons))
+         (setf (lexical-variable-value index) value))
       (funcall (template-body template) ctx))))
 
 (defun apply-default-templates (ctx)
   (let ((node (xpath:context-node ctx)))
     (cond
       ((or (xpath-protocol:node-type-p node :processing-instruction)
-	   (xpath-protocol:node-type-p node :comment)))
+           (xpath-protocol:node-type-p node :comment)))
       ((or (xpath-protocol:node-type-p node :text)
-	   (xpath-protocol:node-type-p node :attribute))
+           (xpath-protocol:node-type-p node :attribute))
        (write-text (xpath-protocol:string-value node)))
       (t
        (apply-templates/list
-	(xpath::force
-	 (xpath-protocol:child-pipe node)))))))
+        (xpath::force
+         (xpath-protocol:child-pipe node)))))))
 
 (defvar *apply-imports*)
 
 (defun apply-applicable-templates (ctx templates param-bindings finally)
   (labels ((apply-imports ()
-	     (if templates
-		 (let* ((this (pop templates))
-			(low (template-apply-imports-limit this))
-			(high (template-import-priority this)))
-		   (setf templates
-			 (remove-if-not
-			  (lambda (x)
-			    (<= low (template-import-priority x) high))
-			  templates))
-		   (invoke-template ctx this param-bindings))
-		 (funcall finally))))
+             (if templates
+                 (let* ((this (pop templates))
+                        (low (template-apply-imports-limit this))
+                        (high (template-import-priority this)))
+                   (setf templates
+                         (remove-if-not
+                          (lambda (x)
+                            (<= low (template-import-priority x) high))
+                          templates))
+                   (invoke-template ctx this param-bindings))
+                 (funcall finally))))
     (let ((*apply-imports* #'apply-imports))
       (apply-imports))))
 
 (defun apply-templates (ctx &optional param-bindings)
   (apply-applicable-templates ctx
-			      (find-templates ctx)
-			      param-bindings
-			      (lambda ()
-				(apply-default-templates ctx))))
+                              (find-templates ctx)
+                              param-bindings
+                              (lambda ()
+                                (apply-default-templates ctx))))
 
 (defun call-template (ctx name &optional param-bindings)
   (apply-applicable-templates ctx
-			      (find-named-templates name)
-			      param-bindings
-			      (lambda ()
-				(error "cannot find named template: ~s"
-				       name))))
+                              (find-named-templates name)
+                              param-bindings
+                              (lambda ()
+                                (error "cannot find named template: ~s"
+                                       name))))
 
 (defun find-templates (ctx)
   (let* ((matching-candidates
-	  (remove-if-not (lambda (template)
-			   (template-matches-p template ctx))
-			 (mode-templates *mode*)))
-	 (npriorities
-	  (if matching-candidates
-	      (1+ (reduce #'max
-			  matching-candidates
-			  :key #'template-import-priority))
-	      0))
-	 (priority-groups (make-array npriorities :initial-element nil)))
+          (remove-if-not (lambda (template)
+                           (template-matches-p template ctx))
+                         (mode-templates *mode*)))
+         (npriorities
+          (if matching-candidates
+              (1+ (reduce #'max
+                          matching-candidates
+                          :key #'template-import-priority))
+              0))
+         (priority-groups (make-array npriorities :initial-element nil)))
     (dolist (template matching-candidates)
       (push template
-	    (elt priority-groups (template-import-priority template))))
+            (elt priority-groups (template-import-priority template))))
 ;;;     (print (map 'list #'length priority-groups))
 ;;;     (force-output)
     (loop
@@ -878,71 +878,71 @@
 (defun find-named-templates (name)
   (gethash name (stylesheet-named-templates *stylesheet*)))
 
-(defun template< (a b)			;assuming same import priority
+(defun template< (a b)                  ;assuming same import priority
   (let ((p (template-priority a))
-	(q (template-priority b)))
+        (q (template-priority b)))
     (cond
       ((< p q) t)
       ((> p q) nil)
       (t
        (xslt-cerror "conflicting templates:~_~A,~_~A"
-		    (template-match-expression a)
-		    (template-match-expression b))
+                    (template-match-expression a)
+                    (template-match-expression b))
        (< (template-position a) (template-position b))))))
 
 (defun maximize (< things)
   (when things
     (let ((max (car things)))
       (dolist (other (cdr things))
-	(when (funcall < max other)
-	  (setf max other)))
+        (when (funcall < max other)
+          (setf max other)))
       max)))
 
 (defun template-matches-p (template ctx)
   (find (xpath:context-node ctx)
-	(xpath:all-nodes (funcall (template-match-thunk template) ctx))))
+        (xpath:all-nodes (funcall (template-match-thunk template) ctx))))
 
 (defun invoke-with-output-sink (fn stylesheet output)
   (etypecase output
     (pathname
      (with-open-file (s output
-			:direction :output
-			:element-type '(unsigned-byte 8)
-			:if-exists :rename-and-delete)
+                        :direction :output
+                        :element-type '(unsigned-byte 8)
+                        :if-exists :rename-and-delete)
        (invoke-with-output-sink fn stylesheet s)))
     ((or stream null)
      (invoke-with-output-sink fn
-			      stylesheet
-			      (make-output-sink stylesheet output)))
+                              stylesheet
+                              (make-output-sink stylesheet output)))
     ((or hax:abstract-handler sax:abstract-handler)
      (with-xml-output output
        (funcall fn)))))
 
 (defun make-output-sink (stylesheet stream)
   (let* ((ystream
-	  (if stream
-	      (let ((et (stream-element-type stream)))
-		(cond
-		  ((or (null et) (subtypep et '(unsigned-byte 8)))
-		   (runes:make-octet-stream-ystream stream))
-		  ((subtypep et 'character)
-		   (runes:make-character-stream-ystream stream))))
-	      (runes:make-rod-ystream)))
-	 (output-spec (stylesheet-output-specification stylesheet))
-	 (omit-xml-declaration-p
-	  (equal (output-omit-xml-declaration output-spec) "yes"))
-	 (sax-target
-	  (make-instance 'cxml::sink
-			 :ystream ystream
-			 :omit-xml-declaration-p omit-xml-declaration-p)))
+          (if stream
+              (let ((et (stream-element-type stream)))
+                (cond
+                  ((or (null et) (subtypep et '(unsigned-byte 8)))
+                   (runes:make-octet-stream-ystream stream))
+                  ((subtypep et 'character)
+                   (runes:make-character-stream-ystream stream))))
+              (runes:make-rod-ystream)))
+         (output-spec (stylesheet-output-specification stylesheet))
+         (omit-xml-declaration-p
+          (equal (output-omit-xml-declaration output-spec) "yes"))
+         (sax-target
+          (make-instance 'cxml::sink
+                         :ystream ystream
+                         :omit-xml-declaration-p omit-xml-declaration-p)))
     (if (equalp (output-method (stylesheet-output-specification stylesheet))
-		"HTML")
-	(make-instance 'combi-sink
-		       :hax-target (make-instance 'chtml::sink
-						  :ystream ystream)
-		       :sax-target sax-target
-		       :encoding (output-encoding output-spec))
-	sax-target)))
+                "HTML")
+        (make-instance 'combi-sink
+                       :hax-target (make-instance 'chtml::sink
+                                                  :ystream ystream)
+                       :sax-target sax-target
+                       :encoding (output-encoding output-spec))
+        sax-target)))
 
 (defstruct template
   match-expression
@@ -961,33 +961,33 @@
 (defun expression-priority (form)
   (let ((step (second form)))
     (if (and (null (cddr form))
-	     (listp step)
-	     (eq :child (car step))
-	     (null (cddr step)))
-	(let ((name (second step)))
-	  (cond
-	    ((or (stringp name)
-		 (and (consp name)
-		      (or (eq (car name) :qname)
-			  (eq (car name) :processing-instruction))))
-	     0.0)
-	    ((and (consp name)
-		  (or (eq (car name) :namespace)
-		      (eq (car name) '*)))
-	     -0.25)
-	    (t
-	     -0.5)))
-	0.5)))
+             (listp step)
+             (eq :child (car step))
+             (null (cddr step)))
+        (let ((name (second step)))
+          (cond
+            ((or (stringp name)
+                 (and (consp name)
+                      (or (eq (car name) :qname)
+                          (eq (car name) :processing-instruction))))
+             0.0)
+            ((and (consp name)
+                  (or (eq (car name) :namespace)
+                      (eq (car name) '*)))
+             -0.25)
+            (t
+             -0.5)))
+        0.5)))
 
 (defun valid-expression-p (expr)
   (cond
     ((atom expr) t)
     ((eq (first expr) :path)
      (every (lambda (x)
-	      (let ((filter (third x)))
-		(or (null filter) (valid-expression-p filter))))
-	    (cdr expr)))
-    ((eq (first expr) :variable)	;(!)
+              (let ((filter (third x)))
+                (or (null filter) (valid-expression-p filter))))
+            (cdr expr)))
+    ((eq (first expr) :variable)        ;(!)
      nil)
     (t
      (every #'valid-expression-p (cdr expr)))))
@@ -996,19 +996,19 @@
   ;; zzz check here for anything not allowed as an XSLT pattern
   ;; zzz can we hack id() and key() here?
   (let ((form (handler-case
-		  (xpath:parse-xpath str)
-		(xpath:xpath-error (c)
-		  (xslt-error "~A" c)))))
+                  (xpath:parse-xpath str)
+                (xpath:xpath-error (c)
+                  (xslt-error "~A" c)))))
     (unless (consp form)
       (xslt-error "not a valid pattern: ~A" str))
     (labels ((process-form (form)
-	       (cond ((eq (car form) :union)
-		      (alexandria:mappend #'process-form (rest form)))
-		     ((not (eq (car form) :path)) ;zzz: filter statt path
-		      (xslt-error "not a valid pattern: ~A" str))
-		     ((not (valid-expression-p form))
-		      (xslt-error "invalid filter"))
-		     (t (list form)))))
+               (cond ((eq (car form) :union)
+                      (alexandria:mappend #'process-form (rest form)))
+                     ((not (eq (car form) :path)) ;zzz: filter statt path
+                      (xslt-error "not a valid pattern: ~A" str))
+                     ((not (valid-expression-p form))
+                      (xslt-error "invalid filter"))
+                     (t (list form)))))
       (process-form form))))
 
 (defun compile-value-thunk (value env)
@@ -1024,19 +1024,19 @@
     collect (multiple-value-bind (local-name uri)
                 (decode-qname name env nil)
               (list (cons local-name uri)
-		    (xslt-trace-thunk
-		     (compile-value-thunk value env)
-		     "local variable ~s = ~s" name :result)))))
+                    (xslt-trace-thunk
+                     (compile-value-thunk value env)
+                     "local variable ~s = ~s" name :result)))))
 
 (defun compile-var-bindings (forms env)
   (loop
      for (cons thunk) in (compile-var-bindings/nointern forms env)
      for (local-name . uri) = cons
      collect (list cons
-		   (push-variable local-name
-				  uri
-				  *lexical-variable-declarations*)
-		   thunk)))
+                   (push-variable local-name
+                                  uri
+                                  *lexical-variable-declarations*)
+                   thunk)))
 
 (defun compile-template (<template> env position)
   (stp:with-attributes (match name priority mode) <template>
@@ -1051,56 +1051,56 @@
           finally (return (values params i)))
       (let* ((*lexical-variable-declarations* (make-empty-declaration-array))
              (param-bindings (compile-var-bindings params env))
-	     (body (parse-body <template> body-pos (mapcar #'car params)))
+             (body (parse-body <template> body-pos (mapcar #'car params)))
              (body-thunk (compile-instruction `(progn ,@body) env))
              (outer-body-thunk
-	      (xslt-trace-thunk
-	       #'(lambda (ctx)
-		   (unwind-protect
-		       (progn
-			 ;; set params that weren't initialized by apply-templates
-			 (loop for (name index param-thunk) in param-bindings
-			       when (eq (lexical-variable-value index nil) 'unbound)
-				 do (setf (lexical-variable-value index)
-					  (funcall param-thunk ctx)))
-			 (funcall body-thunk ctx))))
-	       "template: match = ~s name = ~s" match name))
-	     (n-variables (length *lexical-variable-declarations*)))
+              (xslt-trace-thunk
+               #'(lambda (ctx)
+                   (unwind-protect
+                       (progn
+                         ;; set params that weren't initialized by apply-templates
+                         (loop for (name index param-thunk) in param-bindings
+                               when (eq (lexical-variable-value index nil) 'unbound)
+                                 do (setf (lexical-variable-value index)
+                                          (funcall param-thunk ctx)))
+                         (funcall body-thunk ctx))))
+               "template: match = ~s name = ~s" match name))
+             (n-variables (length *lexical-variable-declarations*)))
         (append
          (when name
            (multiple-value-bind (local-name uri)
                (decode-qname name env nil)
              (list
               (make-template :name (cons local-name uri)
-			     :import-priority *import-priority*
-			     :apply-imports-limit *apply-imports-limit*
+                             :import-priority *import-priority*
+                             :apply-imports-limit *apply-imports-limit*
                              :params param-bindings
                              :body outer-body-thunk
-			     :n-variables n-variables))))
+                             :n-variables n-variables))))
          (when match
            (mapcar (lambda (expression)
                      (let ((match-thunk
-			    (xslt-trace-thunk
-			     (compile-xpath
-			      `(xpath:xpath
-				(:path (:ancestor-or-self :node)
-				       ,@(cdr expression)))
-			      env)
-			     "match-thunk for template (match ~s): ~s --> ~s"
-			     match expression :result))
+                            (xslt-trace-thunk
+                             (compile-xpath
+                              `(xpath:xpath
+                                (:path (:ancestor-or-self :node)
+                                       ,@(cdr expression)))
+                              env)
+                             "match-thunk for template (match ~s): ~s --> ~s"
+                             match expression :result))
                            (p (if priority
                                   (parse-number:parse-number priority)
                                   (expression-priority expression))))
                        (make-template :match-expression expression
                                       :match-thunk match-thunk
-				      :import-priority *import-priority*
-				      :apply-imports-limit *apply-imports-limit*
+                                      :import-priority *import-priority*
+                                      :apply-imports-limit *apply-imports-limit*
                                       :priority p
-				      :position position
+                                      :position position
                                       :mode-qname mode
                                       :params param-bindings
                                       :body outer-body-thunk
-				      :n-variables n-variables)))
+                                      :n-variables n-variables)))
                    (parse-pattern match))))))))
 #+(or)
 (xuriella::parse-stylesheet #p"/home/david/src/lisp/xuriella/test.xsl")
