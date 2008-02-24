@@ -712,6 +712,13 @@
 	     (list (%document (xpath:string-value object)
 			      (or uri instruction-base-uri)))))))))
 
+(xpath:define-xpath-function/lazy xslt current ()
+  #'(lambda (ctx)
+      (xpath:make-node-set
+       (xpath:make-pipe
+	(xpath:context-starting-node ctx)
+	nil))))
+
 (defun apply-stylesheet
     (stylesheet source-document
      &key output parameters uri-resolver navigator)
@@ -988,7 +995,10 @@
 (defun parse-pattern (str)
   ;; zzz check here for anything not allowed as an XSLT pattern
   ;; zzz can we hack id() and key() here?
-  (let ((form (xpath:parse-xpath str)))
+  (let ((form (handler-case
+		  (xpath:parse-xpath str)
+		(xpath:xpath-error (c)
+		  (xslt-error "~A" c)))))
     (unless (consp form)
       (xslt-error "not a valid pattern: ~A" str))
     (labels ((process-form (form)

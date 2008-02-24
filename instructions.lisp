@@ -678,7 +678,7 @@
 		       (constantly (second x)))
 		      (:xpath
 		       (setf constantp nil)
-		       (xpath:compile-xpath (second x) env))))
+		       (compile-xpath (second x) env))))
 		  (parse-attribute-value-template template-string))))
     (values (lambda (ctx)
 	      (with-output-to-string (s)
