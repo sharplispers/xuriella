@@ -1,19 +1,3 @@
-; in:
-;      LAMBDA (#:G2441 #:G2442 #:G2443 #:G2444 #:G2445 #:G2446 #:G2447 #:G2448
-;          #:G2452 #:G2453)
-;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG0.
-; 
-; note: deleting unreachable code
-
-;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2441 #:G2442)
-; 
-; note: deleting unreachable code
-; 
-; compilation unit finished
-;   printed 2 notes
 PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml
@@ -732,7 +716,7 @@ PASS axes_axes58 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes58.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes58.xuriella
 
-FAIL axes_axes59 [XSLT-Result-Tree-Testing]: undefined instruction: number
+FAIL axes_axes59 [XSLT-Result-Tree-Testing]: not a qname: 
   Stylesheet: Xalan_Conformance_Tests/axes/axes59.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes59.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes59.saxon
@@ -4356,7 +4340,7 @@ PASS message_message13 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/message/message_message13.saxon
   Actual output: Xalan_Conformance_Tests/message/message_message13.xuriella
 
-FAIL message_message14 [XSLT-Result-Tree]: undefined instruction: number
+FAIL message_message14 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/message/message14.noindent-xsl
   Data: Xalan_Conformance_Tests/message/message14.xml
   Expected output (1): Xalan_Conformance_Tests/message/message_message14.saxon
@@ -4544,7 +4528,7 @@ PASS namedtemplate_namedtemplate11 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate11.saxon
   Actual output: Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate11.xuriella
 
-FAIL namedtemplate_namedtemplate12 [XSLT-Result-Tree]: undefined instruction: number
+FAIL namedtemplate_namedtemplate12 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/namedtemplate/namedtemplate12.noindent-xsl
   Data: Xalan_Conformance_Tests/namedtemplate/namedtemplate12.xml
   Expected output (1): Xalan_Conformance_Tests/namedtemplate/namedtemplate_namedtemplate12.saxon
@@ -4850,19 +4834,19 @@ PASS namespace_namespace43 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace43.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace43.xuriella
 
-FAIL namespace_namespace44 [XSLT-Result-Tree]: undefined instruction: number
+FAIL namespace_namespace44 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace44.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace44.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace44.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace44.xuriella
 
-FAIL namespace_namespace45 [XSLT-Result-Tree]: undefined instruction: number
+FAIL namespace_namespace45 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace45.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace45.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace45.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace45.xuriella
 
-FAIL namespace_namespace46 [XSLT-Result-Tree]: undefined instruction: number
+FAIL namespace_namespace46 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace46.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace46.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace46.saxon
@@ -5806,559 +5790,639 @@ FAIL numberformat_numberformat46 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat46.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat46.xuriella
 
-FAIL numbering_numbering01 [XSLT-Result-Tree]: undefined instruction: number
+PASS numbering_numbering01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering01.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering01.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering01.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering01.xuriella
 
-FAIL numbering_numbering02 [XSLT-Result-Tree]: undefined instruction: number
+PASS numbering_numbering02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering02.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering02.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering02.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering02.xuriella
 
-FAIL numbering_numbering03 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering03 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering03.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering03.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering03.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering03.xuriella
 
-FAIL numbering_numbering04 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering04 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering04.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering04.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering04.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering04.xuriella
 
-FAIL numbering_numbering05 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering05 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering05.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering05.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering05.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering05.xuriella
 
-FAIL numbering_numbering06 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering06 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering06.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering06.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering06.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering06.xuriella
 
-FAIL numbering_numbering07 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering07 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering07.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering07.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering07.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering07.xuriella
 
-FAIL numbering_numbering08 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering08 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering08.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering08.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering08.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering08.xuriella
 
-FAIL numbering_numbering09 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering09 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering09.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering09.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering09.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering09.xuriella
 
-FAIL numbering_numbering10 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering10 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering10.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering10.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering10.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering10.xuriella
 
-FAIL numbering_numbering11 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering11 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering11.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering11.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering11.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering11.xuriella
 
-FAIL numbering_numbering12 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering12 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering12.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering12.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering12.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering12.xuriella
 
-FAIL numbering_numbering13 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering13 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering13.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering13.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering13.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering13.xuriella
 
-FAIL numbering_numbering14 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering14 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering14.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering14.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering14.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering14.xuriella
 
-FAIL numbering_numbering17 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering17 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering17.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering17.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering17.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering17.xuriella
 
-FAIL numbering_numbering18 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering18 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering18.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering18.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering18.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering18.xuriella
 
-FAIL numbering_numbering19 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering19 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering19.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering19.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering19.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering19.xuriella
 
-FAIL numbering_numbering20 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering20 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering20.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering20.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering20.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering20.xuriella
 
-FAIL numbering_numbering21 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering21 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering21.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering21.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering21.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering21.xuriella
 
-FAIL numbering_numbering22 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering22 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering22.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering22.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering22.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering22.xuriella
 
-FAIL numbering_numbering23 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering23 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering23.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering23.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering23.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering23.xuriella
 
-FAIL numbering_numbering24 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering24 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering24.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering24.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering24.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering24.xuriella
 
-FAIL numbering_numbering25 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering25 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering25.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering25.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering25.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering25.xuriella
 
-FAIL numbering_numbering26 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering26 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering26.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering26.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering26.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering26.xuriella
 
-FAIL numbering_numbering27 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering27 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering27.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering27.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering27.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering27.xuriella
 
-FAIL numbering_numbering28 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering28 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering28.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering28.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering28.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering28.xuriella
 
-FAIL numbering_numbering29 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering29 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering29.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering29.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering29.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering29.xuriella
 
-FAIL numbering_numbering30 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering30 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering30.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering30.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering30.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering30.xuriella
 
-FAIL numbering_numbering31 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering31 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering31.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering31.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering31.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering31.xuriella
 
-FAIL numbering_numbering32 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering32 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering32.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering32.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering32.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering32.xuriella
 
-FAIL numbering_numbering33 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering33 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering33.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering33.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering33.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering33.xuriella
 
-FAIL numbering_numbering34 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering34 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering34.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering34.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering34.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering34.xuriella
 
-FAIL numbering_numbering35 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering35 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering35.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering35.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering35.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering35.xuriella
 
-FAIL numbering_numbering36 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering36 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering36.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering36.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering36.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering36.xuriella
 
-FAIL numbering_numbering37 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering37 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering37.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering37.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering37.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering37.xuriella
 
-FAIL numbering_numbering38 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering38 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering38.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering38.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering38.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering38.xuriella
 
-FAIL numbering_numbering39 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering39 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering39.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering39.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering39.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering39.xuriella
 
-FAIL numbering_numbering40 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering40 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering40.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering40.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering40.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering40.xuriella
 
-FAIL numbering_numbering41 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering41 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering41.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering41.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering41.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering41.xuriella
 
-FAIL numbering_numbering42 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering42 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering42.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering42.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering42.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering42.xuriella
 
-FAIL numbering_numbering43 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering43 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering43.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering43.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering43.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering43.xuriella
 
-FAIL numbering_numbering44 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering44 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering44.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering44.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering44.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering44.xuriella
 
-FAIL numbering_numbering45 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering45 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering45.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering45.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering45.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering45.xuriella
 
-FAIL numbering_numbering46 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering46 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering46.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering46.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering46.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering46.xuriella
 
-FAIL numbering_numbering47 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering47 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering47.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering47.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering47.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering47.xuriella
 
-FAIL numbering_numbering48 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering48 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering48.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering48.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering48.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering48.xuriella
 
-FAIL numbering_numbering49 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering49 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering49.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering49.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering49.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering49.xuriella
 
-FAIL numbering_numbering50 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering50 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering50.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering50.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering50.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering50.xuriella
 
-FAIL numbering_numbering51 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering51 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering51.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering51.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering51.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering51.xuriella
 
-FAIL numbering_numbering52 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering52 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering52.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering52.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering52.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering52.xuriella
 
-FAIL numbering_numbering53 [XSLT-Result-Tree]: undefined instruction: number
+PASS numbering_numbering53 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering53.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering53.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering53.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering53.xuriella
 
-FAIL numbering_numbering54 [XSLT-Result-Tree]: undefined instruction: number
+PASS numbering_numbering54 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering54.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering54.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering54.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering54.xuriella
 
-FAIL numbering_numbering55 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering55 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering55.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering55.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering55.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering55.xuriella
 
-FAIL numbering_numbering56 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering56 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering56.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering56.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering56.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering56.xuriella
 
-FAIL numbering_numbering57 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering57 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering57.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering57.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering57.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering57.xuriella
 
-FAIL numbering_numbering58 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering58 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering58.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering58.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering58.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering58.xuriella
 
-FAIL numbering_numbering59 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering59 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering59.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering59.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering59.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering59.xuriella
 
-FAIL numbering_numbering60 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering60 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering60.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering60.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering60.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering60.xuriella
 
-FAIL numbering_numbering61 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering61 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering61.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering61.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering61.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering61.xuriella
 
-FAIL numbering_numbering62 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering62 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering62.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering62.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering62.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering62.xuriella
 
-FAIL numbering_numbering63 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering63 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering63.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering63.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering63.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering63.xuriella
 
-FAIL numbering_numbering64 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering64 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering64.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering64.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering64.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering64.xuriella
 
-FAIL numbering_numbering65 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering65 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering65.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering65.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering65.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering65.xuriella
 
-FAIL numbering_numbering66 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering66 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering66.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering66.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering66.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering66.xuriella
 
-FAIL numbering_numbering67 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering67 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering67.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering67.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering67.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering67.xuriella
 
-FAIL numbering_numbering68 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering68 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering68.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering68.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering68.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering68.xuriella
 
-FAIL numbering_numbering69 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering69 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering69.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering69.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering69.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering69.xuriella
 
-FAIL numbering_numbering70 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering70 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering70.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering70.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering70.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering70.xuriella
 
-FAIL numbering_numbering71 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering71 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering71.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering71.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering71.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering71.xuriella
 
-FAIL numbering_numbering72 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering72 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering72.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering72.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering72.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering72.xuriella
 
-FAIL numbering_numbering73 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering73 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering73.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering73.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering73.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering73.xuriella
 
-FAIL numbering_numbering74 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering74 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering74.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering74.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering74.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering74.xuriella
 
-FAIL numbering_numbering75 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering75 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering75.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering75.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering75.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering75.xuriella
 
-FAIL numbering_numbering76 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering76 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering76.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering76.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering76.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering76.xuriella
 
-FAIL numbering_numbering77 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering77 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering77.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering77.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering77.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering77.xuriella
 
-FAIL numbering_numbering78 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering78 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                               Wanted one of (:QNAME :NAMESPACE
+                                                              :PROCESSING-INSTRUCTION).
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering78.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering78.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering78.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering78.xuriella
 
-FAIL numbering_numbering79 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering79 [XSLT-Result-Tree]: The value :NAN
+                                               is not of type
+                                                 REAL.
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering79.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering79.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering79.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering79.xuriella
 
-FAIL numbering_numbering80 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering80 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering80.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering80.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering80.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering80.xuriella
 
-FAIL numbering_numbering81 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering81 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering81.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering81.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering81.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering81.xuriella
 
-FAIL numbering_numbering82 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering82 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering82.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering82.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering82.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering82.xuriella
 
-FAIL numbering_numbering83 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering83 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering83.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering83.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering83.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering83.xuriella
 
-FAIL numbering_numbering84 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering84 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering84.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering84.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering84.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering84.xuriella
 
-FAIL numbering_numbering85 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering85 [XSLT-Result-Tree]: The value 1 is not of type LIST.
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering85.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering85.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering85.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering85.xuriella
 
-FAIL numbering_numbering86 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering86 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering86.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering86.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering86.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering86.xuriella
 
-FAIL numbering_numbering87 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering87 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering87.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering87.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering87.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering87.xuriella
 
-FAIL numbering_numbering88 [XSLT-Result-Tree]: undefined instruction: number
+PASS numbering_numbering88 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering88.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering88.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering88.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering88.xuriella
 
-FAIL numbering_numbering89 [XSLT-Result-Tree]: undefined instruction: number
+PASS numbering_numbering89 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering89.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering89.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering89.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering89.xuriella
 
-FAIL numbering_numbering90 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering90 [XSLT-Result-Tree]: not a valid pattern: key('key_of_f','yes')
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering90.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering90.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering90.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering90.xuriella
 
-FAIL numbering_numbering91 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering91 [XSLT-Result-Tree]: not a valid pattern: id('b d g')
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering91.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering91.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering91.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering91.xuriella
 
-FAIL numbering_numbering92 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering92 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering92.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering92.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering92.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering92.xuriella
 
-FAIL numbering_numbering93 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering93 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering93.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering93.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering93.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering93.xuriella
 
-FAIL numbering_numbering94 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering94 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering94.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering94.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering94.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering94.xuriella
 
-FAIL numbering_numbering95 [XSLT-Result-Tree]: undefined instruction: number
+FAIL numbering_numbering95 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering95.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering95.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering95.saxon
@@ -11142,7 +11206,8 @@ FAIL AttributeSets__91099 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.xuriella
 
-PASS AttributeSets__91100 [XSLT-Result-Tree]: raised an xslt-error as expected
+FAIL AttributeSets__91100 [XSLT-Result-Tree]: condition of incorrect type: 
+oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91100.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/AttributeSets/91100a.xsl
@@ -11686,13 +11751,15 @@ FAIL BVTs_bvt058 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt058.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt058.xuriella
 
-FAIL BVTs_bvt060 [Mixed]: undefined instruction: number
+FAIL BVTs_bvt060 [Mixed]: The value 10000000000 is not of type LIST.
   Stylesheet: MSFT_Conformance_Tests/BVTs/num-toobig.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt060.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt060.xuriella
 
-FAIL BVTs_bvt061 [Mixed]: undefined instruction: number
+FAIL BVTs_bvt061 [Mixed]: :CHILD fell through ECASE expression.
+                          Wanted one of (:QNAME :NAMESPACE
+                                         :PROCESSING-INSTRUCTION).
   Stylesheet: MSFT_Conformance_Tests/BVTs/num.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt061.saxon
@@ -14924,7 +14991,7 @@ PASS Miscellaneous__84430 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84430.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84430.xuriella
 
-FAIL Miscellaneous__84435 [Mixed]: undefined instruction: number
+FAIL Miscellaneous__84435 [Mixed]: invalid template parameter (nmbr . )
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84435.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84435.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.saxon
@@ -15868,43 +15935,43 @@ PASS Number__84431 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84431.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84431.xuriella
 
-FAIL Number__84679 [XSLT-Result-Tree]: undefined instruction: number
+PASS Number__84679 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/84679.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84679.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84679.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84679.xuriella
 
-FAIL Number__84680 [XSLT-Result-Tree]: undefined instruction: number
+PASS Number__84680 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/84680.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84680.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84680.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84680.xuriella
 
-FAIL Number__84681 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84681 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84681.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84681.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84681.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84681.xuriella
 
-FAIL Number__84682 [XSLT-Result-Tree]: undefined instruction: number
+PASS Number__84682 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/84682.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84682.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84682.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84682.xuriella
 
-FAIL Number__84683 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84683 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84683.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84683.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84683.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84683.xuriella
 
-FAIL Number__84684 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84684 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84684.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84684.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84684.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84684.xuriella
 
-FAIL Number__84687 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84687 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84687.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84687.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84687.saxon
@@ -15916,31 +15983,31 @@ PASS Number__84688 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84688.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84688.xuriella
 
-FAIL Number__84692 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84692 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84692.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84692.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84692.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84692.xuriella
 
-FAIL Number__84694 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84694 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84694.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84694.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84694.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84694.xuriella
 
-FAIL Number__84698 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84698 [XSLT-Result-Tree]: The value 1 is not of type LIST.
   Stylesheet: MSFT_Conformance_Tests/Number/84698.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84698.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84698.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84698.xuriella
 
-FAIL Number__84699 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84699 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84699.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84699.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84699.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84699.xuriella
 
-FAIL Number__84700 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84700 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84700.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84700.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84700.saxon
@@ -15952,157 +16019,170 @@ PASS Number__84702 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84702.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84702.xuriella
 
-FAIL Number__84705 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84705 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84705.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84705.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84705.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84705.xuriella
 
-PASS Number__84706 [XSLT-Result-Tree]: raised an xslt-error as expected
+FAIL Number__84706 [XSLT-Result-Tree]: condition of incorrect type: 
+sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84706.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84706.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84706.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84706.xuriella
 
-FAIL Number__84714 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84714 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84714.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84714.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84714.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84714.xuriella
 
-FAIL Number__84715 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84715 [XSLT-Result-Tree]: not an NCName: ???????
   Stylesheet: MSFT_Conformance_Tests/Number/84715.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84715.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84715.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84715.xuriella
 
-FAIL Number__84716 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84716 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84716.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84716.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84716.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84716.xuriella
 
-FAIL Number__84717 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84717 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84717.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84717.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84717.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84717.xuriella
 
-FAIL Number__84719 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84719 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84719.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84719.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84719.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84719.xuriella
 
-FAIL Number__84720 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84720 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84720.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84720.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84720.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84720.xuriella
 
-FAIL Number__84722 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84722 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84722.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84722.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84722.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84722.xuriella
 
-FAIL Number__84723 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84723 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84723.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84723.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84723.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84723.xuriella
 
-FAIL Number__84724 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84724 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84724.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84724.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84724.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84724.xuriella
 
-FAIL Number__84725 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84725 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84725.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84725.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84725.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84725.xuriella
 
-FAIL Number__84726 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__84726 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/84726.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84726.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84726.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84726.xuriella
 
-FAIL Number__91021 [XSLT-Result-Tree]: undefined instruction: number
+PASS Number__91021 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/91021.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91021.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91021.xuriella
 
-FAIL Number__91022 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__91022 [XSLT-Result-Tree]: The value 1999 is not of type LIST.
   Stylesheet: MSFT_Conformance_Tests/Number/91022.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91022.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91022.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91022.xuriella
 
-FAIL Number__91026 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__91026 [XSLT-Result-Tree]: The value 99999 is not of type LIST.
   Stylesheet: MSFT_Conformance_Tests/Number/91026.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91026.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91026.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91026.xuriella
 
-FAIL Number__91027 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__91027 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                       Wanted one of (:QNAME :NAMESPACE
+                                                      :PROCESSING-INSTRUCTION).
   Stylesheet: MSFT_Conformance_Tests/Number/91027.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91027.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91027.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91027.xuriella
 
-FAIL Number__91028 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__91028 [XSLT-Result-Tree]: :CHILD fell through ECASE expression.
+                                       Wanted one of (:QNAME :NAMESPACE
+                                                      :PROCESSING-INSTRUCTION).
   Stylesheet: MSFT_Conformance_Tests/Number/91028.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91028.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91028.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91028.xuriella
 
-FAIL Number__91029 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__91029 [XSLT-Result-Tree]: :ROOT fell through ECASE expression.
+                                       Wanted one of (:QNAME :NAMESPACE
+                                                      :PROCESSING-INSTRUCTION).
   Stylesheet: MSFT_Conformance_Tests/Number/91029.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91029.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91029.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91029.xuriella
 
-FAIL Number__91030 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__91030 [XSLT-Result-Tree]: The value 2147483648 is not of type LIST.
   Stylesheet: MSFT_Conformance_Tests/Number/91030.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91030.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91030.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91030.xuriella
 
-FAIL Number__91031 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number__91031 [XSLT-Result-Tree]: The value -2147483649
+                                       is not of type
+                                         LIST.
   Stylesheet: MSFT_Conformance_Tests/Number/91031.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91031.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91031.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91031.xuriella
 
-FAIL Number_format01 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_format01 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_xsl_number_format_pattern_01.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_format01.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_format01.xuriella
 
-FAIL Number_NaNOrInvalidValue [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_NaNOrInvalidValue [XSLT-Result-Tree]: The value :NAN
+                                                  is not of type
+                                                    REAL.
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_xsl_number_invalid_value.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_NaNOrInvalidValue.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_NaNOrInvalidValue.xuriella
 
-FAIL Number_TestFormat1 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_TestFormat1 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_numbering_test1.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/xslt_numbering_test1.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_TestFormat1.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_TestFormat1.xuriella
 
-FAIL Number_TestFormatPattern_1 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_TestFormatPattern_1 [XSLT-Result-Tree]: The value 1
+                                                    is not of type
+                                                      LIST.
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_xsl_number_format_pattern_1.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/xslt_xsl_number_format_pattern01.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_TestFormatPattern_1.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_TestFormatPattern_1.xuriella
 
-FAIL Number_TestFormatPattern01 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_TestFormatPattern01 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_xsl_number_format_pattern01.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/xslt_xsl_number_format_pattern01.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_TestFormatPattern01.saxon
@@ -16117,19 +16197,23 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Number/Number_TestFormatPatternA.1.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_TestFormatPatternA.1.xuriella
 
-FAIL Number_ValueAsNodesetTest1 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_ValueAsNodesetTest1 [XSLT-Result-Tree]: The value :NAN
+                                                    is not of type
+                                                      REAL.
   Stylesheet: MSFT_Conformance_Tests/Number/ValueAsNodesetTest1.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/ValueAsNodesetTest1.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_ValueAsNodesetTest1.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_ValueAsNodesetTest1.xuriella
 
-FAIL Number_ValueAsNodesetTest2 [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_ValueAsNodesetTest2 [XSLT-Result-Tree]: sorry, format-number-list not implemented yet
   Stylesheet: MSFT_Conformance_Tests/Number/ValueAsNodesetTest2.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/ValueAsNodesetTest2.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_ValueAsNodesetTest2.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_ValueAsNodesetTest2.xuriella
 
-FAIL Number_ValueAsEmptyNodeset [XSLT-Result-Tree]: undefined instruction: number
+FAIL Number_ValueAsEmptyNodeset [XSLT-Result-Tree]: The value :NAN
+                                                    is not of type
+                                                      REAL.
   Stylesheet: MSFT_Conformance_Tests/Number/ValueAsEmptyNodeset.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/ValueAsNodesetTest1.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_ValueAsEmptyNodeset.saxon
@@ -17220,7 +17304,7 @@ FAIL Output_MediaTypeTest [XSLT-Output]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Output/Output_MediaTypeTest.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_MediaTypeTest.xuriella
 
-FAIL Output_MethodEqualsHtmlWithoutIndentSet [XSLT-Output]: undefined instruction: number
+FAIL Output_MethodEqualsHtmlWithoutIndentSet [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_OutputHtmlIndentNotSpecified.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_OutputHtmlIndentNotSpecified.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_MethodEqualsHtmlWithoutIndentSet.saxon
@@ -17245,7 +17329,7 @@ PASS Output_OutputHTMLWithForcedXmlDeclaration [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_OutputHTMLWithForcedXmlDeclaration.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_OutputHTMLWithForcedXmlDeclaration.xuriella
 
-FAIL Output_UseLiteralResultElementHead [XSLT-Output]: undefined instruction: number
+FAIL Output_UseLiteralResultElementHead [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_output_HtmlWithLiteralResultHeadElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_output_HtmlWithLiteralResultHeadElement.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_UseLiteralResultElementHead.saxon
@@ -19957,4 +20041,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2116/3089 tests.
+Passed 2124/3089 tests.

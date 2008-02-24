@@ -181,7 +181,7 @@
                          :percentp (find (df/percent df) picture)
 			 :per-mille-p (find (df/per-mille df) picture)
 			 :prefix (subseq picture 0 start)
-			 :suffix (subseq picture end)))) 
+			 :suffix (subseq picture end))))
 	  (setf (values start
 			(pic/integer-part-grouping-positions result)
 			(pic/minimum-integer-part-size result))

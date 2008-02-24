@@ -255,3 +255,17 @@
 
 (define-instruction-parser |terminate| (node)
   `(xsl:terminate ,@(parse-body node)))
+
+(define-instruction-parser |number| (node)
+  (stp:with-attributes (level count from value format lang letter-value
+			      grouping-separator grouping-size)
+      node
+    `(xsl:number :level ,level
+		 :count ,count
+		 :from ,from
+		 :value ,value
+		 :format ,format
+		 :lang ,lang
+		 :letter-value ,letter-value
+		 :grouping-separator ,grouping-separator
+		 :grouping-size ,grouping-size)))

@@ -29,7 +29,10 @@
 
 (in-package :xuriella)
 
-(declaim (optimize (debug 3) (safety 3) (space 0) (speed 0)))
+#+sbcl
+(declaim (optimize (debug 2)))
+
+
 ;;;; Instructions
 
 (defmacro define-instruction (name (args-var env-var) &body body)
@@ -96,10 +99,10 @@
       args
     (declare (ignore use-attribute-sets)) ;fixme
     (multiple-value-bind (name-thunk constant-name-p)
-	(compile-attribute-value-template name env)
+	(compile-avt name env)
       (multiple-value-bind (ns-thunk constant-ns-p)
 	  (if namespace
-	      (compile-attribute-value-template namespace env)
+	      (compile-avt namespace env)
 	      (values nil t))
 	(let ((body-thunk (compile-instruction `(progn ,@body) env)))
 	  (if (and constant-name-p constant-ns-p)
@@ -144,10 +147,10 @@
 (define-instruction xsl:attribute (args env)
   (destructuring-bind ((name &key namespace) &body body) args
     (multiple-value-bind (name-thunk constant-name-p)
-	(compile-attribute-value-template name env)
+	(compile-avt name env)
       (multiple-value-bind (ns-thunk constant-ns-p)
 	  (if namespace
-	      (compile-attribute-value-template namespace env)
+	      (compile-avt namespace env)
 	      (values nil t))
 	(let ((value-thunk (compile-instruction `(progn ,@body) env)))
 	  (if (and constant-name-p constant-ns-p)
@@ -215,7 +218,7 @@
 
 (define-instruction xsl:literal-attribute (args env)
   (destructuring-bind ((local-name &optional uri suggested-prefix) value) args
-    (let ((value-thunk (compile-attribute-value-template value env)))
+    (let ((value-thunk (compile-avt value env)))
       (lambda (ctx)
 	(write-attribute local-name
 			 uri
@@ -230,7 +233,7 @@
 
 (define-instruction xsl:processing-instruction (args env)
   (destructuring-bind (name &rest body) args
-    (let ((name-thunk (compile-attribute-value-template name env))
+    (let ((name-thunk (compile-avt name env))
 	  (value-thunk (compile-instruction `(progn ,@body) env)))
       (lambda (ctx)
 	(write-processing-instruction
@@ -669,7 +672,7 @@
 	     (emit))))
       (nreverse tokens))))
 
-(defun compile-attribute-value-template (template-string env)
+(defun compile-avt (template-string env)
   (let* ((constantp t)
 	 (fns
 	  (mapcar (lambda (x)

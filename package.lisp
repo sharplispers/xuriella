@@ -16,7 +16,7 @@
 	   #:copy
 	   #:value-of
 	   #:unescaped-value-of
-	   ;; #:number
+	   #:number
 	   #:for-each
 	   #:with-namespaces
 	   #:with-excluded-namespaces
