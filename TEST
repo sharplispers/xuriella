@@ -1,3 +1,19 @@
+; in:
+;      LAMBDA (#:G2439 #:G2440 #:G2441 #:G2442 #:G2443 #:G2444 #:G2445 #:G2446
+;          #:G2450 #:G2451)
+;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG0.
+; 
+; note: deleting unreachable code
+
+;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2439 #:G2440)
+; 
+; note: deleting unreachable code
+; 
+; compilation unit finished
+;   printed 2 notes
 PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml
@@ -1077,9 +1093,10 @@ PASS axes_axes119 [XSLT-Result-Tree-Testing]
   Actual output: Xalan_Conformance_Tests/axes/axes_axes119.xuriella
 
 FAIL axes_axes120 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
-                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
+                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE-USING-NAVIGATOR (5)>
                                               when called with arguments
-                                                (#S(CXML-STP-IMPL::STP-NAMESPACE
+                                                (:DEFAULT-NAVIGATOR
+                                                 #S(CXML-STP-IMPL::STP-NAMESPACE
                                                     :PARENT #.(CXML-STP:ELEMENT
                                                                #| :PARENT of type DOCUMENT |#
                                                                :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
@@ -7853,9 +7870,10 @@ PASS position_position101 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/position/position_position101.xuriella
 
 FAIL position_position111 [XSLT-Result-Tree]: There is no applicable method for the generic function
-                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
+                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE-USING-NAVIGATOR (5)>
                                               when called with arguments
-                                                (#S(CXML-STP-IMPL::STP-NAMESPACE
+                                                (:DEFAULT-NAVIGATOR
+                                                 #S(CXML-STP-IMPL::STP-NAMESPACE
                                                     :PARENT #.(CXML-STP-IMPL::DOCUMENT
                                                                :CHILDREN '(#.(CXML-STP:ELEMENT
                                                                               #| :PARENT of type DOCUMENT |#
@@ -15475,9 +15493,10 @@ PASS Namespace__84474 [XSLT-Structure]
 
 WARNING: There is no such encoding: "windows-1251".
 FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: There is no applicable method for the generic function
-                                                               #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE (4)>
+                                                               #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE-USING-NAVIGATOR (5)>
                                                              when called with arguments
-                                                               (#S(CXML-STP-IMPL::STP-NAMESPACE
+                                                               (:DEFAULT-NAVIGATOR
+                                                                #S(CXML-STP-IMPL::STP-NAMESPACE
                                                                    :PARENT #.(CXML-STP:ELEMENT
                                                                               #| :PARENT of type ELEMENT |#
                                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"

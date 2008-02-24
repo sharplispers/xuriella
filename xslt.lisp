@@ -713,7 +713,8 @@
 			      (or uri instruction-base-uri)))))))))
 
 (defun apply-stylesheet
-    (stylesheet source-document &key output parameters uri-resolver)
+    (stylesheet source-document
+     &key output parameters uri-resolver navigator)
   (when (typep stylesheet 'xml-designator)
     (setf stylesheet (parse-stylesheet stylesheet)))
   (when (typep source-document 'xml-designator)
@@ -721,7 +722,8 @@
   (invoke-with-output-sink
    (lambda ()
      (handler-case*
-	 (let* ((puri:*strict-parse* nil)
+	 (let* ((xpath:*navigator* (or navigator :default-navigator))
+		(puri:*strict-parse* nil)
 		(*stylesheet* stylesheet)
 		(*mode* (find-mode stylesheet nil))
 		(*empty-mode* (make-mode))

@@ -403,10 +403,12 @@
 	     (:constructor make-result-tree-fragment (node)))
   node)
 
-(defmethod xpath-protocol:node-p ((node result-tree-fragment))
+(define-default-method xpath-protocol:node-p
+    ((node result-tree-fragment))
   t)
 
-(defmethod xpath-protocol:string-value ((node result-tree-fragment))
+(define-default-method xpath-protocol:string-value
+    ((node result-tree-fragment))
   (xpath-protocol:string-value (result-tree-fragment-node node)))
 
 (defun apply-to-result-tree-fragment (ctx thunk)

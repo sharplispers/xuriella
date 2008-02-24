@@ -166,7 +166,7 @@
     result))
 
 (macrolet ((defproxy (name &rest args)
-	     `(defmethod ,name ((node stripping-node) ,@args)
+	     `(define-default-method ,name ((node stripping-node) ,@args)
 		(,name (stripping-node-target node) ,@args))))
   (defproxy xpath-protocol:local-name)
   (defproxy xpath-protocol:namespace-uri)
@@ -176,16 +176,16 @@
   (defproxy xpath-protocol:namespace-pipe)
   (defproxy xpath-protocol:node-type-p type))
 
-(defmethod xpath-protocol:node-p ((node stripping-node))
+(define-default-method xpath-protocol:node-p ((node stripping-node))
   t)
 
-(defmethod xpath-protocol:child-pipe ((node stripping-node))
+(define-default-method xpath-protocol:child-pipe ((node stripping-node))
   (stripping-node-children node))
 
-(defmethod xpath-protocol:parent-node ((node stripping-node))
+(define-default-method xpath-protocol:parent-node ((node stripping-node))
   (stripping-node-parent node))
 
-(defmethod xpath-protocol:string-value ((node stripping-node))
+(define-default-method xpath-protocol:string-value ((node stripping-node))
   (with-output-to-string (s)
     (write-string-value node s)))
 

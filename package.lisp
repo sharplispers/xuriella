@@ -33,6 +33,7 @@
   (:export #:parse-stylesheet
 	   #:apply-stylesheet
 	   #:make-parameter)
+  (:import-from :xpath-protocol #:define-default-method)
   (:documentation
    "Empty is an empty example.
 
