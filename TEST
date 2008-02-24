@@ -2244,8 +2244,6 @@ PASS copy_copy26 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy26.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy26.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy27.noindent-xsl" is a vector with 106 elements.
-Its element type is specialized to CHARACTER.
 FAIL copy_copy27 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/copy/copy27.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy27.xml
@@ -2994,8 +2992,6 @@ PASS impincl_impincl07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl07.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl07.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml" is a vector with 102 elements.
-Its element type is specialized to CHARACTER.
 FAIL impincl_impincl08 [XSLT-Result-Tree]: cannot parse referenced document /home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml":
                                                                                                                                                                               No such file or directory
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl08.noindent-xsl
@@ -4118,8 +4114,6 @@ FAIL math_math111 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/math/math_math111.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math111.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs01a.xml" is a vector with 100 elements.
-Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs01.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs01.xml
@@ -4176,34 +4170,24 @@ FAIL mdocs_mdocs08 [XSLT-Result-Tree]: invalid number of arguments: 0
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs08.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs08.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs09.noindent-xsl" is a vector with 108 elements.
-Its element type is specialized to CHARACTER.
 FAIL mdocs_mdocs09 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs09.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs09.xml
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs09.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs09.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocstest.xml" is a vector with 108 elements.
-Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocstest.xml" is a vector with 108 elements.
-Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs10.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs10.xml
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs10.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs10.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocs11a.xml" is a vector with 107 elements.
-Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs11.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs11.xml
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs11.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs11.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs12.noindent-xsl" is a vector with 108 elements.
-Its element type is specialized to CHARACTER.
 FAIL mdocs_mdocs12 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs12.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs12.xml
@@ -4211,8 +4195,6 @@ FAIL mdocs_mdocs12 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs12.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs12.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/ximpmdocs13.xsl" is a vector with 103 elements.
-Its element type is specialized to CHARACTER.
 FAIL mdocs_mdocs13 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs13.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs13.xml
@@ -4220,8 +4202,6 @@ FAIL mdocs_mdocs13 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs13.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs13.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/x14template.html" is a vector with 104 elements.
-Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs14 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs14.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs14.xml
@@ -4236,8 +4216,6 @@ FAIL mdocs_mdocs15 [XSLT-Result-Tree]: invalid number of arguments: 0
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs15.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs15.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/terms.xml" is a vector with 97 elements.
-Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs16.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs16.xml
@@ -4713,10 +4691,6 @@ FAIL namespace_namespace19 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace19.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace19.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl" is a vector with 116 elements.
-Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl" is a vector with 116 elements.
-Its element type is specialized to CHARACTER.
 PASS namespace_namespace20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace20.xml
@@ -8735,18 +8709,12 @@ PASS select_select66 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select66.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select66.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select67.noindent-xsl" is a vector with 110 elements.
-Its element type is specialized to CHARACTER.
 PASS select_select67 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select67.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select67.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select67.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select67.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.noindent-xsl" is a vector with 110 elements.
-Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.xml" is a vector with 101 elements.
-Its element type is specialized to CHARACTER.
 PASS select_select68 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select68.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select68.xml
@@ -8765,8 +8733,6 @@ FAIL select_select70 [XSLT-Result-Tree]: no such function: :CURRENT
   Expected output (1): Xalan_Conformance_Tests/select/select_select70.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select70.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select71.xml" is a vector with 101 elements.
-Its element type is specialized to CHARACTER.
 PASS select_select71 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select71.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select71.xml
@@ -10081,8 +10047,6 @@ PASS variable_variable23 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable23.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable23.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/variable/variable20.xml" is a vector with 105 elements.
-Its element type is specialized to CHARACTER.
 PASS variable_variable24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable24.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable24.xml
@@ -10529,8 +10493,6 @@ PASS whitespace_whitespace23 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/whitespace/whitespace_whitespace23.saxon
   Actual output: Xalan_Conformance_Tests/whitespace/whitespace_whitespace23.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/whitespace/docws35.xml" is a vector with 104 elements.
-Its element type is specialized to CHARACTER.
 PASS whitespace_whitespace35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/whitespace/whitespace35.noindent-xsl
   Data: Xalan_Conformance_Tests/whitespace/whitespace35.xml
@@ -15565,8 +15527,6 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl" is a vector with 135 elements.
-Its element type is specialized to CHARACTER.
 FAIL Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/foo.xml
@@ -18317,8 +18277,6 @@ error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conforma
   Expected output (1): MSFT_Conformance_Tests/Template/Template_CallTemplateWithDuplicateParameter.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_CallTemplateWithDuplicateParameter.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_template_DocumentFnTakesStringParam2.xml" is a vector with 135 elements.
-Its element type is specialized to CHARACTER.
 PASS Template_DocumentFNTakesStringParam [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_DocumentFnTakesStringParam.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_DocumentFnTakesStringParam.xml
@@ -18326,8 +18284,6 @@ PASS Template_DocumentFNTakesStringParam [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/Template/Template_DocumentFNTakesStringParam.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_DocumentFNTakesStringParam.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_template_MatchFirstInclude.xml" is a vector with 125 elements.
-Its element type is specialized to CHARACTER.
 PASS Template_MatchFirstElementBelowDocRootWithExpression [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_MatchFirstElmtBelowDocRoot.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_template_MatchFirstElmtBelowDocRoot.xml
@@ -19180,8 +19136,6 @@ PASS Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Variables/%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml" is a vector with 214 elements.
-Its element type is specialized to CHARACTER.
 PASS Variables_UseDocumentFnToReturnRootNode [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_DocumentFnReturnRootNode.noindent-xsl
   Data: MSFT_Conformance_Tests/Variables/xslt_variable_DocumentFnReturnRootNode.xml
@@ -19832,8 +19786,6 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_CurrentFunctionInVariable.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_CurrentFunctionInVariable.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/functions.xml" is a vector with 108 elements.
-Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_Document [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/Document.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
@@ -19851,8 +19803,6 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionAbsArgument.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionAbsArgument.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_document_fn.noindent-xsl" is a vector with 134 elements.
-Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_DocumentFunctionNoArg [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_document_fn.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
@@ -19872,8 +19822,6 @@ FAIL XSLTFunctions_DocumentFunctionWithEntityRef [Mixed]: invalid number of argu
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml" is a vector with 107 elements.
-Its element type is specialized to CHARACTER.
 FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: cannot parse referenced document /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml: error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml":
                                                                                                                                                                                                             No such file or directory
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_document_fn_with_nonexistent_filename.noindent-xsl
@@ -19881,8 +19829,6 @@ FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: cannot parse
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithNonExistingFilename.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithNonExistingFilename.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/functions.xml" is a vector with 108 elements.
-Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_DocumentInUnion [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/DocumentInUnion.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
@@ -19989,10 +19935,6 @@ FAIL XSLTFunctions_TestOfIdFunction [Mixed]: not a valid pattern: id('b')
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestOfIdFunction.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestOfIdFunction.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xsltcfg.xml" is a vector with 106 elements.
-Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/testcat.xml" is a vector with 106 elements.
-Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_Bug76054 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/document_function_context.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
@@ -20010,8 +19952,6 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76984.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76984.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/DocumentFuncWithEmptyArg.noindent-xsl" is a vector with 132 elements.
-Its element type is specialized to CHARACTER.
 FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/DocumentFuncWithEmptyArg.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml

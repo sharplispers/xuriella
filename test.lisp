@@ -573,7 +573,6 @@
 	(actual (test-output-pathname test "xuriella"))
 	(official (test-official-output-pathname test)))
     (labels ((uri-resolver (uri)
-	       (describe uri)
 	       (if (search "%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml"
 			   uri)
 		   (cxml::pathname-to-uri
