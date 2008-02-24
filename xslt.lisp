@@ -166,6 +166,13 @@
   (assert (not (eq newval 'unbound)))
   (setf (svref *global-variable-values* index) newval))
 
+(defmethod xpath:environment-find-function
+    ((env xslt-environment) lname uri)
+  (if (string= uri "")
+      (or (xpath:find-xpath-function lname *xsl*)
+	  (xpath:find-xpath-function lname uri))
+      (xpath:find-xpath-function lname uri)))
+
 (defmethod xpath:environment-find-variable
     ((env xslt-environment) lname uri)
   (let ((index
@@ -680,8 +687,10 @@
       (xslt-error "use of fragment identifiers in document() not supported"))
     xpath-root-node))
 
-(xpath::define-xpath-function/lazy
-    :document
+(xpath:define-extension xslt *xsl*)
+
+(xpath:define-xpath-function/lazy
+    xslt :document
     (object &optional node-set)
   (let ((instruction-base-uri *instruction-base-uri*))
     (lambda (ctx)
@@ -974,23 +983,6 @@
     (t
      (every #'valid-expression-p (cdr expr)))))
 
-#+nil
-(defun parse-pattern (str)
-  ;; zzz check here for anything not allowed as an XSLT pattern
-  ;; zzz can we hack id() and key() here?
-  (let ((form (xpath:parse-xpath str)))
-    (unless (consp form)
-      (xslt-error "not a valid pattern: ~A" str))
-    (mapcar (lambda (case)
-	      (unless (eq (car case) :path) ;zzz: filter statt path
-		(xslt-error "not a valid pattern: ~A" str))
-	      (unless (valid-expression-p case)
-		(xslt-error "invalid filter"))
-	      case)
-	    (if (eq (car form) 'xpath::union)
-		(cdr form)
-		(list form)))))
-
 (defun parse-pattern (str)
   ;; zzz check here for anything not allowed as an XSLT pattern
   ;; zzz can we hack id() and key() here?
@@ -998,7 +990,7 @@
     (unless (consp form)
       (xslt-error "not a valid pattern: ~A" str))
     (labels ((process-form (form)
-	       (cond ((eq (car form) 'xpath::union)
+	       (cond ((eq (car form) :union)
 		      (alexandria:mappend #'process-form (rest form)))
 		     ((not (eq (car form) :path)) ;zzz: filter statt path
 		      (xslt-error "not a valid pattern: ~A" str))

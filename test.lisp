@@ -745,8 +745,8 @@
        (equal (stp:system-id a) (stp:system-id b))
        (equal (stp:internal-subset a) (stp:internal-subset b))))
 
-(xpath::define-xpath-function/eager
-    :print
+(xpath:define-xpath-function/eager
+    xslt :print
     (thing)
   (if (xpath:node-set-p thing)
       (loop

@@ -1,6 +1,6 @@
 ; in:
-;      LAMBDA (#:G2394 #:G2395 #:G2396 #:G2397 #:G2398 #:G2399 #:G2400 #:G2401
-;          #:G2405 #:G2406)
+;      LAMBDA (#:G2228 #:G2229 #:G2230 #:G2231 #:G2232 #:G2233 #:G2234 #:G2235
+;          #:G2239 #:G2240)
 ;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
 ; --> SB-C::%INSTANCE-TYPEP 
 ; ==>
@@ -8,7 +8,7 @@
 ; 
 ; note: deleting unreachable code
 
-;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2394 #:G2395)
+;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2228 #:G2229)
 ; 
 ; note: deleting unreachable code
 ; 
@@ -1098,14 +1098,14 @@ FAIL axes_axes120 [XSLT-Result-Tree-Testing]: There is no applicable method for 
                                                 (#S(CXML-STP-IMPL::STP-NAMESPACE
                                                     :PARENT #.(CXML-STP:ELEMENT
                                                                #| :PARENT of type DOCUMENT |#
-                                                               :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
+                                                               :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
                                                                :CHILDREN '(#.(CXML-STP:TEXT
                                                                               #| :PARENT of type ELEMENT |#
                                                                               :DATA "
   ")
                                                                            #.(CXML-STP:ELEMENT
                                                                               #| :PARENT of type ELEMENT |#
-                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
+                                                                              :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
                                                                               :LOCAL-NAME "sub"
                                                                               :NAMESPACE-PREFIX "b"
                                                                               :NAMESPACE-URI "http://name-b")
@@ -1115,7 +1115,7 @@ FAIL axes_axes120 [XSLT-Result-Tree-Testing]: There is no applicable method for 
   ")
                                                                            #.(CXML-STP:ELEMENT
                                                                               #| :PARENT of type ELEMENT |#
-                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
+                                                                              :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
                                                                               :LOCAL-NAME "sub"
                                                                               :NAMESPACE-PREFIX "c"
                                                                               :NAMESPACE-URI "http://name-c")
@@ -2260,7 +2260,7 @@ PASS copy_copy26 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy26.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy26.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy27.noindent-xsl" is a vector with 106 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy27.noindent-xsl" is a vector with 94 elements.
 Its element type is specialized to CHARACTER.
 FAIL copy_copy27 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/copy/copy27.noindent-xsl
@@ -2409,14 +2409,14 @@ PASS copy_copy50 [XSLT-Result-Tree]: raised an xslt-error as expected
 FAIL copy_copy51 [XSLT-Result-Tree]: don't know how to copy node #S(CXML-STP-IMPL::STP-NAMESPACE
                                                                     :PARENT #.(ELEMENT
                                                                                #| :PARENT of type DOCUMENT |#
-                                                                               BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy51.xml
+                                                                               BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy51.xml
                                                                                CHILDREN '(#.(TEXT
                                                                                              #| :PARENT of type ELEMENT |#
                                                                                              DATA 
   )
                                                                                           #.(ELEMENT
                                                                                              #| :PARENT of type ELEMENT |#
-                                                                                             BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy51.xml
+                                                                                             BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy51.xml
                                                                                              LOCAL-NAME sub
                                                                                              NAMESPACE-PREFIX b
                                                                                              NAMESPACE-URI http://name-b)
@@ -2426,7 +2426,7 @@ FAIL copy_copy51 [XSLT-Result-Tree]: don't know how to copy node #S(CXML-STP-IMP
   )
                                                                                           #.(ELEMENT
                                                                                              #| :PARENT of type ELEMENT |#
-                                                                                             BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy51.xml
+                                                                                             BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/copy/copy51.xml
                                                                                              LOCAL-NAME sub
                                                                                              NAMESPACE-PREFIX c
                                                                                              NAMESPACE-URI http://name-c)
@@ -3010,10 +3010,10 @@ PASS impincl_impincl07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl07.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl07.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml" is a vector with 102 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml" is a vector with 90 elements.
 Its element type is specialized to CHARACTER.
-FAIL impincl_impincl08 [XSLT-Result-Tree]: cannot parse referenced document /home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml":
-                                                                                                                                                                              No such file or directory
+FAIL impincl_impincl08 [XSLT-Result-Tree]: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml":
+                                                                                                                                                                  ??? ?????? ????? ??? ????????
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl08.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl08.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/../impincl-test/impincl08.xsl
@@ -3141,7 +3141,7 @@ PASS impincl_impincl26 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl26.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl26.xuriella
 
-PASS impincl_impincl27 [XSLT-Result-Tree]: raised an xslt-error as expected
+FAIL impincl_impincl27 [XSLT-Result-Tree]: cannot find imported stylesheet file:fragmentsimp27b.xsl at fragmentsimp27b.xsl
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl27.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl27.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/imp27c.xsl
@@ -3595,13 +3595,13 @@ PASS math_math18 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/math/math_math18.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math18.xuriella
 
-FAIL math_math19 [XSLT-Result-Tree]: Invalid number: "trud" [Reason: Exponent-marker at end of number]
+FAIL math_math19 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/math/math19.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math19.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math19.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math19.xuriella
 
-FAIL math_math20 [XSLT-Result-Tree]: Invalid number: "falsd" [Reason: Exponent-marker at beginning of number]
+FAIL math_math20 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/math/math20.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math20.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math20.saxon
@@ -4051,7 +4051,7 @@ PASS math_math94 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/math/math_math94.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math94.xuriella
 
-FAIL math_math95 [XSLT-Result-Tree]: Invalid number: "fivd" [Reason: Exponent-marker at beginning of number]
+PASS math_math95 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/math/math95.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math95.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math95.saxon
@@ -4110,7 +4110,7 @@ PASS math_math103 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/math/math_math103.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math103.xuriella
 
-FAIL math_math104 [XSLT-Result-Tree]: Invalid number: "fivd" [Reason: Exponent-marker at beginning of number]
+FAIL math_math104 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/math/math104.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math104.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math104.saxon
@@ -4134,7 +4134,7 @@ FAIL math_math111 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/math/math_math111.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math111.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs01a.xml" is a vector with 100 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs01a.xml" is a vector with 88 elements.
 Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs01.noindent-xsl
@@ -4192,7 +4192,7 @@ FAIL mdocs_mdocs08 [XSLT-Result-Tree]: invalid number of arguments: 0
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs08.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs08.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs09.noindent-xsl" is a vector with 108 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs09.noindent-xsl" is a vector with 96 elements.
 Its element type is specialized to CHARACTER.
 FAIL mdocs_mdocs09 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs09.noindent-xsl
@@ -4200,9 +4200,9 @@ FAIL mdocs_mdocs09 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs09.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs09.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocstest.xml" is a vector with 108 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocstest.xml" is a vector with 96 elements.
 Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocstest.xml" is a vector with 108 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocstest.xml" is a vector with 96 elements.
 Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs10.noindent-xsl
@@ -4210,7 +4210,7 @@ PASS mdocs_mdocs10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs10.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs10.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocs11a.xml" is a vector with 107 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl-test/mdocs11a.xml" is a vector with 95 elements.
 Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs11.noindent-xsl
@@ -4218,7 +4218,7 @@ PASS mdocs_mdocs11 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs11.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs11.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs12.noindent-xsl" is a vector with 108 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/mdocs12.noindent-xsl" is a vector with 96 elements.
 Its element type is specialized to CHARACTER.
 FAIL mdocs_mdocs12 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs12.noindent-xsl
@@ -4227,7 +4227,7 @@ FAIL mdocs_mdocs12 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs12.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs12.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/ximpmdocs13.xsl" is a vector with 103 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/ximpmdocs13.xsl" is a vector with 91 elements.
 Its element type is specialized to CHARACTER.
 FAIL mdocs_mdocs13 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs13.noindent-xsl
@@ -4236,7 +4236,7 @@ FAIL mdocs_mdocs13 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs13.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs13.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/x14template.html" is a vector with 104 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/x14template.html" is a vector with 92 elements.
 Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs14 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs14.noindent-xsl
@@ -4252,7 +4252,7 @@ FAIL mdocs_mdocs15 [XSLT-Result-Tree]: invalid number of arguments: 0
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs15.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs15.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/terms.xml" is a vector with 97 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/mdocs/terms.xml" is a vector with 85 elements.
 Its element type is specialized to CHARACTER.
 PASS mdocs_mdocs16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs16.noindent-xsl
@@ -4729,9 +4729,9 @@ FAIL namespace_namespace19 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace19.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace19.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl" is a vector with 116 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl" is a vector with 104 elements.
 Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl" is a vector with 116 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl" is a vector with 104 elements.
 Its element type is specialized to CHARACTER.
 PASS namespace_namespace20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl
@@ -5638,7 +5638,7 @@ FAIL numberformat_numberformat14 [XSLT-Result-Tree]: Argument X is not a REAL:
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat14.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat14.xuriella
 
-FAIL numberformat_numberformat15 [XSLT-Result-Tree]: Invalid number: "foo" [Reason: Exponent-marker at beginning of number]
+FAIL numberformat_numberformat15 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat15.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat15.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat15.saxon
@@ -5738,7 +5738,7 @@ FAIL numberformat_numberformat30 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat30.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat30.xuriella
 
-PASS numberformat_numberformat31 [XSLT-Result-Tree]
+FAIL numberformat_numberformat31 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat31.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat31.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat31.saxon
@@ -5776,7 +5776,7 @@ FAIL numberformat_numberformat37 [XSLT-Result-Tree]: Argument X is not a REAL:
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat37.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat37.xuriella
 
-FAIL numberformat_numberformat38 [XSLT-Result-Tree]: Invalid number: "foo" [Reason: Exponent-marker at beginning of number]
+PASS numberformat_numberformat38 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat38.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat38.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat38.saxon
@@ -6577,10 +6577,8 @@ PASS output_output21 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/output/output_output21.xuriella
 
 WARNING:
-   comparison failed: Corrupted UTF-8 input (initial byte was #b10100111)
-WARNING:
    comparison failed: Corrupted UTF-8 input (initial byte was #b10010110)
-FAIL output_output22 [XSLT-Result-Tree]: output doesn't match
+PASS output_output22 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output22.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output22.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output22.saxon
@@ -7915,7 +7913,7 @@ FAIL position_position111 [XSLT-Result-Tree]: There is no applicable method for 
                                                                                                :NAMESPACE-URI "http://example.org/bar"))
                                                                               :EXTRA-NAMESPACES '(("foo"
                                                                                                    "http://example.org/foo"))
-                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/position/position111.xml"
+                                                                              :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/position/position111.xml"
                                                                               :LOCAL-NAME "Doc")))
                                                     :PREFIX "xml"
                                                     :URI "http://www.w3.org/XML/1998/namespace")).
@@ -8751,7 +8749,7 @@ PASS select_select66 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select66.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select66.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select67.noindent-xsl" is a vector with 110 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/select/select67.noindent-xsl" is a vector with 98 elements.
 Its element type is specialized to CHARACTER.
 PASS select_select67 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select67.noindent-xsl
@@ -8759,9 +8757,9 @@ PASS select_select67 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select67.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select67.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.noindent-xsl" is a vector with 110 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.noindent-xsl" is a vector with 98 elements.
 Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.xml" is a vector with 101 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/select/select68.xml" is a vector with 89 elements.
 Its element type is specialized to CHARACTER.
 PASS select_select68 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select68.noindent-xsl
@@ -8781,7 +8779,7 @@ FAIL select_select70 [XSLT-Result-Tree]: no such function: :CURRENT
   Expected output (1): Xalan_Conformance_Tests/select/select_select70.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select70.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/select/select71.xml" is a vector with 101 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/select/select71.xml" is a vector with 89 elements.
 Its element type is specialized to CHARACTER.
 PASS select_select71 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select71.noindent-xsl
@@ -8889,7 +8887,7 @@ FAIL select_select86 [XSLT-Result-Tree]: no such function: :CURRENT
   Expected output (1): Xalan_Conformance_Tests/select/select_select86.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select86.xuriella
 
-FAIL sort_sort01 [XSLT-Result-Tree]: Invalid number: "Hdllo" [Reason: Multiple exponent-markers in number]
+FAIL sort_sort01 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
   Stylesheet: Xalan_Conformance_Tests/sort/sort01.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort01.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort01.saxon
@@ -8937,7 +8935,7 @@ PASS sort_sort08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort08.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort08.xuriella
 
-FAIL sort_sort09 [XSLT-Result-Tree]: Invalid number: "Hdllo" [Reason: Multiple exponent-markers in number]
+FAIL sort_sort09 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
   Stylesheet: Xalan_Conformance_Tests/sort/sort09.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort09.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort09.saxon
@@ -8961,7 +8959,7 @@ PASS sort_sort12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort12.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort12.xuriella
 
-FAIL sort_sort13 [XSLT-Result-Tree]: Invalid number: "First" [Reason: Exponent-marker at beginning of number]
+FAIL sort_sort13 [XSLT-Result-Tree]: Argument Y is not a NUMBER: :NAN
   Stylesheet: Xalan_Conformance_Tests/sort/sort13.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort13.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort13.saxon
@@ -9099,7 +9097,7 @@ FAIL sort_sort32 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort32.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort32.xuriella
 
-FAIL sort_sort33 [XSLT-Result-Tree]: Invalid number: "bogus" [Reason: Exponent-marker at end of number]
+FAIL sort_sort33 [XSLT-Result-Tree]: Argument Y is not a NUMBER: :NAN
   Stylesheet: Xalan_Conformance_Tests/sort/sort33.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort33.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort33.saxon
@@ -9123,7 +9121,7 @@ FAIL sort_sort35 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort35.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort35.xuriella
 
-FAIL sort_sort36 [XSLT-Result-Tree]: Invalid number: "trud" [Reason: Exponent-marker at end of number]
+FAIL sort_sort36 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort36.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort36.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort36.saxon
@@ -9141,7 +9139,7 @@ FAIL sort_sort37 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort37.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort37.xuriella
 
-FAIL sort_sort38 [XSLT-Result-Tree]: Invalid number: "First" [Reason: Exponent-marker at beginning of number]
+FAIL sort_sort38 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
   Stylesheet: Xalan_Conformance_Tests/sort/sort38.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort38.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort38.saxon
@@ -9153,7 +9151,7 @@ PASS sort_sort39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort39.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort39.xuriella
 
-FAIL sort_sort40 [XSLT-Result-Tree]: Invalid number: "Hdllo" [Reason: Multiple exponent-markers in number]
+FAIL sort_sort40 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
   Stylesheet: Xalan_Conformance_Tests/sort/sort40.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort40.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort40.saxon
@@ -10097,7 +10095,7 @@ PASS variable_variable23 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable23.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable23.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/variable/variable20.xml" is a vector with 105 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/variable/variable20.xml" is a vector with 93 elements.
 Its element type is specialized to CHARACTER.
 PASS variable_variable24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable24.noindent-xsl
@@ -10545,7 +10543,7 @@ PASS whitespace_whitespace23 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/whitespace/whitespace_whitespace23.saxon
   Actual output: Xalan_Conformance_Tests/whitespace/whitespace_whitespace23.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/Xalan_Conformance_Tests/whitespace/docws35.xml" is a vector with 104 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/whitespace/docws35.xml" is a vector with 92 elements.
 Its element type is specialized to CHARACTER.
 PASS whitespace_whitespace35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/whitespace/whitespace35.noindent-xsl
@@ -10654,7 +10652,7 @@ FAIL Attributes__78386 [XSLT-Result-Tree]: not a stylesheet
 FAIL Attributes__78387 [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Processing instruction target "xml:namespace" is not a valid NcName.
 Context:
-  Line 6, column 52 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/domtest1.xml
+  Line 6, column 52 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/domtest1.xml
 
   Stylesheet: MSFT_Conformance_Tests/Attributes/78387.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/domtest1.xml
@@ -10927,162 +10925,7 @@ PASS Attributes__89459 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89459.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__89459.xuriella
 
-FAIL Attributes__89460 [XSLT-Result-Tree]: condition of incorrect type: 
-Invalid number: "Waynd Stddld
-Jund 24, 1998
-List of Flora
-
-???
-Nativd
-
-Acorus amdricanus (Raf.)
-swddtflag
-
-
-Alisma gramindum Ldj.
-narrowldaf watdr plantain
-
-
-Alisma plantago-aquatica L.
-Amdrican watdrplantain
-
-
-Rhus glabra L.
-smooth sumac
-
-
-Toxicoddndron divdrsilobum
-Pacific poison oak
-
-
-Toxicoddndron rydbdrgii
-wdstdrn poison ivy
-
-
-Alisma triviald Pursh
-northdrn watdr plantain
-
-
-Balddllia ranunculoidds
-ldssdr watdrplantain
-
-
-Machadrocarpus californicus
-California damsonium
-
-
-Sagittaria latifolia Willd.
-broadldaf arrowhdad
-
-
-Sagittaria subulata
-awlldaf arrowhdad
-
-
-Acdr glabrum Torr.
-Rocky Mountain mapld
-
-
-Acdr glabrum var. douglasii
-Douglas mapld
-
-
-Acdr grandiddntatum Nutt.
-bigtooth mapld
-
-
-Acdr macrophyllum Pursh
-bigldaf mapld
-
-
-Acdr ndgundo L.
-boxdlddr
-
-
-Pacific Madrond
-Arbutus mdnzidsii
-madrond.jpg
-
-
-Ordgon Grapd
-Bdrbdris (Mahonia), var.
-ograpd.jpg
-
-Bldchnum spicantdddr fdrn
-
-Yarrow
-Achillda milldfolium L
-
-
-Vind Mapld
-Acdr circinatum Pursh
-vmapld.jpg
-
-
-Salal
-salal.jpg
-Gaulthdria shallon Pursh
-
-
-Taxus brdvifolia Nutt.
-Pacific Ydw
-pydw.jpg
-
-
-Artdmisia, Var.
-Sagdbrush
-
-Vitis vinifdra L.domdstic grapd
-Zannichdllia palustris L.horndd pondwddd
-Phyllospadix scouldriScouldr's surfgrass
-Phyllospadix sdrrulatustoothdd surfgrass
-Phyllospadix torrdyiTorrdy's surfgrass
-Zostdra japonicadwarf ddlgrass
-Zostdra marina L.sdawrack
-Pdganum harmala L.Syrian rud
-Tribulus tdrrdstris L.puncturdvind
-Zygophyllum fabago L.Syrian bdancapdr
-
-???
-
-???
-Exotic or Introducdd
-
-Picda pungdns Engdlm
-Colorado Blud Sprucd
-
-
-Gldditsia triacanthos L.
-Hondy Locust
-
-
-Galium aparind L.
-Cldavdrs; Strangldwddd
-
-???
-
-???
-Fungi
-
-
-Ddath Cap Mushroom
-Amanita phalloidds
-
-
-Ydllow Mordl
-Morchdlla dsculdnta
-
-
-Black Mordl
-Morchdlla dlata
-
-
-Half-frdd Mordl
-Morchdlla sdmilibdra
-
-
-Wrinkldd Thimbld Cap; Early Mordl
-Vdrpa bohdmica" [Reason: Multiple exponent-markers in number]
+PASS Attributes__89460 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-7-repeat_for.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__89460.saxon
@@ -11121,7 +10964,7 @@ PASS Attributes__89466 [XSLT-Result-Tree]
 FAIL Attributes_Attribute_AttributeWithEmptyName [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/xslt_attribute_EmptyAttribute.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/xslt_attribute_EmptyAttribute.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_attribute_EmptyAttribute.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/xslt_attribute_Prefixes.xml
@@ -11137,7 +10980,7 @@ FAIL Attributes_Attribute_DoeWithTextAndValueOf [XSLT-Result-Tree]: saxon error 
 FAIL Attributes_Attribute_EmptyNameAttributeWithNS [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/xslt_attribute_EmptyAttributeNS.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/xslt_attribute_EmptyAttributeNS.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_attribute_EmptyAttributeNS.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/xslt_attribute_Prefixes.xml
@@ -11159,7 +11002,7 @@ PASS Attributes_Attribute_LiteralResultAttributeIsAmpersand [XSLT-Result-Tree]
 FAIL Attributes_Attribute_UseXmlnsAsNamespaceForAttributeImplicitly [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: The namespace URI "http://www.w3.org/2000/xmlns/" may not be bound to prefix "foo" (or any other).
 Context:
-  Line 9, column 74 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/xslt_attribute_XmlnsExplicitAsAttributeNs.noindent-xsl
+  Line 9, column 74 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Attributes/xslt_attribute_XmlnsExplicitAsAttributeNs.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_attribute_XmlnsExplicitAsAttributeNs.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/xslt_attribute_XmlnsExplicitAsAttributeNs.xml
@@ -11663,11 +11506,10 @@ Operation was SB-KERNEL::DIVISION, operands (1 0).
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt015.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt015.xuriella
 
-FAIL BVTs_bvt017 [Mixed]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
-when called with arguments
-  (#<CLOSURE-HTML::SINK {xxxxxxxx}> "
+FAIL BVTs_bvt017 [Mixed]: There is no applicable method for the generic function
+                            #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
+                          when called with arguments
+                            (#<CLOSURE-HTML::SINK {xxxxxxxx}> "
 <
 ? This is ? a test. ?
 ? This is ? a test. ?
@@ -11678,16 +11520,26 @@ when called with arguments
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt017.xuriella
 
 WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\C80.
+Context:
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/BVTs_bvt018.xuriella
+
+WARNING:
    comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
-FAIL BVTs_bvt018 [Mixed]: saxon error not signalled and official output not a match
+FAIL BVTs_bvt018 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding01.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt018.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt018.xuriella
 
 WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\C80.
+Context:
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/BVTs_bvt019.saxon
+
+WARNING:
    comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
-FAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a match
+FAIL BVTs_bvt019 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding02.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt019.saxon
@@ -11742,7 +11594,7 @@ There is no applicable method for the generic function
   #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
 when called with arguments
   (NIL
-   "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/fwdcompat.noindent-xsl").
+   "file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/fwdcompat.noindent-xsl").
   Stylesheet: MSFT_Conformance_Tests/BVTs/fwdcompat.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/fwdcompat.inc
@@ -12032,12 +11884,12 @@ PASS BVTs_bvt083 [Mixed]: raised an xslt-error as expected
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\U000186A0.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/BVTs_bvt085.xuriella
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/BVTs_bvt085.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\U000186A0.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/BVTs_bvt085.xuriella
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/BVTs/BVTs_bvt085.xuriella
 
 FAIL BVTs_bvt085 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/surrogate.noindent-xsl
@@ -12111,7 +11963,7 @@ PASS BVTs_bvt094 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt094.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt094.xuriella
 
-FAIL BVTs_bvt095 [Mixed]: Invalid number: "trud" [Reason: Exponent-marker at end of number]
+FAIL BVTs_bvt095 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/var-simple.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt095.saxon
@@ -12156,12 +12008,12 @@ PASS Comment_Comment_CDATAWithDoubleHyphenEntities [XSLT-Result-Tree]
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
 
 FAIL Comment_Comment_CDATAWithSingleHyphen [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_CdataHyphenEntityMix.noindent-xsl
@@ -12190,12 +12042,12 @@ PASS Comment_Comment_CommentWithOnlyValidText [XSLT-Result-Tree]
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 11 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
+  Line 1, column 11 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 11 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
+  Line 1, column 11 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
 
 FAIL Comment_Comment_DoubleHypenEntitywithDelCharacter [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleEntityHyphen.noindent-xsl
@@ -12206,12 +12058,12 @@ FAIL Comment_Comment_DoubleHypenEntitywithDelCharacter [XSLT-Result-Tree]: outpu
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 13 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
+  Line 1, column 13 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 13 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
+  Line 1, column 13 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
 
 FAIL Comment_Comment_DoubleHypenInText [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleHyphen.noindent-xsl
@@ -12222,12 +12074,12 @@ FAIL Comment_Comment_DoubleHypenInText [XSLT-Result-Tree]: output doesn't match
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
 
 FAIL Comment_Comment_DoubleHyphenONLY [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleHyphenOnly.noindent-xsl
@@ -12244,12 +12096,12 @@ PASS Comment_Comment_EmptyComment [XSLT-Result-Tree]
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
+  Line 1, column 12 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
+  Line 1, column 12 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
 
 FAIL Comment_Comment_HyphenEntityAndHyphen [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleHyphenEntity.noindent-xsl
@@ -12260,12 +12112,12 @@ FAIL Comment_Comment_HyphenEntityAndHyphen [XSLT-Result-Tree]: output doesn't ma
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
 
 FAIL Comment_Comment_LineOfAllHyphens [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_LineOfHyphens.noindent-xsl
@@ -12276,12 +12128,12 @@ FAIL Comment_Comment_LineOfAllHyphens [XSLT-Result-Tree]: output doesn't match
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: '--' not allowed in a comment
 Location:
-  Line 1, column 8 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
+  Line 1, column 8 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
 
 FAIL Comment_Comment_SingleHyphenOnly [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_SingleHyphen.noindent-xsl
@@ -12309,7 +12161,7 @@ PASS Comment_Comment_Test3 [XSLT-Result-Tree]
 
 FAIL Comment_DisableOutputEscaping_XslTextInXslComment [XSLT-Result-Tree]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Comment/xslt_comment_DoeTextInComment.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Comment/xslt_comment_DoeTextInComment.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoeTextInComment.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_DoeTextInComment.xml
@@ -12446,8 +12298,8 @@ FAIL ConflictResolution__77802 [XSLT-Template]: output doesn't match
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77802.xuriella
 
 FAIL ConflictResolution__77833 [XSLT-Template]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/ConflictResolution/xslt08103.noindent-xsl":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/ConflictResolution/xslt08103.noindent-xsl":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08103.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/plants01.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77833.saxon
@@ -12845,8 +12697,8 @@ PASS Elements__89113 [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89113.xuriella
 
 FAIL Elements__89171 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Elements/Plants.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Elements/Plants.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-b-repeat.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89171.saxon
@@ -12859,16 +12711,16 @@ FAIL Elements__89172 [XSLT-Result-Tree]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89172.xuriella
 
 FAIL Elements__89175 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Elements/Plants.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Elements/Plants.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-b-copy.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89175.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89175.xuriella
 
 FAIL Elements__89177 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Elements/Plants.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Elements/Plants.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-b-attribute.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89177.saxon
@@ -13051,7 +12903,7 @@ PASS Elements_Element_ElementWithEmptyElementTag [XSLT-Result-Tree]
 FAIL Elements_Element_ElementWithNoNameSpecified [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Elements/xslt_element_EmptyElement.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Elements/xslt_element_EmptyElement.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Elements/xslt_element_EmptyElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/xslt_element_Prefixes.xml
@@ -13061,7 +12913,7 @@ Context:
 FAIL Elements_Element_ElementWithNoNameSpecifiedButValidNS [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Elements/xslt_element_EmptyElementWithNS.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Elements/xslt_element_EmptyElementWithNS.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Elements/xslt_element_EmptyElementWithNS.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/xslt_element_Prefixes.xml
@@ -13071,7 +12923,7 @@ Context:
 FAIL Elements_Element_ElementWithNSFromNameFn [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml
 
   Stylesheet: MSFT_Conformance_Tests/Elements/xslt_element_NoElementNS.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml
@@ -13357,7 +13209,7 @@ There is no applicable method for the generic function
   #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
 when called with arguments
   (NIL
-   "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Errors/inc-nohref.noindent-xsl").
+   "file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Errors/inc-nohref.noindent-xsl").
   Stylesheet: MSFT_Conformance_Tests/Errors/inc-nohref.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err054.saxon
@@ -13366,7 +13218,7 @@ when called with arguments
 FAIL Errors_err055 [Mixed]: condition of incorrect type: 
 Document not well-formed: element expected
 Context:
-  Line 1, column 5 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Errors/inc/parse-error.inc
+  Line 1, column 5 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Errors/inc/parse-error.inc
 
   Stylesheet: MSFT_Conformance_Tests/Errors/inc-parserr.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
@@ -13755,17 +13607,11 @@ FAIL FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]: Argument X is no
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatInfinityTest.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatInfinityTest.xuriella
 
-FAIL FormatNumber_DecimalFormatNaNTest [XSLT-Result-Tree]: Invalid number: "foo" [Reason: Exponent-marker at beginning of number]
+FAIL FormatNumber_DecimalFormatNaNTest [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_no_decimal_format_NaN_test.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatNaNTest.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatNaNTest.xuriella
-
-FAIL FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep [XSLT-Result-Tree]: expected error not signalled: 
-  Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_no_same_char_as_decimal_and_grp_sep.noindent-xsl
-  Data: MSFT_Conformance_Tests/FormatNumber/books.xml
-  Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep.saxon
-  Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep.xuriella
 
 FAIL FormatNumber_DecimalFormatZeroDigit [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_decimal_format_zero_digit.noindent-xsl
@@ -14093,7 +13939,7 @@ Document not well-formed: Bad nesting. "xsl:stylesheet" / (:EOF)
 FAIL Import__91147 [XSLT-Structure]: condition of incorrect type: 
 Document not well-formed: element expected
 Context:
-  Line 1, column 5 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Import/91147.txt
+  Line 1, column 5 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Import/91147.txt
 
   Stylesheet: MSFT_Conformance_Tests/Import/91147.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
@@ -14126,7 +13972,7 @@ There is no applicable method for the generic function
   #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
 when called with arguments
   (NIL
-   "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Import/91152.noindent-xsl").
+   "file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Import/91152.noindent-xsl").
   Stylesheet: MSFT_Conformance_Tests/Import/91152.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91152.saxon
@@ -14272,7 +14118,7 @@ There is no applicable method for the generic function
   #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
 when called with arguments
   (NIL
-   "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Include/XSLT03006.noindent-xsl").
+   "file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Include/XSLT03006.noindent-xsl").
   Stylesheet: MSFT_Conformance_Tests/Include/XSLT03006.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
   Expected output (1): MSFT_Conformance_Tests/Include/Include__77506.saxon
@@ -14305,7 +14151,7 @@ PASS Include__77511 [XSLT-Structure]: raised an xslt-error as expected
 FAIL Include__77512 [XSLT-Structure]: condition of incorrect type: 
 Document not well-formed: syntax error in read-tag-2.
 Context:
-  Line 7, column 1 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Include/xslt03011a.xsl
+  Line 7, column 1 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Include/xslt03011a.xsl
 
   Stylesheet: MSFT_Conformance_Tests/Include/XSLT03011.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
@@ -14330,7 +14176,7 @@ PASS Include__77514 [XSLT-Structure]: raised an xslt-error as expected
 WARNING: There is no such encoding: "shift_jis".
 FAIL Include__77515 [XSLT-Structure]: Document not well-formed: Corrupted UTF-8 input (initial byte was #b10000010)
 Location:
-  Line 1, column 44 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Include/XSLT03022a.xsl
+  Line 1, column 44 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Include/XSLT03022a.xsl
 
   Stylesheet: MSFT_Conformance_Tests/Include/XSLT03022.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
@@ -14339,8 +14185,8 @@ Location:
   Actual output: MSFT_Conformance_Tests/Include/Include__77515.xuriella
 
 FAIL Include__77736 [XSLT-Structure]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Include/xslt03022.noindent-xsl":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Include/xslt03022.noindent-xsl":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Include/xslt03022.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
   Expected output (1): MSFT_Conformance_Tests/Include/Include__77736.saxon
@@ -14442,7 +14288,7 @@ PASS Include_Include_ParentImplicitlyExcludesChildNamespace [XSLT-Structure]
 FAIL Include_Include_ParentNSVisibleToIncludedDoc [XSLT-Structure]: condition of incorrect type: 
 Document not well-formed: Undeclared namespace prefix: foo
 Context:
-  Line 7, column 12 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext2.xsl
+  Line 7, column 12 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext2.xsl
 
   Stylesheet: MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext.xml
@@ -14937,7 +14783,7 @@ PASS Miscellaneous__83996 [Mixed]
 FAIL Miscellaneous__84001 [Mixed]: condition of incorrect type: 
 Document not well-formed: element expected
 Context:
-  Line 3, column 22 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Miscellaneous/bug46988.xml
+  Line 3, column 22 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Miscellaneous/bug46988.xml
 
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/bug46988.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/bug46988.xml
@@ -15466,8 +15312,8 @@ FAIL Namespace__77658 [XSLT-Structure]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77658.xuriella
 
 FAIL Namespace__77659 [XSLT-Structure]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Plants.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Plants.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Namespace/comment10.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77659.saxon
@@ -15615,7 +15461,7 @@ FAIL Namespace__77984 [XSLT-Structure]: expected error not signalled:
 FAIL Namespace__78028 [XSLT-Structure]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XSLT01004.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XSLT01004.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01004.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/output.xml
@@ -15689,7 +15535,7 @@ FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: There is no applica
                                                                (#S(CXML-STP-IMPL::STP-NAMESPACE
                                                                    :PARENT #.(CXML-STP:ELEMENT
                                                                               #| :PARENT of type ELEMENT |#
-                                                                              :BASE-URI "file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
+                                                                              :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
                                                                               :LOCAL-NAME "foo")
                                                                    :PREFIX ""
                                                                    :URI "")).
@@ -15701,7 +15547,7 @@ FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: There is no applica
 FAIL Namespace_Bug85356 [XSLT-Structure]: don't know how to copy node #S(CXML-STP-IMPL::STP-NAMESPACE
                                                                          :PARENT #.(ELEMENT
                                                                                     #| :PARENT of type DOCUMENT |#
-                                                                                    BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Bug85356.xml
+                                                                                    BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Bug85356.xml
                                                                                     CHILDREN '(#.(TEXT
                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                   DATA 
@@ -15710,7 +15556,7 @@ FAIL Namespace_Bug85356 [XSLT-Structure]: don't know how to copy node #S(CXML-ST
                                                                                                   #| :PARENT of type ELEMENT |#
                                                                                                   EXTRA-NAMESPACES '((foo
                                                                                                                       http://foo.com))
-                                                                                                  BASE-URI file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Bug85356.xml
+                                                                                                  BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Bug85356.xml
                                                                                                   LOCAL-NAME elem
                                                                                                   NAMESPACE-URI default)
                                                                                                #.(TEXT
@@ -15729,14 +15575,14 @@ FAIL Namespace_Bug85356 [XSLT-Structure]: don't know how to copy node #S(CXML-ST
 FAIL Namespace_XPath_Conflict_XPath_XSLT [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_1.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_1.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_1.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl" is a vector with 135 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl" is a vector with 123 elements.
 Its element type is specialized to CHARACTER.
 FAIL Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
@@ -15747,7 +15593,7 @@ FAIL Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]: output doesn'
 FAIL Namespace_XPath_DefaultNamespace [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_4.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_4.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_4.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
@@ -15757,7 +15603,7 @@ Context:
 FAIL Namespace_XPath_NavigatorMethods [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_3.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_3.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_3.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
@@ -15767,7 +15613,7 @@ Context:
 FAIL Namespace_XPath_PredefinedPrefix_XML [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_6.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_6.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_6.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
@@ -15777,7 +15623,7 @@ Context:
 FAIL Namespace_XPath_PredefinedPrefix_XMLNS [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_7.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_7.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_7.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
@@ -15787,7 +15633,7 @@ Context:
 FAIL Namespace_XPath_SameQuery_DiffNamespace [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_8.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_8.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_8.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
@@ -15797,7 +15643,7 @@ Context:
 FAIL Namespace_XPath_ScopingRules [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_5.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_5.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_5.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
@@ -15807,7 +15653,7 @@ Context:
 FAIL Namespace_XPath_UndeclaredPrefix [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_2.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_2.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_2.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
@@ -16007,7 +15853,7 @@ FAIL Namespace-alias__91801 [XSLT-Structure]: output doesn't match
 
 FAIL Namespace-alias_Namespace-Alias_NSAliasForDefaultWithExcludeResPref [XSLT-Structure]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Namespace-alias/NSaliasWithDefaultResultPrefix.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace-alias/NSaliasWithDefaultResultPrefix.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/NSaliasWithDefaultResultPrefix.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/NSaliasWithDefaultResultPrefix.xml
@@ -16063,7 +15909,7 @@ FAIL Number__10053 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10053.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__10053.xuriella
 
-FAIL Number__84431 [XSLT-Result-Tree]: Invalid number: "sd12" [Reason: Exponent-marker at beginning of number]
+PASS Number__84431 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/84431.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84431.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84431.saxon
@@ -16311,7 +16157,7 @@ FAIL Number_TestFormatPattern01 [XSLT-Result-Tree]: undefined instruction: numbe
 
 FAIL Number_TestFormatPatternA.1 [XSLT-Result-Tree]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Number/xslt_numbering_formatA1.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Number/xslt_numbering_formatA1.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_numbering_formatA1.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/xslt_numbering_formatA1.xml
@@ -16507,7 +16353,7 @@ WARNING: There is no such encoding: "iso-2022-jp".
 FAIL Output__78222 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29224.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16515,10 +16361,9 @@ Context:
   Actual output: MSFT_Conformance_Tests/Output/Output__78222.xuriella
 
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78223 [XSLT-Output]: condition of incorrect type: 
-Document not well-formed: Expected '!' or '?' after '<' in DTD.
+FAIL Output__78223 [XSLT-Output]: Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29200.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16528,7 +16373,7 @@ Context:
 FAIL Output__78224 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/XSLT29206.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/XSLT29206.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29206.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16539,7 +16384,7 @@ WARNING: There is no such encoding: "iso-2022-jp".
 FAIL Output__78225 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29207.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16550,7 +16395,7 @@ WARNING: There is no such encoding: "iso-2022-jp".
 FAIL Output__78226 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29205.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16561,15 +16406,14 @@ WARNING: There is no such encoding: "iso-2022-jp".
 FAIL Output__78227 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29219.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78227.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78227.xuriella
 
-FAIL Output__78229 [XSLT-Output]: condition of incorrect type: 
-oops, merging of output elements not supported yet
+FAIL Output__78229 [XSLT-Output]: oops, merging of output elements not supported yet
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29226.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78229.saxon
@@ -16600,24 +16444,24 @@ FAIL Output__84010 [XSLT-Output]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Output/Output__84010.xuriella
 
 FAIL Output__84011 [XSLT-Output]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Output/84011.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84011.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84011.xuriella
 
 FAIL Output__84012 [XSLT-Output]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Output/84012.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84012.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84012.xuriella
 
 FAIL Output__84013 [XSLT-Output]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/OutputText.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Output/84013.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84013.saxon
@@ -16643,34 +16487,33 @@ FAIL Output__84015 [XSLT-Output]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Output/Output__84015.xuriella
 
 FAIL Output__84016 [XSLT-Output]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Output/84016.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84016.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84016.xuriella
 
 FAIL Output__84017 [XSLT-Output]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Output/84017.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84017.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84017.xuriella
 
 FAIL Output__84018 [XSLT-Output]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/outputtext.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Output/84018.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84018.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84018.xuriella
 
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__84019 [XSLT-Output]: condition of incorrect type: 
-Document not well-formed: Expected '!' or '?' after '<' in DTD.
+FAIL Output__84019 [XSLT-Output]: Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84019.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16681,7 +16524,7 @@ WARNING: There is no such encoding: "iso-2022-jp".
 FAIL Output__84020 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84020.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16692,7 +16535,7 @@ WARNING: There is no such encoding: "iso-2022-jp".
 FAIL Output__84021 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84021.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -16700,10 +16543,9 @@ Context:
   Actual output: MSFT_Conformance_Tests/Output/Output__84021.xuriella
 
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__84022 [XSLT-Output]: condition of incorrect type: 
-Document not well-formed: Expected '!' or '?' after '<' in DTD.
+FAIL Output__84022 [XSLT-Output]: Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
-  Line 3, column 16 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+  Line 3, column 16 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/iso-2022-jp.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84022.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -17162,7 +17004,7 @@ FAIL Output__84434 [XSLT-Output]: output doesn't match
 
 FAIL Output__84452 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84452.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84452.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84452.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84452.xml
@@ -17171,7 +17013,7 @@ Context:
 
 FAIL Output__84453 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84453.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84453.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84453.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84453.xml
@@ -17180,7 +17022,7 @@ Context:
 
 FAIL Output__84454 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84454.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84454.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84454.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84454.xml
@@ -17189,7 +17031,7 @@ Context:
 
 FAIL Output__84455 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84455.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84455.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84455.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84455.xml
@@ -17198,7 +17040,7 @@ Context:
 
 FAIL Output__84456 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84456.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84456.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84456.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84456.xml
@@ -17207,7 +17049,7 @@ Context:
 
 FAIL Output__84457 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84457.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84457.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84457.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84457.xml
@@ -17216,7 +17058,7 @@ Context:
 
 FAIL Output__84458 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84458.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84458.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84458.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84458.xml
@@ -17225,7 +17067,7 @@ Context:
 
 FAIL Output__84459 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84459.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84459.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84459.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84459.xml
@@ -17234,7 +17076,7 @@ Context:
 
 FAIL Output__84460 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84460.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84460.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84460.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84460.xml
@@ -17243,7 +17085,7 @@ Context:
 
 FAIL Output__84461 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84461.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84461.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84461.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84461.xml
@@ -17252,7 +17094,7 @@ Context:
 
 FAIL Output__84462 [XSLT-Output]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Output/84462.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Output/84462.xml
 
   Stylesheet: MSFT_Conformance_Tests/Output/84462.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84462.xml
@@ -17374,7 +17216,7 @@ PASS Output_DoctypeSystemAttribute [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_DoctypeSystemAttribute.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_DoctypeSystemAttribute.xuriella
 
-FAIL Output_EmptyElement1 [XSLT-Output]: saxon error not signalled and official output not a match
+PASS Output_EmptyElement1 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_out_html_empty_tag.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt_out_html_empty_tag.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_EmptyElement1.saxon
@@ -17536,8 +17378,8 @@ Context:
   Line 5, column 4 in NIL
 
 WARNING:
-   comparison failed: error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/ProcessingInstruction/xslt_invalid_pi_name.txt":
-                        No such file or directory
+   comparison failed: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/ProcessingInstruction/xslt_invalid_pi_name.txt":
+                        Нет такого файла или каталога
 FAIL ProcessingInstruction_InvalidPIName2 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/xslt_invalid_pi_name2.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
@@ -17706,7 +17548,7 @@ PASS Sorting__77557 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77557.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77557.xuriella
 
-FAIL Sorting__77559 [XSLT-Data-Manipulation]: Invalid number: "six" [Reason: Exponent-marker at beginning of number]
+FAIL Sorting__77559 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT19014.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sort4.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77559.saxon
@@ -17799,8 +17641,8 @@ PASS Sorting__77985 [XSLT-Data-Manipulation]
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77985.xuriella
 
 FAIL Sorting__77986 [XSLT-Data-Manipulation]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt18109.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt18109.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt18117.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt18109.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77986.saxon
@@ -17809,14 +17651,14 @@ error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conforma
 FAIL Sorting__78191 [XSLT-Data-Manipulation]: condition of incorrect type: 
 Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS9", only "xml" is legal.
 Context:
-  Line 7, column 97 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt19012.noindent-xsl
+  Line 7, column 97 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt19012.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt19012.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortNodeType.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78191.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__78191.xuriella
 
-FAIL Sorting__78286 [XSLT-Data-Manipulation]: Invalid number: "ond" [Reason: Exponent-marker at end of number]
+FAIL Sorting__78286 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT18123.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/XSLT18123.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78286.saxon
@@ -17828,7 +17670,7 @@ PASS Sorting__78288 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78288.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__78288.xuriella
 
-FAIL Sorting__78291 [XSLT-Data-Manipulation]: Invalid number: "ond" [Reason: Exponent-marker at end of number]
+FAIL Sorting__78291 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT18105.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/XSLT18123.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78291.saxon
@@ -18023,7 +17865,7 @@ PASS Sorting__84479 [XSLT-Data-Manipulation]
 FAIL Sorting__89290 [XSLT-Data-Manipulation]: condition of incorrect type: 
 Document not well-formed: Bad nesting. "xsl:sort" / (:ETAG "for-each")
 Context:
-  Line 10, column 13 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/2_5_16_repeat.noindent-xsl
+  Line 10, column 13 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/2_5_16_repeat.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/2_5_16_repeat.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/plants.xml
@@ -18138,13 +17980,13 @@ FAIL Sorting__91703 [XSLT-Data-Manipulation]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91703.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91703.xuriella
 
-FAIL Sorting__91704 [XSLT-Data-Manipulation]: Invalid number: "L?E" [Reason: Exponent-marker at beginning of number]
+FAIL Sorting__91704 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
   Stylesheet: MSFT_Conformance_Tests/Sorting/91704.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91704.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91704.xuriella
 
-FAIL Sorting__91705 [XSLT-Data-Manipulation]: Invalid number: "L?E" [Reason: Exponent-marker at beginning of number]
+FAIL Sorting__91705 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
   Stylesheet: MSFT_Conformance_Tests/Sorting/91705.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91705.saxon
@@ -18170,7 +18012,7 @@ FAIL Sorting__91753 [XSLT-Data-Manipulation]: output doesn't match
 
 FAIL Sorting_Sort_AllTextElementsAreSame [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_TextElementsAllSame.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_TextElementsAllSame.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_TextElementsAllSame.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_TextElementsAllSame.xml
@@ -18179,7 +18021,7 @@ Context:
 
 FAIL Sorting_Sort_CommaDelimitedNumber [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.xml
@@ -18188,7 +18030,7 @@ Context:
 
 FAIL Sorting_Sort_LongTextWithTrailingNumbers [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_LongTextWithNumbers.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_LongTextWithNumbers.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_LongTextWithNumbers.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_LongTextWithNumbers.xml
@@ -18197,7 +18039,7 @@ Context:
 
 FAIL Sorting_Sort_MixedCaseWithUpperSet [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_MixedCaseUpperFirst.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_MixedCaseUpperFirst.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_MixedCaseUpperFirst.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_MixedCaseUpperFirst.xml
@@ -18206,7 +18048,7 @@ Context:
 
 FAIL Sorting_Sort_NumbersWithLanguageNotEnglish [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortNumbersWithDifferentLang.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortNumbersWithDifferentLang.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortNumbersWithDifferentLang.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortNumbersWithDifferentLang.xml
@@ -18215,7 +18057,7 @@ Context:
 
 FAIL Sorting_Sort_PositiveNumbersHavePlusSign [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithPositiveSignChar.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithPositiveSignChar.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithPositiveSignChar.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithPositiveSignChar.xml
@@ -18224,7 +18066,7 @@ Context:
 
 FAIL Sorting_Sort_SortEmptyTextNodesWithDataTypeNumber [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.xml
@@ -18233,7 +18075,7 @@ Context:
 
 FAIL Sorting_Sort_SortOnDecimalPointWithoutPrefixedZero [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_DecimalPointsWithoutPrefixZeroMix.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_DecimalPointsWithoutPrefixZeroMix.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_DecimalPointsWithoutPrefixZeroMix.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_DecimalPointsWithoutPrefixZeroMix.xml
@@ -18242,7 +18084,7 @@ Context:
 
 FAIL Sorting_Sort_SortOnNumbersWithAttributeCaseOrder [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_DataTypeNumberWithCaseOrders.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_DataTypeNumberWithCaseOrders.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_DataTypeNumberWithCaseOrders.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_DataTypeNumberWithCaseOrders.xml
@@ -18251,7 +18093,7 @@ Context:
 
 FAIL Sorting_Sort_SortSameNumbers [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortSameNumbers.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortSameNumbers.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortSameNumbers.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortSameNumbers.xml
@@ -18260,7 +18102,7 @@ Context:
 
 FAIL Sorting_Sort_SortTextWithNonTextCharacters [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithNonAlphaChars.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithNonAlphaChars.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithNonAlphaChars.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithNonAlphaChars.xml
@@ -18269,7 +18111,7 @@ Context:
 
 FAIL Sorting_Sort_SortWithUpperCharactersInMiddleOfTextLowerCaseFirst [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_TextWithUpperInMiddle.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_TextWithUpperInMiddle.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_TextWithUpperInMiddle.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_TextWithUpperInMiddle.xml
@@ -18278,7 +18120,7 @@ Context:
 
 FAIL Sorting_Sort_SortWithUpperCharactersInMiddleOfTextUpperCaseFirst [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_UpperFirstWithUpperCaseInMiddle.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_UpperFirstWithUpperCaseInMiddle.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_UpperFirstWithUpperCaseInMiddle.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_UpperFirstWithUpperCaseInMiddle.xml
@@ -18287,7 +18129,7 @@ Context:
 
 FAIL Sorting_Sort_TextNodesSpanMultipleLines [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.xml
@@ -18296,7 +18138,7 @@ Context:
 
 FAIL Sorting_Sort_UpperFirstOnTextWithUpper [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortUpperFirstBase.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_SortUpperFirstBase.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortUpperFirstBase.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortUpperFirstBase.xml
@@ -18305,7 +18147,7 @@ Context:
 
 FAIL Sorting_Sort_ZeroAndNegativeZero [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroAndNegativeZero.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroAndNegativeZero.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroAndNegativeZero.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroAndNegativeZero.xml
@@ -18314,7 +18156,7 @@ Context:
 
 FAIL Sorting_Sort_ZeroPrefixedNegativeNumbers [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroPrefixedNegNumbers.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroPrefixedNegNumbers.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroPrefixedNegNumbers.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_ZeroPrefixedNegNumbers.xml
@@ -18360,7 +18202,7 @@ FAIL Sorting_SortExprWithCurrentInApplyTemplates [XSLT-Data-Manipulation]: no su
 
 FAIL Sorting_TurkishISortingTest [XSLT-Data-Manipulation]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/turkish.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Sorting/turkish.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Sorting/turkish.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/turkish.xml
@@ -18449,7 +18291,7 @@ FAIL Stylesheet_InvalidStylesheetMustThrowException [XSLT-Structure]: expected e
 
 FAIL Stylesheet_Stylsheet_ExcludeResultPrefixesOnStylesheet [XSLT-Structure]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_ValidExcludeNSPrefix.xml
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_ValidExcludeNSPrefix.xml
 
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_ValidExcludeNSPrefix.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_ValidExcludeNSPrefix.xml
@@ -18459,7 +18301,7 @@ Context:
 FAIL Stylesheet_UseStylesheetWithXmlnsEqualToXmlnsUri [XSLT-Structure]: condition of incorrect type: 
 Document not well-formed: The namespace URI "http://www.w3.org/2000/xmlns/" may not be bound to prefix "foo" (or any other).
 Context:
-  Line 6, column 3 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_XmlnsNsOnStylesheet.noindent-xsl
+  Line 6, column 3 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_XmlnsNsOnStylesheet.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_XmlnsNsOnStylesheet.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_XmlnsNsOnStylesheet.xml
@@ -18473,22 +18315,22 @@ PASS Template__84581 [XSLT-Template]
   Actual output: MSFT_Conformance_Tests/Template/Template__84581.xuriella
 
 FAIL Template_ApplyTemplateWithDuplicateParameter [XSLT-Template]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Template/IDontExist.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Template/IDontExist.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_duplicate_param.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/IDontExist.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_ApplyTemplateWithDuplicateParameter.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_ApplyTemplateWithDuplicateParameter.xuriella
 
 FAIL Template_CallTemplateWithDuplicateParameter [XSLT-Template]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Template/IDontExist.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Template/IDontExist.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_call_template_duplicate_param.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/IDontExist.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_CallTemplateWithDuplicateParameter.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_CallTemplateWithDuplicateParameter.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_template_DocumentFnTakesStringParam2.xml" is a vector with 135 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_template_DocumentFnTakesStringParam2.xml" is a vector with 123 elements.
 Its element type is specialized to CHARACTER.
 PASS Template_DocumentFNTakesStringParam [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_DocumentFnTakesStringParam.noindent-xsl
@@ -18497,7 +18339,7 @@ PASS Template_DocumentFNTakesStringParam [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/Template/Template_DocumentFNTakesStringParam.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_DocumentFNTakesStringParam.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_template_MatchFirstInclude.xml" is a vector with 125 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_template_MatchFirstInclude.xml" is a vector with 113 elements.
 Its element type is specialized to CHARACTER.
 PASS Template_MatchFirstElementBelowDocRootWithExpression [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_template_MatchFirstElmtBelowDocRoot.noindent-xsl
@@ -18560,10 +18402,9 @@ PASS Template_TestForMatchPattern [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/Template/Template_TestForMatchPattern.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_TestForMatchPattern.xuriella
 
-FAIL Template_TestParamValueAfterCallTemplate [XSLT-Template]: condition of incorrect type: 
-Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
+FAIL Template_TestParamValueAfterCallTemplate [XSLT-Template]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_test_param_value_before_and_after_call_template.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Template/xslt_test_param_value_before_and_after_call_template.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_test_param_value_before_and_after_call_template.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/xslt_test_param_value_before_and_after_call_template.xml
@@ -18609,7 +18450,7 @@ PASS Text__78244 [XSLT-Result-Tree]
 FAIL Text__78245 [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS1", only "xml" is legal.
 Context:
-  Line 6, column 93 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT04002.noindent-xsl
+  Line 6, column 93 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT04002.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04002.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
@@ -18634,7 +18475,7 @@ PASS Text__78249 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78249.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78249.xuriella
 
-FAIL Text__78272 [XSLT-Result-Tree]: output doesn't match
+PASS Text__78272 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04100.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78272.saxon
@@ -18643,7 +18484,7 @@ FAIL Text__78272 [XSLT-Result-Tree]: output doesn't match
 FAIL Text__78273 [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS3", only "xml" is legal.
 Context:
-  Line 4, column 98 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT04104.noindent-xsl
+  Line 4, column 98 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT04104.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04104.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
@@ -18695,7 +18536,7 @@ PASS Text__78280 [XSLT-Result-Tree]
 FAIL Text__78281 [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS5", only "xml" is legal.
 Context:
-  Line 4, column 112 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT04115.noindent-xsl
+  Line 4, column 112 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT04115.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04115.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
@@ -18705,12 +18546,12 @@ Context:
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text__78307.saxon
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text__78307.saxon
 
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/Text/78307.txt
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/Text/78307.txt
 
 FAIL Text__78307 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05006.noindent-xsl
@@ -18721,12 +18562,12 @@ FAIL Text__78307 [XSLT-Result-Tree]: output doesn't match
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text__78308.saxon
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text__78308.saxon
 
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/Text/78308.txt
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/Text/78308.txt
 
 FAIL Text__78308 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05000.noindent-xsl
@@ -18735,8 +18576,8 @@ FAIL Text__78308 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Text/Text__78308.xuriella
 
 FAIL Text__78309 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT05001.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/XSLT05001.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05001.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/XSLT05001.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78309.saxon
@@ -18767,12 +18608,12 @@ FAIL Text__78312 [XSLT-Result-Tree]: expected error not signalled:
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text__78313.saxon
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text__78313.saxon
 
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/Text/78313.txt
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/REF_OUT/Text/78313.txt
 
 FAIL Text__78313 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05005.noindent-xsl
@@ -18792,15 +18633,15 @@ PASS Text__83979 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text__83979.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__83979.xuriella
 
-FAIL Text__91137 [XSLT-Result-Tree]: output doesn't match
+PASS Text__91137 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/91137.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/91137.xsl
   Expected output (1): MSFT_Conformance_Tests/Text/Text__91137.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__91137.xuriella
 
 FAIL Text__78282 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/text.xml":
-  No such file or directory
+error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/text.xml":
+  ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04116.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/text.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78282.saxon
@@ -18833,12 +18674,12 @@ PASS Text_modified78309 [XSLT-Result-Tree]
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
 
 WARNING:
    comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
 
 FAIL Text_Modified78311 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Text/DoeWithQuotesAroundText.noindent-xsl
@@ -18882,7 +18723,7 @@ PASS Text_Text_ConvCdataLitResultTextOnly [XSLT-Result-Tree]
 FAIL Value-of_DisableOutputEscaping_XslValueOfInXslComment [XSLT-Result-Tree]: condition of incorrect type: 
 Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Valueof/xslt_valueof_DoeValueOfInComment.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Valueof/xslt_valueof_DoeValueOfInComment.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/Valueof/xslt_valueof_DoeValueOfInComment.noindent-xsl
   Data: MSFT_Conformance_Tests/Valueof/xslt_valueof_DoeValueOfInComment.xml
@@ -19351,7 +19192,7 @@ PASS Variables_SelectAttributeAndWhitespaceBetweenElement [XPath-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables_SelectAttributeAndWhitespaceBetweenElement.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/Variables/%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml" is a vector with 214 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Variables/%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml" is a vector with 202 elements.
 Its element type is specialized to CHARACTER.
 PASS Variables_UseDocumentFnToReturnRootNode [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_DocumentFnReturnRootNode.noindent-xsl
@@ -19834,8 +19675,7 @@ FAIL XSLTFunctions__crahedOnEmptyVariable [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.xuriella
 
-FAIL XSLTFunctions__defaultPattern [Mixed]: condition of incorrect type: 
-Too large to be represented as a SINGLE-FLOAT:
+FAIL XSLTFunctions__defaultPattern [Mixed]: Too large to be represented as a SINGLE-FLOAT:
   9999999999999999999999999999999999999999999999999999999999999999999999
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -19861,8 +19701,7 @@ FAIL XSLTFunctions__emptyParameters [Mixed]: no digit-sign or zero-digit sign fo
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.xuriella
 
-FAIL XSLTFunctions__EuropeanPattern [Mixed]: condition of incorrect type: 
-Too large to be represented as a SINGLE-FLOAT:
+FAIL XSLTFunctions__EuropeanPattern [Mixed]: Too large to be represented as a SINGLE-FLOAT:
   9999999999999999999999999999999999999999999999999999999999999999999999
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-eu.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -19899,8 +19738,7 @@ FAIL XSLTFunctions__minimumValue [Mixed]: invalid XPath syntax: arithmetic error
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.xuriella
 
-FAIL XSLTFunctions__Non_DigitPattern [Mixed]: condition of incorrect type: 
-arithmetic error DIVISION-BY-ZERO signalled
+FAIL XSLTFunctions__Non_DigitPattern [Mixed]: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (3 0).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-nd.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -19913,8 +19751,7 @@ FAIL XSLTFunctions__Pattern-separator [Mixed]: Argument X is not a REAL: :INF
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.xuriella
 
-FAIL XSLTFunctions__percentPattern [Mixed]: condition of incorrect type: 
-Argument X is not a REAL: :INF
+FAIL XSLTFunctions__percentPattern [Mixed]: Argument X is not a REAL: :INF
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pe.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__percentPattern.saxon
@@ -19933,7 +19770,8 @@ FAIL XSLTFunctions__sameDecimalFormatsWithImport [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.xuriella
 
-FAIL XSLTFunctions__specialCharInPattern [Mixed]: no digit-sign or zero-digit sign found
+FAIL XSLTFunctions__specialCharInPattern [Mixed]: condition of incorrect type: 
+no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/specialCharInPattern.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__specialCharInPattern.saxon
@@ -19950,6 +19788,13 @@ FAIL XSLTFunctions__testWithNumber [Mixed]: output doesn't match
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__testWithNumber.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__testWithNumber.xuriella
+
+FAIL XSLTFunctions__threeSubpatterns [Mixed]: condition of incorrect type: 
+invalid pattern separators
+  Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/threeSubpatterns.noindent-xsl
+  Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
+  Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__threeSubpatterns.saxon
+  Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__threeSubpatterns.xuriella
 
 PASS XSLTFunctions__without1stParameter [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/without1stPara.noindent-xsl
@@ -19993,17 +19838,16 @@ FAIL XSLTFunctions_BooleanFunction [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_BooleanFunction.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_BooleanFunction.xuriella
 
-FAIL XSLTFunctions_CurrentFunctionInVariable [Mixed]: condition of incorrect type: 
-Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
+FAIL XSLTFunctions_CurrentFunctionInVariable [Mixed]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_CurrentFunctionInVariable.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_CurrentFunctionInVariable.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/functions.xml" is a vector with 108 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/functions.xml" is a vector with 96 elements.
 Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_Document [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/Document.noindent-xsl
@@ -20012,17 +19856,16 @@ PASS XSLTFunctions_Document [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Document.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Document.xuriella
 
-FAIL XSLTFunctions_DocumentFunctionAbsArgument [Mixed]: condition of incorrect type: 
-Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
+FAIL XSLTFunctions_DocumentFunctionAbsArgument [Mixed]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_current_in_variable.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionAbsArgument.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionAbsArgument.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_document_fn.noindent-xsl" is a vector with 134 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_document_fn.noindent-xsl" is a vector with 122 elements.
 Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_DocumentFunctionNoArg [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_document_fn.noindent-xsl
@@ -20043,16 +19886,16 @@ FAIL XSLTFunctions_DocumentFunctionWithEntityRef [Mixed]: invalid number of argu
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml" is a vector with 107 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml" is a vector with 95 elements.
 Its element type is specialized to CHARACTER.
-FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: cannot parse referenced document /home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml: error opening #P"/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml":
-                                                                                                                                                                                                            No such file or directory
+FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml":
+                                                                                                                                                                                                ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_document_fn_with_nonexistent_filename.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithNonExistingFilename.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithNonExistingFilename.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/functions.xml" is a vector with 108 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/functions.xml" is a vector with 96 elements.
 Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_DocumentInUnion [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/DocumentInUnion.noindent-xsl
@@ -20129,7 +19972,7 @@ PASS XSLTFunctions_RepeatedUseOfDivOperator [Mixed]
 
 FAIL XSLTFunctions_RoundTripNumber_UsingStringFn [Mixed]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/StringFn_RoundTrippedNumbersNoTrunc.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/StringFn_RoundTrippedNumbersNoTrunc.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/StringFn_RoundTrippedNumbersNoTrunc.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/StringFn_RoundTrippedNumbersNoTrunc.xml
@@ -20160,9 +20003,9 @@ FAIL XSLTFunctions_TestOfIdFunction [Mixed]: not a valid pattern: id('b')
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestOfIdFunction.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestOfIdFunction.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xsltcfg.xml" is a vector with 106 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/xsltcfg.xml" is a vector with 94 elements.
 Its element type is specialized to CHARACTER.
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/testcat.xml" is a vector with 106 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/testcat.xml" is a vector with 94 elements.
 Its element type is specialized to CHARACTER.
 PASS XSLTFunctions_Bug76054 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/document_function_context.noindent-xsl
@@ -20173,7 +20016,7 @@ PASS XSLTFunctions_Bug76054 [Mixed]
 
 FAIL XSLTFunctions_Bug76984 [Mixed]: Document not well-formed: Unexpected character #\ZERO_WIDTH_NO-BREAK_SPACE.
 Context:
-  Line 1, column 2 in file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/Bug76984.noindent-xsl
+  Line 1, column 2 in file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/Bug76984.noindent-xsl
 
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.xml
@@ -20181,7 +20024,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76984.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76984.xuriella
 
-"file://+/home/david/src/XSLT-testsuite-04/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/DocumentFuncWithEmptyArg.noindent-xsl" is a vector with 132 elements.
+"file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/DocumentFuncWithEmptyArg.noindent-xsl" is a vector with 120 elements.
 Its element type is specialized to CHARACTER.
 FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/DocumentFuncWithEmptyArg.noindent-xsl
@@ -20189,4 +20032,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2074/3089 tests.
+Passed 2080/3089 tests.
