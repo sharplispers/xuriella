@@ -300,8 +300,10 @@
     ;; the following tests take a lot of time due to the problems of current matching algorithm:
     "impincl_impincl16"
     "match_match13"
-    ;; the following test is actually okay, but running it takes longer
-    ;; than I'm willing to wait before every checkin:
+    ;; probably the same problem (but I haven't checked):
+    "numbering_numbering03"
+    "numbering_numbering80"
+    "numbering_numbering81"
     "Import__91164"))
 
 (defun run-tests (&optional (categories *default-categories*)

@@ -55,7 +55,8 @@
                                     (funcall grouping-size ctx))))
           (write-text
            (format-number-list
-            (or value
+            (if value
+		(list value)
                 (compute-number-list (or level "single")
                                      (xpath::context-node ctx)
                                      count
@@ -69,7 +70,12 @@
 (defun compile-pattern (str env)
   (compile-xpath
    `(xpath:xpath
-     (:path (:ancestor-or-self :node) ,@(cdr (parse-pattern str))))
+     (:union
+      ,@(mapcar (lambda (x)
+		  (check-type (car x) (eql :path))
+		  `(:path (:ancestor-or-self :node)
+			  ,@(cdr x)))
+		(parse-pattern str))))
    env))
 
 (defun pattern-thunk-matches-p (pattern-thunk node)
@@ -101,11 +107,14 @@
 (defun compute-number-list (level node count from)
   (unless count
     (setf count
-          (let ((qname (xpath-protocol:qualified-name node)))
+          (let ((uri (xpath-protocol:namespace-uri node))
+		(lname (xpath-protocol:local-name node)))
             (lambda (ctx)
               (let ((node (xpath:context-node ctx)))
                 (xpath:make-node-set
-                 (if (equal (xpath-protocol:qualified-name node) qname)
+                 (if (and (xpath-protocol:node-type-p node :element)
+			  (equal (xpath-protocol:namespace-uri node) uri)
+			  (equal (xpath-protocol:local-name node) lname))
                      (list node)
                      nil)))))))
   (cond
@@ -122,23 +131,92 @@
     ((equal level "any")
      (destructuring-bind (root)
          (xpath::force (funcall (xpath::axis-function :root) node))
-       (let ((nodes (xpath::force (funcall (xpath::axis-function :descendant-or-self) root))))
-         (when from
+       (let ((nodes (xpath::force
+		     (xpath::append-pipes
+		      (xpath::subpipe-before
+		       node
+		       (funcall (xpath::axis-function :descendant-or-self) root))
+		      (list node)))))
+	 (when from
            (loop
               for (current . rest) on nodes
-              until (pattern-thunk-matches-p from current)
-              finally (setf nodes rest)))
+	      when (pattern-thunk-matches-p from current)
+	      do
+		(setf nodes rest)))
          (list
           (loop
-             for node in nodes
-             while (pattern-thunk-matches-p count node)
-             count t)))))
+             for n in nodes
+             count (pattern-thunk-matches-p count n))))))
     (t
      (xslt-error "invalid number level: ~A" level))))
 
+(xpath::deflexer format-lexer
+  ("([a-zA-Z0-9]+)" (x) (values :format x))
+  ("([^a-zA-Z0-9]+)" (x) (values :text x)))
+
+(defun format-number-token (str n)
+  (cond
+    ((or (equal str "a") (equal str "A"))
+     (let ((start (if (equal str "a") 96 64)))
+       (if (zerop n)
+	   (code-char (1+ start))
+	   (nreverse
+	    (with-output-to-string (r)
+	      (loop
+		 for m = n then rest
+		 while (plusp m)
+		 for (rest digit) = (multiple-value-list
+				     (truncate m 26))
+		 do
+		 (write-char (code-char (+ start digit)) r)))))))
+    ((equal str "i")
+     (format nil "~(~@R~)" n))
+    ((equal str "I")
+     (format nil "~@R" n))
+    (t
+     (unless (cl-ppcre:all-matches "^0*1$" str)
+       ;; unsupported format
+       (setf str "1"))
+     (format nil "~v,'0D" (length str) n))))
+
+(defun group-numbers (str separator size)
+  (loop
+     for c across str
+     for i from (1- (length str)) downto 0
+     do
+       (write-char c)
+       (when (and (zerop (mod i size)) (plusp i))
+	 (write-string separator))))
+
+;;; fixme: unicode support
 (defun format-number-list
     (list format lang letter-value grouping-separator grouping-size)
   (declare (ignore lang letter-value))
-  (if (equal format "1")
-      (format nil "~{~D~^.~}" list)
-      (error "sorry, format-number-list not implemented yet")))
+  (with-output-to-string (*standard-output*)
+    (let ((lexer (format-lexer format))
+	  (seen-text-p t)
+	  (last-token nil))
+      (loop
+	 (multiple-value-bind (type str) (funcall lexer)
+	   (unless type
+	     (if list
+		 (setf type :format
+		       str last-token)
+		 (return)))
+	   (ecase type
+	     (:text
+	      (write-string str)
+	      (setf seen-text-p t))
+	     (:format
+	      (unless seen-text-p
+		(write-char #\.))
+	      (setf seen-text-p nil)
+	      (setf last-token str)
+	      (let* ((n (pop list))
+		     (formatted (format-number-token str n)))
+		(write-string (if (and grouping-separator
+				       grouping-size)
+				  (group-numbers formatted
+						 grouping-separator
+						 grouping-size)
+				  formatted))))))))))
