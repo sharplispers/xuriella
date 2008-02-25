@@ -300,6 +300,8 @@
     ;; the following tests take a lot of time due to the problems of current matching algorithm:
     "impincl_impincl16"
     "match_match13"
+    ;; stack exhaustion -- matching problem i think
+    "Keys_PerfRepro3"
     ;; probably the same problem (but I haven't checked):
     "numbering_numbering03"
     "numbering_numbering80"

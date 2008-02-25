@@ -250,7 +250,8 @@
   (output-specification (make-output-specification))
   (strip-tests nil)
   (named-templates (make-hash-table :test 'equal))
-  (attribute-sets (make-hash-table :test 'equal)))
+  (attribute-sets (make-hash-table :test 'equal))
+  (keys (make-hash-table :test 'equal)))
 
 (defstruct mode (templates nil))
 
@@ -274,6 +275,22 @@
                                 (push (cons prefix uri) bindings))
                               element)
   bindings)
+
+(defun find-key (name stylesheet)
+  (or (gethash name (stylesheet-keys stylesheet))
+      (xslt-error "unknown key: ~a" name)))
+
+(defun make-key (match use) (cons match use))
+
+(defun key-match (key) (car key))
+
+(defun key-use (key) (cdr key))
+
+(defun add-key (stylesheet name match use)
+  (if (gethash name (stylesheet-keys stylesheet))
+      (xslt-error "duplicate key: ~a" name)
+      (setf (gethash name (stylesheet-keys stylesheet))
+            (make-key match use))))
 
 (defvar *excluded-namespaces* (list *xsl*))
 (defvar *empty-mode*)
@@ -339,6 +356,7 @@
     (incf *import-priority*)
     (parse-exclude-result-prefixes! <transform> env)
     (parse-global-variables! stylesheet <transform>)
+    (parse-keys! stylesheet <transform> env)
     (parse-templates! stylesheet <transform> env)
     (parse-output! stylesheet <transform>)
     (parse-strip/preserve-space! stylesheet <transform> env)
@@ -582,6 +600,18 @@
                          :param-p (namep <variable> "param")
                          :thunk-setter thunk-setter))))))
 
+(defun parse-keys! (stylesheet <transform> env)
+  (xpath:with-namespaces ((nil #.*xsl*))
+    (xpath:do-node-set
+        (<key> (xpath:evaluate "key" <transform>))
+      (stp:with-attributes (name match use) <key>
+        (unless name (xslt-error "key name attribute not specified"))
+        (unless match (xslt-error "key match attribute not specified"))
+        (unless use (xslt-error "key use attribute not specified"))
+        (add-key stylesheet name
+                 (compile-xpath `(xpath:xpath ,(parse-key-pattern match)) env)
+                 (compile-xpath use env))))))
+
 (defun parse-global-variables! (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
     (let* ((table (make-hash-table :test 'equal))
@@ -694,9 +724,8 @@
     (object &optional node-set)
   (let ((instruction-base-uri *instruction-base-uri*))
     (lambda (ctx)
-      (declare (ignore ctx))
-      (let* ((object (funcall object))
-             (node-set (and node-set (funcall node-set)))
+      (let* ((object (funcall object ctx))
+             (node-set (and node-set (funcall node-set ctx)))
              (uri
               (when node-set
                 ;; FIXME: should use first node of the node set
@@ -712,12 +741,40 @@
              (list (%document (xpath:string-value object)
                               (or uri instruction-base-uri)))))))))
 
-(xpath:define-xpath-function/lazy xslt current ()
+(xpath:define-xpath-function/eager xslt :key (name object)
+  (let ((key (find-key (xpath:string-value name) *stylesheet*)))
+    (labels ((get-by-key (value)
+               (let ((value (xpath:string-value value)))
+                 (xpath::filter-pipe
+                  #'(lambda (node)
+                      (equal value (xpath:string-value
+                                    (xpath:evaluate-compiled
+                                     (key-use key) node))))
+                  (xpath:pipe-of
+                   (xpath:node-set-value
+                    (xpath:evaluate-compiled
+                     (key-match key) xpath:context)))))))
+      (xpath:make-node-set
+       (xpath::sort-pipe
+        (if (xpath:node-set-p object)
+            (xpath::mappend-pipe #'get-by-key (xpath:pipe-of object))
+            (get-by-key object)))))))
+
+;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
+
+(xpath:define-xpath-function/lazy xslt :current ()
   #'(lambda (ctx)
       (xpath:make-node-set
        (xpath:make-pipe
         (xpath:context-starting-node ctx)
         nil))))
+
+(xpath:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
+  (if node-set-thunk
+      #'(lambda (ctx)
+          (xpath:get-node-id (xpath:node-set-value (funcall node-set-thunk ctx))))
+      #'(lambda (ctx)
+          (xpath:get-node-id (xpath:context-node ctx)))))
 
 (defun apply-stylesheet
     (stylesheet source-document
@@ -992,13 +1049,27 @@
     (t
      (every #'valid-expression-p (cdr expr)))))
 
+(defun parse-xpath (str)
+  (handler-case
+      (xpath:parse-xpath str)
+    (xpath:xpath-error (c)
+      (xslt-error "~A" c))))
+
+(defun parse-key-pattern (str)
+  (let ((parsed
+         (mapcar #'(lambda (item)
+                     `(:path (:root :node)
+                             (:descendant-or-self *)
+                             ,@(cdr item)))
+                 (parse-pattern str))))
+    (if (null (rest parsed))
+        (first parsed)
+        `(:union ,@parsed))))
+
 (defun parse-pattern (str)
   ;; zzz check here for anything not allowed as an XSLT pattern
   ;; zzz can we hack id() and key() here?
-  (let ((form (handler-case
-                  (xpath:parse-xpath str)
-                (xpath:xpath-error (c)
-                  (xslt-error "~A" c)))))
+  (let ((form (parse-xpath str)))
     (unless (consp form)
       (xslt-error "not a valid pattern: ~A" str))
     (labels ((process-form (form)
