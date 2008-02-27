@@ -251,7 +251,8 @@
   (strip-tests nil)
   (named-templates (make-hash-table :test 'equal))
   (attribute-sets (make-hash-table :test 'equal))
-  (keys (make-hash-table :test 'equal)))
+  (keys (make-hash-table :test 'equal))
+  (namespace-aliases (make-hash-table :test 'equal)))
 
 (defstruct mode (templates nil))
 
@@ -360,7 +361,8 @@
     (parse-templates! stylesheet <transform> env)
     (parse-output! stylesheet <transform>)
     (parse-strip/preserve-space! stylesheet <transform> env)
-    (parse-attribute-sets! stylesheet <transform> env)))
+    (parse-attribute-sets! stylesheet <transform> env)
+    (parse-namespace-aliases! stylesheet <transform> env)))
 
 (defvar *xsl-import-stack* nil)
 
@@ -429,6 +431,14 @@
                        (decode-qname (stp:attribute-value elt "name") env nil)
                      (cons local-name uri))
                    (stylesheet-attribute-sets stylesheet)))))
+
+(defun parse-namespace-aliases! (stylesheet <transform> env)
+  (dolist (elt (stp:filter-children (of-name "namespace-alias") <transform>))
+    (stp:with-attributes (stylesheet-prefix result-prefix) elt
+      (setf (gethash
+	     (xpath-sys:environment-find-namespace env stylesheet-prefix)
+	     (stylesheet-namespace-aliases stylesheet))
+	    (xpath-sys:environment-find-namespace env result-prefix)))))
 
 (defun parse-exclude-result-prefixes! (<transform> env)
   (stp:with-attributes (exclude-result-prefixes) <transform>
@@ -819,7 +829,7 @@
            (apply-templates ctx))
        (xpath:xpath-error (c)
                           (xslt-error "~A" c))))
-   stylesheet
+   (stylesheet-output-specification stylesheet)
    output))
 
 (defun find-attribute-set (local-name uri)
@@ -959,23 +969,23 @@
   (find (xpath:context-node ctx)
         (xpath:all-nodes (funcall (template-match-thunk template) ctx))))
 
-(defun invoke-with-output-sink (fn stylesheet output)
+(defun invoke-with-output-sink (fn output-spec output)
   (etypecase output
     (pathname
      (with-open-file (s output
                         :direction :output
                         :element-type '(unsigned-byte 8)
                         :if-exists :rename-and-delete)
-       (invoke-with-output-sink fn stylesheet s)))
+       (invoke-with-output-sink fn output-spec s)))
     ((or stream null)
      (invoke-with-output-sink fn
-                              stylesheet
-                              (make-output-sink stylesheet output)))
+                              output-spec
+                              (make-output-sink output-spec output)))
     ((or hax:abstract-handler sax:abstract-handler)
      (with-xml-output output
        (funcall fn)))))
 
-(defun make-output-sink (stylesheet stream)
+(defun make-output-sink (output-spec stream)
   (let* ((ystream
           (if stream
               (let ((et (stream-element-type stream)))
@@ -985,15 +995,13 @@
                   ((subtypep et 'character)
                    (runes:make-character-stream-ystream stream))))
               (runes:make-rod-ystream)))
-         (output-spec (stylesheet-output-specification stylesheet))
          (omit-xml-declaration-p
           (equal (output-omit-xml-declaration output-spec) "yes"))
          (sax-target
           (make-instance 'cxml::sink
                          :ystream ystream
                          :omit-xml-declaration-p omit-xml-declaration-p)))
-    (if (equalp (output-method (stylesheet-output-specification stylesheet))
-                "HTML")
+    (if (equalp (output-method output-spec) "HTML")
         (make-instance 'combi-sink
                        :hax-target (make-instance 'chtml::sink
                                                   :ystream ystream)

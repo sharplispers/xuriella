@@ -269,3 +269,11 @@
                  :letter-value ,letter-value
                  :grouping-separator ,grouping-separator
                  :grouping-size ,grouping-size)))
+
+(define-instruction-parser |document| (node)
+  (stp:with-attributes (href method indent doctype-public doctype-system) node
+    `(xsl:document (,href :method ,method
+			  :indent ,indent
+			  :doctype-public ,doctype-public
+			  :doctype-system ,doctype-system)
+       ,@(parse-body node))))

@@ -18,15 +18,20 @@
            #:unescaped-value-of
            #:number
            #:for-each
-           #:with-namespaces
-           #:with-excluded-namespaces
-           #:with-duplicates-check
            #:with-base-uri
            #:copy-of
            #:message
            #:terminate
            #:fallback
-           #:use-attribute-sets))
+           #:use-attribute-sets
+
+	   ;; Extensions
+           #:document			;fixme: incompatible with XSLT 2.0
+
+	   ;; xuriella internals
+           #:with-namespaces
+           #:with-excluded-namespaces
+           #:with-duplicates-check))
 
 (defpackage :xuriella
   (:use :cl)

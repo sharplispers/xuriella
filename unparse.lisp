@@ -56,6 +56,10 @@
   (maybe-emit-start-tag)
   (funcall fn *sink*))
 
+(defun unalias-uri (uri)
+  (gethash uri (stylesheet-namespace-aliases *stylesheet*)
+	   uri))
+
 (defmacro with-element ((local-name uri &key suggested-prefix extra-namespaces)
                         &body body)
   `(invoke-with-element (lambda () ,@body)
@@ -129,9 +133,7 @@
            while
              (sink-element-find-uri prefix elt)
            finally
-             (let ((cons (cons prefix uri)))
-               (push cons (sink-element-all-namespaces elt))
-               (push cons (sink-element-new-namespaces elt)))
+	     (push-sink-element-namespace elt prefix uri)
              (return prefix)))))
 
 (defun make-xmlns-attribute (prefix uri)
@@ -164,6 +166,7 @@
   (check-type uri string)
   (check-type suggested-prefix (or null string))
   (maybe-emit-start-tag)
+  (setf uri (unalias-uri uri))
   (let* ((parent *current-element*)
          (elt (make-sink-element
                :local-name local-name
@@ -187,7 +190,8 @@
 
 (defun process-extra-namespaces (elt extra-namespaces)
   (loop
-     for (prefix . uri) in extra-namespaces
+     for (prefix . auri) in extra-namespaces
+     for uri = (unalias-uri auri)
      do
      (unless
          ;; allow earlier conses in extra-namespaces to hide later ones.
@@ -199,15 +203,25 @@
          (unless
              ;; no need to declare what has already been done
              (equal uri previous)
-           (let ((cons (cons prefix uri)))
-             (push cons (sink-element-all-namespaces elt))
-             (push cons (sink-element-new-namespaces elt))))))))
+	   (push-sink-element-namespace elt prefix uri))))))
+
+(defun push-sink-element-namespace (elt prefix uri)
+  (cond
+    ((equal prefix "xml")
+     (assert (equal uri "http://www.w3.org/XML/1998/namespace")))
+    ((equal prefix "xmlns")
+     (assert (equal uri "http://www.w3.org/2000/xmlns/")))
+    (t
+     (let ((cons (cons prefix uri)))
+       (push cons (sink-element-all-namespaces elt))
+       (push cons (sink-element-new-namespaces elt))))))
 
 (defun write-attribute (local-name uri value &key suggested-prefix)
   (check-type local-name string)
   (check-type uri string)
   (check-type value string)
   (check-type suggested-prefix (or null string))
+  (setf uri (unalias-uri uri))
   (cond
     ((null *current-element*)
      (xslt-error "attribute outside of element"))
