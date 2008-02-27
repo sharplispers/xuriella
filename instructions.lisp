@@ -410,9 +410,9 @@
     ((node result-tree-fragment))
   t)
 
-(define-default-method xpath-protocol:string-value
+(define-default-method xpath-protocol:node-text
     ((node result-tree-fragment))
-  (xpath-protocol:string-value (result-tree-fragment-node node)))
+  (xpath-protocol:node-text (result-tree-fragment-node node)))
 
 (defun apply-to-result-tree-fragment (ctx thunk)
   (let ((document
@@ -483,18 +483,18 @@
 (defun copy-leaf-node (node)
   (cond
     ((xpath-protocol:node-type-p node :text)
-     (write-text (xpath-protocol:string-value node)))
+     (write-text (xpath-protocol:node-text node)))
     ((xpath-protocol:node-type-p node :comment)
-     (write-comment (xpath-protocol:string-value node)))
+     (write-comment (xpath-protocol:node-text node)))
     ((xpath-protocol:node-type-p node :processing-instruction)
      (write-processing-instruction
          (xpath-protocol:processing-instruction-target node)
-       (xpath-protocol:string-value node)))
+       (xpath-protocol:node-text node)))
     ((xpath-protocol:node-type-p node :attribute)
      (write-attribute
       (xpath-protocol:local-name node)
       (xpath-protocol:namespace-uri node)
-      (xpath-protocol:string-value node)
+      (xpath-protocol:node-text node)
       :suggested-prefix (xpath-protocol:namespace-prefix node)))
     (t
      (error "don't know how to copy node ~A" node))))

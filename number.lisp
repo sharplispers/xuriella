@@ -111,7 +111,7 @@
 		(lname (xpath-protocol:local-name node)))
             (lambda (ctx)
               (let ((node (xpath:context-node ctx)))
-                (xpath:make-node-set
+                (xpath-sys:make-node-set
                  (if (and (xpath-protocol:node-type-p node :element)
 			  (equal (xpath-protocol:namespace-uri node) uri)
 			  (equal (xpath-protocol:local-name node) lname))

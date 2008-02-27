@@ -127,11 +127,11 @@
       (split-qname qname)
     (values local-name
             (if (or prefix (not attributep))
-                (xpath:environment-find-namespace env prefix)
+                (xpath-sys:environment-find-namespace env prefix)
                 "")
             prefix)))
 
-(defmethod xpath:environment-find-namespace ((env xslt-environment) prefix)
+(defmethod xpath-sys:environment-find-namespace ((env xslt-environment) prefix)
   (cdr (assoc prefix *namespaces* :test 'equal)))
 
 (defun find-variable-index (local-name uri table)
@@ -166,14 +166,14 @@
   (assert (not (eq newval 'unbound)))
   (setf (svref *global-variable-values* index) newval))
 
-(defmethod xpath:environment-find-function
+(defmethod xpath-sys:environment-find-function
     ((env xslt-environment) lname uri)
   (if (string= uri "")
-      (or (xpath:find-xpath-function lname *xsl*)
-          (xpath:find-xpath-function lname uri))
-      (xpath:find-xpath-function lname uri)))
+      (or (xpath-sys:find-xpath-function lname *xsl*)
+          (xpath-sys:find-xpath-function lname uri))
+      (xpath-sys:find-xpath-function lname uri)))
 
-(defmethod xpath:environment-find-variable
+(defmethod xpath-sys:environment-find-variable
     ((env xslt-environment) lname uri)
   (let ((index
          (find-variable-index lname uri *lexical-variable-declarations*)))
@@ -184,7 +184,7 @@
 
 (defclass lexical-xslt-environment (xslt-environment) ())
 
-(defmethod xpath:environment-find-variable
+(defmethod xpath-sys:environment-find-variable
     ((env lexical-xslt-environment) lname uri)
   (or (call-next-method)
       (let ((index
@@ -201,7 +201,7 @@
     :initarg :initial-global-variable-thunks
     :accessor initial-global-variable-thunks)))
 
-(defmethod xpath:environment-find-variable
+(defmethod xpath-sys:environment-find-variable
     ((env global-variable-environment) lname uri)
   (or (call-next-method)
       (gethash (cons lname uri) (initial-global-variable-thunks env))))
@@ -435,7 +435,7 @@
       (dolist (prefix (words (or exclude-result-prefixes "")))
     (when (equal prefix "#default")
       (setf prefix nil))
-    (push (or (xpath:environment-find-namespace env prefix)
+    (push (or (xpath-sys:environment-find-namespace env prefix)
               (xslt-error "namespace not found: ~A" prefix))
           *excluded-namespaces*))))
 
@@ -457,7 +457,7 @@
                     ((eql pos (- (length name-test) 2))
                      (let* ((prefix (subseq name-test 0 pos))
                             (name-test-uri
-                             (xpath:environment-find-namespace env prefix)))
+                             (xpath-sys:environment-find-namespace env prefix)))
                        (unless (xpath::nc-name-p prefix)
                          (xslt-error "not an NCName: ~A" prefix))
                        (lambda (local-name uri)
@@ -717,9 +717,9 @@
       (xslt-error "use of fragment identifiers in document() not supported"))
     xpath-root-node))
 
-(xpath:define-extension xslt *xsl*)
+(xpath-sys:define-extension xslt *xsl*)
 
-(xpath:define-xpath-function/lazy
+(xpath-sys:define-xpath-function/lazy
     xslt :document
     (object &optional node-set)
   (let ((instruction-base-uri *instruction-base-uri*))
@@ -731,7 +731,7 @@
                 ;; FIXME: should use first node of the node set
                 ;; _in document order_
                 (xpath-protocol:base-uri (xpath:first-node node-set)))))
-        (xpath::make-node-set
+        (xpath-sys:make-node-set
          (if (xpath:node-set-p object)
              (xpath:map-node-set->list
               (lambda (node)
@@ -741,7 +741,7 @@
              (list (%document (xpath:string-value object)
                               (or uri instruction-base-uri)))))))))
 
-(xpath:define-xpath-function/eager xslt :key (name object)
+(xpath-sys:define-xpath-function/eager xslt :key (name object)
   (let ((key (find-key (xpath:string-value name) *stylesheet*)))
     (labels ((get-by-key (value)
                (let ((value (xpath:string-value value)))
@@ -750,31 +750,31 @@
                       (equal value (xpath:string-value
                                     (xpath:evaluate-compiled
                                      (key-use key) node))))
-                  (xpath:pipe-of
+                  (xpath-sys:pipe-of
                    (xpath:node-set-value
                     (xpath:evaluate-compiled
                      (key-match key) xpath:context)))))))
-      (xpath:make-node-set
+      (xpath-sys:make-node-set
        (xpath::sort-pipe
         (if (xpath:node-set-p object)
-            (xpath::mappend-pipe #'get-by-key (xpath:pipe-of object))
+            (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
             (get-by-key object)))))))
 
 ;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
 
-(xpath:define-xpath-function/lazy xslt :current ()
+(xpath-sys:define-xpath-function/lazy xslt :current ()
   #'(lambda (ctx)
-      (xpath:make-node-set
-       (xpath:make-pipe
+      (xpath-sys:make-node-set
+       (xpath-sys:make-pipe
         (xpath:context-starting-node ctx)
         nil))))
 
-(xpath:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
+(xpath-sys:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
   (if node-set-thunk
       #'(lambda (ctx)
-          (xpath:get-node-id (xpath:node-set-value (funcall node-set-thunk ctx))))
+          (xpath-sys:get-node-id (xpath:node-set-value (funcall node-set-thunk ctx))))
       #'(lambda (ctx)
-          (xpath:get-node-id (xpath:context-node ctx)))))
+          (xpath-sys:get-node-id (xpath:context-node ctx)))))
 
 (defun apply-stylesheet
     (stylesheet source-document
@@ -869,7 +869,7 @@
            (xpath-protocol:node-type-p node :comment)))
       ((or (xpath-protocol:node-type-p node :text)
            (xpath-protocol:node-type-p node :attribute))
-       (write-text (xpath-protocol:string-value node)))
+       (write-text (xpath-protocol:node-text node)))
       (t
        (apply-templates/list
         (xpath::force

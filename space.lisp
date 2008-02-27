@@ -140,7 +140,7 @@
   (do-pipe (a (xpath-protocol:attribute-pipe node))
     (when (and (equal (xpath-protocol:local-name a) local-name)
                (equal (xpath-protocol:namespace-uri a) uri))
-      (return (xpath-protocol:string-value a)))))
+      (return (xpath-protocol:node-text a)))))
 
 (defun make-stripping-node (parent target tests force-preserve)
   (let ((result (make-parent-stripping-node parent target))
@@ -153,7 +153,7 @@
                    (make-leaf-stripping-node result child-node)))
              (maybe-recurse (child-node)
                (if (and (xpath-protocol:node-type-p child-node :text)
-                        (whitespacep (xpath-protocol:string-value child-node)))
+                        (whitespacep (xpath-protocol:node-text child-node)))
                    nil
                    (recurse child-node))))
       (let ((all-children (xpath-protocol:child-pipe target)))
@@ -185,7 +185,7 @@
 (define-default-method xpath-protocol:parent-node ((node stripping-node))
   (stripping-node-parent node))
 
-(define-default-method xpath-protocol:string-value ((node stripping-node))
+(define-default-method xpath-protocol:node-text ((node stripping-node))
   (with-output-to-string (s)
     (write-string-value node s)))
 
@@ -199,7 +199,7 @@
   (write-string-value (stripping-node-target node) stream))
 
 (defmethod write-string-value (node stream)
-  (write-string (xpath-protocol:string-value node) stream))
+  (write-string (xpath-protocol:node-text node) stream))
 
 
 ;;;; TEXT NORMALIZER, from cxml-rng

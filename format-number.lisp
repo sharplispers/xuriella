@@ -79,7 +79,7 @@
   ;; fixme
   (make-decimal-format))
 
-(xpath:define-xpath-function/eager
+(xpath-sys:define-xpath-function/eager
     xslt :format-number
     (value picture &optional format-name)
   (let ((df (find-decimal-format format-name)))

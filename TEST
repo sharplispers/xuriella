@@ -1076,43 +1076,7 @@ PASS axes_axes119 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes119.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes119.xuriella
 
-FAIL axes_axes120 [XSLT-Result-Tree-Testing]: There is no applicable method for the generic function
-                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE-USING-NAVIGATOR (5)>
-                                              when called with arguments
-                                                (:DEFAULT-NAVIGATOR
-                                                 #S(CXML-STP-IMPL::STP-NAMESPACE
-                                                    :PARENT #.(CXML-STP:ELEMENT
-                                                               #| :PARENT of type DOCUMENT |#
-                                                               :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
-                                                               :CHILDREN '(#.(CXML-STP:TEXT
-                                                                              #| :PARENT of type ELEMENT |#
-                                                                              :DATA "
-  ")
-                                                                           #.(CXML-STP:ELEMENT
-                                                                              #| :PARENT of type ELEMENT |#
-                                                                              :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
-                                                                              :LOCAL-NAME "sub"
-                                                                              :NAMESPACE-PREFIX "b"
-                                                                              :NAMESPACE-URI "http://name-b")
-                                                                           #.(CXML-STP:TEXT
-                                                                              #| :PARENT of type ELEMENT |#
-                                                                              :DATA "
-  ")
-                                                                           #.(CXML-STP:ELEMENT
-                                                                              #| :PARENT of type ELEMENT |#
-                                                                              :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/axes/axes120.xml"
-                                                                              :LOCAL-NAME "sub"
-                                                                              :NAMESPACE-PREFIX "c"
-                                                                              :NAMESPACE-URI "http://name-c")
-                                                                           #.(CXML-STP:TEXT
-                                                                              #| :PARENT of type ELEMENT |#
-                                                                              :DATA "
-"))
-                                                               :LOCAL-NAME "root"
-                                                               :NAMESPACE-PREFIX "a"
-                                                               :NAMESPACE-URI "http://name-a")
-                                                    :PREFIX "a"
-                                                    :URI "http://name-a")).
+FAIL axes_axes120 [XSLT-Result-Tree-Testing]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/axes/axes120.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes120.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes120.saxon
@@ -7850,32 +7814,7 @@ PASS position_position101 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position101.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position101.xuriella
 
-FAIL position_position111 [XSLT-Result-Tree]: contains(): error: There is no applicable method for the generic function
-                                                                   #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE-USING-NAVIGATOR (5)>
-                                                                 when called with arguments
-                                                                   (:DEFAULT-NAVIGATOR
-                                                                    #S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                       :PARENT #.(CXML-STP-IMPL::DOCUMENT
-                                                                                  :CHILDREN '(#.(CXML-STP:ELEMENT
-                                                                                                 #| :PARENT of type DOCUMENT |#
-                                                                                                 :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
-                                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                                  :VALUE "attr1"
-                                                                                                                  :LOCAL-NAME "foo1"
-                                                                                                                  :NAMESPACE-PREFIX "bar"
-                                                                                                                  :NAMESPACE-URI "http://example.org/bar")
-                                                                                                               #.(CXML-STP:ATTRIBUTE
-                                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                                  :VALUE "attr2"
-                                                                                                                  :LOCAL-NAME "foo2"
-                                                                                                                  :NAMESPACE-PREFIX "bar"
-                                                                                                                  :NAMESPACE-URI "http://example.org/bar"))
-                                                                                                 :EXTRA-NAMESPACES '(("foo"
-                                                                                                                      "http://example.org/foo"))
-                                                                                                 :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/position/position111.xml"
-                                                                                                 :LOCAL-NAME "Doc")))
-                                                                       :PREFIX "xml"
-                                                                       :URI "http://www.w3.org/XML/1998/namespace")).
+FAIL position_position111 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/position/position111.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position111.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position111.saxon
@@ -18478,17 +18417,7 @@ PASS Namespace__84474 [XSLT-Structure]
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__84474.xuriella
 
 WARNING: There is no such encoding: "windows-1251".
-FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: string(): error: There is no applicable method for the generic function
-                                                                                #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:STRING-VALUE-USING-NAVIGATOR (5)>
-                                                                              when called with arguments
-                                                                                (:DEFAULT-NAVIGATOR
-                                                                                 #S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                                    :PARENT #.(CXML-STP:ELEMENT
-                                                                                               #| :PARENT of type ELEMENT |#
-                                                                                               :BASE-URI "file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml"
-                                                                                               :LOCAL-NAME "foo")
-                                                                                    :PREFIX ""
-                                                                                    :URI "")).
+FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.saxon
