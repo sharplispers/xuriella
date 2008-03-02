@@ -188,22 +188,23 @@
          for (prefix . uri) in (sink-element-new-namespaces elt) do
          (sax:end-prefix-mapping *sink* prefix)))))
 
+(defun process-extra-namespace (elt prefix uri)
+  (setf uri (unalias-uri uri))
+  (unless
+      ;; allow earlier conses in extra-namespaces to hide later ones.
+      (find prefix
+	    (sink-element-new-namespaces elt)
+	    :key #'car
+	    :test #'equal)
+    (let ((previous (sink-element-find-uri prefix elt)))
+      (unless
+	  ;; no need to declare what has already been done
+	  (equal uri previous)
+	(push-sink-element-namespace elt prefix uri)))))
+
 (defun process-extra-namespaces (elt extra-namespaces)
-  (loop
-     for (prefix . auri) in extra-namespaces
-     for uri = (unalias-uri auri)
-     do
-     (unless
-         ;; allow earlier conses in extra-namespaces to hide later ones.
-         (find prefix
-               (sink-element-new-namespaces elt)
-               :key #'car
-               :test #'equal)
-       (let ((previous (sink-element-find-uri prefix elt)))
-         (unless
-             ;; no need to declare what has already been done
-             (equal uri previous)
-	   (push-sink-element-namespace elt prefix uri))))))
+  (loop for (prefix . uri) in extra-namespaces do
+       (process-extra-namespace elt prefix uri)))
 
 (defun push-sink-element-namespace (elt prefix uri)
   (cond
@@ -240,6 +241,17 @@
                                           local-name)
                                    (equal (sink-attribute-uri x) uri)))
                             (sink-element-attributes *current-element*)))))))
+
+(defun write-extra-namespace (prefix uri)
+  (check-type prefix string)
+  (check-type uri string)
+  (cond
+    ((null *current-element*)
+     (xslt-error "attribute outside of element"))
+    (*start-tag-written-p*
+     (xslt-cerror "namespace after start tag"))
+    (t
+     (process-extra-namespace *current-element* prefix uri))))
 
 (defun write-text (data)
   (maybe-emit-start-tag)

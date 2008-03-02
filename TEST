@@ -2336,39 +2336,7 @@ PASS copy_copy50 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy50.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy50.xuriella
 
-FAIL copy_copy51 [XSLT-Result-Tree]: don't know how to copy node #S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                    :PARENT #.(ELEMENT
-                                                                               #| :PARENT of type DOCUMENT |#
-                                                                               BASE-URI file://+...Xalan_Conformance_Tests/copy/copy51.xml
-                                                                               CHILDREN '(#.(TEXT
-                                                                                             #| :PARENT of type ELEMENT |#
-                                                                                             DATA 
-  )
-                                                                                          #.(ELEMENT
-                                                                                             #| :PARENT of type ELEMENT |#
-                                                                                             BASE-URI file://+...Xalan_Conformance_Tests/copy/copy51.xml
-                                                                                             LOCAL-NAME sub
-                                                                                             NAMESPACE-PREFIX b
-                                                                                             NAMESPACE-URI http://name-b)
-                                                                                          #.(TEXT
-                                                                                             #| :PARENT of type ELEMENT |#
-                                                                                             DATA 
-  )
-                                                                                          #.(ELEMENT
-                                                                                             #| :PARENT of type ELEMENT |#
-                                                                                             BASE-URI file://+...Xalan_Conformance_Tests/copy/copy51.xml
-                                                                                             LOCAL-NAME sub
-                                                                                             NAMESPACE-PREFIX c
-                                                                                             NAMESPACE-URI http://name-c)
-                                                                                          #.(TEXT
-                                                                                             #| :PARENT of type ELEMENT |#
-                                                                                             DATA 
-))
-                                                                               LOCAL-NAME root
-                                                                               NAMESPACE-PREFIX a
-                                                                               NAMESPACE-URI http://name-a)
-                                                                    :PREFIX a
-                                                                    :URI http://name-a)
+PASS copy_copy51 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy51.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy51.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy51.saxon
@@ -18385,30 +18353,7 @@ PASS Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.xuriella
 
-FAIL Namespace_Bug85356 [XSLT-Structure]: don't know how to copy node #S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                         :PARENT #.(DOCUMENT
-                                                                                    CHILDREN '(#.(ELEMENT
-                                                                                                  #| :PARENT of type DOCUMENT |#
-                                                                                                  BASE-URI file://+...MSFT_Conformance_Tests/Namespace/Bug85356.xml
-                                                                                                  CHILDREN '(#.(TEXT
-                                                                                                                #| :PARENT of type ELEMENT |#
-                                                                                                                DATA 
-?)
-                                                                                                             #.(ELEMENT
-                                                                                                                #| :PARENT of type ELEMENT |#
-                                                                                                                EXTRA-NAMESPACES '((foo
-                                                                                                                                    http://foo.com))
-                                                                                                                BASE-URI file://+...MSFT_Conformance_Tests/Namespace/Bug85356.xml
-                                                                                                                LOCAL-NAME elem
-                                                                                                                NAMESPACE-URI default)
-                                                                                                             #.(TEXT
-                                                                                                                #| :PARENT of type ELEMENT |#
-                                                                                                                DATA 
-))
-                                                                                                  LOCAL-NAME root
-                                                                                                  NAMESPACE-URI default)))
-                                                                         :PREFIX xml
-                                                                         :URI http://www.w3.org/XML/1998/namespace)
+PASS Namespace_Bug85356 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace/Bug85356.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/Bug85356.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_Bug85356.saxon
@@ -18424,92 +18369,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.xuriella
 
-FAIL Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]: don't know how to copy node #S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                                                  :PARENT #.(ELEMENT
-                                                                                                             #| :PARENT of type DOCUMENT |#
-                                                                                                             ATTRIBUTES '(#.(ATTRIBUTE
-                                                                                                                             #| :PARENT of type ELEMENT |#
-                                                                                                                             VALUE 1.0
-                                                                                                                             LOCAL-NAME version))
-                                                                                                             BASE-URI file://+...MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
-                                                                                                             CHILDREN '(#.(TEXT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           DATA 
-
-    )
-                                                                                                                        #.(COMMENT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           DATA  Purpose: Test case for bug 70935 )
-                                                                                                                        #.(TEXT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           DATA 
-
-    )
-                                                                                                                        #.(ELEMENT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           ATTRIBUTES '(#.(ATTRIBUTE
-                                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                                           VALUE UTF-8
-                                                                                                                                           LOCAL-NAME encoding)
-                                                                                                                                        #.(ATTRIBUTE
-                                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                                           VALUE xml
-                                                                                                                                           LOCAL-NAME method)
-                                                                                                                                        #.(ATTRIBUTE
-                                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                                           VALUE yes
-                                                                                                                                           LOCAL-NAME omit-xml-declaration))
-                                                                                                                           BASE-URI file://+...MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
-                                                                                                                           LOCAL-NAME output
-                                                                                                                           NAMESPACE-PREFIX xsl
-                                                                                                                           NAMESPACE-URI http://www.w3.org/1999/XSL/Transform)
-                                                                                                                        #.(TEXT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           DATA 
-
-    )
-                                                                                                                        #.(ELEMENT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           ATTRIBUTES '(#.(ATTRIBUTE
-                                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                                           VALUE /
-                                                                                                                                           LOCAL-NAME match))
-                                                                                                                           BASE-URI file://+...MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
-                                                                                                                           CHILDREN '(#.(TEXT
-                                                                                                                                         #| :PARENT of type ELEMENT |#
-                                                                                                                                         DATA 
-        )
-                                                                                                                                      #.(ELEMENT
-                                                                                                                                         #| :PARENT of type ELEMENT |#
-                                                                                                                                         BASE-URI file://+...MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
-                                                                                                                                         CHILDREN '(#.(ELEMENT
-                                                                                                                                                       #| :PARENT of type ELEMENT |#
-                                                                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
-                                                                                                                                                                       #| :PARENT of type ELEMENT |#
-                                                                                                                                                                       VALUE document('')/xsl:stylesheet/namespace::xsl
-                                                                                                                                                                       LOCAL-NAME select))
-                                                                                                                                                       BASE-URI file://+...MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
-                                                                                                                                                       LOCAL-NAME copy-of
-                                                                                                                                                       NAMESPACE-PREFIX xsl
-                                                                                                                                                       NAMESPACE-URI http://www.w3.org/1999/XSL/Transform))
-                                                                                                                                         LOCAL-NAME test)
-                                                                                                                                      #.(TEXT
-                                                                                                                                         #| :PARENT of type ELEMENT |#
-                                                                                                                                         DATA 
-    ))
-                                                                                                                           LOCAL-NAME template
-                                                                                                                           NAMESPACE-PREFIX xsl
-                                                                                                                           NAMESPACE-URI http://www.w3.org/1999/XSL/Transform)
-                                                                                                                        #.(TEXT
-                                                                                                                           #| :PARENT of type ELEMENT |#
-                                                                                                                           DATA 
-
-))
-                                                                                                             LOCAL-NAME stylesheet
-                                                                                                             NAMESPACE-PREFIX xsl
-                                                                                                             NAMESPACE-URI http://www.w3.org/1999/XSL/Transform)
-                                                                                                  :PREFIX xsl
-                                                                                                  :URI http://www.w3.org/1999/XSL/Transform)
+PASS Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_CopyNamespaceNodeToOutput.saxon
@@ -23009,4 +22869,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2386/3085 tests.
+Passed 2389/3085 tests.
