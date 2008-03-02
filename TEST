@@ -2156,30 +2156,13 @@ PASS copy_copy20 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy20.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy20.xuriella
 
-FAIL copy_copy21 [XSLT-Result-Tree]: don't know how to copy node #.(DOCUMENT-TYPE
-                                                                    #| :PARENT of type DOCUMENT |#
-                                                                    ROOT-ELEMENT-NAME test
-                                                                    SYSTEM-ID NIL
-                                                                    PUBLIC-ID NIL
-                                                                    INTERNAL-SUBSET <!ELEMENT test (extEnt)>
-<!ELEMENT extEnt (sub2)>
-<!ATTLIST extEnt attr CDATA #REQUIRED>
-<!ELEMENT sub2 #PCDATA>
-<!ENTITY extEnt SYSTEM 'ent21.xml'>
-)
+PASS copy_copy21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy21.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy21.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy21.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy21.xuriella
 
-FAIL copy_copy22 [XSLT-Result-Tree]: don't know how to copy node #.(DOCUMENT-TYPE
-                                                                    #| :PARENT of type DOCUMENT |#
-                                                                    ROOT-ELEMENT-NAME test
-                                                                    SYSTEM-ID NIL
-                                                                    PUBLIC-ID NIL
-                                                                    INTERNAL-SUBSET <!ELEMENT test #PCDATA>
-<!ENTITY extEnt SYSTEM 'ent22.xml'>
-)
+PASS copy_copy22 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy22.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy22.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy22.saxon
@@ -23026,4 +23009,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2379/3085 tests.
+Passed 2381/3085 tests.
