@@ -778,23 +778,28 @@
                               (or uri instruction-base-uri)))))))))
 
 (xpath-sys:define-xpath-function/eager xslt :key (name object)
-  (let ((key (find-key (xpath:string-value name) *stylesheet*)))
-    (labels ((get-by-key (value)
-               (let ((value (xpath:string-value value)))
-                 (xpath::filter-pipe
-                  #'(lambda (node)
-                      (equal value (xpath:string-value
-                                    (xpath:evaluate-compiled
-                                     (key-use key) node))))
-                  (xpath-sys:pipe-of
-                   (xpath:node-set-value
-                    (xpath:evaluate-compiled
-                     (key-match key) xpath:context)))))))
-      (xpath-sys:make-node-set
-       (xpath::sort-pipe
-        (if (xpath:node-set-p object)
-            (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
-            (get-by-key object)))))))
+  (handler-case
+      (let ((key (find-key (xpath:string-value name) *stylesheet*)))
+        (labels ((get-by-key (value)
+                   (let ((value (xpath:string-value value)))
+                     (xpath::filter-pipe
+                      #'(lambda (node)
+                          (equal value (xpath:string-value
+                                        (xpath:evaluate-compiled
+                                         (key-use key) node))))
+                      (xpath-sys:pipe-of
+                       (xpath:node-set-value
+                        (xpath:evaluate-compiled
+                         (key-match key) xpath:context)))))))
+          (xpath-sys:make-node-set
+           (xpath::sort-pipe
+            (if (xpath:node-set-p object)
+                (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
+                (get-by-key object))))))
+    ;; fixme: the extension mechanism would turn our condition into an
+    ;; ERROR otherwise
+    (xslt-error (c)
+      (xpath::xpath-error "~A" c))))
 
 ;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
 
@@ -1121,6 +1126,7 @@
     (xpath:xpath-error (c)
       (xslt-error "~A" c))))
 
+;; zzz also use naive-pattern-expression here?
 (defun parse-key-pattern (str)
   (let ((parsed
          (mapcar #'(lambda (item)
@@ -1141,12 +1147,24 @@
     (labels ((process-form (form)
                (cond ((eq (car form) :union)
                       (alexandria:mappend #'process-form (rest form)))
-                     ((not (eq (car form) :path)) ;zzz: filter statt path
-                      (xslt-error "not a valid pattern: ~A" str))
+                     ((not (or (eq (car form) :path)
+                               (and (eq (car form) :filter)
+                                    (let ((filter (second form)))
+                                      (and (consp filter)
+                                           (member (car filter)
+                                                   '(:key :id))))
+                                    (equal (third form) '(:true)))
+                               (member (car form) '(:key :id))))
+                      (xslt-error "not a valid pattern: ~A ~A" str form))
                      ((not (valid-expression-p form))
                       (xslt-error "invalid filter"))
                      (t (list form)))))
       (process-form form))))
+
+(defun naive-pattern-expression (x)
+  (ecase (car x)
+    (:path `(:path (:ancestor-or-self :node) ,@(cdr x)))
+    ((:filter :key :id) x)))
 
 (defun compile-value-thunk (value env)
   (if (and (listp value) (eq (car value) 'progn))
@@ -1220,8 +1238,7 @@
                             (xslt-trace-thunk
                              (compile-xpath
                               `(xpath:xpath
-                                (:path (:ancestor-or-self :node)
-                                       ,@(cdr expression)))
+                                ,(naive-pattern-expression expression))
                               env)
                              "match-thunk for template (match ~s): ~s --> ~s"
                              match expression :result))

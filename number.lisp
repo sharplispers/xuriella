@@ -71,11 +71,7 @@
   (compile-xpath
    `(xpath:xpath
      (:union
-      ,@(mapcar (lambda (x)
-		  (check-type (car x) (eql :path))
-		  `(:path (:ancestor-or-self :node)
-			  ,@(cdr x)))
-		(parse-pattern str))))
+      ,@(mapcar #'naive-pattern-expression (parse-pattern str))))
    env))
 
 (defun pattern-thunk-matches-p (pattern-thunk node)

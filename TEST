@@ -2492,7 +2492,7 @@ PASS idkey_idkey02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey02.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey02.xuriella
 
-FAIL idkey_idkey03 [XSLT-Result-Tree]: not a valid pattern: key('mykey', 'Introduction')/p
+PASS idkey_idkey03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey03.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey03.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey03.saxon
@@ -2603,7 +2603,7 @@ PASS idkey_idkey21 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey21.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey21.xuriella
 
-FAIL idkey_idkey22 [XSLT-Result-Tree]: not a valid pattern: id('id5')
+PASS idkey_idkey22 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey22.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey22.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey22.saxon
@@ -2681,7 +2681,7 @@ PASS idkey_idkey34 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey34.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey34.xuriella
 
-FAIL idkey_idkey35 [XSLT-Result-Tree]: not a valid pattern: key('mykey','Introduction')//p
+PASS idkey_idkey35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey35.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey35.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey35.saxon
@@ -2694,37 +2694,463 @@ PASS idkey_idkey36 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey36.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey36.xuriella
 
-FAIL idkey_idkey37 [XSLT-Result-Tree]: not a valid pattern: id('b d c')/*[@size > 17]
+PASS idkey_idkey37 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey37.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey37.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey37.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey37.xuriella
 
-FAIL idkey_idkey38 [XSLT-Result-Tree]: not a valid pattern: id('d')/*[@size > 17]
+PASS idkey_idkey38 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey38.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey38.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey38.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey38.xuriella
 
-FAIL idkey_idkey39 [XSLT-Result-Tree]: not a valid pattern: id('b d c')/r[@size > 17]
+PASS idkey_idkey39 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey39.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey39.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey39.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey39.xuriella
 
-FAIL idkey_idkey40 [XSLT-Result-Tree]: not a valid pattern: id('id6')/text()
+FAIL idkey_idkey40 [XSLT-Result-Tree]: id(): error: SIMPLE-ERROR: There is no applicable method for the generic function
+                                                                    #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:GET-ELEMENT-BY-ID-USING-NAVIGATOR (3)>
+                                                                  when called with arguments
+                                                                    (:DEFAULT-NAVIGATOR
+                                                                     #<XURIELLA::PARENT-STRIPPING-NODE #.(CXML-STP-IMPL::DOCUMENT
+   :CHILDREN '(#.(CXML-STP:COMMENT
+                  #| :PARENT of type DOCUMENT |#
+                  :DATA " Test for ID selection and pattern matching ")
+               #.(CXML-STP-IMPL::DOCUMENT-TYPE
+                  #| :PARENT of type DOCUMENT |#
+                  :ROOT-ELEMENT-NAME "doc"
+                  :SYSTEM-ID NIL
+                  :PUBLIC-ID NIL
+                  :INTERNAL-SUBSET "<!ELEMENT doc (#PCDATA|a|b|c)*>
+<!ATTLIST doc id ID #REQUIRED>
+<!ELEMENT a (#PCDATA|a|b|c)*>
+<!ATTLIST a id ID #REQUIRED>
+<!ELEMENT b (#PCDATA|a|b|c)*>
+<!ATTLIST b id ID #REQUIRED>
+<!ELEMENT c (#PCDATA|a|b|c)*>
+<!ATTLIST c id ID #REQUIRED>
+")
+               #.(CXML-STP:ELEMENT
+                  #| :PARENT of type DOCUMENT |#
+                  :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                   #| :PARENT of type ELEMENT |#
+                                   :VALUE "id0"
+                                   :LOCAL-NAME "id"))
+                  :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                  :CHILDREN '(#.(CXML-STP:TEXT
+                                 #| :PARENT of type ELEMENT |#
+                                 :DATA "
+  ")
+                              #.(CXML-STP:ELEMENT
+                                 #| :PARENT of type ELEMENT |#
+                                 :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                  #| :PARENT of type ELEMENT |#
+                                                  :VALUE "id1"
+                                                  :LOCAL-NAME "id"))
+                                 :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                                 :CHILDREN '(#.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    *id1*
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id2"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id2*
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id3"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id3*"))
+                                                               :LOCAL-NAME "a")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id4"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id4*"))
+                                                               :LOCAL-NAME "b")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id5"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id5*"))
+                                                               :LOCAL-NAME "c")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+    "))
+                                                :LOCAL-NAME "a")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id6"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id6*"))
+                                                :LOCAL-NAME "b")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id7"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey40.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id7*"))
+                                                :LOCAL-NAME "c")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+  "))
+                                 :LOCAL-NAME "a")
+                              #.(CXML-STP:TEXT
+                                 #| :PARENT of type ELEMENT |#
+                                 :DATA "
+"))
+                  :LOCAL-NAME "doc")))>
+                                                                     "id6").
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey40.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey40.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey40.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey40.xuriella
 
-FAIL idkey_idkey41 [XSLT-Result-Tree]: not a valid pattern: id('id2')//text()
+FAIL idkey_idkey41 [XSLT-Result-Tree]: id(): error: SIMPLE-ERROR: There is no applicable method for the generic function
+                                                                    #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:GET-ELEMENT-BY-ID-USING-NAVIGATOR (3)>
+                                                                  when called with arguments
+                                                                    (:DEFAULT-NAVIGATOR
+                                                                     #<XURIELLA::PARENT-STRIPPING-NODE #.(CXML-STP-IMPL::DOCUMENT
+   :CHILDREN '(#.(CXML-STP:COMMENT
+                  #| :PARENT of type DOCUMENT |#
+                  :DATA " Test for ID selection and pattern matching ")
+               #.(CXML-STP-IMPL::DOCUMENT-TYPE
+                  #| :PARENT of type DOCUMENT |#
+                  :ROOT-ELEMENT-NAME "doc"
+                  :SYSTEM-ID NIL
+                  :PUBLIC-ID NIL
+                  :INTERNAL-SUBSET "<!ELEMENT doc (#PCDATA|a|b|c)*>
+<!ATTLIST doc id ID #REQUIRED>
+<!ELEMENT a (#PCDATA|a|b|c)*>
+<!ATTLIST a id ID #REQUIRED>
+<!ELEMENT b (#PCDATA|a|b|c)*>
+<!ATTLIST b id ID #REQUIRED>
+<!ELEMENT c (#PCDATA|a|b|c)*>
+<!ATTLIST c id ID #REQUIRED>
+")
+               #.(CXML-STP:ELEMENT
+                  #| :PARENT of type DOCUMENT |#
+                  :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                   #| :PARENT of type ELEMENT |#
+                                   :VALUE "id0"
+                                   :LOCAL-NAME "id"))
+                  :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                  :CHILDREN '(#.(CXML-STP:TEXT
+                                 #| :PARENT of type ELEMENT |#
+                                 :DATA "
+  ")
+                              #.(CXML-STP:ELEMENT
+                                 #| :PARENT of type ELEMENT |#
+                                 :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                  #| :PARENT of type ELEMENT |#
+                                                  :VALUE "id1"
+                                                  :LOCAL-NAME "id"))
+                                 :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                                 :CHILDREN '(#.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    *id1*
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id2"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id2*
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id3"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id3*"))
+                                                               :LOCAL-NAME "a")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id4"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id4*"))
+                                                               :LOCAL-NAME "b")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id5"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id5*"))
+                                                               :LOCAL-NAME "c")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+    "))
+                                                :LOCAL-NAME "a")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id6"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id6*"))
+                                                :LOCAL-NAME "b")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id7"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey41.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id7*"))
+                                                :LOCAL-NAME "c")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+  "))
+                                 :LOCAL-NAME "a")
+                              #.(CXML-STP:TEXT
+                                 #| :PARENT of type ELEMENT |#
+                                 :DATA "
+"))
+                  :LOCAL-NAME "doc")))>
+                                                                     "id2").
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey41.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey41.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey41.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey41.xuriella
 
-FAIL idkey_idkey42 [XSLT-Result-Tree]: not a valid pattern: id('id2')/*[name()='b']/text()
+FAIL idkey_idkey42 [XSLT-Result-Tree]: id(): error: SIMPLE-ERROR: There is no applicable method for the generic function
+                                                                    #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:GET-ELEMENT-BY-ID-USING-NAVIGATOR (3)>
+                                                                  when called with arguments
+                                                                    (:DEFAULT-NAVIGATOR
+                                                                     #<XURIELLA::PARENT-STRIPPING-NODE #.(CXML-STP-IMPL::DOCUMENT
+   :CHILDREN '(#.(CXML-STP:COMMENT
+                  #| :PARENT of type DOCUMENT |#
+                  :DATA " Test for ID selection and pattern matching ")
+               #.(CXML-STP-IMPL::DOCUMENT-TYPE
+                  #| :PARENT of type DOCUMENT |#
+                  :ROOT-ELEMENT-NAME "doc"
+                  :SYSTEM-ID NIL
+                  :PUBLIC-ID NIL
+                  :INTERNAL-SUBSET "<!ELEMENT doc (#PCDATA|a|b|c)*>
+<!ATTLIST doc id ID #REQUIRED>
+<!ELEMENT a (#PCDATA|a|b|c)*>
+<!ATTLIST a id ID #REQUIRED>
+<!ELEMENT b (#PCDATA|a|b|c)*>
+<!ATTLIST b id ID #REQUIRED>
+<!ELEMENT c (#PCDATA|a|b|c)*>
+<!ATTLIST c id ID #REQUIRED>
+")
+               #.(CXML-STP:ELEMENT
+                  #| :PARENT of type DOCUMENT |#
+                  :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                   #| :PARENT of type ELEMENT |#
+                                   :VALUE "id0"
+                                   :LOCAL-NAME "id"))
+                  :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                  :CHILDREN '(#.(CXML-STP:TEXT
+                                 #| :PARENT of type ELEMENT |#
+                                 :DATA "
+  ")
+                              #.(CXML-STP:ELEMENT
+                                 #| :PARENT of type ELEMENT |#
+                                 :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                  #| :PARENT of type ELEMENT |#
+                                                  :VALUE "id1"
+                                                  :LOCAL-NAME "id"))
+                                 :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                                 :CHILDREN '(#.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    *id1*
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id2"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id2*
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id3"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id3*"))
+                                                               :LOCAL-NAME "a")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id4"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id4*"))
+                                                               :LOCAL-NAME "b")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+      ")
+                                                            #.(CXML-STP:ELEMENT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                                #| :PARENT of type ELEMENT |#
+                                                                                :VALUE "id5"
+                                                                                :LOCAL-NAME "id"))
+                                                               :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                                                               :CHILDREN '(#.(CXML-STP:TEXT
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :DATA "*id5*"))
+                                                               :LOCAL-NAME "c")
+                                                            #.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "
+    "))
+                                                :LOCAL-NAME "a")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id6"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id6*"))
+                                                :LOCAL-NAME "b")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+    ")
+                                             #.(CXML-STP:ELEMENT
+                                                #| :PARENT of type ELEMENT |#
+                                                :ATTRIBUTES '(#.(CXML-STP:ATTRIBUTE
+                                                                 #| :PARENT of type ELEMENT |#
+                                                                 :VALUE "id7"
+                                                                 :LOCAL-NAME "id"))
+                                                :BASE-URI "file://+...Xalan_Conformance_Tests/idkey/idkey42.xml"
+                                                :CHILDREN '(#.(CXML-STP:TEXT
+                                                               #| :PARENT of type ELEMENT |#
+                                                               :DATA "*id7*"))
+                                                :LOCAL-NAME "c")
+                                             #.(CXML-STP:TEXT
+                                                #| :PARENT of type ELEMENT |#
+                                                :DATA "
+  "))
+                                 :LOCAL-NAME "a")
+                              #.(CXML-STP:TEXT
+                                 #| :PARENT of type ELEMENT |#
+                                 :DATA "
+"))
+                  :LOCAL-NAME "doc")))>
+                                                                     "id2").
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey42.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey42.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey42.saxon
@@ -2736,31 +3162,31 @@ PASS idkey_idkey43 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey43.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey43.xuriella
 
-FAIL idkey_idkey44 [XSLT-Result-Tree]: not a valid pattern: key('Info','id15')//Level3[Name[starts-with(@First,'J')]]
+PASS idkey_idkey44 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey44.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey44.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey44.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey44.xuriella
 
-FAIL idkey_idkey45 [XSLT-Result-Tree]: not a valid pattern: key('Info','id1')//Level3[Name[starts-with(@First,'J')]]
+PASS idkey_idkey45 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey45.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey45.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey45.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey45.xuriella
 
-FAIL idkey_idkey46 [XSLT-Result-Tree]: not a valid pattern: key('Info','id4')//Level3
+PASS idkey_idkey46 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey46.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey46.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey46.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey46.xuriella
 
-FAIL idkey_idkey47 [XSLT-Result-Tree]: not a valid pattern: key('Info','id1')//Level3/Level3
+PASS idkey_idkey47 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey47.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey47.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey47.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey47.xuriella
 
-FAIL idkey_idkey48 [XSLT-Result-Tree]: not a valid pattern: key('Info','id1')//Level3/Level3[Name/@MI='Q'][Age='8']
+PASS idkey_idkey48 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey48.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey48.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey48.saxon
@@ -2793,7 +3219,7 @@ PASS idkey_idkey52 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey52.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey52.xuriella
 
-FAIL idkey_idkey53 [XSLT-Result-Tree]: key(): error: XSLT-ERROR: unknown key: bar:mykey
+FAIL idkey_idkey53 [XSLT-Result-Tree]: key: error: unknown key: bar:mykey
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey53.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey53.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey53.saxon
@@ -2835,7 +3261,7 @@ FAIL idkey_idkey59 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey59.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey59.xuriella
 
-FAIL idkey_idkey60 [XSLT-Result-Tree]: not a valid pattern: id("abc")/l1/v
+PASS idkey_idkey60 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey60.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey60.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey60.saxon
@@ -3255,7 +3681,7 @@ PASS match_match10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/match/match_match10.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match10.xuriella
 
-FAIL match_match11 [XSLT-Result-Tree]: not a valid pattern: id('b')
+PASS match_match11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/match/match11.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match11.xml
   Expected output (1): Xalan_Conformance_Tests/match/match_match11.saxon
@@ -6237,13 +6663,13 @@ FAIL numbering_numbering89 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering89.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering89.xuriella
 
-FAIL numbering_numbering90 [XSLT-Result-Tree]: not a valid pattern: key('key_of_f','yes')
+FAIL numbering_numbering90 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering90.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering90.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering90.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering90.xuriella
 
-FAIL numbering_numbering91 [XSLT-Result-Tree]: not a valid pattern: id('b d g')
+PASS numbering_numbering91 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering91.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering91.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering91.saxon
@@ -14533,15 +14959,13 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err055.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err055.xuriella
 
-FAIL Errors_err056 [Mixed]: condition of incorrect type: 
-key(): error: XSLT-ERROR: unknown key: bad:name:
+PASS Errors_err056 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/key-badname.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err056.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err056.xuriella
 
-FAIL Errors_err057 [Mixed]: condition of incorrect type: 
-key(): error: XSLT-ERROR: unknown key: unknown
+PASS Errors_err057 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/key-undefined.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err057.saxon
@@ -17294,8 +17718,7 @@ PASS Keys__91720 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91720.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91720.xuriella
 
-FAIL Keys__91721 [XSLT-Data-Manipulation]: condition of incorrect type: 
-key(): error: XSLT-ERROR: unknown key: foo
+PASS Keys__91721 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Keys/91721.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91721.saxon
@@ -17319,8 +17742,7 @@ PASS Keys__91724 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91724.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91724.xuriella
 
-FAIL Keys__91725 [XSLT-Data-Manipulation]: condition of incorrect type: 
-key(): error: XSLT-ERROR: unknown key:  a
+PASS Keys__91725 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Keys/91725.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91725.saxon
@@ -17394,7 +17816,7 @@ FAIL Keys__91859 [XSLT-Data-Manipulation]: duplicate key: foo
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91859.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91859.xuriella
 
-FAIL Keys__91860 [XSLT-Data-Manipulation]: not a valid pattern: key('x','Redmond')
+PASS Keys__91860 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91860.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91860.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91860.saxon
@@ -22784,7 +23206,7 @@ FAIL XSLTFunctions_GenereateIdAppliedToNamespaceNodesOnDifferentElements [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_GenereateIdAppliedToNamespaceNodesOnDifferentElements.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_GenereateIdAppliedToNamespaceNodesOnDifferentElements.xuriella
 
-FAIL XSLTFunctions_KeyFuncTestDescendantsNodeset [Mixed]: not a valid pattern: key('mykey','Introduction')//p
+PASS XSLTFunctions_KeyFuncTestDescendantsNodeset [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_key_desc_nodeset_test.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_key_desc_nodeset_test.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_KeyFuncTestDescendantsNodeset.saxon
@@ -22833,13 +23255,13 @@ PASS XSLTFunctions_SubstringFunctionTest2 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_SubstringFunctionTest2.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_SubstringFunctionTest2.xuriella
 
-FAIL XSLTFunctions_TestIdFuncInComplexStruct [Mixed]: not a valid pattern: id('id5')
+PASS XSLTFunctions_TestIdFuncInComplexStruct [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_test_id_function.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/xslt_test_id_function.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestIdFuncInComplexStruct.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestIdFuncInComplexStruct.xuriella
 
-FAIL XSLTFunctions_TestOfIdFunction [Mixed]: not a valid pattern: id('b')
+PASS XSLTFunctions_TestOfIdFunction [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_test_id_literal.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_test_id_literal.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_TestOfIdFunction.saxon
@@ -22871,4 +23293,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2416/3085 tests.
+Passed 2438/3085 tests.
