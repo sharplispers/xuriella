@@ -782,28 +782,23 @@
                               (or uri instruction-base-uri)))))))))
 
 (xpath-sys:define-xpath-function/eager xslt :key (name object)
-  (handler-case
-      (let ((key (find-key (xpath:string-value name) *stylesheet*)))
-        (labels ((get-by-key (value)
-                   (let ((value (xpath:string-value value)))
-                     (xpath::filter-pipe
-                      #'(lambda (node)
-                          (equal value (xpath:string-value
-                                        (xpath:evaluate-compiled
-                                         (key-use key) node))))
-                      (xpath-sys:pipe-of
-                       (xpath:node-set-value
-                        (xpath:evaluate-compiled
-                         (key-match key) xpath:context)))))))
-          (xpath-sys:make-node-set
-           (xpath::sort-pipe
-            (if (xpath:node-set-p object)
-                (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
-                (get-by-key object))))))
-    ;; fixme: the extension mechanism would turn our condition into an
-    ;; ERROR otherwise
-    (xslt-error (c)
-      (xpath::xpath-error "~A" c))))
+  (let ((key (find-key (xpath:string-value name) *stylesheet*)))
+    (labels ((get-by-key (value)
+               (let ((value (xpath:string-value value)))
+                 (xpath::filter-pipe
+                  #'(lambda (node)
+                      (equal value (xpath:string-value
+                                    (xpath:evaluate-compiled
+                                     (key-use key) node))))
+                  (xpath-sys:pipe-of
+                   (xpath:node-set-value
+                    (xpath:evaluate-compiled
+                     (key-match key) xpath:context)))))))
+      (xpath-sys:make-node-set
+       (xpath::sort-pipe
+        (if (xpath:node-set-p object)
+            (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
+            (get-by-key object)))))))
 
 ;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
 

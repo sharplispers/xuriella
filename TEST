@@ -2793,7 +2793,7 @@ PASS idkey_idkey52 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey52.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey52.xuriella
 
-FAIL idkey_idkey53 [XSLT-Result-Tree]: key: error: unknown key: bar:mykey
+FAIL idkey_idkey53 [XSLT-Result-Tree]: unknown key: bar:mykey
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey53.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey53.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey53.saxon
@@ -2908,8 +2908,8 @@ PASS impincl_impincl07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl07.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl07.xuriella
 
-FAIL impincl_impincl08 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document ...Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"...Xalan_Conformance_Tests/impincl/testfile.xml":
-                                                                                                                                                                                                             No such file or directory
+FAIL impincl_impincl08 [XSLT-Result-Tree]: cannot parse referenced document ...Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"...Xalan_Conformance_Tests/impincl/testfile.xml":
+                                                                                                                                                                              No such file or directory
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl08.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl08.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/../impincl-test/impincl08.xsl
@@ -4030,8 +4030,8 @@ PASS mdocs_mdocs01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs01.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs01.xuriella
 
-FAIL mdocs_mdocs02 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /mdocs02b.xml: error opening #P"/mdocs02b.xml":
-                                                                                                                        No such file or directory
+FAIL mdocs_mdocs02 [XSLT-Result-Tree]: cannot parse referenced document /mdocs02b.xml: error opening #P"/mdocs02b.xml":
+                                                                                         No such file or directory
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs02.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs02.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/mdocs02b.xml
@@ -4052,13 +4052,13 @@ PASS mdocs_mdocs04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs04.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs04.xuriella
 
-FAIL mdocs_mdocs05 [XSLT-Result-Tree]: document(): error: SIMPLE-ERROR: There is no applicable method for the generic function
-                                                                          #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
-                                                                        when called with arguments
-                                                                          (#.(CXML-STP:ATTRIBUTE
-                                                                              #| :PARENT of type ELEMENT |#
-                                                                              :VALUE "compu.xml"
-                                                                              :LOCAL-NAME "urlstr")).
+FAIL mdocs_mdocs05 [XSLT-Result-Tree]: There is no applicable method for the generic function
+                                         #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
+                                       when called with arguments
+                                         (#.(CXML-STP:ATTRIBUTE
+                                             #| :PARENT of type ELEMENT |#
+                                             :VALUE "compu.xml"
+                                             :LOCAL-NAME "urlstr")).
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs05.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs05.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/compu.xml
@@ -4125,8 +4125,8 @@ PASS mdocs_mdocs14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs14.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs14.xuriella
 
-FAIL mdocs_mdocs15 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /mdocs15a.xml: error opening #P"/mdocs15a.xml":
-                                                                                                                        No such file or directory
+FAIL mdocs_mdocs15 [XSLT-Result-Tree]: cannot parse referenced document /mdocs15a.xml: error opening #P"/mdocs15a.xml":
+                                                                                         No such file or directory
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs15.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs15.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/mdocs15a.xml
@@ -5489,32 +5489,31 @@ FAIL numberformat_numberformat09 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat09.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat09.xuriella
 
-FAIL numberformat_numberformat11 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat11 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (4 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat11.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat11.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat11.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat11.xuriella
 
-FAIL numberformat_numberformat12 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat12 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (4 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat12.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat12.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat12.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat12.xuriella
 
-FAIL numberformat_numberformat13 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat13 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (4 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat13.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat13.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat13.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat13.xuriella
 
-FAIL numberformat_numberformat14 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
-                                                                                           -13
-                                                                                         is not of type
-                                                                                           (MOD
-                                                                                            1152921504606846975).
+FAIL numberformat_numberformat14 [XSLT-Result-Tree]: The value -13
+                                                     is not of type
+                                                       (MOD
+                                                        1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat14.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat14.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat14.saxon
@@ -5632,7 +5631,7 @@ FAIL numberformat_numberformat32 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat32.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat32.xuriella
 
-FAIL numberformat_numberformat34 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat34 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (6 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat34.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat34.xml
@@ -5651,11 +5650,10 @@ PASS numberformat_numberformat36 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat36.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat36.xuriella
 
-FAIL numberformat_numberformat37 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
-                                                                                           -13
-                                                                                         is not of type
-                                                                                           (MOD
-                                                                                            1152921504606846975).
+FAIL numberformat_numberformat37 [XSLT-Result-Tree]: The value -13
+                                                     is not of type
+                                                       (MOD
+                                                        1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat37.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat37.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat37.saxon
@@ -5667,21 +5665,19 @@ PASS numberformat_numberformat38 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat38.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat38.xuriella
 
-FAIL numberformat_numberformat39 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
-                                                                                           -13
-                                                                                         is not of type
-                                                                                           (MOD
-                                                                                            1152921504606846975).
+FAIL numberformat_numberformat39 [XSLT-Result-Tree]: The value -13
+                                                     is not of type
+                                                       (MOD
+                                                        1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat39.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat39.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat39.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat39.xuriella
 
-FAIL numberformat_numberformat40 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
-                                                                                           -13
-                                                                                         is not of type
-                                                                                           (MOD
-                                                                                            1152921504606846975).
+FAIL numberformat_numberformat40 [XSLT-Result-Tree]: The value -13
+                                                     is not of type
+                                                       (MOD
+                                                        1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat40.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat40.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat40.saxon
@@ -8177,16 +8173,16 @@ PASS reluri_reluri08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/reluri/reluri_reluri08.saxon
   Actual output: Xalan_Conformance_Tests/reluri/reluri_reluri08.xuriella
 
-FAIL reluri_reluri09 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
-                                                                                                                                   No such file or directory
+FAIL reluri_reluri09 [XSLT-Result-Tree]: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
+                                                                                                    No such file or directory
   Stylesheet: Xalan_Conformance_Tests/reluri/reluri09.noindent-xsl
   Data: Xalan_Conformance_Tests/reluri/reluri09.xml
   Supplemental data: Xalan_Conformance_Tests/reluri/level1/level2/level3/xreluri09a.xml
   Expected output (1): Xalan_Conformance_Tests/reluri/reluri_reluri09.saxon
   Actual output: Xalan_Conformance_Tests/reluri/reluri_reluri09.xuriella
 
-FAIL reluri_reluri10 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
-                                                                                                                                   No such file or directory
+FAIL reluri_reluri10 [XSLT-Result-Tree]: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
+                                                                                                    No such file or directory
   Stylesheet: Xalan_Conformance_Tests/reluri/reluri10.noindent-xsl
   Data: Xalan_Conformance_Tests/reluri/reluri10.xml
   Supplemental data: Xalan_Conformance_Tests/reluri/level1/level2/xreluri10b.xml
@@ -11304,7 +11300,7 @@ PASS BVTs_bvt014 [Mixed]
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt014.xuriella
 
 FAIL BVTs_bvt015 [Mixed]: condition of incorrect type: 
-format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
+arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (1 0).
   Stylesheet: MSFT_Conformance_Tests/BVTs/decimal-format.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
@@ -11462,7 +11458,7 @@ FAIL BVTs_bvt043 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt043.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt043.xuriella
 
-FAIL BVTs_bvt044 [Mixed]: concat(): error: XSLT-ERROR: recursive variable definition
+FAIL BVTs_bvt044 [Mixed]: recursive variable definition
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-var.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-var3.inc
@@ -14490,8 +14486,7 @@ PASS Errors_err049 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err049.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err049.xuriella
 
-FAIL Errors_err051 [Mixed]: condition of incorrect type: 
-concat(): error: XSLT-ERROR: recursive variable definition
+PASS Errors_err051 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/import-cycle2.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Errors/inc/import-var.inc
@@ -16424,11 +16419,10 @@ PASS ForEach_ForEach_ForeachWithXPATHEvaluatesToNull [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ForEach/ForEach_ForEach_ForeachWithXPATHEvaluatesToNull.saxon
   Actual output: MSFT_Conformance_Tests/ForEach/ForEach_ForEach_ForeachWithXPATHEvaluatesToNull.xuriella
 
-FAIL FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
-                                                                                                      -13
-                                                                                                    is not of type
-                                                                                                      (MOD
-                                                                                                       1152921504606846975).
+FAIL FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]: The value -13
+                                                                is not of type
+                                                                  (MOD
+                                                                   1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_no_decimal_format_infinity_test.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatInfinityTest.saxon
@@ -16476,11 +16470,11 @@ FAIL FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard [XSLT-Result-
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard.xuriella
 
-FAIL FormatNumber_FormatNumberWithDecimalFormatInfinity [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
-                                                                                                                  -13
-                                                                                                                is not of type
-                                                                                                                  (MOD
-                                                                                                                   1152921504606846975).
+FAIL FormatNumber_FormatNumberWithDecimalFormatInfinity [XSLT-Result-Tree]: The value
+                                                                              -13
+                                                                            is not of type
+                                                                              (MOD
+                                                                               1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_number_infinity.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatInfinity.saxon
@@ -18678,13 +18672,13 @@ PASS Namespace-alias_NSAlias_Inside_CallTemplate [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.xuriella
 
-FAIL Number__10052 [XSLT-Result-Tree]: format-number: error: no digit-sign or zero-digit sign found
+FAIL Number__10052 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/Number/10052.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10052.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__10052.xuriella
 
-FAIL Number__10053 [XSLT-Result-Tree]: format-number: error: no digit-sign or zero-digit sign found
+FAIL Number__10053 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/Number/10053.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10053.saxon
@@ -22552,7 +22546,7 @@ FAIL XSLTFunctions__crahedOnEmptyVariable [Mixed]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.xuriella
 
 FAIL XSLTFunctions__defaultPattern [Mixed]: condition of incorrect type: 
-format-number(): error: SIMPLE-TYPE-ERROR: Too large to be represented as a SINGLE-FLOAT:
+Too large to be represented as a SINGLE-FLOAT:
   9999999999999999999999999999999999999999999999999999999999999999999999
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -22572,14 +22566,14 @@ FAIL XSLTFunctions__doublePeriod [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__doublePeriod.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__doublePeriod.xuriella
 
-FAIL XSLTFunctions__emptyParameters [Mixed]: format-number: error: no digit-sign or zero-digit sign found
+FAIL XSLTFunctions__emptyParameters [Mixed]: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/emptyParameters.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.xuriella
 
 FAIL XSLTFunctions__EuropeanPattern [Mixed]: condition of incorrect type: 
-format-number(): error: SIMPLE-TYPE-ERROR: Too large to be represented as a SINGLE-FLOAT:
+Too large to be represented as a SINGLE-FLOAT:
   9999999999999999999999999999999999999999999999999999999999999999999999
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-eu.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -22611,27 +22605,23 @@ FAIL XSLTFunctions__minimumValue [Mixed]: output doesn't match
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.xuriella
 
 FAIL XSLTFunctions__Non_DigitPattern [Mixed]: condition of incorrect type: 
-format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
+arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (3 0).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-nd.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.xuriella
 
-FAIL XSLTFunctions__Pattern-separator [Mixed]: format-number(): error: TYPE-ERROR: The value
-                                                                                     -13
-                                                                                   is not of type
-                                                                                     (MOD
-                                                                                      1152921504606846975).
+FAIL XSLTFunctions__Pattern-separator [Mixed]: The value -13
+                                               is not of type
+                                                 (MOD 1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pa.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.xuriella
 
 FAIL XSLTFunctions__percentPattern [Mixed]: condition of incorrect type: 
-format-number(): error: TYPE-ERROR: The value -13
-                                    is not of type
-                                      (MOD 1152921504606846975).
+The value -13 is not of type (MOD 1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pe.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__percentPattern.saxon
@@ -22650,7 +22640,7 @@ FAIL XSLTFunctions__sameDecimalFormatsWithImport [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.xuriella
 
-FAIL XSLTFunctions__specialCharInPattern [Mixed]: format-number: error: no digit-sign or zero-digit sign found
+FAIL XSLTFunctions__specialCharInPattern [Mixed]: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/specialCharInPattern.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__specialCharInPattern.saxon
@@ -22723,26 +22713,26 @@ PASS XSLTFunctions_DocumentFunctionNoArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionNoArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionNoArg.xuriella
 
-FAIL XSLTFunctions_DocumentFunctionWithAbsoluteArgument [Mixed]: document(): error: SIMPLE-ERROR: There is no applicable method for the generic function
-                                                                                                    #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:BASE-URI-USING-NAVIGATOR (3)>
-                                                                                                  when called with arguments
-                                                                                                    (:DEFAULT-NAVIGATOR
-                                                                                                     NIL).
+FAIL XSLTFunctions_DocumentFunctionWithAbsoluteArgument [Mixed]: There is no applicable method for the generic function
+                                                                   #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:BASE-URI-USING-NAVIGATOR (3)>
+                                                                 when called with arguments
+                                                                   (:DEFAULT-NAVIGATOR
+                                                                    NIL).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_document_function_abs_arg.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithAbsoluteArgument.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithAbsoluteArgument.xuriella
 
-FAIL XSLTFunctions_DocumentFunctionWithEntityRef [Mixed]: document(): error: XSLT-ERROR: cannot parse referenced document ...MSFT_Conformance_Tests/XSLTFunctions/test.ent: error opening #P"...MSFT_Conformance_Tests/XSLTFunctions/test.ent":
-                                                                                                                                                                                                                             No such file or directory
+FAIL XSLTFunctions_DocumentFunctionWithEntityRef [Mixed]: cannot parse referenced document ...MSFT_Conformance_Tests/XSLTFunctions/test.ent: error opening #P"...MSFT_Conformance_Tests/XSLTFunctions/test.ent":
+                                                                                                                                                                                              No such file or directory
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_doc_function_with_entity_ref.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Supplemental data: MSFT_Conformance_Tests/XSLTFunctions/inc/test.ent
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.xuriella
 
-FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: document(): error: XSLT-ERROR: cannot parse referenced document ...MSFT_Conformance_Tests/XSLTFunctions/notfound.xml: error opening #P"...MSFT_Conformance_Tests/XSLTFunctions/notfound.xml":
-                                                                                                                                                                                                                                           No such file or directory
+FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: cannot parse referenced document ...MSFT_Conformance_Tests/XSLTFunctions/notfound.xml: error opening #P"...MSFT_Conformance_Tests/XSLTFunctions/notfound.xml":
+                                                                                                                                                                                                            No such file or directory
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_document_fn_with_nonexistent_filename.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithNonExistingFilename.saxon
@@ -22848,13 +22838,13 @@ PASS XSLTFunctions_Bug76054 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76054.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76054.xuriella
 
-FAIL XSLTFunctions_Bug76984 [Mixed]: document(): error: SIMPLE-ERROR: There is no applicable method for the generic function
-                                                                        #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
-                                                                      when called with arguments
-                                                                        (#.(CXML-STP:ATTRIBUTE
-                                                                            #| :PARENT of type ELEMENT |#
-                                                                            :VALUE "a.xml"
-                                                                            :LOCAL-NAME "doc")).
+FAIL XSLTFunctions_Bug76984 [Mixed]: There is no applicable method for the generic function
+                                       #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
+                                     when called with arguments
+                                       (#.(CXML-STP:ATTRIBUTE
+                                           #| :PARENT of type ELEMENT |#
+                                           :VALUE "a.xml"
+                                           :LOCAL-NAME "doc")).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.xml
   Supplemental data: MSFT_Conformance_Tests/XSLTFunctions/b.xml
@@ -22867,4 +22857,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2444/3085 tests.
+Passed 2445/3085 tests.
