@@ -716,7 +716,7 @@ PASS axes_axes58 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes58.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes58.xuriella
 
-FAIL axes_axes59 [XSLT-Result-Tree-Testing]: not a qname: 
+PASS axes_axes59 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes59.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes59.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes59.saxon
@@ -734,7 +734,7 @@ PASS axes_axes61 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes61.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes61.xuriella
 
-FAIL axes_axes62 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes62 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes62.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes62.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes62.saxon
@@ -770,7 +770,7 @@ PASS axes_axes67 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes67.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes67.xuriella
 
-FAIL axes_axes68 [XSLT-Result-Tree-Testing]: not a qname: 
+PASS axes_axes68 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes68.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes68.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes68.saxon
@@ -890,7 +890,7 @@ PASS axes_axes87 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes87.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes87.xuriella
 
-FAIL axes_axes88 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes88 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes88.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes88.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes88.saxon
@@ -1010,7 +1010,7 @@ PASS axes_axes107 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes107.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes107.xuriella
 
-FAIL axes_axes108 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes108 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes108.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes108.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes108.saxon
@@ -1022,19 +1022,19 @@ PASS axes_axes109 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes109.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes109.xuriella
 
-FAIL axes_axes110 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes110 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes110.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes110.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes110.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes110.xuriella
 
-FAIL axes_axes111 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes111 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes111.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes111.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes111.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes111.xuriella
 
-FAIL axes_axes112 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes112 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes112.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes112.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes112.saxon
@@ -1076,7 +1076,7 @@ PASS axes_axes119 [XSLT-Result-Tree-Testing]
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes119.saxon
   Actual output: Xalan_Conformance_Tests/axes/axes_axes119.xuriella
 
-FAIL axes_axes120 [XSLT-Result-Tree-Testing]: output doesn't match
+PASS axes_axes120 [XSLT-Result-Tree-Testing]
   Stylesheet: Xalan_Conformance_Tests/axes/axes120.noindent-xsl
   Data: Xalan_Conformance_Tests/axes/axes120.xml
   Expected output (1): Xalan_Conformance_Tests/axes/axes_axes120.saxon
@@ -1190,7 +1190,7 @@ PASS boolean_boolean07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean07.saxon
   Actual output: Xalan_Conformance_Tests/boolean/boolean_boolean07.xuriella
 
-FAIL boolean_boolean08 [XSLT-Result-Tree]: no such function: :LANG
+PASS boolean_boolean08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/boolean/boolean08.noindent-xsl
   Data: Xalan_Conformance_Tests/boolean/boolean08.xml
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean08.saxon
@@ -1244,7 +1244,7 @@ PASS boolean_boolean16 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean16.saxon
   Actual output: Xalan_Conformance_Tests/boolean/boolean_boolean16.xuriella
 
-FAIL boolean_boolean17 [XSLT-Result-Tree]: output doesn't match
+PASS boolean_boolean17 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/boolean/boolean17.noindent-xsl
   Data: Xalan_Conformance_Tests/boolean/boolean17.xml
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean17.saxon
@@ -1490,13 +1490,13 @@ PASS boolean_boolean57 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean57.saxon
   Actual output: Xalan_Conformance_Tests/boolean/boolean_boolean57.xuriella
 
-FAIL boolean_boolean58 [XSLT-Result-Tree]: output doesn't match
+PASS boolean_boolean58 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/boolean/boolean58.noindent-xsl
   Data: Xalan_Conformance_Tests/boolean/boolean58.xml
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean58.saxon
   Actual output: Xalan_Conformance_Tests/boolean/boolean_boolean58.xuriella
 
-FAIL boolean_boolean59 [XSLT-Result-Tree]: output doesn't match
+PASS boolean_boolean59 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/boolean/boolean59.noindent-xsl
   Data: Xalan_Conformance_Tests/boolean/boolean59.xml
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean59.saxon
@@ -1580,7 +1580,7 @@ PASS boolean_boolean72 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean72.saxon
   Actual output: Xalan_Conformance_Tests/boolean/boolean_boolean72.xuriella
 
-FAIL boolean_boolean73 [XSLT-Result-Tree]: output doesn't match
+PASS boolean_boolean73 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/boolean/boolean73.noindent-xsl
   Data: Xalan_Conformance_Tests/boolean/boolean73.xml
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean73.saxon
@@ -1592,7 +1592,7 @@ PASS boolean_boolean74 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean74.saxon
   Actual output: Xalan_Conformance_Tests/boolean/boolean_boolean74.xuriella
 
-FAIL boolean_boolean75 [XSLT-Result-Tree]: output doesn't match
+PASS boolean_boolean75 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/boolean/boolean75.noindent-xsl
   Data: Xalan_Conformance_Tests/boolean/boolean75.xml
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean75.saxon
@@ -1646,7 +1646,7 @@ PASS boolean_boolean83 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean83.saxon
   Actual output: Xalan_Conformance_Tests/boolean/boolean_boolean83.xuriella
 
-FAIL boolean_boolean84 [XSLT-Result-Tree]: output doesn't match
+PASS boolean_boolean84 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/boolean/boolean84.noindent-xsl
   Data: Xalan_Conformance_Tests/boolean/boolean84.xml
   Expected output (1): Xalan_Conformance_Tests/boolean/boolean_boolean84.saxon
@@ -2096,7 +2096,7 @@ PASS copy_copy10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy10.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy10.xuriella
 
-FAIL copy_copy11 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy11.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy11.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy11.saxon
@@ -2397,7 +2397,7 @@ PASS copy_copy52 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy52.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy52.xuriella
 
-FAIL copy_copy53 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy53 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy53.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy53.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy53.saxon
@@ -2415,31 +2415,31 @@ PASS copy_copy55 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy55.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy55.xuriella
 
-FAIL copy_copy56 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy56 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy56.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy56.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy56.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy56.xuriella
 
-FAIL copy_copy57 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy57 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy57.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy57.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy57.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy57.xuriella
 
-FAIL copy_copy58 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy58 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy58.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy58.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy58.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy58.xuriella
 
-FAIL copy_copy59 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy59 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy59.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy59.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy59.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy59.xuriella
 
-FAIL copy_copy60 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy60 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy60.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy60.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy60.saxon
@@ -2469,7 +2469,7 @@ PASS dflt_dflt04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/dflt/dflt_dflt04.saxon
   Actual output: Xalan_Conformance_Tests/dflt/dflt_dflt04.xuriella
 
-FAIL expression_expression01 [XSLT-Result-Tree]: no such function: :LANG
+PASS expression_expression01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/expression/expression01.noindent-xsl
   Data: Xalan_Conformance_Tests/expression/expression01.xml
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression01.saxon
@@ -2481,25 +2481,25 @@ FAIL expression_expression02 [XSLT-Result-Tree]: no such function: :UNPARSED-ENT
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression02.saxon
   Actual output: Xalan_Conformance_Tests/expression/expression_expression02.xuriella
 
-FAIL expression_expression03 [XSLT-Result-Tree]: no such function: :LANG
+PASS expression_expression03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/expression/expression03.noindent-xsl
   Data: Xalan_Conformance_Tests/expression/expression03.xml
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression03.saxon
   Actual output: Xalan_Conformance_Tests/expression/expression_expression03.xuriella
 
-FAIL expression_expression04 [XSLT-Result-Tree]: no such function: :LANG
+PASS expression_expression04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/expression/expression04.noindent-xsl
   Data: Xalan_Conformance_Tests/expression/expression04.xml
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression04.saxon
   Actual output: Xalan_Conformance_Tests/expression/expression_expression04.xuriella
 
-FAIL expression_expression05 [XSLT-Result-Tree]: no such function: :LANG
+PASS expression_expression05 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/expression/expression05.noindent-xsl
   Data: Xalan_Conformance_Tests/expression/expression05.xml
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression05.saxon
   Actual output: Xalan_Conformance_Tests/expression/expression_expression05.xuriella
 
-FAIL expression_expression06 [XSLT-Result-Tree]: no such function: :LANG
+PASS expression_expression06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/expression/expression06.noindent-xsl
   Data: Xalan_Conformance_Tests/expression/expression06.xml
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression06.saxon
@@ -2572,7 +2572,7 @@ PASS idkey_idkey07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey07.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey07.xuriella
 
-FAIL idkey_idkey08 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey08.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey08.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey08.saxon
@@ -2706,7 +2706,7 @@ PASS idkey_idkey30 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey30.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey30.xuriella
 
-FAIL idkey_idkey31 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey31 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey31.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey31.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey31.saxon
@@ -2842,7 +2842,7 @@ PASS idkey_idkey52 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey52.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey52.xuriella
 
-FAIL idkey_idkey53 [XSLT-Result-Tree]: key(): error: unknown key: bar:mykey
+FAIL idkey_idkey53 [XSLT-Result-Tree]: key(): error: XSLT-ERROR: unknown key: bar:mykey
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey53.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey53.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey53.saxon
@@ -2922,7 +2922,7 @@ PASS impincl_impincl02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl02.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl02.xuriella
 
-FAIL impincl_impincl03 [XSLT-Result-Tree]: concat(): error: invalid array index 3 for #() (should be nonnegative and <0)
+FAIL impincl_impincl03 [XSLT-Result-Tree]: concat(): error: SIMPLE-TYPE-ERROR: invalid array index 3 for #() (should be nonnegative and <0)
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl03.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl03.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/p.xsl
@@ -2957,8 +2957,8 @@ PASS impincl_impincl07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl07.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl07.xuriella
 
-FAIL impincl_impincl08 [XSLT-Result-Tree]: document(): error: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml":
-                                                                                                                                                                                     ??? ?????? ????? ??? ????????
+FAIL impincl_impincl08 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/Xalan_Conformance_Tests/impincl/testfile.xml":
+                                                                                                                                                                                                 ??? ?????? ????? ??? ????????
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl08.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl08.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/../impincl-test/impincl08.xsl
@@ -2980,7 +2980,7 @@ PASS impincl_impincl10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl10.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl10.xuriella
 
-FAIL impincl_impincl11 [XSLT-Result-Tree]: concat(): error: invalid array index 3 for #() (should be nonnegative and <0)
+FAIL impincl_impincl11 [XSLT-Result-Tree]: concat(): error: SIMPLE-TYPE-ERROR: invalid array index 3 for #() (should be nonnegative and <0)
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl11.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl11.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/ss5.xsl
@@ -3942,7 +3942,7 @@ PASS math_math85 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/math/math_math85.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math85.xuriella
 
-FAIL math_math86 [XSLT-Result-Tree]: output doesn't match
+PASS math_math86 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/math/math86.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math86.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math86.saxon
@@ -4050,19 +4050,19 @@ PASS math_math103 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/math/math_math103.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math103.xuriella
 
-FAIL math_math104 [XSLT-Result-Tree]: output doesn't match
+PASS math_math104 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/math/math104.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math104.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math104.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math104.xuriella
 
-PASS math_math105 [XSLT-Result-Tree]
+FAIL math_math105 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/math/math105.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math105.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math105.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math105.xuriella
 
-FAIL math_math110 [XSLT-Result-Tree]: output doesn't match
+PASS math_math110 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/math/math110.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math110.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math110.saxon
@@ -4081,8 +4081,8 @@ PASS mdocs_mdocs01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs01.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs01.xuriella
 
-FAIL mdocs_mdocs02 [XSLT-Result-Tree]: document(): error: cannot parse referenced document /mdocs02b.xml: error opening #P"/mdocs02b.xml":
-                                                                                                            ??? ?????? ????? ??? ????????
+FAIL mdocs_mdocs02 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /mdocs02b.xml: error opening #P"/mdocs02b.xml":
+                                                                                                                        ??? ?????? ????? ??? ????????
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs02.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs02.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/mdocs02b.xml
@@ -4103,13 +4103,13 @@ PASS mdocs_mdocs04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs04.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs04.xuriella
 
-FAIL mdocs_mdocs05 [XSLT-Result-Tree]: document(): error: There is no applicable method for the generic function
-                                                            #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
-                                                          when called with arguments
-                                                            (#.(CXML-STP:ATTRIBUTE
-                                                                #| :PARENT of type ELEMENT |#
-                                                                :VALUE "compu.xml"
-                                                                :LOCAL-NAME "urlstr")).
+FAIL mdocs_mdocs05 [XSLT-Result-Tree]: document(): error: SIMPLE-ERROR: There is no applicable method for the generic function
+                                                                          #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
+                                                                        when called with arguments
+                                                                          (#.(CXML-STP:ATTRIBUTE
+                                                                              #| :PARENT of type ELEMENT |#
+                                                                              :VALUE "compu.xml"
+                                                                              :LOCAL-NAME "urlstr")).
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs05.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs05.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/compu.xml
@@ -4176,8 +4176,8 @@ PASS mdocs_mdocs14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs14.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs14.xuriella
 
-FAIL mdocs_mdocs15 [XSLT-Result-Tree]: document(): error: cannot parse referenced document /mdocs15a.xml: error opening #P"/mdocs15a.xml":
-                                                                                                            ??? ?????? ????? ??? ????????
+FAIL mdocs_mdocs15 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /mdocs15a.xml: error opening #P"/mdocs15a.xml":
+                                                                                                                        ??? ?????? ????? ??? ????????
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs15.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs15.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/mdocs15a.xml
@@ -4237,7 +4237,7 @@ PASS message_message04 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/message/message_message04.xuriella
 
 WARNING: <?xml version="1.0" encoding="UTF-8"?>
-Message from MESSAGE05: <a xmlns="">X</a>
+Message from MESSAGE05: <a>X</a>
 PASS message_message05 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/message/message05.noindent-xsl
   Data: Xalan_Conformance_Tests/message/message05.xml
@@ -4289,7 +4289,7 @@ PASS message_message10 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/message/message_message10.xuriella
 
 WARNING: <?xml version="1.0" encoding="UTF-8"?>
-Message from MESSAGE11: <!---->Anything between the colon and this?
+Message from MESSAGE11: <!--X-->Anything between the colon and this?
 PASS message_message11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/message/message11.noindent-xsl
   Data: Xalan_Conformance_Tests/message/message11.xml
@@ -4305,7 +4305,7 @@ PASS message_message12 [XSLT-Result-Tree]
   Actual output: Xalan_Conformance_Tests/message/message_message12.xuriella
 
 WARNING: <?xml version="1.0" encoding="UTF-8"?>
-Message from MESSAGE13: <a xmlns=""/>Anything between the colon and this?
+Message from MESSAGE13: <a/>Anything between the colon and this?
 PASS message_message13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/message/message13.noindent-xsl
   Data: Xalan_Conformance_Tests/message/message13.xml
@@ -4655,13 +4655,13 @@ FAIL namespace_namespace18 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace18.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace18.xuriella
 
-FAIL namespace_namespace19 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace19.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace19.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace19.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace19.xuriella
 
-PASS namespace_namespace20 [XSLT-Result-Tree]
+FAIL namespace_namespace20 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace20.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace20.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace20.saxon
@@ -4710,7 +4710,7 @@ PASS namespace_namespace27 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace27.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace27.xuriella
 
-FAIL namespace_namespace28 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace28.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace28.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace28.saxon
@@ -4752,7 +4752,7 @@ PASS namespace_namespace34 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace34.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace34.xuriella
 
-FAIL namespace_namespace35 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace35.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace35.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace35.saxon
@@ -5213,7 +5213,7 @@ PASS namespace_namespace112 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace112.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace112.xuriella
 
-FAIL namespace_namespace113 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace113 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace113.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace113.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/namespace/incnamespace113.xsl
@@ -5454,7 +5454,7 @@ PASS node_node16 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/node/node_node16.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node16.xuriella
 
-FAIL node_node17 [XSLT-Result-Tree]: not a qname: 
+PASS node_node17 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/node/node17.noindent-xsl
   Data: Xalan_Conformance_Tests/node/node17.xml
   Expected output (1): Xalan_Conformance_Tests/node/node_node17.saxon
@@ -5490,19 +5490,19 @@ FAIL numberformat_numberformat01 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat01.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat01.xuriella
 
-FAIL numberformat_numberformat02 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat02.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat02.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat02.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat02.xuriella
 
-FAIL numberformat_numberformat03 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat03.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat03.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat03.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat03.xuriella
 
-FAIL numberformat_numberformat04 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat04.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat04.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat04.saxon
@@ -5526,7 +5526,7 @@ PASS numberformat_numberformat07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat07.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat07.xuriella
 
-FAIL numberformat_numberformat08 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat08.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat08.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat08.saxon
@@ -5538,29 +5538,29 @@ FAIL numberformat_numberformat09 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat09.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat09.xuriella
 
-FAIL numberformat_numberformat11 [XSLT-Result-Tree]: format-number(): error: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat11 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (4 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat11.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat11.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat11.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat11.xuriella
 
-FAIL numberformat_numberformat12 [XSLT-Result-Tree]: format-number(): error: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat12 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (4 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat12.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat12.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat12.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat12.xuriella
 
-FAIL numberformat_numberformat13 [XSLT-Result-Tree]: format-number(): error: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat13 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (4 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat13.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat13.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat13.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat13.xuriella
 
-FAIL numberformat_numberformat14 [XSLT-Result-Tree]: format-number(): error: Argument X is not a REAL:
-                                                                               :INF
+FAIL numberformat_numberformat14 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                                  :INF
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat14.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat14.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat14.saxon
@@ -5648,7 +5648,7 @@ FAIL numberformat_numberformat27 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat27.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat27.xuriella
 
-FAIL numberformat_numberformat28 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat28.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat28.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat28.saxon
@@ -5678,7 +5678,7 @@ FAIL numberformat_numberformat32 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat32.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat32.xuriella
 
-FAIL numberformat_numberformat34 [XSLT-Result-Tree]: format-number(): error: arithmetic error DIVISION-BY-ZERO signalled
+FAIL numberformat_numberformat34 [XSLT-Result-Tree]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (6 0).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat34.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat34.xml
@@ -5691,14 +5691,14 @@ FAIL numberformat_numberformat35 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat35.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat35.xuriella
 
-FAIL numberformat_numberformat36 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat36 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat36.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat36.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat36.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat36.xuriella
 
-FAIL numberformat_numberformat37 [XSLT-Result-Tree]: format-number(): error: Argument X is not a REAL:
-                                                                               :INF
+FAIL numberformat_numberformat37 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                                  :INF
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat37.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat37.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat37.saxon
@@ -5710,15 +5710,15 @@ PASS numberformat_numberformat38 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat38.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat38.xuriella
 
-FAIL numberformat_numberformat39 [XSLT-Result-Tree]: format-number(): error: Argument X is not a REAL:
-                                                                               :-INF
+FAIL numberformat_numberformat39 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                                  :-INF
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat39.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat39.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat39.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat39.xuriella
 
-FAIL numberformat_numberformat40 [XSLT-Result-Tree]: format-number(): error: Argument X is not a REAL:
-                                                                               :-INF
+FAIL numberformat_numberformat40 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                                  :-INF
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat40.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat40.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat40.saxon
@@ -6696,19 +6696,19 @@ PASS output_output53 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output53.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output53.xuriella
 
-FAIL output_output54 [XSLT-Result-Tree]: output doesn't match
+PASS output_output54 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output54.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output54.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output54.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output54.xuriella
 
-FAIL output_output55 [XSLT-Result-Tree]: output doesn't match
+PASS output_output55 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output55.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output55.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output55.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output55.xuriella
 
-FAIL output_output56 [XSLT-Result-Tree]: output doesn't match
+PASS output_output56 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output56.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output56.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output56.saxon
@@ -6814,7 +6814,7 @@ PASS output_output67 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output67.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output67.xuriella
 
-FAIL output_output68 [XSLT-Result-Tree]: output doesn't match
+PASS output_output68 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output68.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output68.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output68.saxon
@@ -7603,7 +7603,7 @@ PASS position_position75 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position75.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position75.xuriella
 
-FAIL position_position76 [XSLT-Result-Tree]: output doesn't match
+PASS position_position76 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position76.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position76.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position76.saxon
@@ -7814,13 +7814,13 @@ PASS position_position101 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position101.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position101.xuriella
 
-FAIL position_position111 [XSLT-Result-Tree]: output doesn't match
+PASS position_position111 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position111.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position111.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position111.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position111.xuriella
 
-FAIL predicate_predicate01 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate01.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate01.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate01.saxon
@@ -7868,7 +7868,7 @@ PASS predicate_predicate08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate08.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate08.xuriella
 
-FAIL predicate_predicate09 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate09.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate09.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate09.saxon
@@ -7940,13 +7940,13 @@ PASS predicate_predicate20 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate20.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate20.xuriella
 
-FAIL predicate_predicate21 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate21.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate21.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate21.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate21.xuriella
 
-FAIL predicate_predicate22 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate22 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate22.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate22.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate22.saxon
@@ -7958,13 +7958,13 @@ PASS predicate_predicate23 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate23.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate23.xuriella
 
-FAIL predicate_predicate24 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate24.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate24.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate24.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate24.xuriella
 
-FAIL predicate_predicate25 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate25 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate25.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate25.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate25.saxon
@@ -7976,13 +7976,13 @@ PASS predicate_predicate26 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate26.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate26.xuriella
 
-FAIL predicate_predicate27 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate27 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate27.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate27.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate27.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate27.xuriella
 
-FAIL predicate_predicate28 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate28.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate28.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate28.saxon
@@ -7994,7 +7994,7 @@ PASS predicate_predicate29 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate29.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate29.xuriella
 
-FAIL predicate_predicate30 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate30 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate30.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate30.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate30.saxon
@@ -8006,7 +8006,7 @@ PASS predicate_predicate31 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate31.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate31.xuriella
 
-FAIL predicate_predicate32 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate32 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate32.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate32.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate32.saxon
@@ -8018,7 +8018,7 @@ PASS predicate_predicate33 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate33.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate33.xuriella
 
-FAIL predicate_predicate34 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate34 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate34.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate34.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate34.saxon
@@ -8162,7 +8162,7 @@ PASS predicate_predicate57 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate57.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate57.xuriella
 
-FAIL predicate_predicate58 [XSLT-Result-Tree]: output doesn't match
+PASS predicate_predicate58 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/predicate/predicate58.noindent-xsl
   Data: Xalan_Conformance_Tests/predicate/predicate58.xml
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate58.saxon
@@ -8230,16 +8230,16 @@ PASS reluri_reluri08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/reluri/reluri_reluri08.saxon
   Actual output: Xalan_Conformance_Tests/reluri/reluri_reluri08.xuriella
 
-FAIL reluri_reluri09 [XSLT-Result-Tree]: document(): error: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
-                                                                                                                       ??? ?????? ????? ??? ????????
+FAIL reluri_reluri09 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
+                                                                                                                                   ??? ?????? ????? ??? ????????
   Stylesheet: Xalan_Conformance_Tests/reluri/reluri09.noindent-xsl
   Data: Xalan_Conformance_Tests/reluri/reluri09.xml
   Supplemental data: Xalan_Conformance_Tests/reluri/level1/level2/level3/xreluri09a.xml
   Expected output (1): Xalan_Conformance_Tests/reluri/reluri_reluri09.saxon
   Actual output: Xalan_Conformance_Tests/reluri/reluri_reluri09.xuriella
 
-FAIL reluri_reluri10 [XSLT-Result-Tree]: document(): error: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
-                                                                                                                       ??? ?????? ????? ??? ????????
+FAIL reluri_reluri10 [XSLT-Result-Tree]: document(): error: XSLT-ERROR: cannot parse referenced document /level3/xreluri09a.xml: error opening #P"/level3/xreluri09a.xml":
+                                                                                                                                   ??? ?????? ????? ??? ????????
   Stylesheet: Xalan_Conformance_Tests/reluri/reluri10.noindent-xsl
   Data: Xalan_Conformance_Tests/reluri/reluri10.xml
   Supplemental data: Xalan_Conformance_Tests/reluri/level1/level2/xreluri10b.xml
@@ -8487,13 +8487,13 @@ PASS select_select38 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select38.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select38.xuriella
 
-FAIL select_select39 [XSLT-Result-Tree]: output doesn't match
+PASS select_select39 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select39.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select39.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select39.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select39.xuriella
 
-FAIL select_select40 [XSLT-Result-Tree]: output doesn't match
+PASS select_select40 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select40.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select40.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select40.saxon
@@ -8779,7 +8779,7 @@ PASS select_select86 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select86.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select86.xuriella
 
-FAIL sort_sort01 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
+FAIL sort_sort01 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort01.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort01.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort01.saxon
@@ -8827,7 +8827,7 @@ PASS sort_sort08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort08.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort08.xuriella
 
-FAIL sort_sort09 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
+FAIL sort_sort09 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort09.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort09.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort09.saxon
@@ -8851,7 +8851,7 @@ PASS sort_sort12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort12.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort12.xuriella
 
-FAIL sort_sort13 [XSLT-Result-Tree]: Argument Y is not a NUMBER: :NAN
+FAIL sort_sort13 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort13.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort13.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort13.saxon
@@ -8947,7 +8947,7 @@ PASS sort_sort27 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort27.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort27.xuriella
 
-FAIL sort_sort28 [XSLT-Result-Tree]: Argument Y is not a NUMBER: :NAN
+FAIL sort_sort28 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort28.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort28.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort28.saxon
@@ -8989,7 +8989,7 @@ FAIL sort_sort32 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort32.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort32.xuriella
 
-FAIL sort_sort33 [XSLT-Result-Tree]: Argument Y is not a NUMBER: :NAN
+FAIL sort_sort33 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort33.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort33.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort33.saxon
@@ -9031,7 +9031,7 @@ FAIL sort_sort37 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort37.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort37.xuriella
 
-FAIL sort_sort38 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
+PASS sort_sort38 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort38.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort38.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort38.saxon
@@ -9043,7 +9043,7 @@ PASS sort_sort39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort39.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort39.xuriella
 
-FAIL sort_sort40 [XSLT-Result-Tree]: Argument X is not a NUMBER: :NAN
+FAIL sort_sort40 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/sort/sort40.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort40.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort40.saxon
@@ -9793,19 +9793,19 @@ FAIL string_string132 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/string/string_string132.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string132.xuriella
 
-FAIL string_string133 [XSLT-Result-Tree]: output doesn't match
+PASS string_string133 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string133.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string133.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string133.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string133.xuriella
 
-FAIL string_string134 [XSLT-Result-Tree]: output doesn't match
+PASS string_string134 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string134.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string134.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string134.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string134.xuriella
 
-FAIL string_string135 [XSLT-Result-Tree]: invalid XPath syntax: arithmetic error FLOATING-POINT-OVERFLOW signalled in: .000000000000000000000000000000123456789
+PASS string_string135 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string135.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string135.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string135.saxon
@@ -10258,13 +10258,13 @@ PASS variable_variable67 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable67.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable67.xuriella
 
-FAIL variable_variable68 [XSLT-Result-Tree]: output doesn't match
+PASS variable_variable68 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable68.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable68.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable68.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable68.xuriella
 
-FAIL variable_variable69 [XSLT-Result-Tree]: output doesn't match
+PASS variable_variable69 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable69.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable69.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable69.saxon
@@ -10494,8 +10494,7 @@ PASS Attributes__78375 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78375.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78375.xuriella
 
-FAIL Attributes__78377 [XSLT-Result-Tree]: condition of incorrect type: 
-The value NIL is not of type STRING.
+PASS Attributes__78377 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/78377.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78377.saxon
@@ -11199,7 +11198,7 @@ PASS AVTs__77575 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77575.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77575.xuriella
 
-FAIL AVTs__77576 [XSLT-Result-Tree]: output doesn't match
+PASS AVTs__77576 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17009.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/XSLT17009.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77576.saxon
@@ -11376,7 +11375,7 @@ PASS BVTs_bvt014 [Mixed]
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt014.xuriella
 
 FAIL BVTs_bvt015 [Mixed]: condition of incorrect type: 
-format-number(): error: arithmetic error DIVISION-BY-ZERO signalled
+format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (1 0).
   Stylesheet: MSFT_Conformance_Tests/BVTs/decimal-format.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
@@ -11508,7 +11507,7 @@ FAIL BVTs_bvt038 [Mixed]: attribute outside of element
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt038.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt038.xuriella
 
-FAIL BVTs_bvt039 [Mixed]: output doesn't match
+PASS BVTs_bvt039 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-alias.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-nsalias.inc
@@ -11543,7 +11542,7 @@ FAIL BVTs_bvt043 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt043.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt043.xuriella
 
-FAIL BVTs_bvt044 [Mixed]: concat(): error: recursive variable definition
+FAIL BVTs_bvt044 [Mixed]: concat(): error: XSLT-ERROR: recursive variable definition
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-var.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-var3.inc
@@ -11608,6 +11607,11 @@ WARNING:
    comparison failed: Document not well-formed: Only the default namespace (the one without a prefix) may be bound to an empty namespace URI, thus undeclaring it.
 Context:
   Line 2, column 153 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Only the default namespace (the one without a prefix) may be bound to an empty namespace URI, thus undeclaring it.
+Context:
+  Line 2, column 323 in NIL
 
 FAIL BVTs_bvt058 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/nsalias.noindent-xsl
@@ -14567,7 +14571,7 @@ PASS Errors_err049 [Mixed]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err049.xuriella
 
 FAIL Errors_err051 [Mixed]: condition of incorrect type: 
-concat(): error: recursive variable definition
+concat(): error: XSLT-ERROR: recursive variable definition
   Stylesheet: MSFT_Conformance_Tests/Errors/import-cycle2.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Errors/inc/import-var.inc
@@ -14610,14 +14614,14 @@ Context:
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err055.xuriella
 
 FAIL Errors_err056 [Mixed]: condition of incorrect type: 
-key(): error: unknown key: bad:name:
+key(): error: XSLT-ERROR: unknown key: bad:name:
   Stylesheet: MSFT_Conformance_Tests/Errors/key-badname.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err056.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err056.xuriella
 
 FAIL Errors_err057 [Mixed]: condition of incorrect type: 
-key(): error: unknown key: unknown
+key(): error: XSLT-ERROR: unknown key: unknown
   Stylesheet: MSFT_Conformance_Tests/Errors/key-undefined.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err057.saxon
@@ -16502,8 +16506,8 @@ PASS ForEach_ForEach_ForeachWithXPATHEvaluatesToNull [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ForEach/ForEach_ForEach_ForeachWithXPATHEvaluatesToNull.saxon
   Actual output: MSFT_Conformance_Tests/ForEach/ForEach_ForEach_ForeachWithXPATHEvaluatesToNull.xuriella
 
-FAIL FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]: format-number(): error: Argument X is not a REAL:
-                                                                                          :INF
+FAIL FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                                             :INF
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_no_decimal_format_infinity_test.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatInfinityTest.saxon
@@ -16545,8 +16549,8 @@ FAIL FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard [XSLT-Result-
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard.xuriella
 
-FAIL FormatNumber_FormatNumberWithDecimalFormatInfinity [XSLT-Result-Tree]: format-number(): error: Argument X is not a REAL:
-                                                                                                      :-INF
+FAIL FormatNumber_FormatNumberWithDecimalFormatInfinity [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                                                         :-INF
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_number_infinity.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatInfinity.saxon
@@ -17363,7 +17367,7 @@ PASS Keys__91720 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91720.xuriella
 
 FAIL Keys__91721 [XSLT-Data-Manipulation]: condition of incorrect type: 
-key(): error: unknown key: foo
+key(): error: XSLT-ERROR: unknown key: foo
   Stylesheet: MSFT_Conformance_Tests/Keys/91721.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91721.saxon
@@ -17388,7 +17392,7 @@ PASS Keys__91724 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91724.xuriella
 
 FAIL Keys__91725 [XSLT-Data-Manipulation]: condition of incorrect type: 
-key(): error: unknown key:  a
+key(): error: XSLT-ERROR: unknown key:  a
   Stylesheet: MSFT_Conformance_Tests/Keys/91725.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91725.saxon
@@ -18229,7 +18233,7 @@ PASS Namespace__77669 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77669.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77669.xuriella
 
-FAIL Namespace__77670 [XSLT-Structure]: output doesn't match
+PASS Namespace__77670 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace/element_in_attribute10.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77670.saxon
@@ -18417,35 +18421,36 @@ PASS Namespace__84474 [XSLT-Structure]
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__84474.xuriella
 
 WARNING: There is no such encoding: "windows-1251".
-FAIL Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]: output doesn't match
+PASS Namespace_CheckXmlnsResetOnResultTree [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/XmlnsResetOnResultElement.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace_CheckXmlnsResetOnResultTree.xuriella
 
 FAIL Namespace_Bug85356 [XSLT-Structure]: don't know how to copy node #S(CXML-STP-IMPL::STP-NAMESPACE
-                                                                         :PARENT #.(ELEMENT
-                                                                                    #| :PARENT of type DOCUMENT |#
-                                                                                    BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Bug85356.xml
-                                                                                    CHILDREN '(#.(TEXT
-                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                  DATA 
-?)
-                                                                                               #.(ELEMENT
-                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                  EXTRA-NAMESPACES '((foo
-                                                                                                                      http://foo.com))
+                                                                         :PARENT #.(DOCUMENT
+                                                                                    CHILDREN '(#.(ELEMENT
+                                                                                                  #| :PARENT of type DOCUMENT |#
                                                                                                   BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Bug85356.xml
-                                                                                                  LOCAL-NAME elem
-                                                                                                  NAMESPACE-URI default)
-                                                                                               #.(TEXT
-                                                                                                  #| :PARENT of type ELEMENT |#
-                                                                                                  DATA 
+                                                                                                  CHILDREN '(#.(TEXT
+                                                                                                                #| :PARENT of type ELEMENT |#
+                                                                                                                DATA 
+?)
+                                                                                                             #.(ELEMENT
+                                                                                                                #| :PARENT of type ELEMENT |#
+                                                                                                                EXTRA-NAMESPACES '((foo
+                                                                                                                                    http://foo.com))
+                                                                                                                BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace/Bug85356.xml
+                                                                                                                LOCAL-NAME elem
+                                                                                                                NAMESPACE-URI default)
+                                                                                                             #.(TEXT
+                                                                                                                #| :PARENT of type ELEMENT |#
+                                                                                                                DATA 
 ))
-                                                                                    LOCAL-NAME root
-                                                                                    NAMESPACE-URI default)
-                                                                         :PREFIX
-                                                                         :URI default)
+                                                                                                  LOCAL-NAME root
+                                                                                                  NAMESPACE-URI default)))
+                                                                         :PREFIX xml
+                                                                         :URI http://www.w3.org/XML/1998/namespace)
   Stylesheet: MSFT_Conformance_Tests/Namespace/Bug85356.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/Bug85356.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_Bug85356.saxon
@@ -18461,7 +18466,92 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.xuriella
 
-FAIL Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]: output doesn't match
+FAIL Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]: don't know how to copy node #S(CXML-STP-IMPL::STP-NAMESPACE
+                                                                                                  :PARENT #.(ELEMENT
+                                                                                                             #| :PARENT of type DOCUMENT |#
+                                                                                                             ATTRIBUTES '(#.(ATTRIBUTE
+                                                                                                                             #| :PARENT of type ELEMENT |#
+                                                                                                                             VALUE 1.0
+                                                                                                                             LOCAL-NAME version))
+                                                                                                             BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
+                                                                                                             CHILDREN '(#.(TEXT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           DATA 
+
+    )
+                                                                                                                        #.(COMMENT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           DATA  Purpose: Test case for bug 70935 )
+                                                                                                                        #.(TEXT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           DATA 
+
+    )
+                                                                                                                        #.(ELEMENT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           ATTRIBUTES '(#.(ATTRIBUTE
+                                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                                           VALUE UTF-8
+                                                                                                                                           LOCAL-NAME encoding)
+                                                                                                                                        #.(ATTRIBUTE
+                                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                                           VALUE xml
+                                                                                                                                           LOCAL-NAME method)
+                                                                                                                                        #.(ATTRIBUTE
+                                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                                           VALUE yes
+                                                                                                                                           LOCAL-NAME omit-xml-declaration))
+                                                                                                                           BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
+                                                                                                                           LOCAL-NAME output
+                                                                                                                           NAMESPACE-PREFIX xsl
+                                                                                                                           NAMESPACE-URI http://www.w3.org/1999/XSL/Transform)
+                                                                                                                        #.(TEXT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           DATA 
+
+    )
+                                                                                                                        #.(ELEMENT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           ATTRIBUTES '(#.(ATTRIBUTE
+                                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                                           VALUE /
+                                                                                                                                           LOCAL-NAME match))
+                                                                                                                           BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
+                                                                                                                           CHILDREN '(#.(TEXT
+                                                                                                                                         #| :PARENT of type ELEMENT |#
+                                                                                                                                         DATA 
+        )
+                                                                                                                                      #.(ELEMENT
+                                                                                                                                         #| :PARENT of type ELEMENT |#
+                                                                                                                                         BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
+                                                                                                                                         CHILDREN '(#.(ELEMENT
+                                                                                                                                                       #| :PARENT of type ELEMENT |#
+                                                                                                                                                       ATTRIBUTES '(#.(ATTRIBUTE
+                                                                                                                                                                       #| :PARENT of type ELEMENT |#
+                                                                                                                                                                       VALUE document('')/xsl:stylesheet/namespace::xsl
+                                                                                                                                                                       LOCAL-NAME select))
+                                                                                                                                                       BASE-URI file://+/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
+                                                                                                                                                       LOCAL-NAME copy-of
+                                                                                                                                                       NAMESPACE-PREFIX xsl
+                                                                                                                                                       NAMESPACE-URI http://www.w3.org/1999/XSL/Transform))
+                                                                                                                                         LOCAL-NAME test)
+                                                                                                                                      #.(TEXT
+                                                                                                                                         #| :PARENT of type ELEMENT |#
+                                                                                                                                         DATA 
+    ))
+                                                                                                                           LOCAL-NAME template
+                                                                                                                           NAMESPACE-PREFIX xsl
+                                                                                                                           NAMESPACE-URI http://www.w3.org/1999/XSL/Transform)
+                                                                                                                        #.(TEXT
+                                                                                                                           #| :PARENT of type ELEMENT |#
+                                                                                                                           DATA 
+
+))
+                                                                                                             LOCAL-NAME stylesheet
+                                                                                                             NAMESPACE-PREFIX xsl
+                                                                                                             NAMESPACE-URI http://www.w3.org/1999/XSL/Transform)
+                                                                                                  :PREFIX xsl
+                                                                                                  :URI http://www.w3.org/1999/XSL/Transform)
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_CopyNamespaceNodeToOutput.saxon
@@ -18610,6 +18700,11 @@ WARNING:
 Context:
   Line 2, column 48 in NIL
 
+WARNING:
+   comparison failed: Document not well-formed: Only the default namespace (the one without a prefix) may be bound to an empty namespace URI, thus undeclaring it.
+Context:
+  Line 2, column 48 in NIL
+
 FAIL Namespace-alias__91782 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91782.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
@@ -18628,7 +18723,7 @@ PASS Namespace-alias__91784 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91784.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91784.xuriella
 
-FAIL Namespace-alias__91785 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91785 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91785.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91785.saxon
@@ -18730,7 +18825,7 @@ FAIL Namespace-alias_Namespace-Alias_NSAliasForDefaultWithExcludeResPref [XSLT-S
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_NSAliasForDefaultWithExcludeResPref.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_NSAliasForDefaultWithExcludeResPref.xuriella
 
-FAIL Namespace-alias_Namespace-Alias_RenameAliasIfClauseForResultDocument [XSLT-Structure]: output doesn't match
+PASS Namespace-alias_Namespace-Alias_RenameAliasIfClauseForResultDocument [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/xslt_nsalias_NsAliasForXslOutput.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/xslt_nsalias_NsAliasForXslOutput.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_RenameAliasIfClauseForResultDocument.saxon
@@ -18748,7 +18843,7 @@ FAIL Namespace-alias_Namespace-Alias_Test2 [XSLT-Structure]: output doesn't matc
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_Test2.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_Test2.xuriella
 
-FAIL Namespace-alias_Namespace-Alias_WithinRTF [XSLT-Structure]: output doesn't match
+PASS Namespace-alias_Namespace-Alias_WithinRTF [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/xslt_NSaliasWithinRTF.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_WithinRTF.saxon
@@ -18761,19 +18856,19 @@ FAIL Namespace-alias_NSAlias_In_Import [XSLT-Structure]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_In_Import.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_In_Import.xuriella
 
-FAIL Namespace-alias_NSAlias_Inside_CallTemplate [XSLT-Structure]: output doesn't match
+PASS Namespace-alias_NSAlias_Inside_CallTemplate [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/xslt_test_namespace_alias_inside_call_template.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.xuriella
 
-FAIL Number__10052 [XSLT-Result-Tree]: format-number(): error: no digit-sign or zero-digit sign found
+FAIL Number__10052 [XSLT-Result-Tree]: format-number: error: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/Number/10052.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10052.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__10052.xuriella
 
-FAIL Number__10053 [XSLT-Result-Tree]: format-number(): error: no digit-sign or zero-digit sign found
+FAIL Number__10053 [XSLT-Result-Tree]: format-number: error: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/Number/10053.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10053.saxon
@@ -19139,7 +19234,7 @@ FAIL Number__91021 [XSLT-Result-Tree]: There is no applicable method for the gen
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91021.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91021.xuriella
 
-FAIL Number__91022 [XSLT-Result-Tree]: output doesn't match
+PASS Number__91022 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/91022.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91022.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91022.saxon
@@ -20594,7 +20689,7 @@ PASS Sorting__77557 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77557.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77557.xuriella
 
-FAIL Sorting__77559 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
+PASS Sorting__77559 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT19014.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sort4.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77559.saxon
@@ -20704,7 +20799,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78191.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__78191.xuriella
 
-FAIL Sorting__78286 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
+PASS Sorting__78286 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT18123.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/XSLT18123.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78286.saxon
@@ -20716,7 +20811,7 @@ PASS Sorting__78288 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78288.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__78288.xuriella
 
-FAIL Sorting__78291 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
+PASS Sorting__78291 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT18105.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/XSLT18123.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78291.saxon
@@ -20848,7 +20943,7 @@ PASS Sorting__84006 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__84006.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__84006.xuriella
 
-FAIL Sorting__84186 [XSLT-Data-Manipulation]: Argument Y is not a NUMBER: :NAN
+FAIL Sorting__84186 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/84186.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/84186a.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__84186.saxon
@@ -21026,13 +21121,13 @@ FAIL Sorting__91703 [XSLT-Data-Manipulation]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91703.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91703.xuriella
 
-FAIL Sorting__91704 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
+PASS Sorting__91704 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/91704.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91704.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91704.xuriella
 
-FAIL Sorting__91705 [XSLT-Data-Manipulation]: Argument X is not a NUMBER: :NAN
+PASS Sorting__91705 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/91705.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91705.saxon
@@ -21062,8 +21157,7 @@ PASS Sorting_Sort_AllTextElementsAreSame [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_AllTextElementsAreSame.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_AllTextElementsAreSame.xuriella
 
-FAIL Sorting_Sort_CommaDelimitedNumber [XSLT-Data-Manipulation]: Argument X is not a NUMBER:
-                                                                   :NAN
+FAIL Sorting_Sort_CommaDelimitedNumber [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_CommaDelimitedNumber.saxon
@@ -21093,8 +21187,7 @@ FAIL Sorting_Sort_PositiveNumbersHavePlusSign [XSLT-Data-Manipulation]: output d
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_PositiveNumbersHavePlusSign.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_PositiveNumbersHavePlusSign.xuriella
 
-FAIL Sorting_Sort_SortEmptyTextNodesWithDataTypeNumber [XSLT-Data-Manipulation]: Argument X is not a NUMBER:
-                                                                                   :NAN
+FAIL Sorting_Sort_SortEmptyTextNodesWithDataTypeNumber [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortEmptyTextNodesWithDataTypeNumber.saxon
@@ -22653,7 +22746,7 @@ FAIL XSLTFunctions__crahedOnEmptyVariable [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.xuriella
 
-FAIL XSLTFunctions__defaultPattern [Mixed]: format-number(): error: Too large to be represented as a SINGLE-FLOAT:
+FAIL XSLTFunctions__defaultPattern [Mixed]: format-number(): error: SIMPLE-TYPE-ERROR: Too large to be represented as a SINGLE-FLOAT:
   9999999999999999999999999999999999999999999999999999999999999999999999
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -22673,13 +22766,13 @@ FAIL XSLTFunctions__doublePeriod [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__doublePeriod.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__doublePeriod.xuriella
 
-FAIL XSLTFunctions__emptyParameters [Mixed]: format-number(): error: no digit-sign or zero-digit sign found
+FAIL XSLTFunctions__emptyParameters [Mixed]: format-number: error: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/emptyParameters.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.xuriella
 
-FAIL XSLTFunctions__EuropeanPattern [Mixed]: format-number(): error: Too large to be represented as a SINGLE-FLOAT:
+FAIL XSLTFunctions__EuropeanPattern [Mixed]: format-number(): error: SIMPLE-TYPE-ERROR: Too large to be represented as a SINGLE-FLOAT:
   9999999999999999999999999999999999999999999999999999999999999999999999
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-eu.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -22698,34 +22791,34 @@ FAIL XSLTFunctions__InvalidPattern [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__InvalidPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__InvalidPattern.xuriella
 
-FAIL XSLTFunctions__minimalValue [Mixed]: invalid XPath syntax: arithmetic error FLOATING-POINT-OVERFLOW signalled in: 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000222
+FAIL XSLTFunctions__minimalValue [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/min-value2.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimalValue.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimalValue.xuriella
 
-FAIL XSLTFunctions__minimumValue [Mixed]: invalid XPath syntax: arithmetic error FLOATING-POINT-OVERFLOW signalled in: 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000222
+FAIL XSLTFunctions__minimumValue [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/min-value.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.xuriella
 
-FAIL XSLTFunctions__Non_DigitPattern [Mixed]: format-number(): error: arithmetic error DIVISION-BY-ZERO signalled
+FAIL XSLTFunctions__Non_DigitPattern [Mixed]: format-number(): error: DIVISION-BY-ZERO: arithmetic error DIVISION-BY-ZERO signalled
 Operation was SB-KERNEL::DIVISION, operands (3 0).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-nd.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.xuriella
 
-FAIL XSLTFunctions__Pattern-separator [Mixed]: format-number(): error: Argument X is not a REAL:
-                                                                         :INF
+FAIL XSLTFunctions__Pattern-separator [Mixed]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                            :INF
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pa.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.xuriella
 
-FAIL XSLTFunctions__percentPattern [Mixed]: format-number(): error: Argument X is not a REAL:
-                                                                      :INF
+FAIL XSLTFunctions__percentPattern [Mixed]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
+                                                                                         :INF
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pe.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__percentPattern.saxon
@@ -22744,8 +22837,7 @@ FAIL XSLTFunctions__sameDecimalFormatsWithImport [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.xuriella
 
-FAIL XSLTFunctions__specialCharInPattern [Mixed]: condition of incorrect type: 
-format-number(): error: no digit-sign or zero-digit sign found
+PASS XSLTFunctions__specialCharInPattern [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/specialCharInPattern.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__specialCharInPattern.saxon
@@ -22757,14 +22849,13 @@ PASS XSLTFunctions__testOn-0.00 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__testOn-0.00.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__testOn-0.00.xuriella
 
-FAIL XSLTFunctions__testWithNumber [Mixed]: output doesn't match
+PASS XSLTFunctions__testWithNumber [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/testWithNumber.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__testWithNumber.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__testWithNumber.xuriella
 
-FAIL XSLTFunctions__threeSubpatterns [Mixed]: condition of incorrect type: 
-format-number(): error: invalid pattern separators
+PASS XSLTFunctions__threeSubpatterns [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/threeSubpatterns.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__threeSubpatterns.saxon
@@ -22825,26 +22916,26 @@ PASS XSLTFunctions_DocumentFunctionNoArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionNoArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionNoArg.xuriella
 
-FAIL XSLTFunctions_DocumentFunctionWithAbsoluteArgument [Mixed]: document(): error: There is no applicable method for the generic function
-                                                                                      #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:BASE-URI-USING-NAVIGATOR (3)>
-                                                                                    when called with arguments
-                                                                                      (:DEFAULT-NAVIGATOR
-                                                                                       NIL).
+FAIL XSLTFunctions_DocumentFunctionWithAbsoluteArgument [Mixed]: document(): error: SIMPLE-ERROR: There is no applicable method for the generic function
+                                                                                                    #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:BASE-URI-USING-NAVIGATOR (3)>
+                                                                                                  when called with arguments
+                                                                                                    (:DEFAULT-NAVIGATOR
+                                                                                                     NIL).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_document_function_abs_arg.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithAbsoluteArgument.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithAbsoluteArgument.xuriella
 
-FAIL XSLTFunctions_DocumentFunctionWithEntityRef [Mixed]: document(): error: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/test.ent: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/test.ent":
-                                                                                                                                                                                                     ??? ?????? ????? ??? ????????
+FAIL XSLTFunctions_DocumentFunctionWithEntityRef [Mixed]: document(): error: XSLT-ERROR: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/test.ent: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/test.ent":
+                                                                                                                                                                                                                 ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_doc_function_with_entity_ref.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Supplemental data: MSFT_Conformance_Tests/XSLTFunctions/inc/test.ent
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithEntityRef.xuriella
 
-FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: document(): error: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml":
-                                                                                                                                                                                                                   ??? ?????? ????? ??? ????????
+FAIL XSLTFunctions_DocumentFunctionWithNonExistingFilename [Mixed]: document(): error: XSLT-ERROR: cannot parse referenced document /home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml: error opening #P"/home/ivan4th/devlibs/testsuite/TESTS/MSFT_Conformance_Tests/XSLTFunctions/notfound.xml":
+                                                                                                                                                                                                                               ??? ?????? ????? ??? ????????
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_document_fn_with_nonexistent_filename.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithNonExistingFilename.saxon
@@ -22913,7 +23004,7 @@ PASS XSLTFunctions_RepeatedUseOfDivOperator [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_RepeatedUseOfDivOperator.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_RepeatedUseOfDivOperator.xuriella
 
-FAIL XSLTFunctions_RoundTripNumber_UsingStringFn [Mixed]: output doesn't match
+PASS XSLTFunctions_RoundTripNumber_UsingStringFn [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/StringFn_RoundTrippedNumbersNoTrunc.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/StringFn_RoundTrippedNumbersNoTrunc.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_RoundTripNumber_UsingStringFn.saxon
@@ -22950,13 +23041,13 @@ PASS XSLTFunctions_Bug76054 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76054.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76054.xuriella
 
-FAIL XSLTFunctions_Bug76984 [Mixed]: document(): error: There is no applicable method for the generic function
-                                                          #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
-                                                        when called with arguments
-                                                          (#.(CXML-STP:ATTRIBUTE
-                                                              #| :PARENT of type ELEMENT |#
-                                                              :VALUE "a.xml"
-                                                              :LOCAL-NAME "doc")).
+FAIL XSLTFunctions_Bug76984 [Mixed]: document(): error: SIMPLE-ERROR: There is no applicable method for the generic function
+                                                                        #<STANDARD-GENERIC-FUNCTION CXML-STP:BASE-URI (2)>
+                                                                      when called with arguments
+                                                                        (#.(CXML-STP:ATTRIBUTE
+                                                                            #| :PARENT of type ELEMENT |#
+                                                                            :VALUE "a.xml"
+                                                                            :LOCAL-NAME "doc")).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.xml
   Supplemental data: MSFT_Conformance_Tests/XSLTFunctions/b.xml
@@ -22969,4 +23060,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2290/3085 tests.
+Passed 2377/3085 tests.

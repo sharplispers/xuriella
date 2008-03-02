@@ -216,15 +216,26 @@
   `(invoke-with-text-output-sink (lambda (,var) ,@body)))
 
 (defclass text-output-sink (sax:default-handler)
-  ((target :initarg :target :accessor text-output-sink-target)))
+  ((target :initarg :target :accessor text-output-sink-target)
+   (depth :initform 0 :accessor textoutput-sink-depth)))
+
+(defmethod sax:start-element ((sink text-output-sink)
+                              namespace-uri local-name qname attributes)
+  (declare (ignore namespace-uri local-name qname attributes))
+  (incf (textoutput-sink-depth sink)))
 
 (defmethod sax:characters ((sink text-output-sink) data)
-  (write-string data (text-output-sink-target sink)))
+  (when (zerop (textoutput-sink-depth sink))
+    (write-string data (text-output-sink-target sink))))
+
+(defmethod sax:end-element ((sink text-output-sink)
+                              namespace-uri local-name qname)
+  (declare (ignore namespace-uri local-name qname))
+  (decf (textoutput-sink-depth sink)))
 
 (defun invoke-with-text-output-sink (fn)
   (with-output-to-string (s)
     (funcall fn (make-instance 'text-output-sink :target s))))
-
 
 ;;;; Names
 

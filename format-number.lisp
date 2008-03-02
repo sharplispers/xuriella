@@ -102,7 +102,7 @@
        (df/pattern-separator df)
        picture)
     (unless (and positive (not erroneous))
-      (error "invalid pattern separators"))
+      (xpath:xpath-error "invalid pattern separators"))
     (unless negative
       (setf negative (concatenate 'string
                                   (string (df/minus-sign df))
@@ -175,7 +175,7 @@
       (let ((start (position-if #'activep picture))
             (last (position-if #'activep picture :from-end t)))
         (unless start
-          (error "no digit-sign or zero-digit sign found"))
+          (xpath:xpath-error "no digit-sign or zero-digit sign found"))
         (let* ((end (1+ last))
                (result (make-picture
                          :percentp (find (df/percent df) picture)

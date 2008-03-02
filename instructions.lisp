@@ -146,6 +146,8 @@
 
 (define-instruction xsl:attribute (args env)
   (destructuring-bind ((name &key namespace) &body body) args
+    (when (null name)
+      (xslt-error "xsl:attribute: name not specified"))
     (multiple-value-bind (name-thunk constant-name-p)
         (compile-avt name env)
       (multiple-value-bind (ns-thunk constant-ns-p)
@@ -243,10 +245,11 @@
              (funcall value-thunk ctx))))))))
 
 (define-instruction xsl:comment (args env)
-  (destructuring-bind (str) args
+  (let ((value-thunk (compile-instruction `(progn ,@args) env)))
     (lambda (ctx)
-      (declare (ignore ctx))
-      (write-comment str))))
+      (write-comment (with-text-output-sink (s)
+                       (with-xml-output s
+                         (funcall value-thunk ctx)))))))
 
 (define-instruction xsl:value-of (args env)
   (destructuring-bind (xpath) args
@@ -267,15 +270,17 @@
     (let ((thunk (compile-xpath xpath env))
           ;; FIXME: what was this for?  --david
           #+(or) (v (intern-variable "varName" "")))
-      (lambda (ctx)
-        (let ((result (funcall thunk ctx)))
-          (typecase result
-            (xpath:node-set ;; FIXME: variables can contain node sets w/fragments inside. Maybe just fragments would do?
-             (xpath:map-node-set #'copy-into-result result))
-            (result-tree-fragment
-             (copy-into-result result))
-            (t
-             (write-text (xpath:string-value result)))))))))
+      (xslt-trace-thunk
+       (lambda (ctx)
+         (let ((result (funcall thunk ctx)))
+           (typecase result
+             (xpath:node-set ;; FIXME: variables can contain node sets w/fragments inside. Maybe just fragments would do?
+              (xpath:map-node-set #'copy-into-result (xpath:sort-node-set result)))
+             (result-tree-fragment
+              (copy-into-result result))
+             (t
+              (write-text (xpath:string-value result))))))
+       "copy-of ~s" xpath))))
 
 (defun copy-into-result (node)
   (cond
@@ -314,7 +319,17 @@
                   (funcall select-thunk (xpath:make-context b)))))
           (* f
              (if numberp
-                 (signum (- (xpath:number-value i) (xpath:number-value j)))
+                 (let ((n-a (xpath:number-value i))
+                       (n-b (xpath:number-value j)))
+                   (cond ((and (xpath::nan-p a)
+                               (not (xpath::nan-p b)))
+                          -1)
+                         ((and (not (xpath::nan-p a))
+                               (xpath::nan-p b))
+                          1)
+                         ((xpath::compare-numbers '< n-a n-b) -1)
+                         ((xpath::compare-numbers '> n-a n-b) 1)
+                         (t 0)))
                  (cond
                    ((string< i j) -1)
                    ((equal i j) 0)
@@ -737,7 +752,7 @@
 (define-indentation xsl:literal-attribute ((name &optional uri) &body body))
 (define-indentation xsl:text (str))
 (define-indentation xsl:processing-instruction (name &body body))
-(define-indentation xsl:comment (str))
+(define-indentation xsl:comment (&body body))
 (define-indentation xsl:value-of (xpath))
 (define-indentation xsl:unescaped-value-of (xpath))
 (define-indentation xsl:for-each (select &body decls-and-body))
