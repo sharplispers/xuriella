@@ -291,7 +291,11 @@
              (*trace-output* dribble)
              (*error-output* dribble)
              (*terminal-io* (make-two-way-stream *standard-input* dribble)))
-        (run-tests category d)))))
+        (handler-bind ((warning
+                        (lambda (c)
+                          (warn "~A" (replace-junk (princ-to-string c)))
+                          (muffle-warning c))))
+          (run-tests category d))))))
 
 (defparameter *bad-tests*
   '( ;; some tests wants us to recover from this error, yet this one doesn't:
@@ -563,12 +567,15 @@
           :xml))))
 
 (defun replace-junk (str)
-  (map 'string
-       (lambda (c)
-         (if (or (eql c #\newline) (<= 32 (char-code c) 126))
-             c
-             #\?))
-       str))
+  (cl-ppcre:regex-replace-all
+   `(:group ,(namestring *tests-directory*))
+   (map 'string
+        (lambda (c)
+          (if (or (eql c #\newline) (<= 32 (char-code c) 126))
+              c
+              #\?))
+        str)
+   "..."))
 
 (defun run-test (test)
   (let ((expected-saxon (test-output-pathname test "saxon"))
