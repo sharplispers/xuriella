@@ -1,19 +1,3 @@
-; in:
-;      LAMBDA (#:G2441 #:G2442 #:G2443 #:G2444 #:G2445 #:G2446 #:G2447 #:G2448
-;          #:G2452 #:G2453)
-;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG0.
-; 
-; note: deleting unreachable code
-
-;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2441 #:G2442)
-; 
-; note: deleting unreachable code
-; 
-; compilation unit finished
-;   printed 2 notes
 PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml
@@ -1980,13 +1964,13 @@ PASS conflictres_conflictres24 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres24.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres24.xuriella
 
-FAIL conflictres_conflictres25 [XSLT-Result-Tree]: output doesn't match
+PASS conflictres_conflictres25 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres25.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres25.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres25.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres25.xuriella
 
-FAIL conflictres_conflictres26 [XSLT-Result-Tree]: output doesn't match
+PASS conflictres_conflictres26 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres26.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres26.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres26.saxon
@@ -2004,13 +1988,13 @@ PASS conflictres_conflictres28 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres28.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres28.xuriella
 
-FAIL conflictres_conflictres29 [XSLT-Result-Tree]: output doesn't match
+PASS conflictres_conflictres29 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres29.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres29.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres29.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres29.xuriella
 
-FAIL conflictres_conflictres30 [XSLT-Result-Tree]: output doesn't match
+PASS conflictres_conflictres30 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres30.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres30.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres30.saxon
@@ -2022,7 +2006,7 @@ PASS conflictres_conflictres31 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres31.saxon
   Actual output: Xalan_Conformance_Tests/conflictres/conflictres_conflictres31.xuriella
 
-FAIL conflictres_conflictres32 [XSLT-Result-Tree]: output doesn't match
+PASS conflictres_conflictres32 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/conflictres/conflictres32.noindent-xsl
   Data: Xalan_Conformance_Tests/conflictres/conflictres32.xml
   Expected output (1): Xalan_Conformance_Tests/conflictres/conflictres_conflictres32.saxon
@@ -13698,7 +13682,7 @@ PASS ConflictResolution__77870 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77870.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77870.xuriella
 
-FAIL ConflictResolution__77871 [XSLT-Template]: output doesn't match
+PASS ConflictResolution__77871 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08102.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77871.saxon
@@ -13831,7 +13815,7 @@ PASS ConflictResolution__77904 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77904.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77904.xuriella
 
-FAIL ConflictResolution__84476 [XSLT-Template]: output doesn't match
+PASS ConflictResolution__84476 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/84476.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/84476.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84476.saxon
@@ -23042,4 +23026,4 @@ FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2372/3085 tests.
+Passed 2379/3085 tests.

@@ -1043,7 +1043,7 @@
   (let ((step (second form)))
     (if (and (null (cddr form))
              (listp step)
-             (eq :child (car step))
+             (member (car step) '(:child :attribute))
              (null (cddr step)))
         (let ((name (second step)))
           (cond
