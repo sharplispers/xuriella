@@ -1,4 +1,4 @@
-;;; -*- show-trailing-whitespace: t; indent-tabs: nil -*-
+;;; -*- show-trailing-whitespace: t; indent-tabs-mode: nil -*-
 
 ;;; Copyright (c) 2007,2008 David Lichteblau, Ivan Shvedunov.
 ;;; Copyright (c) 2004 David Lichteblau (for headcraft.de)
