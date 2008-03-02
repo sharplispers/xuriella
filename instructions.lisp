@@ -291,9 +291,7 @@
      (with-element ((xpath-protocol:local-name node)
                     (xpath-protocol:namespace-uri node)
                     :suggested-prefix (xpath-protocol:namespace-prefix node)
-                    ;; FIXME: is remove-excluded-namespaces correct here?
-                    :extra-namespaces (remove-excluded-namespaces
-                                       (namespaces-as-alist node)))
+                    :extra-namespaces (namespaces-as-alist node))
        (map-pipe-eagerly #'copy-into-result
                          (xpath-protocol:attribute-pipe node))
        (map-pipe-eagerly #'copy-into-result

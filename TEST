@@ -2192,7 +2192,7 @@ PASS copy_copy26 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy26.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy26.xuriella
 
-FAIL copy_copy27 [XSLT-Result-Tree]: output doesn't match
+PASS copy_copy27 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy27.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy27.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy27.saxon
@@ -4118,7 +4118,7 @@ PASS mdocs_mdocs08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs08.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs08.xuriella
 
-FAIL mdocs_mdocs09 [XSLT-Result-Tree]: output doesn't match
+PASS mdocs_mdocs09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs09.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs09.xml
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs09.saxon
@@ -4143,7 +4143,7 @@ FAIL mdocs_mdocs12 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs12.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs12.xuriella
 
-FAIL mdocs_mdocs13 [XSLT-Result-Tree]: output doesn't match
+PASS mdocs_mdocs13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs13.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs13.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/mdocs/ximpmdocs13.xsl
@@ -14128,7 +14128,7 @@ FAIL Elements__89282 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89282.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89282.xuriella
 
-FAIL Elements__89283 [XSLT-Result-Tree]: output doesn't match
+PASS Elements__89283 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-f-copy.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89283.saxon
@@ -23003,10 +23003,10 @@ FAIL XSLTFunctions_Bug76984 [Mixed]: document(): error: SIMPLE-ERROR: There is n
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76984.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76984.xuriella
 
-FAIL XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]: output doesn't match
+PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/DocumentFuncWithEmptyArg.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2381/3085 tests.
+Passed 2386/3085 tests.
