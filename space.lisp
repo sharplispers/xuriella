@@ -201,6 +201,14 @@
 (defmethod write-string-value (node stream)
   (write-string (xpath-protocol:node-text node) stream))
 
+(define-default-method xpath-protocol:get-element-by-id
+    ((node stripping-node) id)
+  (xpath-protocol:get-element-by-id (stripping-node-target node) id))
+
+(define-default-method xpath-protocol:unparsed-entity-uri
+    ((node stripping-node) name)
+  (xpath-protocol:unparsed-entity-uri (stripping-node-target node) name))
+
 
 ;;;; TEXT NORMALIZER, from cxml-rng
 
