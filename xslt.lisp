@@ -257,7 +257,7 @@
 
 (defstruct stylesheet
   (modes (make-hash-table :test 'equal))
-  (global-variables ())
+  (global-variables (make-empty-declaration-array))
   (output-specification (make-output-specification))
   (strip-tests nil)
   (named-templates (make-hash-table :test 'equal))
@@ -674,7 +674,11 @@
       ;; thunk setters to perform their compilation
       (setf specs (nreverse specs))
       (mapc (lambda (spec) (funcall (variable-thunk-setter spec))) specs)
-      (setf (stylesheet-global-variables stylesheet) specs))))
+      (let ((table (stylesheet-global-variables stylesheet))
+            (newlen (length *global-variable-declarations*)))
+        (adjust-array table newlen :fill-pointer newlen)
+        (dolist (spec specs)
+          (setf (elt table (variable-index spec)) spec))))))
 
 (defun parse-templates! (stylesheet <transform> env)
   (let ((i 0))
@@ -869,21 +873,21 @@
                   source-document
                   (stylesheet-strip-tests stylesheet)))
                 (ctx (xpath:make-context xpath-root-node)))
-           (mapc (lambda (spec)
-                   (when (variable-param-p spec)
-                     (let ((value
-                            (find-parameter-value (variable-local-name spec)
-                                                  (variable-uri spec)
-                                                  parameters)))
-                       (when value
-                         (setf (global-variable-value (variable-index spec))
-                               value)))))
-                 global-variable-specs)
-           (mapc (lambda (spec)
-                   (funcall (variable-thunk spec) ctx))
-                 global-variable-specs)
-           #+nil (print global-variable-specs)
-           #+nil (print *global-variable-values*)
+           (map nil
+                (lambda (spec)
+                  (when (variable-param-p spec)
+                    (let ((value
+                           (find-parameter-value (variable-local-name spec)
+                                                 (variable-uri spec)
+                                                 parameters)))
+                      (when value
+                        (setf (global-variable-value (variable-index spec))
+                              value)))))
+                global-variable-specs)
+           (map nil
+                (lambda (spec)
+                  (funcall (variable-thunk spec) ctx))
+                global-variable-specs)
 	   ;; zzz we wouldn't have to mask float traps here if we used the
 	   ;; XPath API properly.  Unfortunately I've been using FUNCALL
 	   ;; everywhere instead of EVALUATE, so let's paper over that

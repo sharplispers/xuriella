@@ -2873,7 +2873,7 @@ PASS impincl_impincl02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl02.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl02.xuriella
 
-FAIL impincl_impincl03 [XSLT-Result-Tree]: concat(): error: SIMPLE-TYPE-ERROR: invalid array index 3 for #() (should be nonnegative and <0)
+PASS impincl_impincl03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl03.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl03.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/p.xsl
@@ -2931,7 +2931,7 @@ PASS impincl_impincl10 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl10.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl10.xuriella
 
-FAIL impincl_impincl11 [XSLT-Result-Tree]: concat(): error: SIMPLE-TYPE-ERROR: invalid array index 3 for #() (should be nonnegative and <0)
+PASS impincl_impincl11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl11.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl11.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/ss5.xsl
@@ -9950,14 +9950,14 @@ PASS variable_variable28 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable28.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable28.xuriella
 
-FAIL variable_variable29 [XSLT-Result-Tree]: invalid array index 0 for #() (should be nonnegative and <0)
+PASS variable_variable29 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable29.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable29.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/variable/impfinal.xsl
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable29.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable29.xuriella
 
-FAIL variable_variable30 [XSLT-Result-Tree]: invalid array index 0 for #() (should be nonnegative and <0)
+PASS variable_variable30 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable30.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable30.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/variable/impfinal.xsl
@@ -16891,14 +16891,14 @@ FAIL Import_Import_IncludeBeforeImportInStylesheet [XSLT-Structure]: expected er
   Expected output (1): MSFT_Conformance_Tests/Import/Import_Import_IncludeBeforeImportInStylesheet.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import_Import_IncludeBeforeImportInStylesheet.xuriella
 
-FAIL Import_ImportPrecedanceTest1 [XSLT-Structure]: invalid array index 0 for #() (should be nonnegative and <0)
+PASS Import_ImportPrecedanceTest1 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/xslt_test_import_precedance1.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/foo.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/test2.inc
   Expected output (1): MSFT_Conformance_Tests/Import/Import_ImportPrecedanceTest1.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import_ImportPrecedanceTest1.xuriella
 
-FAIL Import_ImportPrecedanceTest2 [XSLT-Structure]: invalid array index 1 for #("In style sheet a") (should be nonnegative and <1)
+PASS Import_ImportPrecedanceTest2 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/xslt_test_import_precedancea.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/foo.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/e.inc
@@ -22867,4 +22867,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2438/3085 tests.
+Passed 2444/3085 tests.
