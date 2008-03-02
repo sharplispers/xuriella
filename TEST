@@ -1,6 +1,6 @@
 ; in:
-;      LAMBDA (#:G2313 #:G2314 #:G2315 #:G2316 #:G2317 #:G2318 #:G2319 #:G2320
-;          #:G2324 #:G2325)
+;      LAMBDA (#:G2441 #:G2442 #:G2443 #:G2444 #:G2445 #:G2446 #:G2447 #:G2448
+;          #:G2452 #:G2453)
 ;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
 ; --> SB-C::%INSTANCE-TYPEP 
 ; ==>
@@ -8,7 +8,7 @@
 ; 
 ; note: deleting unreachable code
 
-;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2313 #:G2314)
+;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2441 #:G2442)
 ; 
 ; note: deleting unreachable code
 ; 
@@ -5573,8 +5573,11 @@ Operation was SB-KERNEL::DIVISION, operands (4 0).
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat13.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat13.xuriella
 
-FAIL numberformat_numberformat14 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
-                                                                                                  :INF
+FAIL numberformat_numberformat14 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
+                                                                                           -13
+                                                                                         is not of type
+                                                                                           (MOD
+                                                                                            1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat14.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat14.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat14.saxon
@@ -5711,8 +5714,11 @@ PASS numberformat_numberformat36 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat36.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat36.xuriella
 
-FAIL numberformat_numberformat37 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
-                                                                                                  :INF
+FAIL numberformat_numberformat37 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
+                                                                                           -13
+                                                                                         is not of type
+                                                                                           (MOD
+                                                                                            1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat37.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat37.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat37.saxon
@@ -5724,15 +5730,21 @@ PASS numberformat_numberformat38 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat38.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat38.xuriella
 
-FAIL numberformat_numberformat39 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
-                                                                                                  :-INF
+FAIL numberformat_numberformat39 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
+                                                                                           -13
+                                                                                         is not of type
+                                                                                           (MOD
+                                                                                            1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat39.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat39.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat39.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat39.xuriella
 
-FAIL numberformat_numberformat40 [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
-                                                                                                  :-INF
+FAIL numberformat_numberformat40 [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
+                                                                                           -13
+                                                                                         is not of type
+                                                                                           (MOD
+                                                                                            1152921504606846975).
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat40.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat40.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat40.saxon
@@ -6234,9 +6246,7 @@ FAIL numbering_numbering78 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering78.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering78.xuriella
 
-FAIL numbering_numbering79 [XSLT-Result-Tree]: The value :NAN
-                                               is not of type
-                                                 REAL.
+FAIL numbering_numbering79 [XSLT-Result-Tree]: Can't decode NaN or infinity: #<DOUBLE-FLOAT quiet NaN>.
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering79.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering79.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering79.saxon
@@ -6512,8 +6522,10 @@ PASS output_output21 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output21.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output21.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10100111)
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10010110)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10100111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10010110)
 FAIL output_output22 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output22.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output22.xml
@@ -6854,7 +6866,8 @@ FAIL output_output72 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output72.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output72.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10000010)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10000010)
 PASS output_output73 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output73.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output73.xml
@@ -11375,14 +11388,16 @@ when called with arguments
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt017.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt017.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
 FAIL BVTs_bvt018 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding01.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt018.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt018.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
 FAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding02.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
@@ -13292,11 +13307,13 @@ FAIL BVTs_bvt089 [Mixed]: no such function: :UNPARSED-ENTITY-URI
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt089.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt089.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 47 in NIL
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 47 in NIL
 
@@ -13911,7 +13928,8 @@ PASS Elements__78346 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78346.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78346.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after '<?'
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after '<?'
 Location:
   Line 3, column 3 in NIL
 
@@ -16471,8 +16489,11 @@ PASS ForEach_ForEach_ForeachWithXPATHEvaluatesToNull [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ForEach/ForEach_ForEach_ForeachWithXPATHEvaluatesToNull.saxon
   Actual output: MSFT_Conformance_Tests/ForEach/ForEach_ForEach_ForeachWithXPATHEvaluatesToNull.xuriella
 
-FAIL FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
-                                                                                                             :INF
+FAIL FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
+                                                                                                      -13
+                                                                                                    is not of type
+                                                                                                      (MOD
+                                                                                                       1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_no_decimal_format_infinity_test.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatInfinityTest.saxon
@@ -16520,8 +16541,11 @@ FAIL FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard [XSLT-Result-
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard.xuriella
 
-FAIL FormatNumber_FormatNumberWithDecimalFormatInfinity [XSLT-Result-Tree]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
-                                                                                                                         :-INF
+FAIL FormatNumber_FormatNumberWithDecimalFormatInfinity [XSLT-Result-Tree]: format-number(): error: TYPE-ERROR: The value
+                                                                                                                  -13
+                                                                                                                is not of type
+                                                                                                                  (MOD
+                                                                                                                   1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_number_infinity.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatInfinity.saxon
@@ -19219,11 +19243,13 @@ FAIL Number__91027 [XSLT-Result-Tree]: Argument X is not a NUMBER: NIL
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91027.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91027.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91028.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91028.xuriella
 
@@ -19233,11 +19259,13 @@ FAIL Number__91028 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91028.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91028.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91029.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91029.xuriella
 
@@ -19265,9 +19293,7 @@ PASS Number_format01 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Number/Number_format01.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_format01.xuriella
 
-FAIL Number_NaNOrInvalidValue [XSLT-Result-Tree]: The value :NAN
-                                                  is not of type
-                                                    REAL.
+FAIL Number_NaNOrInvalidValue [XSLT-Result-Tree]: Can't decode NaN or infinity: #<DOUBLE-FLOAT quiet NaN>.
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_xsl_number_invalid_value.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_NaNOrInvalidValue.saxon
@@ -19297,9 +19323,7 @@ PASS Number_TestFormatPatternA.1 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Number/Number_TestFormatPatternA.1.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_TestFormatPatternA.1.xuriella
 
-FAIL Number_ValueAsNodesetTest1 [XSLT-Result-Tree]: The value :NAN
-                                                    is not of type
-                                                      REAL.
+FAIL Number_ValueAsNodesetTest1 [XSLT-Result-Tree]: Can't decode NaN or infinity: #<DOUBLE-FLOAT quiet NaN>.
   Stylesheet: MSFT_Conformance_Tests/Number/ValueAsNodesetTest1.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/ValueAsNodesetTest1.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_ValueAsNodesetTest1.saxon
@@ -19311,9 +19335,7 @@ PASS Number_ValueAsNodesetTest2 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Number/Number_ValueAsNodesetTest2.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_ValueAsNodesetTest2.xuriella
 
-FAIL Number_ValueAsEmptyNodeset [XSLT-Result-Tree]: The value :NAN
-                                                    is not of type
-                                                      REAL.
+FAIL Number_ValueAsEmptyNodeset [XSLT-Result-Tree]: Can't decode NaN or infinity: #<DOUBLE-FLOAT quiet NaN>.
   Stylesheet: MSFT_Conformance_Tests/Number/ValueAsEmptyNodeset.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/ValueAsNodesetTest1.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_ValueAsEmptyNodeset.saxon
@@ -19475,7 +19497,8 @@ PASS Output__78183 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78183.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78183.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10011010)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10011010)
 PASS Output__78221 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29209a.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/www.toplist.cz.xml
@@ -20077,21 +20100,24 @@ PASS Output__84313 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84313.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84313.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10101101)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10101101)
 PASS Output__84374 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84374.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84374.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84374.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84374.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10100000)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10100000)
 PASS Output__84428 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84428.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84428.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84428.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84428.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10100011)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10100011)
 PASS Output__84429 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84429.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84429.xml
@@ -20104,11 +20130,13 @@ PASS Output__84432 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84432.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84432.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 7 in NIL
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 7 in NIL
 
@@ -20695,7 +20723,8 @@ PASS Sorting__77569 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77569.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77569.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10110111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10110111)
 FAIL Sorting__77977 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt18304.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/multilingualsort.xml
@@ -21571,11 +21600,13 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78281.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78281.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text__78307.saxon
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78307.txt
 
@@ -21585,11 +21616,13 @@ FAIL Text__78307 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78307.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78307.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text__78308.saxon
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78308.txt
 
@@ -21607,11 +21640,13 @@ error opening #P"...MSFT_Conformance_Tests/Text/XSLT05001.xml":
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78309.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78309.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 3 in NIL
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 3 in NIL
 
@@ -21627,11 +21662,13 @@ FAIL Text__78312 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78312.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78312.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text__78313.saxon
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78313.txt
 
@@ -21691,11 +21728,13 @@ PASS Text_modified78309 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text_modified78309.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text_modified78309.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
 
@@ -22754,15 +22793,20 @@ Operation was SB-KERNEL::DIVISION, operands (3 0).
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.xuriella
 
-FAIL XSLTFunctions__Pattern-separator [Mixed]: format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL:
-                                                                                            :INF
+FAIL XSLTFunctions__Pattern-separator [Mixed]: format-number(): error: TYPE-ERROR: The value
+                                                                                     -13
+                                                                                   is not of type
+                                                                                     (MOD
+                                                                                      1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pa.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.xuriella
 
 FAIL XSLTFunctions__percentPattern [Mixed]: condition of incorrect type: 
-format-number(): error: SIMPLE-TYPE-ERROR: Argument X is not a REAL: :INF
+format-number(): error: TYPE-ERROR: The value -13
+                                    is not of type
+                                      (MOD 1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pe.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__percentPattern.saxon

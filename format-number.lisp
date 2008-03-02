@@ -192,15 +192,11 @@
                 (parse-fractional-picture picture df start end))
           result)))))
 
-(defun nanp (value)
-  ;; fixme
-  (eq value :nan))
-
 (defun infinityp (value)
   (eq value :infinity))
 
 (defun format-number (value positive-picture negative-picture df)
-  (if (nanp value)
+  (if (xpath::nan-p value)
       (df/nan df)
       (let ((picture (if (minusp value) negative-picture positive-picture)))
         (if (infinityp value)

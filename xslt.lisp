@@ -837,7 +837,12 @@
                  global-variable-specs)
            #+nil (print global-variable-specs)
            #+nil (print *global-variable-values*)
-           (apply-templates ctx))
+	   ;; zzz we wouldn't have to mask float traps here if we used the
+	   ;; XPath API properly.  Unfortunately I've been using FUNCALL
+	   ;; everywhere instead of EVALUATE, so let's paper over that
+	   ;; at a central place to be sure:
+           (xpath::with-float-traps-masked ()
+	     (apply-templates ctx)))
        (xpath:xpath-error (c)
                           (xslt-error "~A" c))))
    (stylesheet-output-specification stylesheet)
