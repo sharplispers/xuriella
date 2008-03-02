@@ -644,9 +644,12 @@
         (unless name (xslt-error "key name attribute not specified"))
         (unless match (xslt-error "key match attribute not specified"))
         (unless use (xslt-error "key use attribute not specified"))
-        (add-key stylesheet name
-                 (compile-xpath `(xpath:xpath ,(parse-key-pattern match)) env)
-                 (compile-xpath use env))))))
+        (multiple-value-bind (local-name uri)
+            (decode-qname name env nil)
+          (add-key stylesheet
+                   (cons local-name uri)
+                   (compile-xpath `(xpath:xpath ,(parse-key-pattern match)) env)
+                   (compile-xpath use env)))))))
 
 (defun parse-global-variables! (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
@@ -781,24 +784,31 @@
              (list (%document (xpath:string-value object)
                               (or uri instruction-base-uri)))))))))
 
-(xpath-sys:define-xpath-function/eager xslt :key (name object)
-  (let ((key (find-key (xpath:string-value name) *stylesheet*)))
-    (labels ((get-by-key (value)
-               (let ((value (xpath:string-value value)))
-                 (xpath::filter-pipe
-                  #'(lambda (node)
-                      (equal value (xpath:string-value
-                                    (xpath:evaluate-compiled
-                                     (key-use key) node))))
-                  (xpath-sys:pipe-of
-                   (xpath:node-set-value
-                    (xpath:evaluate-compiled
-                     (key-match key) xpath:context)))))))
-      (xpath-sys:make-node-set
-       (xpath::sort-pipe
-        (if (xpath:node-set-p object)
-            (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
-            (get-by-key object)))))))
+(xpath-sys:define-xpath-function/lazy xslt :key (name object)
+  (let ((namespaces *namespaces*))
+    (lambda (ctx)
+      (let* ((qname (xpath:string-value (funcall name ctx)))
+             (object (funcall object ctx))
+             (expanded-name
+              (multiple-value-bind (local-name uri)
+                  (decode-qname/runtime qname namespaces nil)
+                (cons local-name uri)))
+             (key (find-key expanded-name *stylesheet*)))
+        (labels ((get-by-key (value)
+                   (let ((value (xpath:string-value value)))
+                     (xpath::filter-pipe
+                      #'(lambda (node)
+                          (equal value (xpath:string-value
+                                        (xpath:evaluate-compiled
+                                         (key-use key) node))))
+                      (xpath-sys:pipe-of
+                       (xpath:node-set-value
+                        (xpath:evaluate-compiled (key-match key) ctx)))))))
+          (xpath-sys:make-node-set
+           (xpath::sort-pipe
+            (if (xpath:node-set-p object)
+                (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
+                (get-by-key object)))))))))
 
 ;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
 

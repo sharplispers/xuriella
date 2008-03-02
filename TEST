@@ -2793,7 +2793,7 @@ PASS idkey_idkey52 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey52.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey52.xuriella
 
-FAIL idkey_idkey53 [XSLT-Result-Tree]: unknown key: bar:mykey
+PASS idkey_idkey53 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey53.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey53.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey53.saxon
@@ -17171,7 +17171,8 @@ PASS Keys_SortNodesetReturnedByKey [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys_SortNodesetReturnedByKey.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys_SortNodesetReturnedByKey.xuriella
 
-FAIL Keys_MultipltKeysInclude [XSLT-Data-Manipulation]: duplicate key: prices
+FAIL Keys_MultipltKeysInclude [XSLT-Data-Manipulation]: duplicate key: (prices
+                                                                        . )
   Stylesheet: MSFT_Conformance_Tests/Keys/MultipltKeysInclude.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/MultipltKeysInclude.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Keys/MultipltKeysInclude.inc
@@ -17202,19 +17203,19 @@ PASS Keys__91706 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91706.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91706.xuriella
 
-FAIL Keys__91707 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Keys__91707 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Keys/91707.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91707.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91707.xuriella
 
-FAIL Keys__91708 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Keys__91708 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Keys/91708.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91708.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91708.xuriella
 
-FAIL Keys__91709 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Keys__91709 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Keys/91709.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91709.saxon
@@ -17366,7 +17367,7 @@ PASS Keys__91835 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91835.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91835.xuriella
 
-FAIL Keys__91836 [XSLT-Data-Manipulation]: duplicate key: foo
+FAIL Keys__91836 [XSLT-Data-Manipulation]: duplicate key: (foo . )
   Stylesheet: MSFT_Conformance_Tests/Keys/91836.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91836.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91836.saxon
@@ -17378,7 +17379,7 @@ PASS Keys__91858 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91858.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91858.xuriella
 
-FAIL Keys__91859 [XSLT-Data-Manipulation]: duplicate key: foo
+FAIL Keys__91859 [XSLT-Data-Manipulation]: duplicate key: (foo . )
   Stylesheet: MSFT_Conformance_Tests/Keys/91859.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91859.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91859.saxon
@@ -22857,4 +22858,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2445/3085 tests.
+Passed 2449/3085 tests.
