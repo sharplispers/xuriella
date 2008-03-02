@@ -2426,7 +2426,7 @@ PASS expression_expression01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression01.saxon
   Actual output: Xalan_Conformance_Tests/expression/expression_expression01.xuriella
 
-FAIL expression_expression02 [XSLT-Result-Tree]: no such function: :UNPARSED-ENTITY-URI
+PASS expression_expression02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/expression/expression02.noindent-xsl
   Data: Xalan_Conformance_Tests/expression/expression02.xml
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression02.saxon
@@ -13236,7 +13236,7 @@ PASS BVTs_bvt087 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt087.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt087.xuriella
 
-FAIL BVTs_bvt089 [Mixed]: no such function: :UNPARSED-ENTITY-URI
+PASS BVTs_bvt089 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/unparsed-entity.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/unparsed-entity.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt089.saxon
@@ -22869,4 +22869,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2391/3085 tests.
+Passed 2393/3085 tests.

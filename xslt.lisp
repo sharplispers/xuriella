@@ -790,6 +790,12 @@
         (xpath:context-starting-node ctx)
         nil))))
 
+(xpath-sys:define-xpath-function/lazy xslt :unparsed-entity-uri (name)
+  #'(lambda (ctx)
+      (or (xpath-protocol:unparsed-entity-uri (xpath:context-node ctx)
+                                              (funcall name ctx))
+          "")))
+
 (xpath-sys:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
   (if node-set-thunk
       #'(lambda (ctx)
