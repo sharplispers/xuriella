@@ -2456,25 +2456,25 @@ PASS expression_expression06 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/expression/expression_expression06.saxon
   Actual output: Xalan_Conformance_Tests/expression/expression_expression06.xuriella
 
-FAIL extend_extend01 [XSLT-Result-Tree]: undefined instruction: fallback
+PASS extend_extend01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/extend/extend01.noindent-xsl
   Data: Xalan_Conformance_Tests/extend/extend01.xml
   Expected output (1): Xalan_Conformance_Tests/extend/extend_extend01.saxon
   Actual output: Xalan_Conformance_Tests/extend/extend_extend01.xuriella
 
-FAIL extend_extend02 [XSLT-Result-Tree]: undefined instruction: fallback
+PASS extend_extend02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/extend/extend02.noindent-xsl
   Data: Xalan_Conformance_Tests/extend/extend02.xml
   Expected output (1): Xalan_Conformance_Tests/extend/extend_extend02.saxon
   Actual output: Xalan_Conformance_Tests/extend/extend_extend02.xuriella
 
-FAIL extend_extend03 [XSLT-Result-Tree]: no such function: :ELEMENT-AVAILABLE
+PASS extend_extend03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/extend/extend03.noindent-xsl
   Data: Xalan_Conformance_Tests/extend/extend03.xml
   Expected output (1): Xalan_Conformance_Tests/extend/extend_extend03.saxon
   Actual output: Xalan_Conformance_Tests/extend/extend_extend03.xuriella
 
-FAIL extend_extend04 [XSLT-Result-Tree]: undefined instruction: fallback
+PASS extend_extend04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/extend/extend04.noindent-xsl
   Data: Xalan_Conformance_Tests/extend/extend04.xml
   Expected output (1): Xalan_Conformance_Tests/extend/extend_extend04.saxon
@@ -3171,7 +3171,7 @@ PASS lre_lre19 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre19.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre19.xuriella
 
-FAIL lre_lre20 [XSLT-Result-Tree]: output doesn't match
+PASS lre_lre20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/lre/lre20.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre20.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre20.saxon
@@ -4269,7 +4269,9 @@ PASS message_message14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/message/message_message14.saxon
   Actual output: Xalan_Conformance_Tests/message/message_message14.xuriella
 
-FAIL message_message15 [XSLT-Result-Tree]: undefined instruction: fallback
+WARNING: <?xml version="1.0" encoding="UTF-8"?>
+Message from MESSAGE15: We got inside
+PASS message_message15 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/message/message15.noindent-xsl
   Data: Xalan_Conformance_Tests/message/message15.xml
   Expected output (1): Xalan_Conformance_Tests/message/message_message15.saxon
@@ -4586,7 +4588,7 @@ PASS namespace_namespace15 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace15.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace15.xuriella
 
-FAIL namespace_namespace16 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace16.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace16.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace16.saxon
@@ -14355,7 +14357,7 @@ FAIL Errors_err016 [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err016.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err016.xuriella
 
-FAIL Errors_err017 [Mixed]: expected error not signalled: 
+PASS Errors_err017 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/bad-prefix.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err017.saxon
@@ -16358,7 +16360,7 @@ PASS Errors_xsl_template_match_pattern_with_variable_ref [Mixed]: raised an xslt
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_xsl_template_match_pattern_with_variable_ref.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_xsl_template_match_pattern_with_variable_ref.xuriella
 
-FAIL Fallback__91817 [XSLT-Extendability]: undefined instruction: fallback
+PASS Fallback__91817 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/Fallback/91817.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91817.saxon
@@ -17624,7 +17626,7 @@ PASS Miscellaneous__84039 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84039.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84039.xuriella
 
-FAIL Miscellaneous__84111 [Mixed]: no such function: :FUNCTION-AVAILABLE
+PASS Miscellaneous__84111 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84111.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/books.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84111.saxon
@@ -21109,13 +21111,13 @@ PASS Stylesheet__91802 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91802.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91802.xuriella
 
-FAIL Stylesheet__91803 [XSLT-Structure]: undefined instruction: fallback
+PASS Stylesheet__91803 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91803.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91803.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91803.xuriella
 
-FAIL Stylesheet__91804 [XSLT-Structure]: undefined instruction: fallback
+FAIL Stylesheet__91804 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91804.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91804.saxon
@@ -21141,13 +21143,13 @@ FAIL Stylesheet__91808 [XSLT-Structure]: not a stylesheet
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91808.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91808.xuriella
 
-FAIL Stylesheet__91810 [XSLT-Structure]: no such function: :ELEMENT-AVAILABLE
+PASS Stylesheet__91810 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91810.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91810.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91810.xuriella
 
-FAIL Stylesheet__91811 [XSLT-Structure]: undefined instruction: fallback
+PASS Stylesheet__91811 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91811.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91811.saxon
@@ -22445,49 +22447,49 @@ FAIL XSLTFunctions__84050 [Mixed]: no such function: :SYSTEM-PROPERTY
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84050.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84050.xuriella
 
-FAIL XSLTFunctions__84053 [Mixed]: no such function: :FUNCTION-AVAILABLE
+PASS XSLTFunctions__84053 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84053.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84053.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84053.xuriella
 
-FAIL XSLTFunctions__84054 [Mixed]: no such function: :FUNCTION-AVAILABLE
+PASS XSLTFunctions__84054 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84054.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84054.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84054.xuriella
 
-FAIL XSLTFunctions__84056 [Mixed]: no such function: :FUNCTION-AVAILABLE
+PASS XSLTFunctions__84056 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84056.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84056.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84056.xuriella
 
-FAIL XSLTFunctions__84058 [Mixed]: no such function: :FUNCTION-AVAILABLE
+PASS XSLTFunctions__84058 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84058.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84058.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84058.xuriella
 
-FAIL XSLTFunctions__84170 [Mixed]: no such function: :ELEMENT-AVAILABLE
+PASS XSLTFunctions__84170 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84170.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84170.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84170.xuriella
 
-FAIL XSLTFunctions__84171 [Mixed]: no such function: :ELEMENT-AVAILABLE
+PASS XSLTFunctions__84171 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84171.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84171.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84171.xuriella
 
-FAIL XSLTFunctions__84172 [Mixed]: no such function: :ELEMENT-AVAILABLE
+PASS XSLTFunctions__84172 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84172.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84172.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84172.xuriella
 
-FAIL XSLTFunctions__84173 [Mixed]: no such function: :ELEMENT-AVAILABLE
+PASS XSLTFunctions__84173 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84173.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84173.saxon
@@ -22764,13 +22766,13 @@ FAIL XSLTFunctions_DocumentInUnionWithDuplicateNodes [Mixed]: output doesn't mat
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentInUnionWithDuplicateNodes.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentInUnionWithDuplicateNodes.xuriella
 
-FAIL XSLTFunctions_ElementAvailFunctionFalseTest [Mixed]: no such function: :ELEMENT-AVAILABLE
+PASS XSLTFunctions_ElementAvailFunctionFalseTest [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_element_avail_false.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_ElementAvailFunctionFalseTest.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_ElementAvailFunctionFalseTest.xuriella
 
-FAIL XSLTFunctions_ElementAvailFunctionTrueTest [Mixed]: no such function: :ELEMENT-AVAILABLE
+PASS XSLTFunctions_ElementAvailFunctionTrueTest [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_element_avail_true.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_ElementAvailFunctionTrueTest.saxon
@@ -22869,4 +22871,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2393/3085 tests.
+Passed 2416/3085 tests.

@@ -97,13 +97,19 @@
   (typecase node
     (stp:element
      (let ((expr
-            (if (equal (stp:namespace-uri node) *xsl*)
-                (parse-instruction/xsl-element
-                 (or (find-symbol (stp:local-name node) :xuriella)
-                     (xslt-error "undefined instruction: ~A"
-                                 (stp:local-name node)))
-                 node)
-                (parse-instruction/literal-element node))))
+            (cond
+	      ((equal (stp:namespace-uri node) *xsl*)
+	       (parse-instruction/xsl-element
+		(or (find-symbol (stp:local-name node) :xuriella)
+		    (xslt-error "undefined instruction: ~A"
+				(stp:local-name node)))
+		node))
+	      ((find (stp:namespace-uri node)
+		     *extension-namespaces*
+		     :test #'equal)
+	       (parse-fallback-children node))
+	      (t
+	       (parse-instruction/literal-element node)))))
        (if (equal (stp:base-uri node) (stp:base-uri (stp:parent node)))
            expr
            (print`(xsl:with-base-uri ,(stp:base-uri node)
@@ -127,11 +133,24 @@
                        ,(stp:value a)))
      ,@(parse-body node)))
 
+(defun parse-fallback-children (node)
+  `(progn
+     ,@(loop
+	  for fallback in (stp:filter-children (of-name "fallback") node)
+	  append (parse-body fallback))))
+
+(defparameter *available-instructions* (make-hash-table :test 'equal))
+
 (defmacro define-instruction-parser (name (node-var) &body body)
-  `(defmethod parse-instruction/xsl-element
-       ((.name. (eql ',name)) ,node-var)
-     (declare (ignore .name.))
-     ,@body))
+  `(progn
+     (setf (gethash ,(symbol-name name) *available-instructions*) t)
+     (defmethod parse-instruction/xsl-element
+	 ((.name. (eql ',name)) ,node-var)
+       (declare (ignore .name.))
+       ,@body)))
+
+(define-instruction-parser |fallback| (node)
+  '(progn))
 
 (define-instruction-parser |apply-templates| (node)
   (stp:with-attributes (select mode) node
