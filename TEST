@@ -2529,7 +2529,7 @@ PASS idkey_idkey08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey08.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey08.xuriella
 
-FAIL idkey_idkey09 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey09.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey09.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey09.saxon
@@ -17792,7 +17792,7 @@ PASS Miscellaneous__84430 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84430.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84430.xuriella
 
-FAIL Miscellaneous__84435 [Mixed]: invalid template parameter (nmbr . )
+PASS Miscellaneous__84435 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/84435.noindent-xsl
   Data: MSFT_Conformance_Tests/Miscellaneous/84435.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84435.saxon
@@ -22869,4 +22869,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2389/3085 tests.
+Passed 2391/3085 tests.
