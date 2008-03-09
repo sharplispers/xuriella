@@ -128,7 +128,7 @@
      (xsl:use-attribute-sets
       ,(stp:attribute-value node "use-attribute-sets" *xsl*))
      ,@(loop for a in (stp:list-attributes node)
-            unless (and (namep a "use-attribute-sets"))
+            unless (equal (stp:namespace-uri a) *xsl*)
             collect `(xsl:literal-attribute
                          (,(stp:local-name a)
                            ,(stp:namespace-uri a)
