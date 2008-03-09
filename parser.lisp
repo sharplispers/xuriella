@@ -142,8 +142,6 @@
 	  for fallback in (stp:filter-children (of-name "fallback") node)
 	  append (parse-body fallback))))
 
-(defparameter *available-instructions* (make-hash-table :test 'equal))
-
 (defmacro define-instruction-parser (name (node-var) &body body)
   `(progn
      (setf (gethash ,(symbol-name name) *available-instructions*) t)

@@ -33,6 +33,12 @@
 (declaim (optimize (debug 2)))
 
 
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (defvar *xsl* "http://www.w3.org/1999/XSL/Transform")
+  (defvar *xml* "http://www.w3.org/XML/1998/namespace")
+  (defvar *html* "http://www.w3.org/1999/xhtml"))
+
+
 ;;;; XSLT-ERROR
 
 (define-condition xslt-error (simple-error)
@@ -89,11 +95,6 @@
 
 
 ;;;; XSLT-ENVIRONMENT and XSLT-CONTEXT
-
-(defparameter *initial-namespaces*
-  '((nil . "")
-    ("xmlns" . #"http://www.w3.org/2000/xmlns/")
-    ("xml" . #"http://www.w3.org/XML/1998/namespace")))
 
 (defparameter *namespaces* *initial-namespaces*)
 
@@ -239,11 +240,6 @@
 
 ;;;; Names
 
-(eval-when (:compile-toplevel :load-toplevel :execute)
-  (defvar *xsl* "http://www.w3.org/1999/XSL/Transform")
-  (defvar *xml* "http://www.w3.org/XML/1998/namespace")
-  (defvar *html* "http://www.w3.org/1999/xhtml"))
-
 (defun of-name (local-name)
   (stp:of-name local-name *xsl*))
 
@@ -345,10 +341,9 @@
             (xslt-error "recursive inclusion of ~A" uri))
           (let* ((*xsl-include-stack* (cons str *xsl-include-stack*))
                  (<transform>2 (parse-stylesheet-to-stp stream uri-resolver)))
-            (stp:do-children (child <transform>2)
-              (stp:insert-child-after <transform>
-                                      (stp:copy child)
-                                      include))
+            (stp:insert-child-after <transform>
+                                    (stp:copy <transform>2)
+                                    include)
             (stp:detach include)))))
     <transform>))
 
@@ -357,37 +352,68 @@
 (defvar *import-priority*)
 (defvar *extension-namespaces*)
 
+(defmacro do-toplevel ((var xpath <transform>) &body body)
+  `(map-toplevel (lambda (,var) ,@body) ,xpath ,<transform>))
+
+(defun map-toplevel (fn xpath <transform>)
+  (dolist (node (list-toplevel xpath <transform>))
+    (let ((*namespaces* *namespaces*))
+      (xpath:do-node-set (ancestor (xpath:evaluate "ancestor::node()" node))
+        (when (xpath-protocol:node-type-p ancestor :element)
+          (setf *namespaces* (acons-namespaces ancestor))))
+      (funcall fn node))))
+
+(defun list-toplevel (xpath <transform>)
+  (labels ((recurse (sub)
+             (let ((subsubs
+                    (xpath-sys:pipe-of
+                     (xpath:evaluate "transform|stylesheet" sub))))
+               (xpath::append-pipes
+                (xpath-sys:pipe-of (xpath:evaluate xpath sub))
+                (xpath::mappend-pipe #'recurse subsubs)))))
+    (xpath::sort-nodes (recurse <transform>))))
+
+(defmacro with-parsed-prefixes ((node env) &body body)
+  `(invoke-with-parsed-prefixes (lambda () ,@body) ,node ,env))
+
+(defun invoke-with-parsed-prefixes (fn node env)
+  (unless (or (namep node "stylesheet") (namep node "transform"))
+    (setf node (stp:parent node)))
+  (let ((*excluded-namespaces* (list *xsl*))
+        (*extension-namespaces* '()))
+    (parse-exclude-result-prefixes! node env)
+    (parse-extension-element-prefixes! node env)
+    (funcall fn)))
+
 (defun parse-1-stylesheet (env stylesheet designator uri-resolver)
   (let* ((<transform> (parse-stylesheet-to-stp designator uri-resolver))
          (instruction-base-uri (stp:base-uri <transform>))
          (namespaces (acons-namespaces <transform>))
          (apply-imports-limit (1+ *import-priority*))
          (continuations '()))
-    (let ((*instruction-base-uri* instruction-base-uri)
-          (*namespaces* namespaces)
-          (*apply-imports-limit* apply-imports-limit)
-          (*extension-namespaces* nil))
-      (dolist (import (stp:filter-children (of-name "import") <transform>))
-        (let ((uri (puri:merge-uris (stp:attribute-value import "href")
-                                    (stp:base-uri import))))
-          (push (parse-imported-stylesheet env stylesheet uri uri-resolver)
-                continuations)))
+    (let ((*namespaces* namespaces))
+      (invoke-with-parsed-prefixes (constantly t) <transform> env))
+    (macrolet ((with-specials ((&optional) &body body)
+                 `(let ((*instruction-base-uri* instruction-base-uri)
+                        (*namespaces* namespaces)
+                        (*apply-imports-limit* apply-imports-limit))
+                    ,@body)))
+      (with-specials ()
+        (do-toplevel (import "import" <transform>)
+          (let ((uri (puri:merge-uris (stp:attribute-value import "href")
+                                      (stp:base-uri import))))
+            (push (parse-imported-stylesheet env stylesheet uri uri-resolver)
+                  continuations))))
       (let ((import-priority
-             (incf *import-priority*)))
-        (parse-exclude-result-prefixes! <transform> env)
-        (parse-extension-element-prefixes <transform> env)
-        (let ((cont (prepare-global-variables stylesheet <transform>))
-              (extension-namespaces *extension-namespaces*))
-          ;; delay the rest of compilation until we've seen all global
-          ;; variables:
-          (lambda ()
-            (mapc #'funcall (nreverse continuations))
-            (let ((*import-priority* import-priority)
-                  (*instruction-base-uri* instruction-base-uri)
-                  (*namespaces* namespaces)
-                  (*apply-imports-limit* apply-imports-limit)
-                  (*extension-namespaces* extension-namespaces))
-              (funcall cont)
+             (incf *import-priority*))
+            (var-cont (prepare-global-variables stylesheet <transform>)))
+        ;; delay the rest of compilation until we've seen all global
+        ;; variables:
+        (lambda ()
+          (mapc #'funcall (nreverse continuations))
+          (with-specials ()
+            (let ((*import-priority* import-priority))
+              (funcall var-cont)
               (parse-keys! stylesheet <transform> env)
               (parse-templates! stylesheet <transform> env)
               (parse-output! stylesheet <transform>)
@@ -421,70 +447,90 @@
         (parse-1-stylesheet env stylesheet stream uri-resolver)))))
 
 (defun parse-stylesheet (designator &key uri-resolver)
-  (let* ((*import-priority* 0)
-         (puri:*strict-parse* nil)
-         (stylesheet (make-stylesheet))
-         (env (make-instance 'lexical-xslt-environment))
-         (*excluded-namespaces* *excluded-namespaces*)
-         (*global-variable-declarations* (make-empty-declaration-array)))
-    (ensure-mode stylesheet nil)
-    (funcall (parse-1-stylesheet env stylesheet designator uri-resolver))
-    ;; reverse attribute sets:
-    (let ((table (stylesheet-attribute-sets stylesheet)))
-      (maphash (lambda (k v)
-                 (setf (gethash k table) (nreverse v)))
-               table))
-    stylesheet))
+  (xpath:with-namespaces ((nil #.*xsl*))
+    (let* ((*import-priority* 0)
+           (puri:*strict-parse* nil)
+           (stylesheet (make-stylesheet))
+           (env (make-instance 'lexical-xslt-environment))
+           (*excluded-namespaces* *excluded-namespaces*)
+           (*global-variable-declarations* (make-empty-declaration-array)))
+      (ensure-mode stylesheet nil)
+      (funcall (parse-1-stylesheet env stylesheet designator uri-resolver))
+      ;; reverse attribute sets:
+      (let ((table (stylesheet-attribute-sets stylesheet)))
+        (maphash (lambda (k v)
+                   (setf (gethash k table) (nreverse v)))
+                 table))
+      stylesheet)))
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
-  (dolist (elt (stp:filter-children (of-name "attribute-set") <transform>))
-    (push (let* ((sets
-                  (mapcar (lambda (qname)
-                            (multiple-value-list (decode-qname qname env nil)))
-                          (words
-                           (stp:attribute-value elt "use-attribute-sets"))))
-                 (instructions
-                  (stp:map-children 'list #'parse-instruction elt))
-                 (*lexical-variable-declarations*
-                  (make-empty-declaration-array))
-                 (thunk
-                  (compile-instruction `(progn ,@instructions) env))
-                 (n-variables (length *lexical-variable-declarations*)))
-            (lambda (ctx)
-              (with-stack-limit ()
-                (loop for (local-name uri nil) in sets do
-                     (dolist (thunk (find-attribute-set local-name uri))
-                       (funcall thunk ctx)))
-                (let ((*lexical-variable-values*
-                       (make-variable-value-array n-variables)))
-                  (funcall thunk ctx)))))
-          (gethash (multiple-value-bind (local-name uri)
-                       (decode-qname (stp:attribute-value elt "name") env nil)
-                     (cons local-name uri))
-                   (stylesheet-attribute-sets stylesheet)))))
+  (do-toplevel (elt "attribute-set" <transform>)
+    (with-parsed-prefixes (elt env)
+      (push (let* ((sets
+                    (mapcar (lambda (qname)
+                              (multiple-value-list (decode-qname qname env nil)))
+                            (words
+                             (stp:attribute-value elt "use-attribute-sets"))))
+                   (instructions
+                    (stp:map-children
+                     'list
+                     (lambda (child)
+                       (unless (or (not (typep child 'stp:element))
+                                   (and (equal (stp:namespace-uri child) *xsl*)
+                                        (equal (stp:local-name child)
+                                               "attribute"))
+                                   (find (stp:namespace-uri child)
+                                         *extension-namespaces*
+                                         :test 'equal))
+                         (xslt-error "non-attribute found in attribute set"))
+                       (parse-instruction child))
+                     elt))
+                   (*lexical-variable-declarations*
+                    (make-empty-declaration-array))
+                   (thunk
+                    (compile-instruction `(progn ,@instructions) env))
+                   (n-variables (length *lexical-variable-declarations*)))
+              (lambda (ctx)
+                (with-stack-limit ()
+                  (loop for (local-name uri nil) in sets do
+                       (dolist (thunk (find-attribute-set local-name uri))
+                         (funcall thunk ctx)))
+                  (let ((*lexical-variable-values*
+                         (make-variable-value-array n-variables)))
+                    (funcall thunk ctx)))))
+            (gethash (multiple-value-bind (local-name uri)
+                         (decode-qname (stp:attribute-value elt "name") env nil)
+                       (cons local-name uri))
+                     (stylesheet-attribute-sets stylesheet))))))
 
 (defun parse-namespace-aliases! (stylesheet <transform> env)
-  (dolist (elt (stp:filter-children (of-name "namespace-alias") <transform>))
+  (do-toplevel (elt "namespace-alias" <transform>)
     (stp:with-attributes (stylesheet-prefix result-prefix) elt
       (setf (gethash
 	     (xpath-sys:environment-find-namespace env stylesheet-prefix)
 	     (stylesheet-namespace-aliases stylesheet))
 	    (xpath-sys:environment-find-namespace env result-prefix)))))
 
-(defun parse-exclude-result-prefixes! (<transform> env)
-  (stp:with-attributes (exclude-result-prefixes) <transform>
+(defun parse-exclude-result-prefixes! (node env)
+  (stp:with-attributes (exclude-result-prefixes)
+      node
     (dolist (prefix (words (or exclude-result-prefixes "")))
-      (when (equal prefix "#default")
-        (setf prefix nil))
+      (if (equal prefix "#default")
+          (setf prefix nil)
+          (unless (cxml-stp-impl::nc-name-p prefix)
+            (xslt-error "invalid prefix: ~A" prefix)))
       (push (or (xpath-sys:environment-find-namespace env prefix)
                 (xslt-error "namespace not found: ~A" prefix))
             *excluded-namespaces*))))
 
-(defun parse-extension-element-prefixes (<transform> env)
-  (stp:with-attributes (extension-element-prefixes) <transform>
+(defun parse-extension-element-prefixes! (node env)
+  (stp:with-attributes (extension-element-prefixes)
+      node
     (dolist (prefix (words (or extension-element-prefixes "")))
-      (when (equal prefix "#default")
-        (setf prefix nil))
+      (if (equal prefix "#default")
+          (setf prefix nil)
+          (unless (cxml-stp-impl::nc-name-p prefix)
+            (xslt-error "invalid prefix: ~A" prefix)))
       (let ((uri
              (or (xpath-sys:environment-find-namespace env prefix)
                  (xslt-error "namespace not found: ~A" prefix))))
@@ -494,10 +540,7 @@
 
 (defun parse-strip/preserve-space! (stylesheet <transform> env)
   (xpath:with-namespaces ((nil #.*xsl*))
-    (dolist (elt (stp:filter-children (lambda (x)
-                                        (or (namep x "strip-space")
-                                            (namep x "preserve-space")))
-                                      <transform>))
+    (do-toplevel (elt "strip-space|preserve-space" <transform>)
       (let ((*namespaces* (acons-namespaces elt))
             (mode
              (if (equal (stp:local-name elt) "strip-space")
@@ -540,7 +583,7 @@
   encoding)
 
 (defun parse-output! (stylesheet <transform>)
-  (let ((outputs (stp:filter-children (of-name "output") <transform>)))
+  (let ((outputs (list-toplevel "output" <transform>)))
     (when outputs
       (when (cdr outputs)
         ;; FIXME:
@@ -611,49 +654,55 @@
   (let* ((*namespaces* (acons-namespaces <variable>))
          (instruction-base-uri (stp:base-uri <variable>))
          (*instruction-base-uri* instruction-base-uri)
+         (*excluded-namespaces* (list *xsl*))
+         (*extension-namespaces* '())
          (qname (stp:attribute-value <variable> "name")))
-    (unless qname
-      (xslt-error "name missing in ~A" (stp:local-name <variable>)))
-    (multiple-value-bind (local-name uri)
-        (decode-qname qname global-env nil)
-      ;; For the normal compilation environment of templates, install it
-      ;; into *GLOBAL-VARIABLE-DECLARATIONS*:
-      (let ((index (intern-global-variable local-name uri)))
-        ;; For the evaluation of a global variable itself, build a thunk
-        ;; that lazily resolves other variables, stored into
-        ;; INITIAL-GLOBAL-VARIABLE-THUNKS:
-        (let* ((value-thunk :unknown)
-               (global-variable-thunk
-                (lambda (ctx)
-                  (let ((v (global-variable-value index nil)))
-                    (when (eq v 'seen)
-                      (xslt-error "recursive variable definition"))
-                    (cond
-                      ((eq v 'unbound)
-                       (setf (global-variable-value index) 'seen)
-                       (setf (global-variable-value index)
-                             (funcall value-thunk ctx)))
-                      (t
-                       v)))))
-               (thunk-setter
-                (lambda ()
-                  (let ((*instruction-base-uri* instruction-base-uri))
-                    (setf value-thunk
-                          (compile-global-variable <variable> global-env))))))
-          (setf (gethash (cons local-name uri)
-                         (initial-global-variable-thunks global-env))
-                global-variable-thunk)
-          (make-variable :index index
-                         :local-name local-name
-                         :uri uri
-                         :thunk global-variable-thunk
-                         :param-p (namep <variable> "param")
-                         :thunk-setter thunk-setter))))))
+    (with-parsed-prefixes (<variable> global-env)
+      (unless qname
+        (xslt-error "name missing in ~A" (stp:local-name <variable>)))
+      (multiple-value-bind (local-name uri)
+          (decode-qname qname global-env nil)
+        ;; For the normal compilation environment of templates, install it
+        ;; into *GLOBAL-VARIABLE-DECLARATIONS*:
+        (let ((index (intern-global-variable local-name uri)))
+          ;; For the evaluation of a global variable itself, build a thunk
+          ;; that lazily resolves other variables, stored into
+          ;; INITIAL-GLOBAL-VARIABLE-THUNKS:
+          (let* ((value-thunk :unknown)
+                 (global-variable-thunk
+                  (lambda (ctx)
+                    (let ((v (global-variable-value index nil)))
+                      (when (eq v 'seen)
+                        (xslt-error "recursive variable definition"))
+                      (cond
+                        ((eq v 'unbound)
+                         (setf (global-variable-value index) 'seen)
+                         (setf (global-variable-value index)
+                               (funcall value-thunk ctx)))
+                        (t
+                         v)))))
+                 (excluded-namespaces *excluded-namespaces*)
+                 (extension-namespaces *extension-namespaces*)
+                 (thunk-setter
+                  (lambda ()
+                    (let ((*instruction-base-uri* instruction-base-uri)
+                          (*excluded-namespaces* excluded-namespaces)
+                          (*extension-namespaces* extension-namespaces))
+                      (setf value-thunk
+                            (compile-global-variable <variable> global-env))))))
+            (setf (gethash (cons local-name uri)
+                           (initial-global-variable-thunks global-env))
+                  global-variable-thunk)
+            (make-variable :index index
+                           :local-name local-name
+                           :uri uri
+                           :thunk global-variable-thunk
+                           :param-p (namep <variable> "param")
+                           :thunk-setter thunk-setter)))))))
 
 (defun parse-keys! (stylesheet <transform> env)
   (xpath:with-namespaces ((nil #.*xsl*))
-    (xpath:do-node-set
-        (<key> (xpath:evaluate "key" <transform>))
+    (do-toplevel (<key> "key" <transform>)
       (let ((*instruction-base-uri* (stp:base-uri <key>)))
         (stp:with-attributes (name match use) <key>
           (unless name (xslt-error "key name attribute not specified"))
@@ -672,8 +721,7 @@
            (global-env (make-instance 'global-variable-environment
                                       :initial-global-variable-thunks table))
            (specs '()))
-      (xpath:do-node-set
-          (<variable> (xpath:evaluate "variable|param" <transform>))
+      (do-toplevel (<variable> "variable|param" <transform>)
         (let ((var (parse-global-variable! <variable> global-env)))
           (xslt-trace "parsing global variable ~s (uri ~s)"
                       (variable-local-name var)
@@ -701,24 +749,25 @@
 
 (defun parse-templates! (stylesheet <transform> env)
   (let ((i 0))
-    (dolist (<template> (stp:filter-children (of-name "template") <transform>))
+    (do-toplevel (<template> "template" <transform>)
       (let ((*namespaces* (acons-namespaces <template>))
             (*instruction-base-uri* (stp:base-uri <template>)))
-        (dolist (template (compile-template <template> env i))
-          (let ((name (template-name template)))
-            (if name
-                (let* ((table (stylesheet-named-templates stylesheet))
-                       (head (car (gethash name table))))
-                  (when (and head (eql (template-import-priority head)
-                                       (template-import-priority template)))
-                    ;; fixme: is this supposed to be a run-time error?
-                    (xslt-error "conflicting templates for ~A" name))
-                  (push template (gethash name table)))
-                (let ((mode (ensure-mode/qname stylesheet
-                                               (template-mode-qname template)
-                                               env)))
-                  (setf (template-mode template) mode)
-                  (push template (mode-templates mode)))))))
+        (with-parsed-prefixes (<template> env)
+          (dolist (template (compile-template <template> env i))
+            (let ((name (template-name template)))
+              (if name
+                  (let* ((table (stylesheet-named-templates stylesheet))
+                         (head (car (gethash name table))))
+                    (when (and head (eql (template-import-priority head)
+                                         (template-import-priority template)))
+                      ;; fixme: is this supposed to be a run-time error?
+                      (xslt-error "conflicting templates for ~A" name))
+                    (push template (gethash name table)))
+                  (let ((mode (ensure-mode/qname stylesheet
+                                                 (template-mode-qname template)
+                                                 env)))
+                    (setf (template-mode template) mode)
+                    (push template (mode-templates mode))))))))
       (incf i))))
 
 
@@ -728,6 +777,10 @@
 (defvar *mode*)
 
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
+
+(defun unalias-uri (uri)
+  (gethash uri (stylesheet-namespace-aliases *stylesheet*)
+	   uri))
 
 (defstruct (parameter
              (:constructor make-parameter (value local-name &optional uri)))
@@ -879,6 +932,8 @@
           (%get-node-id (xpath:node-set-value (funcall node-set-thunk ctx))))
       #'(lambda (ctx)
           (%get-node-id (xpath:context-node ctx)))))
+
+(defparameter *available-instructions* (make-hash-table :test 'equal))
 
 (xpath-sys:define-xpath-function/lazy xslt :element-available (qname)
   (let ((namespaces *namespaces*))

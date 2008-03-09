@@ -56,10 +56,6 @@
   (maybe-emit-start-tag)
   (funcall fn *sink*))
 
-(defun unalias-uri (uri)
-  (gethash uri (stylesheet-namespace-aliases *stylesheet*)
-	   uri))
-
 (defmacro with-element ((local-name uri &key suggested-prefix extra-namespaces)
                         &body body)
   `(invoke-with-element (lambda () ,@body)
@@ -159,6 +155,11 @@
   uri
   suggested-prefix
   value)
+
+(defparameter *initial-namespaces*
+  '((nil . "")
+    ("xmlns" . #"http://www.w3.org/2000/xmlns/")
+    ("xml" . #"http://www.w3.org/XML/1998/namespace")))
 
 (defun invoke-with-element
     (fn local-name uri &key suggested-prefix extra-namespaces)

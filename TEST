@@ -1,3 +1,19 @@
+; in:
+;      LAMBDA (#:G2458 #:G2459 #:G2460 #:G2461 #:G2462 #:G2463 #:G2464 #:G2465
+;          #:G2469 #:G2470)
+;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG0.
+; 
+; note: deleting unreachable code
+
+;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2458 #:G2459)
+; 
+; note: deleting unreachable code
+; 
+; compilation unit finished
+;   printed 2 notes
 PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml
@@ -10941,25 +10957,25 @@ FAIL AttributeSets__91093 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91093.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91093.xuriella
 
-FAIL AttributeSets__91094 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91094 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91094.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91094.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91094.xuriella
 
-FAIL AttributeSets__91095 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91095 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91095.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91095.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91095.xuriella
 
-FAIL AttributeSets__91096 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91096 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91096.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91096.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91096.xuriella
 
-FAIL AttributeSets__91097 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91097 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91097.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91097.saxon
@@ -11373,12 +11389,7 @@ PASS BVTs_bvt029 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt029.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt029.xuriella
 
-FAIL BVTs_bvt033 [Mixed]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
-when called with arguments
-  (NIL
-   "file://+...MSFT_Conformance_Tests/BVTs/fwdcompat.noindent-xsl").
+PASS BVTs_bvt033 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/BVTs/fwdcompat.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/fwdcompat.inc
@@ -11443,7 +11454,7 @@ FAIL BVTs_bvt042 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt042.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt042.xuriella
 
-FAIL BVTs_bvt043 [Mixed]: output doesn't match
+PASS BVTs_bvt043 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-tmpl.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-tmpl.inc
@@ -13716,7 +13727,7 @@ PASS ConflictResolution__77889 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77889.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77889.xuriella
 
-FAIL ConflictResolution__77891 [XSLT-Template]: output doesn't match
+PASS ConflictResolution__77891 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt09008.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77891.saxon
@@ -14290,7 +14301,7 @@ when called with arguments
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err002.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err002.xuriella
 
-FAIL Errors_err007 [Mixed]: expected error not signalled: 
+PASS Errors_err007 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/attrset-instr.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err007.saxon
@@ -22845,4 +22856,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2475/3085 tests.
+Passed 2483/3085 tests.
