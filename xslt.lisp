@@ -748,7 +748,7 @@
 
 (defun %document (uri-string base-uri)
   (let* ((absolute-uri
-          (puri:merge-uris uri-string base-uri))
+          (puri:merge-uris uri-string (or base-uri "")))
          (resolved-uri
           (if *uri-resolver*
               (funcall *uri-resolver* (puri:render-uri absolute-uri nil))
@@ -791,10 +791,14 @@
              (xpath:map-node-set->list
               (lambda (node)
                 (%document (xpath:string-value node)
-                           (or uri (xpath-protocol:base-uri node))))
+                           (if (plusp (length uri))
+                               uri
+                               (xpath-protocol:base-uri node))))
               object)
              (list (%document (xpath:string-value object)
-                              (or uri instruction-base-uri)))))))))
+                              (if (plusp (length uri))
+                                  uri
+                                  instruction-base-uri)))))))))
 
 (xpath-sys:define-xpath-function/lazy xslt :key (name object)
   (let ((namespaces *namespaces*))
@@ -843,12 +847,33 @@
                                               (funcall name ctx))
           "")))
 
+(defun %get-node-id (node)
+  (when (xpath:node-set-p node)
+    (setf node (xpath::textually-first-node node)))
+  (when node
+    (let ((id (xpath-sys:get-node-id node))
+          (highest-base-uri
+           (loop
+              for parent = node then next
+              for next = (xpath-protocol:parent-node parent)
+              for this-base-uri = (xpath-protocol:base-uri parent)
+              for highest-base-uri = (if (plusp (length this-base-uri))
+                                         this-base-uri
+                                         highest-base-uri)
+              while next
+              finally (return highest-base-uri))))
+      ;; Heuristic: Reverse it so that the /home/david/alwaysthesame prefix is
+      ;; checked only if everything else matches.
+      ;;
+      ;; This might be pointless premature optimization, but I like the idea :-)
+      (nreverse (concatenate 'string highest-base-uri "//" id)))))
+
 (xpath-sys:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
   (if node-set-thunk
       #'(lambda (ctx)
-          (xpath-sys:get-node-id (xpath:node-set-value (funcall node-set-thunk ctx))))
+          (%get-node-id (xpath:node-set-value (funcall node-set-thunk ctx))))
       #'(lambda (ctx)
-          (xpath-sys:get-node-id (xpath:context-node ctx)))))
+          (%get-node-id (xpath:context-node ctx)))))
 
 (xpath-sys:define-xpath-function/lazy xslt :element-available (qname)
   (let ((namespaces *namespaces*))
