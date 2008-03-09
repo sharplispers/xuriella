@@ -2712,19 +2712,19 @@ PASS idkey_idkey39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey39.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey39.xuriella
 
-FAIL idkey_idkey40 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey40 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey40.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey40.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey40.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey40.xuriella
 
-FAIL idkey_idkey41 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey41 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey41.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey41.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey41.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey41.xuriella
 
-FAIL idkey_idkey42 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey42 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey42.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey42.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey42.saxon
@@ -22858,4 +22858,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2457/3085 tests.
+Passed 2460/3085 tests.

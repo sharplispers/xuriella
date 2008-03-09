@@ -1023,8 +1023,6 @@
     (dolist (template matching-candidates)
       (push template
             (elt priority-groups (template-import-priority template))))
-;;;     (print (map 'list #'length priority-groups))
-;;;     (force-output)
     (loop
        for i from (1- npriorities) downto 0
        for group = (elt priority-groups i)

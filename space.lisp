@@ -203,7 +203,35 @@
 
 (define-default-method xpath-protocol:get-element-by-id
     ((node stripping-node) id)
-  (xpath-protocol:get-element-by-id (stripping-node-target node) id))
+  (let ((target
+         (xpath-protocol:get-element-by-id (stripping-node-target node) id)))
+    (when target
+      (let ((stripping-root
+             (loop
+                for parent = node then next
+                for next = (stripping-node-parent parent)
+                while next
+                finally (return parent)))
+            (target-path nil))
+        (loop
+           for parent = target then next
+           for next = (xpath-protocol:parent-node parent)
+           while next
+           do (push parent target-path))
+        (labels ((find-child (stripping-parent target-child)
+                   (xpath::find-in-pipe target-child
+                                        (xpath-protocol:child-pipe
+                                         stripping-parent)
+                                        :key #'stripping-node-target))
+                 (resolve-path (stripping-parent target-path)
+                   (if target-path
+                       (let ((step
+                              (find-child stripping-parent (car target-path))))
+                         (if step
+                             (resolve-path step (cdr target-path))
+                             nil))
+                       stripping-parent)))
+          (resolve-path stripping-root target-path))))))
 
 (define-default-method xpath-protocol:unparsed-entity-uri
     ((node stripping-node) name)
