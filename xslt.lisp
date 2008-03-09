@@ -352,7 +352,7 @@
             (stp:detach include)))))
     <transform>))
 
-(defvar *instruction-base-uri*)
+(defvar *instruction-base-uri*) ;misnamed, is also used in other attributes
 (defvar *apply-imports-limit*)
 (defvar *import-priority*)
 (defvar *extension-namespaces*)
@@ -608,8 +608,10 @@
   thunk-setter)
 
 (defun parse-global-variable! (<variable> global-env) ;; also for <param>
-  (let ((*namespaces* (acons-namespaces <variable>))
-        (qname (stp:attribute-value <variable> "name")))
+  (let* ((*namespaces* (acons-namespaces <variable>))
+         (instruction-base-uri (stp:base-uri <variable>))
+         (*instruction-base-uri* instruction-base-uri)
+         (qname (stp:attribute-value <variable> "name")))
     (unless qname
       (xslt-error "name missing in ~A" (stp:local-name <variable>)))
     (multiple-value-bind (local-name uri)
@@ -635,8 +637,9 @@
                        v)))))
                (thunk-setter
                 (lambda ()
-                  (setf value-thunk
-                        (compile-global-variable <variable> global-env)))))
+                  (let ((*instruction-base-uri* instruction-base-uri))
+                    (setf value-thunk
+                          (compile-global-variable <variable> global-env))))))
           (setf (gethash (cons local-name uri)
                          (initial-global-variable-thunks global-env))
                 global-variable-thunk)
@@ -651,16 +654,17 @@
   (xpath:with-namespaces ((nil #.*xsl*))
     (xpath:do-node-set
         (<key> (xpath:evaluate "key" <transform>))
-      (stp:with-attributes (name match use) <key>
-        (unless name (xslt-error "key name attribute not specified"))
-        (unless match (xslt-error "key match attribute not specified"))
-        (unless use (xslt-error "key use attribute not specified"))
-        (multiple-value-bind (local-name uri)
-            (decode-qname name env nil)
-          (add-key stylesheet
-                   (cons local-name uri)
-                   (compile-xpath `(xpath:xpath ,(parse-key-pattern match)) env)
-                   (compile-xpath use env)))))))
+      (let ((*instruction-base-uri* (stp:base-uri <key>)))
+        (stp:with-attributes (name match use) <key>
+          (unless name (xslt-error "key name attribute not specified"))
+          (unless match (xslt-error "key match attribute not specified"))
+          (unless use (xslt-error "key use attribute not specified"))
+          (multiple-value-bind (local-name uri)
+              (decode-qname name env nil)
+            (add-key stylesheet
+                     (cons local-name uri)
+                     (compile-xpath `(xpath:xpath ,(parse-key-pattern match)) env)
+                     (compile-xpath use env))))))))
 
 (defun prepare-global-variables (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
@@ -698,7 +702,8 @@
 (defun parse-templates! (stylesheet <transform> env)
   (let ((i 0))
     (dolist (<template> (stp:filter-children (of-name "template") <transform>))
-      (let ((*namespaces* (acons-namespaces <template>)))
+      (let ((*namespaces* (acons-namespaces <template>))
+            (*instruction-base-uri* (stp:base-uri <template>)))
         (dolist (template (compile-template <template> env i))
           (let ((name (template-name template)))
             (if name

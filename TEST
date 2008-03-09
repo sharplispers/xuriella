@@ -2908,8 +2908,7 @@ PASS impincl_impincl07 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl07.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl07.xuriella
 
-FAIL impincl_impincl08 [XSLT-Result-Tree]: cannot parse referenced document ...Xalan_Conformance_Tests/impincl/testfile.xml: error opening #P"...Xalan_Conformance_Tests/impincl/testfile.xml":
-                                                                                                                                                                              No such file or directory
+PASS impincl_impincl08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl08.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl08.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/../impincl-test/impincl08.xsl
@@ -4099,7 +4098,7 @@ PASS mdocs_mdocs11 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs11.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs11.xuriella
 
-FAIL mdocs_mdocs12 [XSLT-Result-Tree]: output doesn't match
+PASS mdocs_mdocs12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs12.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs12.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/mdocs/xincmdocs12.xsl
@@ -22847,4 +22846,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2462/3085 tests.
+Passed 2464/3085 tests.

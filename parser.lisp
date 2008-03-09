@@ -109,11 +109,14 @@
 		     :test #'equal)
 	       (parse-fallback-children node))
 	      (t
-	       (parse-instruction/literal-element node)))))
-       (if (equal (stp:base-uri node) (stp:base-uri (stp:parent node)))
+	       (parse-instruction/literal-element node))))
+           (parent (stp:parent node)))
+       (if (and (equal (stp:base-uri node) (stp:base-uri parent))
+                (equal (stp:namespace-uri parent) *xsl*)
+                (find-symbol (stp:local-name parent) :xuriella))
            expr
-           (print`(xsl:with-base-uri ,(stp:base-uri node)
-              ,expr)))))
+           `(xsl:with-base-uri ,(stp:base-uri node)
+              ,expr))))
     (stp:text
      `(xsl:text ,(stp:data node)))))
 
