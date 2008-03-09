@@ -1008,7 +1008,7 @@
 (defvar *apply-imports*)
 
 (defun apply-applicable-templates (ctx templates param-bindings finally)
-  (labels ((apply-imports ()
+  (labels ((apply-imports (&optional actual-param-bindings)
              (if templates
                  (let* ((this (pop templates))
                         (low (template-apply-imports-limit this))
@@ -1018,10 +1018,10 @@
                           (lambda (x)
                             (<= low (template-import-priority x) high))
                           templates))
-                   (invoke-template ctx this param-bindings))
+                   (invoke-template ctx this actual-param-bindings))
                  (funcall finally))))
     (let ((*apply-imports* #'apply-imports))
-      (apply-imports))))
+      (apply-imports param-bindings))))
 
 (defun apply-templates (ctx &optional param-bindings)
   (apply-applicable-templates ctx

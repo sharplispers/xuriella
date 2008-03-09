@@ -3043,7 +3043,7 @@ PASS impincl_impincl27 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl27.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl27.xuriella
 
-FAIL impincl_impincl28 [XSLT-Result-Tree]: output doesn't match
+PASS impincl_impincl28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl28.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl28.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/impwparam.xsl
@@ -22846,4 +22846,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2464/3085 tests.
+Passed 2465/3085 tests.
