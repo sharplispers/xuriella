@@ -2547,7 +2547,7 @@ PASS idkey_idkey11 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey11.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey11.xuriella
 
-FAIL idkey_idkey12 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey12.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey12.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey12.saxon
@@ -2829,7 +2829,7 @@ PASS idkey_idkey58 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey58.saxon
   Actual output: Xalan_Conformance_Tests/idkey/idkey_idkey58.xuriella
 
-FAIL idkey_idkey59 [XSLT-Result-Tree]: output doesn't match
+PASS idkey_idkey59 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/idkey/idkey59.noindent-xsl
   Data: Xalan_Conformance_Tests/idkey/idkey59.xml
   Expected output (1): Xalan_Conformance_Tests/idkey/idkey_idkey59.saxon
@@ -8542,7 +8542,7 @@ PASS select_select58 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select58.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select58.xuriella
 
-FAIL select_select59 [XSLT-Result-Tree]: output doesn't match
+PASS select_select59 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select59.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select59.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select59.saxon
@@ -17191,7 +17191,7 @@ PASS Keys__10051 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__10051.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__10051.xuriella
 
-FAIL Keys__91690 [XSLT-Data-Manipulation]: output doesn't match
+PASS Keys__91690 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91690.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91690.saxon
@@ -17317,13 +17317,13 @@ PASS Keys__91725 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91725.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91725.xuriella
 
-FAIL Keys__91726 [XSLT-Data-Manipulation]: output doesn't match
+PASS Keys__91726 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91726.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91726.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91726.xuriella
 
-FAIL Keys__91727 [XSLT-Data-Manipulation]: output doesn't match
+PASS Keys__91727 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91727.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91727.saxon
@@ -17335,7 +17335,7 @@ PASS Keys__91730 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91730.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91730.xuriella
 
-FAIL Keys__91732 [XSLT-Data-Manipulation]: output doesn't match
+PASS Keys__91732 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91732.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91730.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91732.saxon
@@ -22858,4 +22858,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2450/3085 tests.
+Passed 2457/3085 tests.

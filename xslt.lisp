@@ -810,9 +810,15 @@
                    (let ((value (xpath:string-value value)))
                      (xpath::filter-pipe
                       #'(lambda (node)
-                          (equal value (xpath:string-value
-                                        (xpath:evaluate-compiled
-                                         (key-use key) node))))
+                          (let ((uses
+                                 (xpath:evaluate-compiled (key-use key) node)))
+                            (if (xpath:node-set-p uses)
+                                (xpath::find-in-pipe
+                                 value
+                                 (xpath-sys:pipe-of uses)
+                                 :key #'xpath:string-value
+                                 :test #'equal)
+                                (equal value (xpath:string-value uses)))))
                       (xpath-sys:pipe-of
                        (xpath:node-set-value
                         (xpath:evaluate-compiled (key-match key) ctx)))))))
