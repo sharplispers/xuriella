@@ -359,24 +359,41 @@
 
 (defun parse-1-stylesheet (env stylesheet designator uri-resolver)
   (let* ((<transform> (parse-stylesheet-to-stp designator uri-resolver))
-         (*instruction-base-uri* (stp:base-uri <transform>))
-         (*namespaces* (acons-namespaces <transform>))
-         (*apply-imports-limit* (1+ *import-priority*))
-         (*extension-namespaces* nil))
-    (dolist (import (stp:filter-children (of-name "import") <transform>))
-      (let ((uri (puri:merge-uris (stp:attribute-value import "href")
-                                  (stp:base-uri import))))
-        (parse-imported-stylesheet env stylesheet uri uri-resolver)))
-    (incf *import-priority*)
-    (parse-exclude-result-prefixes! <transform> env)
-    (parse-extension-element-prefixes <transform> env)
-    (parse-global-variables! stylesheet <transform>)
-    (parse-keys! stylesheet <transform> env)
-    (parse-templates! stylesheet <transform> env)
-    (parse-output! stylesheet <transform>)
-    (parse-strip/preserve-space! stylesheet <transform> env)
-    (parse-attribute-sets! stylesheet <transform> env)
-    (parse-namespace-aliases! stylesheet <transform> env)))
+         (instruction-base-uri (stp:base-uri <transform>))
+         (namespaces (acons-namespaces <transform>))
+         (apply-imports-limit (1+ *import-priority*))
+         (continuations '()))
+    (let ((*instruction-base-uri* instruction-base-uri)
+          (*namespaces* namespaces)
+          (*apply-imports-limit* apply-imports-limit)
+          (*extension-namespaces* nil))
+      (dolist (import (stp:filter-children (of-name "import") <transform>))
+        (let ((uri (puri:merge-uris (stp:attribute-value import "href")
+                                    (stp:base-uri import))))
+          (push (parse-imported-stylesheet env stylesheet uri uri-resolver)
+                continuations)))
+      (let ((import-priority
+             (incf *import-priority*)))
+        (parse-exclude-result-prefixes! <transform> env)
+        (parse-extension-element-prefixes <transform> env)
+        (let ((cont (prepare-global-variables stylesheet <transform>))
+              (extension-namespaces *extension-namespaces*))
+          ;; delay the rest of compilation until we've seen all global
+          ;; variables:
+          (lambda ()
+            (mapc #'funcall (nreverse continuations))
+            (let ((*import-priority* import-priority)
+                  (*instruction-base-uri* instruction-base-uri)
+                  (*namespaces* namespaces)
+                  (*apply-imports-limit* apply-imports-limit)
+                  (*extension-namespaces* extension-namespaces))
+              (funcall cont)
+              (parse-keys! stylesheet <transform> env)
+              (parse-templates! stylesheet <transform> env)
+              (parse-output! stylesheet <transform>)
+              (parse-strip/preserve-space! stylesheet <transform> env)
+              (parse-attribute-sets! stylesheet <transform> env)
+              (parse-namespace-aliases! stylesheet <transform> env))))))))
 
 (defvar *xsl-import-stack* nil)
 
@@ -411,7 +428,7 @@
          (*excluded-namespaces* *excluded-namespaces*)
          (*global-variable-declarations* (make-empty-declaration-array)))
     (ensure-mode stylesheet nil)
-    (parse-1-stylesheet env stylesheet designator uri-resolver)
+    (funcall (parse-1-stylesheet env stylesheet designator uri-resolver))
     ;; reverse attribute sets:
     (let ((table (stylesheet-attribute-sets stylesheet)))
       (maphash (lambda (k v)
@@ -611,16 +628,10 @@
                       (xslt-error "recursive variable definition"))
                     (cond
                       ((eq v 'unbound)
-                       ;; (print (list :computing index))
                        (setf (global-variable-value index) 'seen)
                        (setf (global-variable-value index)
-                             (funcall value-thunk ctx))
-                       #+nil (print (list :done-computing index
-                                    (global-variable-value index)))
-                       #+nil (global-variable-value index))
+                             (funcall value-thunk ctx)))
                       (t
-                       #+nil(print (list :have
-                                    index v))
                        v)))))
                (thunk-setter
                 (lambda ()
@@ -651,7 +662,7 @@
                    (compile-xpath `(xpath:xpath ,(parse-key-pattern match)) env)
                    (compile-xpath use env)))))))
 
-(defun parse-global-variables! (stylesheet <transform>)
+(defun prepare-global-variables (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
     (let* ((table (make-hash-table :test 'equal))
            (global-env (make-instance 'global-variable-environment
@@ -673,15 +684,16 @@
             (xslt-error "duplicate definition for global variable ~A"
                         (variable-local-name var)))
           (push var specs)))
-      ;; now that the global environment knows about all variables, run the
-      ;; thunk setters to perform their compilation
       (setf specs (nreverse specs))
-      (mapc (lambda (spec) (funcall (variable-thunk-setter spec))) specs)
-      (let ((table (stylesheet-global-variables stylesheet))
-            (newlen (length *global-variable-declarations*)))
-        (adjust-array table newlen :fill-pointer newlen)
-        (dolist (spec specs)
-          (setf (elt table (variable-index spec)) spec))))))
+      (lambda ()
+        ;; now that the global environment knows about all variables, run the
+        ;; thunk setters to perform their compilation
+        (mapc (lambda (spec) (funcall (variable-thunk-setter spec))) specs)
+        (let ((table (stylesheet-global-variables stylesheet))
+              (newlen (length *global-variable-declarations*)))
+          (adjust-array table newlen :fill-pointer newlen)
+          (dolist (spec specs)
+            (setf (elt table (variable-index spec)) spec)))))))
 
 (defun parse-templates! (stylesheet <transform> env)
   (let ((i 0))

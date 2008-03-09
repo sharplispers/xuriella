@@ -3016,7 +3016,7 @@ PASS impincl_impincl23 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl23.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl23.xuriella
 
-FAIL impincl_impincl24 [XSLT-Result-Tree]: undeclared variable: color in namespace 
+PASS impincl_impincl24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl24.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl24.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/i24imp.xsl
@@ -22858,4 +22858,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2449/3085 tests.
+Passed 2450/3085 tests.
