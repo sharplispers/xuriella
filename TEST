@@ -3050,7 +3050,7 @@ PASS impincl_impincl28 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/impincl/impincl_impincl28.saxon
   Actual output: Xalan_Conformance_Tests/impincl/impincl_impincl28.xuriella
 
-FAIL impincl_impincl29 [XSLT-Result-Tree]: invalid template parameter (p1 . )
+PASS impincl_impincl29 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/impincl/impincl29.noindent-xsl
   Data: Xalan_Conformance_Tests/impincl/impincl29.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/impincl/fragments/impwparam.xsl
@@ -9918,8 +9918,7 @@ PASS variable_variable25 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable25.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable25.xuriella
 
-FAIL variable_variable26 [XSLT-Result-Tree]: invalid template parameter (test
-                                                                         . )
+PASS variable_variable26 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable26.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable26.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable26.saxon
@@ -13130,7 +13129,7 @@ FAIL BVTs_bvt070 [Mixed]: oops, merging of output elements not supported yet
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt070.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt070.xuriella
 
-FAIL BVTs_bvt072 [Mixed]: invalid template parameter (not-there . )
+PASS BVTs_bvt072 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/param-simple.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt072.saxon
@@ -22846,4 +22845,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2465/3085 tests.
+Passed 2468/3085 tests.

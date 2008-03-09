@@ -987,9 +987,8 @@
                                      :test #'equal
                                      :key #'car)
          do
-         (unless index
-           (xslt-error "invalid template parameter ~A" name-cons))
-         (setf (lexical-variable-value index) value))
+           (when index
+             (setf (lexical-variable-value index) value)))
       (funcall (template-body template) ctx))))
 
 (defun apply-default-templates (ctx)
