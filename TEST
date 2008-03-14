@@ -4000,7 +4000,7 @@ PASS math_math104 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/math/math_math104.saxon
   Actual output: Xalan_Conformance_Tests/math/math_math104.xuriella
 
-FAIL math_math105 [XSLT-Result-Tree]: output doesn't match
+PASS math_math105 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/math/math105.noindent-xsl
   Data: Xalan_Conformance_Tests/math/math105.xml
   Expected output (1): Xalan_Conformance_Tests/math/math_math105.saxon
@@ -9633,7 +9633,7 @@ PASS string_string131 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string131.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string131.xuriella
 
-FAIL string_string132 [XSLT-Result-Tree]: output doesn't match
+PASS string_string132 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string132.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string132.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string132.saxon
@@ -22744,4 +22744,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2511/3085 tests.
+Passed 2513/3085 tests.
