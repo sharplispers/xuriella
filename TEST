@@ -3172,7 +3172,7 @@ PASS lre_lre20 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre20.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre20.xuriella
 
-FAIL lre_lre21 [XSLT-Result-Tree]: output doesn't match
+PASS lre_lre21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/lre/lre21.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre21.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre21.saxon
@@ -21037,19 +21037,19 @@ PASS Stylesheet__91811 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91811.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91811.xuriella
 
-FAIL Stylesheet__91813 [XSLT-Structure]: expected error not signalled: 
+PASS Stylesheet__91813 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91813.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91813.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91813.xuriella
 
-FAIL Stylesheet__91814 [XSLT-Structure]: expected error not signalled: 
+PASS Stylesheet__91814 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91814.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91814.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91814.xuriella
 
-FAIL Stylesheet__91815 [XSLT-Structure]: expected error not signalled: 
+PASS Stylesheet__91815 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91815.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91815.saxon
@@ -22744,4 +22744,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2506/3085 tests.
+Passed 2510/3085 tests.

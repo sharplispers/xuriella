@@ -31,6 +31,7 @@
 	   ;; xuriella internals
            #:with-namespaces
            #:with-excluded-namespaces
+           #:with-extension-namespaces
            #:with-duplicates-check))
 
 (defpackage :xuriella

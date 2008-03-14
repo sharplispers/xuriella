@@ -121,20 +121,35 @@
      `(xsl:text ,(stp:data node)))))
 
 (defun parse-instruction/literal-element (node)
-  `(xsl:literal-element
-       (,(stp:local-name node)
-         ,(stp:namespace-uri node)
-         ,(stp:namespace-prefix node))
-     (xsl:use-attribute-sets
-      ,(stp:attribute-value node "use-attribute-sets" *xsl*))
-     ,@(loop for a in (stp:list-attributes node)
-            unless (equal (stp:namespace-uri a) *xsl*)
-            collect `(xsl:literal-attribute
-                         (,(stp:local-name a)
-                           ,(stp:namespace-uri a)
-                           ,(stp:namespace-prefix a))
-                       ,(stp:value a)))
-     ,@(parse-body node)))
+  (let ((le
+         `(xsl:literal-element
+              (,(stp:local-name node)
+                ,(stp:namespace-uri node)
+                ,(stp:namespace-prefix node))
+            (xsl:use-attribute-sets
+             ,(stp:attribute-value node "use-attribute-sets" *xsl*))
+            ,@(loop for a in (stp:list-attributes node)
+                 unless (equal (stp:namespace-uri a) *xsl*)
+                 collect `(xsl:literal-attribute
+                              (,(stp:local-name a)
+                                ,(stp:namespace-uri a)
+                                ,(stp:namespace-prefix a))
+                            ,(stp:value a)))
+            ,@(parse-body node)))
+        (extensions '()))
+    (stp:with-attributes ((eep "extension-element-prefixes" *xsl*))
+        node
+      (dolist (prefix (words (or eep "")))
+        (when (equal prefix "#default")
+          (setf prefix nil))
+        (push (or (stp:find-namespace prefix node)
+                  (xslt-error "namespace not found: ~A" prefix))
+              extensions)))
+    (if extensions
+        `(xsl:with-extension-namespaces ,extensions
+           (xsl:with-excluded-namespaces ,extensions
+             ,le))
+        le)))
 
 (defun parse-fallback-children (node)
   `(progn
