@@ -4025,8 +4025,7 @@ PASS mdocs_mdocs01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs01.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs01.xuriella
 
-FAIL mdocs_mdocs02 [XSLT-Result-Tree]: cannot parse referenced document /mdocs02b.xml: error opening #P"/mdocs02b.xml":
-                                                                                         No such file or directory
+PASS mdocs_mdocs02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs02.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs02.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/mdocs02b.xml
@@ -22744,4 +22743,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2514/3085 tests.
+Passed 2515/3085 tests.

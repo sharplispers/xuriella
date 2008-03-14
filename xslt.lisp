@@ -868,7 +868,13 @@
                 (%document (xpath:string-value node)
                            (if (plusp (length uri))
                                uri
-                               (xpath-protocol:base-uri node))))
+                               (xpath-protocol:base-uri
+                                (if (xpath-protocol:node-type-p node :document)
+                                    (xpath::find-in-pipe-if
+                                     (lambda (x)
+                                       (xpath-protocol:node-type-p x :element))
+                                     (xpath-protocol:child-pipe node))
+                                    node)))))
               object)
              (list (%document (xpath:string-value object)
                               (if (plusp (length uri))
