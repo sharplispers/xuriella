@@ -3124,11 +3124,7 @@ PASS lre_lre12 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre12.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre12.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL lre_lre13 [XSLT-Result-Tree]: output doesn't match
+PASS lre_lre13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/lre/lre13.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre13.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre13.saxon
@@ -6472,20 +6468,12 @@ PASS output_output24 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output24.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output24.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
 FAIL output_output25 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output25.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output25.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output25.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output25.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
 FAIL output_output26 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output26.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output26.xml
@@ -6821,11 +6809,7 @@ FAIL output_output75 [XSLT-Result-Tree]: saxon error not signalled and official 
   Expected output (1): Xalan_Conformance_Tests/output/output_output75.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output75.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL output_output76 [XSLT-Result-Tree]: output doesn't match
+PASS output_output76 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output76.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output76.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output76.saxon
@@ -6880,10 +6864,6 @@ PASS output_output85 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output85.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output85.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
 FAIL output_output86 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output86.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output86.xml
@@ -7037,31 +7017,19 @@ PASS output_output107 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output107.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output107.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL output_output109 [XSLT-Result-Tree]: output doesn't match
+PASS output_output109 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output109.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output109.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output109.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output109.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL output_output110 [XSLT-Result-Tree]: output doesn't match
+PASS output_output110 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output110.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output110.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output110.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output110.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL output_output111 [XSLT-Result-Tree]: output doesn't match
+PASS output_output111 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output111.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output111.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output111.saxon
@@ -7073,11 +7041,7 @@ FAIL output_output112 [XSLT-Result-Tree]: attribute outside of element
   Expected output (1): Xalan_Conformance_Tests/output/output_output112.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output112.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL output_output113 [XSLT-Result-Tree]: output doesn't match
+PASS output_output113 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output113.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output113.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output113.saxon
@@ -8225,11 +8189,7 @@ PASS select_select06 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select06.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select06.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL select_select07 [XSLT-Result-Tree]: output doesn't match
+PASS select_select07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/select/select07.noindent-xsl
   Data: Xalan_Conformance_Tests/select/select07.xml
   Expected output (1): Xalan_Conformance_Tests/select/select_select07.saxon
@@ -8821,41 +8781,25 @@ FAIL sort_sort21 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort21.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort21.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort22 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort22 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort22.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort22.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort22.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort22.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort23 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort23 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort23.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort23.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort23.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort23.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort24 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort24.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort24.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort24.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort24.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort25 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort25 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort25.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort25.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort25.saxon
@@ -8885,21 +8829,13 @@ PASS sort_sort29 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort29.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort29.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort30 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort30 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort30.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort30.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort30.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort30.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort31 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort31 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort31.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort31.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort31.saxon
@@ -8923,11 +8859,7 @@ FAIL sort_sort34 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort34.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort34.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort35 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort35.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort35.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort35.saxon
@@ -8939,11 +8871,7 @@ PASS sort_sort36 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort36.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort36.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL sort_sort37 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort37 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort37.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort37.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort37.saxon
@@ -16595,22 +16523,14 @@ PASS ForwardComp__91856 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91856.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91856.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL Import__10000 [XSLT-Structure]: output doesn't match
+PASS Import__10000 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/10000.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/10000b.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__10000.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__10000.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL Import__10001 [XSLT-Structure]: output doesn't match
+PASS Import__10001 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/10001.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/10001b.xsl
@@ -19172,18 +19092,14 @@ PASS Output__77929 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77929.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77929.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-FAIL Output__77930 [XSLT-Output]: output doesn't match
+PASS Output__77930 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29505.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77930.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77930.xuriella
 
 WARNING: comparison failed: :|MY:XML| fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
+                   Wanted one of (:TEXT :HTML :XML).
 FAIL Output__77931 [XSLT-Output]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29506.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
@@ -19397,10 +19313,6 @@ FAIL Output__84009 [XSLT-Output]: oops, merging of output elements not supported
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84009.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84009.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
 FAIL Output__84010 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84010.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt05001.xml
@@ -19438,10 +19350,6 @@ oops, merging of output elements not supported yet
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84014.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84014.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
 FAIL Output__84015 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84015.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt05001.xml
@@ -19953,10 +19861,6 @@ FAIL Output__84433 [XSLT-Output]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84433.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84433.xuriella
 
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
-WARNING: comparison failed: :TEXT fell through ECASE expression.
-                   Wanted one of (:HTML :XML).
 FAIL Output__84434 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84434.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84434.xml
@@ -22840,4 +22744,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2488/3085 tests.
+Passed 2506/3085 tests.

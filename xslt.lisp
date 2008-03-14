@@ -208,35 +208,52 @@
       (gethash (cons lname uri) (initial-global-variable-thunks env))))
 
 
-;;;; TEXT-OUTPUT-SINK
+;;;; TOPLEVEL-TEXT-OUTPUT-SINK
 ;;;;
-;;;; A sink that serializes only text and will error out on any other
-;;;; SAX event.
+;;;; A sink that serializes only text not contained in any element.
 
-(defmacro with-text-output-sink ((var) &body body)
-  `(invoke-with-text-output-sink (lambda (,var) ,@body)))
+(defmacro with-toplevel-text-output-sink ((var) &body body)
+  `(invoke-with-toplevel-text-output-sink (lambda (,var) ,@body)))
 
-(defclass text-output-sink (sax:default-handler)
+(defclass toplevel-text-output-sink (sax:default-handler)
   ((target :initarg :target :accessor text-output-sink-target)
    (depth :initform 0 :accessor textoutput-sink-depth)))
 
-(defmethod sax:start-element ((sink text-output-sink)
+(defmethod sax:start-element ((sink toplevel-text-output-sink)
                               namespace-uri local-name qname attributes)
   (declare (ignore namespace-uri local-name qname attributes))
   (incf (textoutput-sink-depth sink)))
 
-(defmethod sax:characters ((sink text-output-sink) data)
+(defmethod sax:characters ((sink toplevel-text-output-sink) data)
   (when (zerop (textoutput-sink-depth sink))
     (write-string data (text-output-sink-target sink))))
 
-(defmethod sax:end-element ((sink text-output-sink)
+(defmethod sax:end-element ((sink toplevel-text-output-sink)
                               namespace-uri local-name qname)
   (declare (ignore namespace-uri local-name qname))
   (decf (textoutput-sink-depth sink)))
 
-(defun invoke-with-text-output-sink (fn)
+(defun invoke-with-toplevel-text-output-sink (fn)
   (with-output-to-string (s)
-    (funcall fn (make-instance 'text-output-sink :target s))))
+    (funcall fn (make-instance 'toplevel-text-output-sink :target s))))
+
+
+;;;; TEXT-FILTER
+;;;;
+;;;; A sink that passes through only text (at any level).
+
+(defclass text-filter (sax:default-handler)
+  ((target :initarg :target :accessor text-filter-target)))
+
+(defmethod sax:characters ((sink text-filter) data)
+  (sax:characters (text-filter-target sink) data))
+
+(defmethod sax:end-document ((sink text-filter))
+  (sax:end-document (text-filter-target sink)))
+
+(defun make-text-filter (target)
+  (make-instance 'text-filter :target target))
+
 
 ;;;; Names
 
@@ -1173,13 +1190,17 @@
           (make-instance 'cxml::sink
                          :ystream ystream
                          :omit-xml-declaration-p omit-xml-declaration-p)))
-    (if (equalp (output-method output-spec) "HTML")
-        (make-instance 'combi-sink
-                       :hax-target (make-instance 'chtml::sink
-                                                  :ystream ystream)
-                       :sax-target sax-target
-                       :encoding (output-encoding output-spec))
-        sax-target)))
+    (cond
+      ((equalp (output-method output-spec) "HTML")
+       (make-instance 'combi-sink
+                      :hax-target (make-instance 'chtml::sink
+                                                 :ystream ystream)
+                      :sax-target sax-target
+                      :encoding (output-encoding output-spec)))
+      ((equalp (output-method output-spec) "TEXT")
+       (make-text-filter sax-target))
+      (t
+       sax-target))))
 
 (defstruct template
   match-expression

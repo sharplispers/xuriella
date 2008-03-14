@@ -168,7 +168,7 @@
     (lambda (ctx)
       (write-attribute local-name
                        uri
-                       (with-text-output-sink (s)
+                       (with-toplevel-text-output-sink (s)
                          (with-xml-output s
                            (funcall value-thunk ctx)))
                        :suggested-prefix prefix))))
@@ -185,7 +185,7 @@
             (setf uri (funcall ns-thunk ctx)))
           (write-attribute local-name
                            (or uri "")
-                           (with-text-output-sink (s)
+                           (with-toplevel-text-output-sink (s)
                              (with-xml-output s
                                (funcall value-thunk ctx)))
                            :suggested-prefix prefix))))))
@@ -240,14 +240,14 @@
       (lambda (ctx)
         (write-processing-instruction
          (funcall name-thunk ctx)
-         (with-text-output-sink (s)
+         (with-toplevel-text-output-sink (s)
            (with-xml-output s
              (funcall value-thunk ctx))))))))
 
 (define-instruction xsl:comment (args env)
   (let ((value-thunk (compile-instruction `(progn ,@args) env)))
     (lambda (ctx)
-      (write-comment (with-text-output-sink (s)
+      (write-comment (with-toplevel-text-output-sink (s)
                        (with-xml-output s
                          (funcall value-thunk ctx)))))))
 

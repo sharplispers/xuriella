@@ -501,7 +501,8 @@
   (handler-case
       (ecase compare
         (:xml (xml-output-equal-p p q))
-        (:html (html-output-equal-p p q)))
+        (:html (html-output-equal-p p q))
+        (:text (text-output-equal-p p q)))
     ((or error parse-number::invalid-number) (c)
       (warn "comparison failed: ~A" c)
       nil)))
@@ -549,6 +550,17 @@
     (normalize-html-whitespace r)
     (normalize-html-whitespace s)
     (node= (stp:document-element r) (stp:document-element s))))
+
+(defun text-output-equal-p (p q)
+  (with-open-file (a p :element-type '(unsigned-byte 8))
+    (with-open-file (b q :element-type '(unsigned-byte 8))
+      (let ((len (file-length a)))
+        (and (eql len (file-length b))
+             (let ((d (make-array len :element-type '(unsigned-byte 8)))
+                   (e (make-array len :element-type '(unsigned-byte 8))))
+               (read-sequence d a)
+               (read-sequence e b)
+               (equalp d e)))))))
 
 (defun strip-addresses (str)
   (cl-ppcre:regex-replace-all "{[0-9a-fA-F]+}\\>" str "{xxxxxxxx}>"))
