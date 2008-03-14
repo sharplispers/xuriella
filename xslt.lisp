@@ -821,6 +821,8 @@
       (file-position s 0))
     (cxml:parse s handler)))
 
+(defvar *documents*)
+
 (defun %document (uri-string base-uri)
   (let* ((absolute-uri
           (puri:merge-uris uri-string (or base-uri "")))
@@ -834,15 +836,17 @@
             (cxml:xml-parse-error (c)
               (xslt-error "cannot find referenced document ~A: ~A"
                           resolved-uri c))))
-         (document
-          (handler-case
-              (parse-allowing-microsoft-bom pathname (stp:make-builder))
-            ((or file-error cxml:xml-parse-error) (c)
-              (xslt-error "cannot parse referenced document ~A: ~A"
-                          pathname c))))
          (xpath-root-node
-          (make-whitespace-stripper document
-                                    (stylesheet-strip-tests *stylesheet*))))
+          (or (gethash pathname *documents*)
+              (setf (gethash pathname *documents*)
+                    (make-whitespace-stripper
+                     (handler-case
+                         (parse-allowing-microsoft-bom pathname
+                                                       (stp:make-builder))
+                       ((or file-error cxml:xml-parse-error) (c)
+                         (xslt-error "cannot parse referenced document ~A: ~A"
+                                     pathname c)))
+                     (stylesheet-strip-tests *stylesheet*))))))
     (when (puri:uri-fragment absolute-uri)
       (xslt-error "use of fragment identifiers in document() not supported"))
     xpath-root-node))
@@ -983,16 +987,15 @@
                  t))))))
 
 (defun apply-stylesheet
-    (stylesheet source-document
+    (stylesheet source-designator
      &key output parameters uri-resolver navigator)
   (when (typep stylesheet 'xml-designator)
     (setf stylesheet (parse-stylesheet stylesheet)))
-  (when (typep source-document 'xml-designator)
-    (setf source-document (cxml:parse source-document (stp:make-builder))))
   (invoke-with-output-sink
    (lambda ()
      (handler-case*
-         (let* ((xpath:*navigator* (or navigator :default-navigator))
+         (let* ((*documents* (make-hash-table :test 'equal))
+                (xpath:*navigator* (or navigator :default-navigator))
                 (puri:*strict-parse* nil)
                 (*stylesheet* stylesheet)
                 (*mode* (find-mode stylesheet nil))
@@ -1002,11 +1005,17 @@
                 (*global-variable-values*
                  (make-variable-value-array (length global-variable-specs)))
                 (*uri-resolver* uri-resolver)
+                (source-document
+                 (if (typep source-designator 'xml-designator)
+                     (cxml:parse source-designator (stp:make-builder))
+                     source-designator))
                 (xpath-root-node
                  (make-whitespace-stripper
                   source-document
                   (stylesheet-strip-tests stylesheet)))
                 (ctx (xpath:make-context xpath-root-node)))
+           (when (pathnamep source-designator)
+             (setf (gethash source-designator *documents*) xpath-root-node))
            (map nil
                 (lambda (spec)
                   (when (variable-param-p spec)

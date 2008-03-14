@@ -4060,7 +4060,7 @@ PASS mdocs_mdocs06 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs06.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs06.xuriella
 
-FAIL mdocs_mdocs07 [XSLT-Result-Tree]: output doesn't match
+PASS mdocs_mdocs07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs07.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs07.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/mdocs06b.xml
@@ -22634,7 +22634,7 @@ PASS XSLTFunctions_DocumentInUnion [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentInUnion.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentInUnion.xuriella
 
-FAIL XSLTFunctions_DocumentInUnionWithDuplicateNodes [Mixed]: output doesn't match
+PASS XSLTFunctions_DocumentInUnionWithDuplicateNodes [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_test_document_function_for_union.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/xslt_test_document_function_for_union.xml
   Supplemental data: MSFT_Conformance_Tests/XSLTFunctions/mdocs06b.xml
@@ -22740,4 +22740,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2518/3085 tests.
+Passed 2520/3085 tests.
