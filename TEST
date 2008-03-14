@@ -4046,8 +4046,7 @@ PASS mdocs_mdocs04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/mdocs/mdocs_mdocs04.saxon
   Actual output: Xalan_Conformance_Tests/mdocs/mdocs_mdocs04.xuriella
 
-FAIL mdocs_mdocs05 [XSLT-Result-Tree]: cannot parse referenced document /compu.xml: error opening #P"/compu.xml":
-                                                                                      No such file or directory
+PASS mdocs_mdocs05 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/mdocs/mdocs05.noindent-xsl
   Data: Xalan_Conformance_Tests/mdocs/mdocs05.xml
   Supplemental data: Xalan_Conformance_Tests/mdocs/compu.xml
@@ -8129,16 +8128,14 @@ PASS reluri_reluri08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/reluri/reluri_reluri08.saxon
   Actual output: Xalan_Conformance_Tests/reluri/reluri_reluri08.xuriella
 
-FAIL reluri_reluri09 [XSLT-Result-Tree]: cannot parse referenced document ...Xalan_Conformance_Tests/reluri/level3/xreluri09a.xml: error opening #P"...Xalan_Conformance_Tests/reluri/level3/xreluri09a.xml":
-                                                                                                                                                                                    No such file or directory
+PASS reluri_reluri09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/reluri/reluri09.noindent-xsl
   Data: Xalan_Conformance_Tests/reluri/reluri09.xml
   Supplemental data: Xalan_Conformance_Tests/reluri/level1/level2/level3/xreluri09a.xml
   Expected output (1): Xalan_Conformance_Tests/reluri/reluri_reluri09.saxon
   Actual output: Xalan_Conformance_Tests/reluri/reluri_reluri09.xuriella
 
-FAIL reluri_reluri10 [XSLT-Result-Tree]: cannot parse referenced document ...Xalan_Conformance_Tests/reluri/level3/xreluri09a.xml: error opening #P"...Xalan_Conformance_Tests/reluri/level3/xreluri09a.xml":
-                                                                                                                                                                                    No such file or directory
+PASS reluri_reluri10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/reluri/reluri10.noindent-xsl
   Data: Xalan_Conformance_Tests/reluri/reluri10.xml
   Supplemental data: Xalan_Conformance_Tests/reluri/level1/level2/xreluri10b.xml
@@ -22605,10 +22602,11 @@ PASS XSLTFunctions_DocumentFunctionNoArg [Mixed]
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionNoArg.xuriella
 
 FAIL XSLTFunctions_DocumentFunctionWithAbsoluteArgument [Mixed]: There is no applicable method for the generic function
-                                                                   #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:BASE-URI-USING-NAVIGATOR (6)>
+                                                                   #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:NODE-TYPE-P-USING-NAVIGATOR (26)>
                                                                  when called with arguments
                                                                    (:DEFAULT-NAVIGATOR
-                                                                    NIL).
+                                                                    NIL
+                                                                    :DOCUMENT).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_func_document_function_abs_arg.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/foo.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionWithAbsoluteArgument.saxon
@@ -22729,8 +22727,7 @@ PASS XSLTFunctions_Bug76054 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76054.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_Bug76054.xuriella
 
-FAIL XSLTFunctions_Bug76984 [Mixed]: cannot parse referenced document /a.xml: error opening #P"/a.xml":
-                                                                                No such file or directory
+FAIL XSLTFunctions_Bug76984 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/Bug76984.xml
   Supplemental data: MSFT_Conformance_Tests/XSLTFunctions/b.xml
@@ -22743,4 +22740,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2515/3085 tests.
+Passed 2518/3085 tests.

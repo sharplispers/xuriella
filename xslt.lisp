@@ -849,6 +849,19 @@
 
 (xpath-sys:define-extension xslt *xsl*)
 
+(defun document-base-uri (node)
+  (xpath-protocol:base-uri
+   (cond
+     ((xpath-protocol:node-type-p node :document)
+      (xpath::find-in-pipe-if
+       (lambda (x)
+         (xpath-protocol:node-type-p x :element))
+       (xpath-protocol:child-pipe node)))
+     ((xpath-protocol:node-type-p node :element)
+      node)
+     (t
+      (xpath-protocol:parent-node node)))))
+
 (xpath-sys:define-xpath-function/lazy
     xslt :document
     (object &optional node-set)
@@ -856,30 +869,20 @@
     (lambda (ctx)
       (let* ((object (funcall object ctx))
              (node-set (and node-set (funcall node-set ctx)))
-             (uri
-              (when node-set
-                ;; FIXME: should use first node of the node set
-                ;; _in document order_
-                (xpath-protocol:base-uri (xpath:first-node node-set)))))
+             (base-uri
+              (if node-set
+                  (document-base-uri (xpath::textually-first-node node-set))
+                  instruction-base-uri)))
         (xpath-sys:make-node-set
          (if (xpath:node-set-p object)
              (xpath:map-node-set->list
               (lambda (node)
                 (%document (xpath:string-value node)
-                           (if (plusp (length uri))
-                               uri
-                               (xpath-protocol:base-uri
-                                (if (xpath-protocol:node-type-p node :document)
-                                    (xpath::find-in-pipe-if
-                                     (lambda (x)
-                                       (xpath-protocol:node-type-p x :element))
-                                     (xpath-protocol:child-pipe node))
-                                    node)))))
+                           (if node-set
+                               base-uri
+                               (document-base-uri node))))
               object)
-             (list (%document (xpath:string-value object)
-                              (if (plusp (length uri))
-                                  uri
-                                  instruction-base-uri)))))))))
+             (list (%document (xpath:string-value object) base-uri))))))))
 
 (xpath-sys:define-xpath-function/lazy xslt :key (name object)
   (let ((namespaces *namespaces*))
