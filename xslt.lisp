@@ -319,6 +319,7 @@
 
 (defvar *excluded-namespaces* (list *xsl*))
 (defvar *empty-mode*)
+(defvar *default-mode*)
 
 (defvar *xsl-include-stack* nil)
 
@@ -791,7 +792,6 @@
 ;;;; APPLY-STYLESHEET
 
 (defvar *stylesheet*)
-(defvar *mode*)
 
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
 
@@ -963,7 +963,7 @@
       #'(lambda (ctx)
           (%get-node-id (xpath:context-node ctx)))))
 
-(defparameter *available-instructions* (make-hash-table :test 'equal))
+(declaim (special *available-instructions*))
 
 (xpath-sys:define-xpath-function/lazy xslt :element-available (qname)
   (let ((namespaces *namespaces*))
@@ -998,8 +998,8 @@
                 (xpath:*navigator* (or navigator :default-navigator))
                 (puri:*strict-parse* nil)
                 (*stylesheet* stylesheet)
-                (*mode* (find-mode stylesheet nil))
                 (*empty-mode* (make-mode))
+                (*default-mode* (find-mode stylesheet nil))
                 (global-variable-specs
                  (stylesheet-global-variables stylesheet))
                 (*global-variable-values*
@@ -1036,7 +1036,7 @@
 	   ;; everywhere instead of EVALUATE, so let's paper over that
 	   ;; at a central place to be sure:
            (xpath::with-float-traps-masked ()
-	     (apply-templates ctx)))
+	     (apply-templates ctx :mode *default-mode*)))
        (xpath:xpath-error (c)
                           (xslt-error "~A" c))))
    (stylesheet-output-specification stylesheet)
@@ -1046,7 +1046,7 @@
   (or (gethash (cons local-name uri) (stylesheet-attribute-sets *stylesheet*))
       (xslt-error "no such attribute set: ~A/~A" local-name uri)))
 
-(defun apply-templates/list (list &optional param-bindings sort-predicate)
+(defun apply-templates/list (list &key param-bindings sort-predicate mode)
   (when sort-predicate
     (setf list (sort list sort-predicate)))
   (let* ((n (length list))
@@ -1056,7 +1056,8 @@
        for child in list
        do
          (apply-templates (xpath:make-context child s/d i)
-           param-bindings))))
+                          :param-bindings param-bindings
+                          :mode mode))))
 
 (defvar *stack-limit* 200)
 
@@ -1081,7 +1082,7 @@
              (setf (lexical-variable-value index) value)))
       (funcall (template-body template) ctx))))
 
-(defun apply-default-templates (ctx)
+(defun apply-default-templates (ctx mode)
   (let ((node (xpath:context-node ctx)))
     (cond
       ((or (xpath-protocol:node-type-p node :processing-instruction)
@@ -1092,7 +1093,8 @@
       (t
        (apply-templates/list
         (xpath::force
-         (xpath-protocol:child-pipe node)))))))
+         (xpath-protocol:child-pipe node))
+        :mode mode)))))
 
 (defvar *apply-imports*)
 
@@ -1112,12 +1114,12 @@
     (let ((*apply-imports* #'apply-imports))
       (apply-imports param-bindings))))
 
-(defun apply-templates (ctx &optional param-bindings)
+(defun apply-templates (ctx &key param-bindings mode)
   (apply-applicable-templates ctx
-                              (find-templates ctx)
+                              (find-templates ctx (or mode *default-mode*))
                               param-bindings
                               (lambda ()
-                                (apply-default-templates ctx))))
+                                (apply-default-templates ctx mode))))
 
 (defun call-template (ctx name &optional param-bindings)
   (apply-applicable-templates ctx
@@ -1127,11 +1129,11 @@
                                 (error "cannot find named template: ~s"
                                        name))))
 
-(defun find-templates (ctx)
+(defun find-templates (ctx mode)
   (let* ((matching-candidates
           (remove-if-not (lambda (template)
                            (template-matches-p template ctx))
-                         (mode-templates *mode*)))
+                         (mode-templates mode)))
          (npriorities
           (if matching-candidates
               (1+ (reduce #'max

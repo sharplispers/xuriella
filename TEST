@@ -4278,7 +4278,7 @@ PASS modes_modes01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes01.saxon
   Actual output: Xalan_Conformance_Tests/modes/modes_modes01.xuriella
 
-FAIL modes_modes02 [XSLT-Result-Tree]: output doesn't match
+PASS modes_modes02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/modes/modes02.noindent-xsl
   Data: Xalan_Conformance_Tests/modes/modes02.xml
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes02.saxon
@@ -4326,7 +4326,7 @@ PASS modes_modes09 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes09.saxon
   Actual output: Xalan_Conformance_Tests/modes/modes_modes09.xuriella
 
-FAIL modes_modes10 [XSLT-Result-Tree]: output doesn't match
+PASS modes_modes10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/modes/modes10.noindent-xsl
   Data: Xalan_Conformance_Tests/modes/modes10.xml
   Expected output (1): Xalan_Conformance_Tests/modes/modes_modes10.saxon
@@ -11400,7 +11400,7 @@ PASS BVTs_bvt052 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt052.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt052.xuriella
 
-FAIL BVTs_bvt053 [Mixed]: *stack-limit* reached; stack overflow
+PASS BVTs_bvt053 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/mode.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt053.saxon
@@ -22740,4 +22740,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2520/3085 tests.
+Passed 2523/3085 tests.

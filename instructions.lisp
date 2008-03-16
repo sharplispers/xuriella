@@ -35,6 +35,8 @@
 
 ;;;; Instructions
 
+(defparameter *available-instructions* (make-hash-table :test 'equal))
+
 (defmacro define-instruction (name (args-var env-var) &body body)
   `(setf (get ',name 'xslt-instruction)
          (lambda (,args-var ,env-var)
@@ -544,18 +546,18 @@
       (multiple-value-bind (mode-local-name mode-uri)
           (and mode (decode-qname mode env nil))
         (lambda (ctx)
-          (let ((*mode* (if mode
-                            (or (find-mode *stylesheet*
-                                           mode-local-name
-                                           mode-uri)
-                                *empty-mode*)
-                            *mode*)))
-            (apply-templates/list
-             (xpath::force
-              (xpath::sorted-pipe-of (funcall select-thunk ctx)))
-             (loop for (name nil value-thunk) in param-bindings
-                collect (list name (funcall value-thunk ctx)))
-             sort-predicate)))))))
+          (apply-templates/list
+           (xpath::force
+            (xpath::sorted-pipe-of (funcall select-thunk ctx)))
+           :param-bindings
+           (loop for (name nil value-thunk) in param-bindings
+              collect (list name (funcall value-thunk ctx)))
+           :sort-predicate sort-predicate
+           :mode (when mode
+                   (or (find-mode *stylesheet*
+                                  mode-local-name
+                                  mode-uri)
+                       *empty-mode*))))))))
 
 (define-instruction xsl:apply-imports (args env)
   (declare (ignore args env))
