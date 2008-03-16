@@ -255,7 +255,7 @@
       (write-string (pic/prefix picture) s)
       (loop
          for i from (1- wanted-left) downto 0
-         for index from 0
+         for index from (- left wanted-left)
          do
            (if (< i left)
                (write-char (elt str index) s)

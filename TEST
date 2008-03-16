@@ -5417,7 +5417,7 @@ PASS node_node21 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/node/node_node21.saxon
   Actual output: Xalan_Conformance_Tests/node/node_node21.xuriella
 
-FAIL numberformat_numberformat01 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat01.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat01.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat01.saxon
@@ -5577,7 +5577,7 @@ FAIL numberformat_numberformat26 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat26.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat26.xuriella
 
-FAIL numberformat_numberformat27 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat27 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat27.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat27.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat27.saxon
@@ -9480,13 +9480,13 @@ PASS string_string107 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/string/string_string107.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string107.xuriella
 
-FAIL string_string108 [XSLT-Result-Tree]: output doesn't match
+PASS string_string108 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string108.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string108.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string108.saxon
   Actual output: Xalan_Conformance_Tests/string/string_string108.xuriella
 
-FAIL string_string109 [XSLT-Result-Tree]: output doesn't match
+PASS string_string109 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/string/string109.noindent-xsl
   Data: Xalan_Conformance_Tests/string/string109.xml
   Expected output (1): Xalan_Conformance_Tests/string/string_string109.saxon
@@ -22725,4 +22725,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2543/3085 tests.
+Passed 2547/3085 tests.
