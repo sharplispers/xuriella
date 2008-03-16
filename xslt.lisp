@@ -554,7 +554,7 @@
     (stp:with-attributes (name
                           ;; strings
                           infinity
-                          NaN
+                          (nan "NaN")
                           ;; characters:
                           decimal-separator
                           grouping-separator

@@ -5495,7 +5495,7 @@ PASS numberformat_numberformat14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat14.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat14.xuriella
 
-FAIL numberformat_numberformat15 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat15 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat15.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat15.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat15.saxon
@@ -5649,26 +5649,26 @@ PASS numberformat_numberformat40 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat40.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat40.xuriella
 
-FAIL numberformat_numberformat41 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat41 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat41.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat41.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat41.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat41.xuriella
 
-FAIL numberformat_numberformat42 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat42 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat42.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat42.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat42.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat42.xuriella
 
-FAIL numberformat_numberformat43 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat43 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat43.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat43.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/x43import.xsl
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat43.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat43.xuriella
 
-FAIL numberformat_numberformat44 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat44 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat44.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat44.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/x43import.xsl
@@ -16308,7 +16308,7 @@ PASS FormatNumber_DecimalFormatInfinityTest [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatInfinityTest.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatInfinityTest.xuriella
 
-FAIL FormatNumber_DecimalFormatNaNTest [XSLT-Result-Tree]: output doesn't match
+PASS FormatNumber_DecimalFormatNaNTest [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_no_decimal_format_NaN_test.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatNaNTest.saxon
@@ -22750,4 +22750,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2576/3085 tests.
+Passed 2582/3085 tests.
