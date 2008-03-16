@@ -118,8 +118,13 @@
     (when namespace
       (setf uri namespace))
     (lambda (ctx)
-      (with-element (local-name uri :suggested-prefix prefix)
-        (funcall body-thunk ctx)))))
+      (cond
+        (uri
+         (with-element (local-name uri :suggested-prefix prefix)
+           (funcall body-thunk ctx)))
+        (t
+         (xslt-cerror "namespace not found: ~A" prefix)
+         (funcall body-thunk ctx))))))
 
 (defun compile-element/runtime (name-thunk ns-thunk body-thunk)
   ;; run-time decoding of the QName, but using the same namespaces
@@ -484,7 +489,7 @@
   (let ((namespaces '()))
     (do-pipe (ns (xpath-protocol:namespace-pipe element))
       (push (cons (xpath-protocol:local-name ns)
-                  (xpath-protocol:namespace-uri ns))
+                  (xpath-protocol:node-text ns))
             namespaces))
     namespaces))
 

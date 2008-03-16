@@ -4720,8 +4720,7 @@ PASS namespace_namespace39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace39.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace39.xuriella
 
-FAIL namespace_namespace40 [XSLT-Result-Tree]: condition of incorrect type: 
-The value of XURIELLA::URI is NIL, which is not of type STRING.
+PASS namespace_namespace40 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace40.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace40.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace40.saxon
@@ -4733,8 +4732,7 @@ PASS namespace_namespace41 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace41.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace41.xuriella
 
-FAIL namespace_namespace42 [XSLT-Result-Tree]: condition of incorrect type: 
-The value of XURIELLA::URI is NIL, which is not of type STRING.
+FAIL namespace_namespace42 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace42.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace42.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace42.saxon
@@ -4842,8 +4840,7 @@ PASS namespace_namespace59 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace59.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace59.xuriella
 
-FAIL namespace_namespace60 [XSLT-Result-Tree]: condition of incorrect type: 
-The value of XURIELLA::URI is NIL, which is not of type STRING.
+PASS namespace_namespace60 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace60.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace60.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace60.saxon
@@ -4921,8 +4918,7 @@ PASS namespace_namespace72 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace72.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace72.xuriella
 
-FAIL namespace_namespace73 [XSLT-Result-Tree]: condition of incorrect type: 
-The value of XURIELLA::URI is NIL, which is not of type STRING.
+PASS namespace_namespace73 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace73.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace73.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace73.saxon
@@ -4952,8 +4948,7 @@ PASS namespace_namespace78 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace78.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace78.xuriella
 
-FAIL namespace_namespace79 [XSLT-Result-Tree]: condition of incorrect type: 
-The value of XURIELLA::URI is NIL, which is not of type STRING.
+PASS namespace_namespace79 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace79.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace79.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace79.saxon
@@ -22740,4 +22735,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2529/3085 tests.
+Passed 2533/3085 tests.
