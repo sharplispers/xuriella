@@ -192,6 +192,8 @@
                                (funcall value-thunk ctx)))
                            :suggested-prefix prefix))))))
 
+;; Also elides (later) namespaces hidden by (earlier) ones.
+;; Reverses order.
 (defun remove-excluded-namespaces
     (namespaces &optional (excluded-uris *excluded-namespaces*))
   (let ((koerbchen '())
@@ -202,6 +204,7 @@
        do
          (cond
            ((find prefix kroepfchen :test #'equal))
+           ((find prefix koerbchen :test #'equal :key #'car))
            ((find uri excluded-uris :test #'equal)
             (push prefix kroepfchen))
            (t

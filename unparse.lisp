@@ -197,6 +197,8 @@
     (setf uri (unalias-uri uri)))
   (unless
       ;; allow earlier conses in extra-namespaces to hide later ones.
+      ;; FIXME: add a good explanation here why we need to do this both
+      ;; here and in remove-extra-namespaces.
       (find prefix
 	    (sink-element-new-namespaces elt)
 	    :key #'car
