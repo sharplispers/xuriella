@@ -5559,7 +5559,7 @@ PASS numberformat_numberformat24 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat24.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat24.xuriella
 
-FAIL numberformat_numberformat25 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS numberformat_numberformat25 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat25.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat25.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat25.saxon
@@ -16314,7 +16314,7 @@ PASS FormatNumber_DecimalFormatNaNTest [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatNaNTest.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatNaNTest.xuriella
 
-FAIL FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep [XSLT-Result-Tree]: expected error not signalled: 
+PASS FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_no_same_char_as_decimal_and_grp_sep.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep.saxon
@@ -22750,4 +22750,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2582/3085 tests.
+Passed 2584/3085 tests.

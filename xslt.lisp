@@ -571,25 +571,32 @@
               (values "" ""))
         (unless (find-decimal-format local-name uri stylesheet nil)
           (setf (find-decimal-format local-name uri stylesheet)
-                (flet ((chr (key x)
-                         (when x
-                           (unless (eql (length x) 1)
-                             (xslt-error "not a single character: ~A" x))
-                           (list key (elt x 0))))
-                       (str (key x)
-                         (when x
-                           (list key x))))
-                  (apply #'make-decimal-format
-                         (append (str :infinity infinity)
-                                 (str :nan nan)
-                                 (chr :decimal-separator decimal-separator)
-                                 (chr :grouping-separator grouping-separator)
-                                 (chr :zero-digit zero-digit)
-                                 (chr :percent percent)
-                                 (chr :per-mille per-mille)
-                                 (chr :digit digit)
-                                 (chr :pattern-separator pattern-separator)
-                                 (chr :minus-sign minus-sign))))))))))
+                (let ((seen '()))
+                  (flet ((chr (key x)
+                           (when x
+                             (unless (eql (length x) 1)
+                               (xslt-error "not a single character: ~A" x))
+                             (let ((chr (elt x 0)))
+                               (when (find chr seen)
+                                 (xslt-error
+                                  "conflicting decimal format characters: ~A"
+                                  chr))
+                               (push chr seen)
+                               (list key chr))))
+                         (str (key x)
+                           (when x
+                             (list key x))))
+                    (apply #'make-decimal-format
+                           (append (str :infinity infinity)
+                                   (str :nan nan)
+                                   (chr :decimal-separator decimal-separator)
+                                   (chr :grouping-separator grouping-separator)
+                                   (chr :zero-digit zero-digit)
+                                   (chr :percent percent)
+                                   (chr :per-mille per-mille)
+                                   (chr :digit digit)
+                                   (chr :pattern-separator pattern-separator)
+                                   (chr :minus-sign minus-sign)))))))))))
 
 (defun parse-exclude-result-prefixes! (node env)
   (stp:with-attributes (exclude-result-prefixes)
