@@ -507,9 +507,44 @@
       (warn "comparison failed: ~A" c)
       nil)))
 
+;; Workaround for namespace_namespace23 and other tests:
+;;  - For these tests, saxon and msxsl output a declaration for the XSL
+;;    namespace without using that declaration.
+;;  - I think saxon and msxsl are both wrong.
+;;  - The official test output agrees with my assessment.
+;;    (So does libxslt, but that's not to be trusted. :-))
+;;  - Here's the catch: The official test output is broken in its whitespace
+;;    handling.
+;; So let's normalize spaces in test output that looks like an XSLT
+;; stylesheet, allowing us to pass these tests using the official test output.
+(defun maybe-normalize-test-spaces (wrapper)
+  (stp:do-children (wrapper-child wrapper)
+    (when (and (typep wrapper-child 'stp:element)
+               (equal (stp:namespace-uri wrapper-child) *xsl*))
+      (strip-stylesheet wrapper-child)
+      (labels ((recurse (e &optional preserve)
+                 (stp:do-children (child e)
+                   (typecase child
+                     (stp:text
+                      (setf (stp:data child)
+                            (normalize-whitespace (stp:data child))))
+                     (stp:element
+                         (stp:with-attributes ((space "space" *xml*))
+                             child
+                           (let ((new-preserve
+                                  (cond
+                                    ((namep child "text") t)
+                                    ((not space) preserve)
+                                    ((equal space "preserve") t)
+                                    (t nil))))
+                             (recurse child new-preserve))))))))
+        (recurse wrapper-child)))))
+
 (defun xml-output-equal-p (p q)
   (let ((r (parse-for-comparison p))
         (s (parse-for-comparison q)))
+    (maybe-normalize-test-spaces (stp:document-element r))
+    (maybe-normalize-test-spaces (stp:document-element s))
     (node= (stp:document-element r) (stp:document-element s))))
 
 ;; FIXME: don't do this in <pre> etc.

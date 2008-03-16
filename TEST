@@ -4617,7 +4617,7 @@ PASS namespace_namespace22 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace22.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace22.xuriella
 
-FAIL namespace_namespace23 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace23 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace23.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace23.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/namespace/test2.xsl
@@ -18443,7 +18443,7 @@ PASS Namespace-alias__91785 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91785.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91785.xuriella
 
-FAIL Namespace-alias__91786 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91786 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91786.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91786.saxon
@@ -22740,4 +22740,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2524/3085 tests.
+Passed 2526/3085 tests.
