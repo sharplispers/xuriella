@@ -217,7 +217,8 @@
       (lambda (ctx)
         (with-element (local-name uri
                                   :suggested-prefix suggested-prefix
-                                  :extra-namespaces namespaces)
+                                  :extra-namespaces namespaces
+                                  :process-aliases t)
           (funcall body-thunk ctx))))))
 
 (define-instruction xsl:literal-attribute (args env)
@@ -227,6 +228,7 @@
         (write-attribute local-name
                          uri
                          (funcall value-thunk ctx)
+                         :process-aliases t
                          :suggested-prefix suggested-prefix)))))
 
 (define-instruction xsl:text (args env)
@@ -519,7 +521,8 @@
     ((xpath-protocol:node-type-p node :namespace)
      (write-extra-namespace
       (xpath-protocol:local-name node)
-      (xpath-protocol:namespace-uri node)))
+      (xpath-protocol:namespace-uri node)
+      nil))
     (t
      (error "don't know how to copy node ~A" node))))
 

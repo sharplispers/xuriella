@@ -56,13 +56,15 @@
   (maybe-emit-start-tag)
   (funcall fn *sink*))
 
-(defmacro with-element ((local-name uri &key suggested-prefix extra-namespaces)
-                        &body body)
+(defmacro with-element
+    ((local-name uri &key suggested-prefix extra-namespaces process-aliases)
+     &body body)
   `(invoke-with-element (lambda () ,@body)
                         ,local-name
                         ,uri
                         :suggested-prefix ,suggested-prefix
-                        :extra-namespaces ,extra-namespaces))
+                        :extra-namespaces ,extra-namespaces
+                        :process-aliases ,process-aliases))
 
 (defun doctype (name public-id system-id &optional internal-subset)
   (sax:start-dtd *sink* name public-id system-id)
@@ -162,12 +164,13 @@
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
 
 (defun invoke-with-element
-    (fn local-name uri &key suggested-prefix extra-namespaces)
+    (fn local-name uri &key suggested-prefix extra-namespaces process-aliases)
   (check-type local-name string)
   (check-type uri string)
   (check-type suggested-prefix (or null string))
   (maybe-emit-start-tag)
-  (setf uri (unalias-uri uri))
+  (when process-aliases
+    (setf uri (unalias-uri uri)))
   (let* ((parent *current-element*)
          (elt (make-sink-element
                :local-name local-name
@@ -180,7 +183,7 @@
                :attributes nil))
          (*current-element* elt)
          (*start-tag-written-p* nil))
-    (process-extra-namespaces elt extra-namespaces)
+    (process-extra-namespaces elt extra-namespaces process-aliases)
     (multiple-value-prog1
         (funcall fn)
       (maybe-emit-start-tag)
@@ -189,8 +192,9 @@
          for (prefix . uri) in (sink-element-new-namespaces elt) do
          (sax:end-prefix-mapping *sink* prefix)))))
 
-(defun process-extra-namespace (elt prefix uri)
-  (setf uri (unalias-uri uri))
+(defun process-extra-namespace (elt prefix uri process-aliases)
+  (when process-aliases
+    (setf uri (unalias-uri uri)))
   (unless
       ;; allow earlier conses in extra-namespaces to hide later ones.
       (find prefix
@@ -203,9 +207,9 @@
 	  (equal uri previous)
 	(push-sink-element-namespace elt prefix uri)))))
 
-(defun process-extra-namespaces (elt extra-namespaces)
+(defun process-extra-namespaces (elt extra-namespaces process-aliases)
   (loop for (prefix . uri) in extra-namespaces do
-       (process-extra-namespace elt prefix uri)))
+       (process-extra-namespace elt prefix uri process-aliases)))
 
 (defun push-sink-element-namespace (elt prefix uri)
   (cond
@@ -218,12 +222,14 @@
        (push cons (sink-element-all-namespaces elt))
        (push cons (sink-element-new-namespaces elt))))))
 
-(defun write-attribute (local-name uri value &key suggested-prefix)
+(defun write-attribute
+    (local-name uri value &key suggested-prefix process-aliases)
   (check-type local-name string)
   (check-type uri string)
   (check-type value string)
   (check-type suggested-prefix (or null string))
-  (setf uri (unalias-uri uri))
+  (when process-aliases
+    (setf uri (unalias-uri uri)))
   (cond
     ((null *current-element*)
      (xslt-error "attribute outside of element"))
@@ -243,7 +249,7 @@
                                    (equal (sink-attribute-uri x) uri)))
                             (sink-element-attributes *current-element*)))))))
 
-(defun write-extra-namespace (prefix uri)
+(defun write-extra-namespace (prefix uri process-aliases)
   (check-type prefix string)
   (check-type uri string)
   (cond
@@ -252,7 +258,7 @@
     (*start-tag-written-p*
      (xslt-cerror "namespace after start tag"))
     (t
-     (process-extra-namespace *current-element* prefix uri))))
+     (process-extra-namespace *current-element* prefix uri process-aliases))))
 
 (defun write-text (data)
   (maybe-emit-start-tag)
