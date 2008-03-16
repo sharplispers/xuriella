@@ -123,8 +123,14 @@
          (with-element (local-name uri :suggested-prefix prefix)
            (funcall body-thunk ctx)))
         (t
-         (xslt-cerror "namespace not found: ~A" prefix)
-         (funcall body-thunk ctx))))))
+         ;; ERROR rather than CERROR because saxon doesn't do the recovery,
+         ;; and the official output illustrates recovery but is useless as
+         ;; always.
+         (xslt-error "namespace not found: ~A" prefix)
+         #+(or)
+         (let ((*start-tag-written-p* t))
+           (declare (special *start-tag-written-p*))
+           (funcall body-thunk ctx)))))))
 
 (defun compile-element/runtime (name-thunk ns-thunk body-thunk)
   ;; run-time decoding of the QName, but using the same namespaces
