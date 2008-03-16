@@ -730,15 +730,18 @@
        (null
         (set-exclusive-or (stp:list-attributes e) (stp:list-attributes f)
                           :test #'node=))
-       (flet ((collect-namespaces (elt)
-                (let ((result ()))
-                  (stp:map-extra-namespaces
-                   (lambda (k v) (push (cons k v) result))
-                   elt)
-                  result)))
-         (null
-          (set-exclusive-or (collect-namespaces e) (collect-namespaces f)
-                            :test #'equal)))))
+       (block nil
+         (flet ((check-namespaces (a b)
+                  (let ((result ()))
+                    (stp:map-extra-namespaces
+                     (lambda (k v)
+                       (unless (equal v (stp:find-namespace k b))
+                         (return nil)))
+                     a)
+                    result)))
+           (check-namespaces e f)
+           (check-namespaces f e))
+         t)))
 
 (defmethod node= ((a stp:node) (b stp:node))
   nil)
