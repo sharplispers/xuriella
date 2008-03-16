@@ -5285,7 +5285,7 @@ PASS namespace_namespace141 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace141.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace141.xuriella
 
-FAIL namespace_namespace142 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace142 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace142.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace142.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace142.saxon
@@ -22725,4 +22725,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2542/3085 tests.
+Passed 2543/3085 tests.
