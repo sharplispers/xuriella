@@ -96,7 +96,10 @@
 
 ;;;; XSLT-ENVIRONMENT and XSLT-CONTEXT
 
-(defparameter *namespaces* *initial-namespaces*)
+(defparameter *namespaces*
+  '((nil . "")
+    ("xmlns" . #"http://www.w3.org/2000/xmlns/")
+    ("xml" . #"http://www.w3.org/XML/1998/namespace")))
 
 (defvar *global-variable-declarations*)
 (defvar *lexical-variable-declarations*)
@@ -128,12 +131,19 @@
       (split-qname qname)
     (values local-name
             (if (or prefix (not attributep))
-                (xpath-sys:environment-find-namespace env prefix)
+                (xpath-sys:environment-find-namespace env (or prefix ""))
                 "")
             prefix)))
 
 (defmethod xpath-sys:environment-find-namespace ((env xslt-environment) prefix)
-  (cdr (assoc prefix *namespaces* :test 'equal)))
+  (or (cdr (assoc prefix *namespaces* :test 'equal))
+      ;; zzz gross hack.
+      ;; Change the entire code base to represent "no prefix" as the
+      ;; empty string consistently.  unparse.lisp has already been changed.
+      (and (equal prefix "")
+           (cdr (assoc nil *namespaces* :test 'equal)))
+      (and (eql prefix nil)
+           (cdr (assoc "" *namespaces* :test 'equal)))))
 
 (defun find-variable-index (local-name uri table)
   (position (cons local-name uri) table :test 'equal))
@@ -527,7 +537,11 @@
       (setf (gethash
 	     (xpath-sys:environment-find-namespace env stylesheet-prefix)
 	     (stylesheet-namespace-aliases stylesheet))
-	    (xpath-sys:environment-find-namespace env result-prefix)))))
+	    (xpath-sys:environment-find-namespace
+             env
+             (if (equal result-prefix "#default")
+                 ""
+                 result-prefix))))))
 
 (defun parse-exclude-result-prefixes! (node env)
   (stp:with-attributes (exclude-result-prefixes)
@@ -796,8 +810,11 @@
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
 
 (defun unalias-uri (uri)
-  (gethash uri (stylesheet-namespace-aliases *stylesheet*)
-	   uri))
+  (let ((result
+         (gethash uri (stylesheet-namespace-aliases *stylesheet*)
+                  uri)))
+    (check-type result string)
+    result))
 
 (defstruct (parameter
              (:constructor make-parameter (value local-name &optional uri)))

@@ -4846,7 +4846,7 @@ PASS namespace_namespace60 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace60.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace60.xuriella
 
-FAIL namespace_namespace61 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace61 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace61.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace61.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace61.saxon
@@ -5092,13 +5092,13 @@ PASS namespace_namespace103 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace103.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace103.xuriella
 
-FAIL namespace_namespace104 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace104 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace104.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace104.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace104.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace104.xuriella
 
-FAIL namespace_namespace105 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace105 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace105.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace105.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace105.saxon
@@ -5207,7 +5207,7 @@ PASS namespace_namespace124 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace124.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace124.xuriella
 
-PASS namespace_namespace125 [XSLT-Result-Tree]
+FAIL namespace_namespace125 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace125.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace125.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace125.saxon
@@ -5225,13 +5225,13 @@ PASS namespace_namespace127 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace127.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace127.xuriella
 
-FAIL namespace_namespace128 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace128 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace128.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace128.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace128.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace128.xuriella
 
-FAIL namespace_namespace130 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace130 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace130.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace130.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace130.saxon
@@ -10294,7 +10294,7 @@ PASS Attributes__78366 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78366.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78366.xuriella
 
-FAIL Attributes__78367 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__78367 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78367.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78367.saxon
@@ -11429,11 +11429,6 @@ WARNING:
    comparison failed: Document not well-formed: Only the default namespace (the one without a prefix) may be bound to an empty namespace URI, thus undeclaring it.
 Context:
   Line 2, column 153 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Only the default namespace (the one without a prefix) may be bound to an empty namespace URI, thus undeclaring it.
-Context:
-  Line 2, column 323 in NIL
 
 FAIL BVTs_bvt058 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/nsalias.noindent-xsl
@@ -18409,12 +18404,7 @@ WARNING:
 Context:
   Line 2, column 48 in NIL
 
-WARNING:
-   comparison failed: Document not well-formed: Only the default namespace (the one without a prefix) may be bound to an empty namespace URI, thus undeclaring it.
-Context:
-  Line 2, column 48 in NIL
-
-FAIL Namespace-alias__91782 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91782 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91782.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91782.saxon
@@ -22735,4 +22725,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2534/3085 tests.
+Passed 2540/3085 tests.

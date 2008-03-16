@@ -180,7 +180,7 @@
       (setf uri namespace))
     (lambda (ctx)
       (write-attribute local-name
-                       uri
+                       (or uri "")
                        (with-toplevel-text-output-sink (s)
                          (with-xml-output s
                            (funcall value-thunk ctx)))
@@ -203,15 +203,16 @@
                                (funcall value-thunk ctx)))
                            :suggested-prefix prefix))))))
 
-;; Also elides (later) namespaces hidden by (earlier) ones.
-;; Reverses order.
+;; zzz Also elides (later) namespaces hidden by (earlier) ones.
+;; zzz Reverses order.
 (defun remove-excluded-namespaces
     (namespaces &optional (excluded-uris *excluded-namespaces*))
   (let ((koerbchen '())
         (kroepfchen '()))
     (loop
        for cons in namespaces
-       for (prefix . uri) = cons
+       for (prefix* . uri) = cons
+       for prefix = (or prefix* "")
        do
          (cond
            ((find prefix kroepfchen :test #'equal))
@@ -229,7 +230,7 @@
     (let ((body-thunk (compile-instruction `(progn ,@body) env))
           (namespaces (remove-excluded-namespaces *namespaces*)))
       (lambda (ctx)
-        (with-element (local-name uri
+        (with-element (local-name (or uri "")
                                   :suggested-prefix suggested-prefix
                                   :extra-namespaces namespaces
                                   :process-aliases t)

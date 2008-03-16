@@ -97,7 +97,7 @@
   (let* ((local-name (sink-attribute-local-name attr))
          (uri (sink-attribute-uri attr))
          (suggested-prefix (sink-attribute-suggested-prefix attr))
-         (prefix (ensure-prefix-for-uri elt uri suggested-prefix))
+         (prefix (ensure-prefix-for-uri elt uri suggested-prefix t))
          (qname (if (plusp (length prefix))
                     (concatenate 'string prefix ":" local-name)
                     local-name)))
@@ -107,13 +107,18 @@
                         :value (sink-attribute-value attr))))
 
 (defun sink-element-find-uri (prefix elt)
+  (assert prefix)
   (cdr
    (find prefix
          (sink-element-all-namespaces elt)
          :key #'car
          :test #'equal)))
 
-(defun ensure-prefix-for-uri (elt uri &optional suggested-prefix)
+(defun ensure-prefix-for-uri (elt uri suggested-prefix &optional attributep)
+  (check-type uri string)
+  (when (or (equal suggested-prefix "xmlns")
+            (equal suggested-prefix "xml"))
+    (setf suggested-prefix nil))
   (let* ((prefix-cons
           (find uri
                 (sink-element-all-namespaces elt)
@@ -123,16 +128,37 @@
          (cross-check
           (when prefix-cons
             (sink-element-find-uri prefix elt))))
-    (if (and prefix-cons (equal cross-check uri))
-        prefix
-        (loop
+    (cond
+      ((equal uri "")
+       (unless (or attributep
+                   (equal (sink-element-find-uri "" elt) ""))
+         (push-sink-element-namespace elt "" ""))
+       "")
+      ((and prefix-cons
+            (equal cross-check uri)
+            (or (plusp (length prefix))
+                (not attributep)))
+       (pushnew prefix (sink-element-used-prefixes elt) :test #'equal)
+       prefix)
+      ((and (or (plusp (length suggested-prefix))
+                (not attributep))
+            (not (find suggested-prefix
+                       (sink-element-new-namespaces elt)
+                       :key #'car
+                       :test #'equal))
+            (not (find suggested-prefix
+                       (sink-element-used-prefixes elt)
+                       :test #'equal)))
+       (push-sink-element-namespace elt (or suggested-prefix "") uri)
+       suggested-prefix)
+      (t
+       (loop
            for i from 0
-           for prefix = suggested-prefix then (format nil "ns-~D" i)
-           while
-             (sink-element-find-uri prefix elt)
+           for prefix = (format nil "ns-~D" i)
+           while (sink-element-find-uri prefix elt)
            finally
 	     (push-sink-element-namespace elt prefix uri)
-             (return prefix)))))
+             (return prefix))))))
 
 (defun make-xmlns-attribute (prefix uri)
   (sax:make-attribute
@@ -149,6 +175,7 @@
   suggested-prefix
   all-namespaces
   new-namespaces
+  used-prefixes
   attributes
   actual-qname)
 
@@ -159,7 +186,7 @@
   value)
 
 (defparameter *initial-namespaces*
-  '((nil . "")
+  '(("" . "")
     ("xmlns" . #"http://www.w3.org/2000/xmlns/")
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
 
@@ -183,7 +210,13 @@
                :attributes nil))
          (*current-element* elt)
          (*start-tag-written-p* nil))
+    ;; always establish explicitly copied namespaces first
+    ;; (not including declarations of the default namespace)
     (process-extra-namespaces elt extra-namespaces process-aliases)
+    ;; establish the element's prefix (which might have to be the default
+    ;; namespace if it's the empty URI)
+    (ensure-prefix-for-uri elt uri suggested-prefix)
+    ;; we'll do attributes incrementally
     (multiple-value-prog1
         (funcall fn)
       (maybe-emit-start-tag)
@@ -196,24 +229,30 @@
   (when process-aliases
     (setf uri (unalias-uri uri)))
   (unless
-      ;; allow earlier conses in extra-namespaces to hide later ones.
-      ;; FIXME: add a good explanation here why we need to do this both
-      ;; here and in remove-extra-namespaces.
-      (find prefix
-	    (sink-element-new-namespaces elt)
-	    :key #'car
-	    :test #'equal)
+      (or
+       ;; don't touch the empty prefix, since we might need it for the empty
+       ;; URI
+       (zerop (length prefix))
+       ;; don't touch the empty URI
+       (zerop (length uri))
+       ;; allow earlier conses in extra-namespaces to hide later ones.
+       ;; FIXME: add a good explanation here why we need to do this both
+       ;; here and in remove-extra-namespaces.
+       (find prefix
+             (sink-element-new-namespaces elt)
+             :key #'car
+             :test #'equal))
     (let ((previous (sink-element-find-uri prefix elt)))
-      (unless
-	  ;; no need to declare what has already been done
-	  (equal uri previous)
-	(push-sink-element-namespace elt prefix uri)))))
+      (if (equal uri previous) ;no need to declare what has already been done
+          (pushnew prefix (sink-element-used-prefixes elt) :test #'equal)
+          (push-sink-element-namespace elt prefix uri))))))
 
 (defun process-extra-namespaces (elt extra-namespaces process-aliases)
   (loop for (prefix . uri) in extra-namespaces do
        (process-extra-namespace elt prefix uri process-aliases)))
 
 (defun push-sink-element-namespace (elt prefix uri)
+  (assert prefix)
   (cond
     ((equal prefix "xml")
      (assert (equal uri "http://www.w3.org/XML/1998/namespace")))
@@ -259,6 +298,8 @@
      (xslt-error "attribute outside of element"))
     (*start-tag-written-p*
      (xslt-cerror "namespace after start tag"))
+    ((zerop (length prefix))
+     (xslt-cerror "refusing to copy declaration for default namespace"))
     (t
      (process-extra-namespace *current-element* prefix uri process-aliases))))
 

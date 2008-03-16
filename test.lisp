@@ -497,10 +497,10 @@
                                          ""))))))
     d))
 
-(defun output-equal-p (compare p q)
+(defun output-equal-p (compare p q &key normalize)
   (handler-case
       (ecase compare
-        (:xml (xml-output-equal-p p q))
+        (:xml (xml-output-equal-p p q normalize))
         (:html (html-output-equal-p p q))
         (:text (text-output-equal-p p q)))
     ((or error parse-number::invalid-number) (c)
@@ -517,10 +517,11 @@
 ;;    handling.
 ;; So let's normalize spaces in test output that looks like an XSLT
 ;; stylesheet, allowing us to pass these tests using the official test output.
-(defun maybe-normalize-test-spaces (wrapper)
+(defun maybe-normalize-test-spaces (wrapper force)
   (stp:do-children (wrapper-child wrapper)
     (when (and (typep wrapper-child 'stp:element)
-               (equal (stp:namespace-uri wrapper-child) *xsl*))
+               (or (equal (stp:namespace-uri wrapper-child) *xsl*)
+                   force))
       (strip-stylesheet wrapper-child)
       (labels ((recurse (e &optional preserve)
                  (stp:do-children (child e)
@@ -540,11 +541,11 @@
                              (recurse child new-preserve))))))))
         (recurse wrapper-child)))))
 
-(defun xml-output-equal-p (p q)
+(defun xml-output-equal-p (p q normalize)
   (let ((r (parse-for-comparison p))
         (s (parse-for-comparison q)))
-    (maybe-normalize-test-spaces (stp:document-element r))
-    (maybe-normalize-test-spaces (stp:document-element s))
+    (maybe-normalize-test-spaces (stp:document-element r) normalize)
+    (maybe-normalize-test-spaces (stp:document-element s) normalize)
     (node= (stp:document-element r) (stp:document-element s))))
 
 ;; FIXME: don't do this in <pre> etc.
@@ -629,7 +630,9 @@
         #+xuriella::xsltproc
         (expected-xsltproc (test-output-pathname test "xsltproc"))
         (actual (test-output-pathname test "xuriella"))
-        (official (test-official-output-pathname test)))
+        (official (test-official-output-pathname test))
+        (force-normalization
+         (find (test-id test) '("Namespace-alias__91782") :test #'equal)))
     (labels ((uri-resolver (uri)
                (if (search "%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml"
                            uri)
@@ -700,7 +703,8 @@
                      (official-matches-p
                       (output-equal-p output-method
                                       official
-                                      actual)))
+                                      actual
+                                      :normalize force-normalization)))
                  (cond
                    ((or saxon-matches-p
                         #+xuriella::xsltproc xsltproc-matches-p
@@ -731,7 +735,8 @@
                ((output-equal-p
                  (slurp-output-method (test-stylesheet-pathname test))
                  official
-                 actual)
+                 actual
+                 :normalize force-normalization)
                 (report t))
                (t
                 (report nil ": saxon error not signalled and official output not a match"))))))))))
