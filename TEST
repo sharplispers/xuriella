@@ -5613,7 +5613,7 @@ PASS numberformat_numberformat34 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat34.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat34.xuriella
 
-FAIL numberformat_numberformat35 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat35 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat35.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat35.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat35.saxon
@@ -16368,7 +16368,7 @@ PASS FormatNumber_FormatNumberWithPattern.000 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithPattern.000.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithPattern.000.xuriella
 
-FAIL FormatNumber_TestGrpSepr [XSLT-Result-Tree]: output doesn't match
+PASS FormatNumber_TestGrpSepr [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_test_grp_sepr.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_TestGrpSepr.saxon
@@ -22411,9 +22411,9 @@ PASS XSLTFunctions__crahedOnEmptyVariable [Mixed]: raised an xslt-error as expec
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.xuriella
 
-FAIL XSLTFunctions__defaultPattern [Mixed]: condition of incorrect type: 
-Too large to be represented as a SINGLE-FLOAT:
-  9999999999999999999999999999999999999999999999999999999999999999999999
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10001001)
+FAIL XSLTFunctions__defaultPattern [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__defaultPattern.saxon
@@ -22750,4 +22750,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2584/3085 tests.
+Passed 2586/3085 tests.

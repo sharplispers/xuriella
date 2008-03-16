@@ -101,7 +101,8 @@
                  (find-decimal-format "" "" *stylesheet*))))
         (multiple-value-bind (pos neg)
             (parse-picture (xpath:string-value (funcall picture ctx)) df)
-          (format-number (xpath:number-value (funcall value ctx))
+          (format-number (float (xpath:number-value (funcall value ctx))
+                                1.0d0)
                          pos
                          neg
                          df))))))
@@ -153,6 +154,14 @@
               (incf (car integer-part-grouping-positions)))
             (incf minimum-integer-part-size)))
        finally
+         (when integer-part-grouping-positions
+           ;; zzz I wrote the above algorithm based on the XSLT 2.0 spec,
+           ;; only to find out that the test suite doesn't want
+           ;; multiple INTEGER-PART-GROUPING-POSITIONS.  Sun says
+           ;; that only the last one is used:
+           ;; http://java.sun.com/j2se/1.3/docs/api/java/text/DecimalFormat.html
+           (setf integer-part-grouping-positions
+                 (list (car integer-part-grouping-positions))))
          (return (values i
                          (loop
                             for pos in integer-part-grouping-positions
