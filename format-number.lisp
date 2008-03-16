@@ -208,14 +208,11 @@
                 (parse-fractional-picture picture df start end))
           result)))))
 
-(defun infinityp (value)
-  (eq value :infinity))
-
 (defun format-number (value positive-picture negative-picture df)
   (if (xpath::nan-p value)
       (df/nan df)
       (let ((picture (if (minusp value) negative-picture positive-picture)))
-        (if (infinityp value)
+        (if (xpath::inf-p value)
             (concatenate 'string
                          (pic/prefix picture)
                          (df/infinity df)
