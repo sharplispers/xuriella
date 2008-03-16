@@ -4678,7 +4678,7 @@ PASS namespace_namespace32 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace32.saxon
   Actual output: Xalan_Conformance_Tests/namespace/namespace_namespace32.xuriella
 
-FAIL namespace_namespace33 [XSLT-Result-Tree]: output doesn't match
+PASS namespace_namespace33 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/namespace/namespace33.noindent-xsl
   Data: Xalan_Conformance_Tests/namespace/namespace33.xml
   Expected output (1): Xalan_Conformance_Tests/namespace/namespace_namespace33.saxon
@@ -22740,4 +22740,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2528/3085 tests.
+Passed 2529/3085 tests.

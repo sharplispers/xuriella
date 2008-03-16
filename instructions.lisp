@@ -524,7 +524,7 @@
     ((xpath-protocol:node-type-p node :namespace)
      (write-extra-namespace
       (xpath-protocol:local-name node)
-      (xpath-protocol:namespace-uri node)
+      (xpath-protocol:node-text node)
       nil))
     (t
      (error "don't know how to copy node ~A" node))))
