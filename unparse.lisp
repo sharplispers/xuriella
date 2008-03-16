@@ -116,6 +116,7 @@
 
 (defun ensure-prefix-for-uri (elt uri suggested-prefix &optional attributep)
   (check-type uri string)
+  (setf suggested-prefix (or suggested-prefix "")) ;zzz
   (when (or (equal suggested-prefix "xmlns")
             (equal suggested-prefix "xml"))
     (setf suggested-prefix nil))
@@ -134,12 +135,6 @@
                    (equal (sink-element-find-uri "" elt) ""))
          (push-sink-element-namespace elt "" ""))
        "")
-      ((and prefix-cons
-            (equal cross-check uri)
-            (or (plusp (length prefix))
-                (not attributep)))
-       (pushnew prefix (sink-element-used-prefixes elt) :test #'equal)
-       prefix)
       ((and (or (plusp (length suggested-prefix))
                 (not attributep))
             (not (find suggested-prefix
@@ -149,8 +144,14 @@
             (not (find suggested-prefix
                        (sink-element-used-prefixes elt)
                        :test #'equal)))
-       (push-sink-element-namespace elt (or suggested-prefix "") uri)
+       (push-sink-element-namespace elt suggested-prefix uri)
        suggested-prefix)
+      ((and prefix-cons
+            (equal cross-check uri)
+            (or (plusp (length prefix))
+                (not attributep)))
+       (pushnew prefix (sink-element-used-prefixes elt) :test #'equal)
+       prefix)
       (t
        (loop
            for i from 0
