@@ -286,7 +286,8 @@
   (named-templates (make-hash-table :test 'equal))
   (attribute-sets (make-hash-table :test 'equal))
   (keys (make-hash-table :test 'equal))
-  (namespace-aliases (make-hash-table :test 'equal)))
+  (namespace-aliases (make-hash-table :test 'equal))
+  (decimal-formats (make-hash-table :test 'equal)))
 
 (defstruct mode (templates nil))
 
@@ -447,7 +448,8 @@
               (parse-output! stylesheet <transform>)
               (parse-strip/preserve-space! stylesheet <transform> env)
               (parse-attribute-sets! stylesheet <transform> env)
-              (parse-namespace-aliases! stylesheet <transform> env))))))))
+              (parse-namespace-aliases! stylesheet <transform> env)
+              (parse-decimal-formats! stylesheet <transform> env))))))))
 
 (defvar *xsl-import-stack* nil)
 
@@ -489,6 +491,10 @@
         (maphash (lambda (k v)
                    (setf (gethash k table) (nreverse v)))
                  table))
+      ;; add default df
+      (unless (find-decimal-format "" "" stylesheet nil)
+        (setf (find-decimal-format "" "" stylesheet)
+              (make-decimal-format)))
       stylesheet)))
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
@@ -542,6 +548,43 @@
              (if (equal result-prefix "#default")
                  ""
                  result-prefix))))))
+
+(defun parse-decimal-formats! (stylesheet <transform> env)
+  (do-toplevel (elt "decimal-format" <transform>)
+    (stp:with-attributes (name
+                          ;; strings
+                          infinity
+                          NaN
+                          ;; characters:
+                          decimal-separator
+                          grouping-separator
+                          zero-digit
+                          percent
+                          per-mille
+                          digit
+                          pattern-separator
+                          minus-sign)
+        elt
+      (multiple-value-bind (local-name uri)
+          (if name
+              (decode-qname name env nil)
+              (values "" ""))
+        (unless (find-decimal-format local-name uri stylesheet nil)
+          (setf (find-decimal-format local-name uri stylesheet)
+                (flet ((arg (key x)
+                         (when x
+                           (unless (eql (length x) 1)
+                             (xslt-error "not a single character: ~A" x))
+                           (list key (elt x 0)))))
+                  (apply #'make-decimal-format
+                         (append (arg :decimal-separator decimal-separator)
+                                 (arg :grouping-separator grouping-separator)
+                                 (arg :zero-digit zero-digit)
+                                 (arg :percent percent)
+                                 (arg :per-mille per-mille)
+                                 (arg :digit digit)
+                                 (arg :pattern-separator pattern-separator)
+                                 (arg :minus-sign minus-sign))))))))))
 
 (defun parse-exclude-result-prefixes! (node env)
   (stp:with-attributes (exclude-result-prefixes)

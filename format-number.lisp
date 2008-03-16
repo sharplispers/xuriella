@@ -35,7 +35,7 @@
   (grouping-separator #\,)              ;active
   (zero-digit #\0)                      ;active
   (percent #\%)
-  (per-mille (code-char 2030))
+  (per-mille (code-char #x2030))
 
   ;; picture string syntax only
   (digit #\#)                           ;active
@@ -74,21 +74,37 @@
          (setf (elt result i) (code-char (+ start i))))
     result))
 
-(defun find-decimal-format (format-name)
-  (declare (ignore format-name))
-  ;; fixme
-  (make-decimal-format))
+(defun find-decimal-format (lname uri stylesheet &optional (errorp t))
+  (or (gethash (cons lname uri)
+               (stylesheet-decimal-formats stylesheet))
+      (when errorp
+        (xslt-error "decimal format not found: ~A/~A" lname uri))))
 
-(xpath-sys:define-xpath-function/eager
+(defun (setf find-decimal-format) (newval lname uri stylesheet)
+  (setf (gethash (cons lname uri)
+                 (stylesheet-decimal-formats stylesheet))
+        newval))
+
+(xpath-sys:define-xpath-function/lazy
     xslt :format-number
     (value picture &optional format-name)
-  (let ((df (find-decimal-format format-name)))
-    (multiple-value-bind (pos neg)
-        (parse-picture (xpath:string-value picture) df)
-      (format-number (xpath:number-value value)
-                     pos
-                     neg
-                     df))))
+  (let ((namespaces *namespaces*))
+    (lambda (ctx)
+      (let ((df
+             (if format-name
+                 (let ((qname (funcall format-name ctx)))
+                   (multiple-value-bind (local-name uri)
+                       (decode-qname/runtime qname namespaces nil)
+                     (find-decimal-format local-name
+                                          (or uri "")
+                                          *stylesheet*)))
+                 (find-decimal-format "" "" *stylesheet*))))
+        (multiple-value-bind (pos neg)
+            (parse-picture (xpath:string-value (funcall picture ctx)) df)
+          (format-number (xpath:number-value (funcall value ctx))
+                         pos
+                         neg
+                         df))))))
 
 (defun test-format-number (value picture)
   (let ((df (make-decimal-format)))

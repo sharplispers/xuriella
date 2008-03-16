@@ -5465,28 +5465,25 @@ PASS numberformat_numberformat08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat08.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat08.xuriella
 
-FAIL numberformat_numberformat09 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat09.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat09.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat09.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat09.xuriella
 
-FAIL numberformat_numberformat11 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
-Operation was SB-KERNEL::DIVISION, operands (4 0).
+PASS numberformat_numberformat11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat11.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat11.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat11.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat11.xuriella
 
-FAIL numberformat_numberformat12 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
-Operation was SB-KERNEL::DIVISION, operands (4 0).
+PASS numberformat_numberformat12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat12.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat12.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat12.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat12.xuriella
 
-FAIL numberformat_numberformat13 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
-Operation was SB-KERNEL::DIVISION, operands (4 0).
+PASS numberformat_numberformat13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat13.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat13.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat13.saxon
@@ -5507,7 +5504,7 @@ FAIL numberformat_numberformat15 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat15.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat15.xuriella
 
-FAIL numberformat_numberformat16 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat16.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat16.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat16.saxon
@@ -5519,59 +5516,59 @@ PASS numberformat_numberformat17 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat17.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat17.xuriella
 
-FAIL numberformat_numberformat18 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat18 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat18.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat18.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat18.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat18.xuriella
 
-FAIL numberformat_numberformat19 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat19.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat19.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat19.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat19.xuriella
 
-FAIL numberformat_numberformat20 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat20.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat20.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat20.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat20.xuriella
 
-FAIL numberformat_numberformat21 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat21.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat21.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/periodgroup.xsl
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat21.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat21.xuriella
 
-FAIL numberformat_numberformat22 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat22 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat22.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat22.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/periodgroup.xsl
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat22.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat22.xuriella
 
-FAIL numberformat_numberformat23 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat23 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat23.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat23.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/periodgroup.xsl
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat23.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat23.xuriella
 
-FAIL numberformat_numberformat24 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat24 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat24.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat24.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/periodgroup.xsl
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat24.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat24.xuriella
 
-PASS numberformat_numberformat25 [XSLT-Result-Tree]
+FAIL numberformat_numberformat25 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat25.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat25.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat25.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat25.xuriella
 
-FAIL numberformat_numberformat26 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat26 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat26.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat26.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat26.saxon
@@ -5595,7 +5592,7 @@ PASS numberformat_numberformat29 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat29.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat29.xuriella
 
-FAIL numberformat_numberformat30 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat30 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat30.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat30.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat30.saxon
@@ -5607,14 +5604,13 @@ PASS numberformat_numberformat31 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat31.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat31.xuriella
 
-FAIL numberformat_numberformat32 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat32 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat32.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat32.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat32.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat32.xuriella
 
-FAIL numberformat_numberformat34 [XSLT-Result-Tree]: arithmetic error DIVISION-BY-ZERO signalled
-Operation was SB-KERNEL::DIVISION, operands (6 0).
+PASS numberformat_numberformat34 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat34.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat34.xml
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat34.saxon
@@ -5691,14 +5687,14 @@ FAIL numberformat_numberformat44 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat44.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat44.xuriella
 
-FAIL numberformat_numberformat45 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat45 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat45.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat45.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/x45import.xsl
   Expected output (1): Xalan_Conformance_Tests/numberformat/numberformat_numberformat45.saxon
   Actual output: Xalan_Conformance_Tests/numberformat/numberformat_numberformat45.xuriella
 
-FAIL numberformat_numberformat46 [XSLT-Result-Tree]: output doesn't match
+PASS numberformat_numberformat46 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numberformat/numberformat46.noindent-xsl
   Data: Xalan_Conformance_Tests/numberformat/numberformat46.xml
   Supplemental stylesheet: Xalan_Conformance_Tests/numberformat/x45import.xsl
@@ -11211,8 +11207,7 @@ PASS BVTs_bvt014 [Mixed]
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt014.xuriella
 
 FAIL BVTs_bvt015 [Mixed]: condition of incorrect type: 
-arithmetic error DIVISION-BY-ZERO signalled
-Operation was SB-KERNEL::DIVISION, operands (1 0).
+The value -13 is not of type (MOD 1152921504606846975).
   Stylesheet: MSFT_Conformance_Tests/BVTs/decimal-format.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt015.saxon
@@ -14236,7 +14231,7 @@ PASS Errors_err013 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err013.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err013.xuriella
 
-FAIL Errors_err014 [Mixed]: expected error not signalled: 
+PASS Errors_err014 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/bad-decfmt.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err014.saxon
@@ -16341,19 +16336,19 @@ FAIL FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep [XSLT-Result-Tree]: e
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep.xuriella
 
-FAIL FormatNumber_DecimalFormatZeroDigit [XSLT-Result-Tree]: output doesn't match
+FAIL FormatNumber_DecimalFormatZeroDigit [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_decimal_format_zero_digit.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit.xuriella
 
-FAIL FormatNumber_DecimalFormatZeroDigit1 [XSLT-Result-Tree]: output doesn't match
+FAIL FormatNumber_DecimalFormatZeroDigit1 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_decimal_format_zero_digit1.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit1.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit1.xuriella
 
-FAIL FormatNumber_DecimalFormatZeroDigit2 [XSLT-Result-Tree]: output doesn't match
+FAIL FormatNumber_DecimalFormatZeroDigit2 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_decimal_format_zero_digit2.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit2.saxon
@@ -16365,7 +16360,7 @@ PASS FormatNumber_extraParameters [XSLT-Result-Tree]: raised an xslt-error as ex
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_extraParameters.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_extraParameters.xuriella
 
-FAIL FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard [XSLT-Result-Tree]: output doesn't match
+PASS FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_format_number_decimal_fo.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_FormatNumberWithDecimalFormatAndEuropeanStandard.saxon
@@ -18561,13 +18556,31 @@ PASS Namespace-alias_NSAlias_Inside_CallTemplate [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.xuriella
 
-FAIL Number__10052 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
+FAIL Number__10052 [XSLT-Result-Tree]: The value
+                                         #S(XURIELLA::RESULT-TREE-FRAGMENT
+                                            :NODE #.(CXML-STP:ELEMENT
+                                                     #| :PARENT of type DOCUMENT |#
+                                                     :CHILDREN '(#.(CXML-STP:TEXT
+                                                                    #| :PARENT of type ELEMENT |#
+                                                                    :DATA "foo"))
+                                                     :LOCAL-NAME "fragment"))
+                                       is not of type
+                                         (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/Number/10052.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10052.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__10052.xuriella
 
-FAIL Number__10053 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
+FAIL Number__10053 [XSLT-Result-Tree]: The value
+                                         #S(XURIELLA::RESULT-TREE-FRAGMENT
+                                            :NODE #.(CXML-STP:ELEMENT
+                                                     #| :PARENT of type DOCUMENT |#
+                                                     :CHILDREN '(#.(CXML-STP:TEXT
+                                                                    #| :PARENT of type ELEMENT |#
+                                                                    :DATA "foo"))
+                                                     :LOCAL-NAME "fragment"))
+                                       is not of type
+                                         (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/Number/10053.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10053.saxon
@@ -22412,7 +22425,7 @@ PASS XSLTFunctions__84484 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84484.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84484.xuriella
 
-FAIL XSLTFunctions__crahedOnEmptyVariable [Mixed]: expected error not signalled: 
+PASS XSLTFunctions__crahedOnEmptyVariable [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/crash.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.saxon
@@ -22446,8 +22459,16 @@ FAIL XSLTFunctions__emptyParameters [Mixed]: no digit-sign or zero-digit sign fo
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.xuriella
 
 FAIL XSLTFunctions__EuropeanPattern [Mixed]: condition of incorrect type: 
-Too large to be represented as a SINGLE-FLOAT:
-  9999999999999999999999999999999999999999999999999999999999999999999999
+The value
+  #S(XURIELLA::RESULT-TREE-FRAGMENT
+     :NODE #.(CXML-STP:ELEMENT
+              #| :PARENT of type DOCUMENT |#
+              :CHILDREN '(#.(CXML-STP:TEXT
+                             #| :PARENT of type ELEMENT |#
+                             :DATA "european"))
+              :LOCAL-NAME "fragment"))
+is not of type
+  (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-eu.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__EuropeanPattern.saxon
@@ -22478,35 +22499,59 @@ FAIL XSLTFunctions__minimumValue [Mixed]: output doesn't match
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.xuriella
 
 FAIL XSLTFunctions__Non_DigitPattern [Mixed]: condition of incorrect type: 
-arithmetic error DIVISION-BY-ZERO signalled
-Operation was SB-KERNEL::DIVISION, operands (3 0).
+The value
+  #S(XURIELLA::RESULT-TREE-FRAGMENT
+     :NODE #.(CXML-STP:ELEMENT
+              #| :PARENT of type DOCUMENT |#
+              :CHILDREN '(#.(CXML-STP:TEXT
+                             #| :PARENT of type ELEMENT |#
+                             :DATA "non_digit"))
+              :LOCAL-NAME "fragment"))
+is not of type
+  (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-nd.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.xuriella
 
-FAIL XSLTFunctions__Pattern-separator [Mixed]: The value -13
+FAIL XSLTFunctions__Pattern-separator [Mixed]: The value
+                                                 #S(XURIELLA::RESULT-TREE-FRAGMENT
+                                                    :NODE #.(CXML-STP:ELEMENT
+                                                             #| :PARENT of type DOCUMENT |#
+                                                             :CHILDREN '(#.(CXML-STP:TEXT
+                                                                            #| :PARENT of type ELEMENT |#
+                                                                            :DATA "pattern"))
+                                                             :LOCAL-NAME "fragment"))
                                                is not of type
-                                                 (MOD 1152921504606846975).
+                                                 (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pa.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.xuriella
 
 FAIL XSLTFunctions__percentPattern [Mixed]: condition of incorrect type: 
-The value -13 is not of type (MOD 1152921504606846975).
+The value
+  #S(XURIELLA::RESULT-TREE-FRAGMENT
+     :NODE #.(CXML-STP:ELEMENT
+              #| :PARENT of type DOCUMENT |#
+              :CHILDREN '(#.(CXML-STP:TEXT
+                             #| :PARENT of type ELEMENT |#
+                             :DATA "percent"))
+              :LOCAL-NAME "fragment"))
+is not of type
+  (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pe.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__percentPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__percentPattern.xuriella
 
-FAIL XSLTFunctions__sameDecimalFormats [Mixed]: output doesn't match
+PASS XSLTFunctions__sameDecimalFormats [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/sameDecimalFormats.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormats.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormats.xuriella
 
-FAIL XSLTFunctions__sameDecimalFormatsWithImport [Mixed]: output doesn't match
+PASS XSLTFunctions__sameDecimalFormatsWithImport [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/sameDecimalFormats2.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/XSLTFunctions/decfmt1.xsl
@@ -22725,4 +22770,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2548/3085 tests.
+Passed 2570/3085 tests.

@@ -246,7 +246,7 @@
     (let ((previous (sink-element-find-uri prefix elt)))
       (if (equal uri previous) ;no need to declare what has already been done
           (pushnew prefix (sink-element-used-prefixes elt) :test #'equal)
-          (push-sink-element-namespace elt prefix uri))))))
+          (push-sink-element-namespace elt prefix uri)))))
 
 (defun process-extra-namespaces (elt extra-namespaces process-aliases)
   (loop for (prefix . uri) in extra-namespaces do
