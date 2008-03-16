@@ -175,7 +175,7 @@
 (defun compile-attribute/constant-name (qname namespace env value-thunk)
   ;; the simple case: compile-time decoding of the QName
   (multiple-value-bind (local-name uri prefix)
-      (decode-qname qname env nil)
+      (decode-qname qname env t)
     (when namespace
       (setf uri namespace))
     (lambda (ctx)
@@ -193,7 +193,7 @@
     (lambda (ctx)
       (let ((qname (funcall name-thunk ctx)))
         (multiple-value-bind (local-name uri prefix)
-            (decode-qname/runtime qname namespaces nil)
+            (decode-qname/runtime qname namespaces t)
           (when ns-thunk
             (setf uri (funcall ns-thunk ctx)))
           (write-attribute local-name
