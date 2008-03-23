@@ -174,9 +174,13 @@
                   (write-char (code-char (+ start digit -1)) r)
                   (return))))))))
     ((equal str "i")
-     (format nil "~(~@R~)" n))
+     (if (zerop n)
+         "0"
+         (format nil "~(~@R~)" n)))
     ((equal str "I")
-     (format nil "~@R" n))
+     (if (zerop n)
+         "0"
+         (format nil "~@R" n)))
     (t
      (unless (cl-ppcre:all-matches "^0*1$" str)
        ;; unsupported format
