@@ -246,7 +246,10 @@
       (setf suffix current-text))
     (unless conses
       (setf conses (list (cons nil "1"))))
-    (let ((tail conses))
+    (let* ((tail-cons (car conses))
+           (tail (if (car tail-cons)
+                     conses
+                     (push (cons "." (cdr tail-cons)) conses))))
       (setf conses (nreverse conses))
       (setf (cdr tail) tail))
     (values prefix conses suffix)))
