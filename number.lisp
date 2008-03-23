@@ -49,7 +49,7 @@
                                             (funcall value ctx))))
                                       (if (xpath::nan-p x)
                                           x
-                                          (round x)))))
+                                          (round (xpath::xnum-round x))))))
               (format             (funcall format ctx))
               (lang               (funcall lang ctx))
               (letter-value       (funcall letter-value ctx))
