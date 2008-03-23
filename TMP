@@ -76,13 +76,13 @@ PASS numbering_numbering18 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering18.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering18.xuriella
 
-FAIL numbering_numbering19 [XSLT-Result-Tree]: output doesn't match
+PASS numbering_numbering19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering19.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering19.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering19.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering19.xuriella
 
-FAIL numbering_numbering20 [XSLT-Result-Tree]: output doesn't match
+PASS numbering_numbering20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering20.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering20.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering20.saxon
@@ -346,7 +346,7 @@ PASS numbering_numbering63 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering63.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering63.xuriella
 
-FAIL numbering_numbering64 [XSLT-Result-Tree]: output doesn't match
+PASS numbering_numbering64 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering64.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering64.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering64.saxon
@@ -514,4 +514,4 @@ PASS numbering_numbering93 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering93.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering93.xuriella
 
-Passed 74/86 tests.
+Passed 77/86 tests.

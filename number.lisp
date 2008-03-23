@@ -91,7 +91,7 @@
                           when (pattern-thunk-matches-p from a)
                           do (return result)
                           collect a into result
-                          finally (return nil))
+                          finally (return ancestors))
                        ancestors))))
 
 (defun node-position-among-siblings (node count)
