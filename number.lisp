@@ -105,18 +105,34 @@
              (xpath::force
               (funcall (xpath::axis-function :preceding-sibling) node)))))
 
+(defun node-type (node)
+  (dolist (type '(:element
+                  :attribute
+                  :text
+                  :document
+                  :namespace
+                  :processing-instruction
+                  :comment))
+    (when (xpath-protocol:node-type-p node type)
+      (return type))))
+
 (defun compute-number-list (level node count from)
   (unless count
     (setf count
           (let ((uri (xpath-protocol:namespace-uri node))
-		(lname (xpath-protocol:local-name node)))
+		(lname (xpath-protocol:local-name node))
+                (node-type (node-type node)))
             (lambda (ctx)
-              (let ((node (xpath:context-node ctx)))
+              (let ((ctx-node (xpath:context-node ctx)))
                 (xpath-sys:make-node-set
-                 (if (and (xpath-protocol:node-type-p node :element)
-			  (equal (xpath-protocol:namespace-uri node) uri)
-			  (equal (xpath-protocol:local-name node) lname))
-                     (list node)
+                 (if (if (eq node-type :element)
+                         (and (xpath-protocol:node-type-p ctx-node :element)
+                              (equal (xpath-protocol:namespace-uri ctx-node)
+                                     uri)
+                              (equal (xpath-protocol:local-name ctx-node)
+                                     lname))
+                         (xpath-protocol:node-type-p ctx-node node-type))
+                     (list ctx-node)
                      nil)))))))
   (cond
     ((equal level "single")
