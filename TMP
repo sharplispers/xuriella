@@ -436,7 +436,7 @@ PASS numbering_numbering78 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering78.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering78.xuriella
 
-FAIL numbering_numbering79 [XSLT-Result-Tree]: Can't decode NaN or infinity: #<DOUBLE-FLOAT quiet NaN>.
+PASS numbering_numbering79 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering79.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering79.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering79.saxon
@@ -514,4 +514,4 @@ PASS numbering_numbering93 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering93.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering93.xuriella
 
-Passed 83/86 tests.
+Passed 84/86 tests.

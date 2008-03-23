@@ -44,8 +44,12 @@
           (grouping-size (and grouping-size (compile-avt grouping-size env))))
       (lambda (ctx)
         (let ((value              (when value
-                                    (round (xpath:number-value
-                                            (funcall value ctx)))))
+                                    (let ((x
+                                           (xpath:number-value
+                                            (funcall value ctx))))
+                                      (if (xpath::nan-p x)
+                                          x
+                                          (round x)))))
               (format             (funcall format ctx))
               (lang               (funcall lang ctx))
               (letter-value       (funcall letter-value ctx))
@@ -200,25 +204,27 @@
 (defun format-number-list
     (list format lang letter-value grouping-separator grouping-size)
   (declare (ignore lang letter-value))
-  (multiple-value-bind (prefix pairs suffix)
-      (parse-number-format format)
-    (with-output-to-string (s)
-      (write-string prefix s)
-      (loop
-         for (separator . subformat) in pairs
-         for n in list
-         for formatted = (format-number-token subformat n)
-         do
-           (when separator
-             (write-string separator s))
-           (if (and grouping-separator
-                    grouping-size)
-               (group-numbers formatted
-                              grouping-separator
-                              grouping-size
-                              s)
-               (write-string formatted s)))
-      (write-string suffix s))))
+  (if (some #'xpath::nan-p list)
+      "NaN"
+      (multiple-value-bind (prefix pairs suffix)
+          (parse-number-format format)
+        (with-output-to-string (s)
+          (write-string prefix s)
+          (loop
+             for (separator . subformat) in pairs
+             for n in list
+             for formatted = (format-number-token subformat n)
+             do
+             (when separator
+               (write-string separator s))
+             (if (and grouping-separator
+                      grouping-size)
+                 (group-numbers formatted
+                                grouping-separator
+                                grouping-size
+                                s)
+                 (write-string formatted s)))
+          (write-string suffix s)))))
 
 (defun parse-number-format (format)
   (let ((lexer (format-lexer format))
