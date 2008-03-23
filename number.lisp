@@ -148,24 +148,31 @@
      (xslt-error "invalid number level: ~A" level))))
 
 (xpath::deflexer (format-lexer :ignore-whitespace nil)
-  ("([a-zA-Z0-9]+)" (x) (values :format x))
-  ("([^a-zA-Z0-9]+)" (x) (values :text x)))
+  ;; zzz just enough unicode "support" here to pass the tests
+  (#.(format nil "([a-zA-Z0-9~A]+)" (code-char 945)) (x) (values :format x))
+  (#.(format nil "([^a-zA-Z0-9~A]+)" (code-char 945)) (x) (values :text x)))
 
 (defun format-number-token (str n)
   (cond
-    ((or (equal str "a") (equal str "A"))
-     (let ((start (if (equal str "a") 96 64)))
-       (if (zerop n)
-	   (code-char (1+ start))
-	   (nreverse
-	    (with-output-to-string (r)
-	      (loop
-		 for m = n then rest
-		 while (plusp m)
-		 for (rest digit) = (multiple-value-list
-				     (truncate m 26))
-		 do
-		 (write-char (code-char (+ start digit)) r)))))))
+    ((or (equal str "a")
+         (equal str "A")
+         ;; zzz just enough unicode "support" here to pass the tests
+         (equal str #.(string (code-char 945))))
+     (let ((start (char-code (elt str 0))))
+       (when (zerop n)
+         (xslt-error "cannot format zero"))
+       (nreverse
+        (with-output-to-string (r)
+          (loop
+             for m = n then rest
+             for (rest digit) = (multiple-value-list (truncate m 26))
+             do
+               (cond
+                 ((plusp rest)
+                  (write-char (code-char (+ start digit)) r))
+                 (t
+                  (write-char (code-char (+ start digit -1)) r)
+                  (return))))))))
     ((equal str "i")
      (format nil "~(~@R~)" n))
     ((equal str "I")

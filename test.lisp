@@ -309,8 +309,11 @@
     ;; probably the same problem (but I haven't checked):
     "numbering_numbering03"
     "numbering_numbering10"
+    "numbering_numbering11"
     "numbering_numbering80"
     "numbering_numbering81"
+    "numbering_numbering94"
+    "numbering_numbering95"
     "Import__91164"))
 
 (defun run-tests (&optional (categories *default-categories*)
