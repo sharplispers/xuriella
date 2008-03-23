@@ -178,20 +178,23 @@
          (equal str "A")
          ;; zzz just enough unicode "support" here to pass the tests
          (equal str #.(string (code-char 945))))
-     (let ((start (char-code (elt str 0))))
+     (let ((start (char-code (elt str 0)))
+           (greekp (equal str #.(string (code-char 945)))))
        (when (zerop n)
          (xslt-error "cannot format zero"))
        (nreverse
         (with-output-to-string (r)
           (loop
              for m = n then rest
-             for (rest digit) = (multiple-value-list (truncate m 26))
+             for (rest digit) = (multiple-value-list
+                                 (truncate (1- m)
+                                           (if greekp 25 26)))
              do
                (cond
                  ((plusp rest)
                   (write-char (code-char (+ start digit)) r))
                  (t
-                  (write-char (code-char (+ start digit -1)) r)
+                  (write-char (code-char (+ start digit)) r)
                   (return))))))))
     ((equal str "i")
      (if (zerop n)
