@@ -46,14 +46,6 @@ PASS numbering_numbering09 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering09.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering09.xuriella
 
-FAIL numbering_numbering11 [XSLT-Result-Tree]: The value "2"
-                                               is not of type
-                                                 REAL.
-  Stylesheet: Xalan_Conformance_Tests/numbering/numbering11.noindent-xsl
-  Data: Xalan_Conformance_Tests/numbering/numbering11.xml
-  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering11.saxon
-  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering11.xuriella
-
 PASS numbering_numbering12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering12.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering12.xml
@@ -522,20 +514,4 @@ PASS numbering_numbering93 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering93.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering93.xuriella
 
-FAIL numbering_numbering94 [XSLT-Result-Tree]: The value "2"
-                                               is not of type
-                                                 REAL.
-  Stylesheet: Xalan_Conformance_Tests/numbering/numbering94.noindent-xsl
-  Data: Xalan_Conformance_Tests/numbering/numbering94.xml
-  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering94.saxon
-  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering94.xuriella
-
-FAIL numbering_numbering95 [XSLT-Result-Tree]: The value "2"
-                                               is not of type
-                                                 REAL.
-  Stylesheet: Xalan_Conformance_Tests/numbering/numbering95.noindent-xsl
-  Data: Xalan_Conformance_Tests/numbering/numbering95.xml
-  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering95.saxon
-  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering95.xuriella
-
-Passed 72/89 tests.
+Passed 72/86 tests.

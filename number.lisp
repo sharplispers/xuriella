@@ -52,7 +52,8 @@
               (grouping-separator (when grouping-separator
                                     (funcall grouping-separator ctx)))
               (grouping-size      (when grouping-size
-                                    (funcall grouping-size ctx))))
+                                    (xpath:number-value
+                                     (funcall grouping-size ctx)))))
           (write-text
            (format-number-list
             (if value
