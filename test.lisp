@@ -308,6 +308,7 @@
     "Keys_PerfRepro3"
     ;; probably the same problem (but I haven't checked):
     "numbering_numbering03"
+    "numbering_numbering10"
     "numbering_numbering80"
     "numbering_numbering81"
     "Import__91164"))

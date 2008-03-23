@@ -146,7 +146,7 @@
     (t
      (xslt-error "invalid number level: ~A" level))))
 
-(xpath::deflexer format-lexer
+(xpath::deflexer (format-lexer :ignore-whitespace nil)
   ("([a-zA-Z0-9]+)" (x) (values :format x))
   ("([^a-zA-Z0-9]+)" (x) (values :text x)))
 
@@ -175,44 +175,66 @@
        (setf str "1"))
      (format nil "~v,'0D" (length str) n))))
 
-(defun group-numbers (str separator size)
+(defun group-numbers (str separator size stream)
   (loop
      for c across str
      for i from (1- (length str)) downto 0
      do
-       (write-char c)
+       (write-char c stream)
        (when (and (zerop (mod i size)) (plusp i))
-	 (write-string separator))))
+	 (write-string separator stream))))
 
 ;;; fixme: unicode support
 (defun format-number-list
     (list format lang letter-value grouping-separator grouping-size)
   (declare (ignore lang letter-value))
-  (with-output-to-string (*standard-output*)
-    (let ((lexer (format-lexer format))
-	  (seen-text-p t)
-	  (last-token nil))
+  (multiple-value-bind (prefix pairs suffix)
+      (parse-number-format format)
+    (with-output-to-string (s)
+      (write-string prefix s)
       (loop
-	 (multiple-value-bind (type str) (funcall lexer)
-	   (unless type
-	     (if list
-		 (setf type :format
-		       str last-token)
-		 (return)))
-	   (ecase type
-	     (:text
-	      (write-string str)
-	      (setf seen-text-p t))
-	     (:format
-	      (unless seen-text-p
-		(write-char #\.))
-	      (setf seen-text-p nil)
-	      (setf last-token str)
-	      (let* ((n (pop list))
-		     (formatted (format-number-token str n)))
-		(write-string (if (and grouping-separator
-				       grouping-size)
-				  (group-numbers formatted
-						 grouping-separator
-						 grouping-size)
-				  formatted))))))))))
+         for (separator . subformat) in pairs
+         for n in list
+         for formatted = (format-number-token subformat n)
+         do
+           (when separator
+             (write-string separator s))
+           (if (and grouping-separator
+                    grouping-size)
+               (group-numbers formatted
+                              grouping-separator
+                              grouping-size
+                              s)
+               (write-string formatted s)))
+      (write-string suffix s))))
+
+(defun parse-number-format (format)
+  (let ((lexer (format-lexer format))
+        (prefix "")
+        (conses '())
+        (suffix "")
+        (current-text nil))
+    (loop
+       (multiple-value-bind (type str) (funcall lexer)
+         (ecase type
+           ((nil :eof)
+            (return))
+           (:text
+            (if conses
+                (setf current-text str)
+                (setf prefix str)))
+           (:format
+            (push (cons (if conses
+                            (or current-text ".")
+                            nil)
+                        str)
+                  conses)
+            (setf current-text nil)))))
+    (when current-text
+      (setf suffix current-text))
+    (unless conses
+      (setf conses (list (cons nil "1"))))
+    (let ((tail conses))
+      (setf conses (nreverse conses))
+      (setf (cdr tail) tail))
+    (values prefix conses suffix)))
