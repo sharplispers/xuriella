@@ -6205,7 +6205,7 @@ PASS numbering_numbering93 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering93.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering93.xuriella
 
-FAIL output_output01 [XSLT-Result-Tree]: output doesn't match
+PASS output_output01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output01.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output01.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output01.saxon
@@ -6631,11 +6631,7 @@ FAIL output_output61 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output61.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output61.xuriella
 
-FAIL output_output62 [XSLT-Result-Tree]: There is no applicable method for the generic function
-                                           #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
-                                         when called with arguments
-                                           (#<CLOSURE-HTML::SINK {xxxxxxxx}>
-                                            "<P>&nbsp;</P>").
+PASS output_output62 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output62.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output62.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output62.saxon
@@ -6728,11 +6724,7 @@ PASS output_output73 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output73.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output73.xuriella
 
-FAIL output_output74 [XSLT-Result-Tree]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
-when called with arguments
-  (#<CLOSURE-HTML::SINK {xxxxxxxx}> "<<<P>>>").
+PASS output_output74 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output74.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output74.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output74.saxon
@@ -11163,15 +11155,8 @@ FAIL BVTs_bvt015 [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt015.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt015.xuriella
 
-FAIL BVTs_bvt017 [Mixed]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION HAX:UNESCAPED (3)>
-when called with arguments
-  (#<CLOSURE-HTML::SINK {xxxxxxxx}> "
-<
-? This is ? a test. ?
-? This is ? a test. ?
->").
+WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+FAIL BVTs_bvt017 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding00.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt017.saxon
@@ -22688,4 +22673,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2638/3081 tests.
+Passed 2641/3081 tests.
