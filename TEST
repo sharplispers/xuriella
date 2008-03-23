@@ -6451,7 +6451,7 @@ PASS output_output30 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output30.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output30.xuriella
 
-FAIL output_output32 [XSLT-Result-Tree]: output doesn't match
+PASS output_output32 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output32.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output32.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output32.saxon
@@ -19796,37 +19796,37 @@ FAIL Output__84434 [XSLT-Output]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84434.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84434.xuriella
 
-FAIL Output__84452 [XSLT-Output]: output doesn't match
+PASS Output__84452 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84452.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84452.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84452.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84452.xuriella
 
-FAIL Output__84453 [XSLT-Output]: output doesn't match
+PASS Output__84453 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84453.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84453.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84453.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84453.xuriella
 
-FAIL Output__84454 [XSLT-Output]: output doesn't match
+PASS Output__84454 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84454.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84454.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84454.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84454.xuriella
 
-FAIL Output__84455 [XSLT-Output]: output doesn't match
+PASS Output__84455 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84455.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84455.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84455.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84455.xuriella
 
-FAIL Output__84456 [XSLT-Output]: output doesn't match
+PASS Output__84456 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84456.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84456.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84456.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84456.xuriella
 
-FAIL Output__84457 [XSLT-Output]: output doesn't match
+PASS Output__84457 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84457.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84457.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84457.saxon
@@ -19838,7 +19838,7 @@ FAIL Output__84458 [XSLT-Output]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84458.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84458.xuriella
 
-FAIL Output__84459 [XSLT-Output]: output doesn't match
+PASS Output__84459 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84459.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84459.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84459.saxon
@@ -22685,4 +22685,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2648/3081 tests.
+Passed 2656/3081 tests.
