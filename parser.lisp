@@ -235,7 +235,10 @@
        ,@(parse-body node))))
 
 (define-instruction-parser |text| (node)
-  `(xsl:text ,(stp:string-value node)))
+  (stp:with-attributes (select disable-output-escaping) node
+    (if disable-output-escaping
+        `(xsl:unescaped-text ,(stp:string-value node))
+        `(xsl:text ,(stp:string-value node)))))
 
 (define-instruction-parser |comment| (node)
   `(xsl:comment ,@(parse-body node)))

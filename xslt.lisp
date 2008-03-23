@@ -238,6 +238,9 @@
   (when (zerop (textoutput-sink-depth sink))
     (write-string data (text-output-sink-target sink))))
 
+(defmethod sax:unescaped ((sink toplevel-text-output-sink) data)
+  (sax:characters sink data))
+
 (defmethod sax:end-element ((sink toplevel-text-output-sink)
                               namespace-uri local-name qname)
   (declare (ignore namespace-uri local-name qname))
@@ -258,11 +261,29 @@
 (defmethod sax:characters ((sink text-filter) data)
   (sax:characters (text-filter-target sink) data))
 
+(defmethod sax:unescaped ((sink text-filter) data)
+  (sax:unescaped (text-filter-target sink) data))
+
 (defmethod sax:end-document ((sink text-filter))
   (sax:end-document (text-filter-target sink)))
 
 (defun make-text-filter (target)
   (make-instance 'text-filter :target target))
+
+
+;;;; ESCAPER
+;;;;
+;;;; A sink that recovers from sax:unescaped using sax:characters, as per
+;;;; XSLT 16.4.
+
+(defclass escaper (cxml:broadcast-handler)
+  ())
+
+(defmethod sax:unescaped ((sink escaper) data)
+  (sax:characters sink data))
+
+(defun make-escaper (target)
+  (make-instance 'escaper :handlers (list target)))
 
 
 ;;;; Names

@@ -93,6 +93,10 @@
   (maybe-close-tag handler)
   (sax:unescaped (sink-hax-target handler) data))
 
+(defmethod sax:unescaped ((handler combi-sink) data)
+  (maybe-close-tag handler)
+  (sax:unescaped (sink-hax-target handler) data))
+
 (defmethod sax:comment ((handler combi-sink) data)
   (maybe-close-tag handler)
   (sax:comment (sink-hax-target handler) data))

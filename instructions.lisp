@@ -252,6 +252,12 @@
       (declare (ignore ctx))
       (write-text str))))
 
+(define-instruction xsl:unescaped-text (args env)
+  (destructuring-bind (str) args
+    (lambda (ctx)
+      (declare (ignore ctx))
+      (write-unescaped str))))
+
 (define-instruction xsl:processing-instruction (args env)
   (destructuring-bind (name &rest body) args
     (let ((name-thunk (compile-avt name env))
@@ -453,7 +459,7 @@
 
 (defun apply-to-result-tree-fragment (ctx thunk)
   (let ((document
-         (with-xml-output (stp:make-builder)
+         (with-xml-output (make-escaper (stp:make-builder))
            (with-element ("fragment" "")
              (funcall thunk ctx)))))
     (make-result-tree-fragment (stp:document-element document))))

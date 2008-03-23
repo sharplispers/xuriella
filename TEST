@@ -6217,7 +6217,7 @@ PASS output_output02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output02.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output02.xuriella
 
-FAIL output_output03 [XSLT-Result-Tree]: output doesn't match
+PASS output_output03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output03.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output03.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output03.saxon
@@ -6289,7 +6289,17 @@ PASS output_output09 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output09.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output09.xuriella
 
-FAIL output_output10 [XSLT-Result-Tree]: SAX event UNESCAPED not implemented by this handler
+WARNING:
+   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
+Context:
+  Line 2, column 15 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
+Context:
+  Line 3, column 15 in NIL
+
+FAIL output_output10 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output10.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output10.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output10.saxon
@@ -10628,7 +10638,7 @@ PASS Attributes_Attribute_AttributeWithEmptyName [XSLT-Result-Tree]: raised an x
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_AttributeWithEmptyName.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_Attribute_AttributeWithEmptyName.xuriella
 
-FAIL Attributes_Attribute_DoeWithTextAndValueOf [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS Attributes_Attribute_DoeWithTextAndValueOf [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/DoeOnAttributes.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/DoeOnAttributes.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_DoeWithTextAndValueOf.saxon
@@ -13709,6 +13719,16 @@ PASS Elements__78358 [XSLT-Result-Tree]: raised an xslt-error as expected
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78358.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78358.xuriella
+
+WARNING:
+   comparison failed: Document not well-formed: Expected '!' or '?' after '<' in DTD.
+Context:
+  Line 3, column 8 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Expected '!' or '?' after '<' in DTD.
+Context:
+  Line 3, column 8 in NIL
 
 FAIL Elements__78362 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Elements/78362.noindent-xsl
@@ -20011,7 +20031,7 @@ PASS Output_MethodEqualsHtmlWithoutIndentSet [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_MethodEqualsHtmlWithoutIndentSet.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_MethodEqualsHtmlWithoutIndentSet.xuriella
 
-FAIL Output_Modified84433 [XSLT-Output]: output doesn't match
+PASS Output_Modified84433 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/output_DoeOnAmpersandXslText.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84433.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_Modified84433.saxon
@@ -20127,7 +20147,7 @@ FAIL ProcessingInstruction_InvalidPIName2 [XSLT-Result-Tree]: output doesn't mat
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_InvalidPIName2.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_InvalidPIName2.xuriella
 
-FAIL ProcessingInstruction_ValueOfandTextWithDoeInProcInstr [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS ProcessingInstruction_ValueOfandTextWithDoeInProcInstr [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/xslt_pi_PIWithTextDoeEscapeChars.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/xslt_pi_PIWithTextDoeEscapeChars.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_ValueOfandTextWithDoeInProcInstr.saxon
@@ -21315,7 +21335,7 @@ error opening #P"...MSFT_Conformance_Tests/Text/text.xml":
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78282.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78282.xuriella
 
-FAIL Text_DoeWithCdataInText [XSLT-Result-Tree]: output doesn't match
+PASS Text_DoeWithCdataInText [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/DoeWithCdataSection.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/DoeWithCdataSection.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text_DoeWithCdataInText.saxon
@@ -21327,7 +21347,7 @@ PASS Text_modified78307 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text_modified78307.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text_modified78307.xuriella
 
-FAIL Text_modified78308 [XSLT-Result-Tree]: output doesn't match
+PASS Text_modified78308 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/xslt_text_DoeOnTextElement.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text_modified78308.saxon
@@ -21339,15 +21359,7 @@ PASS Text_modified78309 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text_modified78309.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text_modified78309.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
-Context:
-  Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
-
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
-Context:
-  Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text_Modified78311.xuriella
-
-FAIL Text_Modified78311 [XSLT-Result-Tree]: output doesn't match
+PASS Text_Modified78311 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/DoeWithQuotesAroundText.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text_Modified78311.saxon
@@ -22673,4 +22685,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2641/3081 tests.
+Passed 2648/3081 tests.
