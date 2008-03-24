@@ -6235,22 +6235,6 @@ PASS output_output05 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output05.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output05.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 2, column 15 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 3, column 15 in NIL
-
-FAIL output_output06 [XSLT-Result-Tree]: output doesn't match
-  Stylesheet: Xalan_Conformance_Tests/output/output06.noindent-xsl
-  Data: Xalan_Conformance_Tests/output/output06.xml
-  Expected output (1): Xalan_Conformance_Tests/output/output_output06.saxon
-  Actual output: Xalan_Conformance_Tests/output/output_output06.xuriella
-
 PASS output_output07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output07.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output07.xml
@@ -6268,22 +6252,6 @@ PASS output_output09 [XSLT-Result-Tree]
   Data: Xalan_Conformance_Tests/output/output09.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output09.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output09.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 2, column 15 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 3, column 15 in NIL
-
-FAIL output_output10 [XSLT-Result-Tree]: output doesn't match
-  Stylesheet: Xalan_Conformance_Tests/output/output10.noindent-xsl
-  Data: Xalan_Conformance_Tests/output/output10.xml
-  Expected output (1): Xalan_Conformance_Tests/output/output_output10.saxon
-  Actual output: Xalan_Conformance_Tests/output/output_output10.xuriella
 
 PASS output_output11 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output11.noindent-xsl
@@ -6539,7 +6507,7 @@ PASS output_output49 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output49.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output49.xuriella
 
-FAIL output_output50 [XSLT-Result-Tree]: output doesn't match
+PASS output_output50 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output50.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output50.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output50.saxon
@@ -13603,17 +13571,6 @@ PASS Copying_Copy-of_CopyOfFromDocumentRoot [XSLT-Result-Tree]
   Data: MSFT_Conformance_Tests/Copying/xslt_copyof_CopyOfRootXmlDocToOutput.xml
   Expected output (1): MSFT_Conformance_Tests/Copying/Copying_Copy-of_CopyOfFromDocumentRoot.saxon
   Actual output: MSFT_Conformance_Tests/Copying/Copying_Copy-of_CopyOfFromDocumentRoot.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: Expected '!' or '?' after '<' in DTD.
-Context:
-  Line 5, column 10 in NIL
-
-PASS Copying_ResultTreeFragmentWithEscapedText [XSLT-Result-Tree]
-  Stylesheet: MSFT_Conformance_Tests/Copying/DoeWithResultTreeFragment.noindent-xsl
-  Data: MSFT_Conformance_Tests/Copying/DoeWithResultTreeFragment.xml
-  Expected output (1): MSFT_Conformance_Tests/Copying/Copying_ResultTreeFragmentWithEscapedText.saxon
-  Actual output: MSFT_Conformance_Tests/Copying/Copying_ResultTreeFragmentWithEscapedText.xuriella
 
 WARNING: There is no such encoding: "windows-1251".
 PASS Copying_UseXmlnsWithEmptyStringAsDefaultNs [XSLT-Result-Tree]
@@ -22635,4 +22592,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2666/3081 tests.
+Passed 2666/3078 tests.

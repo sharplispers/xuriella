@@ -26,5 +26,6 @@
      (:file "html")
      (:file "format-number")
      (:file "number")
+     (:file "stpx")
      (:file "test"))
     :depends-on (:cxml :cxml-stp :closure-html :xpath :split-sequence))

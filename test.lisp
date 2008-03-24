@@ -302,6 +302,15 @@
   '( ;; some tests wants us to recover from this error, yet this one doesn't:
     "copy_copy61"
     "copy_copy62"
+
+    ;; we'd pass these tests, but the test authors forgot to declare the
+    ;; entity they're writing, so we can't parse it for comparison.
+    "output_output06"
+    "output_output10"
+    ;; another similar test where the output is unparsable, except that
+    ;; here an entity declaration wouldn't have helped either:
+    "Copying_ResultTreeFragmentWithEscapedText"
+
     ;; the following tests take a lot of time due to the problems of current matching algorithm:
     "impincl_impincl16"
     "match_match13"

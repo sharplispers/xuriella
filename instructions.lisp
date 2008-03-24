@@ -459,7 +459,7 @@
 
 (defun apply-to-result-tree-fragment (ctx thunk)
   (let ((document
-         (with-xml-output (make-escaper (stp:make-builder))
+         (with-xml-output (make-stpx-builder)
            (with-element ("fragment" "")
              (funcall thunk ctx)))))
     (make-result-tree-fragment (stp:document-element document))))
@@ -526,7 +526,11 @@
 (defun copy-leaf-node (node)
   (cond
     ((xpath-protocol:node-type-p node :text)
-     (write-text (xpath-protocol:node-text node)))
+     (etypecase (if (typep node 'stripping-node)
+                    (stripping-node-target node)
+                    node)
+       (unescaped-text (write-unescaped (xpath-protocol:node-text node)))
+       (stp:text (write-text (xpath-protocol:node-text node)))))
     ((xpath-protocol:node-type-p node :comment)
      (write-comment (xpath-protocol:node-text node)))
     ((xpath-protocol:node-type-p node :processing-instruction)
