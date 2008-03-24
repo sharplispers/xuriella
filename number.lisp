@@ -81,7 +81,8 @@
 
 (defun pattern-thunk-matches-p (pattern-thunk node)
   (find node
-        (xpath:all-nodes (funcall pattern-thunk (xpath:make-context node)))))
+        (xpath:all-nodes (funcall pattern-thunk (xpath:make-context node)))
+        :test #'xpath-protocol:node-equal))
 
 (defun ancestors-using-count-and-from (node count from)
   (let ((ancestors

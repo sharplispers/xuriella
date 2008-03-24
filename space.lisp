@@ -172,9 +172,27 @@
   (defproxy xpath-protocol:namespace-uri)
   (defproxy xpath-protocol:namespace-prefix)
   (defproxy xpath-protocol:qualified-name)
-  (defproxy xpath-protocol:attribute-pipe)
-  (defproxy xpath-protocol:namespace-pipe)
   (defproxy xpath-protocol:node-type-p type))
+
+(define-default-method xpath-protocol:node-equal
+    ((a stripping-node) (b stripping-node))
+  (xpath-protocol:node-equal (stripping-node-target a)
+                             (stripping-node-target b)))
+
+(define-default-method xpath-protocol:hash-key ((node stripping-node))
+  (xpath-protocol:hash-key (stripping-node-target node)))
+
+(define-default-method xpath-protocol:attribute-pipe ((node stripping-node))
+  (xpath::map-pipe (lambda (attribute)
+                     (make-leaf-stripping-node node attribute))
+                   (xpath-protocol:attribute-pipe
+                    (stripping-node-target node))))
+
+(define-default-method xpath-protocol:namespace-pipe ((node stripping-node))
+  (xpath::map-pipe (lambda (namespace)
+                     (make-leaf-stripping-node node namespace))
+                   (xpath-protocol:namespace-pipe
+                    (stripping-node-target node))))
 
 (define-default-method xpath-protocol:node-p ((node stripping-node))
   t)

@@ -1280,7 +1280,8 @@
 
 (defun template-matches-p (template ctx)
   (find (xpath:context-node ctx)
-        (xpath:all-nodes (funcall (template-match-thunk template) ctx))))
+        (xpath:all-nodes (funcall (template-match-thunk template) ctx))
+        :test #'xpath-protocol:node-equal))
 
 (defun invoke-with-output-sink (fn output-spec output)
   (etypecase output

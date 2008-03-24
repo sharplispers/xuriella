@@ -6337,8 +6337,10 @@ PASS output_output21 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output21.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output21.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10100111)
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10010110)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10100111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10010110)
 FAIL output_output22 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output22.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output22.xml
@@ -6639,7 +6641,8 @@ PASS output_output72 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output72.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output72.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10000010)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10000010)
 PASS output_output73 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output73.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output73.xml
@@ -7284,7 +7287,7 @@ PASS position_position69 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/position/position_position69.saxon
   Actual output: Xalan_Conformance_Tests/position/position_position69.xuriella
 
-FAIL position_position70 [XSLT-Result-Tree]: output doesn't match
+PASS position_position70 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/position/position70.noindent-xsl
   Data: Xalan_Conformance_Tests/position/position70.xml
   Expected output (1): Xalan_Conformance_Tests/position/position_position70.saxon
@@ -11051,21 +11054,24 @@ FAIL BVTs_bvt015 [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt015.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt015.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
 FAIL BVTs_bvt017 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding00.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt017.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt017.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
 FAIL BVTs_bvt018 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding01.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt018.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt018.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
 FAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding02.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
@@ -12945,11 +12951,13 @@ PASS BVTs_bvt089 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt089.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt089.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 49 in NIL
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 49 in NIL
 
@@ -13505,7 +13513,8 @@ PASS Elements__78346 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78346.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78346.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after '<?'
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after '<?'
 Location:
   Line 3, column 3 in NIL
 
@@ -18754,11 +18763,13 @@ FAIL Number__91027 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91027.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91027.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91028.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91028.xuriella
 
@@ -18768,11 +18779,13 @@ FAIL Number__91028 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91028.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91028.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91029.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Number/Number__91029.xuriella
 
@@ -19010,7 +19023,8 @@ PASS Output__78183 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78183.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78183.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10011010)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10011010)
 PASS Output__78221 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29209a.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/www.toplist.cz.xml
@@ -19629,14 +19643,16 @@ PASS Output__84313 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84313.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84313.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10101101)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10101101)
 PASS Output__84374 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84374.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84374.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84374.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84374.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10100000)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10100000)
 PASS Output__84428 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84428.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84428.xml
@@ -19660,11 +19676,13 @@ PASS Output__84432 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84432.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84432.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 7 in NIL
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
+WARNING:
+   comparison failed: Document not well-formed: Expecting name after &.
 Location:
   Line 2, column 7 in NIL
 
@@ -21129,11 +21147,13 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78281.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78281.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text__78307.saxon
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78307.txt
 
@@ -21143,11 +21163,13 @@ FAIL Text__78307 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78307.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78307.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text__78308.saxon
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78308.txt
 
@@ -21181,11 +21203,13 @@ FAIL Text__78312 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78312.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78312.xuriella
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/Text/Text__78313.saxon
 
-WARNING: comparison failed: Document not well-formed: Unexpected character #\&.
+WARNING:
+   comparison failed: Document not well-formed: Unexpected character #\&.
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78313.txt
 
@@ -22241,7 +22265,8 @@ PASS XSLTFunctions__crahedOnEmptyVariable [Mixed]: raised an xslt-error as expec
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__crahedOnEmptyVariable.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10001001)
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10001001)
 FAIL XSLTFunctions__defaultPattern [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
@@ -22492,7 +22517,7 @@ PASS XSLTFunctions_ElementAvailFunctionTrueTest [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_ElementAvailFunctionTrueTest.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_ElementAvailFunctionTrueTest.xuriella
 
-FAIL XSLTFunctions_GenereateIdAppliedToNamespaceNodesOnDifferentElements [Mixed]: output doesn't match
+PASS XSLTFunctions_GenereateIdAppliedToNamespaceNodesOnDifferentElements [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_generate_id_namespace.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/data.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_GenereateIdAppliedToNamespaceNodesOnDifferentElements.saxon
@@ -22581,4 +22606,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2695/3076 tests.
+Passed 2697/3076 tests.
