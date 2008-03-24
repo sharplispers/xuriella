@@ -6265,7 +6265,7 @@ PASS output_output12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output12.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output12.xuriella
 
-FAIL output_output13 [XSLT-Result-Tree]: output doesn't match
+PASS output_output13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output13.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output13.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output13.saxon
@@ -6277,7 +6277,7 @@ PASS output_output14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output14.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output14.xuriella
 
-FAIL output_output15 [XSLT-Result-Tree]: output doesn't match
+PASS output_output15 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output15.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output15.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output15.saxon
@@ -6601,13 +6601,13 @@ PASS output_output63 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output63.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output63.xuriella
 
-FAIL output_output64 [XSLT-Result-Tree]: output doesn't match
+PASS output_output64 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output64.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output64.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output64.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output64.xuriella
 
-FAIL output_output65 [XSLT-Result-Tree]: output doesn't match
+PASS output_output65 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output65.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output65.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output65.saxon
@@ -6710,7 +6710,7 @@ PASS output_output81 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output81.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output81.xuriella
 
-FAIL output_output82 [XSLT-Result-Tree]: output doesn't match
+PASS output_output82 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output82.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output82.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output82.saxon
@@ -12864,7 +12864,7 @@ PASS BVTs_bvt065 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt065.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt065.xuriella
 
-FAIL BVTs_bvt066 [Mixed]: output doesn't match
+PASS BVTs_bvt066 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-default3.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt066.saxon
@@ -22654,4 +22654,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2666/3078 tests.
+Passed 2672/3078 tests.

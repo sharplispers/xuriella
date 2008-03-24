@@ -688,7 +688,9 @@
   method
   indent
   omit-xml-declaration
-  encoding)
+  encoding
+  doctype-system
+  doctype-public)
 
 (defun parse-output! (stylesheet <transform>)
   (let ((outputs (list-toplevel "output" <transform>)))
@@ -705,8 +707,8 @@
                               indent
                               encoding
 ;;;                           media-type
-;;;                           doctype-system
-;;;                           doctype-public
+                              doctype-system
+                              doctype-public
                               omit-xml-declaration
 ;;;                           standalone
 ;;;                           cdata-section-elements
@@ -715,6 +717,8 @@
           (setf (output-method spec) method)
           (setf (output-indent spec) indent)
           (setf (output-encoding spec) encoding)
+          (setf (output-doctype-system spec) doctype-system)
+          (setf (output-doctype-public spec) doctype-public)
           (setf (output-omit-xml-declaration spec) omit-xml-declaration))))))
 
 (defun make-empty-declaration-array ()
@@ -1285,6 +1289,11 @@
                               (make-output-sink output-spec output)))
     ((or hax:abstract-handler sax:abstract-handler)
      (with-xml-output output
+       (when (typep output '(or combi-sink auto-detect-sink))
+         (sax:start-dtd output
+                        :autodetect-me-please
+                        (output-doctype-public output-spec)
+                        (output-doctype-system output-spec)))
        (funcall fn)))))
 
 (defun make-output-sink (output-spec stream)
@@ -1309,15 +1318,24 @@
                                                        :ystream ystream)
                             :sax-target sax-target
                             :encoding (output-encoding output-spec))))
-      (cond
-        ((equalp (output-method output-spec) "HTML")
-         (make-combi-sink))
-        ((equalp (output-method output-spec) "TEXT")
-         (make-text-filter sax-target))
-        ((equalp (output-method output-spec) "XML")
-         sax-target)
-        (t
-         (make-auto-detect-sink (make-combi-sink)))))))
+      (let ((method-key
+             (cond
+               ((equalp (output-method output-spec) "HTML") :html)
+               ((equalp (output-method output-spec) "TEXT") :text)
+               ((equalp (output-method output-spec) "XML") :xml)
+               (t nil))))
+        (cond
+          ((and (eq method-key :html)
+                (null (output-doctype-system output-spec))
+                (null (output-doctype-public output-spec)))
+           (make-combi-sink))
+          ((eq method-key :text)
+           (make-text-filter sax-target))
+          ((and (eq method-key :xml)
+                (null (output-doctype-system output-spec)))
+           sax-target)
+          (t
+           (make-auto-detect-sink (make-combi-sink) method-key)))))))
 
 (defstruct template
   match-expression

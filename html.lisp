@@ -49,8 +49,9 @@
 (defmethod sax:start-document ((handler combi-sink))
   nil)
 
-(defmethod sax:start-dtd ((handler combi-sink) name pubid systemid)
-  (hax:start-document (sink-hax-target handler) name pubid systemid))
+(defmethod sax:start-dtd ((handler combi-sink) name pubid sysid)
+  (when (or pubid sysid)
+    (hax:start-document (sink-hax-target handler) name pubid sysid)))
 
 (defun maybe-close-tag (combi-sink)
   (cxml::maybe-close-tag (sink-sax-target combi-sink)))
@@ -104,40 +105,52 @@
 ;;;
 ;;; Waits for the document element, then decides between combi-sink and
 ;;; xml sink.
+;;;
+;;; Also figures out the root element name for the doctype.
 
 (defclass auto-detect-sink (cxml:broadcast-handler)
   ((switchedp :initform nil :accessor sink-switched-p)
+   (detected-method :initarg :detected-method :accessor sink-detected-method)
+   (sysid :initform nil :accessor sink-sysid)
+   (pubid :initform nil :accessor sink-pubid)
    (buffered-events :initform '() :accessor sink-buffered-events)))
 
-(defun make-auto-detect-sink (combi-sink)
-  (make-instance 'auto-detect-sink :handlers (list combi-sink)))
+(defun make-auto-detect-sink (combi-sink fixed-method)
+  (make-instance 'auto-detect-sink
+                 :handlers (list combi-sink)
+                 :detected-method fixed-method))
 
 (defmethod sax:start-document ((handler auto-detect-sink))
   nil)
 
-(defmethod sax:start-dtd ((handler auto-detect-sink) name pubid systemid)
-  (assert nil))
+(defmethod sax:start-dtd ((handler auto-detect-sink) name pubid sysid)
+  (setf (sink-sysid handler) sysid)
+  (setf (sink-pubid handler) pubid))
 
 (defmethod sax:start-element
     :before
     ((handler auto-detect-sink) uri lname qname attrs)
   (unless (sink-switched-p handler)
-    (if (and (equal uri "") (string-equal lname "html"))
-        (switch-to-html-output handler)
-        (switch-to-xml-output handler))))
+    (if (ecase (sink-detected-method handler)
+          (:html t)
+          (:xml nil)
+          ((nil) (and (equal uri "") (string-equal lname "html"))))
+        (switch-to-html-output handler qname)
+        (switch-to-xml-output handler qname))))
 
 (defmethod sax:end-document :before ((handler auto-detect-sink))
   (unless (sink-switched-p handler)
-    (switch-to-xml-output handler)))
+    (if (eq (sink-detected-method handler) :html)
+        (switch-to-html-output handler "root")
+        (switch-to-xml-output handler "root"))))
 
 (defmethod sax:characters ((handler auto-detect-sink) data)
   (cond
     ((sink-switched-p handler)
      (call-next-method))
-    ((not (whitespacep data))
-     (switch-to-xml-output handler)
-     (call-next-method))
     (t
+     (unless (or (whitespacep data) (sink-detected-method handler))
+       (setf (sink-detected-method handler) :xml))
      (push (list 'sax:characters data) (sink-buffered-events handler)))))
 
 (defmethod sax:processing-instruction
@@ -166,20 +179,28 @@
 (define-condition |hey test suite, this is an HTML document| ()
   ())
 
-(defun switch-to-html-output (handler)
+(defun switch-to-html-output (handler qname)
   (signal '|hey test suite, this is an HTML document|)
   (setf (sink-switched-p handler) t)
+  (when (or (sink-sysid handler) (sink-pubid handler))
+    (hax:start-document (car (cxml:broadcast-handler-handlers handler))
+                        qname
+                        (sink-pubid handler)
+                        (sink-sysid handler)))
   (replay-buffered-events handler))
 
-(defun switch-to-xml-output (handler)
+(defun switch-to-xml-output (handler qname)
   (setf (sink-switched-p handler) t)
-  (setf (cxml:broadcast-handler-handlers handler)
-        (list (sink-sax-target
-               (car (cxml:broadcast-handler-handlers handler)))))
+  (let ((target
+         (sink-sax-target (car (cxml:broadcast-handler-handlers handler)))))
+    (setf (cxml:broadcast-handler-handlers handler) (list target))
+    (sax:start-document target)
+    (when (sink-sysid handler)
+      (sax:start-dtd target qname (sink-pubid handler) (sink-sysid handler))
+      (sax:end-dtd target)))
   (replay-buffered-events handler))
 
 (defun replay-buffered-events (handler)
-  (sax:start-document (car (cxml:broadcast-handler-handlers handler)))
   (loop
      for (event . args) in (nreverse (sink-buffered-events handler))
      do (apply event handler args)))
