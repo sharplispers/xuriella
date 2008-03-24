@@ -253,13 +253,14 @@
 
 ;;;; TEXT-FILTER
 ;;;;
-;;;; A sink that passes through only text (at any level).
+;;;; A sink that passes through only text (at any level) and turns to
+;;;; into unescaped characters.
 
 (defclass text-filter (sax:default-handler)
   ((target :initarg :target :accessor text-filter-target)))
 
 (defmethod sax:characters ((sink text-filter) data)
-  (sax:characters (text-filter-target sink) data))
+  (sax:unescaped (text-filter-target sink) data))
 
 (defmethod sax:unescaped ((sink text-filter) data)
   (sax:unescaped (text-filter-target sink) data))

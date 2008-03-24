@@ -6363,7 +6363,7 @@ PASS output_output24 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output24.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output24.xuriella
 
-FAIL output_output25 [XSLT-Result-Tree]: output doesn't match
+PASS output_output25 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output25.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output25.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output25.saxon
@@ -19200,7 +19200,7 @@ FAIL Output__84009 [XSLT-Output]: oops, merging of output elements not supported
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84009.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84009.xuriella
 
-FAIL Output__84010 [XSLT-Output]: output doesn't match
+PASS Output__84010 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84010.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt05001.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84010.saxon
@@ -19237,7 +19237,7 @@ oops, merging of output elements not supported yet
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84014.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84014.xuriella
 
-FAIL Output__84015 [XSLT-Output]: output doesn't match
+PASS Output__84015 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84015.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/xslt05001.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84015.saxon
@@ -19747,7 +19747,7 @@ FAIL Output__84433 [XSLT-Output]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84433.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84433.xuriella
 
-FAIL Output__84434 [XSLT-Output]: output doesn't match
+PASS Output__84434 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84434.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84434.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84434.saxon
@@ -22654,4 +22654,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2672/3078 tests.
+Passed 2676/3078 tests.
