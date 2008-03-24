@@ -7888,7 +7888,7 @@ PASS predicate_predicate58 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/predicate/predicate_predicate58.saxon
   Actual output: Xalan_Conformance_Tests/predicate/predicate_predicate58.xuriella
 
-FAIL processorinfo_processorinfo03 [XSLT-Result-Tree]: no such function: :SYSTEM-PROPERTY
+PASS processorinfo_processorinfo03 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/processorinfo/processorinfo03.noindent-xsl
   Data: Xalan_Conformance_Tests/processorinfo/processorinfo03.xml
   Expected output (1): Xalan_Conformance_Tests/processorinfo/processorinfo_processorinfo03.saxon
@@ -16229,7 +16229,7 @@ PASS ForwardComp__91850 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91850.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91850.xuriella
 
-FAIL ForwardComp__91853 [XSLT-Extendability]: no such function: :SYSTEM-PROPERTY
+FAIL ForwardComp__91853 [XSLT-Extendability]: invalid number of arguments -- 2 for function system-property
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91853.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91853.saxon
@@ -16241,13 +16241,14 @@ PASS ForwardComp__91854 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91854.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91854.xuriella
 
-FAIL ForwardComp__91855 [XSLT-Extendability]: no such function: :SYSTEM-PROPERTY
+PASS ForwardComp__91855 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91855.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91855.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91855.xuriella
 
-PASS ForwardComp__91856 [XSLT-Extendability]: raised an xslt-error as expected
+FAIL ForwardComp__91856 [XSLT-Extendability]: condition of incorrect type: 
+The value 123 is not of type (SIMPLE-ARRAY CHARACTER).
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91856.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91856.saxon
@@ -22139,19 +22140,19 @@ PASS Whitespaces_XSLT_StripSpace_WhitespaceWithText [XSLT-Data-Model]
   Expected output (1): MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.saxon
   Actual output: MSFT_Conformance_Tests/Whitespaces/Whitespaces_XSLT_StripSpace_WhitespaceWithText.xuriella
 
-FAIL XSLTFunctions__84048 [Mixed]: no such function: :SYSTEM-PROPERTY
+PASS XSLTFunctions__84048 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84048.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84048.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84048.xuriella
 
-FAIL XSLTFunctions__84049 [Mixed]: no such function: :SYSTEM-PROPERTY
+FAIL XSLTFunctions__84049 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84049.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84049.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84049.xuriella
 
-FAIL XSLTFunctions__84050 [Mixed]: no such function: :SYSTEM-PROPERTY
+FAIL XSLTFunctions__84050 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84050.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84050.saxon
@@ -22606,4 +22607,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2697/3076 tests.
+Passed 2699/3076 tests.

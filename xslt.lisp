@@ -1090,6 +1090,24 @@
                      (xpath-sys:find-xpath-function local-name uri))
                  t))))))
 
+(xpath-sys:define-xpath-function/lazy xslt :system-property (qname)
+  (let ((namespaces *namespaces*))
+    (lambda (ctx)
+      (let ((qname (funcall qname ctx)))
+        (multiple-value-bind (local-name uri)
+            (decode-qname/runtime qname namespaces nil)
+          (if (equal uri *xsl*)
+              (cond
+                ((equal local-name "version")
+                 "1")
+                ((equal local-name "vendor")
+                 "Xuriella")
+                ((equal local-name "vendor-uri")
+                 "http://repo.or.cz/w/xuriella.git")
+                (t
+                 ""))
+              ""))))))
+
 (defun apply-stylesheet
     (stylesheet source-designator
      &key output parameters uri-resolver navigator)
