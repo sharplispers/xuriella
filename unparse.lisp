@@ -312,6 +312,7 @@
 (defun write-comment (data)
   (maybe-emit-start-tag)
   (setf data (cl-ppcre:regex-replace-all "--" data "- -"))
+  (setf data (cl-ppcre:regex-replace "-$" data "- "))
   (sax:comment *sink* data)
   data)
 

@@ -6726,17 +6726,7 @@ PASS output_output89 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output89.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output89.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 3, column 37 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 3, column 37 in NIL
-
-FAIL output_output90 [XSLT-Result-Tree]: output doesn't match
+PASS output_output90 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output90.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output90.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output90.saxon
@@ -13069,17 +13059,7 @@ PASS Comment_Comment_CommentWithOnlyValidText [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithOnlyValidText.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CommentWithOnlyValidText.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 11 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 11 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.xuriella
-
-FAIL Comment_Comment_DoubleHypenEntitywithDelCharacter [XSLT-Result-Tree]: output doesn't match
+PASS Comment_Comment_DoubleHypenEntitywithDelCharacter [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleEntityHyphen.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenEntitywithDelCharacter.saxon
@@ -13091,17 +13071,7 @@ PASS Comment_Comment_DoubleHypenInText [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHypenInText.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 10 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 10 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.xuriella
-
-FAIL Comment_Comment_DoubleHyphenONLY [XSLT-Result-Tree]: output doesn't match
+PASS Comment_Comment_DoubleHyphenONLY [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_DoubleHyphenOnly.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_DoubleHyphenONLY.saxon
@@ -13135,17 +13105,7 @@ FAIL Comment_Comment_LineOfAllHyphens [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 8 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 8 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.xuriella
-
-FAIL Comment_Comment_SingleHyphenOnly [XSLT-Result-Tree]: output doesn't match
+PASS Comment_Comment_SingleHyphenOnly [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_SingleHyphen.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_SingleHyphenOnly.saxon
@@ -22621,4 +22581,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2690/3076 tests.
+Passed 2694/3076 tests.
