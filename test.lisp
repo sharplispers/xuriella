@@ -461,33 +461,100 @@
                  (eql (read-byte s nil) #xbf))
       (file-position s 0))
     (if (plusp (file-length s))
-        (let ((xstream (runes:make-xstream s :speed 1)))
-          (setf (runes:xstream-name xstream)
-                (cxml::make-stream-name
-                 :entity-name "main document"
-                 :entity-kind :main
-                 :uri (cxml::pathname-to-uri (merge-pathnames p))))
-          (let ((source (cxml:make-source xstream :pathname p)))
-            (loop
-               for key = (klacks:peek-next source)
-               until (eq key :start-document))
-            (with-output-to-string (r)
-              (write-line "<wrapper>" r)
-              (cxml::with-source (source cxml::context)
-                (when (eq (cxml::zstream-token-category
-                           (cxml::main-zstream cxml::context))
-                          :seen-<)
-                  (write-char #\< r)))
-              (loop
-                 for char = (runes:read-rune xstream)
-                 until (eq char :eof)
-                 do (write-char char r))
-              (write-line "</wrapper>" r))))
+        (slurp-for-comparison-1 p s t)
         "<wrapper/>")))
 
+(defun slurp-for-comparison-1 (p s junk-info)
+  (let ((pos (file-position s))         ;for UTF-8 "BOM"
+        (xstream (runes:make-xstream s :speed 1))
+        (prev-pos 0))
+    (setf (runes:xstream-name xstream)
+          (cxml::make-stream-name
+           :entity-name "main document"
+           :entity-kind :main
+           :uri (cxml::pathname-to-uri (merge-pathnames p))))
+    (let ((source
+           (flet ((er (pub sys)
+                    pub sys
+                    (flexi-streams:make-in-memory-input-stream
+                     #())))
+             (cxml:make-source xstream
+                               :pathname p
+                               :entity-resolver #'er))))
+      (unless (eq junk-info :nada)
+        (loop
+           for key = (progn
+                       (setf prev-pos (runes:xstream-position xstream))
+                       (klacks:peek-next source))
+           until (eq key :start-document))
+        (cxml::with-source (source cxml::context)
+          (when (eq (cxml::zstream-token-category
+                     (cxml::main-zstream cxml::context))
+                    :NMTOKEN)
+            ;; oops, doesn't look like XML at all
+            (file-position s pos)
+            (return-from slurp-for-comparison-1
+              (slurp-for-comparison-1 p s :nada)))))
+      (etypecase junk-info
+        (integer
+         (dotimes (x junk-info)
+           (setf prev-pos (runes:xstream-position xstream))
+           (klacks:peek-next source)))
+        ((eql t)
+         (let ((nskip 0))
+           (handler-case
+               (loop
+                  (case (klacks:peek-next source)
+                    (:start-element (return))
+                    (:characters
+                     (if (whitespacep (klacks:current-characters source))
+                         (incf nskip)
+                         (return)))
+                    (t
+                     (incf nskip))))
+             ((or file-error cxml:xml-parse-error) ()
+               (when (zerop nskip)
+                 (setf nskip nil))))
+           ;; retry
+           (with-open-file (u p :element-type '(unsigned-byte 8))
+             (file-position u pos)
+             (return-from slurp-for-comparison-1
+               (slurp-for-comparison-1 p u nskip)))))
+        ((member nil :nada)))
+      (with-output-to-string (r)
+        (let* ((seen-char
+                (cxml::with-source (source cxml::context)
+                  (ecase (cxml::zstream-token-category
+                          (cxml::main-zstream cxml::context))
+                    (:seen-< #\<)
+                    (:? #\?)
+                    ((nil :s) nil))))
+               (off-by-one-p (or seen-char (eq junk-info :nada)))
+               (new-pos (- prev-pos (if off-by-one-p 1 0))))
+          ;; copy doctype over
+          (with-open-file (u p :element-type '(unsigned-byte 8))
+            (file-position u pos)
+            (let ((y (runes:make-xstream u :speed 1)))
+              (loop
+                 while (< (runes:xstream-position y) new-pos)
+                 do (write-char (runes:read-rune y) r))))
+          (write-line "<wrapper>" r)
+          (when seen-char
+            (write-char seen-char r)))
+        (loop
+           for char = (runes:read-rune xstream)
+           until (eq char :eof)
+           do (write-char char r))
+        (write-line "</wrapper>" r)))))
+
 (defun parse-for-comparison (p)
-  (let* ((d (cxml:parse (slurp-for-comparison p)
-                        (make-text-normalizer (stp:make-builder))))
+  (let* ((d (flet ((er (pub sys)
+                    pub sys
+                    (flexi-streams:make-in-memory-input-stream
+                     #())))
+              (cxml:parse (slurp-for-comparison p)
+                          (make-text-normalizer (stp:make-builder))
+                          :entity-resolver #'er)))
          (de (stp:document-element d)))
     (let ((first (stp:first-child de)))
       (when (typep first 'stp:text)

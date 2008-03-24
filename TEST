@@ -6265,17 +6265,7 @@ PASS output_output12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output12.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output12.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-FAIL output_output13 [XSLT-Result-Tree]: output doesn't match
+PASS output_output13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output13.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output13.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output13.saxon
@@ -6287,17 +6277,7 @@ PASS output_output14 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output14.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output14.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-FAIL output_output15 [XSLT-Result-Tree]: output doesn't match
+PASS output_output15 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output15.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output15.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output15.saxon
@@ -6323,6 +6303,8 @@ PASS output_output18 [XSLT-Result-Tree]
 
 WARNING: There is no such encoding: "US-ASCII".
 WARNING: There is no such encoding: "US-ASCII".
+WARNING: There is no such encoding: "US-ASCII".
+WARNING: There is no such encoding: "US-ASCII".
 PASS output_output19 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output19.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output19.xml
@@ -6331,12 +6313,16 @@ PASS output_output19 [XSLT-Result-Tree]
 
 WARNING: There is no such encoding: "SHIFT_JIS".
 WARNING: There is no such encoding: "SHIFT_JIS".
+WARNING: There is no such encoding: "SHIFT_JIS".
+WARNING: There is no such encoding: "SHIFT_JIS".
 PASS output_output20 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output20.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output20.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output20.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output20.xuriella
 
+WARNING: There is no such encoding: "BIG5".
+WARNING: There is no such encoding: "BIG5".
 WARNING: There is no such encoding: "BIG5".
 WARNING: There is no such encoding: "BIG5".
 PASS output_output21 [XSLT-Result-Tree]
@@ -6353,6 +6339,8 @@ FAIL output_output22 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output22.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output22.xuriella
 
+WARNING: There is no such encoding: "ISO-2022-JP".
+WARNING: There is no such encoding: "ISO-2022-JP".
 WARNING: There is no such encoding: "ISO-2022-JP".
 WARNING: There is no such encoding: "ISO-2022-JP".
 PASS output_output23 [XSLT-Result-Tree]
@@ -6379,6 +6367,8 @@ FAIL output_output26 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output26.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output26.xuriella
 
+WARNING: There is no such encoding: "US-ASCII".
+WARNING: There is no such encoding: "US-ASCII".
 WARNING: There is no such encoding: "US-ASCII".
 WARNING: There is no such encoding: "US-ASCII".
 PASS output_output28 [XSLT-Result-Tree]
@@ -6601,33 +6591,13 @@ PASS output_output63 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output63.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output63.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-FAIL output_output64 [XSLT-Result-Tree]: output doesn't match
+PASS output_output64 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output64.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output64.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output64.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output64.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-FAIL output_output65 [XSLT-Result-Tree]: output doesn't match
+PASS output_output65 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output65.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output65.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output65.saxon
@@ -6714,6 +6684,8 @@ PASS output_output77 [XSLT-Result-Tree]
 WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS output_output80 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output80.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output80.xml
@@ -6726,17 +6698,7 @@ PASS output_output81 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output81.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output81.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-FAIL output_output82 [XSLT-Result-Tree]: output doesn't match
+PASS output_output82 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output82.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output82.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output82.saxon
@@ -10617,6 +10579,7 @@ PASS Attributes_Attribute_WhitespaceInUseAttributeSets [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_Attribute_WhitespaceInUseAttributeSets.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS Attributes_EmptyStringInUseAttribSets [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_empty_name_in_use_attribute_sets.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/foo.xml
@@ -10648,6 +10611,7 @@ FAIL AttributeSets__91036 [XSLT-Result-Tree]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91036.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91037 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91037.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
@@ -10661,12 +10625,14 @@ FAIL AttributeSets__91038 [XSLT-Result-Tree]: saxon error not signalled and offi
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91042 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91042.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91042.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91042.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91043 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91043.noindent-xsl
@@ -10675,12 +10641,14 @@ PASS AttributeSets__91043 [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91043.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91045 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91045.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91045.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91045.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91046 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91046.noindent-xsl
@@ -10689,12 +10657,14 @@ PASS AttributeSets__91046 [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91046.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91077 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91077.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91077.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91077.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91078 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91078.noindent-xsl
@@ -10721,12 +10691,14 @@ FAIL AttributeSets__91083 [XSLT-Result-Tree]: saxon error not signalled and offi
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91083.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91084 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91084.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91084.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91084.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91085 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91085.noindent-xsl
@@ -10797,6 +10769,7 @@ FAIL AttributeSets__91101 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91101.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91101.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS AttributeSets__91119 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91119.noindent-xsl
@@ -12868,17 +12841,7 @@ PASS BVTs_bvt065 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt065.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt065.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 3, column 10 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!DOCTYPE)
-Context:
-  Line 2, column 23 in NIL
-
-FAIL BVTs_bvt066 [Mixed]: output doesn't match
+PASS BVTs_bvt066 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-default3.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt066.saxon
@@ -13009,11 +12972,11 @@ PASS BVTs_bvt089 [Mixed]
 
 WARNING: comparison failed: Document not well-formed: Expecting name after &.
 Location:
-  Line 2, column 47 in NIL
+  Line 2, column 49 in NIL
 
 WARNING: comparison failed: Document not well-formed: Expecting name after &.
 Location:
-  Line 2, column 47 in NIL
+  Line 2, column 49 in NIL
 
 FAIL BVTs_bvt090 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/valof.noindent-xsl
@@ -13565,6 +13528,7 @@ PASS Copying__84389 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Copying/Copying__84389.saxon
   Actual output: MSFT_Conformance_Tests/Copying/Copying__84389.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS Copying_Copy-of_CopyOfFromDocumentRoot [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Copying/xslt_copyof_CopyOfRootXmlDocToOutput.noindent-xsl
@@ -18515,6 +18479,8 @@ PASS Number__84699 [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/Number/Number__84699.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84700 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84700.noindent-xsl
@@ -18529,6 +18495,8 @@ PASS Number__84702 [XSLT-Result-Tree]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Number/Number__84702.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84705 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84705.noindent-xsl
@@ -18543,6 +18511,8 @@ FAIL Number__84706 [XSLT-Result-Tree]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/Number/Number__84706.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84714 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84714.noindent-xsl
@@ -18557,6 +18527,8 @@ FAIL Number__84715 [XSLT-Result-Tree]: not an NCName: ???????
   Actual output: MSFT_Conformance_Tests/Number/Number__84715.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84716 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84716.noindent-xsl
@@ -18565,6 +18537,8 @@ FAIL Number__84716 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Number/Number__84716.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84717 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84717.noindent-xsl
@@ -18573,6 +18547,8 @@ FAIL Number__84717 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Number/Number__84717.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84719 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84719.noindent-xsl
@@ -18588,6 +18564,8 @@ FAIL Number__84720 [XSLT-Result-Tree]: output doesn't match
 
 WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 FAIL Number__84722 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84722.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84722.xml
@@ -18595,6 +18573,8 @@ FAIL Number__84722 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Number/Number__84722.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84723 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84723.noindent-xsl
@@ -18603,6 +18583,8 @@ FAIL Number__84723 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Number/Number__84723.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84724 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84724.noindent-xsl
@@ -18611,6 +18593,8 @@ FAIL Number__84724 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Number/Number__84724.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84725 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84725.noindent-xsl
@@ -18619,6 +18603,8 @@ FAIL Number__84725 [XSLT-Result-Tree]: output doesn't match
   Actual output: MSFT_Conformance_Tests/Number/Number__84725.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__84726 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/84726.noindent-xsl
@@ -18803,6 +18789,8 @@ PASS Number__91022 [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/Number/Number__91022.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "utf-16".
 WARNING: There is no such encoding: "utf-16".
 FAIL Number__91026 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/91026.noindent-xsl
@@ -18973,6 +18961,7 @@ PASS Output__77935 [XSLT-Output]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Output/Output__77935.xuriella
 
 WARNING: There is no such encoding: "utf-16".
+WARNING: There is no such encoding: "utf-16".
 PASS Output__77936 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29304.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
@@ -18992,12 +18981,14 @@ FAIL Output__77938 [XSLT-Output]: expected error not signalled:
   Actual output: MSFT_Conformance_Tests/Output/Output__77938.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS Output__77939 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29402.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77939.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77939.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS Output__77940 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29401.noindent-xsl
@@ -19049,12 +19040,14 @@ PASS Output__78180 [XSLT-Output]
   Actual output: MSFT_Conformance_Tests/Output/Output__78180.xuriella
 
 WARNING: There is no such encoding: "unicode".
+WARNING: There is no such encoding: "unicode".
 PASS Output__78182 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29007.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78182.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78182.xuriella
 
+WARNING: There is no such encoding: "unicode".
 WARNING: There is no such encoding: "unicode".
 PASS Output__78183 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29008.noindent-xsl
@@ -19670,7 +19663,11 @@ PASS Output__84428 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84428.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84428.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10100011)
+WARNING:
+   comparison failed: Document not well-formed: Corrupted UTF-8 input (initial byte was #b10100011)
+Context:
+  Line 1, column 6 in file://+...MSFT_Conformance_Tests/REF_OUT/Output/84429.txt
+
 PASS Output__84429 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84429.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84429.xml
@@ -19769,6 +19766,7 @@ PASS Output__84462 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84462.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84462.xuriella
 
+WARNING: There is no such encoding: "unicode".
 WARNING: There is no such encoding: "unicode".
 PASS Output__84480 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84480.noindent-xsl
@@ -20270,7 +20268,11 @@ PASS Sorting__77569 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77569.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77569.xuriella
 
-WARNING: comparison failed: Corrupted UTF-8 input (initial byte was #b10110111)
+WARNING:
+   comparison failed: Document not well-formed: Corrupted UTF-8 input (initial byte was #b10110111)
+Context:
+  Line 1, column 5 in file://+...MSFT_Conformance_Tests/REF_OUT/Sorting/77977.txt
+
 FAIL Sorting__77977 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt18304.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/multilingualsort.xml
@@ -21182,14 +21184,10 @@ error opening #P"...MSFT_Conformance_Tests/Text/XSLT05001.xml":
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78309.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78309.xuriella
 
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
-Location:
-  Line 2, column 3 in NIL
-
-WARNING: comparison failed: Document not well-formed: Expecting name after &.
-Location:
-  Line 2, column 3 in NIL
-
+WARNING: comparison failed: :|"| fell through ECASE expression.
+                   Wanted one of (NIL :S :? :SEEN-<).
+WARNING: comparison failed: :|"| fell through ECASE expression.
+                   Wanted one of (NIL :S :? :SEEN-<).
 FAIL Text__78311 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05003.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
@@ -21285,6 +21283,7 @@ PASS Text_ReservedCharsInAttribute [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/Text/Text_ReservedCharsInAttribute.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS Text_Text_ConvCdataLitResult [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/xslt_text_ConvCdataLitResult.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/xslt_text_ConvCdata.xml
@@ -21292,12 +21291,14 @@ PASS Text_Text_ConvCdataLitResult [XSLT-Result-Tree]
   Actual output: MSFT_Conformance_Tests/Text/Text_Text_ConvCdataLitResult.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
 PASS Text_Text_ConvCdataLitResultSpacesOnly [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/xslt_text_ConvCdataLitSpace.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/xslt_text_ConvCdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text_Text_ConvCdataLitResultSpacesOnly.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text_Text_ConvCdataLitResultSpacesOnly.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS Text_Text_ConvCdataLitResultTextOnly [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/xslt_text_ConvCdataLitText.noindent-xsl
@@ -21785,6 +21786,7 @@ PASS Variables_VarDefinedEqualToAnotherVarNotYetDefined [XPath-Data-Model]: rais
   Expected output (1): MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.saxon
   Actual output: MSFT_Conformance_Tests/Variables/Variables_VarDefinedEqualToAnotherVarNotYetDefined.xuriella
 
+WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 PASS Variables_VariableAssignmentAfterIteration [XPath-Data-Model]
   Stylesheet: MSFT_Conformance_Tests/Variables/xslt_variable_VariableAssignmentInIteration.noindent-xsl
@@ -22518,6 +22520,7 @@ PASS XSLTFunctions_KeyFuncTestDescendantsNodeset [Mixed]
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_KeyFuncTestDescendantsNodeset.xuriella
 
 WARNING: There is no such encoding: "IBM437".
+WARNING: There is no such encoding: "IBM437".
 PASS XSLTFunctions_LastFuncAppliedToNodesetBoundToVariable [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/xslt_functions_last_function.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/data.xml
@@ -22592,4 +22595,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2666/3078 tests.
+Passed 2672/3078 tests.
