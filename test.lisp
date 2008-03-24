@@ -278,7 +278,8 @@
 
 (defun dribble-tests (&optional (category *default-categories*)
                       (d *tests-directory*))
-  (let ((*package* (find-package 'cl-user)))
+  (let ((*package* (find-package 'cl-user))
+        (*print-circle* nil))
     (with-open-file (dribble
                      (merge-pathnames "TEST"
                                       (slot-value (asdf:find-system :xuriella)
@@ -636,114 +637,123 @@
         (actual (test-output-pathname test "xuriella"))
         (official (test-official-output-pathname test))
         (force-normalization
-         (find (test-id test) '("Namespace-alias__91782") :test #'equal)))
-    (labels ((uri-resolver (uri)
-               (if (search "%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml"
-                           uri)
-                   (cxml::pathname-to-uri
-                    (merge-pathnames
-                     "MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml"
-                     *tests-directory*))
-                   uri))
-             (doit ()
-               (with-open-file (s actual
-                                  :if-exists :rename-and-delete
-                                  :direction :output
-                                  :element-type '(unsigned-byte 8))
-                 (handler-bind ((xslt-error
-                                 (lambda (c)
-                                   (declare (ignore c))
-                                   (when (find-restart 'recover)
-                                     (invoke-restart 'recover)))))
-                   (apply-stylesheet (pathname (test-stylesheet-pathname test))
-                                     (pathname (test-data-pathname test))
-                                     :output s
-                                     :uri-resolver #'uri-resolver))))
-             (pp (label pathname)
-               (when pathname
-                 (format t "  ~A: ~A~%"
-                         label
-                         (enough-namestring pathname *tests-directory*))))
-             (report (ok &optional (fmt "") &rest args)
-               (write-string
-                (replace-junk
-                 (strip-addresses
-                  (format nil "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
-                          ok
-                          (test-id test)
-                          (test-category test)
-                          fmt
-                          args))))
-               (pp "Stylesheet" (test-stylesheet-pathname test))
-               (pp "Data" (test-data-pathname test))
-               (pp "Supplemental stylesheet"
-                   (test-stylesheet-pathname-2 test))
-               (pp "Supplemental data" (test-data-pathname-2 test))
-               (pp "Expected output (1)" expected-saxon)
-               #+xuriella::xsltproc
-               (pp "Expected output (2)" expected-xsltproc)
-               (pp "Actual output" actual)
-               (terpri)
-               ok))
-      (cond
-        ((equal (test-operation test) "standard")
-         (handler-case
-             (let ((output-method
-                    (slurp-output-method (test-stylesheet-pathname test))))
-               (when (find (test-id test)
-                           nil ;;'("axes_axes47" "attribset_attribset20")
-                           :test #'equal)
-                 (error "skipping problematic test"))
+         (find (test-id test) '("Namespace-alias__91782") :test #'equal))
+        (output-method nil))
+    (handler-bind ((|hey test suite, this is an HTML document|
+                    (lambda (c)
+                      (declare (ignore c))
+                      (setf output-method :html))))
+      (labels ((uri-resolver (uri)
+                 (if (search "%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml"
+                             uri)
+                     (cxml::pathname-to-uri
+                      (merge-pathnames
+                       "MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml"
+                       *tests-directory*))
+                     uri))
+               (doit ()
+                 (with-open-file (s actual
+                                    :if-exists :rename-and-delete
+                                    :direction :output
+                                    :element-type '(unsigned-byte 8))
+                   (handler-bind ((xslt-error
+                                   (lambda (c)
+                                     (declare (ignore c))
+                                     (when (find-restart 'recover)
+                                       (invoke-restart 'recover)))))
+                     (apply-stylesheet (pathname (test-stylesheet-pathname test))
+                                       (pathname (test-data-pathname test))
+                                       :output s
+                                       :uri-resolver #'uri-resolver))))
+               (pp (label pathname)
+                 (when pathname
+                   (format t "  ~A: ~A~%"
+                           label
+                           (enough-namestring pathname *tests-directory*))))
+               (report (ok &optional (fmt "") &rest args)
+                 (write-string
+                  (replace-junk
+                   (strip-addresses
+                    (format nil "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
+                            ok
+                            (test-id test)
+                            (test-category test)
+                            fmt
+                            args))))
+                 (pp "Stylesheet" (test-stylesheet-pathname test))
+                 (pp "Data" (test-data-pathname test))
+                 (pp "Supplemental stylesheet"
+                     (test-stylesheet-pathname-2 test))
+                 (pp "Supplemental data" (test-data-pathname-2 test))
+                 (pp "Expected output (1)" expected-saxon)
+                 #+xuriella::xsltproc
+                 (pp "Expected output (2)" expected-xsltproc)
+                 (pp "Actual output" actual)
+                 (terpri)
+                 ok))
+        (cond
+          ((equal (test-operation test) "standard")
+           (handler-case
+               (progn
+                 (when (find (test-id test)
+                             nil ;;'("axes_axes47" "attribset_attribset20")
+                             :test #'equal)
+                   (error "skipping problematic test"))
+                 (doit)
+                 (let* ((output-method
+                         (or output-method
+                             (slurp-output-method
+                              (test-stylesheet-pathname test))))
+                        (saxon-matches-p
+                         (output-equal-p output-method
+                                         expected-saxon
+                                         actual))
+                        #+xuriella::xsltproc
+                        (xsltproc-matches-p
+                         (output-equal-p output-method
+                                         expected-xsltproc
+                                         actual))
+                        (official-matches-p
+                         (output-equal-p output-method
+                                         official
+                                         actual
+                                         :normalize force-normalization)))
+                   (cond
+                     ((or saxon-matches-p
+                          #+xuriella::xsltproc xsltproc-matches-p
+                          official-matches-p)
+                      (report t)
+                      #+xuriella::xsltproc
+                      (report t ": saxon ~A, xsltproc ~A~:[~; (MISMATCH)~]"
+                              saxon-matches-p
+                              xsltproc-matches-p
+                              (if saxon-matches-p
+                                  (not xsltproc-matches-p)
+                                  xsltproc-matches-p)))
+                     (t
+                      (report nil ": output doesn't match")))))
+             ((or error parse-number::invalid-number) (c)
+               (report nil ": ~A" c))))
+          (t
+           (handler-case
                (doit)
-               (let ((saxon-matches-p
-                      (output-equal-p output-method
-                                      expected-saxon
-                                      actual))
-                     #+xuriella::xsltproc
-                     (xsltproc-matches-p
-                      (output-equal-p output-method
-                                      expected-xsltproc
-                                      actual))
-                     (official-matches-p
-                      (output-equal-p output-method
-                                      official
-                                      actual
-                                      :normalize force-normalization)))
-                 (cond
-                   ((or saxon-matches-p
-                        #+xuriella::xsltproc xsltproc-matches-p
-                        official-matches-p)
-                    (report t)
-                    #+xuriella::xsltproc
-                    (report t ": saxon ~A, xsltproc ~A~:[~; (MISMATCH)~]"
-                            saxon-matches-p
-                            xsltproc-matches-p
-                            (if saxon-matches-p
-                                (not xsltproc-matches-p)
-                                xsltproc-matches-p)))
-                   (t
-                    (report nil ": output doesn't match")))))
-           ((or error parse-number::invalid-number) (c)
-            (report nil ": ~A" c))))
-        (t
-         (handler-case
-             (doit)
-           (xslt-error (c)
-             (report t ": raised an xslt-error as expected" c))
-           ((or error parse-number::invalid-number) (c)
-             (report nil ": condition of incorrect type: ~%~A" c))
-           (:no-error (result)
-             (cond
-               ((not (and official (probe-file official)))
-                (report nil ": expected error not signalled: " result))
-               ((output-equal-p
-                 (slurp-output-method (test-stylesheet-pathname test))
-                 official
-                 actual
-                 :normalize force-normalization)
-                (report t))
-               (t
-                (report nil ": saxon error not signalled and official output not a match"))))))))))
+             (xslt-error (c)
+               (report t ": raised an xslt-error as expected" c))
+             ((or error parse-number::invalid-number) (c)
+               (report nil ": condition of incorrect type: ~%~A" c))
+             (:no-error (result)
+               (cond
+                 ((not (and official (probe-file official)))
+                  (report nil ": expected error not signalled: " result))
+                 ((output-equal-p
+                   (or output-method
+                       (slurp-output-method (test-stylesheet-pathname test)))
+                   official
+                   actual
+                   :normalize force-normalization)
+                  (report t))
+                 (t
+                  (report nil ": saxon error not signalled and official output not a match")))))))))))
 
 (defun run-xpath-tests ()
   (run-tests '("XPath-Expression" "XSLT-Data-Model")))

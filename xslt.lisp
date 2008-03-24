@@ -1303,17 +1303,21 @@
           (make-instance 'cxml::sink
                          :ystream ystream
                          :omit-xml-declaration-p omit-xml-declaration-p)))
-    (cond
-      ((equalp (output-method output-spec) "HTML")
-       (make-instance 'combi-sink
-                      :hax-target (make-instance 'chtml::sink
-                                                 :ystream ystream)
-                      :sax-target sax-target
-                      :encoding (output-encoding output-spec)))
-      ((equalp (output-method output-spec) "TEXT")
-       (make-text-filter sax-target))
-      (t
-       sax-target))))
+    (flet ((make-combi-sink ()
+             (make-instance 'combi-sink
+                            :hax-target (make-instance 'chtml::sink
+                                                       :ystream ystream)
+                            :sax-target sax-target
+                            :encoding (output-encoding output-spec))))
+      (cond
+        ((equalp (output-method output-spec) "HTML")
+         (make-combi-sink))
+        ((equalp (output-method output-spec) "TEXT")
+         (make-text-filter sax-target))
+        ((equalp (output-method output-spec) "XML")
+         sax-target)
+        (t
+         (make-auto-detect-sink (make-combi-sink)))))))
 
 (defstruct template
   match-expression

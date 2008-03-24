@@ -93,10 +93,93 @@
   (maybe-close-tag handler)
   (sax:unescaped (sink-hax-target handler) data))
 
-(defmethod sax:unescaped ((handler combi-sink) data)
-  (maybe-close-tag handler)
-  (sax:unescaped (sink-hax-target handler) data))
-
 (defmethod sax:comment ((handler combi-sink) data)
   (maybe-close-tag handler)
   (sax:comment (sink-hax-target handler) data))
+
+
+
+
+;;; Handler for the default output method.
+;;;
+;;; Waits for the document element, then decides between combi-sink and
+;;; xml sink.
+
+(defclass auto-detect-sink (cxml:broadcast-handler)
+  ((switchedp :initform nil :accessor sink-switched-p)
+   (buffered-events :initform '() :accessor sink-buffered-events)))
+
+(defun make-auto-detect-sink (combi-sink)
+  (make-instance 'auto-detect-sink :handlers (list combi-sink)))
+
+(defmethod sax:start-document ((handler auto-detect-sink))
+  nil)
+
+(defmethod sax:start-dtd ((handler auto-detect-sink) name pubid systemid)
+  (assert nil))
+
+(defmethod sax:start-element
+    :before
+    ((handler auto-detect-sink) uri lname qname attrs)
+  (unless (sink-switched-p handler)
+    (if (and (equal uri "") (string-equal lname "html"))
+        (switch-to-html-output handler)
+        (switch-to-xml-output handler))))
+
+(defmethod sax:end-document :before ((handler auto-detect-sink))
+  (unless (sink-switched-p handler)
+    (switch-to-xml-output handler)))
+
+(defmethod sax:characters ((handler auto-detect-sink) data)
+  (cond
+    ((sink-switched-p handler)
+     (call-next-method))
+    ((not (whitespacep data))
+     (switch-to-xml-output handler)
+     (call-next-method))
+    (t
+     (push (list 'sax:characters data) (sink-buffered-events handler)))))
+
+(defmethod sax:processing-instruction
+    ((handler auto-detect-sink) target data)
+  (cond
+    ((sink-switched-p handler)
+     (call-next-method))
+    (t
+     (push (list 'sax:processing-instruction target data)
+           (sink-buffered-events handler)))))
+
+(defmethod sax:unescaped ((handler auto-detect-sink) data)
+  (cond
+    ((sink-switched-p handler)
+     (call-next-method))
+    (t
+     (push (list 'sax:unescaped data) (sink-buffered-events handler)))))
+
+(defmethod sax:comment ((handler auto-detect-sink) data)
+  (cond
+    ((sink-switched-p handler)
+     (call-next-method))
+    (t
+     (push (list 'sax:comment data) (sink-buffered-events handler)))))
+
+(define-condition |hey test suite, this is an HTML document| ()
+  ())
+
+(defun switch-to-html-output (handler)
+  (signal '|hey test suite, this is an HTML document|)
+  (setf (sink-switched-p handler) t)
+  (replay-buffered-events handler))
+
+(defun switch-to-xml-output (handler)
+  (setf (sink-switched-p handler) t)
+  (setf (cxml:broadcast-handler-handlers handler)
+        (list (sink-sax-target
+               (car (cxml:broadcast-handler-handlers handler)))))
+  (replay-buffered-events handler))
+
+(defun replay-buffered-events (handler)
+  (sax:start-document (car (cxml:broadcast-handler-handlers handler)))
+  (loop
+     for (event . args) in (nreverse (sink-buffered-events handler))
+     do (apply event handler args)))
