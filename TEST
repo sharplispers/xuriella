@@ -2330,7 +2330,7 @@ PASS copy_copy49 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy49.saxon
   Actual output: Xalan_Conformance_Tests/copy/copy_copy49.xuriella
 
-PASS copy_copy50 [XSLT-Result-Tree]: raised an xslt-error as expected
+PASS copy_copy50 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/copy/copy50.noindent-xsl
   Data: Xalan_Conformance_Tests/copy/copy50.xml
   Expected output (1): Xalan_Conformance_Tests/copy/copy_copy50.saxon
@@ -6852,7 +6852,7 @@ PASS output_output111 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output111.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output111.xuriella
 
-FAIL output_output112 [XSLT-Result-Tree]: attribute outside of element
+PASS output_output112 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output112.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output112.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output112.saxon
@@ -10162,7 +10162,7 @@ PASS Attributes__78379 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78379.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78379.xuriella
 
-PASS Attributes__78380 [XSLT-Result-Tree]: raised an xslt-error as expected
+FAIL Attributes__78380 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Attributes/78380.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78380.saxon
@@ -11147,7 +11147,7 @@ PASS BVTs_bvt037 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt037.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt037.xuriella
 
-FAIL BVTs_bvt038 [Mixed]: attribute outside of element
+PASS BVTs_bvt038 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/ignore.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt038.saxon
@@ -22581,4 +22581,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2694/3076 tests.
+Passed 2695/3076 tests.

@@ -274,7 +274,7 @@
     (setf uri (unalias-uri uri)))
   (cond
     ((null *current-element*)
-     (xslt-error "attribute outside of element"))
+     (xslt-cerror "attribute outside of element"))
     (*start-tag-written-p*
      (xslt-cerror "attribute after start tag"))
     ((equal local-name "xmlns")
