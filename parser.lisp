@@ -236,7 +236,7 @@
 
 (define-instruction-parser |text| (node)
   (stp:with-attributes (select disable-output-escaping) node
-    (if disable-output-escaping
+    (if (equal disable-output-escaping "yes")
         `(xsl:unescaped-text ,(stp:string-value node))
         `(xsl:text ,(stp:string-value node)))))
 
@@ -250,7 +250,7 @@
 
 (define-instruction-parser |value-of| (node)
   (stp:with-attributes (select disable-output-escaping) node
-    (if disable-output-escaping
+    (if (equal disable-output-escaping "yes")
         `(xsl:unescaped-value-of ,select)
         `(xsl:value-of ,select))))
 

@@ -6251,23 +6251,13 @@ FAIL output_output06 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output06.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output06.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 3, column 15 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 3, column 15 in NIL
-
-FAIL output_output07 [XSLT-Result-Tree]: output doesn't match
+PASS output_output07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output07.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output07.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output07.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output07.xuriella
 
-FAIL output_output08 [XSLT-Result-Tree]: output doesn't match
+PASS output_output08 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output08.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output08.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output08.saxon
@@ -13689,16 +13679,6 @@ PASS Elements__78358 [XSLT-Result-Tree]: raised an xslt-error as expected
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78358.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78358.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: Expected '!' or '?' after '<' in DTD.
-Context:
-  Line 3, column 8 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Expected '!' or '?' after '<' in DTD.
-Context:
-  Line 3, column 8 in NIL
 
 FAIL Elements__78362 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Elements/78362.noindent-xsl
@@ -22655,4 +22635,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2664/3081 tests.
+Passed 2666/3081 tests.
