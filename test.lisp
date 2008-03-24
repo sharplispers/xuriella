@@ -303,11 +303,17 @@
     "copy_copy61"
     "copy_copy62"
 
+    ;; we perform recovery, but saxon doesn't.  Recovery results in non-XML
+    ;; output, which we can't parse for comparison against the official test
+    ;; case.
+    "output_output75"
+
     ;; we'd pass these tests, but the test authors forgot to declare the
     ;; entity they're writing, so we can't parse it for comparison.
     "output_output06"
     "output_output10"
     "output_output61"
+
     ;; another similar test where the output is unparsable, except that
     ;; here an entity declaration wouldn't have helped either:
     "Copying_ResultTreeFragmentWithEscapedText"
