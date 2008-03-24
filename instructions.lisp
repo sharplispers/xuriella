@@ -344,11 +344,11 @@
              (if numberp
                  (let ((n-a (xpath:number-value i))
                        (n-b (xpath:number-value j)))
-                   (cond ((and (xpath::nan-p a)
-                               (not (xpath::nan-p b)))
+                   (cond ((and (xpath::nan-p n-a)
+                               (not (xpath::nan-p n-b)))
                           -1)
-                         ((and (not (xpath::nan-p a))
-                               (xpath::nan-p b))
+                         ((and (not (xpath::nan-p n-a))
+                               (xpath::nan-p n-b))
                           1)
                          ((xpath::compare-numbers '< n-a n-b) -1)
                          ((xpath::compare-numbers '> n-a n-b) 1)
@@ -394,7 +394,7 @@
           (let ((nodes (xpath::force
                         (xpath::sorted-pipe-of selected))))
             (when sort-predicate
-              (setf nodes (sort (copy-list nodes) sort-predicate)))
+              (setf nodes (stable-sort (copy-list nodes) sort-predicate)))
             (loop
               with n = (length nodes)
               for node in nodes

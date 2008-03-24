@@ -8481,7 +8481,7 @@ PASS select_select86 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/select/select_select86.saxon
   Actual output: Xalan_Conformance_Tests/select/select_select86.xuriella
 
-FAIL sort_sort01 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort01.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort01.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort01.saxon
@@ -8529,7 +8529,7 @@ PASS sort_sort08 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort08.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort08.xuriella
 
-FAIL sort_sort09 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort09 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort09.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort09.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort09.saxon
@@ -8553,7 +8553,7 @@ PASS sort_sort12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort12.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort12.xuriella
 
-FAIL sort_sort13 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort13 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort13.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort13.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort13.saxon
@@ -8625,7 +8625,7 @@ PASS sort_sort27 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort27.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort27.xuriella
 
-FAIL sort_sort28 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort28 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort28.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort28.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort28.saxon
@@ -8697,7 +8697,7 @@ PASS sort_sort39 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort39.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort39.xuriella
 
-FAIL sort_sort40 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort40 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort40.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort40.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort40.saxon
@@ -20471,7 +20471,7 @@ PASS Sorting__84006 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__84006.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__84006.xuriella
 
-FAIL Sorting__84186 [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting__84186 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/84186.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/84186a.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__84186.saxon
@@ -20685,7 +20685,7 @@ PASS Sorting_Sort_AllTextElementsAreSame [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_AllTextElementsAreSame.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_AllTextElementsAreSame.xuriella
 
-FAIL Sorting_Sort_CommaDelimitedNumber [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting_Sort_CommaDelimitedNumber [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_CommaDelimitedValuesNumber.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_CommaDelimitedNumber.saxon
@@ -20715,7 +20715,7 @@ FAIL Sorting_Sort_PositiveNumbersHavePlusSign [XSLT-Data-Manipulation]: output d
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_PositiveNumbersHavePlusSign.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_PositiveNumbersHavePlusSign.xuriella
 
-FAIL Sorting_Sort_SortEmptyTextNodesWithDataTypeNumber [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting_Sort_SortEmptyTextNodesWithDataTypeNumber [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortOnEmptyTextNodesWithTypeNumber.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortEmptyTextNodesWithDataTypeNumber.saxon
@@ -22607,4 +22607,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2699/3076 tests.
+Passed 2707/3076 tests.
