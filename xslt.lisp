@@ -694,33 +694,39 @@
   doctype-public)
 
 (defun parse-output! (stylesheet <transform>)
-  (let ((outputs (list-toplevel "output" <transform>)))
-    (when outputs
-      (when (cdr outputs)
-        ;; FIXME:
-        ;;   - concatenate cdata-section-elements
-        ;;   - the others must not conflict
-        (error "oops, merging of output elements not supported yet"))
-      (let ((<output> (car outputs))
-            (spec (stylesheet-output-specification stylesheet)))
-        (stp:with-attributes (;; version
-                              method
-                              indent
-                              encoding
+  (dolist (<output> (list-toplevel "output" <transform>))
+    (let ((spec (stylesheet-output-specification stylesheet)))
+      (stp:with-attributes ( ;; version
+                            method
+                            indent
+                            encoding
 ;;;                           media-type
-                              doctype-system
-                              doctype-public
-                              omit-xml-declaration
+                            doctype-system
+                            doctype-public
+                            omit-xml-declaration
 ;;;                           standalone
 ;;;                           cdata-section-elements
-                              )
-            <output>
-          (setf (output-method spec) method)
-          (setf (output-indent spec) indent)
-          (setf (output-encoding spec) encoding)
-          (setf (output-doctype-system spec) doctype-system)
-          (setf (output-doctype-public spec) doctype-public)
-          (setf (output-omit-xml-declaration spec) omit-xml-declaration))))))
+                            )
+          <output>
+        (when method
+          (setf (output-method spec) method))
+        (when indent
+          (setf (output-indent spec) indent))
+        (when encoding
+          (setf (output-encoding spec) encoding))
+        (when doctype-system
+          (setf (output-doctype-system spec) doctype-system))
+        (when doctype-public
+          (setf (output-doctype-public spec) doctype-public))
+        (when omit-xml-declaration
+          (setf (output-omit-xml-declaration spec) omit-xml-declaration))
+;;;         (when cdata-section-elements
+;;;           (setf (output-cdata-section-elements spec)
+;;;                 (concatenate 'string
+;;;                              (output-cdata-section-elements spec)
+;;;                              " "
+;;;                              cdata-section-elements)))
+        ))))
 
 (defun make-empty-declaration-array ()
   (make-array 1 :fill-pointer 0 :adjustable t))

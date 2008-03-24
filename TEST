@@ -6483,7 +6483,7 @@ PASS output_output45 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output45.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output45.xuriella
 
-FAIL output_output46 [XSLT-Result-Tree]: oops, merging of output elements not supported yet
+PASS output_output46 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output46.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output46.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output46.saxon
@@ -6734,7 +6734,7 @@ FAIL output_output86 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): Xalan_Conformance_Tests/output/output_output86.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output86.xuriella
 
-FAIL output_output87 [XSLT-Result-Tree]: oops, merging of output elements not supported yet
+PASS output_output87 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output87.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output87.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output87.saxon
@@ -10777,8 +10777,7 @@ FAIL AttributeSets__91099 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.xuriella
 
-FAIL AttributeSets__91100 [XSLT-Result-Tree]: condition of incorrect type: 
-oops, merging of output elements not supported yet
+PASS AttributeSets__91100 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91100.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/AttributeSets/91100a.xsl
@@ -11215,7 +11214,7 @@ PASS BVTs_bvt040 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt040.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt040.xuriella
 
-FAIL BVTs_bvt041 [Mixed]: oops, merging of output elements not supported yet
+FAIL BVTs_bvt041 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-out.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-out.inc
@@ -12840,13 +12839,13 @@ FAIL BVTs_bvt061 [Mixed]: There is no applicable method for the generic function
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt061.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt061.xuriella
 
-FAIL BVTs_bvt062 [Mixed]: oops, merging of output elements not supported yet
+FAIL BVTs_bvt062 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-cdata.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt062.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt062.xuriella
 
-FAIL BVTs_bvt063 [Mixed]: oops, merging of output elements not supported yet
+FAIL BVTs_bvt063 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-combine.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt063.saxon
@@ -12878,13 +12877,13 @@ FAIL BVTs_bvt067 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt067.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt067.xuriella
 
-FAIL BVTs_bvt069 [Mixed]: oops, merging of output elements not supported yet
+PASS BVTs_bvt069 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-text.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt069.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt069.xuriella
 
-FAIL BVTs_bvt070 [Mixed]: oops, merging of output elements not supported yet
+PASS BVTs_bvt070 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-text2.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt070.saxon
@@ -16433,21 +16432,21 @@ PASS Import__91118 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91118.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91118.xuriella
 
-FAIL Import__91134 [XSLT-Structure]: oops, merging of output elements not supported yet
+FAIL Import__91134 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Import/91134a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91134b.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91134.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91134.xuriella
 
-FAIL Import__91135 [XSLT-Structure]: oops, merging of output elements not supported yet
+PASS Import__91135 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91135a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91135c.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91135.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91135.xuriella
 
-FAIL Import__91136 [XSLT-Structure]: oops, merging of output elements not supported yet
+FAIL Import__91136 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Import/91136a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91136c.xsl
@@ -16646,7 +16645,7 @@ PASS Import_VariableScopeInNestedImports [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import_VariableScopeInNestedImports.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import_VariableScopeInNestedImports.xuriella
 
-FAIL Include__77489 [XSLT-Structure]: oops, merging of output elements not supported yet
+FAIL Include__77489 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Include/XSLT03005.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/XSLT03005a.xsl
@@ -16790,7 +16789,7 @@ PASS Include__78398 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Include/Include__78398.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include__78398.xuriella
 
-FAIL Include__84463 [XSLT-Structure]: oops, merging of output elements not supported yet
+FAIL Include__84463 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Include/84463.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/84463.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/XSLT03005a.xsl
@@ -19077,7 +19076,7 @@ PASS Output__78175 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78175.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78175.xuriella
 
-FAIL Output__78177 [XSLT-Output]: oops, merging of output elements not supported yet
+PASS Output__78177 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29002.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78177.saxon
@@ -19181,20 +19180,44 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78227.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78227.xuriella
 
+WARNING: There is no such encoding: "iso-2022-jp".
 FAIL Output__78229 [XSLT-Output]: condition of incorrect type: 
-oops, merging of output elements not supported yet
+Document not well-formed: Expected '!' or '?' after '<' in DTD.
+Context:
+  Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
+
   Stylesheet: MSFT_Conformance_Tests/Output/XSLT29226.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/iso-2022-jp.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__78229.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__78229.xuriella
 
-FAIL Output__84008 [XSLT-Output]: oops, merging of output elements not supported yet
+WARNING:
+   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!ELEMENT)
+Context:
+  Line 4, column 11 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!ELEMENT)
+Context:
+  Line 4, column 11 in NIL
+
+FAIL Output__84008 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84009.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/Outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84008.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84008.xuriella
 
-FAIL Output__84009 [XSLT-Output]: oops, merging of output elements not supported yet
+WARNING:
+   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!ELEMENT)
+Context:
+  Line 4, column 11 in NIL
+
+WARNING:
+   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!ELEMENT)
+Context:
+  Line 4, column 11 in NIL
+
+FAIL Output__84009 [XSLT-Output]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Output/84008.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/Outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84009.saxon
@@ -19231,7 +19254,8 @@ error opening #P"...MSFT_Conformance_Tests/Output/OutputText.xml":
   Actual output: MSFT_Conformance_Tests/Output/Output__84013.xuriella
 
 FAIL Output__84014 [XSLT-Output]: condition of incorrect type: 
-oops, merging of output elements not supported yet
+error opening #P"...MSFT_Conformance_Tests/Output/OutputText.xml":
+  No such file or directory
   Stylesheet: MSFT_Conformance_Tests/Output/84014.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84014.saxon
@@ -19840,7 +19864,7 @@ PASS Output__84616 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84616.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84616.xuriella
 
-FAIL Output__84617 [XSLT-Output]: oops, merging of output elements not supported yet
+PASS Output__84617 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84617.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84617.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84617.saxon
@@ -22654,4 +22678,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2676/3078 tests.
+Passed 2684/3078 tests.
