@@ -316,6 +316,7 @@
 
 (defun write-processing-instruction (target data)
   (maybe-emit-start-tag)
+  (setf data (cl-ppcre:regex-replace-all "[?]>" data "? >"))
   (sax:processing-instruction *sink* target data)
   data)
 

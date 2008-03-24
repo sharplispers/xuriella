@@ -6573,22 +6573,6 @@ PASS output_output60 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output60.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output60.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 2, column 15 in NIL
-
-WARNING:
-   comparison failed: Document not well-formed: Entity 'nbsp' is not defined.
-Context:
-  Line 3, column 15 in NIL
-
-FAIL output_output61 [XSLT-Result-Tree]: output doesn't match
-  Stylesheet: Xalan_Conformance_Tests/output/output61.noindent-xsl
-  Data: Xalan_Conformance_Tests/output/output61.xml
-  Expected output (1): Xalan_Conformance_Tests/output/output_output61.saxon
-  Actual output: Xalan_Conformance_Tests/output/output_output61.xuriella
-
 PASS output_output62 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output62.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output62.xml
@@ -6649,7 +6633,7 @@ PASS output_output71 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/output/output_output71.saxon
   Actual output: Xalan_Conformance_Tests/output/output_output71.xuriella
 
-FAIL output_output72 [XSLT-Result-Tree]: output doesn't match
+PASS output_output72 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output72.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output72.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output72.saxon
@@ -22678,4 +22662,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2684/3078 tests.
+Passed 2685/3077 tests.
