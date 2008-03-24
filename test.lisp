@@ -528,7 +528,9 @@
                           (cxml::main-zstream cxml::context))
                     (:seen-< #\<)
                     (:? #\?)
-                    ((nil :s) nil))))
+                    ((nil :s)
+                     (setf prev-pos (runes:xstream-position xstream))
+                     nil))))
                (off-by-one-p (or seen-char (eq junk-info :nada)))
                (new-pos (- prev-pos (if off-by-one-p 1 0))))
           ;; copy doctype over
@@ -627,7 +629,12 @@
         (s (parse-for-comparison q)))
     (maybe-normalize-test-spaces (stp:document-element r) normalize)
     (maybe-normalize-test-spaces (stp:document-element s) normalize)
-    (node= (stp:document-element r) (stp:document-element s))))
+    (and (let ((u (stp:document-type r))
+               (v (stp:document-type s)))
+           (if u
+               (and v (node= u v))
+               (null v)))
+         (node= (stp:document-element r) (stp:document-element s)))))
 
 ;; FIXME: don't do this in <pre> etc.
 (defun normalize-html-whitespace (node)
