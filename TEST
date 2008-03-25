@@ -9797,7 +9797,7 @@ PASS variable_variable48 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable48.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable48.xuriella
 
-FAIL variable_variable49 [XSLT-Result-Tree]: undeclared variable: p1 in namespace 
+PASS variable_variable49 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/variable/variable49.noindent-xsl
   Data: Xalan_Conformance_Tests/variable/variable49.xml
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable49.saxon
@@ -12967,7 +12967,7 @@ FAIL BVTs_bvt090 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt090.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt090.xuriella
 
-FAIL BVTs_bvt091 [Mixed]: undeclared variable: abs in namespace 
+PASS BVTs_bvt091 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/var-nested.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt091.saxon
@@ -22607,4 +22607,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2721/3076 tests.
+Passed 2723/3076 tests.

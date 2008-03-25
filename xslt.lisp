@@ -1467,25 +1467,22 @@
           (apply-to-result-tree-fragment ctx inner-thunk)))
       (compile-xpath value env)))
 
-(defun compile-var-bindings/nointern (forms env)
-  (loop
-    for (name value) in forms
-    collect (multiple-value-bind (local-name uri)
-                (decode-qname name env nil)
-              (list (cons local-name uri)
-                    (xslt-trace-thunk
-                     (compile-value-thunk value env)
-                     "local variable ~s = ~s" name :result)))))
+(defun compile-var-binding (name value env)
+  (multiple-value-bind (local-name uri)
+      (decode-qname name env nil)
+    (let ((thunk (xslt-trace-thunk
+                  (compile-value-thunk value env)
+                  "local variable ~s = ~s" name :result)))
+      (list (cons local-name uri)
+            (push-variable local-name
+                           uri
+                           *lexical-variable-declarations*)
+            thunk))))
 
 (defun compile-var-bindings (forms env)
   (loop
-     for (cons thunk) in (compile-var-bindings/nointern forms env)
-     for (local-name . uri) = cons
-     collect (list cons
-                   (push-variable local-name
-                                  uri
-                                  *lexical-variable-declarations*)
-                   thunk)))
+     for (name value) in forms
+     collect (compile-var-binding name value env)))
 
 (defun compile-template (<template> env position)
   (stp:with-attributes (match name priority mode) <template>
