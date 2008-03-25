@@ -327,14 +327,41 @@
     (t
      (copy-leaf-node node))))
 
+(defparameter *lower-first-order*
+  #(#\  #\! #\" #\# #\$ #\% #\& #\' #\( #\) #\* #\+ #\, #\- #\. #\/ #\0 #\1 #\2
+    #\3 #\4 #\5 #\6 #\7 #\8 #\9 #\: #\; #\< #\= #\> #\? #\@ #\H #\J #\L #\N #\P
+    #\R #\T #\V #\X #\Z #\\ #\^ #\` #\b #\d #\f #\h #\j #\l #\n #\p #\r #\t #\v
+    #\x #\z #\A #\B #\C #\D #\E #\F #\G #\I #\K #\M #\O #\Q #\S #\U #\W #\Y #\[
+    #\] #\_ #\a #\c #\e #\g #\i #\k #\m #\o #\q #\s #\u #\w #\y #\{ #\| #\} #\~
+    #\Rubout))
+
+(defparameter *upper-first-order*
+  #(#\  #\! #\" #\# #\$ #\% #\& #\' #\( #\) #\* #\+ #\, #\- #\. #\/ #\0 #\1 #\2
+    #\3 #\4 #\5 #\6 #\7 #\8 #\9 #\: #\; #\< #\= #\> #\? #\@ #\G #\I #\K #\M #\O
+    #\Q #\S #\U #\W #\Y #\[ #\] #\_ #\a #\c #\e #\g #\i #\k #\m #\o #\q #\s #\u
+    #\w #\y #\A #\B #\C #\D #\E #\F #\H #\J #\L #\N #\P #\R #\T #\V #\X #\Z #\\
+    #\^ #\` #\b #\d #\f #\h #\j #\l #\n #\p #\r #\t #\v #\x #\z #\{ #\| #\} #\~
+    #\Rubout))
+
+(defun make-collation-key (str table)
+  (map 'string
+       (lambda (char)
+         (let ((code (char-code char)))
+           (if (<= 32 code 127)
+               (elt table (- code 32))
+               char)))
+       str))
+
 (defun make-sorter (spec env)
   (destructuring-bind (&key select lang data-type order case-order)
       (cdr spec)
-    ;; FIXME: implement case-order
-    (declare (ignore lang case-order))
+    (declare (ignore lang))
     (let ((select-thunk (compile-xpath (or select ".") env))
           (numberp (equal data-type "number"))
-          (f (if (equal order "descending") -1 1)))
+          (f (if (equal order "descending") -1 1))
+          (char-table (if (equal case-order "lower-first")
+                          *lower-first-order*
+                          *upper-first-order*)))
       (lambda (a b)
         (let ((i (xpath:string-value
                   (funcall select-thunk (xpath:make-context a))))
@@ -353,10 +380,13 @@
                          ((xpath::compare-numbers '< n-a n-b) -1)
                          ((xpath::compare-numbers '> n-a n-b) 1)
                          (t 0)))
-                 (cond
-                   ((string< i j) -1)
-                   ((equal i j) 0)
-                   (t 1)))))))))
+                 ;; zzz Unicode support!
+                 (let ((k (make-collation-key i char-table))
+                       (l (make-collation-key j char-table)))
+                   (cond
+                     ((string< k l) -1)
+                     ((equal k l) 0)
+                     (t 1))))))))))
 
 (defun compose-sorters (sorters)
   (if sorters

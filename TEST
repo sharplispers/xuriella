@@ -8487,7 +8487,7 @@ PASS sort_sort01 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort01.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort01.xuriella
 
-FAIL sort_sort02 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort02 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort02.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort02.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort02.saxon
@@ -8535,7 +8535,7 @@ PASS sort_sort09 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort09.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort09.xuriella
 
-FAIL sort_sort10 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort10 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort10.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort10.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort10.saxon
@@ -8559,13 +8559,13 @@ PASS sort_sort13 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort13.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort13.xuriella
 
-FAIL sort_sort14 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort14 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort14.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort14.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort14.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort14.xuriella
 
-FAIL sort_sort15 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort15 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort15.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort15.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort15.saxon
@@ -20697,7 +20697,7 @@ PASS Sorting_Sort_LongTextWithTrailingNumbers [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_LongTextWithTrailingNumbers.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_LongTextWithTrailingNumbers.xuriella
 
-FAIL Sorting_Sort_MixedCaseWithUpperSet [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting_Sort_MixedCaseWithUpperSet [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_MixedCaseUpperFirst.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_MixedCaseUpperFirst.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_MixedCaseWithUpperSet.saxon
@@ -20745,7 +20745,7 @@ PASS Sorting_Sort_SortTextWithNonTextCharacters [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortTextWithNonTextCharacters.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortTextWithNonTextCharacters.xuriella
 
-FAIL Sorting_Sort_SortWithUpperCharactersInMiddleOfTextLowerCaseFirst [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting_Sort_SortWithUpperCharactersInMiddleOfTextLowerCaseFirst [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_TextWithUpperInMiddle.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_TextWithUpperInMiddle.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortWithUpperCharactersInMiddleOfTextLowerCaseFirst.saxon
@@ -20757,13 +20757,13 @@ PASS Sorting_Sort_SortWithUpperCharactersInMiddleOfTextUpperCaseFirst [XSLT-Data
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortWithUpperCharactersInMiddleOfTextUpperCaseFirst.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortWithUpperCharactersInMiddleOfTextUpperCaseFirst.xuriella
 
-FAIL Sorting_Sort_TextNodesSpanMultipleLines [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting_Sort_TextNodesSpanMultipleLines [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_TextNodesSpanMultipleLines.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_TextNodesSpanMultipleLines.xuriella
 
-FAIL Sorting_Sort_UpperFirstOnTextWithUpper [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting_Sort_UpperFirstOnTextWithUpper [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortUpperFirstBase.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortUpperFirstBase.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_UpperFirstOnTextWithUpper.saxon
@@ -22607,4 +22607,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2707/3076 tests.
+Passed 2715/3076 tests.
