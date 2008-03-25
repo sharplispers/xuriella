@@ -1170,7 +1170,10 @@
 
 (defun apply-templates/list (list &key param-bindings sort-predicate mode)
   (when sort-predicate
-    (setf list (sort list sort-predicate)))
+    (setf list
+          (mapcar #'xpath:context-node
+                  (stable-sort (contextify-node-list list)
+                               sort-predicate))))
   (let* ((n (length list))
          (s/d (lambda () n)))
     (loop

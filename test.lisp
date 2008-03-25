@@ -349,14 +349,8 @@
                                          :test #'equal))))))))
 
 (defun run-named-test (name &optional (d *tests-directory*))
-  (klacks:with-open-source
-      (source (klacks:make-tapping-source
-               (cxml:make-source (merge-pathnames "katalog.xml" d))))
-    (let ((*default-pathname-defaults* (merge-pathnames d))
-          (*break-on-signals* 'error))
-      (map-tests #'run-test
-                 source
-                 :test (lambda (test) (equal (test-id test) name))))))
+  (let ((*break-on-signals* 'error))
+    (run-tests :filter (format nil "/~A$" name) :directory d)))
 
 (defun copy-file (p q)
   (with-open-file (in p :element-type '(unsigned-byte 8))
@@ -842,7 +836,7 @@
                   (report nil ": saxon error not signalled and official output not a match")))))))))))
 
 (defun run-xpath-tests ()
-  (run-tests '("XPath-Expression" "XSLT-Data-Model")))
+  (run-tests "XPath-Expression/|XSLT-Data-Model/"))
 
 
 ;;;; from cxml-stp-test

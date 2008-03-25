@@ -352,11 +352,36 @@
 (defun make-collation-key (str table)
   (map 'string (lambda (char) (collation-char char table)) str))
 
+(defun compare-numbers (n-a n-b)
+  (cond ((and (xpath::nan-p n-a)
+              (not (xpath::nan-p n-b)))
+         -1)
+        ((and (not (xpath::nan-p n-a))
+              (xpath::nan-p n-b))
+         1)
+        ((xpath::compare-numbers '< n-a n-b) -1)
+        ((xpath::compare-numbers '> n-a n-b) 1)
+        (t 0)))
+
 (defun mismatch* (a b)
   (let ((pos (mismatch a b)))
     (if (and pos (< pos (min (length a) (length b))))
         pos
         nil)))
+
+(defun compare-strings (i j char-table)
+  ;; zzz Unicode support!
+  (let ((pos
+         (or (mismatch* (string-downcase i) (string-downcase j))
+             (mismatch* i j))))
+    (if pos
+        (let ((c (collation-char (elt i pos) char-table))
+              (d (collation-char (elt j pos) char-table)))
+          (cond
+            ((char< c d) -1)
+            ((char= c d) 0)
+            (t 1)))
+        (signum (- (length i) (length j))))))
 
 (defun make-sorter (spec env)
   (destructuring-bind (&key select lang data-type order case-order)
@@ -369,35 +394,13 @@
                           *lower-first-order*
                           *upper-first-order*)))
       (lambda (a b)
-        (let ((i (xpath:string-value
-                  (funcall select-thunk (xpath:make-context a))))
-              (j (xpath:string-value
-                  (funcall select-thunk (xpath:make-context b)))))
+        (let ((i (xpath:string-value (funcall select-thunk a)))
+              (j (xpath:string-value (funcall select-thunk b))))
           (* f
              (if numberp
-                 (let ((n-a (xpath:number-value i))
-                       (n-b (xpath:number-value j)))
-                   (cond ((and (xpath::nan-p n-a)
-                               (not (xpath::nan-p n-b)))
-                          -1)
-                         ((and (not (xpath::nan-p n-a))
-                               (xpath::nan-p n-b))
-                          1)
-                         ((xpath::compare-numbers '< n-a n-b) -1)
-                         ((xpath::compare-numbers '> n-a n-b) 1)
-                         (t 0)))
-                 ;; zzz Unicode support!
-                 (let ((pos
-                        (or (mismatch* (string-downcase i) (string-downcase j))
-                            (mismatch* i j))))
-                   (if pos
-                       (let ((c (collation-char (elt i pos) char-table))
-                             (d (collation-char (elt j pos) char-table)))
-                         (cond
-                           ((char< c d) -1)
-                           ((char= c d) 0)
-                           (t 1)))
-                       (signum (- (length i) (length j))))))))))))
+                 (compare-numbers (xpath:number-value i)
+                                  (xpath:number-value j))
+                 (compare-strings i j char-table))))))))
 
 (defun compose-sorters (sorters)
   (if sorters
@@ -417,6 +420,14 @@
     (lambda (a b)
       (minusp (funcall sorter a b)))))
 
+(defun contextify-node-list (nodes)
+  (let ((size (length nodes)))
+    (loop
+       for position from 1
+       for node in nodes
+       collect
+         (xpath:make-context node size position))))
+
 (define-instruction xsl:for-each (args env)
   (destructuring-bind (select &optional decls &rest body) args
     (unless (and (consp decls)
@@ -432,17 +443,14 @@
         (let ((selected (funcall select-thunk ctx)))
           (unless (xpath:node-set-p selected)
             (xslt-error "for-each select expression should yield a node-set"))
-          (let ((nodes (xpath::force
-                        (xpath::sorted-pipe-of selected))))
+          (let ((nodes (xpath::force (xpath::sorted-pipe-of selected))))
             (when sort-predicate
-              (setf nodes (stable-sort (copy-list nodes) sort-predicate)))
-            (loop
-              with n = (length nodes)
-              for node in nodes
-              for i from 1
-              do
-           (funcall body-thunk
-                    (xpath:make-context node (lambda () n) i)))))))))
+              (setf nodes
+                    (mapcar #'xpath:context-node
+                            (stable-sort (contextify-node-list nodes)
+                                         sort-predicate))))
+            (dolist (ctx (contextify-node-list nodes))
+              (funcall body-thunk ctx))))))))
 
 (define-instruction xsl:with-namespaces (args env)
   (destructuring-bind ((&rest forms) &rest body) args

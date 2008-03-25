@@ -8583,7 +8583,7 @@ PASS sort_sort20 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort20.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort20.xuriella
 
-FAIL sort_sort21 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort21 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort21.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort21.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort21.saxon
@@ -22607,4 +22607,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2717/3076 tests.
+Passed 2718/3076 tests.
