@@ -8649,19 +8649,19 @@ PASS sort_sort31 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort31.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort31.xuriella
 
-FAIL sort_sort32 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort32 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort32.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort32.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort32.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort32.xuriella
 
-FAIL sort_sort33 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort33 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort33.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort33.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort33.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort33.xuriella
 
-FAIL sort_sort34 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort34 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort34.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort34.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort34.saxon
@@ -22607,4 +22607,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2718/3076 tests.
+Passed 2721/3076 tests.

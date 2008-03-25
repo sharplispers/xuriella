@@ -383,42 +383,59 @@
             (t 1)))
         (signum (- (length i) (length j))))))
 
-(defun make-sorter (spec env)
+(defun make-sorter/lazy (spec env)
   (destructuring-bind (&key select lang data-type order case-order)
       (cdr spec)
-    (declare (ignore lang))
     (let ((select-thunk (compile-xpath (or select ".") env))
-          (numberp (equal data-type "number"))
-          (f (if (equal order "descending") -1 1))
-          (char-table (if (equal case-order "lower-first")
-                          *lower-first-order*
-                          *upper-first-order*)))
-      (lambda (a b)
-        (let ((i (xpath:string-value (funcall select-thunk a)))
-              (j (xpath:string-value (funcall select-thunk b))))
-          (* f
-             (if numberp
-                 (compare-numbers (xpath:number-value i)
-                                  (xpath:number-value j))
-                 (compare-strings i j char-table))))))))
+          (lang-thunk (compile-avt (or lang "")  env))
+          (data-type-thunk (compile-avt (or data-type "") env))
+          (order-thunk (compile-avt (or order "") env))
+          (case-order-thunk (compile-avt (or case-order "") env)))
+      (lambda (ctx)
+        (let ((numberp
+               (equal (funcall data-type-thunk ctx) "number"))
+              (char-table
+               (if (equal (funcall case-order-thunk ctx) "lower-first")
+                   *lower-first-order*
+                   *upper-first-order*))
+              (f
+               (if (equal (funcall order-thunk ctx) "descending") -1 1))
+              (lang
+               (funcall lang-thunk ctx)))
+          (declare (ignore lang))
+          (lambda (a b)
+            (let ((i (xpath:string-value (funcall select-thunk a)))
+                  (j (xpath:string-value (funcall select-thunk b))))
+              (* f
+                 (if numberp
+                     (compare-numbers (xpath:number-value i)
+                                      (xpath:number-value j))
+                     (compare-strings i j char-table))))))))))
 
-(defun compose-sorters (sorters)
+(defun compose-sorters/lazy (sorters)
   (if sorters
-      (let ((this (car sorters))
-            (next (compose-sorters (rest sorters))))
-        (lambda (a b)
-          (let ((d (funcall this a b)))
-            (if (zerop d)
-                (funcall next a b)
-                d))))
-      (constantly 0)))
+      (let ((this-thunk (car sorters))
+            (next-thunk (compose-sorters/lazy (rest sorters))))
+        (lambda (ctx)
+          (let ((this (funcall this-thunk ctx))
+                (next (funcall next-thunk ctx)))
+            (lambda (a b)
+              (let ((d (funcall this a b)))
+                (if (zerop d)
+                    (funcall next a b)
+                    d))))))
+      (lambda (ctx)
+        (declare (ignore ctx))
+        (constantly 0))))
 
-(defun make-sort-predicate (decls env)
-  (let ((sorter
-         (compose-sorters
-          (mapcar (lambda (x) (make-sorter x env)) decls))))
-    (lambda (a b)
-      (minusp (funcall sorter a b)))))
+(defun make-sort-predicate/lazy (decls env)
+  (let ((sorter-thunk
+         (compose-sorters/lazy
+          (mapcar (lambda (x) (make-sorter/lazy x env)) decls))))
+    (lambda (ctx)
+      (let ((sorter (funcall sorter-thunk ctx)))
+        (lambda (a b)
+          (minusp (funcall sorter a b)))))))
 
 (defun contextify-node-list (nodes)
   (let ((size (length nodes)))
@@ -436,19 +453,19 @@
       (setf decls nil))
     (let ((select-thunk (compile-xpath select env))
           (body-thunk (compile-instruction `(progn ,@body) env))
-          (sort-predicate
+          (sort-predicate-thunk
            (when (cdr decls)
-             (make-sort-predicate (cdr decls) env))))
+             (make-sort-predicate/lazy (cdr decls) env))))
       (lambda (ctx)
         (let ((selected (funcall select-thunk ctx)))
           (unless (xpath:node-set-p selected)
             (xslt-error "for-each select expression should yield a node-set"))
           (let ((nodes (xpath::force (xpath::sorted-pipe-of selected))))
-            (when sort-predicate
+            (when sort-predicate-thunk
               (setf nodes
                     (mapcar #'xpath:context-node
                             (stable-sort (contextify-node-list nodes)
-                                         sort-predicate))))
+                                         (funcall sort-predicate-thunk ctx)))))
             (dolist (ctx (contextify-node-list nodes))
               (funcall body-thunk ctx))))))))
 
@@ -617,9 +634,9 @@
             (compile-xpath (or select "child::node()") env))
            (param-bindings
             (compile-var-bindings param-binding-specs env))
-           (sort-predicate
+           (sort-predicate-thunk
             (when decls
-              (make-sort-predicate decls env))))
+              (make-sort-predicate/lazy decls env))))
       (multiple-value-bind (mode-local-name mode-uri)
           (and mode (decode-qname mode env nil))
         (lambda (ctx)
@@ -629,7 +646,8 @@
            :param-bindings
            (loop for (name nil value-thunk) in param-bindings
               collect (list name (funcall value-thunk ctx)))
-           :sort-predicate sort-predicate
+           :sort-predicate (when sort-predicate-thunk
+                             (funcall sort-predicate-thunk ctx))
            :mode (when mode
                    (or (find-mode *stylesheet*
                                   mode-local-name
