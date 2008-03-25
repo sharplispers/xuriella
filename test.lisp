@@ -270,18 +270,12 @@
 
 ;;; Process katalog.xml
 
-;; temporary configuration until we support enough XSLT that it's worth
-;; running all tests:
-(defparameter *default-categories*
-  ;; '("XSLT-Data-Model" "XPath-Expression" "XPath-Data-Model")
-  nil)
-
-(defun dribble-tests (&optional (category *default-categories*)
-                      (d *tests-directory*))
+(defun dribble-tests
+    (&key filter (directory *tests-directory*) (file "TEST"))
   (let ((*package* (find-package 'cl-user))
         (*print-circle* nil))
     (with-open-file (dribble
-                     (merge-pathnames "TEST"
+                     (merge-pathnames file
                                       (slot-value (asdf:find-system :xuriella)
                                                   'asdf::relative-pathname))
                      :direction :output
@@ -296,7 +290,8 @@
                         (lambda (c)
                           (warn "~A" (replace-junk (princ-to-string c)))
                           (muffle-warning c))))
-          (run-tests category d))))))
+          (run-tests :filter filter
+                     :directory directory))))))
 
 (defparameter *bad-tests*
   '( ;; some tests wants us to recover from this error, yet this one doesn't:
@@ -333,21 +328,22 @@
     "numbering_numbering95"
     "Import__91164"))
 
-(defun run-tests (&optional (categories *default-categories*)
-                  (d *tests-directory*))
-  (unless (listp categories)
-    (setf categories (list categories)))
+(defun run-tests (&key filter (directory *tests-directory*))
+  (when (typep filter '(or string cons))
+    (setf filter (cl-ppcre:create-scanner filter)))
   (klacks:with-open-source
       (source (klacks:make-tapping-source
-               (cxml:make-source (merge-pathnames "katalog.xml" d))))
-    (let ((*default-pathname-defaults* (merge-pathnames d)))
+               (cxml:make-source (merge-pathnames "katalog.xml" directory))))
+    (let ((*default-pathname-defaults* (merge-pathnames directory)))
       (map-tests #'run-test
                  source
                  :test (lambda (test)
-                         (and (or (null categories)
-                                  (find (test-category test)
-                                        categories
-                                        :test #'equal))
+                         (and (or (null filter)
+                                  (cl-ppcre:all-matches
+                                   filter
+                                   (format nil "~A/~A"
+                                           (test-category test)
+                                           (test-id test))))
                               (not (find (test-id test)
                                          *bad-tests*
                                          :test #'equal))))))))
