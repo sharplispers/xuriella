@@ -343,14 +343,20 @@
     #\^ #\` #\b #\d #\f #\h #\j #\l #\n #\p #\r #\t #\v #\x #\z #\{ #\| #\} #\~
     #\Rubout))
 
+(defun collation-char (char table)
+  (let ((code (char-code char)))
+    (if (<= 32 code 127)
+        (elt table (- code 32))
+        char)))
+
 (defun make-collation-key (str table)
-  (map 'string
-       (lambda (char)
-         (let ((code (char-code char)))
-           (if (<= 32 code 127)
-               (elt table (- code 32))
-               char)))
-       str))
+  (map 'string (lambda (char) (collation-char char table)) str))
+
+(defun mismatch* (a b)
+  (let ((pos (mismatch a b)))
+    (if (and pos (< pos (min (length a) (length b))))
+        pos
+        nil)))
 
 (defun make-sorter (spec env)
   (destructuring-bind (&key select lang data-type order case-order)
@@ -381,12 +387,17 @@
                          ((xpath::compare-numbers '> n-a n-b) 1)
                          (t 0)))
                  ;; zzz Unicode support!
-                 (let ((k (make-collation-key i char-table))
-                       (l (make-collation-key j char-table)))
-                   (cond
-                     ((string< k l) -1)
-                     ((equal k l) 0)
-                     (t 1))))))))))
+                 (let ((pos
+                        (or (mismatch* (string-downcase i) (string-downcase j))
+                            (mismatch* i j))))
+                   (if pos
+                       (let ((c (collation-char (elt i pos) char-table))
+                             (d (collation-char (elt j pos) char-table)))
+                         (cond
+                           ((char< c d) -1)
+                           ((char= c d) 0)
+                           (t 1)))
+                       (signum (- (length i) (length j))))))))))))
 
 (defun compose-sorters (sorters)
   (if sorters

@@ -8571,7 +8571,7 @@ PASS sort_sort15 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort15.saxon
   Actual output: Xalan_Conformance_Tests/sort/sort_sort15.xuriella
 
-FAIL sort_sort16 [XSLT-Result-Tree]: output doesn't match
+PASS sort_sort16 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/sort/sort16.noindent-xsl
   Data: Xalan_Conformance_Tests/sort/sort16.xml
   Expected output (1): Xalan_Conformance_Tests/sort/sort_sort16.saxon
@@ -10205,7 +10205,7 @@ PASS Attributes__81430 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81430.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81430.xuriella
 
-FAIL Attributes__81431 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__81431 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-1-use-templates_order-by.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81431.saxon
@@ -10320,7 +10320,7 @@ PASS Attributes__81543 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81543.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81543.xuriella
 
-FAIL Attributes__81544 [XSLT-Result-Tree]: output doesn't match
+PASS Attributes__81544 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-8-use-templates_order-by.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81544.saxon
@@ -20757,7 +20757,7 @@ PASS Sorting_Sort_SortWithUpperCharactersInMiddleOfTextUpperCaseFirst [XSLT-Data
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortWithUpperCharactersInMiddleOfTextUpperCaseFirst.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_SortWithUpperCharactersInMiddleOfTextUpperCaseFirst.xuriella
 
-PASS Sorting_Sort_TextNodesSpanMultipleLines [XSLT-Data-Manipulation]
+FAIL Sorting_Sort_TextNodesSpanMultipleLines [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_TextNodesSpanMultipleLines.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_TextNodesSpanMultipleLines.saxon
@@ -22607,4 +22607,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2715/3076 tests.
+Passed 2717/3076 tests.
