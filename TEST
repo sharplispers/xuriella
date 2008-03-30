@@ -10179,13 +10179,13 @@ PASS Attributes__78381 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78381.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78381.xuriella
 
-FAIL Attributes__78382 [XSLT-Result-Tree]: not a stylesheet
+PASS Attributes__78382 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78382.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78382.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78382.xuriella
 
-FAIL Attributes__78386 [XSLT-Result-Tree]: not a stylesheet
+PASS Attributes__78386 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/78386.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78386.saxon
@@ -10303,8 +10303,7 @@ PASS Attributes__81497 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81497.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81497.xuriella
 
-FAIL Attributes__81498 [XSLT-Result-Tree]: condition of incorrect type: 
-The value NIL is not of type STRING.
+PASS Attributes__81498 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-2-pi_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81498.saxon
@@ -10984,7 +10983,7 @@ when called with arguments
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt001.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt001.xuriella
 
-FAIL BVTs_bvt002 [Mixed]: not a stylesheet
+PASS BVTs_bvt002 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/attr-dup.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt002.saxon
@@ -10996,7 +10995,7 @@ PASS BVTs_bvt003 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt003.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt003.xuriella
 
-FAIL BVTs_bvt004 [Mixed]: not a stylesheet
+PASS BVTs_bvt004 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/avt-children.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt004.saxon
@@ -11080,7 +11079,7 @@ FAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a ma
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt019.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt019.xuriella
 
-PASS BVTs_bvt020 [Mixed]: raised an xslt-error as expected
+FAIL BVTs_bvt020 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/exclprefix.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/exclprefix.inc
@@ -11209,7 +11208,7 @@ FAIL BVTs_bvt045 [Mixed]: saxon error not signalled and official output not a ma
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt045.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt045.xuriella
 
-FAIL BVTs_bvt047 [Mixed]: not a stylesheet
+PASS BVTs_bvt047 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/indent-html.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt047.saxon
@@ -11233,13 +11232,18 @@ PASS BVTs_bvt053 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt053.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt053.xuriella
 
-FAIL BVTs_bvt054 [Mixed]: not a stylesheet
+FAIL BVTs_bvt054 [Mixed]: The assertion XURIELLA::PREFIX failed.
   Stylesheet: MSFT_Conformance_Tests/BVTs/name.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt054.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt054.xuriella
 
-FAIL BVTs_bvt055 [Mixed]: not a stylesheet
+WARNING:
+   comparison failed: Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "xp_1", only "xml" is legal.
+Context:
+  Line 8, column 242 in NIL
+
+PASS BVTs_bvt055 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/namespace.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt055.saxon
@@ -11251,7 +11255,7 @@ PASS BVTs_bvt056 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt056.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt056.xuriella
 
-FAIL BVTs_bvt057 [Mixed]: not a stylesheet
+FAIL BVTs_bvt057 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/ns-conflict.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt057.saxon
@@ -12874,7 +12878,7 @@ FAIL BVTs_bvt076 [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt076.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt076.xuriella
 
-FAIL BVTs_bvt077 [Mixed]: not a stylesheet
+FAIL BVTs_bvt077 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/pri-include.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/xsl2.inc
@@ -12899,7 +12903,7 @@ PASS BVTs_bvt080 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt080.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt080.xuriella
 
-FAIL BVTs_bvt081 [Mixed]: not a stylesheet
+PASS BVTs_bvt081 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/single-tmpl.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt081.saxon
@@ -13005,7 +13009,7 @@ PASS BVTs_bvt096 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt096.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt096.xuriella
 
-FAIL BVTs_bvt098 [Mixed]: not a stylesheet
+PASS BVTs_bvt098 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/ws.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt098.saxon
@@ -13550,13 +13554,13 @@ PASS Elements__78363 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78363.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78363.xuriella
 
-FAIL Elements__78364 [XSLT-Result-Tree]: not a stylesheet
+PASS Elements__78364 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/78364.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78364.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78364.xuriella
 
-FAIL Elements__83968 [XSLT-Result-Tree]: not a stylesheet
+PASS Elements__83968 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/83968.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__83968.saxon
@@ -14086,7 +14090,7 @@ PASS Errors_err034 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err034.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err034.xuriella
 
-PASS Errors_err035 [Mixed]: raised an xslt-error as expected
+FAIL Errors_err035 [Mixed]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Errors/extelem-ss.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err035.saxon
@@ -16724,7 +16728,7 @@ PASS Include_Include_IncludedStylesheetShouldHaveDifferentBaseUri [XSLT-Structur
   Expected output (1): MSFT_Conformance_Tests/Include/Include_Include_IncludedStylesheetShouldHaveDifferentBaseUri.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include_Include_IncludedStylesheetShouldHaveDifferentBaseUri.xuriella
 
-FAIL Include_Include_IncludeStylesheetWithoutXslNamespace [XSLT-Structure]: not a stylesheet
+PASS Include_Include_IncludeStylesheetWithoutXslNamespace [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Include/xslt_include_IncludedNS.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/xslt_include_IncludedNS_basexml.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/xslt_include_IncludedNSSecond.xsl
@@ -17948,13 +17952,13 @@ FAIL Namespace__78210 [XSLT-Structure]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78210.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__78210.xuriella
 
-FAIL Namespace__78214 [XSLT-Structure]: not a stylesheet
+PASS Namespace__78214 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01023a.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78214.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__78214.xuriella
 
-FAIL Namespace__78215 [XSLT-Structure]: not a stylesheet
+PASS Namespace__78215 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01022.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78215.saxon
@@ -19993,8 +19997,7 @@ PASS ProcessingInstruction__78198 [XSLT-Result-Tree]: raised an xslt-error as ex
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78198.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78198.xuriella
 
-FAIL ProcessingInstruction__78199 [XSLT-Result-Tree]: condition of incorrect type: 
-The value NIL is not of type STRING.
+PASS ProcessingInstruction__78199 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT16005.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78199.saxon
@@ -20849,14 +20852,14 @@ PASS Stylesheet__91806 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91806.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91806.xuriella
 
-FAIL Stylesheet__91807 [XSLT-Structure]: not a stylesheet
+FAIL Stylesheet__91807 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91807.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Stylesheet/91807a.xsl
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91807.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91807.xuriella
 
-FAIL Stylesheet__91808 [XSLT-Structure]: not a stylesheet
+FAIL Stylesheet__91808 [XSLT-Structure]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91808.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Stylesheet/91808a.xsl
@@ -22608,4 +22611,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2750/3076 tests.
+Passed 2763/3076 tests.

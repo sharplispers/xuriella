@@ -827,7 +827,9 @@
                       (:xpath
                        (setf constantp nil)
                        (compile-xpath (second x) env))))
-                  (parse-attribute-value-template template-string))))
+                  (if template-string
+                      (parse-attribute-value-template template-string)
+                      (xslt-error "missing avt")))))
     (values (lambda (ctx)
               (with-output-to-string (s)
                 (dolist (fn fns)
