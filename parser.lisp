@@ -201,7 +201,11 @@
     (multiple-value-bind (decls rest)
         (loop
            for i from 0
-           for cons on (stp:list-children node)
+           for cons on (stp:filter-children
+                        (lambda (node)
+                          (or (typep node 'stp:element)
+                              (xslt-error "non-element in apply-templates")))
+                        node)
            for (child . nil) = cons
            while (namep child "sort")
            collect (parse-sort child) into decls

@@ -10943,15 +10943,7 @@ PASS AVTs__77599 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77599.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77599.xuriella
 
-FAIL BVTs_bvt001 [Mixed]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION CXML-STP:LOCAL-NAME (1)>
-when called with arguments
-  (#.(CXML-STP:TEXT
-      #| :PARENT of type ELEMENT |#
-      :DATA "
-???
-???")).
+PASS BVTs_bvt001 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/BVTs/apply-templ.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt001.saxon
@@ -13870,17 +13862,7 @@ PASS Elements_ValidAttribute [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements_ValidAttribute.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements_ValidAttribute.xuriella
 
-FAIL Errors__84386 [Mixed]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION CXML-STP:LOCAL-NAME (1)>
-when called with arguments
-  (#.(CXML-STP:TEXT
-      #| :PARENT of type ELEMENT |#
-      :DATA " ?
-
-foo
-
-")).
+PASS Errors__84386 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/84386.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors__84386.saxon
@@ -13916,15 +13898,7 @@ PASS Errors_err001 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err001.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err001.xuriella
 
-FAIL Errors_err002 [Mixed]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION CXML-STP:LOCAL-NAME (1)>
-when called with arguments
-  (#.(CXML-STP:TEXT
-      #| :PARENT of type ELEMENT |#
-      :DATA "
-            Hello
-            ")).
+PASS Errors_err002 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/apply-pcdata.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err002.saxon
@@ -22495,4 +22469,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2810/3073 tests.
+Passed 2813/3073 tests.
