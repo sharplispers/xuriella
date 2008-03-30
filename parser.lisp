@@ -181,7 +181,8 @@
        ,@body)))
 
 (define-instruction-parser |fallback| (node)
-  '(progn))
+  (only-with-attributes () node
+    '(progn)))
 
 (define-instruction-parser |apply-templates| (node)
   (only-with-attributes (select mode) node
@@ -223,20 +224,21 @@
        ,@(parse-body node))))
 
 (define-instruction-parser |choose| (node)
-  `(cond
-     ,@(stp:map-children 'list
-                         (lambda (clause)
-                           (cond
-                             ((namep clause "when")
-                              (only-with-attributes (test) clause
-                                `(,test
-                                  ,@(parse-body clause))))
-                             ((namep clause "otherwise")
-                              `(t ,@(parse-body clause)))
-                             (t
-                              (xslt-error "invalid <choose> clause: ~A"
-                                          (stp:local-name clause)))))
-                         node)))
+  (only-with-attributes () node
+    `(cond
+       ,@(stp:map-children 'list
+                           (lambda (clause)
+                             (cond
+                               ((namep clause "when")
+                                (only-with-attributes (test) clause
+                                  `(,test
+                                    ,@(parse-body clause))))
+                               ((namep clause "otherwise")
+                                `(t ,@(parse-body clause)))
+                               (t
+                                (xslt-error "invalid <choose> clause: ~A"
+                                            (stp:local-name clause)))))
+                           node))))
 
 (define-instruction-parser |element| (node)
   (only-with-attributes (name namespace use-attribute-sets) node
@@ -256,7 +258,8 @@
         `(xsl:text ,(stp:string-value node)))))
 
 (define-instruction-parser |comment| (node)
-  `(xsl:comment ,@(parse-body node)))
+  (only-with-attributes () node
+    `(xsl:comment ,@(parse-body node))))
 
 (define-instruction-parser |processing-instruction| (node)
   (only-with-attributes (name) node
@@ -304,10 +307,10 @@
            :case-order ,case-order)))
 
 (define-instruction-parser |message| (node)
-  `(xsl:message ,@(parse-body node)))
-
-(define-instruction-parser |terminate| (node)
-  `(xsl:terminate ,@(parse-body node)))
+  (only-with-attributes (terminate) node
+    (if terminate
+        `(xsl:message ,@(parse-body node))
+        `(xsl:terminate ,@(parse-body node)))))
 
 (define-instruction-parser |number| (node)
   (only-with-attributes (level count from value format lang letter-value

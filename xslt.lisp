@@ -112,6 +112,7 @@
                  specs))
         (%node (gensym)))
     `(let ((,%NODE ,node))
+       (declare (ignorable ,%NODE))
        (check-for-invalid-attributes ',valid-names ,%NODE)
        (stp:with-attributes ,specs ,%NODE
          ,@body))))

@@ -316,9 +316,17 @@
   (sax:comment *sink* data)
   data)
 
+(defun nc-name-p (str)
+  (and (and (not (zerop (length str)))
+       (cxml::name-start-rune-p (elt str 0))
+       (every #'cxml::name-rune-p str))
+       (cxml::nc-name-p str)))
+
 (defun write-processing-instruction (target data)
   (maybe-emit-start-tag)
   (setf data (cl-ppcre:regex-replace-all "[?]>" data "? >"))
+  (unless (nc-name-p target)
+    (xslt-error "PI target not an NCName: ~A" target))
   (sax:processing-instruction *sink* target data)
   data)
 

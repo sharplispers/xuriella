@@ -313,6 +313,9 @@
     ;; here an entity declaration wouldn't have helped either:
     "Copying_ResultTreeFragmentWithEscapedText"
 
+    ;; input document not ns-wf
+    "Attributes__78387"
+
     ;; the following tests take a lot of time due to the problems of current matching algorithm:
     "impincl_impincl16"
     "match_match13"

@@ -10191,16 +10191,6 @@ PASS Attributes__78386 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78386.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78386.xuriella
 
-FAIL Attributes__78387 [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: Processing instruction target "xml:namespace" is not a valid NcName.
-Context:
-  Line 6, column 52 in file://+...MSFT_Conformance_Tests/Attributes/domtest1.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Attributes/78387.noindent-xsl
-  Data: MSFT_Conformance_Tests/Attributes/domtest1.xml
-  Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78387.saxon
-  Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78387.xuriella
-
 PASS Attributes__81430 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-1-template_for.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
@@ -10249,7 +10239,7 @@ PASS Attributes__81487 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81487.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81487.xuriella
 
-FAIL Attributes__81488 [XSLT-Result-Tree]: expected error not signalled: 
+PASS Attributes__81488 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-1-comment_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81488.saxon
@@ -10363,7 +10353,7 @@ PASS Attributes__81551 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81551.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__81551.xuriella
 
-FAIL Attributes__81552 [XSLT-Result-Tree]: expected error not signalled: 
+PASS Attributes__81552 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/22-8-comment_name.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__81552.saxon
@@ -10728,7 +10718,7 @@ PASS AttributeSets__91098 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91098.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91098.xuriella
 
-FAIL AttributeSets__91099 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91099 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91099.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.saxon
@@ -11079,7 +11069,7 @@ FAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a ma
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt019.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt019.xuriella
 
-FAIL BVTs_bvt020 [Mixed]: saxon error not signalled and official output not a match
+PASS BVTs_bvt020 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/BVTs/exclprefix.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/exclprefix.inc
@@ -14215,15 +14205,7 @@ WARNING: <?xml version="1.0" encoding="UTF-8"?>
 <x/>
 WARNING: <?xml version="1.0" encoding="UTF-8"?>
 <x/>
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-
-???Joe
-???Bob
-???Trenton Literary Review Honorable Mention
-??
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-<x/>
-FAIL Errors_err060 [Mixed]: expected error not signalled: 
+PASS Errors_err060 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/message.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err060.saxon
@@ -17053,11 +17035,7 @@ PASS Keys_PositionLastTest1 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys_PositionLastTest1.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys_PositionLastTest1.xuriella
 
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This is message 1.
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This is message 2.
-FAIL Messages__78220 [XSLT-Output]: expected error not signalled: 
+PASS Messages__78220 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Messages/78220.noindent-xsl
   Data: MSFT_Conformance_Tests/Messages/message.xml
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__78220.saxon
@@ -17073,31 +17051,19 @@ PASS Messages__91758 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91758.saxon
   Actual output: MSFT_Conformance_Tests/Messages/Messages__91758.xuriella
 
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This message is the content from xsl:text
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This message is the content from xsl:text
-FAIL Messages__91759 [XSLT-Output]: expected error not signalled: 
+PASS Messages__91759 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Messages/91759.noindent-xsl
   Data: MSFT_Conformance_Tests/Messages/message.xml
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91759.saxon
   Actual output: MSFT_Conformance_Tests/Messages/Messages__91759.xuriella
 
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This is message 1.
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This is message 2.
-FAIL Messages__91762 [XSLT-Output]: expected error not signalled: 
+PASS Messages__91762 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Messages/91762.noindent-xsl
   Data: MSFT_Conformance_Tests/Messages/message.xml
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91762.saxon
   Actual output: MSFT_Conformance_Tests/Messages/Messages__91762.xuriella
 
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This is message 1.
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-This is message 2.
-FAIL Messages__91763 [XSLT-Output]: expected error not signalled: 
+PASS Messages__91763 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Messages/91763.noindent-xsl
   Data: MSFT_Conformance_Tests/Messages/message.xml
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91763.saxon
@@ -17109,11 +17075,7 @@ FAIL Messages__91764 [XSLT-Output]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91764.saxon
   Actual output: MSFT_Conformance_Tests/Messages/Messages__91764.xuriella
 
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-
-WARNING: <?xml version="1.0" encoding="UTF-8"?>
-
-FAIL Messages__91765 [XSLT-Output]: expected error not signalled: 
+PASS Messages__91765 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Messages/91765.noindent-xsl
   Data: MSFT_Conformance_Tests/Messages/message.xml
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91765.saxon
@@ -17769,9 +17731,7 @@ FAIL Namespace__77658 [XSLT-Structure]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77658.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77658.xuriella
 
-FAIL Namespace__77659 [XSLT-Structure]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Namespace/Plants.xml":
-  No such file or directory
+PASS Namespace__77659 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/comment10.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77659.saxon
@@ -20042,15 +20002,7 @@ PASS ProcessingInstruction__78394 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78394.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78394.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: Processing instruction target "xsl:foo" is not a valid NcName.
-Context:
-  Line 5, column 4 in NIL
-
-WARNING:
-   comparison failed: error opening #P"...MSFT_Conformance_Tests/REF_OUT/ProcessingInstruction/xslt_invalid_pi_name.txt":
-                     No such file or directory
-FAIL ProcessingInstruction_InvalidPIName2 [XSLT-Result-Tree]: output doesn't match
+FAIL ProcessingInstruction_InvalidPIName2 [XSLT-Result-Tree]: PI target not an NCName: xsl:foo
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/xslt_invalid_pi_name2.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_InvalidPIName2.saxon
@@ -22611,4 +22563,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2763/3076 tests.
+Passed 2774/3075 tests.

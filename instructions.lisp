@@ -535,6 +535,16 @@
              (funcall thunk ctx)))))
     (make-result-tree-fragment (stp:document-element document))))
 
+(defun compile-var-bindings/nointern (forms env)
+  (loop
+    for (name value) in forms
+    collect (multiple-value-bind (local-name uri)
+                (decode-qname name env nil)
+              (list (cons local-name uri)
+                    (xslt-trace-thunk
+                     (compile-value-thunk value env)
+                     "local variable ~s = ~s" name :result)))))
+
 (define-instruction let (args env)
   (destructuring-bind ((&rest forms) &rest body) args
     (let* ((old-top (length *lexical-variable-declarations*))
