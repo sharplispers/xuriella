@@ -9930,7 +9930,9 @@ PASS variable_variable70 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/variable/variable_variable70.saxon
   Actual output: Xalan_Conformance_Tests/variable/variable_variable70.xuriella
 
-FAIL ver_ver01 [XSLT-Result-Tree]: undefined instruction: exciting-new-8.5-feature
+WARNING: <?xml version="1.0" encoding="UTF-8"?>
+This stylesheet requires XSLT 8.5 or higher
+PASS ver_ver01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/ver/ver01.noindent-xsl
   Data: Xalan_Conformance_Tests/ver/ver01.xml
   Expected output (1): Xalan_Conformance_Tests/ver/ver_ver01.saxon
@@ -9942,19 +9944,19 @@ PASS ver_ver04 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/ver/ver_ver04.saxon
   Actual output: Xalan_Conformance_Tests/ver/ver_ver04.xuriella
 
-FAIL ver_ver05 [XSLT-Result-Tree]: undefined instruction: exciting-new-17.1-feature
+PASS ver_ver05 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/ver/ver05.noindent-xsl
   Data: Xalan_Conformance_Tests/ver/ver05.xml
   Expected output (1): Xalan_Conformance_Tests/ver/ver_ver05.saxon
   Actual output: Xalan_Conformance_Tests/ver/ver_ver05.xuriella
 
-FAIL ver_ver06 [XSLT-Result-Tree]: undefined instruction: exciting-new-17.2-feature
+PASS ver_ver06 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/ver/ver06.noindent-xsl
   Data: Xalan_Conformance_Tests/ver/ver06.xml
   Expected output (1): Xalan_Conformance_Tests/ver/ver_ver06.saxon
   Actual output: Xalan_Conformance_Tests/ver/ver_ver06.xuriella
 
-FAIL ver_ver07 [XSLT-Result-Tree]: undefined instruction: result-document
+PASS ver_ver07 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/ver/ver07.noindent-xsl
   Data: Xalan_Conformance_Tests/ver/ver07.xml
   Expected output (1): Xalan_Conformance_Tests/ver/ver_ver07.saxon
@@ -11098,7 +11100,7 @@ PASS BVTs_bvt022 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt022.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt022.xuriella
 
-FAIL BVTs_bvt023 [Mixed]: undefined instruction: new
+PASS BVTs_bvt023 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/fallback.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt023.saxon
@@ -14078,7 +14080,7 @@ PASS Errors_err033 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err033.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err033.xuriella
 
-FAIL Errors_err034 [Mixed]: expected error not signalled: 
+PASS Errors_err034 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/extelem-bad.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err034.saxon
@@ -16011,25 +16013,25 @@ PASS Fallback__91817 [XSLT-Extendability]
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91817.saxon
   Actual output: MSFT_Conformance_Tests/Fallback/Fallback__91817.xuriella
 
-FAIL Fallback__91818 [XSLT-Extendability]: undefined instruction: foo
+PASS Fallback__91818 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/Fallback/91818.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91818.saxon
   Actual output: MSFT_Conformance_Tests/Fallback/Fallback__91818.xuriella
 
-FAIL Fallback__91819 [XSLT-Extendability]: undefined instruction: foo
+PASS Fallback__91819 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/Fallback/91819.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91819.saxon
   Actual output: MSFT_Conformance_Tests/Fallback/Fallback__91819.xuriella
 
-FAIL Fallback__91820 [XSLT-Extendability]: undefined instruction: foo
+PASS Fallback__91820 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/Fallback/91820.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91820.saxon
   Actual output: MSFT_Conformance_Tests/Fallback/Fallback__91820.xuriella
 
-FAIL Fallback__91821 [XSLT-Extendability]: undefined instruction: foo
+PASS Fallback__91821 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/Fallback/91821.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91821.saxon
@@ -16041,13 +16043,13 @@ PASS Fallback__91822 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91822.saxon
   Actual output: MSFT_Conformance_Tests/Fallback/Fallback__91822.xuriella
 
-FAIL Fallback__91823 [XSLT-Extendability]: undefined instruction: foo
+PASS Fallback__91823 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/Fallback/91823.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91823.saxon
   Actual output: MSFT_Conformance_Tests/Fallback/Fallback__91823.xuriella
 
-FAIL Fallback__91824 [XSLT-Extendability]: undefined instruction: foo
+PASS Fallback__91824 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/Fallback/91824.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91824.saxon
@@ -16173,13 +16175,13 @@ PASS ForwardComp__91841 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91841.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91841.xuriella
 
-FAIL ForwardComp__91842 [XSLT-Extendability]: undefined instruction: foo
+PASS ForwardComp__91842 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91842.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91842.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91842.xuriella
 
-FAIL ForwardComp__91843 [XSLT-Extendability]: undefined instruction: foo
+PASS ForwardComp__91843 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91843.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91843.saxon
@@ -16191,13 +16193,13 @@ PASS ForwardComp__91844 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91844.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91844.xuriella
 
-PASS ForwardComp__91845 [XSLT-Extendability]: raised an xslt-error as expected
+PASS ForwardComp__91845 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91845.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91845.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91845.xuriella
 
-PASS ForwardComp__91846 [XSLT-Extendability]: raised an xslt-error as expected
+PASS ForwardComp__91846 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91846.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91846.saxon
@@ -22607,4 +22609,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2723/3076 tests.
+Passed 2737/3076 tests.

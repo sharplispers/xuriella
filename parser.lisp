@@ -99,11 +99,15 @@
      (let ((expr
             (cond
 	      ((equal (stp:namespace-uri node) *xsl*)
-	       (parse-instruction/xsl-element
-		(or (find-symbol (stp:local-name node) :xuriella)
-		    (xslt-error "undefined instruction: ~A"
-				(stp:local-name node)))
-		node))
+	       (let ((sym (find-symbol (stp:local-name node) :xuriella)))
+                 (cond
+                   (sym
+                    (parse-instruction/xsl-element sym node))
+                   (*forwards-compatible-p*
+                    (parse-fallback-children node))
+                   (t
+                    (xslt-error "undefined instruction: ~A"
+                                (stp:local-name node))))))
 	      ((find (stp:namespace-uri node)
 		     *extension-namespaces*
 		     :test #'equal)
@@ -136,6 +140,7 @@
                                 ,(stp:namespace-prefix a))
                             ,(stp:value a)))
             ,@(parse-body node)))
+        (version (stp:attribute-value node "version" *xsl*))
         (extensions '()))
     (stp:with-attributes ((eep "extension-element-prefixes" *xsl*))
         node
@@ -145,17 +150,27 @@
         (push (or (stp:find-namespace prefix node)
                   (xslt-error "namespace not found: ~A" prefix))
               extensions)))
-    (if extensions
-        `(xsl:with-extension-namespaces ,extensions
-           (xsl:with-excluded-namespaces ,extensions
-             ,le))
-        le)))
+    (when extensions
+      (setf le
+            `(xsl:with-extension-namespaces ,extensions
+               (xsl:with-excluded-namespaces ,extensions
+                 ,le))))
+    (when version
+      (setf le
+            `(xsl:with-version ,version
+               ,le)))
+    le))
 
 (defun parse-fallback-children (node)
-  `(progn
-     ,@(loop
-	  for fallback in (stp:filter-children (of-name "fallback") node)
-	  append (parse-body fallback))))
+  (let ((fallbacks
+         (loop
+            for fallback in (stp:filter-children (of-name "fallback") node)
+            append (parse-body fallback))))
+    (if fallbacks
+        `(progn ,@fallbacks)
+        `(xsl:terminate
+           (xsl:text
+            "no fallback children in unknown element using forwards compatible processing")))))
 
 (defmacro define-instruction-parser (name (node-var) &body body)
   `(progn

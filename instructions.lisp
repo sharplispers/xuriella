@@ -487,6 +487,11 @@
     (let ((*extension-namespaces* (append uris *extension-namespaces*)))
       (compile-instruction `(progn ,@body) env))))
 
+(define-instruction xsl:with-version (args env)
+  (destructuring-bind (version &rest body) args
+    (let ((*forwards-compatible-p* (not (equal version "1.0"))))
+      (compile-instruction `(progn ,@body) env))))
+
 ;; XSLT disallows multiple definitions of the same variable within a
 ;; template.  Local variables can shadow global variables though.
 ;; Since our LET syntax makes it natural to shadow local variables the
@@ -562,7 +567,7 @@
   (compile-message #'warn args env))
 
 (define-instruction xsl:terminate (args env)
-  (compile-message #'error args env))
+  (compile-message #'xslt-error args env))
 
 (defun namespaces-as-alist (element)
   (let ((namespaces '()))

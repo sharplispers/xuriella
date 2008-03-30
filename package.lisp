@@ -29,6 +29,7 @@
            #:document			;fixme: incompatible with XSLT 2.0
 
 	   ;; xuriella internals
+	   #:with-version
            #:with-namespaces
            #:with-excluded-namespaces
            #:with-extension-namespaces

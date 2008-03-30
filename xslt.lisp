@@ -402,6 +402,7 @@
 (defvar *apply-imports-limit*)
 (defvar *import-priority*)
 (defvar *extension-namespaces*)
+(defvar *forwards-compatible-p*)
 
 (defmacro do-toplevel ((var xpath <transform>) &body body)
   `(map-toplevel (lambda (,var) ,@body) ,xpath ,<transform>))
@@ -424,14 +425,16 @@
                 (xpath::mappend-pipe #'recurse subsubs)))))
     (xpath::sort-nodes (recurse <transform>))))
 
-(defmacro with-parsed-prefixes ((node env) &body body)
-  `(invoke-with-parsed-prefixes (lambda () ,@body) ,node ,env))
+(defmacro with-import-magic ((node env) &body body)
+  `(invoke-with-import-magic (lambda () ,@body) ,node ,env))
 
-(defun invoke-with-parsed-prefixes (fn node env)
+(defun invoke-with-import-magic (fn node env)
   (unless (or (namep node "stylesheet") (namep node "transform"))
     (setf node (stp:parent node)))
   (let ((*excluded-namespaces* (list *xsl*))
-        (*extension-namespaces* '()))
+        (*extension-namespaces* '())
+        (*forwards-compatible-p*
+         (not (equal (stp:attribute-value node "version") "1.0"))))
     (parse-exclude-result-prefixes! node env)
     (parse-extension-element-prefixes! node env)
     (funcall fn)))
@@ -443,7 +446,7 @@
          (apply-imports-limit (1+ *import-priority*))
          (continuations '()))
     (let ((*namespaces* namespaces))
-      (invoke-with-parsed-prefixes (constantly t) <transform> env))
+      (invoke-with-import-magic (constantly t) <transform> env))
     (macrolet ((with-specials ((&optional) &body body)
                  `(let ((*instruction-base-uri* instruction-base-uri)
                         (*namespaces* namespaces)
@@ -521,7 +524,7 @@
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
   (do-toplevel (elt "attribute-set" <transform>)
-    (with-parsed-prefixes (elt env)
+    (with-import-magic (elt env)
       (push (let* ((sets
                     (mapcar (lambda (qname)
                               (multiple-value-list (decode-qname qname env nil)))
@@ -776,7 +779,7 @@
          (*excluded-namespaces* (list *xsl*))
          (*extension-namespaces* '())
          (qname (stp:attribute-value <variable> "name")))
-    (with-parsed-prefixes (<variable> global-env)
+    (with-import-magic (<variable> global-env)
       (unless qname
         (xslt-error "name missing in ~A" (stp:local-name <variable>)))
       (multiple-value-bind (local-name uri)
@@ -871,7 +874,7 @@
     (do-toplevel (<template> "template" <transform>)
       (let ((*namespaces* (acons-namespaces <template>))
             (*instruction-base-uri* (stp:base-uri <template>)))
-        (with-parsed-prefixes (<template> env)
+        (with-import-magic (<template> env)
           (dolist (template (compile-template <template> env i))
             (let ((name (template-name template)))
               (if name
