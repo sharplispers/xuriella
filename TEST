@@ -10937,7 +10937,7 @@ PASS AVTs__77598 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77598.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77598.xuriella
 
-FAIL AVTs__77599 [XSLT-Result-Tree]: attempt to represent a namespace declaration as an ATTRIBUTE
+PASS AVTs__77599 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17107.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/books.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77599.saxon
@@ -22495,4 +22495,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2809/3073 tests.
+Passed 2810/3073 tests.
