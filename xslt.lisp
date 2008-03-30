@@ -580,13 +580,14 @@
                     (stp:map-children
                      'list
                      (lambda (child)
-                       (unless (or (not (typep child 'stp:element))
-                                   (and (equal (stp:namespace-uri child) *xsl*)
-                                        (equal (stp:local-name child)
-                                               "attribute"))
-                                   (find (stp:namespace-uri child)
-                                         *extension-namespaces*
-                                         :test 'equal))
+                       (unless
+                           (and (typep child 'stp:element)
+                                (or (and (equal (stp:namespace-uri child) *xsl*)
+                                         (equal (stp:local-name child)
+                                                "attribute"))
+                                    (find (stp:namespace-uri child)
+                                          *extension-namespaces*
+                                          :test 'equal)))
                          (xslt-error "non-attribute found in attribute set"))
                        (parse-instruction child))
                      elt))

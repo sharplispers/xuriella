@@ -303,6 +303,9 @@
     ;; case.
     "output_output75"
 
+    ;; we pass this test, but saxon doesn't
+    "AttributeSets__91038"
+
     ;; we'd pass these tests, but the test authors forgot to declare the
     ;; entity they're writing, so we can't parse it for comparison.
     "output_output06"

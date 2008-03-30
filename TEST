@@ -10575,12 +10575,6 @@ PASS AttributeSets__91037 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.xuriella
 
-FAIL AttributeSets__91038 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
-  Stylesheet: MSFT_Conformance_Tests/AttributeSets/91038.noindent-xsl
-  Data: MSFT_Conformance_Tests/AttributeSets/books.xml
-  Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.saxon
-  Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.xuriella
-
 WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
@@ -10678,7 +10672,7 @@ PASS AttributeSets__91091 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91091.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91091.xuriella
 
-FAIL AttributeSets__91093 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91093 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91093.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91093.saxon
@@ -13955,7 +13949,7 @@ The value NIL is not of type (SIMPLE-ARRAY CHARACTER).
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err008.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err008.xuriella
 
-FAIL Errors_err009 [Mixed]: expected error not signalled: 
+PASS Errors_err009 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/attrset-pcdata.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err009.saxon
@@ -22509,4 +22503,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2791/3075 tests.
+Passed 2793/3074 tests.
