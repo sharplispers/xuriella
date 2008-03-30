@@ -10931,7 +10931,7 @@ PASS AVTs__77597 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77597.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77597.xuriella
 
-FAIL AVTs__77598 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AVTs__77598 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17106.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/XSLT17106.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77598.saxon
@@ -15797,7 +15797,7 @@ PASS Errors_err079 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err079.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err079.xuriella
 
-FAIL Errors_err088 [Mixed]: expected error not signalled: 
+PASS Errors_err088 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/script.ns.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err088.saxon
@@ -15925,7 +15925,7 @@ junk in string "1,0"
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_InvalidPriorityValue.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_InvalidPriorityValue.xuriella
 
-FAIL Errors_InvalidTopLevelElement [Mixed]: expected error not signalled: 
+PASS Errors_InvalidTopLevelElement [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/xslt_invalid_top_level_element.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_InvalidTopLevelElement.saxon
@@ -16027,7 +16027,7 @@ PASS Fallback__91825 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91825.saxon
   Actual output: MSFT_Conformance_Tests/Fallback/Fallback__91825.xuriella
 
-FAIL Fallback__91826 [XSLT-Extendability]: expected error not signalled: 
+PASS Fallback__91826 [XSLT-Extendability]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Fallback/91826.noindent-xsl
   Data: MSFT_Conformance_Tests/Fallback/books.xml
   Expected output (1): MSFT_Conformance_Tests/Fallback/Fallback__91826.saxon
@@ -17035,7 +17035,7 @@ PASS Messages__91763 [XSLT-Output]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91763.saxon
   Actual output: MSFT_Conformance_Tests/Messages/Messages__91763.xuriella
 
-FAIL Messages__91764 [XSLT-Output]: expected error not signalled: 
+PASS Messages__91764 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Messages/91764.noindent-xsl
   Data: MSFT_Conformance_Tests/Messages/message.xml
   Expected output (1): MSFT_Conformance_Tests/Messages/Messages__91764.saxon
@@ -17691,7 +17691,7 @@ PASS Namespace__77655 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77655.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77655.xuriella
 
-FAIL Namespace__77658 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77658 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01021.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77658.saxon
@@ -17787,19 +17787,19 @@ PASS Namespace__77704 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77704.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77704.xuriella
 
-FAIL Namespace__77730 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77730 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01205.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77730.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77730.xuriella
 
-FAIL Namespace__77731 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77731 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01208.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77731.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77731.xuriella
 
-FAIL Namespace__77732 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77732 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01207.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77732.saxon
@@ -20804,7 +20804,7 @@ PASS Stylesheet__91816 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91816.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91816.xuriella
 
-FAIL Stylesheet_InvalidStylesheetMustThrowException [XSLT-Structure]: expected error not signalled: 
+PASS Stylesheet_InvalidStylesheetMustThrowException [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_InvalidStylesheetThrowExcep.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_InvalidStylesheetThrowExcep.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet_InvalidStylesheetMustThrowException.saxon
@@ -20836,9 +20836,7 @@ error opening #P"...MSFT_Conformance_Tests/Template/IDontExist.xml":
   Expected output (1): MSFT_Conformance_Tests/Template/Template_ApplyTemplateWithDuplicateParameter.saxon
   Actual output: MSFT_Conformance_Tests/Template/Template_ApplyTemplateWithDuplicateParameter.xuriella
 
-FAIL Template_CallTemplateWithDuplicateParameter [XSLT-Template]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Template/IDontExist.xml":
-  No such file or directory
+PASS Template_CallTemplateWithDuplicateParameter [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Template/xslt_call_template_duplicate_param.noindent-xsl
   Data: MSFT_Conformance_Tests/Template/IDontExist.xml
   Expected output (1): MSFT_Conformance_Tests/Template/Template_CallTemplateWithDuplicateParameter.saxon
@@ -22497,4 +22495,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2798/3073 tests.
+Passed 2809/3073 tests.

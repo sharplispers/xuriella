@@ -418,6 +418,11 @@
                                     ("exclude-result-prefixes" . "")
                                     ("extension-element-prefixes" . ""))
                                   <transform>)
+    (let ((invalid
+           (or (stp:find-child-if (of-name "stylesheet") <transform>)
+               (stp:find-child-if (of-name "transform") <transform>))))
+      (when invalid
+        (xslt-error "invalid top-level element ~A" (stp:local-name invalid))))
     (dolist (include (stp:filter-children (of-name "include") <transform>))
       (let* ((uri (puri:merge-uris (stp:attribute-value include "href")
                                    (stp:base-uri include)))
@@ -497,6 +502,21 @@
          (continuations '()))
     (let ((*namespaces* namespaces))
       (invoke-with-import-magic (constantly t) <transform> env))
+    (do-toplevel (elt "node()" <transform>)
+      (when (equal (stp:attribute-value (stp:parent elt) "version") "1.0")
+        (if (typep elt 'stp:element)
+            (when (or (equal (stp:namespace-uri elt) "")
+                      (and (equal (stp:namespace-uri elt) *xsl*)
+                           (not (find (stp:local-name elt)
+                                      '("key" "template" "output" "strip-space"
+                                        "preserve-space" "attribute-set"
+                                        "namespace-alias" "decimal-format"
+                                        "variable" "param" "import" "include"
+                                        ;; for include handling:
+                                        "stylesheet" "transform")
+                                      :test #'equal))))
+              (xslt-error "unknown top-level element ~A" (stp:local-name elt)))
+            (xslt-error "text at top-level"))))
     (macrolet ((with-specials ((&optional) &body body)
                  `(let ((*instruction-base-uri* instruction-base-uri)
                         (*namespaces* namespaces)
