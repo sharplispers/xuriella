@@ -83,7 +83,38 @@
   `(invoke-with-stack-limit (lambda () ,@body)))
 
 
-;;;; Helper function and macro
+;;;; Helper functions and macros
+
+(defun check-for-invalid-attributes (valid-names node)
+  (labels ((check-attribute (a)
+             (unless
+                 (let ((uri (stp:namespace-uri a)))
+                   (or (and (plusp (length uri)) (not (equal uri *xsl*)))
+                       (find (cons (stp:local-name a) uri)
+                             valid-names
+                             :test #'equal)))
+               (xslt-error "attribute ~A not allowed on ~A"
+                           (stp:local-name a)
+                           (stp:local-name node)))))
+    (stp:map-attributes nil #'check-attribute node)))
+
+(defmacro only-with-attributes ((&rest specs) node &body body)
+  (let ((valid-names
+         (mapcar (lambda (entry)
+                   (if (and (listp entry) (cdr entry))
+                       (destructuring-bind (name &optional (uri ""))
+                           (cdr entry)
+                         (cons name uri))
+                       (cons (string-downcase
+                              (princ-to-string
+                               (symbol-name entry)))
+                             "")))
+                 specs))
+        (%node (gensym)))
+    `(let ((,%NODE ,node))
+       (check-for-invalid-attributes ',valid-names ,%NODE)
+       (stp:with-attributes ,specs ,%NODE
+         ,@body))))
 
 (defun map-pipe-eagerly (fn pipe)
   (xpath::enumerate pipe :key fn :result nil))

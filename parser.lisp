@@ -67,7 +67,7 @@
                    (maybe-wrap-namespaces
                     child
                     (if (namep child "variable")
-                        (stp:with-attributes (name select) child
+                        (only-with-attributes (name select) child
                           (when (and select (stp:list-children child))
                             (xslt-error "variable with select and body"))
                           `((let ((,name ,(or select
@@ -84,7 +84,7 @@
 
 (defun parse-param (node)
   ;; FIXME: empty body?
-  (stp:with-attributes (name select) node
+  (only-with-attributes (name select) node
     (unless name
       (xslt-error "name not specified for parameter"))
     (when (and select (stp:list-children node))
@@ -184,7 +184,7 @@
   '(progn))
 
 (define-instruction-parser |apply-templates| (node)
-  (stp:with-attributes (select mode) node
+  (only-with-attributes (select mode) node
     (multiple-value-bind (decls rest)
         (loop
            for i from 0
@@ -207,7 +207,7 @@
   `(xsl:apply-imports))
 
 (define-instruction-parser |call-template| (node)
-  (stp:with-attributes (name) node
+  (only-with-attributes (name) node
       `(xsl:call-template
         ,name ,@(stp:map-children 'list
                                   (lambda (clause)
@@ -218,7 +218,7 @@
                                   node))))
 
 (define-instruction-parser |if| (node)
-  (stp:with-attributes (test) node
+  (only-with-attributes (test) node
     `(when ,test
        ,@(parse-body node))))
 
@@ -228,7 +228,7 @@
                          (lambda (clause)
                            (cond
                              ((namep clause "when")
-                              (stp:with-attributes (test) clause
+                              (only-with-attributes (test) clause
                                 `(,test
                                   ,@(parse-body clause))))
                              ((namep clause "otherwise")
@@ -239,18 +239,18 @@
                          node)))
 
 (define-instruction-parser |element| (node)
-  (stp:with-attributes (name namespace use-attribute-sets) node
+  (only-with-attributes (name namespace use-attribute-sets) node
     `(xsl:element (,name :namespace ,namespace)
        (xsl:use-attribute-sets ,use-attribute-sets)
        ,@(parse-body node))))
 
 (define-instruction-parser |attribute| (node)
-  (stp:with-attributes (name namespace) node
+  (only-with-attributes (name namespace) node
     `(xsl:attribute (,name :namespace ,namespace)
        ,@(parse-body node))))
 
 (define-instruction-parser |text| (node)
-  (stp:with-attributes (select disable-output-escaping) node
+  (only-with-attributes (select disable-output-escaping) node
     (if (equal disable-output-escaping "yes")
         `(xsl:unescaped-text ,(stp:string-value node))
         `(xsl:text ,(stp:string-value node)))))
@@ -259,22 +259,22 @@
   `(xsl:comment ,@(parse-body node)))
 
 (define-instruction-parser |processing-instruction| (node)
-  (stp:with-attributes (name) node
+  (only-with-attributes (name) node
     `(xsl:processing-instruction ,name
        ,@(parse-body node))))
 
 (define-instruction-parser |value-of| (node)
-  (stp:with-attributes (select disable-output-escaping) node
+  (only-with-attributes (select disable-output-escaping) node
     (if (equal disable-output-escaping "yes")
         `(xsl:unescaped-value-of ,select)
         `(xsl:value-of ,select))))
 
 (define-instruction-parser |copy-of| (node)
-  (stp:with-attributes (select) node
+  (only-with-attributes (select) node
     `(xsl:copy-of ,select)))
 
 (define-instruction-parser |copy| (node)
-  (stp:with-attributes (use-attribute-sets) node
+  (only-with-attributes (use-attribute-sets) node
     `(xsl:copy
       (xsl:use-attribute-sets ,use-attribute-sets)
       ,@(parse-body node))))
@@ -283,7 +283,7 @@
   (xslt-error "unhandled xsl:variable"))
 
 (define-instruction-parser |for-each| (node)
-  (stp:with-attributes (select) node
+  (only-with-attributes (select) node
     (multiple-value-bind (decls body-position)
         (loop
            for i from 0
@@ -296,7 +296,7 @@
          ,@(parse-body node body-position)))))
 
 (defun parse-sort (node)
-  (stp:with-attributes (select lang data-type order case-order) node
+  (only-with-attributes (select lang data-type order case-order) node
     `(sort :select ,select
            :lang ,lang
            :data-type ,data-type
@@ -310,8 +310,8 @@
   `(xsl:terminate ,@(parse-body node)))
 
 (define-instruction-parser |number| (node)
-  (stp:with-attributes (level count from value format lang letter-value
-                              grouping-separator grouping-size)
+  (only-with-attributes (level count from value format lang letter-value
+                                   grouping-separator grouping-size)
       node
     `(xsl:number :level ,level
                  :count ,count
@@ -324,7 +324,8 @@
                  :grouping-size ,grouping-size)))
 
 (define-instruction-parser |document| (node)
-  (stp:with-attributes (href method indent doctype-public doctype-system) node
+  (only-with-attributes
+   (href method indent doctype-public doctype-system) node
     `(xsl:document (,href :method ,method
 			  :indent ,indent
 			  :doctype-public ,doctype-public

@@ -10167,7 +10167,7 @@ PASS Attributes__78379 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78379.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes__78379.xuriella
 
-FAIL Attributes__78380 [XSLT-Result-Tree]: expected error not signalled: 
+PASS Attributes__78380 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/78380.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes__78380.saxon
@@ -10569,13 +10569,13 @@ PASS Attributes_xsl_attribute_dup_attr_with_namespace_conflict [XSLT-Result-Tree
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_xsl_attribute_dup_attr_with_namespace_conflict.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_xsl_attribute_dup_attr_with_namespace_conflict.xuriella
 
-FAIL AttributeSets__91035 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS AttributeSets__91035 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91035.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91035.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91035.xuriella
 
-FAIL AttributeSets__91036 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91036 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91036.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91036.saxon
@@ -10650,19 +10650,19 @@ PASS AttributeSets__91078 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91078.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91078.xuriella
 
-FAIL AttributeSets__91080 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS AttributeSets__91080 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91080.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91080.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91080.xuriella
 
-FAIL AttributeSets__91081 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS AttributeSets__91081 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91081.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91081.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91081.xuriella
 
-FAIL AttributeSets__91083 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS AttributeSets__91083 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91083.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91083.saxon
@@ -10723,7 +10723,7 @@ PASS AttributeSets__91097 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91097.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91097.xuriella
 
-PASS AttributeSets__91098 [XSLT-Result-Tree]
+PASS AttributeSets__91098 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91098.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91098.saxon
@@ -10735,7 +10735,7 @@ FAIL AttributeSets__91099 [XSLT-Result-Tree]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91099.xuriella
 
-PASS AttributeSets__91100 [XSLT-Result-Tree]
+PASS AttributeSets__91100 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91100.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/AttributeSets/91100a.xsl
@@ -13526,7 +13526,7 @@ PASS Elements__78347 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78347.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__78347.xuriella
 
-FAIL Elements__78351 [XSLT-Result-Tree]: expected error not signalled: 
+PASS Elements__78351 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Elements/78351.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/books.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__78351.saxon
@@ -13672,7 +13672,7 @@ error opening #P"...MSFT_Conformance_Tests/Elements/Plants.xml":
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89171.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89171.xuriella
 
-FAIL Elements__89172 [XSLT-Result-Tree]: expected error not signalled: 
+PASS Elements__89172 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-b-use-templates.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/ek-b-use-templates.xsl
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89172.saxon
@@ -17593,8 +17593,7 @@ FAIL NamedTemplates__84027 [XSLT-Template]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84027.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84027.xuriella
 
-FAIL NamedTemplates__84028 [XSLT-Template]: condition of incorrect type: 
-The value NIL is not of type (SIMPLE-ARRAY CHARACTER).
+PASS NamedTemplates__84028 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84028.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84028.saxon
@@ -17661,7 +17660,7 @@ PASS NamedTemplates__84044 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84044.saxon
   Actual output: MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84044.xuriella
 
-FAIL NamedTemplates__84045 [XSLT-Template]: expected error not signalled: 
+PASS NamedTemplates__84045 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84045.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84045.saxon
@@ -19988,7 +19987,7 @@ URI scheme :HTTP not supported
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78197.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78197.xuriella
 
-FAIL ProcessingInstruction__78198 [XSLT-Result-Tree]: expected error not signalled: 
+PASS ProcessingInstruction__78198 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT16006.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78198.saxon
@@ -20663,7 +20662,7 @@ PASS Sorting__91705 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91705.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91705.xuriella
 
-FAIL Sorting__91751 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Sorting__91751 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Sorting/91751.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91751.saxon
@@ -20894,7 +20893,7 @@ PASS Stylesheet__91815 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91815.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91815.xuriella
 
-PASS Stylesheet__91816 [XSLT-Structure]
+PASS Stylesheet__91816 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91816.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91816.saxon
@@ -21042,7 +21041,7 @@ PASS Text__78242 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78242.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78242.xuriella
 
-FAIL Text__78243 [XSLT-Result-Tree]: expected error not signalled: 
+PASS Text__78243 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04000.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78243.saxon
@@ -22609,4 +22608,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2737/3076 tests.
+Passed 2750/3076 tests.
