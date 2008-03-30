@@ -10721,7 +10721,7 @@ PASS AttributeSets__91100 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91100.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91100.xuriella
 
-FAIL AttributeSets__91101 [XSLT-Result-Tree]: expected error not signalled: 
+PASS AttributeSets__91101 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/AttributeSets/91101.noindent-xsl
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91101.saxon
@@ -15906,7 +15906,7 @@ PASS Errors_err107 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err107.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err107.xuriella
 
-FAIL Errors_err109 [Mixed]: expected error not signalled: 
+PASS Errors_err109 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/version-global.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err109.saxon
@@ -16278,7 +16278,7 @@ PASS Import__84615 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__84615.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__84615.xuriella
 
-FAIL Import__91032 [XSLT-Structure]: output doesn't match
+FAIL Import__91032 [XSLT-Structure]: attribute id not allowed on stylesheet
   Stylesheet: MSFT_Conformance_Tests/Import/91032.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91032a.xsl
@@ -17417,7 +17417,7 @@ PASS Modes__78321 [XSLT-Template]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78321.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__78321.xuriella
 
-FAIL Modes__78322 [XSLT-Template]: expected error not signalled: 
+PASS Modes__78322 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Modes/XSLT11104.noindent-xsl
   Data: MSFT_Conformance_Tests/Modes/books.xml
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__78322.saxon
@@ -17823,7 +17823,7 @@ PASS Namespace__77734 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77734.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77734.xuriella
 
-FAIL Namespace__77735 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77735 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01204.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77735.saxon
@@ -22503,4 +22503,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2793/3074 tests.
+Passed 2797/3074 tests.
