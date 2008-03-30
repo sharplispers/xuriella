@@ -85,6 +85,21 @@
                  (stylesheet-decimal-formats stylesheet))
         newval))
 
+(defun decimal-format= (a b)
+  (every (lambda (accessor)
+           (equal (funcall accessor a)
+                  (funcall accessor b)))
+         (list #'df/decimal-separator
+               #'df/grouping-separator
+               #'df/zero-digit
+               #'df/percent
+               #'df/per-mille
+               #'df/digit
+               #'df/pattern-separator
+               #'df/infinity
+               #'df/nan
+               #'df/minus-sign)))
+
 (xpath-sys:define-xpath-function/lazy
     xslt :format-number
     (value picture &optional format-name)

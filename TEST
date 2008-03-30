@@ -11015,7 +11015,7 @@ PASS BVTs_bvt014 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt014.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt014.xuriella
 
-FAIL BVTs_bvt015 [Mixed]: expected error not signalled: 
+PASS BVTs_bvt015 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/BVTs/decimal-format.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt015.saxon
@@ -13947,13 +13947,13 @@ PASS Errors_err014 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err014.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err014.xuriella
 
-FAIL Errors_err015 [Mixed]: expected error not signalled: 
+PASS Errors_err015 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/bad-decfmt2.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err015.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err015.xuriella
 
-FAIL Errors_err016 [Mixed]: expected error not signalled: 
+PASS Errors_err016 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/bad-decfmt3.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err016.saxon
@@ -22136,7 +22136,7 @@ FAIL XSLTFunctions__defaultPattern [Mixed]: saxon error not signalled and offici
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__defaultPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__defaultPattern.xuriella
 
-FAIL XSLTFunctions__DifferentDecimalFormatsWithSameName [Mixed]: expected error not signalled: 
+PASS XSLTFunctions__DifferentDecimalFormatsWithSameName [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/diffDecimalFmtWithSameName.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/XSLTFunctions/decfmt2.xsl
@@ -22469,4 +22469,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2813/3073 tests.
+Passed 2817/3073 tests.
