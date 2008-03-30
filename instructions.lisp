@@ -805,8 +805,8 @@
            seen-closing-}
              (case c
                (#\}
-                (collect-xpath)
-                (goto xpath))
+                (emit)
+                (goto seen-stray-}))
                (#\{
                 (emit)
                 (goto xpath))

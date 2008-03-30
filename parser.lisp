@@ -132,8 +132,20 @@
                 ,(stp:namespace-prefix node))
             (xsl:use-attribute-sets
              ,(stp:attribute-value node "use-attribute-sets" *xsl*))
-            ,@(loop for a in (stp:list-attributes node)
-                 unless (equal (stp:namespace-uri a) *xsl*)
+            ,@(loop
+                 for a in (stp:list-attributes node)
+                 for xslp = (equal (stp:namespace-uri a) *xsl*)
+                 when xslp
+                 do (unless (find (stp:local-name a)
+                                  '("version"
+                                    "extension-element-prefixes"
+                                    "exclude-result-prefixes"
+                                    "use-attribute-sets")
+                                  :test #'equal)
+                      (xslt-error
+                       "unknown attribute on literal result element: ~A"
+                       (stp:local-name a)))
+                 else
                  collect `(xsl:literal-attribute
                               (,(stp:local-name a)
                                 ,(stp:namespace-uri a)

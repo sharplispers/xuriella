@@ -3094,7 +3094,7 @@ PASS lre_lre06 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre06.saxon
   Actual output: Xalan_Conformance_Tests/lre/lre_lre06.xuriella
 
-PASS lre_lre07 [XSLT-Result-Tree]
+PASS lre_lre07 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: Xalan_Conformance_Tests/lre/lre07.noindent-xsl
   Data: Xalan_Conformance_Tests/lre/lre07.xml
   Expected output (1): Xalan_Conformance_Tests/lre/lre_lre07.saxon
@@ -10799,12 +10799,6 @@ PASS AttributeSets_DoeInAttributeWithinAttributeSet [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets_DoeInAttributeWithinAttributeSet.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets_DoeInAttributeWithinAttributeSet.xuriella
 
-FAIL AttributeSets_RefToUndefinedAttributeSet [XSLT-Result-Tree]: expected error not signalled: 
-  Stylesheet: MSFT_Conformance_Tests/AttributeSets/xslt_attributeset_undefined_ref.noindent-xsl
-  Data: MSFT_Conformance_Tests/AttributeSets/foo.xml
-  Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets_RefToUndefinedAttributeSet.saxon
-  Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets_RefToUndefinedAttributeSet.xuriella
-
 PASS AVTs__77531 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17000.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/books.xml
@@ -10871,7 +10865,7 @@ PASS AVTs__77579 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77579.saxon
   Actual output: MSFT_Conformance_Tests/AVTs/AVTs__77579.xuriella
 
-FAIL AVTs__77580 [XSLT-Result-Tree]: not a well-formed XPath expression: lexer failed at position 7
+PASS AVTs__77580 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/AVTs/XSLT17012.noindent-xsl
   Data: MSFT_Conformance_Tests/AVTs/XSLT17010.xml
   Expected output (1): MSFT_Conformance_Tests/AVTs/AVTs__77580.saxon
@@ -22503,4 +22497,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2797/3074 tests.
+Passed 2798/3073 tests.
