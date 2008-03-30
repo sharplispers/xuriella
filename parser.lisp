@@ -308,9 +308,9 @@
 
 (define-instruction-parser |message| (node)
   (only-with-attributes (terminate) node
-    (if terminate
-        `(xsl:message ,@(parse-body node))
-        `(xsl:terminate ,@(parse-body node)))))
+    (if (equal terminate "yes")
+        `(xsl:terminate ,@(parse-body node))
+        `(xsl:message ,@(parse-body node)))))
 
 (define-instruction-parser |number| (node)
   (only-with-attributes (level count from value format lang letter-value
