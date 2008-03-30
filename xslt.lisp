@@ -1161,7 +1161,12 @@
     (stylesheet source-designator
      &key output parameters uri-resolver navigator)
   (when (typep stylesheet 'xml-designator)
-    (setf stylesheet (parse-stylesheet stylesheet)))
+    (setf stylesheet
+          (handler-bind
+              ((cxml:xml-parse-error
+                (lambda (c)
+                  (xslt-error "cannot parse stylesheet: ~A" c))))
+            (parse-stylesheet stylesheet))))
   (invoke-with-output-sink
    (lambda ()
      (handler-case*

@@ -10521,11 +10521,7 @@ PASS Attributes_Attribute_LiteralResultAttributeIsAmpersand [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_LiteralResultAttributeIsAmpersand.saxon
   Actual output: MSFT_Conformance_Tests/Attributes/Attributes_Attribute_LiteralResultAttributeIsAmpersand.xuriella
 
-FAIL Attributes_Attribute_UseXmlnsAsNamespaceForAttributeImplicitly [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/2000/xmlns/" may not be bound to prefix "foo" (or any other).
-Context:
-  Line 9, column 74 in file://+...MSFT_Conformance_Tests/Attributes/xslt_attribute_XmlnsExplicitAsAttributeNs.noindent-xsl
-
+PASS Attributes_Attribute_UseXmlnsAsNamespaceForAttributeImplicitly [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Attributes/xslt_attribute_XmlnsExplicitAsAttributeNs.noindent-xsl
   Data: MSFT_Conformance_Tests/Attributes/xslt_attribute_XmlnsExplicitAsAttributeNs.xml
   Expected output (1): MSFT_Conformance_Tests/Attributes/Attributes_Attribute_UseXmlnsAsNamespaceForAttributeImplicitly.saxon
@@ -14165,11 +14161,7 @@ when called with arguments
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err054.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err054.xuriella
 
-FAIL Errors_err055 [Mixed]: condition of incorrect type: 
-Document not well-formed: element expected
-Context:
-  Line 1, column 5 in file://+...MSFT_Conformance_Tests/Errors/inc/parse-error.inc
-
+PASS Errors_err055 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/inc-parserr.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Errors/inc/parse-error.inc
@@ -16373,20 +16365,14 @@ PASS Import__91145 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91145.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91145.xuriella
 
-FAIL Import__91146 [XSLT-Structure]: condition of incorrect type: 
-Document not well-formed: Bad nesting. "xsl:stylesheet" / (:EOF)
-
+PASS Import__91146 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Import/91146.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91146a.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91146.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91146.xuriella
 
-FAIL Import__91147 [XSLT-Structure]: condition of incorrect type: 
-Document not well-formed: element expected
-Context:
-  Line 1, column 5 in file://+...MSFT_Conformance_Tests/Import/91147.txt
-
+PASS Import__91147 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Import/91147.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91147.txt
@@ -16594,11 +16580,7 @@ PASS Include__77511 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Include/Include__77511.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include__77511.xuriella
 
-FAIL Include__77512 [XSLT-Structure]: condition of incorrect type: 
-Document not well-formed: syntax error in read-tag-2.
-Context:
-  Line 7, column 1 in file://+...MSFT_Conformance_Tests/Include/xslt03011a.xsl
-
+PASS Include__77512 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Include/XSLT03011.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/xslt03011a.xsl
@@ -16620,7 +16602,7 @@ PASS Include__77514 [XSLT-Structure]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Include/Include__77514.xuriella
 
 WARNING: There is no such encoding: "shift_jis".
-FAIL Include__77515 [XSLT-Structure]: Document not well-formed: Corrupted UTF-8 input (initial byte was #b10000010)
+FAIL Include__77515 [XSLT-Structure]: cannot parse stylesheet: Document not well-formed: Corrupted UTF-8 input (initial byte was #b10000010)
 Location:
   Line 1, column 44 in file://+...MSFT_Conformance_Tests/Include/XSLT03022a.xsl
 
@@ -16731,11 +16713,7 @@ PASS Include_Include_ParentImplicitlyExcludesChildNamespace [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Include/Include_Include_ParentImplicitlyExcludesChildNamespace.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include_Include_ParentImplicitlyExcludesChildNamespace.xuriella
 
-FAIL Include_Include_ParentNSVisibleToIncludedDoc [XSLT-Structure]: condition of incorrect type: 
-Document not well-formed: Undeclared namespace prefix: foo
-Context:
-  Line 7, column 12 in file://+...MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext2.xsl
-
+PASS Include_Include_ParentNSVisibleToIncludedDoc [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/xslt_include_ParentIncChildContext2.xsl
@@ -17991,11 +17969,7 @@ Context:
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_NavigatorMethods.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_NavigatorMethods.xuriella
 
-FAIL Namespace_XPath_PredefinedPrefix_XML [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "namespace", only "xml" is legal.
-Context:
-  Line 5, column 30 in file://+...MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_6.noindent-xsl
-
+PASS Namespace_XPath_PredefinedPrefix_XML [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_6.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_PredefinedPrefix_XML.saxon
@@ -19944,8 +19918,7 @@ PASS ProcessingInstruction__78196 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78196.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78196.xuriella
 
-FAIL ProcessingInstruction__78197 [XSLT-Result-Tree]: condition of incorrect type: 
-URI scheme :HTTP not supported
+PASS ProcessingInstruction__78197 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT16007.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78197.saxon
@@ -19963,8 +19936,7 @@ PASS ProcessingInstruction__78199 [XSLT-Result-Tree]: raised an xslt-error as ex
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78199.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78199.xuriella
 
-FAIL ProcessingInstruction__78200 [XSLT-Result-Tree]: condition of incorrect type: 
-URI scheme :HTTP not supported
+PASS ProcessingInstruction__78200 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT16004.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78200.saxon
@@ -19976,15 +19948,13 @@ PASS ProcessingInstruction__78201 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78201.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78201.xuriella
 
-FAIL ProcessingInstruction__78202 [XSLT-Result-Tree]: condition of incorrect type: 
-URI scheme :HTTP not supported
+PASS ProcessingInstruction__78202 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT16002.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78202.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78202.xuriella
 
-FAIL ProcessingInstruction__78203 [XSLT-Result-Tree]: condition of incorrect type: 
-URI scheme :HTTP not supported
+PASS ProcessingInstruction__78203 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/XSLT16001.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78203.saxon
@@ -20273,11 +20243,7 @@ error opening #P"...MSFT_Conformance_Tests/Sorting/xslt18109.xml":
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77986.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77986.xuriella
 
-FAIL Sorting__78191 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS9", only "xml" is legal.
-Context:
-  Line 7, column 97 in file://+...MSFT_Conformance_Tests/Sorting/xslt19012.noindent-xsl
-
+PASS Sorting__78191 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt19012.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortNodeType.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__78191.saxon
@@ -20487,11 +20453,7 @@ PASS Sorting__84479 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__84479.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__84479.xuriella
 
-FAIL Sorting__89290 [XSLT-Data-Manipulation]: condition of incorrect type: 
-Document not well-formed: Bad nesting. "xsl:sort" / (:ETAG "for-each")
-Context:
-  Line 10, column 13 in file://+...MSFT_Conformance_Tests/Sorting/2_5_16_repeat.noindent-xsl
-
+PASS Sorting__89290 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Sorting/2_5_16_repeat.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__89290.saxon
@@ -20866,11 +20828,7 @@ PASS Stylesheet_Stylsheet_ExcludeResultPrefixesOnStylesheet [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet_Stylsheet_ExcludeResultPrefixesOnStylesheet.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet_Stylsheet_ExcludeResultPrefixesOnStylesheet.xuriella
 
-FAIL Stylesheet_UseStylesheetWithXmlnsEqualToXmlnsUri [XSLT-Structure]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/2000/xmlns/" may not be bound to prefix "foo" (or any other).
-Context:
-  Line 6, column 3 in file://+...MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_XmlnsNsOnStylesheet.noindent-xsl
-
+PASS Stylesheet_UseStylesheetWithXmlnsEqualToXmlnsUri [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_XmlnsNsOnStylesheet.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/xslt_stylesheet_XmlnsNsOnStylesheet.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet_UseStylesheetWithXmlnsEqualToXmlnsUri.saxon
@@ -21008,11 +20966,7 @@ PASS Text__78244 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78244.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78244.xuriella
 
-FAIL Text__78245 [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS1", only "xml" is legal.
-Context:
-  Line 6, column 93 in file://+...MSFT_Conformance_Tests/Text/XSLT04002.noindent-xsl
-
+PASS Text__78245 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04002.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78245.saxon
@@ -21042,11 +20996,7 @@ FAIL Text__78272 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78272.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78272.xuriella
 
-FAIL Text__78273 [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS3", only "xml" is legal.
-Context:
-  Line 4, column 98 in file://+...MSFT_Conformance_Tests/Text/XSLT04104.noindent-xsl
-
+PASS Text__78273 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04104.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78273.saxon
@@ -21094,11 +21044,7 @@ PASS Text__78280 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78280.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78280.xuriella
 
-FAIL Text__78281 [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "NS5", only "xml" is legal.
-Context:
-  Line 4, column 112 in file://+...MSFT_Conformance_Tests/Text/XSLT04115.noindent-xsl
-
+PASS Text__78281 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04115.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78281.saxon
@@ -22563,4 +22509,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2774/3075 tests.
+Passed 2791/3075 tests.
