@@ -33,8 +33,8 @@
   (destructuring-bind (&key level count from value format lang letter-value
                             grouping-separator grouping-size)
       args
-    (let ((count (and count (compile-pattern count env)))
-          (from  (and from (compile-pattern from env)))
+    (let ((count (and count (xpath:make-pattern-matcher* count env)))
+          (from  (and from (xpath:make-pattern-matcher* from env)))
           (value (and value (compile-xpath value env)))
           (format       (compile-avt (or format "1") env))
           (lang         (compile-avt (or lang "") env))
@@ -72,17 +72,8 @@
             grouping-separator
             grouping-size)))))))
 
-(defun compile-pattern (str env)
-  (compile-xpath
-   `(xpath:xpath
-     (:union
-      ,@(mapcar #'naive-pattern-expression (parse-pattern str))))
-   env))
-
 (defun pattern-thunk-matches-p (pattern-thunk node)
-  (find node
-        (xpath:all-nodes (funcall pattern-thunk (xpath:make-context node)))
-        :test #'xpath-protocol:node-equal))
+  (xpath:matching-value pattern-thunk node))
 
 (defun ancestors-using-count-and-from (node count from)
   (let ((ancestors
@@ -123,18 +114,16 @@
           (let ((uri (xpath-protocol:namespace-uri node))
 		(lname (xpath-protocol:local-name node))
                 (node-type (node-type node)))
-            (lambda (ctx)
-              (let ((ctx-node (xpath:context-node ctx)))
-                (xpath-sys:make-node-set
-                 (if (if (eq node-type :element)
-                         (and (xpath-protocol:node-type-p ctx-node :element)
-                              (equal (xpath-protocol:namespace-uri ctx-node)
-                                     uri)
-                              (equal (xpath-protocol:local-name ctx-node)
-                                     lname))
-                         (xpath-protocol:node-type-p ctx-node node-type))
-                     (list ctx-node)
-                     nil)))))))
+            (lambda (pattern-node)
+              (if (if (eq node-type :element)
+                      (and (xpath-protocol:node-type-p pattern-node :element)
+                           (equal (xpath-protocol:namespace-uri pattern-node)
+                                  uri)
+                           (equal (xpath-protocol:local-name pattern-node)
+                                  lname))
+                      (xpath-protocol:node-type-p pattern-node node-type))
+                  (list t)
+                  nil)))))
   (cond
     ((equal level "single")
      (let ((ancestor (car (ancestors-using-count-and-from node count from))))

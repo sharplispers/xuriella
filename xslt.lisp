@@ -73,11 +73,16 @@
                (,doit)
              ,@clauses)))))
 
+(defmacro with-xpath-errors ((&optional) &body body)
+  `(handler-bind
+       ((xpath:xpath-error
+         (lambda (c)
+           (xslt-error "~A" c))))
+     ,@body))
+
 (defun compile-xpath (xpath &optional env)
-  (handler-case*
-      (xpath:compile-xpath xpath env)
-    (xpath:xpath-error (c)
-      (xslt-error "~A" c))))
+  (with-xpath-errors ()
+    (xpath:compile-xpath xpath env)))
 
 (defmacro with-stack-limit ((&optional) &body body)
   `(invoke-with-stack-limit (lambda () ,@body)))
@@ -343,7 +348,9 @@
   (decimal-formats (make-hash-table :test 'equal))
   (initial-global-variable-thunks (make-hash-table :test 'equal)))
 
-(defstruct mode (templates nil))
+(defstruct mode
+  (templates nil)
+  (match-thunk (lambda (ignore) (declare (ignore ignore)) nil)))
 
 (defun find-mode (stylesheet local-name &optional uri)
   (gethash (cons local-name uri) (stylesheet-modes stylesheet)))
@@ -572,25 +579,35 @@
         (parse-1-stylesheet env stylesheet stream uri-resolver)))))
 
 (defun parse-stylesheet (designator &key uri-resolver)
-  (xpath:with-namespaces ((nil #.*xsl*))
-    (let* ((*import-priority* 0)
-           (puri:*strict-parse* nil)
-           (stylesheet (make-stylesheet))
-           (env (make-instance 'lexical-xslt-environment))
-           (*excluded-namespaces* *excluded-namespaces*)
-           (*global-variable-declarations* (make-empty-declaration-array)))
-      (ensure-mode stylesheet nil)
-      (funcall (parse-1-stylesheet env stylesheet designator uri-resolver))
-      ;; reverse attribute sets:
-      (let ((table (stylesheet-attribute-sets stylesheet)))
-        (maphash (lambda (k v)
-                   (setf (gethash k table) (nreverse v)))
-                 table))
-      ;; add default df
-      (unless (find-decimal-format "" "" stylesheet nil)
-        (setf (find-decimal-format "" "" stylesheet)
-              (make-decimal-format)))
-      stylesheet)))
+  (with-xpath-errors ()
+    (xpath:with-namespaces ((nil #.*xsl*))
+      (let* ((*import-priority* 0)
+             (xpath:*allow-variables-in-patterns* nil)
+             (puri:*strict-parse* nil)
+             (stylesheet (make-stylesheet))
+             (env (make-instance 'lexical-xslt-environment))
+             (*excluded-namespaces* *excluded-namespaces*)
+             (*global-variable-declarations* (make-empty-declaration-array)))
+        (ensure-mode stylesheet nil)
+        (funcall (parse-1-stylesheet env stylesheet designator uri-resolver))
+        ;; reverse attribute sets:
+        (let ((table (stylesheet-attribute-sets stylesheet)))
+          (maphash (lambda (k v)
+                     (setf (gethash k table) (nreverse v)))
+                   table))
+        ;; add default df
+        (unless (find-decimal-format "" "" stylesheet nil)
+          (setf (find-decimal-format "" "" stylesheet)
+                (make-decimal-format)))
+        ;; compile a template matcher for each mode:
+        (loop
+           for mode being each hash-value in (stylesheet-modes stylesheet)
+           do
+             (setf (mode-match-thunk mode)
+                   (xpath:make-pattern-matcher
+                    (mapcar #'template-compiled-pattern
+                            (mode-templates mode)))))
+        stylesheet))))
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
   (do-toplevel (elt "attribute-set" <transform>)
@@ -1223,55 +1240,53 @@
             (parse-stylesheet stylesheet))))
   (invoke-with-output-sink
    (lambda ()
-     (handler-case*
-         (let* ((*documents* (make-hash-table :test 'equal))
-                (xpath:*navigator* (or navigator :default-navigator))
-                (puri:*strict-parse* nil)
-                (*stylesheet* stylesheet)
-                (*empty-mode* (make-mode))
-                (*default-mode* (find-mode stylesheet nil))
-                (global-variable-chains
-                 (stylesheet-global-variables stylesheet))
-                (*global-variable-values*
-                 (make-variable-value-array (length global-variable-chains)))
-                (*uri-resolver* uri-resolver)
-                (source-document
-                 (if (typep source-designator 'xml-designator)
-                     (cxml:parse source-designator (stp:make-builder))
-                     source-designator))
-                (xpath-root-node
-                 (make-whitespace-stripper
-                  source-document
-                  (stylesheet-strip-tests stylesheet)))
-                (ctx (xpath:make-context xpath-root-node)))
-           (when (pathnamep source-designator)
-             (setf (gethash source-designator *documents*) xpath-root-node))
-           (map nil
-                (lambda (chain)
-                  (let ((head (car (variable-chain-definitions chain))))
-                    (when (variable-param-p head)
-                      (let ((value
-                             (find-parameter-value
-                              (variable-chain-local-name chain)
-                              (variable-chain-uri chain)
-                              parameters)))
-                        (when value
-                          (setf (global-variable-value
-                                 (variable-chain-index chain))
-                                value))))))
-                global-variable-chains)
-           (map nil
-                (lambda (chain)
-                  (funcall (variable-chain-thunk chain) ctx))
-                global-variable-chains)
-	   ;; zzz we wouldn't have to mask float traps here if we used the
-	   ;; XPath API properly.  Unfortunately I've been using FUNCALL
-	   ;; everywhere instead of EVALUATE, so let's paper over that
-	   ;; at a central place to be sure:
-           (xpath::with-float-traps-masked ()
-	     (apply-templates ctx :mode *default-mode*)))
-       (xpath:xpath-error (c)
-                          (xslt-error "~A" c))))
+     (with-xpath-errors ()
+       (let* ((*documents* (make-hash-table :test 'equal))
+              (xpath:*navigator* (or navigator :default-navigator))
+              (puri:*strict-parse* nil)
+              (*stylesheet* stylesheet)
+              (*empty-mode* (make-mode))
+              (*default-mode* (find-mode stylesheet nil))
+              (global-variable-chains
+               (stylesheet-global-variables stylesheet))
+              (*global-variable-values*
+               (make-variable-value-array (length global-variable-chains)))
+              (*uri-resolver* uri-resolver)
+              (source-document
+               (if (typep source-designator 'xml-designator)
+                   (cxml:parse source-designator (stp:make-builder))
+                   source-designator))
+              (xpath-root-node
+               (make-whitespace-stripper
+                source-document
+                (stylesheet-strip-tests stylesheet)))
+              (ctx (xpath:make-context xpath-root-node)))
+         (when (pathnamep source-designator)
+           (setf (gethash source-designator *documents*) xpath-root-node))
+         (map nil
+              (lambda (chain)
+                (let ((head (car (variable-chain-definitions chain))))
+                  (when (variable-param-p head)
+                    (let ((value
+                           (find-parameter-value
+                            (variable-chain-local-name chain)
+                            (variable-chain-uri chain)
+                            parameters)))
+                      (when value
+                        (setf (global-variable-value
+                               (variable-chain-index chain))
+                              value))))))
+              global-variable-chains)
+         (map nil
+              (lambda (chain)
+                (funcall (variable-chain-thunk chain) ctx))
+              global-variable-chains)
+         ;; zzz we wouldn't have to mask float traps here if we used the
+         ;; XPath API properly.  Unfortunately I've been using FUNCALL
+         ;; everywhere instead of EVALUATE, so let's paper over that
+         ;; at a central place to be sure:
+         (xpath::with-float-traps-masked ()
+           (apply-templates ctx :mode *default-mode*)))))
    (stylesheet-output-specification stylesheet)
    output))
 
@@ -1367,9 +1382,8 @@
 
 (defun find-templates (ctx mode)
   (let* ((matching-candidates
-          (remove-if-not (lambda (template)
-                           (template-matches-p template ctx))
-                         (mode-templates mode)))
+          (xpath:matching-values (mode-match-thunk mode)
+                                 (xpath:context-node ctx)))
          (npriorities
           (if matching-candidates
               (1+ (reduce #'max
@@ -1409,11 +1423,6 @@
         (when (funcall < max other)
           (setf max other)))
       max)))
-
-(defun template-matches-p (template ctx)
-  (find (xpath:context-node ctx)
-        (xpath:all-nodes (funcall (template-match-thunk template) ctx))
-        :test #'xpath-protocol:node-equal))
 
 (defun invoke-with-output-sink (fn output-spec output)
   (etypecase output
@@ -1479,7 +1488,7 @@
 
 (defstruct template
   match-expression
-  match-thunk
+  compiled-pattern
   name
   import-priority
   apply-imports-limit
@@ -1512,26 +1521,10 @@
              -0.5)))
         0.5)))
 
-(defun valid-expression-p (expr)
-  (cond
-    ((atom expr) t)
-    ((eq (first expr) :path)
-     (every (lambda (x)
-              (let ((filter (third x)))
-                (or (null filter) (valid-expression-p filter))))
-            (cdr expr)))
-    ((eq (first expr) :variable)        ;(!)
-     nil)
-    (t
-     (every #'valid-expression-p (cdr expr)))))
-
 (defun parse-xpath (str)
-  (handler-case
-      (xpath:parse-xpath str)
-    (xpath:xpath-error (c)
-      (xslt-error "~A" c))))
+  (with-xpath-errors ()
+    (xpath:parse-xpath str)))
 
-;; zzz also use naive-pattern-expression here?
 (defun parse-key-pattern (str)
   (let ((parsed
          (mapcar #'(lambda (item)
@@ -1544,32 +1537,8 @@
         `(:union ,@parsed))))
 
 (defun parse-pattern (str)
-  ;; zzz check here for anything not allowed as an XSLT pattern
-  ;; zzz can we hack id() and key() here?
-  (let ((form (parse-xpath str)))
-    (unless (consp form)
-      (xslt-error "not a valid pattern: ~A" str))
-    (labels ((process-form (form)
-               (cond ((eq (car form) :union)
-                      (alexandria:mappend #'process-form (rest form)))
-                     ((not (or (eq (car form) :path)
-                               (and (eq (car form) :filter)
-                                    (let ((filter (second form)))
-                                      (and (consp filter)
-                                           (member (car filter)
-                                                   '(:key :id))))
-                                    (equal (third form) '(:true)))
-                               (member (car form) '(:key :id))))
-                      (xslt-error "not a valid pattern: ~A ~A" str form))
-                     ((not (valid-expression-p form))
-                      (xslt-error "invalid filter"))
-                     (t (list form)))))
-      (process-form form))))
-
-(defun naive-pattern-expression (x)
-  (ecase (car x)
-    (:path `(:path (:ancestor-or-self :node) ,@(cdr x)))
-    ((:filter :key :id) x)))
+  (with-xpath-errors ()
+    (cdr (xpath::parse-pattern-expression str))))
 
 (defun compile-value-thunk (value env)
   (if (and (listp value) (eq (car value) 'progn))
@@ -1636,27 +1605,32 @@
                              :n-variables n-variables))))
          (when match
            (mapcar (lambda (expression)
-                     (let ((match-thunk
-                            (xslt-trace-thunk
-                             (compile-xpath
-                              `(xpath:xpath
-                                ,(naive-pattern-expression expression))
-                              env)
-                             "match-thunk for template (match ~s): ~s --> ~s"
-                             match expression :result))
-                           (p (if priority
-                                  (parse-number:parse-number priority)
-                                  (expression-priority expression))))
-                       (make-template :match-expression expression
-                                      :match-thunk match-thunk
-                                      :import-priority *import-priority*
-                                      :apply-imports-limit *apply-imports-limit*
-                                      :priority p
-                                      :position position
-                                      :mode-qname mode
-                                      :params param-bindings
-                                      :body outer-body-thunk
-                                      :n-variables n-variables)))
-                   (parse-pattern match))))))))
+                     (let* ((compiled-pattern
+                             (xslt-trace-thunk
+                              (car (xpath:compute-patterns
+                                    `(:patterns ,expression)
+                                    42
+                                    :dummy
+                                    env))
+                              "match-thunk for template (match ~s): ~s --> ~s"
+                              match expression :result))
+                            (p (if priority
+                                   (parse-number:parse-number priority)
+                                   (expression-priority expression)))
+                            (template
+                             (make-template :match-expression expression
+                                            :compiled-pattern compiled-pattern
+                                            :import-priority *import-priority*
+                                            :apply-imports-limit *apply-imports-limit*
+                                            :priority p
+                                            :position position
+                                            :mode-qname mode
+                                            :params param-bindings
+                                            :body outer-body-thunk
+                                            :n-variables n-variables)))
+                       (setf (xpath:pattern-value compiled-pattern)
+                             template)
+                       template))
+                   (cdr (xpath:parse-pattern-expression match)))))))))
 #+(or)
 (xuriella::parse-stylesheet #p"/home/david/src/lisp/xuriella/test.xsl")
