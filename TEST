@@ -11161,7 +11161,7 @@ PASS BVTs_bvt043 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt043.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt043.xuriella
 
-FAIL BVTs_bvt044 [Mixed]: recursive variable definition
+PASS BVTs_bvt044 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-var.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-var3.inc
@@ -22469,4 +22469,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2817/3073 tests.
+Passed 2818/3073 tests.

@@ -342,6 +342,19 @@
     "numbering_numbering95"
     "Import__91164"))
 
+;; Tests where the output isn't a match because of extraneous whitespace.
+;; For these tests, we force space normalization before comparing.
+;;
+;; (SANITIZE-STYLESHEET is supposed to get rid of indent="yes", but it
+;; misses imported stylesheets.)
+;;
+;; FIXME: Perhaps some *bad-tests* could instead be *whitespace-issues*,
+;; at least those where the official output wuold be a match.
+;;
+(defparameter *whitespace-issues*
+  '("BVTs_bvt044"
+    "Namespace-alias__91782"))
+
 (defun run-tests (&key filter (directory *tests-directory*))
   (when (typep filter '(or string cons))
     (setf filter (cl-ppcre:create-scanner filter)))
@@ -612,28 +625,37 @@
 ;; So let's normalize spaces in test output that looks like an XSLT
 ;; stylesheet, allowing us to pass these tests using the official test output.
 (defun maybe-normalize-test-spaces (wrapper force)
-  (stp:do-children (wrapper-child wrapper)
-    (when (and (typep wrapper-child 'stp:element)
-               (or (equal (stp:namespace-uri wrapper-child) *xsl*)
-                   force))
-      (strip-stylesheet wrapper-child)
-      (labels ((recurse (e &optional preserve)
-                 (stp:do-children (child e)
-                   (typecase child
-                     (stp:text
-                      (setf (stp:data child)
-                            (normalize-whitespace (stp:data child))))
-                     (stp:element
-                         (stp:with-attributes ((space "space" *xml*))
-                             child
-                           (let ((new-preserve
-                                  (cond
-                                    ((namep child "text") t)
-                                    ((not space) preserve)
-                                    ((equal space "preserve") t)
-                                    (t nil))))
-                             (recurse child new-preserve))))))))
-        (recurse wrapper-child)))))
+  (let ((i 0))
+    (loop while (< i (length (cxml-stp-impl::%children wrapper))) do
+         (let ((wrapper-child (stp:nth-child i wrapper)))
+           (cond
+             ((not (typep wrapper-child 'stp:element))
+              (if force
+                  (stp:delete-nth-child i wrapper)
+                  (incf i)))
+             ((or (equal (stp:namespace-uri wrapper-child) *xsl*)
+                  force)
+              (strip-stylesheet wrapper-child)
+              (labels ((recurse (e &optional preserve)
+                         (stp:do-children (child e)
+                           (typecase child
+                             (stp:text
+                              (setf (stp:data child)
+                                    (normalize-whitespace (stp:data child))))
+                             (stp:element
+                                 (stp:with-attributes ((space "space" *xml*))
+                                     child
+                                   (let ((new-preserve
+                                          (cond
+                                            ((namep child "text") t)
+                                            ((not space) preserve)
+                                            ((equal space "preserve") t)
+                                            (t nil))))
+                                     (recurse child new-preserve))))))))
+                (recurse wrapper-child))
+              (incf i))
+             (t
+              (incf i)))))))
 
 (defun xml-output-equal-p (p q normalize)
   (let ((r (parse-for-comparison p))
@@ -731,7 +753,7 @@
         (actual (test-output-pathname test "xuriella"))
         (official (test-official-output-pathname test))
         (force-normalization
-         (find (test-id test) '("Namespace-alias__91782") :test #'equal))
+         (find (test-id test) *whitespace-issues* :test #'equal))
         (output-method nil))
     (handler-bind ((|hey test suite, this is an HTML document|
                     (lambda (c)
@@ -801,7 +823,8 @@
                         (saxon-matches-p
                          (output-equal-p output-method
                                          expected-saxon
-                                         actual))
+                                         actual
+                                         :normalize force-normalization))
                         #+xuriella::xsltproc
                         (xsltproc-matches-p
                          (output-equal-p output-method

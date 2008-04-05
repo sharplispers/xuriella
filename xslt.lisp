@@ -340,7 +340,8 @@
   (attribute-sets (make-hash-table :test 'equal))
   (keys (make-hash-table :test 'equal))
   (namespace-aliases (make-hash-table :test 'equal))
-  (decimal-formats (make-hash-table :test 'equal)))
+  (decimal-formats (make-hash-table :test 'equal))
+  (initial-global-variable-thunks (make-hash-table :test 'equal)))
 
 (defstruct mode (templates nil))
 
@@ -836,17 +837,23 @@
            (funcall inner ctx)))
        "global ~s (~s) = ~s" name select :result))))
 
-(defstruct (variable-information
+(defstruct (variable-chain
+             (:constructor make-variable-chain)
+             (:conc-name "VARIABLE-CHAIN-"))
+  definitions
+  index
+  local-name
+  thunk
+  uri)
+
+(defstruct (import-variable
              (:constructor make-variable)
              (:conc-name "VARIABLE-"))
-  index
-  thunk
-  local-name
-  uri
-  param-p
-  thunk-setter)
+  value-thunk
+  value-thunk-setter
+  param-p)
 
-(defun parse-global-variable! (<variable> global-env) ;; also for <param>
+(defun parse-global-variable! (stylesheet <variable> global-env)
   (let* ((*namespaces* (acons-namespaces <variable>))
          (instruction-base-uri (stp:base-uri <variable>))
          (*instruction-base-uri* instruction-base-uri)
@@ -865,12 +872,24 @@
           ;; that lazily resolves other variables, stored into
           ;; INITIAL-GLOBAL-VARIABLE-THUNKS:
           (let* ((value-thunk :unknown)
+                 (sgv (stylesheet-global-variables stylesheet))
+                 (chain
+                  (if (< index (length sgv))
+                      (elt sgv index)
+                      (make-variable-chain
+                       :index index
+                       :local-name local-name
+                       :uri uri)))
+                 (next (car (variable-chain-definitions chain)))
                  (global-variable-thunk
                   (lambda (ctx)
                     (let ((v (global-variable-value index nil)))
-                      (when (eq v 'seen)
-                        (xslt-error "recursive variable definition"))
                       (cond
+                        ((eq v 'seen)
+                         (unless next
+                           (xslt-error "no next definition for: ~A"
+                                       local-name))
+                         (funcall (variable-value-thunk next) ctx))
                         ((eq v 'unbound)
                          (setf (global-variable-value index) 'seen)
                          (setf (global-variable-value index)
@@ -879,22 +898,25 @@
                          v)))))
                  (excluded-namespaces *excluded-namespaces*)
                  (extension-namespaces *extension-namespaces*)
-                 (thunk-setter
+                 (variable
+                  (make-variable :param-p (namep <variable> "param")))
+                 (value-thunk-setter
                   (lambda ()
-                    (let ((*instruction-base-uri* instruction-base-uri)
-                          (*excluded-namespaces* excluded-namespaces)
-                          (*extension-namespaces* extension-namespaces))
-                      (setf value-thunk
-                            (compile-global-variable <variable> global-env))))))
+                    (let* ((*instruction-base-uri* instruction-base-uri)
+                           (*excluded-namespaces* excluded-namespaces)
+                           (*extension-namespaces* extension-namespaces)
+                           (fn
+                            (compile-global-variable <variable> global-env)))
+                      (setf value-thunk fn)
+                      (setf (variable-value-thunk variable) fn)))))
+            (setf (variable-value-thunk-setter variable)
+                  value-thunk-setter)
             (setf (gethash (cons local-name uri)
                            (initial-global-variable-thunks global-env))
                   global-variable-thunk)
-            (make-variable :index index
-                           :local-name local-name
-                           :uri uri
-                           :thunk global-variable-thunk
-                           :param-p (namep <variable> "param")
-                           :thunk-setter thunk-setter)))))))
+            (setf (variable-chain-thunk chain) global-variable-thunk)
+            (push variable (variable-chain-definitions chain))
+            chain))))))
 
 (defun parse-keys! (stylesheet <transform> env)
   (xpath:with-namespaces ((nil #.*xsl*))
@@ -913,35 +935,39 @@
 
 (defun prepare-global-variables (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
-    (let* ((table (make-hash-table :test 'equal))
+    (let* ((igvt (stylesheet-initial-global-variable-thunks stylesheet))
            (global-env (make-instance 'global-variable-environment
-                                      :initial-global-variable-thunks table))
-           (specs '()))
+                                      :initial-global-variable-thunks igvt))
+           (chains '()))
       (do-toplevel (<variable> "variable|param" <transform>)
-        (let ((var (parse-global-variable! <variable> global-env)))
+        (let ((chain
+               (parse-global-variable! stylesheet <variable> global-env)))
           (xslt-trace "parsing global variable ~s (uri ~s)"
-                      (variable-local-name var)
-                      (variable-uri var))
-          (when (find var
-                      specs
+                      (variable-chain-local-name chain)
+                      (variable-chain-uri chain))
+          (when (find chain
+                      chains
                       :test (lambda (a b)
-                              (and (equal (variable-local-name a)
-                                          (variable-local-name b))
-                                   (equal (variable-uri a)
-                                          (variable-uri b)))))
+                              (and (equal (variable-chain-local-name a)
+                                          (variable-chain-local-name b))
+                                   (equal (variable-chain-uri a)
+                                          (variable-chain-uri b)))))
             (xslt-error "duplicate definition for global variable ~A"
-                        (variable-local-name var)))
-          (push var specs)))
-      (setf specs (nreverse specs))
+                        (variable-chain-local-name chain)))
+          (push chain chains)))
+      (setf chains (nreverse chains))
+      (let ((table (stylesheet-global-variables stylesheet))
+            (newlen (length *global-variable-declarations*)))
+        (adjust-array table newlen :fill-pointer newlen)
+        (dolist (chain chains)
+          (setf (elt table (variable-chain-index chain)) chain)))
       (lambda ()
         ;; now that the global environment knows about all variables, run the
         ;; thunk setters to perform their compilation
-        (mapc (lambda (spec) (funcall (variable-thunk-setter spec))) specs)
-        (let ((table (stylesheet-global-variables stylesheet))
-              (newlen (length *global-variable-declarations*)))
-          (adjust-array table newlen :fill-pointer newlen)
-          (dolist (spec specs)
-            (setf (elt table (variable-index spec)) spec)))))))
+        (mapc (lambda (chain)
+                (dolist (var (variable-chain-definitions chain))
+                  (funcall (variable-value-thunk-setter var))))
+              chains)))))
 
 (defun parse-templates! (stylesheet <transform> env)
   (let ((i 0))
@@ -1204,10 +1230,10 @@
                 (*stylesheet* stylesheet)
                 (*empty-mode* (make-mode))
                 (*default-mode* (find-mode stylesheet nil))
-                (global-variable-specs
+                (global-variable-chains
                  (stylesheet-global-variables stylesheet))
                 (*global-variable-values*
-                 (make-variable-value-array (length global-variable-specs)))
+                 (make-variable-value-array (length global-variable-chains)))
                 (*uri-resolver* uri-resolver)
                 (source-document
                  (if (typep source-designator 'xml-designator)
@@ -1221,20 +1247,23 @@
            (when (pathnamep source-designator)
              (setf (gethash source-designator *documents*) xpath-root-node))
            (map nil
-                (lambda (spec)
-                  (when (variable-param-p spec)
-                    (let ((value
-                           (find-parameter-value (variable-local-name spec)
-                                                 (variable-uri spec)
-                                                 parameters)))
-                      (when value
-                        (setf (global-variable-value (variable-index spec))
-                              value)))))
-                global-variable-specs)
+                (lambda (chain)
+                  (let ((head (car (variable-chain-definitions chain))))
+                    (when (variable-param-p head)
+                      (let ((value
+                             (find-parameter-value
+                              (variable-chain-local-name chain)
+                              (variable-chain-uri chain)
+                              parameters)))
+                        (when value
+                          (setf (global-variable-value
+                                 (variable-chain-index chain))
+                                value))))))
+                global-variable-chains)
            (map nil
-                (lambda (spec)
-                  (funcall (variable-thunk spec) ctx))
-                global-variable-specs)
+                (lambda (chain)
+                  (funcall (variable-chain-thunk chain) ctx))
+                global-variable-chains)
 	   ;; zzz we wouldn't have to mask float traps here if we used the
 	   ;; XPath API properly.  Unfortunately I've been using FUNCALL
 	   ;; everywhere instead of EVALUATE, so let's paper over that
