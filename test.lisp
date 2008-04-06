@@ -294,23 +294,24 @@
                      :directory directory))))))
 
 (defparameter *bad-tests*
-  '( ;; INCONSISTENT TESTS: some tests wants us to recover from this
-    ;; error, yet this one doesn't:
+  '(;; Inconsistent tests:
+    ;;
+    ;; Some tests wants us to recover from this error, yet this one doesn't:
     "copy_copy61"
     "copy_copy62"
 
-    ;; I'M TOO LAZY TO FIX THIS: we signal a run-time error when and if it's
-    ;; actually used.  The test wants a compilation-time error.
-    ;; So what?
+    ;; Should we fix this?
+    ;;
+    ;; We signal a run-time error when and if it's actually used.  The test
+    ;; wants a compilation-time error...
     "AttributeSets_RefToUndefinedAttributeSet"
 
-    ;; WE WOULD PASS THIS: we perform recovery, but saxon doesn't.  Recovery
-    ;; results in non-XML output, which we can't parse for comparison
-    ;; against the official test case.
-    "output_output75"
+    ;; We would pass this:
     ;;
-    ;; we pass this test, but saxon doesn't
-    "AttributeSets__91038"
+    ;; We perform recovery, but saxon doesn't.  Recovery results in non-XML
+    ;; output, which we can't parse for comparison against the official
+    ;; test case.
+    "output_output75"
     ;;
     ;; we'd pass these tests, but the test authors forgot to declare the
     ;; entity they're writing, so we can't parse it for comparison.
@@ -322,25 +323,20 @@
     ;; here an entity declaration wouldn't have helped either:
     "Copying_ResultTreeFragmentWithEscapedText"
 
-    ;; BROKEN TEST: input document not ns-wf
+    ;; Broken test:
+    ;;
+    ;; Input document isn't ns-wf.
     "Attributes__78387"
 
     ;; FIXME: should re-enable these at some point:
     ;;
     ;; the following tests take a lot of time due to the problems of current matching algorithm:
     "impincl_impincl16"
-    "match_match13"
-    ;; stack exhaustion -- matching problem i think
-    "Keys_PerfRepro3"
     ;; probably the same problem (but I haven't checked):
-    "numbering_numbering03"
-    "numbering_numbering10"
-    "numbering_numbering11"
-    "numbering_numbering80"
-    "numbering_numbering81"
-    "numbering_numbering94"
-    "numbering_numbering95"
-    "Import__91164"))
+    "Import__91164"
+
+    ;; stack exhaustion -- matching problem i think
+    "Keys_PerfRepro3"))
 
 ;; Tests where the output isn't a match because of extraneous whitespace.
 ;; For these tests, we force space normalization before comparing.
@@ -353,7 +349,8 @@
 ;;
 (defparameter *whitespace-issues*
   '("BVTs_bvt044"
-    "Namespace-alias__91782"))
+    "Namespace-alias__91782"
+    "AttributeSets__91038"))
 
 (defun run-tests (&key filter (directory *tests-directory*))
   (when (typep filter '(or string cons))
@@ -873,7 +870,7 @@
                   (report nil ": saxon error not signalled and official output not a match")))))))))))
 
 (defun run-xpath-tests ()
-  (run-tests "XPath-Expression/|XSLT-Data-Model/"))
+  (run-tests :filter "XPath-Expression/|XSLT-Data-Model/"))
 
 
 ;;;; from cxml-stp-test

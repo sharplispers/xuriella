@@ -3262,6 +3262,12 @@ PASS match_match12 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/match/match_match12.saxon
   Actual output: Xalan_Conformance_Tests/match/match_match12.xuriella
 
+PASS match_match13 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/match/match13.noindent-xsl
+  Data: Xalan_Conformance_Tests/match/match13.xml
+  Expected output (1): Xalan_Conformance_Tests/match/match_match13.saxon
+  Actual output: Xalan_Conformance_Tests/match/match_match13.xuriella
+
 PASS match_match14 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: Xalan_Conformance_Tests/match/match14.noindent-xsl
   Data: Xalan_Conformance_Tests/match/match14.xml
@@ -5701,6 +5707,12 @@ PASS numbering_numbering02 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering02.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering02.xuriella
 
+PASS numbering_numbering03 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/numbering/numbering03.noindent-xsl
+  Data: Xalan_Conformance_Tests/numbering/numbering03.xml
+  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering03.saxon
+  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering03.xuriella
+
 PASS numbering_numbering04 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering04.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering04.xml
@@ -5736,6 +5748,18 @@ PASS numbering_numbering09 [XSLT-Result-Tree]
   Data: Xalan_Conformance_Tests/numbering/numbering09.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering09.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering09.xuriella
+
+PASS numbering_numbering10 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/numbering/numbering10.noindent-xsl
+  Data: Xalan_Conformance_Tests/numbering/numbering10.xml
+  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering10.saxon
+  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering10.xuriella
+
+PASS numbering_numbering11 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/numbering/numbering11.noindent-xsl
+  Data: Xalan_Conformance_Tests/numbering/numbering11.xml
+  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering11.saxon
+  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering11.xuriella
 
 PASS numbering_numbering12 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering12.noindent-xsl
@@ -6133,6 +6157,18 @@ PASS numbering_numbering79 [XSLT-Result-Tree]
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering79.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering79.xuriella
 
+PASS numbering_numbering80 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/numbering/numbering80.noindent-xsl
+  Data: Xalan_Conformance_Tests/numbering/numbering80.xml
+  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering80.saxon
+  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering80.xuriella
+
+PASS numbering_numbering81 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/numbering/numbering81.noindent-xsl
+  Data: Xalan_Conformance_Tests/numbering/numbering81.xml
+  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering81.saxon
+  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering81.xuriella
+
 PASS numbering_numbering82 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/numbering/numbering82.noindent-xsl
   Data: Xalan_Conformance_Tests/numbering/numbering82.xml
@@ -6204,6 +6240,18 @@ PASS numbering_numbering93 [XSLT-Result-Tree]
   Data: Xalan_Conformance_Tests/numbering/numbering93.xml
   Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering93.saxon
   Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering93.xuriella
+
+PASS numbering_numbering94 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/numbering/numbering94.noindent-xsl
+  Data: Xalan_Conformance_Tests/numbering/numbering94.xml
+  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering94.saxon
+  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering94.xuriella
+
+PASS numbering_numbering95 [XSLT-Result-Tree]
+  Stylesheet: Xalan_Conformance_Tests/numbering/numbering95.noindent-xsl
+  Data: Xalan_Conformance_Tests/numbering/numbering95.xml
+  Expected output (1): Xalan_Conformance_Tests/numbering/numbering_numbering95.saxon
+  Actual output: Xalan_Conformance_Tests/numbering/numbering_numbering95.xuriella
 
 PASS output_output01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/output/output01.noindent-xsl
@@ -10574,6 +10622,12 @@ PASS AttributeSets__91037 [XSLT-Result-Tree]
   Data: MSFT_Conformance_Tests/AttributeSets/books.xml
   Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.saxon
   Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91037.xuriella
+
+PASS AttributeSets__91038 [XSLT-Result-Tree]
+  Stylesheet: MSFT_Conformance_Tests/AttributeSets/91038.noindent-xsl
+  Data: MSFT_Conformance_Tests/AttributeSets/books.xml
+  Expected output (1): MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.saxon
+  Actual output: MSFT_Conformance_Tests/AttributeSets/AttributeSets__91038.xuriella
 
 WARNING: There is no such encoding: "UTF-16".
 WARNING: There is no such encoding: "UTF-16".
@@ -19270,4 +19324,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2820/3073 tests.
+Passed 2829/3082 tests.
