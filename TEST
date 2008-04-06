@@ -19130,7 +19130,7 @@ PASS XSLTFunctions_DocumentFunctionNoArg [Mixed]
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFunctionNoArg.xuriella
 
 FAIL XSLTFunctions_DocumentFunctionWithAbsoluteArgument [Mixed]: There is no applicable method for the generic function
-                                                                   #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:NODE-TYPE-P-USING-NAVIGATOR (26)>
+                                                                   #<STANDARD-GENERIC-FUNCTION XPATH-PROTOCOL:NODE-TYPE-P-USING-NAVIGATOR (27)>
                                                                  when called with arguments
                                                                    (:DEFAULT-NAVIGATOR
                                                                     NIL

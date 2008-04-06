@@ -52,7 +52,20 @@
 (defun xslt-error (fmt &rest args)
   (error 'xslt-error :format-control fmt :format-arguments args))
 
+;; Many errors in XSLT are "recoverable", with a specified action that must
+;; be taken if the error isn't raised.  My original plan was to implement
+;; such issues as continuable conditions, so that users are alerted about
+;; portability issues with their stylesheet, but can contiue anyway.
+;;
+;; However, our current test suite driver compares against Saxon results,
+;; and Saxon recovers (nearly) always.  So our coverage of these errors
+;; is very incomplete.
+;;
+;; Re-enable this code once we can check that it's actually being used
+;; everywhere.
 (defun xslt-cerror (fmt &rest args)
+  (declare (ignore fmt args))
+  #+(or)
   (with-simple-restart (recover "recover")
     (error 'recoverable-xslt-error
            :format-control fmt
