@@ -1,3 +1,156 @@
+; in:
+;      LAMBDA (#:G2393 #:G2394 #:G2395 #:G2396 #:G2397 #:G2398 #:G2399 #:G2400
+;          #:G2401 #:G2408 #:G2409)
+;     (IF (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE) #:G2393 #:G2394)
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG1.
+; 
+; note: deleting unreachable code
+; 
+; compilation unit finished
+;   printed 2 notes
+; in:
+;      LAMBDA (#:G2439 #:G2440 #:G2441 #:G2442 #:G2443 #:G2444 #:G2445 #:G2446
+;          #:G2447 #:G2448 #:G2449 #:G2450 ...)
+;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+
+;     (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2439 #:G2440)
+; 
+; note: deleting unreachable code
+
+;     (IF (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE)
+;       (IF (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
+;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
+;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2439 #:G2440)
+;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2441
+;                   #:G2442))
+;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
+;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2443 #:G2444)
+;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2445
+;                   #:G2446)))
+;       (IF (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
+;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE) #:G2447
+;               #:G2448)
+;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE) #:G2449
+;               #:G2450)))
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG1.
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+
+;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG2.
+; 
+; note: deleting unreachable code
+; 
+; note: deleting unreachable code
+; 
+; compilation unit finished
+;   printed 19 notes
+; in:
+;      LAMBDA (#:G2543 #:G2544 #:G2545 #:G2546 #:G2547 #:G2548 #:G2549 #:G2550
+;          #:G2554 #:G2555)
+;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG0.
+; 
+; note: deleting unreachable code
+
+;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2543 #:G2544)
+; 
+; note: deleting unreachable code
+; 
+; compilation unit finished
+;   printed 2 notes
 PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml
@@ -6410,7 +6563,7 @@ WARNING:
    comparison failed: Corrupted UTF-8 input (initial byte was #b10100111)
 WARNING:
    comparison failed: Corrupted UTF-8 input (initial byte was #b10010110)
-FAIL output_output22 [XSLT-Result-Tree]: output doesn't match
+KNOWNFAIL output_output22 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: Xalan_Conformance_Tests/output/output22.noindent-xsl
   Data: Xalan_Conformance_Tests/output/output22.xml
   Expected output (1): Xalan_Conformance_Tests/output/output_output22.saxon
@@ -11123,15 +11276,13 @@ PASS BVTs_bvt015 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt015.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt015.xuriella
 
-FAIL BVTs_bvt017 [Mixed]: condition of incorrect type: 
-Unable to encode character code point 32000 as :ISO-8859-1.
+PASS BVTs_bvt017 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding00.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt017.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt017.xuriella
 
-FAIL BVTs_bvt018 [Mixed]: condition of incorrect type: 
-Unable to encode character code point 218 as :ISO-8859-5.
+PASS BVTs_bvt018 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding01.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt018.saxon
@@ -19462,4 +19613,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2831/3082 tests.
+Passed 2834/3082 tests.

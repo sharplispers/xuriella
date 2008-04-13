@@ -86,15 +86,21 @@
                (,doit)
              ,@clauses)))))
 
-(defmacro with-xpath-errors ((&optional) &body body)
-  `(handler-bind
-       ((xpath:xpath-error
-         (lambda (c)
-           (xslt-error "~A" c))))
-     ,@body))
+(defmacro with-resignalled-errors ((&optional) &body body)
+  `(invoke-with-resignalled-errors (lambda () ,@body)))
+
+(defun invoke-with-resignalled-errors (fn)
+  (handler-bind
+      ((xpath:xpath-error
+        (lambda (c)
+          (xslt-error "~A" c)))
+       (babel-encodings:character-encoding-error
+        (lambda (c)
+          (xslt-error "~A" c))))
+    (funcall fn)))
 
 (defun compile-xpath (xpath &optional env)
-  (with-xpath-errors ()
+  (with-resignalled-errors ()
     (xpath:compile-xpath xpath env)))
 
 (defmacro with-stack-limit ((&optional) &body body)
@@ -592,7 +598,7 @@
         (parse-1-stylesheet env stylesheet stream uri-resolver)))))
 
 (defun parse-stylesheet (designator &key uri-resolver)
-  (with-xpath-errors ()
+  (with-resignalled-errors ()
     (xpath:with-namespaces ((nil #.*xsl*))
       (let* ((*import-priority* 0)
              (xpath:*allow-variables-in-patterns* nil)
@@ -1251,9 +1257,9 @@
                 (lambda (c)
                   (xslt-error "cannot parse stylesheet: ~A" c))))
             (parse-stylesheet stylesheet))))
-  (invoke-with-output-sink
-   (lambda ()
-     (with-xpath-errors ()
+  (with-resignalled-errors ()
+    (invoke-with-output-sink
+     (lambda ()
        (let* ((*documents* (make-hash-table :test 'equal))
               (xpath:*navigator* (or navigator :default-navigator))
               (puri:*strict-parse* nil)
@@ -1299,9 +1305,9 @@
          ;; everywhere instead of EVALUATE, so let's paper over that
          ;; at a central place to be sure:
          (xpath::with-float-traps-masked ()
-           (apply-templates ctx :mode *default-mode*)))))
-   (stylesheet-output-specification stylesheet)
-   output))
+           (apply-templates ctx :mode *default-mode*))))
+     (stylesheet-output-specification stylesheet)
+     output)))
 
 (defun find-attribute-set (local-name uri)
   (or (gethash (cons local-name uri) (stylesheet-attribute-sets *stylesheet*))
@@ -1540,7 +1546,7 @@
         0.5)))
 
 (defun parse-xpath (str)
-  (with-xpath-errors ()
+  (with-resignalled-errors ()
     (xpath:parse-xpath str)))
 
 (defun parse-key-pattern (str)
@@ -1555,7 +1561,7 @@
         `(:union ,@parsed))))
 
 (defun parse-pattern (str)
-  (with-xpath-errors ()
+  (with-resignalled-errors ()
     (cdr (xpath::parse-pattern-expression str))))
 
 (defun compile-value-thunk (value env)

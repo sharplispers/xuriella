@@ -77,6 +77,7 @@
 (defun map-original-tests (run-test source &key (test (constantly t)))
   (let ((total 0)
         (pass 0)
+        (known 0)
         major-path)
     (loop
        while (klacks:find-event source :start-element)
@@ -95,11 +96,16 @@
                  (test-case (parse-original-test major-path <test-case>)))
             (when (funcall test test-case)
               (incf total)
-              (when (funcall run-test test-case)
-                (incf pass)))))
+              (ecase (funcall run-test test-case)
+                ((nil))
+                ((t)
+                 (incf pass))
+                (:known-failure
+                 (incf known))))))
          (t
           (klacks:skip source :start-element))))
-    (format t "~&Passed ~D/~D tests.~%" pass total)))
+    (format t "~&Passed ~D/~D tests (~D known failures).~%"
+            pass total known)))
 
 (defun parse-original-test (major-path <test-case>)
   (let* ((file-path
@@ -351,6 +357,13 @@
   '("BVTs_bvt044"
     "Namespace-alias__91782"
     "AttributeSets__91038"))
+
+(defparameter *known-failures*
+  '(
+    ;; uses EBCDIC-CP-IT (whatever that is), but Babel's only got EBCDIC-US.
+    ;; Doesn't actually test any differences between the two, so it's
+    ;; probably just there to annoy us.
+    "output_output22"))
 
 (defun run-tests (&key filter (directory *tests-directory*))
   (when (typep filter '(or string cons))
@@ -797,8 +810,16 @@
                  (write-string
                   (replace-junk
                    (strip-addresses
-                    (format nil "~&~:[FAIL~;PASS~] ~A [~A]~?~%"
-                            ok
+                    (format nil "~&~A ~A [~A]~?~%"
+                            (cond
+                              (ok "PASS")
+                              ((find (test-id test)
+                                     *known-failures*
+                                     :test #'equal)
+                               (setf ok :known-failure)
+                               "KNOWNFAIL")
+                              (t
+                               "FAIL"))
                             (test-id test)
                             (test-category test)
                             fmt
