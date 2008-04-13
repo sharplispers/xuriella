@@ -11291,7 +11291,7 @@ PASS BVTs_bvt053 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt053.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt053.xuriella
 
-FAIL BVTs_bvt054 [Mixed]: output doesn't match
+KNOWNFAIL BVTs_bvt054 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/name.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt054.saxon
@@ -11314,7 +11314,7 @@ PASS BVTs_bvt056 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt056.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt056.xuriella
 
-FAIL BVTs_bvt057 [Mixed]: output doesn't match
+PASS BVTs_bvt057 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/ns-conflict.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt057.saxon
@@ -11344,7 +11344,7 @@ Operation was SB-KERNEL::DIVISION, operands (5 0).
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt061.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt061.xuriella
 
-FAIL BVTs_bvt062 [Mixed]: output doesn't match
+PASS BVTs_bvt062 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-cdata.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt062.saxon
@@ -19454,4 +19454,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2837/3081 tests.
+Passed 2837/3081 tests (3 expected failures, 241 unexpected failures).

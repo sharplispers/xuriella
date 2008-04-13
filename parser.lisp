@@ -64,18 +64,20 @@
     (labels ((recurse (i)
                (when (< i n)
                  (let ((child (stp:nth-child i node)))
-                   (maybe-wrap-namespaces
-                    child
-                    (if (namep child "variable")
+                   (if (namep child "variable")
+                       (maybe-wrap-namespaces
+                        child
                         (only-with-attributes (name select) child
                           (when (and select (stp:list-children child))
                             (xslt-error "variable with select and body"))
                           `((let ((,name ,(or select
                                               `(progn ,@(parse-body child)))))
                               (xsl:with-duplicates-check (,name)
-                                ,@(recurse (1+ i))))))
-                        (cons (parse-instruction child)
-                              (recurse (1+ i)))))))))
+                                ,@(recurse (1+ i)))))))
+                       (append (maybe-wrap-namespaces
+                                child
+                                (list (parse-instruction child)))
+                               (recurse (1+ i))))))))
       (let ((result (recurse start)))
         (if param-names
             `((xsl:with-duplicates-check (,@param-names)

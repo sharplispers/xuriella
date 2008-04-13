@@ -368,11 +368,13 @@
     ;; FIXME?
     ;;
     ;; This is an HTML output method issue.  The spec says the HTML
-    ;; output method should output non-HTML elements using the XML output
-    ;; method.  But it doesn't specify the behaviour for HTML elements with
-    ;; non-HTML attributes on them.  We currently output them as HTML, and
-    ;; lose their namespaces.  This test wants the attributes and their
-    ;; namespaces to survive.
+    ;; output method should output elements with a null namespace URI as
+    ;; HTML, and if their name isn't recognized, as an inline element.
+    ;; <xml> here is such an element.  It has an attributes with a
+    ;; namespace though, and the spec doesn't say what we should do with that
+    ;; attribute.  We currently output it using Closure HTML, and
+    ;; lose its namespace.  This test wants the attribute and its
+    ;; namespace to survive.
     "BVTs_bvt054"))
 
 (defun run-tests (&key filter (directory *tests-directory*))
@@ -485,8 +487,8 @@
                  (incf known))))))
          (t
           (klacks:skip source :start-element))))
-    (format t "~&Passed ~D/~D tests (~D expected failures).~%" pass total known)
-    (format t "~&Unexpected failures: ~D.~%" (- total pass known))))
+    (format t "~&Passed ~D/~D tests (~D expected failures, ~D unexpected failures).~%"
+            pass total known (- total pass known))))
 
 (defun parse-test (<test-case>)
   (stp:with-attributes (id category operation
