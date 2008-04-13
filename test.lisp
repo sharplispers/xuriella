@@ -373,7 +373,8 @@
                                          :test #'equal))))))))
 
 (defun run-named-test (name &optional (d *tests-directory*))
-  (let ((*break-on-signals* 'error))
+  (let ((*break-on-signals*
+         '(and error (not babel-encodings:character-encoding-error))))
     (run-tests :filter (format nil "/~A$" name) :directory d)))
 
 (defun copy-file (p q)
@@ -400,7 +401,8 @@
 (defun copy-test-files (name &optional (d *tests-directory*))
   (let* ((test (find-named-test name d))
          (*default-pathname-defaults* (merge-pathnames d))
-         (*break-on-signals* 'error)
+         (*break-on-signals*
+          '(and error (not babel-encodings:character-encoding-error)))
          (target-dir (merge-pathnames "copied-test/"
                                       (asdf:component-pathname
                                        (asdf:find-system :xuriella))))
@@ -703,6 +705,14 @@
         (s (chtml:parse (pathname q) (stp:make-builder))))
     (normalize-html-whitespace r)
     (normalize-html-whitespace s)
+    (flet ((fix-case (node)
+             (xpath:with-namespaces (("xhtml" "http://www.w3.org/1999/xhtml"))
+               (xpath:do-node-set
+                   (content (xpath:evaluate "//xhtml:meta/@content" node))
+                 (setf (stp:value content)
+                       (string-downcase (stp:value content)))))))
+      (fix-case r)
+      (fix-case s))
     (node= (stp:document-element r) (stp:document-element s))))
 
 (defun text-output-equal-p (p q)

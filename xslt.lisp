@@ -1470,16 +1470,21 @@
               (runes:make-rod-ystream)))
          (omit-xml-declaration-p
           (equal (output-omit-xml-declaration output-spec) "yes"))
+         (sink-encoding (or (output-encoding output-spec) "UTF-8"))
          (sax-target
-          (make-instance 'cxml::sink
-                         :ystream ystream
-                         :omit-xml-declaration-p omit-xml-declaration-p)))
+          (progn
+            (setf (runes:ystream-encoding ystream)
+                  (cxml::find-output-encoding sink-encoding))
+            (make-instance 'cxml::sink
+                           :ystream ystream
+                           :omit-xml-declaration-p omit-xml-declaration-p
+                           :encoding sink-encoding))))
     (flet ((make-combi-sink ()
              (make-instance 'combi-sink
                             :hax-target (make-instance 'chtml::sink
                                                        :ystream ystream)
                             :sax-target sax-target
-                            :encoding (output-encoding output-spec))))
+                            :encoding sink-encoding)))
       (let ((method-key
              (cond
                ((equalp (output-method output-spec) "HTML") :html)

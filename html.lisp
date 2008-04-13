@@ -44,7 +44,7 @@
 
 (defmethod initialize-instance :after ((handler combi-sink) &key)
   (setf (sink-encoding handler)
-        (or (sink-encoding handler) "utf-8")))
+        (or (sink-encoding handler) "UTF-8")))
 
 (defmethod sax:start-document ((handler combi-sink))
   nil)
