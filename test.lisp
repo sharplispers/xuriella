@@ -77,7 +77,6 @@
 (defun map-original-tests (run-test source &key (test (constantly t)))
   (let ((total 0)
         (pass 0)
-        (known 0)
         major-path)
     (loop
        while (klacks:find-event source :start-element)
@@ -96,16 +95,11 @@
                  (test-case (parse-original-test major-path <test-case>)))
             (when (funcall test test-case)
               (incf total)
-              (ecase (funcall run-test test-case)
-                ((nil))
-                ((t)
-                 (incf pass))
-                (:known-failure
-                 (incf known))))))
+              (when (funcall run-test test-case)
+                (incf pass)))))
          (t
           (klacks:skip source :start-element))))
-    (format t "~&Passed ~D/~D tests (~D known failures).~%"
-            pass total known)))
+    (format t "~&Passed ~D/~D tests.~%" pass total)))
 
 (defun parse-original-test (major-path <test-case>)
   (let* ((file-path
@@ -333,6 +327,9 @@
     ;;
     ;; Input document isn't ns-wf.
     "Attributes__78387"
+    ;;
+    ;; Someone commented out most of this test...
+    "BVTs_bvt045"
 
     ;; FIXME: should re-enable these at some point:
     ;;
@@ -350,20 +347,33 @@
 ;; (SANITIZE-STYLESHEET is supposed to get rid of indent="yes", but it
 ;; misses imported stylesheets.)
 ;;
-;; FIXME: Perhaps some *bad-tests* could instead be *whitespace-issues*,
-;; at least those where the official output wuold be a match.
-;;
 (defparameter *whitespace-issues*
   '("BVTs_bvt044"
     "Namespace-alias__91782"
-    "AttributeSets__91038"))
+    "AttributeSets__91038"
+    "BVTs_bvt041"
+    "BVTs_bvt042"
+    "BVTs_bvt054"))
 
 (defparameter *known-failures*
   '(
     ;; uses EBCDIC-CP-IT (whatever that is), but Babel's only got EBCDIC-US.
     ;; Doesn't actually test any differences between the two, so it's
     ;; probably just there to annoy us.
-    "output_output22"))
+    "output_output22"
+
+    ;; uses KOI, which Babel doesn't support
+    "BVTs_bvt019"
+
+    ;; FIXME?
+    ;;
+    ;; This is an HTML output method issue.  The spec says the HTML
+    ;; output method should output non-HTML elements using the XML output
+    ;; method.  But it doesn't specify the behaviour for HTML elements with
+    ;; non-HTML attributes on them.  We currently output them as HTML, and
+    ;; lose their namespaces.  This test wants the attributes and their
+    ;; namespaces to survive.
+    "BVTs_bvt054"))
 
 (defun run-tests (&key filter (directory *tests-directory*))
   (when (typep filter '(or string cons))
@@ -453,7 +463,8 @@
 
 (defun map-tests (run-test source &key (test (constantly t)))
   (let ((total 0)
-        (pass 0))
+        (pass 0)
+        (known 0))
     (loop
        while (klacks:find-event source :start-element)
        for lname = (klacks:current-lname source)
@@ -466,11 +477,16 @@
                  (test-case (parse-test <test-case>)))
             (when (funcall test test-case)
               (incf total)
-              (when (funcall run-test test-case)
-                (incf pass)))))
+              (ecase (funcall run-test test-case)
+                ((nil))
+                ((t)
+                 (incf pass))
+                (:known-failure
+                 (incf known))))))
          (t
           (klacks:skip source :start-element))))
-    (format t "~&Passed ~D/~D tests.~%" pass total)))
+    (format t "~&Passed ~D/~D tests (~D expected failures).~%" pass total known)
+    (format t "~&Unexpected failures: ~D.~%" (- total pass known))))
 
 (defun parse-test (<test-case>)
   (stp:with-attributes (id category operation

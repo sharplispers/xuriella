@@ -119,7 +119,7 @@
   (setf suggested-prefix (or suggested-prefix "")) ;zzz
   (when (or (equal suggested-prefix "xmlns")
             (equal suggested-prefix "xml"))
-    (setf suggested-prefix nil))
+    (setf suggested-prefix ""))
   (let* ((prefix-cons
           (find uri
                 (sink-element-all-namespaces elt)

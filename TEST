@@ -1,156 +1,3 @@
-; in:
-;      LAMBDA (#:G2393 #:G2394 #:G2395 #:G2396 #:G2397 #:G2398 #:G2399 #:G2400
-;          #:G2401 #:G2408 #:G2409)
-;     (IF (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE) #:G2393 #:G2394)
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG1.
-; 
-; note: deleting unreachable code
-; 
-; compilation unit finished
-;   printed 2 notes
-; in:
-;      LAMBDA (#:G2439 #:G2440 #:G2441 #:G2442 #:G2443 #:G2444 #:G2445 #:G2446
-;          #:G2447 #:G2448 #:G2449 #:G2450 ...)
-;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-
-;     (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2439 #:G2440)
-; 
-; note: deleting unreachable code
-
-;     (IF (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE)
-;       (IF (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
-;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
-;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2439 #:G2440)
-;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2441
-;                   #:G2442))
-;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
-;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2443 #:G2444)
-;               (IF (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE) #:G2445
-;                   #:G2446)))
-;       (IF (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
-;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE) #:G2447
-;               #:G2448)
-;           (IF (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE) #:G2449
-;               #:G2450)))
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG1. 'XPATH::DOM-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG1.
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'CXML-STP-IMPL::STP-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'XURIELLA::STRIPPING-NODE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-
-;     (TYPEP SB-PCL::.ARG2. 'XPATH::DOM-NAMESPACE)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG2.
-; 
-; note: deleting unreachable code
-; 
-; note: deleting unreachable code
-; 
-; compilation unit finished
-;   printed 19 notes
-; in:
-;      LAMBDA (#:G2543 #:G2544 #:G2545 #:G2546 #:G2547 #:G2548 #:G2549 #:G2550
-;          #:G2554 #:G2555)
-;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
-; --> SB-C::%INSTANCE-TYPEP 
-; ==>
-;   SB-PCL::.ARG0.
-; 
-; note: deleting unreachable code
-
-;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2543 #:G2544)
-; 
-; note: deleting unreachable code
-; 
-; compilation unit finished
-;   printed 2 notes
 PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml
@@ -11291,7 +11138,7 @@ PASS BVTs_bvt018 [Mixed]: raised an xslt-error as expected
 WARNING: Unknown encoding NIL, falling back to UTF-8
 WARNING:
    comparison failed: Corrupted UTF-8 input (initial byte was #b11111111)
-FAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a match
+KNOWNFAIL BVTs_bvt019 [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/BVTs/encoding02.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt019.saxon
@@ -11392,14 +11239,14 @@ PASS BVTs_bvt040 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt040.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt040.xuriella
 
-FAIL BVTs_bvt041 [Mixed]: output doesn't match
+PASS BVTs_bvt041 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-out.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-out.inc
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt041.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt041.xuriella
 
-FAIL BVTs_bvt042 [Mixed]: output doesn't match
+PASS BVTs_bvt042 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/import-override.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/import-override3.inc
@@ -11419,12 +11266,6 @@ PASS BVTs_bvt044 [Mixed]
   Supplemental stylesheet: MSFT_Conformance_Tests/BVTs/inc/include-var3.inc
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt044.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt044.xuriella
-
-FAIL BVTs_bvt045 [Mixed]: saxon error not signalled and official output not a match
-  Stylesheet: MSFT_Conformance_Tests/BVTs/include.noindent-xsl
-  Data: MSFT_Conformance_Tests/BVTs/data.xml
-  Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt045.saxon
-  Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt045.xuriella
 
 PASS BVTs_bvt047 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/indent-html.noindent-xsl
@@ -11450,7 +11291,7 @@ PASS BVTs_bvt053 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt053.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt053.xuriella
 
-FAIL BVTs_bvt054 [Mixed]: The assertion XURIELLA::PREFIX failed.
+FAIL BVTs_bvt054 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/name.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt054.saxon
@@ -19613,4 +19454,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2834/3082 tests.
+Passed 2837/3081 tests.
