@@ -673,7 +673,9 @@
   (do-toplevel (elt "namespace-alias" <transform>)
     (stp:with-attributes (stylesheet-prefix result-prefix) elt
       (setf (gethash
-	     (xpath-sys:environment-find-namespace env stylesheet-prefix)
+	     (if (equal stylesheet-prefix "#default")
+                 ""
+                 (xpath-sys:environment-find-namespace env stylesheet-prefix))
 	     (stylesheet-namespace-aliases stylesheet))
 	    (xpath-sys:environment-find-namespace
              env

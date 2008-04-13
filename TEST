@@ -11325,7 +11325,7 @@ WARNING:
 Context:
   Line 2, column 153 in NIL
 
-FAIL BVTs_bvt058 [Mixed]: output doesn't match
+PASS BVTs_bvt058 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/nsalias.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt058.saxon
@@ -15222,7 +15222,7 @@ FAIL Namespace-alias__91801 [XSLT-Structure]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91801.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91801.xuriella
 
-FAIL Namespace-alias_Namespace-Alias_NSAliasForDefaultWithExcludeResPref [XSLT-Structure]: output doesn't match
+PASS Namespace-alias_Namespace-Alias_NSAliasForDefaultWithExcludeResPref [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/NSaliasWithDefaultResultPrefix.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/NSaliasWithDefaultResultPrefix.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_NSAliasForDefaultWithExcludeResPref.saxon
@@ -15234,13 +15234,13 @@ PASS Namespace-alias_Namespace-Alias_RenameAliasIfClauseForResultDocument [XSLT-
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_RenameAliasIfClauseForResultDocument.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_RenameAliasIfClauseForResultDocument.xuriella
 
-FAIL Namespace-alias_Namespace-Alias_Test1 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias_Namespace-Alias_Test1 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/xslt_nsalias_test1.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_Test1.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_Test1.xuriella
 
-FAIL Namespace-alias_Namespace-Alias_Test2 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias_Namespace-Alias_Test2 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/xslt_nsalias_test2.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_Test2.saxon
@@ -19454,4 +19454,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2837/3081 tests (3 expected failures, 241 unexpected failures).
+Passed 2841/3081 tests (3 expected failures, 237 unexpected failures).

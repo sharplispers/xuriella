@@ -344,8 +344,12 @@
 ;; Tests where the output isn't a match because of extraneous whitespace.
 ;; For these tests, we force space normalization before comparing.
 ;;
-;; (SANITIZE-STYLESHEET is supposed to get rid of indent="yes", but it
-;; misses imported stylesheets.)
+;; Possible reasons for this problem are:
+;;   a. The output method is declared in an imported stylesheet.
+;;      SANITIZE-STYLESHEET is supposed to get rid of indent="yes", but it
+;;      misses imported stylesheets.
+;;   b. Saxon output isn't a match, but the official output is.
+;;      But the official output is unaffected by SANITIZE-STYLESHEET.
 ;;
 (defparameter *whitespace-issues*
   '("BVTs_bvt044"
@@ -353,7 +357,8 @@
     "AttributeSets__91038"
     "BVTs_bvt041"
     "BVTs_bvt042"
-    "BVTs_bvt054"))
+    "BVTs_bvt054"
+    "BVTs_bvt058"))
 
 (defparameter *known-failures*
   '(

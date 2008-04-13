@@ -191,6 +191,11 @@
     ("xmlns" . #"http://www.w3.org/2000/xmlns/")
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
 
+(defun unalias-attribute-uri (uri)
+  (if (zerop (length uri))
+      uri
+      (unalias-uri uri)))
+
 (defun invoke-with-element
     (fn local-name uri &key suggested-prefix extra-namespaces process-aliases)
   (check-type local-name string)
@@ -271,7 +276,7 @@
   (check-type value string)
   (check-type suggested-prefix (or null string))
   (when process-aliases
-    (setf uri (unalias-uri uri)))
+    (setf uri (unalias-attribute-uri uri)))
   (cond
     ((null *current-element*)
      (xslt-cerror "attribute outside of element"))
