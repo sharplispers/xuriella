@@ -11337,8 +11337,7 @@ PASS BVTs_bvt060 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt060.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt060.xuriella
 
-FAIL BVTs_bvt061 [Mixed]: arithmetic error DIVISION-BY-ZERO signalled
-Operation was SB-KERNEL::DIVISION, operands (5 0).
+FAIL BVTs_bvt061 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/num.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt061.saxon
@@ -15625,7 +15624,7 @@ FAIL Number__91026 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91026.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__91026.xuriella
 
-FAIL Number__91027 [XSLT-Result-Tree]: output doesn't match
+PASS Number__91027 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/91027.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91027.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__91027.saxon
@@ -15681,7 +15680,7 @@ PASS Number_format01 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Number/Number_format01.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_format01.xuriella
 
-FAIL Number_NaNOrInvalidValue [XSLT-Result-Tree]: output doesn't match
+PASS Number_NaNOrInvalidValue [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/xslt_xsl_number_invalid_value.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number_NaNOrInvalidValue.saxon
@@ -19454,4 +19453,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2841/3081 tests (3 expected failures, 237 unexpected failures).
+Passed 2843/3081 tests (3 expected failures, 235 unexpected failures).

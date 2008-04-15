@@ -29,6 +29,16 @@
 
 (in-package :xuriella)
 
+(defun xsl-number-value (y)
+  (let ((x (xpath:number-value y)))
+    (if (or (< x 0.5)
+            (xpath::nan-p x)
+            (xpath::inf-p x)
+            (>= x (expt 2 31))          ;-(
+            )
+        (xpath:string-value x)
+        (round (xpath::xnum-round x)))))
+
 (define-instruction xsl:number (args env)
   (destructuring-bind (&key level count from value format lang letter-value
                             grouping-separator grouping-size)
@@ -44,12 +54,7 @@
           (grouping-size (and grouping-size (compile-avt grouping-size env))))
       (lambda (ctx)
         (let ((value              (when value
-                                    (let ((x
-                                           (xpath:number-value
-                                            (funcall value ctx))))
-                                      (if (xpath::nan-p x)
-                                          x
-                                          (round (xpath::xnum-round x))))))
+                                    (xsl-number-value (funcall value ctx))))
               (format             (funcall format ctx))
               (lang               (funcall lang ctx))
               (letter-value       (funcall letter-value ctx))
@@ -58,19 +63,21 @@
               (grouping-size      (when grouping-size
                                     (xpath:number-value
                                      (funcall grouping-size ctx)))))
-          (write-text
-           (format-number-list
-            (if value
-		(list value)
-                (compute-number-list (or level "single")
-                                     (xpath::context-node ctx)
-                                     count
-                                     from))
-            format
-            lang
-            letter-value
-            grouping-separator
-            grouping-size)))))))
+          (if (stringp value)
+              (write-text value)
+              (write-text
+               (format-number-list
+                (if value
+                    (list value)
+                    (compute-number-list (or level "single")
+                                         (xpath::context-node ctx)
+                                         count
+                                         from))
+                format
+                lang
+                letter-value
+                grouping-separator
+                grouping-size))))))))
 
 (defun pattern-thunk-matches-p (pattern-thunk node)
   (xpath:matching-value pattern-thunk node))
@@ -206,7 +213,8 @@
      for i from (1- (length str)) downto 0
      do
        (write-char c stream)
-       (when (and (zerop (mod i size)) (plusp i))
+       (when (and (plusp size)
+                  (and (zerop (mod i size)) (plusp i)))
 	 (write-string separator stream))))
 
 ;;; fixme: unicode support
@@ -257,8 +265,11 @@
                         str)
                   conses)
             (setf current-text nil)))))
-    (when current-text
-      (setf suffix current-text))
+    (cond
+      (current-text
+       (setf suffix current-text))
+      ((null conses)
+       (setf suffix prefix)))
     (unless conses
       (setf conses (list (cons nil "1"))))
     (let* ((tail-cons (car conses))
