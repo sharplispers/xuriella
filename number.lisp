@@ -229,7 +229,7 @@
           (write-string prefix s)
           (loop
              for (separator . subformat) in pairs
-             for n in list
+             for n in (remove 0 list)
              for formatted = (format-number-token subformat n)
              do
              (when separator

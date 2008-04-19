@@ -15354,7 +15354,7 @@ FAIL Number__84692 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84692.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__84692.xuriella
 
-FAIL Number__84694 [XSLT-Result-Tree]: output doesn't match
+PASS Number__84694 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Number/84694.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/84694.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__84694.saxon
@@ -19453,4 +19453,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2843/3081 tests (3 expected failures, 235 unexpected failures).
+Passed 2844/3081 tests (3 expected failures, 234 unexpected failures).
