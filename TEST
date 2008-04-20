@@ -12697,8 +12697,7 @@ PASS Errors_err058 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err058.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err058.xuriella
 
-FAIL Errors_err059 [Mixed]: condition of incorrect type: 
-The variable XURIELLA::*LEXICAL-VARIABLE-DECLARATIONS* is unbound.
+PASS Errors_err059 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/keyvar.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err059.saxon
@@ -19416,4 +19415,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2885/3080 tests (3 expected failures, 192 unexpected failures).
+Passed 2886/3080 tests (3 expected failures, 191 unexpected failures).

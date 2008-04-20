@@ -281,6 +281,13 @@
              (svref *global-variable-values* index))
            "global ~s (uri ~s) = ~s" lname uri :result)))))
 
+(defclass key-environment (xslt-environment) ())
+
+(defmethod xpath-sys:environment-find-variable
+    ((env key-environment) lname uri)
+  (declare (ignore lname uri))
+  (xslt-error "disallowed variable reference"))
+
 (defclass global-variable-environment (xslt-environment)
   ((initial-global-variable-thunks
     :initarg :initial-global-variable-thunks
@@ -1057,8 +1064,10 @@
               (decode-qname name env nil)
             (add-key stylesheet
                      (cons local-name uri)
-                     (compile-xpath `(xpath:xpath ,(parse-key-pattern match)) env)
-                     (compile-xpath use env))))))))
+                     (compile-xpath `(xpath:xpath ,(parse-key-pattern match))
+                                    env)
+                     (compile-xpath use
+                                    (make-instance 'key-environment)))))))))
 
 (defun prepare-global-variables (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
