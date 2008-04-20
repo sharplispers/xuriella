@@ -43,8 +43,10 @@
   (destructuring-bind (&key level count from value format lang letter-value
                             grouping-separator grouping-size)
       args
-    (let ((count (and count (xpath:make-pattern-matcher* count env)))
-          (from  (and from (xpath:make-pattern-matcher* from env)))
+    (let ((count (and count (without-xslt-current ()
+                              (xpath:make-pattern-matcher* count env))))
+          (from  (and from (without-xslt-current ()
+                             (xpath:make-pattern-matcher* from env))))
           (value (and value (compile-xpath value env)))
           (format       (compile-avt (or format "1") env))
           (lang         (compile-avt (or lang "") env))

@@ -106,6 +106,23 @@
 (defmacro with-stack-limit ((&optional) &body body)
   `(invoke-with-stack-limit (lambda () ,@body)))
 
+(defparameter *without-xslt-current-p* nil)
+
+(defmacro without-xslt-current ((&optional) &body body)
+  `(invoke-without-xslt-current (lambda () ,@body)))
+
+(defun invoke-without-xslt-current (fn)
+  (let ((*without-xslt-current-p* t))
+    (funcall fn)))
+
+;;; (defun invoke-without-xslt-current (fn)
+;;;   (let ((non-extensions (gethash "" xpath::*extensions*))
+;;;         (xpath::*extensions*
+;;;          ;; hide XSLT extensions
+;;;          (make-hash-table :test #'equal)))
+;;;     (setf (gethash "" xpath::*extensions*) non-extensions)
+;;;     (funcall fn)))
+
 
 ;;;; Helper functions and macros
 
@@ -832,11 +849,12 @@
                   (cdr (parse-nametest-tokens
                         (stp:attribute-value elt "elements"))))
           (let* ((compiled-pattern
-                  (car (xpath:compute-patterns
-                        `(:patterns ,expression)
-                        *import-priority*
-                        "will set below"
-                        env)))
+                  (car (without-xslt-current ()
+                         (xpath:compute-patterns
+                          `(:patterns ,expression)
+                          *import-priority*
+                          "will set below"
+                          env))))
                  (strip-test
                   (make-strip-test :compiled-pattern compiled-pattern
                                    :priority (expression-priority expression)
@@ -1214,6 +1232,8 @@
 ;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
 
 (xpath-sys:define-xpath-function/lazy xslt :current ()
+  (when *without-xslt-current-p*
+    (xslt-error "current() not allowed here"))
   #'(lambda (ctx)
       (xpath-sys:make-node-set
        (xpath-sys:make-pipe
@@ -1679,11 +1699,12 @@
            (mapcar (lambda (expression)
                      (let* ((compiled-pattern
                              (xslt-trace-thunk
-                              (car (xpath:compute-patterns
-                                    `(:patterns ,expression)
-                                    42
-                                    :dummy
-                                    env))
+                              (car (without-xslt-current ()
+                                     (xpath:compute-patterns
+                                      `(:patterns ,expression)
+                                      42
+                                      :dummy
+                                      env)))
                               "match-thunk for template (match ~s): ~s --> ~s"
                               match expression :result))
                             (p (if priority
