@@ -1643,6 +1643,13 @@
                             (p (if priority
                                    (xpath::parse-xnum priority)
                                    (expression-priority expression)))
+                            (p
+                             (progn
+                               (unless (and (numberp p)
+                                            (not (xpath::inf-p p))
+                                            (not (xpath::nan-p p)))
+                                 (xslt-error "failed to parse priority"))
+                               (float p 1.0d0)))
                             (template
                              (make-template :match-expression expression
                                             :compiled-pattern compiled-pattern
@@ -1654,10 +1661,6 @@
                                             :params param-bindings
                                             :body outer-body-thunk
                                             :n-variables n-variables)))
-                       (unless (and (numberp p)
-                                    (not (xpath::inf-p p))
-                                    (not (xpath::nan-p p)))
-                         (xslt-error "failed to parse priority"))
                        (setf (xpath:pattern-value compiled-pattern)
                              template)
                        template))
