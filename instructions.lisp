@@ -89,7 +89,8 @@
           (split-qname qname)
         (values local-name
                 (if (or prefix (not attributep))
-                    (cdr (assoc prefix namespaces :test 'equal))
+                    (or (cdr (assoc prefix namespaces :test 'equal))
+                        (xslt-error "namespace not found: ~A" prefix))
                     "")
                 prefix))
     (cxml:well-formedness-violation ()
