@@ -824,7 +824,12 @@
                                      (when (find-restart 'recover)
                                        (invoke-restart 'recover)))))
                      (apply-stylesheet (pathname (test-stylesheet-pathname test))
-                                       (pathname (test-data-pathname test))
+                                       (let ((p (test-data-pathname test)))
+                                         (if (search "Elements/Plants.xml" p)
+                                             (merge-pathnames
+                                              "MSFT_Conformance_Tests/Elements/plants.xml"
+                                              *tests-directory*)
+                                             (pathname p)))
                                        :output s
                                        :uri-resolver #'uri-resolver))))
                (pp (label pathname)

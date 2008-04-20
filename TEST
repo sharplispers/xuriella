@@ -12196,9 +12196,7 @@ PASS Elements__89113 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89113.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89113.xuriella
 
-FAIL Elements__89171 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Elements/Plants.xml":
-  No such file or directory
+PASS Elements__89171 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-b-repeat.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89171.saxon
@@ -12210,17 +12208,13 @@ PASS Elements__89172 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89172.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89172.xuriella
 
-FAIL Elements__89175 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Elements/Plants.xml":
-  No such file or directory
+PASS Elements__89175 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-b-copy.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89175.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89175.xuriella
 
-FAIL Elements__89177 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Elements/Plants.xml":
-  No such file or directory
+PASS Elements__89177 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-b-attribute.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/Plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89177.saxon
@@ -19441,4 +19435,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2854/3080 tests (3 expected failures, 223 unexpected failures).
+Passed 2857/3080 tests (3 expected failures, 220 unexpected failures).
