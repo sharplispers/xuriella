@@ -12743,13 +12743,13 @@ PASS Errors_err066 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err066.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err066.xuriella
 
-FAIL Errors_err067 [Mixed]: expected error not signalled: 
+PASS Errors_err067 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/nsalias-noresult.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err067.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err067.xuriella
 
-FAIL Errors_err068 [Mixed]: expected error not signalled: 
+PASS Errors_err068 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/nsalias-nostyle.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err068.saxon
@@ -14994,7 +14994,7 @@ PASS Namespace_XPath_UndeclaredPrefix [XSLT-Result-Tree]: raised an xslt-error a
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_UndeclaredPrefix.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_UndeclaredPrefix.xuriella
 
-FAIL Namespace-alias__91766 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91766 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91766.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91766.saxon
@@ -15012,13 +15012,13 @@ PASS Namespace-alias__91768 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91768.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91768.xuriella
 
-FAIL Namespace-alias__91769 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91769 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91769.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91769.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91769.xuriella
 
-FAIL Namespace-alias__91770 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91770 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91770.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91770.saxon
@@ -19415,4 +19415,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2886/3080 tests (3 expected failures, 191 unexpected failures).
+Passed 2891/3080 tests (3 expected failures, 186 unexpected failures).
