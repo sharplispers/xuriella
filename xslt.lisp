@@ -603,6 +603,8 @@
       (let ((*xsl-import-stack* (cons str *xsl-import-stack*)))
         (parse-1-stylesheet env stylesheet stream uri-resolver)))))
 
+(defvar *included-attribute-sets*)
+
 (defun parse-stylesheet (designator &key uri-resolver)
   (with-resignalled-errors ()
     (xpath:with-namespaces ((nil #.*xsl*))
@@ -612,7 +614,8 @@
              (stylesheet (make-stylesheet))
              (env (make-instance 'lexical-xslt-environment))
              (*excluded-namespaces* *excluded-namespaces*)
-             (*global-variable-declarations* (make-empty-declaration-array)))
+             (*global-variable-declarations* (make-empty-declaration-array))
+             (*included-attribute-sets* nil))
         (ensure-mode stylesheet nil)
         (funcall (parse-1-stylesheet env stylesheet designator uri-resolver))
         ;; reverse attribute sets:
@@ -620,6 +623,10 @@
           (maphash (lambda (k v)
                      (setf (gethash k table) (nreverse v)))
                    table))
+        ;; for Errors_err011
+        (dolist (sets *included-attribute-sets*)
+          (loop for (local-name uri nil) in sets do
+               (find-attribute-set local-name uri stylesheet)))
         ;; add default df
         (unless (find-decimal-format "" "" stylesheet nil)
           (setf (find-decimal-format "" "" stylesheet)
@@ -668,6 +675,7 @@
                    (thunk
                     (compile-instruction `(progn ,@instructions) env))
                    (n-variables (length *lexical-variable-declarations*)))
+              (push sets *included-attribute-sets*)
               (lambda (ctx)
                 (with-stack-limit ()
                   (loop for (local-name uri nil) in sets do
@@ -1347,8 +1355,8 @@
      (stylesheet-output-specification stylesheet)
      output)))
 
-(defun find-attribute-set (local-name uri)
-  (or (gethash (cons local-name uri) (stylesheet-attribute-sets *stylesheet*))
+(defun find-attribute-set (local-name uri &optional (stylesheet *stylesheet*))
+  (or (gethash (cons local-name uri) (stylesheet-attribute-sets stylesheet))
       (xslt-error "no such attribute set: ~A/~A" local-name uri)))
 
 (defun apply-templates/list (list &key param-bindings sort-predicate mode)
