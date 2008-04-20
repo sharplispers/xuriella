@@ -677,7 +677,10 @@
                          (make-variable-value-array n-variables)))
                     (funcall thunk ctx)))))
             (gethash (multiple-value-bind (local-name uri)
-                         (decode-qname (stp:attribute-value elt "name") env nil)
+                         (decode-qname (or (stp:attribute-value elt "name")
+                                           (xslt-error "missing name"))
+                                       env
+                                       nil)
                        (cons local-name uri))
                      (stylesheet-attribute-sets stylesheet))))))
 
