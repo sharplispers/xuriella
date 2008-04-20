@@ -12767,7 +12767,7 @@ PASS Errors_err071 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err071.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err071.xuriella
 
-FAIL Errors_err072 [Mixed]: expected error not signalled: 
+PASS Errors_err072 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/out-badcdata.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err072.saxon
@@ -15811,7 +15811,7 @@ FAIL Output__77966 [XSLT-Output]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77966.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77966.xuriella
 
-FAIL Output__77967 [XSLT-Output]: expected error not signalled: 
+PASS Output__77967 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29601.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/books.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77967.saxon
@@ -16007,9 +16007,7 @@ error opening #P"...MSFT_Conformance_Tests/Output/OutputText.xml":
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84012.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84012.xuriella
 
-FAIL Output__84013 [XSLT-Output]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Output/OutputText.xml":
-  No such file or directory
+PASS Output__84013 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Output/84013.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84013.saxon
@@ -19415,4 +19413,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2891/3080 tests (3 expected failures, 186 unexpected failures).
+Passed 2894/3080 tests (3 expected failures, 183 unexpected failures).

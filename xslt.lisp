@@ -623,7 +623,7 @@
               (funcall var-cont)
               (parse-keys! stylesheet <transform> env)
               (parse-templates! stylesheet <transform> env)
-              (parse-output! stylesheet <transform>)
+              (parse-output! stylesheet <transform> env)
               (parse-strip/preserve-space! stylesheet <transform> env)
               (parse-attribute-sets! stylesheet <transform> env)
               (parse-namespace-aliases! stylesheet <transform> env)
@@ -907,23 +907,27 @@
   omit-xml-declaration
   encoding
   doctype-system
-  doctype-public)
+  doctype-public
+  cdata-section-matchers)
 
-(defun parse-output! (stylesheet <transform>)
+(defun parse-output! (stylesheet <transform> env)
   (dolist (<output> (list-toplevel "output" <transform>))
     (let ((spec (stylesheet-output-specification stylesheet)))
-      (stp:with-attributes ( ;; version
-                            method
-                            indent
-                            encoding
-;;;                           media-type
-                            doctype-system
-                            doctype-public
-                            omit-xml-declaration
-;;;                           standalone
-;;;                           cdata-section-elements
-                            )
+      (only-with-attributes (version
+                             method
+                             indent
+                             encoding
+                             media-type
+                             doctype-system
+                             doctype-public
+                             omit-xml-declaration
+                             standalone
+                             cdata-section-elements)
           <output>
+        (declare (ignore version
+                         ;; FIXME:
+                         media-type
+                         standalone))
         (when method
           (setf (output-method spec) method))
         (when indent
@@ -936,13 +940,11 @@
           (setf (output-doctype-public spec) doctype-public))
         (when omit-xml-declaration
           (setf (output-omit-xml-declaration spec) omit-xml-declaration))
-;;;         (when cdata-section-elements
-;;;           (setf (output-cdata-section-elements spec)
-;;;                 (concatenate 'string
-;;;                              (output-cdata-section-elements spec)
-;;;                              " "
-;;;                              cdata-section-elements)))
-        ))))
+        (when cdata-section-elements
+          (dolist (qname (words cdata-section-elements))
+            (decode-qname qname env nil) ;check the syntax
+            (push (xpath:make-pattern-matcher* qname env)
+                  (output-cdata-section-matchers spec))))))))
 
 (defun make-empty-declaration-array ()
   (make-array 1 :fill-pointer 0 :adjustable t))
