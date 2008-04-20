@@ -152,7 +152,8 @@
 
 (defun parse-integer-picture (picture df start end)
   (let ((integer-part-grouping-positions '())
-        (minimum-integer-part-size 0))
+        (minimum-integer-part-size 0)
+        (zero-digit-p nil))
     (loop
        for i from start below end
        for c = (elt picture i)
@@ -162,9 +163,13 @@
            (df/grouping-separator
             (push 0 integer-part-grouping-positions))
            (df/digit
+            (when zero-digit-p
+              (xslt-error
+               "digit not allowed after zero-digit in integer picture"))
             (when integer-part-grouping-positions
               (incf (car integer-part-grouping-positions))))
            (df/zero-digit
+            (setf zero-digit-p t)
             (when integer-part-grouping-positions
               (incf (car integer-part-grouping-positions)))
             (incf minimum-integer-part-size)))
