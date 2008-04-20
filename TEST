@@ -11814,14 +11814,6 @@ PASS ConflictResolution__77802 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77802.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77802.xuriella
 
-FAIL ConflictResolution__77833 [XSLT-Template]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/ConflictResolution/xslt08103.noindent-xsl":
-  No such file or directory
-  Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08103.noindent-xsl
-  Data: MSFT_Conformance_Tests/ConflictResolution/plants01.xml
-  Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77833.saxon
-  Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77833.xuriella
-
 PASS ConflictResolution__77847 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08104.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
@@ -11896,7 +11888,7 @@ PASS ConflictResolution__77882 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77882.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77882.xuriella
 
-FAIL ConflictResolution__77883 [XSLT-Template]: expected error not signalled: 
+PASS ConflictResolution__77883 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt08111.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/ConflictResolution/lowpribooks17.xsl
@@ -19449,4 +19441,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2852/3081 tests (3 expected failures, 226 unexpected failures).
+Passed 2853/3080 tests (3 expected failures, 224 unexpected failures).

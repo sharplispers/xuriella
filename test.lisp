@@ -339,7 +339,10 @@
     "Import__91164"
 
     ;; stack exhaustion -- matching problem i think
-    "Keys_PerfRepro3"))
+    "Keys_PerfRepro3"
+
+    ;; test stylesheet doesn't exist?!
+    "ConflictResolution__77833"))
 
 ;; Tests where the output isn't a match because of extraneous whitespace.
 ;; For these tests, we force space normalization before comparing.
