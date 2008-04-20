@@ -12442,7 +12442,7 @@ PASS Errors__84391 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors__84391.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors__84391.xuriella
 
-FAIL Errors__84392 [Mixed]: expected error not signalled: 
+PASS Errors__84392 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/84392.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors__84392.saxon
@@ -12944,7 +12944,7 @@ PASS Errors_InvalidTopLevelElement [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_InvalidTopLevelElement.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_InvalidTopLevelElement.xuriella
 
-FAIL Errors_MissingVersionAttribute [Mixed]: expected error not signalled: 
+PASS Errors_MissingVersionAttribute [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/xslt_missing_version_attr.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_MissingVersionAttribute.saxon
@@ -14746,7 +14746,7 @@ PASS Namespace__77700 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77700.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77700.xuriella
 
-FAIL Namespace__77672 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77672 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01406.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77672.saxon
@@ -14836,7 +14836,7 @@ PASS Namespace__77735 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77735.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77735.xuriella
 
-FAIL Namespace__77806 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77806 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01401.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/XSLT01401.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77806.saxon
@@ -14848,44 +14848,44 @@ PASS Namespace__77983 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77983.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77983.xuriella
 
-FAIL Namespace__77984 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__77984 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/xslt01412.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Namespace/lowpribooks17.xsl
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__77984.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__77984.xuriella
 
-FAIL Namespace__78028 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__78028 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01004.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/output.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78028.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__78028.xuriella
 
-FAIL Namespace__78193 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__78193 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01405.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78193.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__78193.xuriella
 
-FAIL Namespace__78194 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__78194 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01407.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78194.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__78194.xuriella
 
-FAIL Namespace__78207 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__78207 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01408a.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78207.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__78207.xuriella
 
-FAIL Namespace__78208 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__78208 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01409A.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/books.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78208.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace__78208.xuriella
 
-FAIL Namespace__78210 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace__78210 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace/XSLT01410.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace/XSLT01410.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace__78210.saxon
@@ -19433,4 +19433,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2860/3080 tests (3 expected failures, 217 unexpected failures).
+Passed 2871/3080 tests (3 expected failures, 206 unexpected failures).

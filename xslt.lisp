@@ -530,20 +530,25 @@
     (let ((*namespaces* namespaces))
       (invoke-with-import-magic (constantly t) <transform> env))
     (do-toplevel (elt "node()" <transform>)
-      (when (equal (stp:attribute-value (stp:parent elt) "version") "1.0")
-        (if (typep elt 'stp:element)
-            (when (or (equal (stp:namespace-uri elt) "")
-                      (and (equal (stp:namespace-uri elt) *xsl*)
-                           (not (find (stp:local-name elt)
-                                      '("key" "template" "output" "strip-space"
-                                        "preserve-space" "attribute-set"
-                                        "namespace-alias" "decimal-format"
-                                        "variable" "param" "import" "include"
-                                        ;; for include handling:
-                                        "stylesheet" "transform")
-                                      :test #'equal))))
-              (xslt-error "unknown top-level element ~A" (stp:local-name elt)))
-            (xslt-error "text at top-level"))))
+      (let ((version (stp:attribute-value (stp:parent elt) "version")))
+        (cond
+          ((null version)
+           (xslt-error "stylesheet lacks version"))
+          ((equal version "1.0")
+           (if (typep elt 'stp:element)
+               (when (or (equal (stp:namespace-uri elt) "")
+                         (and (equal (stp:namespace-uri elt) *xsl*)
+                              (not (find (stp:local-name elt)
+                                         '("key" "template" "output"
+                                           "strip-space" "preserve-space"
+                                           "attribute-set" "namespace-alias"
+                                           "decimal-format" "variable" "param"
+                                           "import" "include"
+                                           ;; for include handling:
+                                           "stylesheet" "transform")
+                                         :test #'equal))))
+                 (xslt-error "unknown top-level element ~A" (stp:local-name elt)))
+               (xslt-error "text at top-level"))))))
     (macrolet ((with-specials ((&optional) &body body)
                  `(let ((*instruction-base-uri* instruction-base-uri)
                         (*namespaces* namespaces)
