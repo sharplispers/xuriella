@@ -11411,7 +11411,7 @@ FAIL BVTs_bvt075 [Mixed]: saxon error not signalled and official output not a ma
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt075.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt075.xuriella
 
-FAIL BVTs_bvt076 [Mixed]: output doesn't match
+PASS BVTs_bvt076 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/pri-explicit.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt076.saxon
@@ -11742,8 +11742,7 @@ PASS Completeness__84361 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/Completeness/Completeness__84361.saxon
   Actual output: MSFT_Conformance_Tests/Completeness/Completeness__84361.xuriella
 
-FAIL ConflictResolution__77572 [XSLT-Template]: condition of incorrect type: 
-invalid array index 0 for "" (should be nonnegative and <0)
+PASS ConflictResolution__77572 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08004a.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77572.saxon
@@ -11755,7 +11754,7 @@ PASS ConflictResolution__77619 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77619.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77619.xuriella
 
-FAIL ConflictResolution__77621 [XSLT-Template]: output doesn't match
+PASS ConflictResolution__77621 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08006a.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77621.saxon
@@ -11767,15 +11766,13 @@ FAIL ConflictResolution__77622 [XSLT-Template]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77622.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77622.xuriella
 
-FAIL ConflictResolution__77623 [XSLT-Template]: condition of incorrect type: 
-junk in string "1.21a"
+PASS ConflictResolution__77623 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08008.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77623.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77623.xuriella
 
-FAIL ConflictResolution__77626 [XSLT-Template]: condition of incorrect type: 
-Argument Y is not a REAL: NIL
+PASS ConflictResolution__77626 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT08014.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77626.saxon
@@ -11811,7 +11808,7 @@ PASS ConflictResolution__77784 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77784.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77784.xuriella
 
-FAIL ConflictResolution__77802 [XSLT-Template]: output doesn't match
+PASS ConflictResolution__77802 [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/XSLT09000.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/books.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__77802.saxon
@@ -12949,8 +12946,7 @@ FAIL Errors_InvalidFormatPattern1 [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_InvalidFormatPattern1.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_InvalidFormatPattern1.xuriella
 
-FAIL Errors_InvalidPriorityValue [Mixed]: condition of incorrect type: 
-junk in string "1,0"
+PASS Errors_InvalidPriorityValue [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/xslt_template_priority_error.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_InvalidPriorityValue.saxon
@@ -19453,4 +19449,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2844/3081 tests (3 expected failures, 234 unexpected failures).
+Passed 2851/3081 tests (3 expected failures, 227 unexpected failures).

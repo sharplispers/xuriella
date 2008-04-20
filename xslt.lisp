@@ -1641,7 +1641,7 @@
                               "match-thunk for template (match ~s): ~s --> ~s"
                               match expression :result))
                             (p (if priority
-                                   (parse-number:parse-number priority)
+                                   (xpath::parse-xnum priority)
                                    (expression-priority expression)))
                             (template
                              (make-template :match-expression expression
@@ -1654,6 +1654,10 @@
                                             :params param-bindings
                                             :body outer-body-thunk
                                             :n-variables n-variables)))
+                       (unless (and (numberp p)
+                                    (not (xpath::inf-p p))
+                                    (not (xpath::nan-p p)))
+                         (xslt-error "failed to parse priority"))
                        (setf (xpath:pattern-value compiled-pattern)
                              template)
                        template))
