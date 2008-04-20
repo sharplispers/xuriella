@@ -273,6 +273,8 @@
 
 (define-instruction-parser |text| (node)
   (only-with-attributes (select disable-output-escaping) node
+    (when (xpath:evaluate "boolean(*)" node)
+      (xslt-error "non-text found in xsl:text"))
     (if (equal disable-output-escaping "yes")
         `(xsl:unescaped-text ,(stp:string-value node))
         `(xsl:text ,(stp:string-value node)))))

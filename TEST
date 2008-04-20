@@ -12628,7 +12628,7 @@ PASS Errors_err046 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err046.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err046.xuriella
 
-FAIL Errors_err047 [Mixed]: expected error not signalled: 
+PASS Errors_err047 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/fwdcompat-text.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err047.saxon
@@ -12870,7 +12870,7 @@ FAIL Errors_err099 [Mixed]: expected error not signalled:
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err099.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err099.xuriella
 
-FAIL Errors_err100 [Mixed]: expected error not signalled: 
+PASS Errors_err100 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/text-child.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err100.saxon
@@ -19431,4 +19431,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2879/3080 tests (3 expected failures, 198 unexpected failures).
+Passed 2881/3080 tests (3 expected failures, 196 unexpected failures).
