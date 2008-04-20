@@ -182,6 +182,8 @@
       (xslt-error "not a qname: ~A" str))))
 
 (defun decode-qname (qname env attributep)
+  (unless qname
+    (xslt-error "missing name"))
   (multiple-value-bind (prefix local-name)
       (split-qname qname)
     (values local-name

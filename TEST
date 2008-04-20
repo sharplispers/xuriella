@@ -12520,8 +12520,7 @@ PASS Errors_err017 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err017.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err017.xuriella
 
-FAIL Errors_err021 [Mixed]: condition of incorrect type: 
-The value NIL is not of type (SIMPLE-ARRAY CHARACTER).
+PASS Errors_err021 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/call-noname.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err021.saxon
@@ -19432,4 +19431,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2873/3080 tests (3 expected failures, 204 unexpected failures).
+Passed 2874/3080 tests (3 expected failures, 203 unexpected failures).

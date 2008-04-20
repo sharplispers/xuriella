@@ -678,15 +678,15 @@
 
 (define-instruction xsl:call-template (args env)
   (destructuring-bind (name &rest param-binding-specs) args
-      (let ((param-bindings
-             (compile-var-bindings param-binding-specs env)))
-        (multiple-value-bind (local-name uri)
-            (decode-qname name env nil)
-          (setf name (cons local-name uri)))
-        (lambda (ctx)
-          (call-template ctx name
-                         (loop for (name nil value-thunk) in param-bindings
-                               collect (list name (funcall value-thunk ctx))))))))
+    (let ((param-bindings
+           (compile-var-bindings param-binding-specs env)))
+      (multiple-value-bind (local-name uri)
+          (decode-qname name env nil)
+        (setf name (cons local-name uri)))
+      (lambda (ctx)
+        (call-template ctx name
+                       (loop for (name nil value-thunk) in param-bindings
+                          collect (list name (funcall value-thunk ctx))))))))
 
 ;; fixme: incompatible with XSLT 2.0
 (define-instruction xsl:document (args env)
