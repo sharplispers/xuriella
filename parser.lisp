@@ -271,11 +271,20 @@
     `(xsl:attribute (,name :namespace ,namespace)
        ,@(parse-body node))))
 
+(defun boolean-or-error (str)
+  (cond
+    ((equal str "yes")
+     t)
+    ((or (null str) (equal str "no"))
+     nil)
+    (t
+     (xslt-error "not a boolean: ~A" str))))
+
 (define-instruction-parser |text| (node)
   (only-with-attributes (select disable-output-escaping) node
     (when (xpath:evaluate "boolean(*)" node)
       (xslt-error "non-text found in xsl:text"))
-    (if (equal disable-output-escaping "yes")
+    (if (boolean-or-error disable-output-escaping)
         `(xsl:unescaped-text ,(stp:string-value node))
         `(xsl:text ,(stp:string-value node)))))
 
@@ -295,7 +304,7 @@
 (define-instruction-parser |value-of| (node)
   (only-with-attributes (select disable-output-escaping) node
     (assert-no-body node)
-    (if (equal disable-output-escaping "yes")
+    (if (boolean-or-error disable-output-escaping)
         `(xsl:unescaped-value-of ,select)
         `(xsl:value-of ,select))))
 
@@ -337,7 +346,7 @@
 
 (define-instruction-parser |message| (node)
   (only-with-attributes (terminate) node
-    (if (equal terminate "yes")
+    (if (boolean-or-error terminate)
         `(xsl:terminate ,@(parse-body node))
         `(xsl:message ,@(parse-body node)))))
 

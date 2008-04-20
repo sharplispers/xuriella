@@ -1583,7 +1583,7 @@
                    (runes:make-character-stream-ystream stream))))
               (runes:make-rod-ystream)))
          (omit-xml-declaration-p
-          (equal (output-omit-xml-declaration output-spec) "yes"))
+          (boolean-or-error (output-omit-xml-declaration output-spec)))
          (sink-encoding (or (output-encoding output-spec) "UTF-8"))
          (sax-target
           (progn
