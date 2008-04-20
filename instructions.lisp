@@ -394,7 +394,14 @@
           (case-order-thunk (compile-avt (or case-order "") env)))
       (lambda (ctx)
         (let ((numberp
-               (equal (funcall data-type-thunk ctx) "number"))
+               (let ((d-t (funcall data-type-thunk ctx)))
+                 (cond
+                   ((equal d-t "number")
+                    t)
+                   ((or (equal d-t "") (equal d-t "text"))
+                    nil)
+                   (t
+                    (xslt-error "invalid data-type in sort")))))
               (char-table
                (let ((c-o (funcall case-order-thunk ctx)))
                  (cond
@@ -403,7 +410,7 @@
                    ((or (equal c-o "") (equal c-o "upper-first"))
                     *upper-first-order*)
                    (t
-                    (xslt-error "invalid case-order")))))
+                    (xslt-error "invalid case-order in sort")))))
               (f
                (if (equal (funcall order-thunk ctx) "descending") -1 1))
               (lang
