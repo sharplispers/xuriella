@@ -12815,7 +12815,7 @@ PASS Errors_err089 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err089.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err089.xuriella
 
-FAIL Errors_err090 [Mixed]: expected error not signalled: 
+PASS Errors_err090 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/sort-badcase.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err090.saxon
@@ -17467,7 +17467,7 @@ FAIL Sorting__91701 [XSLT-Data-Manipulation]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91701.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91701.xuriella
 
-FAIL Sorting__91703 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Sorting__91703 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Sorting/91703.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/91703.xsl
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91703.saxon
@@ -19413,4 +19413,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2894/3080 tests (3 expected failures, 183 unexpected failures).
+Passed 2896/3080 tests (3 expected failures, 181 unexpected failures).

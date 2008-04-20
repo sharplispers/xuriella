@@ -396,9 +396,14 @@
         (let ((numberp
                (equal (funcall data-type-thunk ctx) "number"))
               (char-table
-               (if (equal (funcall case-order-thunk ctx) "lower-first")
-                   *lower-first-order*
-                   *upper-first-order*))
+               (let ((c-o (funcall case-order-thunk ctx)))
+                 (cond
+                   ((equal c-o "lower-first")
+                    *lower-first-order*)
+                   ((or (equal c-o "") (equal c-o "upper-first"))
+                    *upper-first-order*)
+                   (t
+                    (xslt-error "invalid case-order")))))
               (f
                (if (equal (funcall order-thunk ctx) "descending") -1 1))
               (lang
