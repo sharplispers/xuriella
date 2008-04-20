@@ -437,10 +437,33 @@
 (defun uri-to-pathname (uri)
   (cxml::uri-to-pathname (puri:parse-uri uri)))
 
+;; Why this extra check for literal result element used as stylesheets,
+;; instead of a general check for every literal result element?  Because
+;; Stylesheet__91804 says so.
+(defun check-Errors_err035 (literal-result-element)
+  (let ((*namespaces* (acons-namespaces literal-result-element))
+        (env (make-instance 'lexical-xslt-environment)))
+    (stp:with-attributes ((extension-element-prefixes
+                           "extension-element-prefixes"
+                           *xsl*))
+        literal-result-element
+      (dolist (prefix (words (or extension-element-prefixes "")))
+        (if (equal prefix "#default")
+            (setf prefix nil)
+            (unless (cxml-stp-impl::nc-name-p prefix)
+              (xslt-error "invalid prefix: ~A" prefix)))
+        (let ((uri
+               (or (xpath-sys:environment-find-namespace env prefix)
+                   (xslt-error "namespace not found: ~A" prefix))))
+          (when (equal uri (stp:namespace-uri literal-result-element))
+            (xslt-error "literal result element used as stylesheet, but is ~
+                         declared as an extension element")))))))
+
 (defun unwrap-2.3 (document)
   (let ((literal-result-element (stp:document-element document))
         (new-template (stp:make-element "template" *xsl*))
         (new-document-element (stp:make-element "stylesheet" *xsl*)))
+    (check-Errors_err035 literal-result-element)
     (setf (stp:attribute-value new-document-element "version")
           (or (stp:attribute-value literal-result-element "version" *xsl*)
               (xslt-error "not a stylesheet: root element lacks xsl:version")))
