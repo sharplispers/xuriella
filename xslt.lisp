@@ -1504,8 +1504,8 @@
                               (find-named-templates name)
                               param-bindings
                               (lambda ()
-                                (error "cannot find named template: ~s"
-                                       name))))
+                                (xslt-error "cannot find named template: ~s"
+                                            name))))
 
 (defun find-templates (ctx mode)
   (let* ((matching-candidates
