@@ -12666,12 +12666,7 @@ PASS Errors_err053 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err053.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err053.xuriella
 
-FAIL Errors_err054 [Mixed]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
-when called with arguments
-  (NIL
-   "file://+...MSFT_Conformance_Tests/Errors/inc-nohref.noindent-xsl").
+PASS Errors_err054 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/inc-nohref.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err054.saxon
@@ -13398,12 +13393,7 @@ FAIL Import__91151 [XSLT-Structure]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91151.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91151.xuriella
 
-FAIL Import__91152 [XSLT-Structure]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
-when called with arguments
-  (NIL
-   "file://+...MSFT_Conformance_Tests/Import/91152.noindent-xsl").
+PASS Import__91152 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Import/91152.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91152.saxon
@@ -13544,12 +13534,7 @@ PASS Include__77504 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Include/Include__77504.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include__77504.xuriella
 
-FAIL Include__77506 [XSLT-Structure]: condition of incorrect type: 
-There is no applicable method for the generic function
-  #<STANDARD-GENERIC-FUNCTION PURI:MERGE-URIS (4)>
-when called with arguments
-  (NIL
-   "file://+...MSFT_Conformance_Tests/Include/XSLT03006.noindent-xsl").
+PASS Include__77506 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Include/XSLT03006.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
   Expected output (1): MSFT_Conformance_Tests/Include/Include__77506.saxon
@@ -19431,4 +19416,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2882/3080 tests (3 expected failures, 195 unexpected failures).
+Passed 2885/3080 tests (3 expected failures, 192 unexpected failures).

@@ -493,7 +493,8 @@
       (when invalid
         (xslt-error "invalid top-level element ~A" (stp:local-name invalid))))
     (dolist (include (stp:filter-children (of-name "include") <transform>))
-      (let* ((uri (puri:merge-uris (stp:attribute-value include "href")
+      (let* ((uri (puri:merge-uris (or (stp:attribute-value include "href")
+                                       (xslt-error "include without href"))
                                    (stp:base-uri include)))
              (uri (if uri-resolver
                       (funcall uri-resolver (puri:render-uri uri nil))
@@ -598,7 +599,8 @@
                     ,@body)))
       (with-specials ()
         (do-toplevel (import "import" <transform>)
-          (let ((uri (puri:merge-uris (stp:attribute-value import "href")
+          (let ((uri (puri:merge-uris (or (stp:attribute-value import "href")
+                                          (xslt-error "import without href"))
                                       (stp:base-uri import))))
             (push (parse-imported-stylesheet env stylesheet uri uri-resolver)
                   continuations))))
