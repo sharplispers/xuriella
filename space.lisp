@@ -102,9 +102,9 @@
 
 ;;;; Strip whitespace in source documents
 
-(defun make-whitespace-stripper (node tests)
-  (if tests
-      (make-stripping-node nil node tests nil)
+(defun make-whitespace-stripper (node strip-thunk)
+  (if strip-thunk
+      (make-stripping-node nil node strip-thunk nil)
       node))
 
 (defstruct (stripping-node (:constructor #:ignore))
@@ -128,13 +128,22 @@
           (write-sequence target stream :start 3 :end (1- (length target)))
           (write-sequence target stream)))))
 
-(defun strip-under-qname-p (node tests)
-  (let ((local-name (xpath-protocol:local-name node))
-        (uri (xpath-protocol:namespace-uri node)))
-    (dolist (test tests nil)
-      (let ((result (funcall test local-name uri)))
-        (when result
-          (return (eq result :strip)))))))
+(defun strip-under-qname-p (node strip-thunk)
+  (let* ((strip-test
+          (maximize #'strip-test-<
+                    (xpath:matching-values strip-thunk node))))
+    (and strip-test
+         (eq (strip-test-value strip-test) :strip))))
+
+(defun strip-test-< (a b)
+  (let ((i (strip-test-priority a))
+        (j (strip-test-priority b)))
+    (cond
+      ((< i j) t)
+      ((> i j) nil)
+      (t
+       (< (strip-test-position a)
+          (strip-test-position b))))))
 
 (defun xpath-protocol/attribute-value (node local-name uri)
   (do-pipe (a (xpath-protocol:attribute-pipe node))
@@ -142,14 +151,14 @@
                (equal (xpath-protocol:namespace-uri a) uri))
       (return (xpath-protocol:node-text a)))))
 
-(defun make-stripping-node (parent target tests force-preserve)
+(defun make-stripping-node (parent target strip-thunk force-preserve)
   (let ((result (make-parent-stripping-node parent target))
         (xml-space (xpath-protocol/attribute-value target "space" *xml*)))
     (when xml-space
       (setf force-preserve (equal xml-space "preserve")))
     (labels ((recurse (child-node)
                (if (xpath-protocol:node-type-p child-node :element)
-                   (make-stripping-node result child-node tests force-preserve)
+                   (make-stripping-node result child-node strip-thunk force-preserve)
                    (make-leaf-stripping-node result child-node)))
              (maybe-recurse (child-node)
                (if (and (xpath-protocol:node-type-p child-node :text)
@@ -160,7 +169,7 @@
         (setf (stripping-node-children result)
               (if (or force-preserve
                       (not (xpath-protocol:node-type-p target :element))
-                      (not (strip-under-qname-p target tests)))
+                      (not (strip-under-qname-p target strip-thunk)))
                   (xpath::map-pipe-filtering #'recurse all-children)
                   (xpath::map-pipe-filtering #'maybe-recurse all-children)))))
     result))

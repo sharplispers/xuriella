@@ -360,6 +360,7 @@
   (global-variables (make-empty-declaration-array))
   (output-specification (make-output-specification))
   (strip-tests nil)
+  (strip-thunk nil)
   (named-templates (make-hash-table :test 'equal))
   (attribute-sets (make-hash-table :test 'equal))
   (keys (make-hash-table :test 'equal))
@@ -626,6 +627,12 @@
                    (xpath:make-pattern-matcher
                     (mapcar #'template-compiled-pattern
                             (mode-templates mode)))))
+        ;; and for the strip tests
+        (setf (stylesheet-strip-thunk stylesheet)
+              (let ((patterns (stylesheet-strip-tests stylesheet)))
+                (and patterns
+                     (xpath:make-pattern-matcher
+                      (mapcar #'strip-test-compiled-pattern patterns)))))
         stylesheet))))
 
 (defun parse-attribute-sets! (stylesheet <transform> env)
@@ -763,42 +770,63 @@
           (push uri *extension-namespaces*)
           (push uri *excluded-namespaces*))))))
 
+(defun parse-nametest-tokens (str)
+  (labels ((check (boolean)
+             (unless boolean
+               (xslt-error "invalid nametest token")))
+           (check-null (boolean)
+             (check (not boolean))))
+    (cons
+     :patterns
+     (mapcar (lambda (name-test)
+               (destructuring-bind (&optional path &rest junk)
+                   (cdr (xpath:parse-pattern-expression name-test))
+                 (check-null junk)
+                 (check (eq (car path) :path))
+                 (destructuring-bind (&optional child &rest junk) (cdr path)
+                   (check-null junk)
+                   (check (eq (car child) :child))
+                   (destructuring-bind (nodetest &rest junk) (cdr child)
+                     (check-null junk)
+                     (check (or (stringp nodetest)
+                                (eq nodetest '*)
+                                (and (consp nodetest)
+                                     (or (eq (car nodetest) :namespace)
+                                         (eq (car nodetest) :qname)))))))
+                 path))
+             (words str)))))
+
+(defstruct strip-test
+  compiled-pattern
+  priority
+  position
+  value)
+
 (defun parse-strip/preserve-space! (stylesheet <transform> env)
-  (xpath:with-namespaces ((nil #.*xsl*))
+  (let ((i 0))
     (do-toplevel (elt "strip-space|preserve-space" <transform>)
       (let ((*namespaces* (acons-namespaces elt))
-            (mode
+            (value
              (if (equal (stp:local-name elt) "strip-space")
                  :strip
                  :preserve)))
-        (dolist (name-test (words (stp:attribute-value elt "elements")))
-          (let* ((pos (search ":*" name-test))
-                 (test-function
-                  (cond
-                    ((eql pos (- (length name-test) 2))
-                     (let* ((prefix (subseq name-test 0 pos))
-                            (name-test-uri
-                             (xpath-sys:environment-find-namespace env prefix)))
-                       (unless (xpath::nc-name-p prefix)
-                         (xslt-error "not an NCName: ~A" prefix))
-                       (lambda (local-name uri)
-                         (declare (ignore local-name))
-                         (if (equal uri name-test-uri)
-                             mode
-                             nil))))
-                    ((equal name-test "*")
-                     (lambda (local-name uri)
-                       (declare (ignore local-name uri))
-                       mode))
-                    (t
-                     (multiple-value-bind (name-test-local-name name-test-uri)
-                         (decode-qname name-test env nil)
-                       (lambda (local-name uri)
-                         (if (and (equal local-name name-test-local-name)
-                                  (equal uri name-test-uri))
-                             mode
-                             nil)))))))
-            (push test-function (stylesheet-strip-tests stylesheet))))))))
+        (dolist (expression
+                  (cdr (parse-nametest-tokens
+                        (stp:attribute-value elt "elements"))))
+          (let* ((compiled-pattern
+                  (car (xpath:compute-patterns
+                        `(:patterns ,expression)
+                        *import-priority*
+                        "will set below"
+                        env)))
+                 (strip-test
+                  (make-strip-test :compiled-pattern compiled-pattern
+                                   :priority (expression-priority expression)
+                                   :position i
+                                   :value value)))
+            (setf (xpath:pattern-value compiled-pattern) strip-test)
+            (push strip-test (stylesheet-strip-tests stylesheet)))))
+      (incf i))))
 
 (defstruct (output-specification
              (:conc-name "OUTPUT-"))
@@ -1091,7 +1119,7 @@
                        ((or file-error cxml:xml-parse-error) (c)
                          (xslt-error "cannot parse referenced document ~A: ~A"
                                      pathname c)))
-                     (stylesheet-strip-tests *stylesheet*))))))
+                     (stylesheet-strip-thunk *stylesheet*))))))
     (when (puri:uri-fragment absolute-uri)
       (xslt-error "use of fragment identifiers in document() not supported"))
     xpath-root-node))
@@ -1280,7 +1308,7 @@
               (xpath-root-node
                (make-whitespace-stripper
                 source-document
-                (stylesheet-strip-tests stylesheet)))
+                (stylesheet-strip-thunk stylesheet)))
               (ctx (xpath:make-context xpath-root-node)))
          (when (pathnamep source-designator)
            (setf (gethash source-designator *documents*) xpath-root-node))

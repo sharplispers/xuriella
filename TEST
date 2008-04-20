@@ -11977,7 +11977,7 @@ PASS ConflictResolution__84478 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84478.saxon
   Actual output: MSFT_Conformance_Tests/ConflictResolution/ConflictResolution__84478.xuriella
 
-FAIL ConflictResolution_ConflictResBetweenStripSpaceAndPreserveSpace [XSLT-Template]: output doesn't match
+PASS ConflictResolution_ConflictResBetweenStripSpaceAndPreserveSpace [XSLT-Template]
   Stylesheet: MSFT_Conformance_Tests/ConflictResolution/xslt_conflict_res_between_preservespace_and_strpspace.noindent-xsl
   Data: MSFT_Conformance_Tests/ConflictResolution/xslt_conflict_res_between_preservespace_and_strpspace.xml
   Expected output (1): MSFT_Conformance_Tests/ConflictResolution/ConflictResolution_ConflictResBetweenStripSpaceAndPreserveSpace.saxon
@@ -19441,4 +19441,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2853/3080 tests (3 expected failures, 224 unexpected failures).
+Passed 2854/3080 tests (3 expected failures, 223 unexpected failures).
