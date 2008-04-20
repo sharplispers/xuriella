@@ -384,6 +384,33 @@
             (t 1)))
         (signum (- (length i) (length j))))))
 
+(defun sort/@data-type (str)
+  (cond
+    ((equal str "number")
+     t)
+    ((or (equal str "") (equal str "text"))
+     nil)
+    (t
+     (xslt-error "invalid data-type in sort"))))
+
+(defun sort/@case-order (str)
+  (cond
+    ((equal str "lower-first")
+     *lower-first-order*)
+    ((or (equal str "") (equal str "upper-first"))
+     *upper-first-order*)
+    (t
+     (xslt-error "invalid case-order in sort"))))
+
+(defun sort/@order (str)
+  (cond
+    ((equal str "descending")
+     -1)
+    ((or (equal str "") (equal str "ascending"))
+     1)
+    (t
+     (xslt-error "invalid order in sort"))))
+
 (defun make-sorter/lazy (spec env)
   (destructuring-bind (&key select lang data-type order case-order)
       (cdr spec)
@@ -393,28 +420,10 @@
           (order-thunk (compile-avt (or order "") env))
           (case-order-thunk (compile-avt (or case-order "") env)))
       (lambda (ctx)
-        (let ((numberp
-               (let ((d-t (funcall data-type-thunk ctx)))
-                 (cond
-                   ((equal d-t "number")
-                    t)
-                   ((or (equal d-t "") (equal d-t "text"))
-                    nil)
-                   (t
-                    (xslt-error "invalid data-type in sort")))))
-              (char-table
-               (let ((c-o (funcall case-order-thunk ctx)))
-                 (cond
-                   ((equal c-o "lower-first")
-                    *lower-first-order*)
-                   ((or (equal c-o "") (equal c-o "upper-first"))
-                    *upper-first-order*)
-                   (t
-                    (xslt-error "invalid case-order in sort")))))
-              (f
-               (if (equal (funcall order-thunk ctx) "descending") -1 1))
-              (lang
-               (funcall lang-thunk ctx)))
+        (let ((numberp (sort/@data-type (funcall data-type-thunk ctx)))
+              (char-table (sort/@case-order (funcall case-order-thunk ctx)))
+              (f (sort/@order (funcall order-thunk ctx)))
+              (lang (funcall lang-thunk ctx)))
           (declare (ignore lang))
           (lambda (a b)
             (let ((i (xpath:string-value (funcall select-thunk a)))
