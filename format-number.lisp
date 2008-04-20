@@ -182,7 +182,7 @@
            ;; http://java.sun.com/j2se/1.3/docs/api/java/text/DecimalFormat.html
            (setf integer-part-grouping-positions
                  (list (car integer-part-grouping-positions))))
-         (return (values i
+         (return (values (1+ i)
                          (loop
                             for pos in integer-part-grouping-positions
                             for accum = pos then (+ accum pos)
@@ -213,7 +213,8 @@
             (incf current-grouping)
             (incf minimum-fractional-part-size)
             (incf maximum-fractional-part-size))
-           (df/decimal-separator))
+           (df/decimal-separator
+            (xslt-error "multiple decimal separators found")))
        finally
          (return (values (nreverse fractional-part-grouping-positions)
                          minimum-fractional-part-size
