@@ -458,7 +458,11 @@
            (when (cdr decls)
              (make-sort-predicate/lazy (cdr decls) env))))
       (lambda (ctx)
-        (let ((selected (funcall select-thunk ctx)))
+        (let ((selected (funcall select-thunk ctx))
+              (*apply-imports*
+               (lambda (&optional ignore)
+                 (declare (ignore ignore))
+                 (xslt-error "apply-imports used in for-each"))))
           (unless (xpath:node-set-p selected)
             (xslt-error "for-each select expression should yield a node-set"))
           (let ((nodes (xpath::force (xpath::sorted-pipe-of selected))))
