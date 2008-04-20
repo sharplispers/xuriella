@@ -12598,7 +12598,7 @@ PASS Errors_err035 [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err035.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_err035.xuriella
 
-FAIL Errors_err036 [Mixed]: expected error not signalled: 
+PASS Errors_err036 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/format-fract.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/data.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_err036.saxon
@@ -19431,4 +19431,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2876/3080 tests (3 expected failures, 201 unexpected failures).
+Passed 2877/3080 tests (3 expected failures, 200 unexpected failures).

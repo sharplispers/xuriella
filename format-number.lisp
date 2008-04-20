@@ -188,7 +188,8 @@
   (let ((fractional-part-grouping-positions '())
         (minimum-fractional-part-size 0)
         (maximum-fractional-part-size 0)
-        (current-grouping 0))
+        (current-grouping 0)
+        (digitp nil))
     (loop
        for i from start below end
        for c = (elt picture i)
@@ -197,9 +198,13 @@
            (df/grouping-separator
             (push current-grouping fractional-part-grouping-positions))
            (df/digit
+            (setf digitp t)
             (incf current-grouping)
             (incf maximum-fractional-part-size))
            (df/zero-digit
+            (when digitp
+              (xslt-error
+               "zero-digit not allowed after digit in fractional picture"))
             (incf current-grouping)
             (incf minimum-fractional-part-size)
             (incf maximum-fractional-part-size))
