@@ -12268,7 +12268,7 @@ PASS Elements__89281 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89281.saxon
   Actual output: MSFT_Conformance_Tests/Elements/Elements__89281.xuriella
 
-FAIL Elements__89282 [XSLT-Result-Tree]: expected error not signalled: 
+PASS Elements__89282 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Elements/ek-f-get-value.noindent-xsl
   Data: MSFT_Conformance_Tests/Elements/plants.xml
   Expected output (1): MSFT_Conformance_Tests/Elements/Elements__89282.saxon
@@ -17163,9 +17163,7 @@ PASS Sorting__77985 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77985.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77985.xuriella
 
-FAIL Sorting__77986 [XSLT-Data-Manipulation]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Sorting/xslt18109.xml":
-  No such file or directory
+PASS Sorting__77986 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt18117.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt18109.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77986.saxon
@@ -19435,4 +19433,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2857/3080 tests (3 expected failures, 220 unexpected failures).
+Passed 2859/3080 tests (3 expected failures, 218 unexpected failures).

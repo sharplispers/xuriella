@@ -223,6 +223,8 @@
                    rest)))))
 
 (define-instruction-parser |apply-imports| (node)
+  (only-with-attributes () node)
+  (assert-no-body node)
   `(xsl:apply-imports))
 
 (define-instruction-parser |call-template| (node)
@@ -284,14 +286,20 @@
     `(xsl:processing-instruction ,name
        ,@(parse-body node))))
 
+(defun assert-no-body (node)
+  (when (stp:list-children node)
+    (xslt-error "no child nodes expected in ~A" (stp:local-name node))))
+
 (define-instruction-parser |value-of| (node)
   (only-with-attributes (select disable-output-escaping) node
+    (assert-no-body node)
     (if (equal disable-output-escaping "yes")
         `(xsl:unescaped-value-of ,select)
         `(xsl:value-of ,select))))
 
 (define-instruction-parser |copy-of| (node)
   (only-with-attributes (select) node
+    (assert-no-body node)
     `(xsl:copy-of ,select)))
 
 (define-instruction-parser |copy| (node)
@@ -318,6 +326,7 @@
 
 (defun parse-sort (node)
   (only-with-attributes (select lang data-type order case-order) node
+    (assert-no-body node)
     `(sort :select ,select
            :lang ,lang
            :data-type ,data-type
@@ -334,6 +343,7 @@
   (only-with-attributes (level count from value format lang letter-value
                                    grouping-separator grouping-size)
       node
+    (assert-no-body node)
     `(xsl:number :level ,level
                  :count ,count
                  :from ,from
