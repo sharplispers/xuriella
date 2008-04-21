@@ -244,21 +244,26 @@
        ,@(parse-body node))))
 
 (define-instruction-parser |choose| (node)
-  (only-with-attributes () node
-    `(cond
-       ,@(stp:map-children 'list
-                           (lambda (clause)
-                             (cond
-                               ((namep clause "when")
-                                (only-with-attributes (test) clause
-                                  `(,test
-                                    ,@(parse-body clause))))
-                               ((namep clause "otherwise")
-                                `(t ,@(parse-body clause)))
-                               (t
-                                (xslt-error "invalid <choose> clause: ~A"
-                                            (stp:local-name clause)))))
-                           node))))
+  (let ((whenp nil))
+    (prog1
+        (only-with-attributes () node
+          `(cond
+             ,@(stp:map-children 'list
+                                 (lambda (clause)
+                                   (cond
+                                     ((namep clause "when")
+                                      (setf whenp t)
+                                      (only-with-attributes (test) clause
+                                        `(,test
+                                          ,@(parse-body clause))))
+                                     ((namep clause "otherwise")
+                                      `(t ,@(parse-body clause)))
+                                     (t
+                                      (xslt-error "invalid <choose> clause: ~A"
+                                                  (stp:local-name clause)))))
+                                 node)))
+      (unless whenp
+        (xslt-error "<choose> without <when>")))))
 
 (define-instruction-parser |element| (node)
   (only-with-attributes (name namespace use-attribute-sets) node
