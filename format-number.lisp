@@ -226,7 +226,9 @@
       (let ((start (position-if #'activep picture))
             (last (position-if #'activep picture :from-end t)))
         (unless start
-          (xpath:xpath-error "no digit-sign or zero-digit sign found"))
+          (setf start (length picture))
+          (setf last start)
+          (setf picture (format nil "~A~A" picture (df/zero-digit df))))
         (let* ((end (1+ last))
                (result (make-picture
                          :percentp (find (df/percent df) picture)

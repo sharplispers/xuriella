@@ -12947,13 +12947,13 @@ PASS Errors_WrongXSLNamespace [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_WrongXSLNamespace.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_WrongXSLNamespace.xuriella
 
-FAIL Errors_xsl_choose_without_xsl_when1 [Mixed]: expected error not signalled: 
+PASS Errors_xsl_choose_without_xsl_when1 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/xslt_xsl_choose_without_when1.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/xslt_xsl_choose_without_when.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_xsl_choose_without_xsl_when1.saxon
   Actual output: MSFT_Conformance_Tests/Errors/Errors_xsl_choose_without_xsl_when1.xuriella
 
-FAIL Errors_xsl_choose_without_xsl_when2 [Mixed]: expected error not signalled: 
+PASS Errors_xsl_choose_without_xsl_when2 [Mixed]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Errors/xslt_xsl_choose_without_when2.noindent-xsl
   Data: MSFT_Conformance_Tests/Errors/xslt_xsl_choose_without_when.xml
   Expected output (1): MSFT_Conformance_Tests/Errors/Errors_xsl_choose_without_xsl_when2.saxon
@@ -13061,19 +13061,19 @@ PASS FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep [XSLT-Result-Tree]: r
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatSameCharForDecimalAndGrpSep.xuriella
 
-FAIL FormatNumber_DecimalFormatZeroDigit [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
+PASS FormatNumber_DecimalFormatZeroDigit [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_decimal_format_zero_digit.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit.xuriella
 
-FAIL FormatNumber_DecimalFormatZeroDigit1 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
+PASS FormatNumber_DecimalFormatZeroDigit1 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_decimal_format_zero_digit1.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit1.saxon
   Actual output: MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit1.xuriella
 
-FAIL FormatNumber_DecimalFormatZeroDigit2 [XSLT-Result-Tree]: no digit-sign or zero-digit sign found
+PASS FormatNumber_DecimalFormatZeroDigit2 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/FormatNumber/xslt_decimal_format_zero_digit2.noindent-xsl
   Data: MSFT_Conformance_Tests/FormatNumber/books.xml
   Expected output (1): MSFT_Conformance_Tests/FormatNumber/FormatNumber_DecimalFormatZeroDigit2.saxon
@@ -19091,7 +19091,7 @@ PASS XSLTFunctions__doublePeriod [Mixed]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__doublePeriod.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__doublePeriod.xuriella
 
-FAIL XSLTFunctions__emptyParameters [Mixed]: no digit-sign or zero-digit sign found
+PASS XSLTFunctions__emptyParameters [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/emptyParameters.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.saxon
@@ -19197,7 +19197,7 @@ PASS XSLTFunctions__sameDecimalFormatsWithImport [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__sameDecimalFormatsWithImport.xuriella
 
-FAIL XSLTFunctions__specialCharInPattern [Mixed]: no digit-sign or zero-digit sign found
+PASS XSLTFunctions__specialCharInPattern [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/specialCharInPattern.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__specialCharInPattern.saxon
@@ -19411,4 +19411,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2909/3080 tests (3 expected failures, 168 unexpected failures).
+Passed 2916/3080 tests (3 expected failures, 161 unexpected failures).
