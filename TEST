@@ -13197,8 +13197,7 @@ PASS ForwardComp__91855 [XSLT-Extendability]
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91855.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91855.xuriella
 
-FAIL ForwardComp__91856 [XSLT-Extendability]: condition of incorrect type: 
-The value 123 is not of type (SIMPLE-ARRAY CHARACTER).
+PASS ForwardComp__91856 [XSLT-Extendability]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91856.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91856.saxon
@@ -19389,4 +19388,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2920/3080 tests (3 expected failures, 157 unexpected failures).
+Passed 2921/3080 tests (3 expected failures, 156 unexpected failures).

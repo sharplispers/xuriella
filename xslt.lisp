@@ -1372,7 +1372,7 @@
 (xpath-sys:define-xpath-function/lazy xslt :system-property (qname)
   (let ((namespaces *namespaces*))
     (lambda (ctx)
-      (let ((qname (funcall qname ctx)))
+      (let ((qname (xpath:string-value (funcall qname ctx))))
         (multiple-value-bind (local-name uri)
             (decode-qname/runtime qname namespaces nil)
           (if (equal uri *xsl*)
