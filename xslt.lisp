@@ -541,7 +541,7 @@
                                        (xslt-error "include without href"))
                                    (stp:base-uri include)))
              (uri (if uri-resolver
-                      (funcall uri-resolver (puri:render-uri uri nil))
+                      (funcall uri-resolver uri)
                       uri))
              (str (puri:render-uri uri nil))
              (pathname
@@ -674,7 +674,7 @@
 
 (defun parse-imported-stylesheet (env stylesheet uri uri-resolver)
   (let* ((uri (if uri-resolver
-                  (funcall uri-resolver (puri:render-uri uri nil))
+                  (funcall uri-resolver uri)
                   uri))
          (str (puri:render-uri uri nil))
          (pathname
@@ -1221,7 +1221,7 @@
           (puri:merge-uris uri-string (or base-uri "")))
          (resolved-uri
           (if *uri-resolver*
-              (funcall *uri-resolver* (puri:render-uri absolute-uri nil))
+              (funcall *uri-resolver* absolute-uri)
               absolute-uri))
          (pathname
           (handler-case
@@ -1399,6 +1399,8 @@
                  ""))
               ""))))))
 
+;; FIXME: should there be separate uri-resolver arguments for stylesheet
+;; and data?
 (defun apply-stylesheet
     (stylesheet source-designator
      &key output parameters uri-resolver navigator)
@@ -1408,7 +1410,7 @@
               ((cxml:xml-parse-error
                 (lambda (c)
                   (xslt-error "cannot parse stylesheet: ~A" c))))
-            (parse-stylesheet stylesheet))))
+            (parse-stylesheet stylesheet :uri-resolver uri-resolver))))
   (with-resignalled-errors ()
     (invoke-with-output-sink
      (lambda ()

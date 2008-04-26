@@ -810,13 +810,21 @@
                       (declare (ignore c))
                       (setf output-method :html))))
       (labels ((uri-resolver (uri)
-                 (if (search "%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml"
-                             uri)
-                     (cxml::pathname-to-uri
-                      (merge-pathnames
-                       "MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml"
-                       *tests-directory*))
-                     uri))
+                 (let ((str (puri:render-uri uri nil)))
+                   (cond
+                     ((search "%5c%5c%5c%5cwebxtest%5c%5cmanagedshadow%5c%5cmanaged_b2%5c%5ctestdata%5c%5cxslt%5c%5celement%5c%5cxslt_element_NSShared.xml"
+                              str)
+                      (cxml::pathname-to-uri
+                       (merge-pathnames
+                        "MSFT_Conformance_Tests/Elements/xslt_element_NSShared.xml"
+                        *tests-directory*)))
+                     ((search "webxtest/testcases/91156a.xsl" str)
+                      (cxml::pathname-to-uri
+                       (merge-pathnames
+                        "MSFT_Conformance_Tests/Import/91156a.xsl"
+                        *tests-directory*)))
+                     (t
+                      uri))))
                (doit ()
                  (with-open-file (s actual
                                     :if-exists :rename-and-delete

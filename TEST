@@ -13392,13 +13392,7 @@ PASS Import__91155 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91155.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91155.xuriella
 
-FAIL Import__91156 [XSLT-Structure]: condition of incorrect type: 
-error while parsing arguments to DESTRUCTURING-BIND:
-  invalid number of elements in
-    ("webxtest")
-  to satisfy lambda list
-    (CXML::HOST CXML::DEVICE):
-  exactly 2 expected, but 1 found
+PASS Import__91156 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91156.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91156.saxon
@@ -19388,4 +19382,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2931/3080 tests (3 expected failures, 146 unexpected failures).
+Passed 2932/3080 tests (3 expected failures, 145 unexpected failures).
