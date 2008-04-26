@@ -13187,9 +13187,7 @@ PASS ForwardComp__91848 [XSLT-Extendability]
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91848.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91848.xuriella
 
-FAIL ForwardComp__91849 [XSLT-Extendability]: invalid XPath syntax: Unexpected terminal :DOT (value NIL)
-Expected one of: (:OR :AND :!= := :>= :> :<= :< :- :+ :MOD :DIV :MULTIPLY :PIPE
-                  :// :/ YACC:YACC-EOF-SYMBOL :RPAREN :RBRACKET :COMMA) in: ...
+PASS ForwardComp__91849 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91849.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91849.saxon
@@ -13201,7 +13199,7 @@ PASS ForwardComp__91850 [XSLT-Extendability]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91850.saxon
   Actual output: MSFT_Conformance_Tests/ForwardComp/ForwardComp__91850.xuriella
 
-FAIL ForwardComp__91853 [XSLT-Extendability]: invalid number of arguments -- 2 for function system-property
+PASS ForwardComp__91853 [XSLT-Extendability]
   Stylesheet: MSFT_Conformance_Tests/ForwardComp/91853.noindent-xsl
   Data: MSFT_Conformance_Tests/ForwardComp/books.xml
   Expected output (1): MSFT_Conformance_Tests/ForwardComp/ForwardComp__91853.saxon
@@ -19411,4 +19409,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2916/3080 tests (3 expected failures, 161 unexpected failures).
+Passed 2918/3080 tests (3 expected failures, 159 unexpected failures).

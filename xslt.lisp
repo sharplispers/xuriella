@@ -99,9 +99,33 @@
           (xslt-error "~A" c))))
     (funcall fn)))
 
+(defmacro with-forward-compatible-errors (error-form &body body)
+  `(invoke-with-forward-compatible-errors (lambda () ,@body)
+                                          (lambda () ,error-form)))
+
+(defun invoke-with-forward-compatible-errors (fn error-fn)
+  (let ((result))
+    (tagbody
+       (handler-bind
+           ((xpath:xpath-error
+             (lambda (c)
+               (declare (ignore c))
+               (when *forwards-compatible-p*
+                 (go error)))))
+         (setf result (funcall fn)))
+       (go done)
+     error
+       (setf result (funcall error-fn))
+     done)
+    result))
+
 (defun compile-xpath (xpath &optional env)
   (with-resignalled-errors ()
-    (xpath:compile-xpath xpath env)))
+    (with-forward-compatible-errors
+        (lambda (ctx)
+          (xslt-error "attempt to evaluate an XPath expression with compile-time errors, delayed due to forwards compatible processing: ~A"
+                      xpath))
+      (xpath:compile-xpath xpath env))))
 
 (defmacro with-stack-limit ((&optional) &body body)
   `(invoke-with-stack-limit (lambda () ,@body)))
@@ -253,10 +277,15 @@
 
 (defmethod xpath-sys:environment-find-function
     ((env xslt-environment) lname uri)
-  (if (string= uri "")
-      (or (xpath-sys:find-xpath-function lname *xsl*)
+  (or (if (string= uri "")
+          (or (xpath-sys:find-xpath-function lname *xsl*)
+              (xpath-sys:find-xpath-function lname uri))
           (xpath-sys:find-xpath-function lname uri))
-      (xpath-sys:find-xpath-function lname uri)))
+      (when *forwards-compatible-p*
+        (lambda (&rest ignore)
+          (declare (ignore ignore))
+          (xslt-error "attempt to call an unknown XPath function (~A); error delayed until run-time due to forwards compatible processing"
+                      lname)))))
 
 (defmethod xpath-sys:environment-find-variable
     ((env xslt-environment) lname uri)
@@ -1040,11 +1069,13 @@
                  (extension-namespaces *extension-namespaces*)
                  (variable
                   (make-variable :param-p (namep <variable> "param")))
+                 (forwards-compatible-p *forwards-compatible-p*)
                  (value-thunk-setter
                   (lambda ()
                     (let* ((*instruction-base-uri* instruction-base-uri)
                            (*excluded-namespaces* excluded-namespaces)
                            (*extension-namespaces* extension-namespaces)
+                           (*forwards-compatible-p* forwards-compatible-p)
                            (fn
                             (compile-global-variable <variable> global-env)))
                       (setf value-thunk fn)
@@ -1061,19 +1092,20 @@
 (defun parse-keys! (stylesheet <transform> env)
   (xpath:with-namespaces ((nil #.*xsl*))
     (do-toplevel (<key> "key" <transform>)
-      (let ((*instruction-base-uri* (stp:base-uri <key>)))
-        (stp:with-attributes (name match use) <key>
-          (unless name (xslt-error "key name attribute not specified"))
-          (unless match (xslt-error "key match attribute not specified"))
-          (unless use (xslt-error "key use attribute not specified"))
-          (multiple-value-bind (local-name uri)
-              (decode-qname name env nil)
-            (add-key stylesheet
-                     (cons local-name uri)
-                     (compile-xpath `(xpath:xpath ,(parse-key-pattern match))
-                                    env)
-                     (compile-xpath use
-                                    (make-instance 'key-environment)))))))))
+      (with-import-magic (<key> env)
+        (let ((*instruction-base-uri* (stp:base-uri <key>)))
+          (stp:with-attributes (name match use) <key>
+            (unless name (xslt-error "key name attribute not specified"))
+            (unless match (xslt-error "key match attribute not specified"))
+            (unless use (xslt-error "key use attribute not specified"))
+            (multiple-value-bind (local-name uri)
+                (decode-qname name env nil)
+              (add-key stylesheet
+                       (cons local-name uri)
+                       (compile-xpath `(xpath:xpath ,(parse-key-pattern match))
+                                      env)
+                       (compile-xpath use
+                                      (make-instance 'key-environment))))))))))
 
 (defun prepare-global-variables (stylesheet <transform>)
   (xpath:with-namespaces ((nil #.*xsl*))
@@ -1653,24 +1685,19 @@
              -0.5)))
         0.5)))
 
-(defun parse-xpath (str)
-  (with-resignalled-errors ()
-    (xpath:parse-xpath str)))
-
 (defun parse-key-pattern (str)
-  (let ((parsed
-         (mapcar #'(lambda (item)
-                     `(:path (:root :node)
-                             (:descendant-or-self *)
-                             ,@(cdr item)))
-                 (parse-pattern str))))
-    (if (null (rest parsed))
-        (first parsed)
-        `(:union ,@parsed))))
-
-(defun parse-pattern (str)
   (with-resignalled-errors ()
-    (cdr (xpath::parse-pattern-expression str))))
+    (with-forward-compatible-errors
+        (xpath:parse-xpath "compile-time-error()") ;hack
+      (let ((parsed
+             (mapcar #'(lambda (item)
+                         `(:path (:root :node)
+                                 (:descendant-or-self *)
+                                 ,@(cdr item)))
+                     (cdr (xpath::parse-pattern-expression str)))))
+        (if (null (rest parsed))
+            (first parsed)
+            `(:union ,@parsed))))))
 
 (defun compile-value-thunk (value env)
   (if (and (listp value) (eq (car value) 'progn))
