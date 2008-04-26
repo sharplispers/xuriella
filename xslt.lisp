@@ -647,6 +647,12 @@
                     ,@body)))
       (with-specials ()
         (do-toplevel (import "import" <transform>)
+          (when (let ((prev (xpath:first-node
+                             (xpath:evaluate "preceding-sibling::*"
+                                             import
+                                             t))))
+                  (and prev (not (namep (stp:local-name prev) "import"))))
+            (xslt-error "import not at beginning of stylesheet"))
           (let ((uri (puri:merge-uris (or (stp:attribute-value import "href")
                                           (xslt-error "import without href"))
                                       (stp:base-uri import))))

@@ -13448,7 +13448,7 @@ PASS Import__91173 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91173.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91173.xuriella
 
-FAIL Import_Import_IncludeBeforeImportInStylesheet [XSLT-Structure]: expected error not signalled: 
+PASS Import_Import_IncludeBeforeImportInStylesheet [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Import/xslt_import_IncludeBeforeImport.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/xslt_import_IncludeBeforeImport.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/xslt_import_IncludeBeforeImport2.xsl
@@ -19382,4 +19382,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2932/3080 tests (3 expected failures, 145 unexpected failures).
+Passed 2933/3080 tests (3 expected failures, 144 unexpected failures).
