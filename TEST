@@ -13253,7 +13253,7 @@ PASS Import__84615 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__84615.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__84615.xuriella
 
-FAIL Import__91032 [XSLT-Structure]: attribute id not allowed on stylesheet
+PASS Import__91032 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91032.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91032a.xsl
@@ -13348,7 +13348,7 @@ PASS Import__91147 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91147.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91147.xuriella
 
-FAIL Import__91148 [XSLT-Structure]: output doesn't match
+PASS Import__91148 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91148.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91148/91148/91148.xsl
@@ -13361,7 +13361,7 @@ PASS Import__91150 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91150.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91150.xuriella
 
-FAIL Import__91151 [XSLT-Structure]: output doesn't match
+PASS Import__91151 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91151.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91151a.xsl
@@ -13447,7 +13447,7 @@ PASS Import__91166 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91166.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91166.xuriella
 
-FAIL Import__91173 [XSLT-Structure]: output doesn't match
+PASS Import__91173 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91173.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91173a.xsl
@@ -19388,4 +19388,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2921/3080 tests (3 expected failures, 156 unexpected failures).
+Passed 2925/3080 tests (3 expected failures, 152 unexpected failures).

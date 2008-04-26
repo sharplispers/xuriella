@@ -355,13 +355,17 @@
 ;;      But the official output is unaffected by SANITIZE-STYLESHEET.
 ;;
 (defparameter *whitespace-issues*
-  '("BVTs_bvt044"
-    "Namespace-alias__91782"
-    "AttributeSets__91038"
-    "BVTs_bvt041"
-    "BVTs_bvt042"
-    "BVTs_bvt054"
-    "BVTs_bvt058"))
+  (cl-ppcre:create-scanner
+   "(?smx)
+    ^(BVTs_bvt044$
+       |Namespace-alias__91782$
+       |AttributeSets__91038$
+       |BVTs_bvt041$
+       |BVTs_bvt042$
+       |BVTs_bvt054$
+       |BVTs_bvt058$
+       |Import__
+       )"))
 
 (defparameter *known-failures*
   '(
@@ -799,7 +803,7 @@
         (actual (test-output-pathname test "xuriella"))
         (official (test-official-output-pathname test))
         (force-normalization
-         (find (test-id test) *whitespace-issues* :test #'equal))
+         (cl-ppcre:all-matches *whitespace-issues* (test-id test)))
         (output-method nil))
     (handler-bind ((|hey test suite, this is an HTML document|
                     (lambda (c)
