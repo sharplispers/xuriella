@@ -13266,14 +13266,14 @@ PASS Import__91033 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91033.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91033.xuriella
 
-FAIL Import__91048 [XSLT-Structure]: output doesn't match
+PASS Import__91048 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91048a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91048e.xsl
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91048.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91048.xuriella
 
-FAIL Import__91116 [XSLT-Structure]: output doesn't match
+PASS Import__91116 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91116a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91116c.xsl
@@ -13294,7 +13294,7 @@ PASS Import__91118 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91118.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91118.xuriella
 
-FAIL Import__91134 [XSLT-Structure]: output doesn't match
+PASS Import__91134 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91134a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91134b.xsl
@@ -13308,7 +13308,7 @@ PASS Import__91135 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import__91135.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import__91135.xuriella
 
-FAIL Import__91136 [XSLT-Structure]: output doesn't match
+PASS Import__91136 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Import/91136a.noindent-xsl
   Data: MSFT_Conformance_Tests/Import/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Import/91136c.xsl
@@ -17647,14 +17647,14 @@ PASS Stylesheet__91806 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91806.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91806.xuriella
 
-FAIL Stylesheet__91807 [XSLT-Structure]: output doesn't match
+PASS Stylesheet__91807 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91807.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Stylesheet/91807a.xsl
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91807.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91807.xuriella
 
-FAIL Stylesheet__91808 [XSLT-Structure]: output doesn't match
+PASS Stylesheet__91808 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91808.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Stylesheet/91808a.xsl
@@ -19388,4 +19388,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2925/3080 tests (3 expected failures, 152 unexpected failures).
+Passed 2931/3080 tests (3 expected failures, 146 unexpected failures).

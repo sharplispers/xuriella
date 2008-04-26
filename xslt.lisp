@@ -192,10 +192,13 @@
 
 ;;;; XSLT-ENVIRONMENT and XSLT-CONTEXT
 
-(defparameter *namespaces*
+(defparameter *initial-namespaces*
   '((nil . "")
     ("xmlns" . #"http://www.w3.org/2000/xmlns/")
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
+
+(defparameter *namespaces*
+  *initial-namespaces*)
 
 (defvar *global-variable-declarations*)
 (defvar *lexical-variable-declarations*)
@@ -442,10 +445,12 @@
         (ensure-mode stylesheet local-name uri))
       (find-mode stylesheet nil)))
 
-(defun acons-namespaces (element &optional (bindings *namespaces*))
+(defun acons-namespaces
+    (element &optional (bindings *namespaces*) include-redeclared)
   (map-namespace-declarations (lambda (prefix uri)
                                 (push (cons prefix uri) bindings))
-                              element)
+                              element
+                              include-redeclared)
   bindings)
 
 (defun find-key (name stylesheet)
@@ -573,10 +578,14 @@
 
 (defun map-toplevel (fn xpath <transform>)
   (dolist (node (list-toplevel xpath <transform>))
-    (let ((*namespaces* *namespaces*))
+    (let ((*namespaces* *initial-namespaces*))
       (xpath:do-node-set (ancestor (xpath:evaluate "ancestor::node()" node))
+        (xpath:with-namespaces (("" #.*xsl*))
+          (when (xpath:node-matches-p ancestor "stylesheet|transform")
+            ;; discard namespaces from including stylesheets
+            (setf *namespaces* *initial-namespaces*)))
         (when (xpath-protocol:node-type-p ancestor :element)
-          (setf *namespaces* (acons-namespaces ancestor))))
+          (setf *namespaces* (acons-namespaces ancestor *namespaces* t))))
       (funcall fn node))))
 
 (defun list-toplevel (xpath <transform>)

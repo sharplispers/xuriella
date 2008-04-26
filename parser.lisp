@@ -29,10 +29,11 @@
 
 (in-package :xuriella)
 
-(defun map-namespace-declarations (fn element)
+(defun map-namespace-declarations (fn element &optional include-redeclared)
   (let ((parent (stp:parent element)))
     (maphash (lambda (prefix uri)
-               (unless (and (typep parent 'stp:element)
+               (unless (and (not include-redeclared)
+                            (typep parent 'stp:element)
                             (equal (stp:find-namespace prefix parent) uri))
                  (funcall fn prefix uri)))
              (cxml-stp-impl::collect-local-namespaces element))))

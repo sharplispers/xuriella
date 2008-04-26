@@ -186,7 +186,7 @@
   suggested-prefix
   value)
 
-(defparameter *initial-namespaces*
+(defparameter *initial-unparse-namespaces*
   '(("" . "")
     ("xmlns" . #"http://www.w3.org/2000/xmlns/")
     ("xml" . #"http://www.w3.org/XML/1998/namespace")))
@@ -211,7 +211,7 @@
                :suggested-prefix suggested-prefix
                :all-namespaces (if parent
                                    (sink-element-all-namespaces parent)
-                                   *initial-namespaces*)
+                                   *initial-unparse-namespaces*)
                :new-namespaces nil
                :attributes nil))
          (*current-element* elt)
