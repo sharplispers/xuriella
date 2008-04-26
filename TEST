@@ -15600,9 +15600,7 @@ PASS Output__77930 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77930.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77930.xuriella
 
-WARNING: comparison failed: :|MY:XML| fell through ECASE expression.
-                   Wanted one of (:TEXT :HTML :XML).
-FAIL Output__77931 [XSLT-Output]: saxon error not signalled and official output not a match
+PASS Output__77931 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29506.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77931.saxon
@@ -15641,13 +15639,13 @@ PASS Output__77936 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77936.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77936.xuriella
 
-FAIL Output__77937 [XSLT-Output]: expected error not signalled: 
+PASS Output__77937 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29404.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77937.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__77937.xuriella
 
-FAIL Output__77938 [XSLT-Output]: expected error not signalled: 
+PASS Output__77938 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29403.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77938.saxon
@@ -19291,4 +19289,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2960/3070 tests (4 expected failures, 106 unexpected failures).
+Passed 2963/3070 tests (4 expected failures, 103 unexpected failures).

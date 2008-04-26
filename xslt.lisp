@@ -966,7 +966,8 @@
   encoding
   doctype-system
   doctype-public
-  cdata-section-matchers)
+  cdata-section-matchers
+  standalone-p)
 
 (defun parse-output! (stylesheet <transform> env)
   (dolist (<output> (list-toplevel "output" <transform>))
@@ -984,8 +985,7 @@
           <output>
         (declare (ignore version
                          ;; FIXME:
-                         media-type
-                         standalone))
+                         media-type))
         (when method
           (setf (output-method spec)
                 (cond
@@ -1009,7 +1009,10 @@
           (dolist (qname (words cdata-section-elements))
             (decode-qname qname env nil) ;check the syntax
             (push (xpath:make-pattern-matcher* qname env)
-                  (output-cdata-section-matchers spec))))))))
+                  (output-cdata-section-matchers spec))))
+        (when standalone
+          (setf (output-standalone-p spec)
+                (boolean-or-error standalone)))))))
 
 (defun make-empty-declaration-array ()
   (make-array 1 :fill-pointer 0 :adjustable t))

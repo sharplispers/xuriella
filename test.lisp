@@ -385,6 +385,7 @@
        |BVTs_bvt058$
        |Import__
        |Include__
+       |Output__77931$
        )"))
 
 (defparameter *known-failures*
@@ -671,10 +672,10 @@
 
 (defun output-equal-p (compare p q &key normalize)
   (handler-case
-      (ecase compare
-        (:xml (xml-output-equal-p p q normalize))
+      (case compare
         (:html (html-output-equal-p p q))
-        (:text (text-output-equal-p p q)))
+        (:text (text-output-equal-p p q))
+        (t (xml-output-equal-p p q normalize)))
     ((or error parse-number::invalid-number) (c)
       (warn "comparison failed: ~A" c)
       nil)))
