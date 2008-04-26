@@ -365,6 +365,7 @@
        |BVTs_bvt054$
        |BVTs_bvt058$
        |Import__
+       |Include__
        )"))
 
 (defparameter *known-failures*

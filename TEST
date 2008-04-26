@@ -13490,7 +13490,7 @@ PASS Import_VariableScopeInNestedImports [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Import/Import_VariableScopeInNestedImports.saxon
   Actual output: MSFT_Conformance_Tests/Import/Import_VariableScopeInNestedImports.xuriella
 
-FAIL Include__77489 [XSLT-Structure]: output doesn't match
+PASS Include__77489 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Include/XSLT03005.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/books.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/XSLT03005a.xsl
@@ -13625,7 +13625,7 @@ PASS Include__78398 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Include/Include__78398.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include__78398.xuriella
 
-FAIL Include__84463 [XSLT-Structure]: output doesn't match
+PASS Include__84463 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Include/84463.noindent-xsl
   Data: MSFT_Conformance_Tests/Include/84463.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/XSLT03005a.xsl
@@ -19382,4 +19382,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2933/3080 tests (3 expected failures, 144 unexpected failures).
+Passed 2935/3080 tests (3 expected failures, 142 unexpected failures).
