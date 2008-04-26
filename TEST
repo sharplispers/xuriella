@@ -11578,17 +11578,7 @@ PASS Comment_Comment_CDATAWithDoubleHyphenEntities [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithDoubleHyphenEntities.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithDoubleHyphenEntities.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 10 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 10 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.xuriella
-
-FAIL Comment_Comment_CDATAWithSingleHyphen [XSLT-Result-Tree]: output doesn't match
+PASS Comment_Comment_CDATAWithSingleHyphen [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_CdataHyphenEntityMix.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_CDATAWithSingleHyphen.saxon
@@ -11642,17 +11632,7 @@ PASS Comment_Comment_HyphenEntityAndHyphen [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.saxon
   Actual output: MSFT_Conformance_Tests/Comment/Comment_Comment_HyphenEntityAndHyphen.xuriella
 
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 10 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
-
-WARNING:
-   comparison failed: Document not well-formed: '--' not allowed in a comment
-Location:
-  Line 1, column 10 in file://+...MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.xuriella
-
-FAIL Comment_Comment_LineOfAllHyphens [XSLT-Result-Tree]: output doesn't match
+PASS Comment_Comment_LineOfAllHyphens [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Comment/xslt_comment_LineOfHyphens.noindent-xsl
   Data: MSFT_Conformance_Tests/Comment/xslt_comment_root.xml
   Expected output (1): MSFT_Conformance_Tests/Comment/Comment_Comment_LineOfAllHyphens.saxon
@@ -19409,4 +19389,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2918/3080 tests (3 expected failures, 159 unexpected failures).
+Passed 2920/3080 tests (3 expected failures, 157 unexpected failures).
