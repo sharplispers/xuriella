@@ -11506,7 +11506,7 @@ WARNING:
 Location:
   Line 2, column 49 in NIL
 
-FAIL BVTs_bvt090 [Mixed]: output doesn't match
+PASS BVTs_bvt090 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/valof.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt090.saxon
@@ -15748,7 +15748,7 @@ PASS Output__78221 [XSLT-Output]
 
 WARNING: Unknown encoding SHIFT_JIS, falling back to UTF-8
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78222 [XSLT-Output]: condition of incorrect type: 
+KNOWNFAIL Output__78222 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
   Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -15760,7 +15760,7 @@ Context:
 
 WARNING: Unknown encoding NIL, falling back to UTF-8
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78223 [XSLT-Output]: condition of incorrect type: 
+KNOWNFAIL Output__78223 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
   Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -15772,7 +15772,7 @@ Context:
 
 WARNING: Unknown encoding NIL, falling back to UTF-8
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78224 [XSLT-Output]: condition of incorrect type: 
+KNOWNFAIL Output__78224 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
   Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -15784,7 +15784,7 @@ Context:
 
 WARNING: Unknown encoding WINDOWS-1252, falling back to UTF-8
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78225 [XSLT-Output]: condition of incorrect type: 
+KNOWNFAIL Output__78225 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
   Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -15796,7 +15796,7 @@ Context:
 
 WARNING: Unknown encoding NIL, falling back to UTF-8
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78226 [XSLT-Output]: condition of incorrect type: 
+KNOWNFAIL Output__78226 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
   Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -15808,7 +15808,7 @@ Context:
 
 WARNING: Unknown encoding SHIFT_JIS, falling back to UTF-8
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78227 [XSLT-Output]: condition of incorrect type: 
+KNOWNFAIL Output__78227 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
   Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -15819,7 +15819,7 @@ Context:
   Actual output: MSFT_Conformance_Tests/Output/Output__78227.xuriella
 
 WARNING: There is no such encoding: "iso-2022-jp".
-FAIL Output__78229 [XSLT-Output]: condition of incorrect type: 
+KNOWNFAIL Output__78229 [XSLT-Output]: condition of incorrect type: 
 Document not well-formed: Expected '!' or '?' after '<' in DTD.
 Context:
   Line 3, column 16 in file://+...MSFT_Conformance_Tests/Output/iso-2022-jp.xml
@@ -15839,7 +15839,7 @@ WARNING:
 Context:
   Line 4, column 11 in NIL
 
-FAIL Output__84008 [XSLT-Output]: output doesn't match
+PASS Output__84008 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84009.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/Outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84008.saxon
@@ -15855,7 +15855,7 @@ WARNING:
 Context:
   Line 4, column 11 in NIL
 
-FAIL Output__84009 [XSLT-Output]: output doesn't match
+PASS Output__84009 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84008.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/Outputtext.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84009.saxon
@@ -16409,7 +16409,7 @@ WARNING:
 Location:
   Line 2, column 7 in NIL
 
-FAIL Output__84433 [XSLT-Output]: output doesn't match
+PASS Output__84433 [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/84433.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/84433.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84433.saxon
@@ -17840,7 +17840,7 @@ WARNING:
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78307.txt
 
-FAIL Text__78307 [XSLT-Result-Tree]: output doesn't match
+PASS Text__78307 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05006.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78307.saxon
@@ -17856,7 +17856,7 @@ WARNING:
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78308.txt
 
-FAIL Text__78308 [XSLT-Result-Tree]: output doesn't match
+PASS Text__78308 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05000.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78308.saxon
@@ -17874,7 +17874,7 @@ WARNING: comparison failed: :|"| fell through ECASE expression.
                    Wanted one of (NIL :S :? :SEEN-<).
 WARNING: comparison failed: :|"| fell through ECASE expression.
                    Wanted one of (NIL :S :? :SEEN-<).
-FAIL Text__78311 [XSLT-Result-Tree]: output doesn't match
+PASS Text__78311 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05003.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/books.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78311.saxon
@@ -17896,7 +17896,7 @@ WARNING:
 Context:
   Line 1, column 2 in file://+...MSFT_Conformance_Tests/REF_OUT/Text/78313.txt
 
-FAIL Text__78313 [XSLT-Result-Tree]: output doesn't match
+PASS Text__78313 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT05005.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/Japanese.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78313.saxon
@@ -19289,4 +19289,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2964/3070 tests (4 expected failures, 102 unexpected failures).
+Passed 2972/3070 tests (11 expected failures, 87 unexpected failures).

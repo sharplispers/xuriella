@@ -397,9 +397,18 @@
 
     ;; uses KOI, which Babel doesn't support
     "BVTs_bvt019"
-
-    ;; shift_jis
+    ;;
+    ;; ... shift_jis
     "Include__77515"
+    "Output__78222"
+    ;;
+    ;; ... iso-2022-jp
+    "Output__78223"
+    "Output__78224"
+    "Output__78225"
+    "Output__78226"
+    "Output__78227"
+    "Output__78229"
 
     ;; FIXME?
     ;;
@@ -678,7 +687,9 @@
         (t (xml-output-equal-p p q normalize)))
     ((or error parse-number::invalid-number) (c)
       (warn "comparison failed: ~A" c)
-      nil)))
+      ;; try again using a plain-text comparision, sometimes it helps:
+      (and (not (eq compare :text))
+           (output-equal-p :text p q :normalize normalize)))))
 
 ;; Workaround for namespace_namespace23 and other tests:
 ;;  - For these tests, saxon and msxsl output a declaration for the XSL
