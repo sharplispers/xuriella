@@ -1110,7 +1110,7 @@
     (do-toplevel (<key> "key" <transform>)
       (with-import-magic (<key> env)
         (let ((*instruction-base-uri* (stp:base-uri <key>)))
-          (stp:with-attributes (name match use) <key>
+          (only-with-attributes (name match use) <key>
             (unless name (xslt-error "key name attribute not specified"))
             (unless match (xslt-error "key match attribute not specified"))
             (unless use (xslt-error "key use attribute not specified"))

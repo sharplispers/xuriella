@@ -13817,7 +13817,7 @@ PASS Keys__91717 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91717.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91717.xuriella
 
-FAIL Keys__91718 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Keys__91718 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Keys/91718.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/key.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91718.saxon
@@ -19373,4 +19373,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2938/3079 tests (4 expected failures, 137 unexpected failures).
+Passed 2939/3079 tests (4 expected failures, 136 unexpected failures).
