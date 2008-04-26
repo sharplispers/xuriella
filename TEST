@@ -15570,7 +15570,7 @@ PASS Number_ValueAsEmptyNodeset [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Number/Number_ValueAsEmptyNodeset.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number_ValueAsEmptyNodeset.xuriella
 
-FAIL Output__77926 [XSLT-Output]: expected error not signalled: 
+PASS Output__77926 [XSLT-Output]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Output/xslt29500.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/testdata.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__77926.saxon
@@ -19291,4 +19291,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2959/3070 tests (4 expected failures, 107 unexpected failures).
+Passed 2960/3070 tests (4 expected failures, 106 unexpected failures).

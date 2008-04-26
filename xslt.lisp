@@ -987,7 +987,14 @@
                          media-type
                          standalone))
         (when method
-          (setf (output-method spec) method))
+          (setf (output-method spec)
+                (cond
+                  ((equal method "")
+                   (xslt-error "method missing in xsl:output"))
+                  ((equalp method "HTML") :html)
+                  ((equalp method "TEXT") :text)
+                  ((equalp method "XML") :xml)
+                  (t nil))))
         (when indent
           (setf (output-indent spec) indent))
         (when encoding
@@ -1669,12 +1676,7 @@
                                                        :ystream ystream)
                             :sax-target sax-target
                             :encoding sink-encoding)))
-      (let ((method-key
-             (cond
-               ((equalp (output-method output-spec) "HTML") :html)
-               ((equalp (output-method output-spec) "TEXT") :text)
-               ((equalp (output-method output-spec) "XML") :xml)
-               (t nil))))
+      (let ((method-key (output-method output-spec)))
         (cond
           ((and (eq method-key :html)
                 (null (output-doctype-system output-spec))
