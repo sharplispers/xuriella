@@ -13555,7 +13555,7 @@ PASS Include__77514 [XSLT-Structure]: raised an xslt-error as expected
   Actual output: MSFT_Conformance_Tests/Include/Include__77514.xuriella
 
 WARNING: There is no such encoding: "shift_jis".
-FAIL Include__77515 [XSLT-Structure]: cannot parse stylesheet: Document not well-formed: Corrupted UTF-8 input (initial byte was #b10000010)
+KNOWNFAIL Include__77515 [XSLT-Structure]: cannot parse stylesheet: Document not well-formed: Corrupted UTF-8 input (initial byte was #b10000010)
 Location:
   Line 1, column 44 in file://+...MSFT_Conformance_Tests/Include/XSLT03022a.xsl
 
@@ -13564,14 +13564,6 @@ Location:
   Supplemental stylesheet: MSFT_Conformance_Tests/Include/xslt03022a.xsl
   Expected output (1): MSFT_Conformance_Tests/Include/Include__77515.saxon
   Actual output: MSFT_Conformance_Tests/Include/Include__77515.xuriella
-
-FAIL Include__77736 [XSLT-Structure]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Include/xslt03022.noindent-xsl":
-  No such file or directory
-  Stylesheet: MSFT_Conformance_Tests/Include/xslt03022.noindent-xsl
-  Data: MSFT_Conformance_Tests/Include/books.xml
-  Expected output (1): MSFT_Conformance_Tests/Include/Include__77736.saxon
-  Actual output: MSFT_Conformance_Tests/Include/Include__77736.xuriella
 
 PASS Include__77745 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Include/xslt03019.noindent-xsl
@@ -13728,8 +13720,7 @@ PASS Keys_SortNodesetReturnedByKey [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys_SortNodesetReturnedByKey.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys_SortNodesetReturnedByKey.xuriella
 
-FAIL Keys_MultipltKeysInclude [XSLT-Data-Manipulation]: duplicate key: (prices
-                                                                        . )
+PASS Keys_MultipltKeysInclude [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/MultipltKeysInclude.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/MultipltKeysInclude.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Keys/MultipltKeysInclude.inc
@@ -13924,7 +13915,7 @@ PASS Keys__91835 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91835.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91835.xuriella
 
-FAIL Keys__91836 [XSLT-Data-Manipulation]: duplicate key: (foo . )
+PASS Keys__91836 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91836.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91836.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91836.saxon
@@ -13936,7 +13927,7 @@ PASS Keys__91858 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91858.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91858.xuriella
 
-FAIL Keys__91859 [XSLT-Data-Manipulation]: duplicate key: (foo . )
+PASS Keys__91859 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91859.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91859.xml
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91859.saxon
@@ -19382,4 +19373,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2935/3080 tests (3 expected failures, 142 unexpected failures).
+Passed 2938/3079 tests (4 expected failures, 137 unexpected failures).

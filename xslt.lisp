@@ -464,10 +464,8 @@
 (defun key-use (key) (cdr key))
 
 (defun add-key (stylesheet name match use)
-  (if (gethash name (stylesheet-keys stylesheet))
-      (xslt-error "duplicate key: ~a" name)
-      (setf (gethash name (stylesheet-keys stylesheet))
-            (make-key match use))))
+  (push (make-key match use)
+        (gethash name (stylesheet-keys stylesheet))))
 
 (defvar *excluded-namespaces* (list *xsl*))
 (defvar *empty-mode*)
@@ -651,7 +649,7 @@
                              (xpath:evaluate "preceding-sibling::*"
                                              import
                                              t))))
-                  (and prev (not (namep (stp:local-name prev) "import"))))
+                  (and prev (not (namep prev "import"))))
             (xslt-error "import not at beginning of stylesheet"))
           (let ((uri (puri:merge-uris (or (stp:attribute-value import "href")
                                           (xslt-error "import without href"))
@@ -1287,6 +1285,10 @@
               object)
              (list (%document (xpath:string-value object) base-uri))))))))
 
+;; FIXME: the point of keys is that we are meant to optimize this
+;; by building a table mapping nodes to values for each key.
+;; We should run over all matching nodes and store them in such a table
+;; when seeing their document for the first time.
 (xpath-sys:define-xpath-function/lazy xslt :key (name object)
   (let ((namespaces *namespaces*))
     (lambda (ctx)
@@ -1296,28 +1298,33 @@
               (multiple-value-bind (local-name uri)
                   (decode-qname/runtime qname namespaces nil)
                 (cons local-name uri)))
-             (key (find-key expanded-name *stylesheet*)))
-        (labels ((get-by-key (value)
-                   (let ((value (xpath:string-value value)))
-                     (xpath::filter-pipe
-                      #'(lambda (node)
-                          (let ((uses
-                                 (xpath:evaluate-compiled (key-use key) node)))
-                            (if (xpath:node-set-p uses)
-                                (xpath::find-in-pipe
-                                 value
-                                 (xpath-sys:pipe-of uses)
-                                 :key #'xpath:string-value
-                                 :test #'equal)
-                                (equal value (xpath:string-value uses)))))
-                      (xpath-sys:pipe-of
-                       (xpath:node-set-value
-                        (xpath:evaluate-compiled (key-match key) ctx)))))))
-          (xpath-sys:make-node-set
-           (xpath::sort-pipe
-            (if (xpath:node-set-p object)
-                (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
-                (get-by-key object)))))))))
+             (key-conses (find-key expanded-name *stylesheet*)))
+        (xpath-sys:make-node-set
+         (xpath::mappend-pipe
+          (lambda (key)
+            (labels ((get-by-key (value)
+                       (let ((value (xpath:string-value value)))
+                         (xpath::filter-pipe
+                          #'(lambda (node)
+                              (let ((uses
+                                     (xpath:evaluate-compiled (key-use key)
+                                                              node)))
+                                (if (xpath:node-set-p uses)
+                                    (xpath::find-in-pipe
+                                     value
+                                     (xpath-sys:pipe-of uses)
+                                     :key #'xpath:string-value
+                                     :test #'equal)
+                                    (equal value (xpath:string-value uses)))))
+                          (xpath-sys:pipe-of
+                           (xpath:node-set-value
+                            (xpath:evaluate-compiled (key-match key) ctx)))))))
+              (xpath::sort-pipe
+               (if (xpath:node-set-p object)
+                   (xpath::mappend-pipe #'get-by-key
+                                        (xpath-sys:pipe-of object))
+                   (get-by-key object)))))
+          key-conses))))))
 
 ;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
 
@@ -1351,10 +1358,8 @@
                                          highest-base-uri)
               while next
               finally (return highest-base-uri))))
-      ;; Heuristic: Reverse it so that the /home/david/alwaysthesame prefix is
-      ;; checked only if everything else matches.
-      ;;
-      ;; This might be pointless premature optimization, but I like the idea :-)
+      ;; FIXME: Now that we intern documents, we could use a short ID for
+      ;; the document instead of the base URI.
       (nreverse (concatenate 'string highest-base-uri "//" id)))))
 
 (xpath-sys:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)

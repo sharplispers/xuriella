@@ -342,7 +342,8 @@
     "Keys_PerfRepro3"
 
     ;; test stylesheet doesn't exist?!
-    "ConflictResolution__77833"))
+    "ConflictResolution__77833"
+    "Include__77736"))
 
 ;; Tests where the output isn't a match because of extraneous whitespace.
 ;; For these tests, we force space normalization before comparing.
@@ -377,6 +378,9 @@
 
     ;; uses KOI, which Babel doesn't support
     "BVTs_bvt019"
+
+    ;; shift_jis
+    "Include__77515"
 
     ;; FIXME?
     ;;
