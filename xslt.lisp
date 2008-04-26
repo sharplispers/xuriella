@@ -987,14 +987,17 @@
                          ;; FIXME:
                          media-type))
         (when method
-          (setf (output-method spec)
-                (cond
-                  ((equal method "")
-                   (xslt-error "method missing in xsl:output"))
-                  ((equalp method "HTML") :html)
-                  ((equalp method "TEXT") :text)
-                  ((equalp method "XML") :xml)
-                  (t nil))))
+          (multiple-value-bind  (local-name uri)
+              (decode-qname method env t)
+            (setf (output-method spec)
+                  (if (plusp (length uri))
+                      nil
+                      (cond
+                        ((equalp method "HTML") :html)
+                        ((equalp method "TEXT") :text)
+                        ((equalp method "XML") :xml)
+                        (t
+                         (xslt-error "invalid output method: ~A" method)))))))
         (when indent
           (setf (output-indent spec) indent))
         (when encoding
