@@ -14854,77 +14854,17 @@ PASS Namespace_Bug85356 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace/Namespace_Bug85356.saxon
   Actual output: MSFT_Conformance_Tests/Namespace/Namespace_Bug85356.xuriella
 
-FAIL Namespace_XPath_Conflict_XPath_XSLT [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "ws", only "xml" is legal.
-Context:
-  Line 7, column 98 in file://+...MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_1.noindent-xsl
-  Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-  Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.saxon
-  Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_Conflict_XPath_XSLT.xuriella
-
 PASS Namespace_XPath_CopyNamespaceNodeToOutput [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/xslt_copy_namespace_nodes.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_CopyNamespaceNodeToOutput.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_CopyNamespaceNodeToOutput.xuriella
 
-FAIL Namespace_XPath_DefaultNamespace [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "ws", only "xml" is legal.
-Context:
-  Line 7, column 98 in file://+...MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_4.noindent-xsl
-  Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-  Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_DefaultNamespace.saxon
-  Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_DefaultNamespace.xuriella
-
-FAIL Namespace_XPath_NavigatorMethods [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "ws", only "xml" is legal.
-Context:
-  Line 7, column 98 in file://+...MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_3.noindent-xsl
-  Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-  Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_NavigatorMethods.saxon
-  Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_NavigatorMethods.xuriella
-
 PASS Namespace_XPath_PredefinedPrefix_XML [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_6.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_PredefinedPrefix_XML.saxon
   Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_PredefinedPrefix_XML.xuriella
-
-FAIL Namespace_XPath_PredefinedPrefix_XMLNS [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "ws", only "xml" is legal.
-Context:
-  Line 7, column 98 in file://+...MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_7.noindent-xsl
-  Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-  Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_PredefinedPrefix_XMLNS.saxon
-  Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_PredefinedPrefix_XMLNS.xuriella
-
-FAIL Namespace_XPath_SameQuery_DiffNamespace [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "ws", only "xml" is legal.
-Context:
-  Line 7, column 98 in file://+...MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_8.noindent-xsl
-  Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-  Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_SameQuery_DiffNamespace.saxon
-  Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_SameQuery_DiffNamespace.xuriella
-
-FAIL Namespace_XPath_ScopingRules [XSLT-Result-Tree]: condition of incorrect type: 
-Document not well-formed: The namespace URI "http://www.w3.org/XML/1998/namespace" may not be bound to the prefix "ws", only "xml" is legal.
-Context:
-  Line 7, column 98 in file://+...MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_5.noindent-xsl
-  Data: MSFT_Conformance_Tests/Namespace_XPath/prefixes.xml
-  Expected output (1): MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_ScopingRules.saxon
-  Actual output: MSFT_Conformance_Tests/Namespace_XPath/Namespace_XPath_ScopingRules.xuriella
 
 PASS Namespace_XPath_UndeclaredPrefix [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace_XPath/namespace_xpath_2.noindent-xsl
@@ -14938,7 +14878,7 @@ PASS Namespace-alias__91766 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91766.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91766.xuriella
 
-FAIL Namespace-alias__91767 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91767 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91767.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91767.saxon
@@ -14962,37 +14902,37 @@ PASS Namespace-alias__91770 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91770.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91770.xuriella
 
-FAIL Namespace-alias__91773 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91773 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91773.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91773.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91773.xuriella
 
-FAIL Namespace-alias__91774 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91774 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91774.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91774.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91774.xuriella
 
-FAIL Namespace-alias__91775 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91775 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91775.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91775.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91775.xuriella
 
-FAIL Namespace-alias__91776 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91776 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91776.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91776.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91776.xuriella
 
-FAIL Namespace-alias__91779 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91779 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91779.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91779.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91779.xuriella
 
-FAIL Namespace-alias__91780 [XSLT-Structure]: expected error not signalled: 
+PASS Namespace-alias__91780 [XSLT-Structure]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91780.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91780.saxon
@@ -19351,4 +19291,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2940/3076 tests (4 expected failures, 132 unexpected failures).
+Passed 2947/3070 tests (4 expected failures, 119 unexpected failures).

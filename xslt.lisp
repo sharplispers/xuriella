@@ -793,21 +793,28 @@
 
 (defun parse-namespace-aliases! (stylesheet <transform> env)
   (do-toplevel (elt "namespace-alias" <transform>)
-    (only-with-attributes (stylesheet-prefix result-prefix) elt
-      (unless stylesheet-prefix
-        (xslt-error "missing stylesheet-prefix in namespace-alias"))
-      (unless result-prefix
-        (xslt-error "missing result-prefix in namespace-alias"))
-      (setf (gethash
-	     (if (equal stylesheet-prefix "#default")
-                 ""
-                 (xpath-sys:environment-find-namespace env stylesheet-prefix))
-	     (stylesheet-namespace-aliases stylesheet))
-	    (xpath-sys:environment-find-namespace
-             env
-             (if (equal result-prefix "#default")
-                 ""
-                 result-prefix))))))
+    (let ((*namespaces* (acons-namespaces elt)))
+      (only-with-attributes (stylesheet-prefix result-prefix) elt
+        (unless stylesheet-prefix
+          (xslt-error "missing stylesheet-prefix in namespace-alias"))
+        (unless result-prefix
+          (xslt-error "missing result-prefix in namespace-alias"))
+        (setf (gethash
+               (if (equal stylesheet-prefix "#default")
+                   ""
+                   (or (xpath-sys:environment-find-namespace
+                        env
+                        stylesheet-prefix)
+                       (xslt-error "stylesheet namespace not found in alias: ~A"
+                                   stylesheet-prefix)))
+               (stylesheet-namespace-aliases stylesheet))
+              (or (xpath-sys:environment-find-namespace
+                   env
+                   (if (equal result-prefix "#default")
+                       ""
+                       result-prefix))
+                  (xslt-error "result namespace not found in alias: ~A"
+                              result-prefix)))))))
 
 (defun parse-decimal-formats! (stylesheet <transform> env)
   (do-toplevel (elt "decimal-format" <transform>)
