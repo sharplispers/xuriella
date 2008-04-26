@@ -519,10 +519,13 @@
                  (or (equal (stp:local-name <transform>) "transform")
                      (equal (stp:local-name <transform>) "stylesheet")))
       (xslt-error "not a stylesheet"))
-    (check-for-invalid-attributes '(("version" . "")
-                                    ("exclude-result-prefixes" . "")
-                                    ("extension-element-prefixes" . ""))
-                                  <transform>)
+    (check-for-invalid-attributes
+     '(("version" . "")
+       ("exclude-result-prefixes" . "")
+       ("extension-element-prefixes" . "")
+       ("space" . "http://www.w3.org/XML/1998/namespace")
+       ("id" . ""))
+     <transform>)
     (let ((invalid
            (or (stp:find-child-if (of-name "stylesheet") <transform>)
                (stp:find-child-if (of-name "transform") <transform>))))
