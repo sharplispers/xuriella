@@ -11325,7 +11325,7 @@ WARNING:
 Context:
   Line 2, column 153 in NIL
 
-PASS BVTs_bvt058 [Mixed]
+FAIL BVTs_bvt058 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/BVTs/nsalias.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt058.saxon
@@ -14979,13 +14979,13 @@ PASS Namespace-alias__91786 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91786.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91786.xuriella
 
-FAIL Namespace-alias__91788 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91788 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91788.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91788.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91788.xuriella
 
-FAIL Namespace-alias__91789 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91789 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91789.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91789.saxon
@@ -15003,61 +15003,61 @@ PASS Namespace-alias__91791 [XSLT-Structure]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91791.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91791.xuriella
 
-FAIL Namespace-alias__91792 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91792 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91792.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91792.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91792.xuriella
 
-FAIL Namespace-alias__91793 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91793 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91793.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91793.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91793.xuriella
 
-FAIL Namespace-alias__91794 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91794 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91794.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91794.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91794.xuriella
 
-FAIL Namespace-alias__91795 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91795 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91795.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91795.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91795.xuriella
 
-FAIL Namespace-alias__91796 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91796 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91796.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91796.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91796.xuriella
 
-FAIL Namespace-alias__91797 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91797 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91797.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91797.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91797.xuriella
 
-FAIL Namespace-alias__91798 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91798 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91798.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91798.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91798.xuriella
 
-FAIL Namespace-alias__91799 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91799 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91799.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91799.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91799.xuriella
 
-FAIL Namespace-alias__91800 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91800 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91800.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91800.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91800.xuriella
 
-FAIL Namespace-alias__91801 [XSLT-Structure]: output doesn't match
+PASS Namespace-alias__91801 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/91801.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/nsalias.xml
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias__91801.saxon
@@ -15093,7 +15093,7 @@ PASS Namespace-alias_Namespace-Alias_WithinRTF [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_WithinRTF.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_Namespace-Alias_WithinRTF.xuriella
 
-FAIL Namespace-alias_NSAlias_In_Import [XSLT-Structure]: output doesn't match
+PASS Namespace-alias_NSAlias_In_Import [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Namespace-alias/xslt_test_ns_alias_in_import.noindent-xsl
   Data: MSFT_Conformance_Tests/Namespace-alias/foo.xml
   Supplemental stylesheet: MSFT_Conformance_Tests/Namespace-alias/xslt_test_ns_alias_in_import.inc
@@ -19291,4 +19291,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2947/3070 tests (4 expected failures, 119 unexpected failures).
+Passed 2959/3070 tests (4 expected failures, 107 unexpected failures).

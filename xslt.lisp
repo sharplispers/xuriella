@@ -662,6 +662,7 @@
       (let ((import-priority
              (incf *import-priority*))
             (var-cont (prepare-global-variables stylesheet <transform>)))
+        (parse-namespace-aliases! stylesheet <transform> env)
         ;; delay the rest of compilation until we've seen all global
         ;; variables:
         (lambda ()
@@ -674,7 +675,6 @@
               (parse-output! stylesheet <transform> env)
               (parse-strip/preserve-space! stylesheet <transform> env)
               (parse-attribute-sets! stylesheet <transform> env)
-              (parse-namespace-aliases! stylesheet <transform> env)
               (parse-decimal-formats! stylesheet <transform> env))))))))
 
 (defvar *xsl-import-stack* nil)
@@ -711,6 +711,9 @@
              (xpath:*allow-variables-in-patterns* nil)
              (puri:*strict-parse* nil)
              (stylesheet (make-stylesheet))
+             (*stylesheet*
+              ;; zzz this is for remove-excluded-namespaces only
+              stylesheet)
              (env (make-instance 'lexical-xslt-environment))
              (*excluded-namespaces* *excluded-namespaces*)
              (*global-variable-declarations* (make-empty-declaration-array))

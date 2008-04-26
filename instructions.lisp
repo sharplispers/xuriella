@@ -206,8 +206,12 @@
 
 ;; zzz Also elides (later) namespaces hidden by (earlier) ones.
 ;; zzz Reverses order.
+;;
+;; zzz fix the huge kludge that included-after-all-for-weird-reason-uris is
+;;
 (defun remove-excluded-namespaces
-    (namespaces &optional (excluded-uris *excluded-namespaces*))
+    (namespaces &optional (excluded-uris *excluded-namespaces*)
+                          included-after-all-for-weird-reason-uris)
   (let ((koerbchen '())
         (kroepfchen '()))
     (loop
@@ -218,18 +222,43 @@
          (cond
            ((find prefix kroepfchen :test #'equal))
            ((find prefix koerbchen :test #'equal :key #'car))
-           ((find uri excluded-uris :test #'equal)
+           ((and (find uri excluded-uris :test #'equal)
+                 (not (find uri included-after-all-for-weird-reason-uris
+                            :test #'equal)))
             (push prefix kroepfchen))
            (t
             (push cons koerbchen))))
     koerbchen))
+
+;; FIXME!
+(defun collect-literal-attribute-namespaces-KLUDGE (body)
+  (loop
+     for frob in body
+     when (and (consp frob) (eq (car frob) 'xsl:literal-attribute))
+     collect (second (second frob))))
+
+;; FIXME!
+(defun not-actually-excluded-namespaces-KLUDGE (element-uri body)
+  (mapcan (lambda (uri)
+            (multiple-value-bind (unaliased-uri matchp)
+                (gethash uri (stylesheet-namespace-aliases *stylesheet*))
+              (if matchp
+                  (list unaliased-uri)
+                  nil)))
+          (cons element-uri
+                (remove-if
+                 (lambda (x) (zerop (length x)))
+                 (collect-literal-attribute-namespaces-KLUDGE body)))))
 
 (define-instruction xsl:literal-element (args env)
   (destructuring-bind
         ((local-name &optional (uri "") suggested-prefix) &body body)
       args
     (let ((body-thunk (compile-instruction `(progn ,@body) env))
-          (namespaces (remove-excluded-namespaces *namespaces*)))
+          (namespaces (remove-excluded-namespaces
+                       *namespaces*
+                       *excluded-namespaces*
+                       (not-actually-excluded-namespaces-KLUDGE uri body))))
       (lambda (ctx)
         (with-element (local-name (or uri "")
                                   :suggested-prefix suggested-prefix
