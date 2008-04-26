@@ -115,7 +115,7 @@
 (defun compile-element/constant-name (qname namespace env body-thunk)
   ;; the simple case: compile-time decoding of the QName
   (multiple-value-bind (local-name uri prefix)
-      (decode-qname qname env nil)
+      (decode-qname qname env nil :allow-unknown-namespace t)
     (when namespace
       (setf uri namespace))
     (lambda (ctx)
@@ -176,7 +176,7 @@
 (defun compile-attribute/constant-name (qname namespace env value-thunk)
   ;; the simple case: compile-time decoding of the QName
   (multiple-value-bind (local-name uri prefix)
-      (decode-qname qname env t)
+      (decode-qname qname env t :allow-unknown-namespace t)
     (when namespace
       (setf uri namespace))
     (lambda (ctx)

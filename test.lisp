@@ -327,6 +327,8 @@
     ;;
     ;; Input document isn't ns-wf.
     "Attributes__78387"
+    "Miscellaneous__84001"
+
     ;;
     ;; Someone commented out most of this test...
     "BVTs_bvt045"
@@ -343,7 +345,11 @@
 
     ;; test stylesheet doesn't exist?!
     "ConflictResolution__77833"
-    "Include__77736"))
+    "Include__77736"
+
+    ;; these test the value of generate-id(), which isn't specified
+    "Keys__91832"
+    "Keys__91833"))
 
 ;; Tests where the output isn't a match because of extraneous whitespace.
 ;; For these tests, we force space normalization before comparing.

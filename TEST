@@ -13889,18 +13889,6 @@ PASS Keys__91732 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91732.saxon
   Actual output: MSFT_Conformance_Tests/Keys/Keys__91732.xuriella
 
-FAIL Keys__91832 [XSLT-Data-Manipulation]: output doesn't match
-  Stylesheet: MSFT_Conformance_Tests/Keys/91832.noindent-xsl
-  Data: MSFT_Conformance_Tests/Keys/91832.xml
-  Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91832.saxon
-  Actual output: MSFT_Conformance_Tests/Keys/Keys__91832.xuriella
-
-FAIL Keys__91833 [XSLT-Data-Manipulation]: output doesn't match
-  Stylesheet: MSFT_Conformance_Tests/Keys/91833.noindent-xsl
-  Data: MSFT_Conformance_Tests/Keys/91832.xml
-  Expected output (1): MSFT_Conformance_Tests/Keys/Keys__91833.saxon
-  Actual output: MSFT_Conformance_Tests/Keys/Keys__91833.xuriella
-
 PASS Keys__91834 [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Keys/91834.noindent-xsl
   Data: MSFT_Conformance_Tests/Keys/91834.xml
@@ -14122,16 +14110,6 @@ PASS Miscellaneous__83996 [Mixed]
   Data: MSFT_Conformance_Tests/Miscellaneous/83996.xml
   Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__83996.saxon
   Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__83996.xuriella
-
-FAIL Miscellaneous__84001 [Mixed]: condition of incorrect type: 
-Document not well-formed: element expected
-Context:
-  Line 3, column 22 in file://+...MSFT_Conformance_Tests/Miscellaneous/bug46988.xml
-
-  Stylesheet: MSFT_Conformance_Tests/Miscellaneous/bug46988.noindent-xsl
-  Data: MSFT_Conformance_Tests/Miscellaneous/bug46988.xml
-  Expected output (1): MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84001.saxon
-  Actual output: MSFT_Conformance_Tests/Miscellaneous/Miscellaneous__84001.xuriella
 
 PASS Miscellaneous__84002 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/Miscellaneous/bug43954.noindent-xsl
@@ -14475,7 +14453,7 @@ PASS Modes__84414 [XSLT-Template]
   Expected output (1): MSFT_Conformance_Tests/Modes/Modes__84414.saxon
   Actual output: MSFT_Conformance_Tests/Modes/Modes__84414.xuriella
 
-FAIL NamedTemplates__84027 [XSLT-Template]: expected error not signalled: 
+PASS NamedTemplates__84027 [XSLT-Template]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/NamedTemplates/84027.noindent-xsl
   Data: MSFT_Conformance_Tests/NamedTemplates/books.xml
   Expected output (1): MSFT_Conformance_Tests/NamedTemplates/NamedTemplates__84027.saxon
@@ -19373,4 +19351,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2939/3079 tests (4 expected failures, 136 unexpected failures).
+Passed 2940/3076 tests (4 expected failures, 132 unexpected failures).

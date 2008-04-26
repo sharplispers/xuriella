@@ -225,14 +225,17 @@
     (cxml:well-formedness-violation ()
       (xslt-error "not a qname: ~A" str))))
 
-(defun decode-qname (qname env attributep)
+(defun decode-qname (qname env attributep &key allow-unknown-namespace)
   (unless qname
     (xslt-error "missing name"))
   (multiple-value-bind (prefix local-name)
       (split-qname qname)
     (values local-name
             (if (or prefix (not attributep))
-                (xpath-sys:environment-find-namespace env (or prefix ""))
+                (or (xpath-sys:environment-find-namespace env (or prefix ""))
+                    (if allow-unknown-namespace
+                        nil
+                        (xslt-error "namespace not found: ~A" prefix)))
                 "")
             prefix)))
 
