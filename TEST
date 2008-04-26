@@ -15867,17 +15867,13 @@ PASS Output__84010 [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84010.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84010.xuriella
 
-FAIL Output__84011 [XSLT-Output]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Output/OutputText.xml":
-  No such file or directory
+FAIL Output__84011 [XSLT-Output]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Output/84011.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84011.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84011.xuriella
 
-FAIL Output__84012 [XSLT-Output]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Output/OutputText.xml":
-  No such file or directory
+FAIL Output__84012 [XSLT-Output]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Output/84012.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84012.saxon
@@ -15889,9 +15885,12 @@ PASS Output__84013 [XSLT-Output]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84013.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output__84013.xuriella
 
-FAIL Output__84014 [XSLT-Output]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Output/OutputText.xml":
-  No such file or directory
+WARNING:
+   comparison failed: Document not well-formed: Bad nesting. "wrapper" / (:<!ELEMENT)
+Context:
+  Line 4, column 11 in NIL
+
+FAIL Output__84014 [XSLT-Output]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/Output/84014.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/OutputText.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output__84014.saxon
@@ -16617,7 +16616,7 @@ PASS Output_EntityRefInAttribHtml [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_EntityRefInAttribHtml.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_EntityRefInAttribHtml.xuriella
 
-FAIL Output_Html_Op_Href_Attr_non_ascii_value [XSLT-Output]: output doesn't match
+PASS Output_Html_Op_Href_Attr_non_ascii_value [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_html_op_href_attr_non_ascii_value.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_Html_Op_Href_Attr_non_ascii_value.saxon
@@ -19289,4 +19288,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2972/3070 tests (11 expected failures, 87 unexpected failures).
+Passed 2973/3070 tests (11 expected failures, 86 unexpected failures).

@@ -340,7 +340,7 @@
     "Namespace_XPath_PredefinedPrefix_XMLNS"
     "Namespace_XPath_SameQuery_DiffNamespace"
     "Namespace_XPath_ScopingRules"
-    
+
     ;;
     ;; Someone commented out most of this test...
     "BVTs_bvt045"
@@ -386,6 +386,7 @@
        |Import__
        |Include__
        |Output__77931$
+       |Output_EmptyElement1$
        )"))
 
 (defparameter *known-failures*
@@ -872,11 +873,17 @@
                                        (invoke-restart 'recover)))))
                      (apply-stylesheet (pathname (test-stylesheet-pathname test))
                                        (let ((p (test-data-pathname test)))
-                                         (if (search "Elements/Plants.xml" p)
-                                             (merge-pathnames
-                                              "MSFT_Conformance_Tests/Elements/plants.xml"
-                                              *tests-directory*)
-                                             (pathname p)))
+                                         (cond
+                                           ((search "Elements/Plants.xml" p)
+                                            (merge-pathnames
+                                             "MSFT_Conformance_Tests/Elements/plants.xml"
+                                             *tests-directory*))
+                                           ((search "/OutputText.xml" p)
+                                            (merge-pathnames
+                                             "MSFT_Conformance_Tests/Output/Outputtext.xml"
+                                             *tests-directory*))
+                                           (t
+                                            (pathname p))))
                                        :output s
                                        :uri-resolver #'uri-resolver))))
                (pp (label pathname)
