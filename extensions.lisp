@@ -143,7 +143,6 @@
     ((href &key method indent doctype-public doctype-system)
      &body body
      &environment env)
-  (declare (ignore doctype-public doctype-system)) ;fixme
   (let ((thunk (compile-instruction `(progn ,@body) env))
         (href-thunk (compile-avt href env)))
     (lambda (ctx)
@@ -163,5 +162,7 @@
                     ((equalp method "TEXT") :text)
                     (t
                      (xslt-error "invalid output method: ~A" method)))
-          :indent indent)
+          :indent indent
+          :doctype-public doctype-public
+          :doctype-system doctype-system)
          pathname)))))
