@@ -1249,7 +1249,7 @@
 (defstruct source-document
   id
   root-node
-  keys)
+  (indices (make-hash-table)))
 
 (defvar *uri-to-document*)
 (defvar *root-to-document*)
@@ -1323,10 +1323,30 @@
               object)
              (list (%document (xpath:string-value object) base-uri))))))))
 
-;; FIXME: the point of keys is that we are meant to optimize this
-;; by building a table mapping nodes to values for each key.
-;; We should run over all matching nodes and store them in such a table
-;; when seeing their document for the first time.
+
+(defun build-key-index (document key-conses)
+  (let ((index (make-hash-table :test 'equal)))
+    (dolist (key key-conses)
+      (xpath:do-node-set
+          (node
+           (xpath:evaluate-compiled (key-match key)
+                                    (xpath:make-context
+                                     (source-document-root-node document))))
+        (let* ((use-result (xpath:evaluate-compiled (key-use key) node))
+               (uses (if (xpath:node-set-p use-result)
+                         (xpath:all-nodes use-result)
+                         (list use-result))))
+          (dolist (use uses)
+            (push node (gethash (xpath:string-value use) index))))))
+    index))
+
+(defun %key (document key-conses value)
+  (let* ((indices (source-document-indices document))
+         (index (or (gethash key-conses indices)
+                    (setf (gethash key-conses indices)
+                          (build-key-index document key-conses)))))
+    (gethash value index)))
+
 (xpath-sys:define-xpath-function/lazy xslt :key (name object)
   (let ((namespaces *namespaces*))
     (lambda (ctx)
@@ -1338,31 +1358,14 @@
                 (cons local-name uri)))
              (key-conses (find-key expanded-name *stylesheet*)))
         (xpath-sys:make-node-set
-         (xpath::mappend-pipe
-          (lambda (key)
-            (labels ((get-by-key (value)
-                       (let ((value (xpath:string-value value)))
-                         (xpath::filter-pipe
-                          #'(lambda (node)
-                              (let ((uses
-                                     (xpath:evaluate-compiled (key-use key)
-                                                              node)))
-                                (if (xpath:node-set-p uses)
-                                    (xpath::find-in-pipe
-                                     value
-                                     (xpath-sys:pipe-of uses)
-                                     :key #'xpath:string-value
-                                     :test #'equal)
-                                    (equal value (xpath:string-value uses)))))
-                          (xpath-sys:pipe-of
-                           (xpath:node-set-value
-                            (xpath:evaluate-compiled (key-match key) ctx)))))))
-              (xpath::sort-pipe
-               (if (xpath:node-set-p object)
-                   (xpath::mappend-pipe #'get-by-key
-                                        (xpath-sys:pipe-of object))
-                   (get-by-key object)))))
-          key-conses))))))
+         (labels ((get-by-key (value)
+                    (%key (node-to-source-document (xpath:context-node ctx))
+                          key-conses
+                          (xpath:string-value value))))
+           (xpath::sort-pipe
+            (if (xpath:node-set-p object)
+                (xpath::mappend-pipe #'get-by-key (xpath-sys:pipe-of object))
+                (get-by-key object)))))))))
 
 ;; FIXME: add alias mechanism for XPath extensions in order to avoid duplication
 
@@ -1381,15 +1384,18 @@
                                               (funcall name ctx))
           "")))
 
+(defun node-to-source-document (node)
+  (gethash (xpath:first-node
+            (xpath:evaluate (xpath:xpath (:path (:root :node))) node))
+           *root-to-document*))
+
 (defun %get-node-id (node)
   (when (xpath:node-set-p node)
     (setf node (xpath::textually-first-node node)))
   (when node
-    (let ((root (xpath:first-node
-                 (xpath:evaluate (xpath:xpath (:path (:root :node))) node))))
-      (format nil "d~D~A"
-              (source-document-id (gethash root *root-to-document*))
-              (xpath-sys:get-node-id node)))))
+    (format nil "d~D~A"
+            (source-document-id (node-to-source-document node))
+            (xpath-sys:get-node-id node))))
 
 (xpath-sys:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
   (if node-set-thunk
