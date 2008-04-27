@@ -11349,7 +11349,7 @@ PASS BVTs_bvt062 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt062.saxon
   Actual output: MSFT_Conformance_Tests/BVTs/BVTs_bvt062.xuriella
 
-FAIL BVTs_bvt063 [Mixed]: output doesn't match
+PASS BVTs_bvt063 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/BVTs/out-combine.noindent-xsl
   Data: MSFT_Conformance_Tests/BVTs/data.xml
   Expected output (1): MSFT_Conformance_Tests/BVTs/BVTs_bvt063.saxon
@@ -16646,7 +16646,7 @@ PASS Output_MatchOnCellData [XSLT-Output]
   Expected output (1): MSFT_Conformance_Tests/Output/Output_MatchOnCellData.saxon
   Actual output: MSFT_Conformance_Tests/Output/Output_MatchOnCellData.xuriella
 
-FAIL Output_MediaTypeTest [XSLT-Output]: output doesn't match
+PASS Output_MediaTypeTest [XSLT-Output]
   Stylesheet: MSFT_Conformance_Tests/Output/xslt_html_output_media_type.noindent-xsl
   Data: MSFT_Conformance_Tests/Output/foo.xml
   Expected output (1): MSFT_Conformance_Tests/Output/Output_MediaTypeTest.saxon
@@ -16755,7 +16755,13 @@ PASS ProcessingInstruction__78394 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78394.saxon
   Actual output: MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction__78394.xuriella
 
-FAIL ProcessingInstruction_InvalidPIName2 [XSLT-Result-Tree]: PI target not an NCName: xsl:foo
+WARNING:
+   comparison failed: error opening #P"...MSFT_Conformance_Tests/REF_OUT/ProcessingInstruction/xslt_invalid_pi_name.txt":
+                     No such file or directory
+WARNING:
+   comparison failed: error opening #P"...MSFT_Conformance_Tests/REF_OUT/ProcessingInstruction/xslt_invalid_pi_name.txt":
+                     No such file or directory
+PASS ProcessingInstruction_InvalidPIName2 [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/ProcessingInstruction/xslt_invalid_pi_name2.noindent-xsl
   Data: MSFT_Conformance_Tests/ProcessingInstruction/books.xml
   Expected output (1): MSFT_Conformance_Tests/ProcessingInstruction/ProcessingInstruction_InvalidPIName2.saxon
@@ -19288,4 +19294,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2973/3070 tests (11 expected failures, 86 unexpected failures).
+Passed 2976/3070 tests (11 expected failures, 83 unexpected failures).

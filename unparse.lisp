@@ -332,9 +332,11 @@
 (defun write-processing-instruction (target data)
   (maybe-emit-start-tag)
   (setf data (cl-ppcre:regex-replace-all "[?]>" data "? >"))
-  (unless (nc-name-p target)
-    (xslt-error "PI target not an NCName: ~A" target))
-  (sax:processing-instruction *sink* target data)
+  (cond
+    ((nc-name-p target)
+     (sax:processing-instruction *sink* target data))
+    (t
+     (xslt-cerror "PI target not an NCName: ~A" target)))
   data)
 
 (defun write-unescaped (str)
