@@ -1740,7 +1740,7 @@
       (let ((parsed
              (mapcar #'(lambda (item)
                          `(:path (:root :node)
-                                 (:descendant-or-self *)
+                                 (:descendant-or-self :node)
                                  ,@(cdr item)))
                      (cdr (xpath::parse-pattern-expression str)))))
         (if (null (rest parsed))

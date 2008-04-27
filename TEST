@@ -17925,9 +17925,7 @@ FAIL Text__91137 [XSLT-Result-Tree]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/Text/Text__91137.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__91137.xuriella
 
-FAIL Text__78282 [XSLT-Result-Tree]: condition of incorrect type: 
-error opening #P"...MSFT_Conformance_Tests/Text/text.xml":
-  No such file or directory
+FAIL Text__78282 [XSLT-Result-Tree]: expected error not signalled: 
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04116.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/text.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78282.saxon
@@ -18020,7 +18018,7 @@ PASS Value-of_ValueOf_ConcatTextNodesIntoSingle [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Valueof/Value-of_ValueOf_ConcatTextNodesIntoSingle.saxon
   Actual output: MSFT_Conformance_Tests/Valueof/Value-of_ValueOf_ConcatTextNodesIntoSingle.xuriella
 
-FAIL Value-of_ValueOf_KeyReferenceInSelect [XSLT-Result-Tree]: output doesn't match
+PASS Value-of_ValueOf_KeyReferenceInSelect [XSLT-Result-Tree]
   Stylesheet: MSFT_Conformance_Tests/Valueof/xslt_valueof_KeyFuncInSelect.noindent-xsl
   Data: MSFT_Conformance_Tests/Valueof/xslt_valueof_KeyFuncInSelect.xml
   Expected output (1): MSFT_Conformance_Tests/Valueof/Value-of_ValueOf_KeyReferenceInSelect.saxon
@@ -19294,4 +19292,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2982/3070 tests (26 expected failures, 62 unexpected failures).
+Passed 2983/3070 tests (26 expected failures, 61 unexpected failures).

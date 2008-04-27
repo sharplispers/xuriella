@@ -901,6 +901,10 @@
                                             (merge-pathnames
                                              "MSFT_Conformance_Tests/Output/Outputtext.xml"
                                              *tests-directory*))
+                                           ((search "Text/text.xml" p)
+                                            (merge-pathnames
+                                             "MSFT_Conformance_Tests/Text/Text.xml"
+                                             *tests-directory*))
                                            (t
                                             (pathname p))))
                                        :output s
