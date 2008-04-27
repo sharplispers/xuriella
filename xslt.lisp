@@ -103,6 +103,8 @@
   `(invoke-with-forward-compatible-errors (lambda () ,@body)
                                           (lambda () ,error-form)))
 
+(defvar *forwards-compatible-p*)
+
 (defun invoke-with-forward-compatible-errors (fn error-fn)
   (let ((result))
     (tagbody
@@ -572,7 +574,6 @@
 (defvar *apply-imports-limit*)
 (defvar *import-priority*)
 (defvar *extension-namespaces*)
-(defvar *forwards-compatible-p*)
 
 (defmacro do-toplevel ((var xpath <transform>) &body body)
   `(map-toplevel (lambda (,var) ,@body) ,xpath ,<transform>))
@@ -1396,17 +1397,22 @@
       #'(lambda (ctx)
           (%get-node-id (xpath:context-node ctx)))))
 
-(declaim (special *available-instructions*))
+(declaim (special *builtin-instructions*))
 
 (xpath-sys:define-xpath-function/lazy xslt :element-available (qname)
-  (let ((namespaces *namespaces*))
+  (let ((namespaces *namespaces*)
+        (extensions *extension-namespaces*))
     #'(lambda (ctx)
         (let ((qname (funcall qname ctx)))
           (multiple-value-bind (local-name uri)
               (decode-qname/runtime qname namespaces nil)
-            (and (equal uri *xsl*)
-                 (gethash local-name *available-instructions*)
-                 t))))))
+            (cond
+              ((equal uri *xsl*)
+               (and (gethash local-name *builtin-instructions*) t))
+              ((find uri extensions :test #'equal)
+               (and (find-extension-element local-name uri) t))
+              (t
+               nil)))))))
 
 (xpath-sys:define-xpath-function/lazy xslt :function-available (qname)
   (let ((namespaces *namespaces*))

@@ -35,16 +35,21 @@
            #:with-extension-namespaces
            #:with-duplicates-check))
 
+(defpackage :xuriella-extensions
+  (:use)
+  (:export #:document))
+
 (defpackage :xuriella
   (:use :cl)
   (:export #:parse-stylesheet
            #:apply-stylesheet
-           #:make-parameter)
+           #:make-parameter
+
+	   #:define-extension-group
+	   #:define-extension-parser
+	   #:define-extension-compiler
+	   #:parse-body
+	   #:compile-instruction)
   (:import-from :xpath-protocol #:define-default-method)
   (:documentation
-   "Empty is an empty example.
-
-    @begin[Empty section]{section}
-    I am a blind text.
-
-    @end{section}"))
+   "Xuriella is an implementation of XSLT 1.0."))

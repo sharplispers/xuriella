@@ -18837,12 +18837,6 @@ PASS XSLTFunctions__84048 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84048.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84048.xuriella
 
-FAIL XSLTFunctions__84050 [Mixed]: output doesn't match
-  Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84050.noindent-xsl
-  Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
-  Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84050.saxon
-  Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84050.xuriella
-
 PASS XSLTFunctions__84053 [Mixed]
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84053.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
@@ -19257,4 +19251,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2983/3069 tests (26 expected failures, 60 unexpected failures).
+Passed 2983/3068 tests (26 expected failures, 59 unexpected failures).

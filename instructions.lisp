@@ -35,7 +35,7 @@
 
 ;;;; Instructions
 
-(defparameter *available-instructions* (make-hash-table :test 'equal))
+(defparameter *builtin-instructions* (make-hash-table :test 'equal))
 
 (defmacro define-instruction (name (args-var env-var) &body body)
   `(setf (get ',name 'xslt-instruction)
@@ -747,30 +747,10 @@
                        (loop for (name nil value-thunk) in param-bindings
                           collect (list name (funcall value-thunk ctx))))))))
 
-;; fixme: incompatible with XSLT 2.0
-(define-instruction xsl:document (args env)
-  (destructuring-bind ((href &key method indent doctype-public doctype-system)
-                       &body body)
-      args
-    (declare (ignore doctype-public doctype-system)) ;fixme
-    (let ((thunk (compile-instruction `(progn ,@body) env))
-	  (href-thunk (compile-avt href env)))
-      (lambda (ctx)
-	(let ((pathname
-	       (uri-to-pathname
-		(puri:merge-uris (funcall href-thunk ctx)
-				 (xpath-protocol:base-uri
-				  (xpath:context-node ctx))))))
-	  (ensure-directories-exist pathname) ;really?
-	  (invoke-with-output-sink
-	   (lambda ()
-	     (funcall thunk ctx))
-	   (make-output-specification :method (or method "XML") :indent indent)
-	   pathname))))))
-
 (defun compile-instruction (form env)
   (xslt-trace-thunk
    (funcall (or (get (car form) 'xslt-instruction)
+                (get (car form) 'extension-compiler)
                 (error "undefined instruction: ~A" (car form)))
             (cdr form)
             env)

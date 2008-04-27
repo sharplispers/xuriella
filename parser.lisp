@@ -114,7 +114,12 @@
 	      ((find (stp:namespace-uri node)
 		     *extension-namespaces*
 		     :test #'equal)
-	       (parse-fallback-children node))
+	       (let ((extension (find-extension-element
+                                 (stp:local-name node)
+                                 (stp:namespace-uri node))))
+                 (if extension
+                     (funcall (extension-element-parser extension) node)
+                     (parse-fallback-children node))))
 	      (t
 	       (parse-instruction/literal-element node))))
            (parent (stp:parent node)))
@@ -195,7 +200,7 @@
 
 (defmacro define-instruction-parser (name (node-var) &body body)
   `(progn
-     (setf (gethash ,(symbol-name name) *available-instructions*) t)
+     (setf (gethash ,(symbol-name name) *builtin-instructions*) t)
      (defmethod parse-instruction/xsl-element
 	 ((.name. (eql ',name)) ,node-var)
        (declare (ignore .name.))
@@ -376,12 +381,3 @@
                  :letter-value ,letter-value
                  :grouping-separator ,grouping-separator
                  :grouping-size ,grouping-size)))
-
-(define-instruction-parser |document| (node)
-  (only-with-attributes
-   (href method indent doctype-public doctype-system) node
-    `(xsl:document (,href :method ,method
-			  :indent ,indent
-			  :doctype-public ,doctype-public
-			  :doctype-system ,doctype-system)
-       ,@(parse-body node))))
