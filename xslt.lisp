@@ -705,6 +705,8 @@
 
 (defvar *included-attribute-sets*)
 
+(defvar *stylesheet*)
+
 (defun parse-stylesheet (designator &key uri-resolver)
   (with-resignalled-errors ()
     (xpath:with-namespaces ((nil #.*xsl*))
@@ -1213,8 +1215,6 @@
 
 ;;;; APPLY-STYLESHEET
 
-(defvar *stylesheet*)
-
 (deftype xml-designator () '(or runes:xstream runes:rod array stream pathname))
 
 (defun unalias-uri (uri)
@@ -1246,8 +1246,13 @@
       (file-position s 0))
     (cxml:parse s handler)))
 
-(defvar *documents*)
-(defvar *document-ids*)
+(defstruct source-document
+  id
+  root-node
+  keys)
+
+(defvar *uri-to-document*)
+(defvar *root-to-document*)
 
 (defun %document (uri-string base-uri)
   (let* ((absolute-uri
@@ -1262,24 +1267,24 @@
             (cxml:xml-parse-error (c)
               (xslt-error "cannot find referenced document ~A: ~A"
                           resolved-uri c))))
-         (xpath-root-node
-          (gethash pathname *documents*)))
-    (unless xpath-root-node
-      (setf xpath-root-node
-            (make-whitespace-stripper
-             (handler-case
-                 (parse-allowing-microsoft-bom pathname
-                                               (stp:make-builder))
-               ((or file-error cxml:xml-parse-error) (c)
-                 (xslt-error "cannot parse referenced document ~A: ~A"
-                             pathname c)))
-             (stylesheet-strip-thunk *stylesheet*)))
-     (setf (gethash pathname *documents*) xpath-root-node)
-     (setf (gethash xpath-root-node *document-ids*)
-           (hash-table-count *document-ids*)))
+         (document (gethash pathname *uri-to-document*)))
+    (unless document
+      (let ((root-node
+             (make-whitespace-stripper
+              (handler-case
+                  (parse-allowing-microsoft-bom pathname
+                                                (stp:make-builder))
+                ((or file-error cxml:xml-parse-error) (c)
+                  (xslt-error "cannot parse referenced document ~A: ~A"
+                              pathname c)))
+              (stylesheet-strip-thunk *stylesheet*)))
+            (id (hash-table-count *root-to-document*)))
+        (setf document (make-source-document :id id :root-node root-node))
+        (setf (gethash pathname *uri-to-document*) document)
+        (setf (gethash root-node *root-to-document*) document)))
     (when (puri:uri-fragment absolute-uri)
       (xslt-error "use of fragment identifiers in document() not supported"))
-    xpath-root-node))
+    (source-document-root-node document)))
 
 (xpath-sys:define-extension xslt *xsl*)
 
@@ -1383,7 +1388,7 @@
     (let ((root (xpath:first-node
                  (xpath:evaluate (xpath:xpath (:path (:root :node))) node))))
       (format nil "d~D~A"
-              (or (gethash root *document-ids*) (error "bug!"))
+              (source-document-id (gethash root *root-to-document*))
               (xpath-sys:get-node-id node)))))
 
 (xpath-sys:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
@@ -1454,8 +1459,10 @@
   (with-resignalled-errors ()
     (invoke-with-output-sink
      (lambda ()
-       (let* ((*documents* (make-hash-table :test 'equal))
-              (*document-ids* (make-hash-table :test 'equal))
+       (let* ((*uri-to-document* (make-hash-table :test 'equal))
+              (*root-to-document*
+               ;; fixme? should be xpath-protocol:node-equal
+               (make-hash-table :test 'equal))
               (xpath:*navigator* (or navigator :default-navigator))
               (puri:*strict-parse* nil)
               (*stylesheet* stylesheet)
@@ -1474,10 +1481,13 @@
                (make-whitespace-stripper
                 source-document
                 (stylesheet-strip-thunk stylesheet)))
-              (ctx (xpath:make-context xpath-root-node)))
-         (when (pathnamep source-designator)
-           (setf (gethash source-designator *documents*) xpath-root-node)
-           (setf (gethash xpath-root-node *document-ids*) 0))
+              (ctx (xpath:make-context xpath-root-node))
+              (document (make-source-document
+                         :id 0
+                         :root-node xpath-root-node)))
+         (when (pathnamep source-designator) ;fixme: else use base uri?
+           (setf (gethash source-designator *uri-to-document*) document))
+         (setf (gethash xpath-root-node *root-to-document*) document)
          (map nil
               (lambda (chain)
                 (let ((head (car (variable-chain-definitions chain))))
