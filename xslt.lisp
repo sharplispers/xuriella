@@ -1247,6 +1247,7 @@
     (cxml:parse s handler)))
 
 (defvar *documents*)
+(defvar *document-ids*)
 
 (defun %document (uri-string base-uri)
   (let* ((absolute-uri
@@ -1262,16 +1263,20 @@
               (xslt-error "cannot find referenced document ~A: ~A"
                           resolved-uri c))))
          (xpath-root-node
-          (or (gethash pathname *documents*)
-              (setf (gethash pathname *documents*)
-                    (make-whitespace-stripper
-                     (handler-case
-                         (parse-allowing-microsoft-bom pathname
-                                                       (stp:make-builder))
-                       ((or file-error cxml:xml-parse-error) (c)
-                         (xslt-error "cannot parse referenced document ~A: ~A"
-                                     pathname c)))
-                     (stylesheet-strip-thunk *stylesheet*))))))
+          (gethash pathname *documents*)))
+    (unless xpath-root-node
+      (setf xpath-root-node
+            (make-whitespace-stripper
+             (handler-case
+                 (parse-allowing-microsoft-bom pathname
+                                               (stp:make-builder))
+               ((or file-error cxml:xml-parse-error) (c)
+                 (xslt-error "cannot parse referenced document ~A: ~A"
+                             pathname c)))
+             (stylesheet-strip-thunk *stylesheet*)))
+     (setf (gethash pathname *documents*) xpath-root-node)
+     (setf (gethash xpath-root-node *document-ids*)
+           (hash-table-count *document-ids*)))
     (when (puri:uri-fragment absolute-uri)
       (xslt-error "use of fragment identifiers in document() not supported"))
     xpath-root-node))
@@ -1375,20 +1380,11 @@
   (when (xpath:node-set-p node)
     (setf node (xpath::textually-first-node node)))
   (when node
-    (let ((id (xpath-sys:get-node-id node))
-          (highest-base-uri
-           (loop
-              for parent = node then next
-              for next = (xpath-protocol:parent-node parent)
-              for this-base-uri = (xpath-protocol:base-uri parent)
-              for highest-base-uri = (if (plusp (length this-base-uri))
-                                         this-base-uri
-                                         highest-base-uri)
-              while next
-              finally (return highest-base-uri))))
-      ;; FIXME: Now that we intern documents, we could use a short ID for
-      ;; the document instead of the base URI.
-      (nreverse (concatenate 'string highest-base-uri "//" id)))))
+    (let ((root (xpath:first-node
+                 (xpath:evaluate (xpath:xpath (:path (:root :node))) node))))
+      (format nil "d~D~A"
+              (or (gethash root *document-ids*) (error "bug!"))
+              (xpath-sys:get-node-id node)))))
 
 (xpath-sys:define-xpath-function/lazy xslt :generate-id (&optional node-set-thunk)
   (if node-set-thunk
@@ -1459,6 +1455,7 @@
     (invoke-with-output-sink
      (lambda ()
        (let* ((*documents* (make-hash-table :test 'equal))
+              (*document-ids* (make-hash-table :test 'equal))
               (xpath:*navigator* (or navigator :default-navigator))
               (puri:*strict-parse* nil)
               (*stylesheet* stylesheet)
@@ -1479,7 +1476,8 @@
                 (stylesheet-strip-thunk stylesheet)))
               (ctx (xpath:make-context xpath-root-node)))
          (when (pathnamep source-designator)
-           (setf (gethash source-designator *documents*) xpath-root-node))
+           (setf (gethash source-designator *documents*) xpath-root-node)
+           (setf (gethash xpath-root-node *document-ids*) 0))
          (map nil
               (lambda (chain)
                 (let ((head (car (variable-chain-definitions chain))))
