@@ -40,7 +40,8 @@
 (defclass combi-sink (sax:content-handler)
   ((hax-target :initarg :hax-target :accessor sink-hax-target)
    (sax-target :initarg :sax-target :accessor sink-sax-target)
-   (encoding :initarg :encoding :accessor sink-encoding)))
+   (encoding :initarg :encoding :accessor sink-encoding)
+   (media-type :initarg :media-type :accessor sink-media-type)))
 
 (defmethod initialize-instance :after ((handler combi-sink) &key)
   (setf (sink-encoding handler)
@@ -63,7 +64,9 @@
       ((equal uri "")
        (sax:start-element hax-target *html* lname qname attrs)
        (when (and encoding (equalp lname "head"))
-         (let* ((content (format nil "text/html; charset=~A" encoding))
+         (let* ((content (format nil "~A; charset=~A"
+                                 (or (sink-media-type handler) "text/html")
+                                 encoding))
                 (attrs
                  (list (hax:make-attribute "http-equiv" "Content-Type")
                        (hax:make-attribute "content" content))))

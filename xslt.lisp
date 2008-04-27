@@ -967,7 +967,8 @@
   doctype-system
   doctype-public
   cdata-section-matchers
-  standalone-p)
+  standalone-p
+  media-type)
 
 (defun parse-output! (stylesheet <transform> env)
   (dolist (<output> (list-toplevel "output" <transform>))
@@ -983,9 +984,7 @@
                              standalone
                              cdata-section-elements)
           <output>
-        (declare (ignore version
-                         ;; FIXME:
-                         media-type))
+        (declare (ignore version))
         (when method
           (multiple-value-bind  (local-name uri)
               (decode-qname method env t)
@@ -993,9 +992,9 @@
                   (if (plusp (length uri))
                       nil
                       (cond
-                        ((equalp method "HTML") :html)
-                        ((equalp method "TEXT") :text)
-                        ((equalp method "XML") :xml)
+                        ((equalp local-name "HTML") :html)
+                        ((equalp local-name "TEXT") :text)
+                        ((equalp local-name "XML") :xml)
                         (t
                          (xslt-error "invalid output method: ~A" method)))))))
         (when indent
@@ -1015,7 +1014,9 @@
                   (output-cdata-section-matchers spec))))
         (when standalone
           (setf (output-standalone-p spec)
-                (boolean-or-error standalone)))))))
+                (boolean-or-error standalone)))
+        (when media-type
+          (setf (output-media-type spec) media-type))))))
 
 (defun make-empty-declaration-array ()
   (make-array 1 :fill-pointer 0 :adjustable t))
@@ -1681,6 +1682,7 @@
                             :hax-target (make-instance 'chtml::sink
                                                        :ystream ystream)
                             :sax-target sax-target
+                            :media-type (output-media-type output-spec)
                             :encoding sink-encoding)))
       (let ((method-key (output-method output-spec)))
         (cond
