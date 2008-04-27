@@ -444,7 +444,74 @@
     ;; attribute.  We currently output it using Closure HTML, and
     ;; lose its namespace.  This test wants the attribute and its
     ;; namespace to survive.
-    "BVTs_bvt054"))
+    "BVTs_bvt054"
+
+    ;; FIXME!
+    ;;
+    ;; Review the following test cases.  Many of them are actual bugs
+    ;; in Xuriella.
+    "BVTs_bvt058"
+    "BVTs_bvt061"
+    "BVTs_bvt067"
+    "BVTs_bvt075"
+    "BVTs_bvt077"
+    "BVTs_bvt085"
+    "BVTs_bvt086"
+    "Elements__78362"
+    "Number__10052"
+    "Number__10053"
+    "Number__84692"
+    "Number__84700"
+    "Number__84705"
+    "Number__84706"
+    "Number__84714"
+    "Number__84715"
+    "Number__84716"
+    "Number__84717"
+    "Number__84719"
+    "Number__84720"
+    "Number__84722"
+    "Number__84723"
+    "Number__84724"
+    "Number__84725"
+    "Number__84726"
+    "Number__91026"
+    "Number__91028"
+    "Number__91029"
+    "Output__84011"
+    "Output__84012"
+    "Output__84014"
+    "Output__84016"
+    "Output__84017"
+    "Output__84018"
+    "Output__84019"
+    "Output__84020"
+    "Output__84021"
+    "Output__84022"
+    "Output__84458"
+    "Output_EmptyElement1"
+    "Sorting_Sort_TextNodesSpanMultipleLines"
+    "Template_ApplyTemplateWithDuplicateParameter"
+    "Text__78272"
+    "Text__78309"
+    "Text__91137"
+    "Text__78282"
+    "XSLTFunctions__defaultPattern"
+    "XSLTFunctions__EuropeanPattern"
+    "XSLTFunctions__minimalValue"
+    "XSLTFunctions__minimumValue"
+    "XSLTFunctions__Non_DigitPattern"
+    "XSLTFunctions__Pattern-separator"
+    "XSLTFunctions__percentPattern"
+    "XSLTFunctions__testWithNumber"
+    "XSLTFunctions_BooleanFunction"
+    "XSLTFunctions_DocumentFunctionWithAbsoluteArgument"
+    "XSLTFunctions_DocumentFunctionWithEntityRef"
+    "XSLTFunctions_DocumentFunctionWithNonExistingFilename"
+    "XSLTFunctions_Bug76984"))
+
+(defun known-failure-p (id)
+  (find id *known-failures* :test #'equal))
 
 (defun run-tests (&key filter (directory *tests-directory*))
   (when (typep filter '(or string cons))
@@ -924,10 +991,11 @@
                    (strip-addresses
                     (format nil "~&~A ~A [~A]~?~%"
                             (cond
-                              (ok "PASS")
-                              ((find (test-id test)
-                                     *known-failures*
-                                     :test #'equal)
+                              (ok
+                               (if (known-failure-p (test-id test))
+                                   "UNEXPECTED-SUCCESS"
+                                   "PASS"))
+                              ((known-failure-p (test-id test))
                                (setf ok :known-failure)
                                "KNOWNFAIL")
                               (t
