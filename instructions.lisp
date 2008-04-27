@@ -417,7 +417,7 @@
   (cond
     ((equal str "number")
      t)
-    ((or (equal str "") (equal str "text"))
+    ((or (null str) (equal str "text"))
      nil)
     (t
      (xslt-error "invalid data-type in sort"))))
@@ -426,7 +426,7 @@
   (cond
     ((equal str "lower-first")
      *lower-first-order*)
-    ((or (equal str "") (equal str "upper-first"))
+    ((or (null str) (equal str "upper-first"))
      *upper-first-order*)
     (t
      (xslt-error "invalid case-order in sort"))))
@@ -435,19 +435,24 @@
   (cond
     ((equal str "descending")
      -1)
-    ((or (equal str "") (equal str "ascending"))
+    ((or (null str) (equal str "ascending"))
      1)
     (t
      (xslt-error "invalid order in sort"))))
+
+(defun compile-optional-avt (template-string env)
+  (if template-string
+      (compile-avt template-string env)
+      (values (constantly nil) t)))
 
 (defun make-sorter/lazy (spec env)
   (destructuring-bind (&key select lang data-type order case-order)
       (cdr spec)
     (let ((select-thunk (compile-xpath (or select ".") env))
-          (lang-thunk (compile-avt (or lang "")  env))
-          (data-type-thunk (compile-avt (or data-type "") env))
-          (order-thunk (compile-avt (or order "") env))
-          (case-order-thunk (compile-avt (or case-order "") env)))
+          (lang-thunk (compile-optional-avt lang env))
+          (data-type-thunk (compile-optional-avt data-type env))
+          (order-thunk (compile-optional-avt order env))
+          (case-order-thunk (compile-optional-avt case-order env)))
       (lambda (ctx)
         (let ((numberp (sort/@data-type (funcall data-type-thunk ctx)))
               (char-table (sort/@case-order (funcall case-order-thunk ctx)))

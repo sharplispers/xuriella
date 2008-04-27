@@ -16893,7 +16893,7 @@ PASS Sorting__77548 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77548.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77548.xuriella
 
-FAIL Sorting__77550 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Sorting__77550 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT19008.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sort3.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77550.saxon
@@ -16911,7 +16911,7 @@ PASS Sorting__77553 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77553.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__77553.xuriella
 
-FAIL Sorting__77555 [XSLT-Data-Manipulation]: expected error not signalled: 
+PASS Sorting__77555 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Sorting/XSLT20010.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sort3.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77555.saxon
@@ -19294,4 +19294,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2976/3070 tests (11 expected failures, 83 unexpected failures).
+Passed 2978/3070 tests (11 expected failures, 81 unexpected failures).
