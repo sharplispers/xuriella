@@ -61,6 +61,19 @@
       exprs))
 
 (defun parse-body (node &optional (start 0) (param-names '()))
+  "@arg[node]{A node representing part of a stylesheet.}
+   @arg[start]{An optional integer, defaulting to 0.}
+   @arg[param-names]{Undocumented.}
+   @return{An list of XSLT instructions in sexp syntax}
+
+   @short{Parses the children of an XSLT instruction.}
+
+   This function is for use in XSLT extensions.  When defining an
+   extension using @fun{define-extension-parser}, it can be used
+   to parse the children of the extension node using regular XSLT syntax
+   recursively.
+
+   Specify @code{start} to skip the first @code{start} child nodes."
   (let ((n (stp:count-children-if #'identity node)))
     (labels ((recurse (i)
                (when (< i n)

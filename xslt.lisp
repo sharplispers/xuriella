@@ -50,6 +50,7 @@
   (:documentation "The class of recoverable XSLT errors."))
 
 (defun xslt-error (fmt &rest args)
+  "@unexport{}"
   (error 'xslt-error :format-control fmt :format-arguments args))
 
 ;; Many errors in XSLT are "recoverable", with a specified action that must
@@ -431,6 +432,14 @@
   (decimal-formats (make-hash-table :test 'equal))
   (initial-global-variable-thunks (make-hash-table :test 'equal)))
 
+(setf (documentation 'stylesheet 'type)
+      "The class of stylesheets that have been parsed and compiled.
+
+       Pass instances of this class to @fun{apply-stylesheet} to invoke
+       them.
+
+       @see-constructor{parse-stylesheet}")
+
 (defstruct mode
   (templates nil)
   (match-thunk (lambda (ignore) (declare (ignore ignore)) nil)))
@@ -708,6 +717,17 @@
 (defvar *stylesheet*)
 
 (defun parse-stylesheet (designator &key uri-resolver)
+  "@arg[designator]{an XML designator}
+   @arg[uri-resolver]{optional function of one argument}
+   @return{An instance of @class{stylesheet}.}
+
+   @short{Parse a stylesheet.}
+
+   This function parses and compiles an XSLT stylesheet.
+   The precompiled stylesheet object can then be passed to
+   @fun{apply-stylesheet}.
+
+   Also refer to @fun{apply-stylesheet} for details on XML designators."
   (with-resignalled-errors ()
     (xpath:with-namespaces ((nil #.*xsl*))
       (let* ((*import-priority* 0)
@@ -1230,6 +1250,55 @@
   local-name
   value)
 
+(setf (documentation 'parameter 'type)
+      "The class of top-level parameters to XSLT stylesheets.
+
+       Parameters are identified by expanded names, i.e. a namespace URI
+       and local-name.
+
+       Their value is string.
+
+       @see-constructor{make-parameter}
+       @see-slot{parameter-uri}
+       @see-slot{parameter-local-name}
+       @see-slot{parameter-value}")
+
+(setf (documentation 'make-parameter 'function)
+      "@arg[value]{The parameter's value, a string.}
+       @arg[local-name]{The parameter's local name, a string.}
+       @arg[local-name]{The parameter's namespace URI, a string.}
+       @return{An instance of @class{parameter}.}
+
+       @short{Creates a paramater.}
+
+       @see{parameter-uri}
+       @see{parameter-local-name}
+       @see{parameter-value}")
+
+(setf (documentation 'parameter-uri 'function)
+      "@arg[instance]{An instance of @class{parameter}.}
+       @return{A string}
+       @return{Returns the parameter's namespace URI.}
+
+       @see{parameter-local-name}
+       @see{parameter-value}")
+
+(setf (documentation 'parameter-local-name 'function)
+      "@arg[instance]{An instance of @class{parameter}.}
+       @return{A string}
+       @return{Returns the parameter's local name.}
+
+       @see{parameter-uri}
+       @see{parameter-value}")
+
+(setf (documentation 'parameter-value 'function)
+      "@arg[instance]{An instance of @class{parameter}.}
+       @return{A string}
+       @return{Returns the parameter's value.}
+
+       @see{parameter-uri}
+       @see{parameter-local-name}")
+
 (defun find-parameter-value (local-name uri parameters)
   (dolist (p parameters)
     (when (and (equal (parameter-local-name p) local-name)
@@ -1455,6 +1524,70 @@
 (defun apply-stylesheet
     (stylesheet source-designator
      &key output parameters uri-resolver navigator)
+  "@arg[stylesheet]{a stylesheet designator (see below for details)}
+   @arg[source-designator]{a source document designator (see below for details)}
+   @arg[output]{optional output sink designator (see below for details)}
+   @arg[parameters]{a list of @class{parameter} instances}
+   @arg[uri-resolver]{optional function of one argument}
+   @arg[navigator]{optional XPath navigator}
+   @return{The value returned by sax:end-document when called on the
+     designated output sink.}
+
+   @short{Apply a stylesheet to a document.}
+
+   This function takes @code{stylesheet} (either a parsed @class{stylesheet}
+   or a designator for XML file to be parsed) and a source document, specified
+   using the XML designator @code{source-designator}, and applies the
+   stylesheet to the document.
+
+   An XML designator is any value accepted by @code{cxml:parse}, in particular:
+   @begin{ul}
+     @item{Pathnames -- The file referred to by the pathname will parsed
+       using cxml.}
+     @item{Stream -- The stream will be parsed using cxml.}
+     @item{Xstream -- Similar to the stream case, but using cxml's internal
+       representation of rune streams.}
+     @item{String -- The string itself will be parsed as an XML document,
+       and is assumed to have been decoded into characters already.}
+     @item{Array of (unsigned-byte 8) -- The array itself will be parsed as
+       an XML document (which has not been decoded yet).}
+   @end{ul}
+
+   Note: Since strings are interpreted as documents, namestrings are
+   not acceptable.  Use pathnames instead of namestrings.
+
+   An output sink designator is has the following form:
+   @begin{ul}
+     @item{Null -- Designates a string sink.  I.e., the result document
+       of the stylesheet will be returned as a string.  This as the default.}
+     @item{Pathnames -- The file referred to by the pathname will created
+       and written to.}
+     @item{Stream -- The stream will be written to.}
+     @item{SAX or HAX handler -- Events will be sent directly to this sink.}
+   @end{ul}
+
+   Note: Specificaton of a sink overrides the specification of XML or HTML
+   output method in the styl.sheet.
+
+   Parameters are identified by names, and have values that are strings.
+   Top-level parameters of these names are bound accordingly.  If a paramater
+   is not specified, its default value is computed as implemented in the
+   stylesheet. If parameters are specified that the stylesheet does not
+   recognize, they will be ignored.
+
+   A @code{uri-resolver} is a function taking a PURI object as an argument
+   and returning a PURI object as a value.  The URI resolver will be invoked
+   for all references to external files, e.g. at compilation time using
+   xsl:import and xsl:include, and at run-time using the document() function.
+
+   The URI resolver can be used to rewrite URLs so that file http:// links
+   are replaced by file:// links, for example.  Another application are
+   URI resolvers that signal an error instead of returning, for example
+   so that file:// links forbidden.
+
+   The specified @code{navigator} will be passed to XPath protocol functions.
+
+   @see{parse-stylesheet}"
   (when (typep stylesheet 'xml-designator)
     (setf stylesheet
           (handler-bind

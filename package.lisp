@@ -25,9 +25,6 @@
            #:fallback
            #:use-attribute-sets
 
-	   ;; Extensions
-           #:document			;fixme: incompatible with XSLT 2.0
-
 	   ;; xuriella internals
 	   #:with-version
            #:with-namespaces
@@ -43,7 +40,14 @@
   (:use :cl)
   (:export #:parse-stylesheet
            #:apply-stylesheet
+	   #:stylesheet
+	   #:parameter
+	   #:parameter-uri
+	   #:parameter-local-name
+	   #:parameter-value
            #:make-parameter
+
+	   #:xslt-error
 
 	   #:define-extension-group
 	   #:define-extension-parser
@@ -62,6 +66,7 @@
       parameter instances created by @fun{make-parameter}.
 
       @aboutfun{apply-stylesheet}
+      @aboutclass{parameter}
       @aboutfun{make-parameter}
     @end{section}
     @begin[Compiling stylesheets explicitly]{section}
@@ -71,6 +76,7 @@
       compile it first.
 
       @aboutfun{parse-stylesheet}
+      @aboutclass{stylesheet}
     @end{section}
     @begin[Defining extension elements]{section}
       Xuriella can be extended in two ways:

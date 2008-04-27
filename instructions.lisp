@@ -748,6 +748,19 @@
                           collect (list name (funcall value-thunk ctx))))))))
 
 (defun compile-instruction (form env)
+  "@arg[form]{An XSLT instruction in sexp representation}
+   @arg[env]{An XSLT environment}
+   @return{A compiled function}
+
+   @short{Compiles an XSLT instruction.}
+
+   This function is for use in XSLT extensions.  When defining an
+   extension using @macro{define-extension-compiler}, pass body forms of
+   the extension that should be interpreted as XSLT instructions to this
+   function.
+
+   The environment is an opaque object, which can be obtained using
+   the @code{&environment} lambda list keyword in the extension compiler."
   (xslt-trace-thunk
    (funcall (or (get (car form) 'xslt-instruction)
                 (get (car form) 'extension-compiler)

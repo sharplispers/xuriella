@@ -65,6 +65,14 @@
     (push new-ext (gethash uri *extension-groups*))))
 
 (defmacro define-extension-group (name uri &optional documentation)
+  "@arg[name]{The name of the XSLT extension group (a symbol)}
+   @arg[uri]{Namespace URI for the extension elements (a string)}
+   @arg[documentation]{Documentation string for the XPath extension}
+   @short{Defines an XSLT extension group with specified
+   short @code{name} and namespace @code{uri}.}
+
+   An XSLT extension group is a collection of XSLT element that are defined
+   using @fun{define-extension-parser}."
   (check-type name symbol)
   `(%define-extension-group ',name ,uri ,documentation))
 
@@ -83,6 +91,37 @@
         (make-extension-element :local-name name)))
 
 (defmacro define-extension-parser (ext name (node-var) &body body)
+  "@arg[ext]{The name of an XSLT extension group (a symbol)}
+   @arg[name]{Local name of the extension element (a string)}
+   @arg[node-var]{Variable name for the node to be parsed, a symbol.}
+   @arg[body]{Lisp forms, an implicit progn}
+   @short{Defines a parser an extension element.}
+
+   The parser function defined by this macro will be invoked when
+   an XSLT extension element is encountered that has the namespace URI
+   of the specified extension group and the local-name of this parser.
+
+   @code{body} should return an XSLT instruction in sexp syntax.
+
+   As a (very hypothetical) example, if the return value is computed using
+
+   @begin{pre}
+   `(xsl:text ,(princ-to-string node-var))
+   @end{pre}
+
+   the stylesheet will emit a text node at run time, with the string
+   representation of the instruction node as a value.
+
+   Alternatively, a form can be returned that refers to user-specific
+   compiler extensions:
+
+   @begin{pre}
+   `(your-package::frob
+     ,(stp:attribute-value node-var \"frob-arg\"))
+   @end{pre}
+
+   Use @fun{define-extension-compiler} to implement an extension like
+   @code{frob}."
   `(setf (extension-element-parser
           (ensure-extension-element ',ext ',name))
          (lambda (,node-var)
@@ -106,6 +145,26 @@
          (return (values 'ignore normal-forms)))))
 
 (defmacro define-extension-compiler (symbol (&rest lambda-list) &body body)
+  "@arg[symbol]{The name of the extension, a symbol}
+   @arg[lambda-list]{A destructuring lambda list, optionaly augmented using
+     &environment}
+   @arg[body]{Lisp forms, an implicit progn}
+
+   Defines @code{symbol} as a name to be used in Xuriella's sexp
+   representation for XSLT.
+
+   It used when XSLT in sexp syntax includes a list of the form:
+
+   @begin{pre}(symbol ...arguments...)@end{pre}
+
+   The list @code{arguments} is then destructured using the specified lambda
+   list, and @code{body} is invoked during compilation time as an implicit
+   progn.
+
+   @code{body} should return a function of one argument, which will be called
+   at run time with a context object as an argument.
+
+   @see{compile-instruction}"
   (when (find (symbol-package symbol)
               ;; reserved for built-in instructions:
               (list (find-package :common-lisp)
