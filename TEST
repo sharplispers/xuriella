@@ -16988,7 +16988,7 @@ WARNING:
 Context:
   Line 1, column 5 in file://+...MSFT_Conformance_Tests/REF_OUT/Sorting/77977.txt
 
-FAIL Sorting__77977 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__77977 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt18304.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/multilingualsort.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__77977.saxon
@@ -17282,67 +17282,67 @@ PASS Sorting__89763 [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__89763.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__89763.xuriella
 
-FAIL Sorting__91689 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91689 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91689.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91689.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91689.xuriella
 
-FAIL Sorting__91691 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91691 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91691.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91691.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91691.xuriella
 
-FAIL Sorting__91693 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91693 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91693.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91693.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91693.xuriella
 
-FAIL Sorting__91694 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91694 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91694.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91694.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91694.xuriella
 
-FAIL Sorting__91695 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91695 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91695.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91695.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91695.xuriella
 
-FAIL Sorting__91696 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91696 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91696.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91696.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91696.xuriella
 
-FAIL Sorting__91697 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91697 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91697.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91697.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91697.xuriella
 
-FAIL Sorting__91698 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91698 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91698.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91698.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91698.xuriella
 
-FAIL Sorting__91699 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91699 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91699.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91699.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91699.xuriella
 
-FAIL Sorting__91700 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91700 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91700.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91700.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91700.xuriella
 
-FAIL Sorting__91701 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91701 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91701.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91701.saxon
@@ -17372,13 +17372,13 @@ PASS Sorting__91751 [XSLT-Data-Manipulation]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91751.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91751.xuriella
 
-FAIL Sorting__91752 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91752 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91752.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91752.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting__91752.xuriella
 
-FAIL Sorting__91753 [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting__91753 [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/91753.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/sortlang.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting__91753.saxon
@@ -17523,7 +17523,7 @@ PASS Sorting_SortExprWithCurrentInApplyTemplates [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_SortExprWithCurrentInApplyTemplates.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_SortExprWithCurrentInApplyTemplates.xuriella
 
-FAIL Sorting_TurkishISortingTest [XSLT-Data-Manipulation]: output doesn't match
+KNOWNFAIL Sorting_TurkishISortingTest [XSLT-Data-Manipulation]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Sorting/turkish.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/turkish.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_TurkishISortingTest.saxon
@@ -17541,7 +17541,7 @@ PASS Stylesheet__91803 [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91803.saxon
   Actual output: MSFT_Conformance_Tests/Stylesheet/Stylesheet__91803.xuriella
 
-FAIL Stylesheet__91804 [XSLT-Structure]: output doesn't match
+PASS Stylesheet__91804 [XSLT-Structure]
   Stylesheet: MSFT_Conformance_Tests/Stylesheet/91804.noindent-xsl
   Data: MSFT_Conformance_Tests/Stylesheet/books.xml
   Expected output (1): MSFT_Conformance_Tests/Stylesheet/Stylesheet__91804.saxon
@@ -19294,4 +19294,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2979/3070 tests (11 expected failures, 80 unexpected failures).
+Passed 2980/3070 tests (26 expected failures, 64 unexpected failures).

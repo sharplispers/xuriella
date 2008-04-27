@@ -128,35 +128,7 @@
      `(xsl:text ,(stp:data node)))))
 
 (defun parse-instruction/literal-element (node)
-  (let ((le
-         `(xsl:literal-element
-              (,(stp:local-name node)
-                ,(stp:namespace-uri node)
-                ,(stp:namespace-prefix node))
-            (xsl:use-attribute-sets
-             ,(stp:attribute-value node "use-attribute-sets" *xsl*))
-            ,@(loop
-                 for a in (stp:list-attributes node)
-                 for xslp = (equal (stp:namespace-uri a) *xsl*)
-                 when xslp
-                 do (unless (find (stp:local-name a)
-                                  '("version"
-                                    "extension-element-prefixes"
-                                    "exclude-result-prefixes"
-                                    "use-attribute-sets")
-                                  :test #'equal)
-                      (xslt-error
-                       "unknown attribute on literal result element: ~A"
-                       (stp:local-name a)))
-                 else
-                 collect `(xsl:literal-attribute
-                              (,(stp:local-name a)
-                                ,(stp:namespace-uri a)
-                                ,(stp:namespace-prefix a))
-                            ,(stp:value a)))
-            ,@(parse-body node)))
-        (version (stp:attribute-value node "version" *xsl*))
-        (extensions '()))
+  (let ((extensions '()))
     (stp:with-attributes ((eep "extension-element-prefixes" *xsl*))
         node
       (dolist (prefix (words (or eep "")))
@@ -165,21 +137,55 @@
         (push (or (stp:find-namespace prefix node)
                   (xslt-error "namespace not found: ~A" prefix))
               extensions)))
-    (when extensions
-      (setf le
-            `(xsl:with-extension-namespaces ,extensions
-               (xsl:with-excluded-namespaces ,extensions
-                 ,le))))
-    (when version
-      (setf le
-            `(xsl:with-version ,version
-               ,le)))
-    le))
+    (if (find (stp:namespace-uri node) extensions :test #'equal)
+        ;; oops, this isn't a literal result element after all
+        (parse-fallback-children node)
+        (let ((le
+               `(xsl:literal-element
+                    (,(stp:local-name node)
+                      ,(stp:namespace-uri node)
+                      ,(stp:namespace-prefix node))
+                  (xsl:use-attribute-sets
+                   ,(stp:attribute-value node "use-attribute-sets" *xsl*))
+                  ,@(loop
+                       for a in (stp:list-attributes node)
+                       for xslp = (equal (stp:namespace-uri a) *xsl*)
+                       when xslp
+                       do (unless (find (stp:local-name a)
+                                        '("version"
+                                          "extension-element-prefixes"
+                                          "exclude-result-prefixes"
+                                          "use-attribute-sets")
+                                        :test #'equal)
+                            (xslt-error
+                             "unknown attribute on literal result element: ~A"
+                             (stp:local-name a)))
+                       else
+                       collect `(xsl:literal-attribute
+                                    (,(stp:local-name a)
+                                      ,(stp:namespace-uri a)
+                                      ,(stp:namespace-prefix a))
+                                  ,(stp:value a)))
+                  ,@ (let ((*extension-namespaces*
+                            (append extensions *extension-namespaces*)))
+                       (parse-body node))))
+              (version (stp:attribute-value node "version" *xsl*)))
+          (when extensions
+            (setf le
+                  `(xsl:with-extension-namespaces ,extensions
+                     (xsl:with-excluded-namespaces ,extensions
+                       ,le))))
+          (when version
+            (setf le
+                  `(xsl:with-version ,version
+                     ,le)))
+          le))))
 
 (defun parse-fallback-children (node)
   (let ((fallbacks
          (loop
             for fallback in (stp:filter-children (of-name "fallback") node)
+            do (only-with-attributes () fallback)
             append (parse-body fallback))))
     (if fallbacks
         `(progn ,@fallbacks)

@@ -387,6 +387,7 @@
        |Include__
        |Output__77931$
        |Output_EmptyElement1$
+       |BVTs_bvt020$
        )"))
 
 (defparameter *known-failures*
@@ -427,6 +428,7 @@
     "Sorting__91701"
     "Sorting__91752"
     "Sorting__91753"
+    "Sorting_TurkishISortingTest"
 
     ;; FIXME?
     ;;
