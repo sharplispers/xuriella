@@ -1431,7 +1431,7 @@
                  "1")
                 ((equal local-name "vendor")
                  "Xuriella")
-                ((equal local-name "vendor-uri")
+                ((equal local-name "vendor-url")
                  "http://repo.or.cz/w/xuriella.git")
                 (t
                  ""))

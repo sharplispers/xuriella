@@ -107,7 +107,7 @@
     (lambda (ctx)
       (let ((df
              (if format-name
-                 (let ((qname (funcall format-name ctx)))
+                 (let ((qname (xpath:string-value (funcall format-name ctx))))
                    (multiple-value-bind (local-name uri)
                        (decode-qname/runtime qname namespaces nil)
                      (find-decimal-format local-name

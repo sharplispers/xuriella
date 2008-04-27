@@ -15106,31 +15106,37 @@ PASS Namespace-alias_NSAlias_Inside_CallTemplate [XSLT-Structure]
   Expected output (1): MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.saxon
   Actual output: MSFT_Conformance_Tests/Namespace-alias/Namespace-alias_NSAlias_Inside_CallTemplate.xuriella
 
-FAIL Number__10052 [XSLT-Result-Tree]: The value
-                                         #S(XURIELLA::RESULT-TREE-FRAGMENT
-                                            :NODE #.(CXML-STP:ELEMENT
-                                                     #| :PARENT of type DOCUMENT |#
-                                                     :CHILDREN '(#.(CXML-STP:TEXT
-                                                                    #| :PARENT of type ELEMENT |#
-                                                                    :DATA "foo"))
-                                                     :LOCAL-NAME "fragment"))
-                                       is not of type
-                                         (SIMPLE-ARRAY CHARACTER).
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+FAIL Number__10052 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/10052.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10052.saxon
   Actual output: MSFT_Conformance_Tests/Number/Number__10052.xuriella
 
-FAIL Number__10053 [XSLT-Result-Tree]: The value
-                                         #S(XURIELLA::RESULT-TREE-FRAGMENT
-                                            :NODE #.(CXML-STP:ELEMENT
-                                                     #| :PARENT of type DOCUMENT |#
-                                                     :CHILDREN '(#.(CXML-STP:TEXT
-                                                                    #| :PARENT of type ELEMENT |#
-                                                                    :DATA "foo"))
-                                                     :LOCAL-NAME "fragment"))
-                                       is not of type
-                                         (SIMPLE-ARRAY CHARACTER).
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+WARNING: There is no such encoding: "UTF-16".
+FAIL Number__10053 [XSLT-Result-Tree]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/Number/10053.noindent-xsl
   Data: MSFT_Conformance_Tests/Number/91021.xml
   Expected output (1): MSFT_Conformance_Tests/Number/Number__10053.saxon
@@ -18831,12 +18837,6 @@ PASS XSLTFunctions__84048 [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84048.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84048.xuriella
 
-FAIL XSLTFunctions__84049 [Mixed]: output doesn't match
-  Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84049.noindent-xsl
-  Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
-  Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84049.saxon
-  Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__84049.xuriella
-
 FAIL XSLTFunctions__84050 [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/84050.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/books.xml
@@ -18978,17 +18978,9 @@ PASS XSLTFunctions__emptyParameters [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__emptyParameters.xuriella
 
-FAIL XSLTFunctions__EuropeanPattern [Mixed]: condition of incorrect type: 
-The value
-  #S(XURIELLA::RESULT-TREE-FRAGMENT
-     :NODE #.(CXML-STP:ELEMENT
-              #| :PARENT of type DOCUMENT |#
-              :CHILDREN '(#.(CXML-STP:TEXT
-                             #| :PARENT of type ELEMENT |#
-                             :DATA "european"))
-              :LOCAL-NAME "fragment"))
-is not of type
-  (SIMPLE-ARRAY CHARACTER).
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10001001)
+FAIL XSLTFunctions__EuropeanPattern [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-eu.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__EuropeanPattern.saxon
@@ -19018,48 +19010,21 @@ FAIL XSLTFunctions__minimumValue [Mixed]: output doesn't match
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__minimumValue.xuriella
 
-FAIL XSLTFunctions__Non_DigitPattern [Mixed]: condition of incorrect type: 
-The value
-  #S(XURIELLA::RESULT-TREE-FRAGMENT
-     :NODE #.(CXML-STP:ELEMENT
-              #| :PARENT of type DOCUMENT |#
-              :CHILDREN '(#.(CXML-STP:TEXT
-                             #| :PARENT of type ELEMENT |#
-                             :DATA "non_digit"))
-              :LOCAL-NAME "fragment"))
-is not of type
-  (SIMPLE-ARRAY CHARACTER).
+WARNING:
+   comparison failed: Corrupted UTF-8 input (initial byte was #b10001001)
+FAIL XSLTFunctions__Non_DigitPattern [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-nd.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Non_DigitPattern.xuriella
 
-FAIL XSLTFunctions__Pattern-separator [Mixed]: The value
-                                                 #S(XURIELLA::RESULT-TREE-FRAGMENT
-                                                    :NODE #.(CXML-STP:ELEMENT
-                                                             #| :PARENT of type DOCUMENT |#
-                                                             :CHILDREN '(#.(CXML-STP:TEXT
-                                                                            #| :PARENT of type ELEMENT |#
-                                                                            :DATA "pattern"))
-                                                             :LOCAL-NAME "fragment"))
-                                               is not of type
-                                                 (SIMPLE-ARRAY CHARACTER).
+FAIL XSLTFunctions__Pattern-separator [Mixed]: output doesn't match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pa.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__Pattern-separator.xuriella
 
-FAIL XSLTFunctions__percentPattern [Mixed]: condition of incorrect type: 
-The value
-  #S(XURIELLA::RESULT-TREE-FRAGMENT
-     :NODE #.(CXML-STP:ELEMENT
-              #| :PARENT of type DOCUMENT |#
-              :CHILDREN '(#.(CXML-STP:TEXT
-                             #| :PARENT of type ELEMENT |#
-                             :DATA "percent"))
-              :LOCAL-NAME "fragment"))
-is not of type
-  (SIMPLE-ARRAY CHARACTER).
+FAIL XSLTFunctions__percentPattern [Mixed]: saxon error not signalled and official output not a match
   Stylesheet: MSFT_Conformance_Tests/XSLTFunctions/fmt-no-pe.noindent-xsl
   Data: MSFT_Conformance_Tests/XSLTFunctions/fmt-no.xml
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions__percentPattern.saxon
@@ -19292,4 +19257,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2983/3070 tests (26 expected failures, 61 unexpected failures).
+Passed 2983/3069 tests (26 expected failures, 60 unexpected failures).

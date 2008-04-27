@@ -359,6 +359,10 @@
     "ConflictResolution__77833"
     "Include__77736"
 
+    ;; har har
+    "XSLTFunctions__84049"
+    "XSLTFunctions__84050"
+
     ;; these test the value of generate-id(), which isn't specified
     "Keys__91832"
     "Keys__91833"))
