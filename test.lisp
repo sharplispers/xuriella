@@ -411,6 +411,23 @@
     "Output__78227"
     "Output__78229"
 
+    ;; non-english sorting, which we don't support (yet?)
+    ;;
+    "Sorting__77977"
+    "Sorting__91689"
+    "Sorting__91691"
+    "Sorting__91693"
+    "Sorting__91694"
+    "Sorting__91695"
+    "Sorting__91696"
+    "Sorting__91697"
+    "Sorting__91698"
+    "Sorting__91699"
+    "Sorting__91700"
+    "Sorting__91701"
+    "Sorting__91752"
+    "Sorting__91753"
+
     ;; FIXME?
     ;;
     ;; This is an HTML output method issue.  The spec says the HTML

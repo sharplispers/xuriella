@@ -17414,7 +17414,7 @@ PASS Sorting_Sort_NumbersWithLanguageNotEnglish [XSLT-Data-Manipulation]
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_NumbersWithLanguageNotEnglish.saxon
   Actual output: MSFT_Conformance_Tests/Sorting/Sorting_Sort_NumbersWithLanguageNotEnglish.xuriella
 
-FAIL Sorting_Sort_PositiveNumbersHavePlusSign [XSLT-Data-Manipulation]: output doesn't match
+PASS Sorting_Sort_PositiveNumbersHavePlusSign [XSLT-Data-Manipulation]
   Stylesheet: MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithPositiveSignChar.noindent-xsl
   Data: MSFT_Conformance_Tests/Sorting/xslt_sort_SortWithPositiveSignChar.xml
   Expected output (1): MSFT_Conformance_Tests/Sorting/Sorting_Sort_PositiveNumbersHavePlusSign.saxon
@@ -19294,4 +19294,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2978/3070 tests (11 expected failures, 81 unexpected failures).
+Passed 2979/3070 tests (11 expected failures, 80 unexpected failures).
