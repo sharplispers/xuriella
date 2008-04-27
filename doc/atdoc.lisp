@@ -1,8 +1,11 @@
-(asdf:operate 'asdf:load-op :closure-html)
+(asdf:operate 'asdf:load-op :xuriella)
 (asdf:operate 'asdf:load-op :atdoc)
-(atdoc:generate-documentation
- '(:chtml :hax)
- "/home/david/src/lisp/closure-html/doc/atdoc/"
- :index-title "Closure HTML API reference"
- :heading "Closure HTML"
- :css "cxml.css")
+(let* ((base (asdf:component-pathname (asdf:find-system :xuriella)))
+       (atdoc-directory (merge-pathnames "doc/atdoc/" base)))
+  (ensure-directories-exist atdoc-directory)
+  (atdoc:generate-documentation
+   '(:xuriella)
+   atdoc-directory
+   :index-title "Xuriella XSLT API reference"
+   :heading "Xuriella XSLT"
+   :css (merge-pathnames "doc/atdoc.css" base)))
