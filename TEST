@@ -17787,7 +17787,7 @@ PASS Text__78273 [XSLT-Result-Tree]: raised an xslt-error as expected
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78273.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78273.xuriella
 
-FAIL Text__78274 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS Text__78274 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04108.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78274.saxon
@@ -17799,7 +17799,7 @@ PASS Text__78275 [XSLT-Result-Tree]
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78275.saxon
   Actual output: MSFT_Conformance_Tests/Text/Text__78275.xuriella
 
-FAIL Text__78276 [XSLT-Result-Tree]: saxon error not signalled and official output not a match
+PASS Text__78276 [XSLT-Result-Tree]: raised an xslt-error as expected
   Stylesheet: MSFT_Conformance_Tests/Text/XSLT04110.noindent-xsl
   Data: MSFT_Conformance_Tests/Text/textdata.xml
   Expected output (1): MSFT_Conformance_Tests/Text/Text__78276.saxon
@@ -19294,4 +19294,4 @@ PASS XSLTFunctions_DocumentFuncWithEmptyArg [Mixed]
   Expected output (1): MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.saxon
   Actual output: MSFT_Conformance_Tests/XSLTFunctions/XSLTFunctions_DocumentFuncWithEmptyArg.xuriella
 
-Passed 2980/3070 tests (26 expected failures, 64 unexpected failures).
+Passed 2982/3070 tests (26 expected failures, 62 unexpected failures).

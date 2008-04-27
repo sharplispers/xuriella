@@ -1771,8 +1771,15 @@
      for (name value) in forms
      collect (compile-var-binding name value env)))
 
+(defmacro sometimes-with-attributes ((&rest attrs) node &body body)
+  (let ((x (gensym)))
+    `(let ((,x ,node))
+       (if *forwards-compatible-p*
+           (stp:with-attributes (,@attrs) ,x ,@body)
+           (only-with-attributes (,@attrs) ,x ,@body)))))
+
 (defun compile-template (<template> env position)
-  (stp:with-attributes (match name priority mode) <template>
+  (sometimes-with-attributes (match name priority mode) <template>
     (unless (or name match)
       (xslt-error "missing match in template"))
     (multiple-value-bind (params body-pos)
