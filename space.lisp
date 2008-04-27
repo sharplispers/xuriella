@@ -131,7 +131,7 @@
 (defun strip-under-qname-p (node strip-thunk)
   (let* ((strip-test
           (maximize #'strip-test-<
-                    (xpath:matching-values strip-thunk node))))
+                    (xpattern:matching-values strip-thunk node))))
     (and strip-test
          (eq (strip-test-value strip-test) :strip))))
 

@@ -1,3 +1,19 @@
+; in:
+;      LAMBDA (#:G2922 #:G2923 #:G2924 #:G2925 #:G2926 #:G2927 #:G2928 #:G2929
+;          #:G2933 #:G2934)
+;     (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM)
+; --> SB-C::%INSTANCE-TYPEP 
+; ==>
+;   SB-PCL::.ARG0.
+; 
+; note: deleting unreachable code
+
+;     (IF (TYPEP SB-PCL::.ARG0. 'RUNES::OCTET-VECTOR-YSTREAM) #:G2922 #:G2923)
+; 
+; note: deleting unreachable code
+; 
+; compilation unit finished
+;   printed 2 notes
 PASS attribset_attribset01 [XSLT-Result-Tree]
   Stylesheet: Xalan_Conformance_Tests/attribset/attribset01.noindent-xsl
   Data: Xalan_Conformance_Tests/attribset/attribset01.xml

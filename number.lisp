@@ -44,9 +44,9 @@
                             grouping-separator grouping-size)
       args
     (let ((count (and count (without-xslt-current ()
-                              (xpath:make-pattern-matcher* count env))))
+                              (xpattern:make-pattern-matcher* count env))))
           (from  (and from (without-xslt-current ()
-                             (xpath:make-pattern-matcher* from env))))
+                             (xpattern:make-pattern-matcher* from env))))
           (value (and value (compile-xpath value env)))
           (format       (compile-avt (or format "1") env))
           (lang         (compile-avt (or lang "") env))
@@ -82,7 +82,7 @@
                 grouping-size))))))))
 
 (defun pattern-thunk-matches-p (pattern-thunk node)
-  (xpath:matching-value pattern-thunk node))
+  (xpattern:matching-value pattern-thunk node))
 
 (defun ancestors-using-count-and-from (node count from)
   (let ((ancestors

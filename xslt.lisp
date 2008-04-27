@@ -583,7 +583,7 @@
     (let ((*namespaces* *initial-namespaces*))
       (xpath:do-node-set (ancestor (xpath:evaluate "ancestor::node()" node))
         (xpath:with-namespaces (("" #.*xsl*))
-          (when (xpath:node-matches-p ancestor "stylesheet|transform")
+          (when (xpattern:node-matches-p ancestor "stylesheet|transform")
             ;; discard namespaces from including stylesheets
             (setf *namespaces* *initial-namespaces*)))
         (when (xpath-protocol:node-type-p ancestor :element)
@@ -711,7 +711,7 @@
   (with-resignalled-errors ()
     (xpath:with-namespaces ((nil #.*xsl*))
       (let* ((*import-priority* 0)
-             (xpath:*allow-variables-in-patterns* nil)
+             (xpattern:*allow-variables-in-patterns* nil)
              (puri:*strict-parse* nil)
              (stylesheet (make-stylesheet))
              (*stylesheet*
@@ -741,14 +741,14 @@
            for mode being each hash-value in (stylesheet-modes stylesheet)
            do
              (setf (mode-match-thunk mode)
-                   (xpath:make-pattern-matcher
+                   (xpattern:make-pattern-matcher
                     (mapcar #'template-compiled-pattern
                             (mode-templates mode)))))
         ;; and for the strip tests
         (setf (stylesheet-strip-thunk stylesheet)
               (let ((patterns (stylesheet-strip-tests stylesheet)))
                 (and patterns
-                     (xpath:make-pattern-matcher
+                     (xpattern:make-pattern-matcher
                       (mapcar #'strip-test-compiled-pattern patterns)))))
         stylesheet))))
 
@@ -912,7 +912,7 @@
      :patterns
      (mapcar (lambda (name-test)
                (destructuring-bind (&optional path &rest junk)
-                   (cdr (xpath:parse-pattern-expression name-test))
+                   (cdr (xpattern:parse-pattern-expression name-test))
                  (check-null junk)
                  (check (eq (car path) :path))
                  (destructuring-bind (&optional child &rest junk) (cdr path)
@@ -947,7 +947,7 @@
                         (stp:attribute-value elt "elements"))))
           (let* ((compiled-pattern
                   (car (without-xslt-current ()
-                         (xpath:compute-patterns
+                         (xpattern:compute-patterns
                           `(:patterns ,expression)
                           *import-priority*
                           "will set below"
@@ -957,7 +957,7 @@
                                    :priority (expression-priority expression)
                                    :position i
                                    :value value)))
-            (setf (xpath:pattern-value compiled-pattern) strip-test)
+            (setf (xpattern:pattern-value compiled-pattern) strip-test)
             (push strip-test (stylesheet-strip-tests stylesheet)))))
       (incf i))))
 
@@ -1013,7 +1013,7 @@
         (when cdata-section-elements
           (dolist (qname (words cdata-section-elements))
             (decode-qname qname env nil) ;check the syntax
-            (push (xpath:make-pattern-matcher* qname env)
+            (push (xpattern:make-pattern-matcher* qname env)
                   (output-cdata-section-matchers spec))))
         (when standalone
           (setf (output-standalone-p spec)
@@ -1613,8 +1613,8 @@
 
 (defun find-templates (ctx mode)
   (let* ((matching-candidates
-          (xpath:matching-values (mode-match-thunk mode)
-                                 (xpath:context-node ctx)))
+          (xpattern:matching-values (mode-match-thunk mode)
+                                    (xpath:context-node ctx)))
          (npriorities
           (if matching-candidates
               (1+ (reduce #'max
@@ -1842,7 +1842,7 @@
                      (let* ((compiled-pattern
                              (xslt-trace-thunk
                               (car (without-xslt-current ()
-                                     (xpath:compute-patterns
+                                     (xpattern:compute-patterns
                                       `(:patterns ,expression)
                                       42
                                       :dummy
@@ -1870,9 +1870,9 @@
                                             :params param-bindings
                                             :body outer-body-thunk
                                             :n-variables n-variables)))
-                       (setf (xpath:pattern-value compiled-pattern)
+                       (setf (xpattern:pattern-value compiled-pattern)
                              template)
                        template))
-                   (cdr (xpath:parse-pattern-expression match)))))))))
+                   (cdr (xpattern:parse-pattern-expression match)))))))))
 #+(or)
 (xuriella::parse-stylesheet #p"/home/david/src/lisp/xuriella/test.xsl")
