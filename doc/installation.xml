@@ -16,8 +16,9 @@
   <p>
     Xuriella needs
     <a href="http://common-lisp.net/project/cxml">cxml</a>,
+    <a href="http://common-lisp.net/project/closure/closure-html/">chtml</a>,
     <a href="http://www.lichteblau.com/cxml-stp/">cxml-stp</a>, and
-    <a href="http://common-lisp.net/project/plexippus-xpath">Plexippus XPath</a>
+    <a href="http://common-lisp.net/project/plexippus-xpath">Plexippus XPath</a>.
   </p>
   <p>
     <a href="http://www.cliki.net/asdf">ASDF</a> is used for
