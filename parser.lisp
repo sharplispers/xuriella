@@ -209,7 +209,9 @@
         `(progn ,@fallbacks)
         `(xsl:terminate
            (xsl:text
-            "no fallback children in unknown element using forwards compatible processing")))))
+            ,(format nil "no fallback children in unknown element ~A/~A using forwards compatible processing"
+                     (stp:local-name node)
+                     (stp:namespace-uri node)))))))
 
 (defmacro define-instruction-parser (name (node-var) &body body)
   `(progn

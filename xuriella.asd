@@ -28,5 +28,6 @@
      (:file "number")
      (:file "stpx")
      (:file "extensions")
+     (:file "profile")
      (:file "test"))
     :depends-on (:cxml :cxml-stp :closure-html :xpath :split-sequence))

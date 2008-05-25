@@ -53,7 +53,11 @@
 	   #:define-extension-parser
 	   #:define-extension-compiler
 	   #:parse-body
-	   #:compile-instruction)
+	   #:compile-instruction
+
+	   #:enable-profiling
+	   #:disable-profiling
+	   #:report)
   (:import-from :xpath-protocol #:define-default-method)
   (:documentation
    "Xuriella is an implementation of XSLT 1.0.
@@ -77,6 +81,13 @@
 
       @aboutfun{parse-stylesheet}
       @aboutclass{stylesheet}
+    @end{section}
+    @begin[Profiling support]{section}
+     The profiling facility records the run time of XSLT templates.
+
+     @aboutfun{enable-profiling}
+     @aboutfun{disable-profiling}
+     @aboutfun{report}
     @end{section}
     @begin[Defining extension elements]{section}
       Xuriella can be extended in two ways:

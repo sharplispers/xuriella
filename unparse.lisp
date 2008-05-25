@@ -56,6 +56,12 @@
   (maybe-emit-start-tag)
   (funcall fn *sink*))
 
+(defmacro defun/unparse (name (&rest args) &body body)
+  `(defun ,name ,args
+     (with-profile-counter (*unparse-xml-counter*)
+       (let ((*unparse-xml-counter* nil))
+         ,@body))))
+
 (defmacro with-element
     ((local-name uri &key suggested-prefix extra-namespaces process-aliases)
      &body body)
@@ -66,7 +72,7 @@
                         :extra-namespaces ,extra-namespaces
                         :process-aliases ,process-aliases))
 
-(defun doctype (name public-id system-id &optional internal-subset)
+(defun/unparse doctype (name public-id system-id &optional internal-subset)
   (sax:start-dtd *sink* name public-id system-id)
   (when internal-subset
     (sax:unparsed-internal-subset *sink* internal-subset))
@@ -198,12 +204,14 @@
 
 (defun invoke-with-element
     (fn local-name uri &key suggested-prefix extra-namespaces process-aliases)
-  (check-type local-name string)
-  (check-type uri string)
-  (check-type suggested-prefix (or null string))
-  (maybe-emit-start-tag)
-  (when process-aliases
-    (setf uri (unalias-uri uri)))
+  ;; fixme: don't litter this function with calls to with-profile-counter
+  (with-profile-counter (*unparse-xml-counter*)
+    (check-type local-name string)
+    (check-type uri string)
+    (check-type suggested-prefix (or null string))
+    (maybe-emit-start-tag)
+    (when process-aliases
+      (setf uri (unalias-uri uri))))
   (let* ((parent *current-element*)
          (elt (make-sink-element
                :local-name local-name
@@ -216,20 +224,22 @@
                :attributes nil))
          (*current-element* elt)
          (*start-tag-written-p* nil))
-    ;; always establish explicitly copied namespaces first
-    ;; (not including declarations of the default namespace)
-    (process-extra-namespaces elt extra-namespaces process-aliases)
-    ;; establish the element's prefix (which might have to be the default
-    ;; namespace if it's the empty URI)
-    (ensure-prefix-for-uri elt uri suggested-prefix)
+    (with-profile-counter (*unparse-xml-counter*)
+      ;; always establish explicitly copied namespaces first
+      ;; (not including declarations of the default namespace)
+      (process-extra-namespaces elt extra-namespaces process-aliases)
+      ;; establish the element's prefix (which might have to be the default
+      ;; namespace if it's the empty URI)
+      (ensure-prefix-for-uri elt uri suggested-prefix))
     ;; we'll do attributes incrementally
     (multiple-value-prog1
         (funcall fn)
-      (maybe-emit-start-tag)
-      (sax:end-element *sink* uri local-name (sink-element-actual-qname elt))
-      (loop
-         for (prefix . uri) in (sink-element-new-namespaces elt) do
-         (sax:end-prefix-mapping *sink* prefix)))))
+      (with-profile-counter (*unparse-xml-counter*)
+        (maybe-emit-start-tag)
+        (sax:end-element *sink* uri local-name (sink-element-actual-qname elt))
+        (loop
+           for (prefix . uri) in (sink-element-new-namespaces elt) do
+           (sax:end-prefix-mapping *sink* prefix))))))
 
 (defun process-extra-namespace (elt prefix uri process-aliases)
   (when process-aliases
@@ -269,7 +279,7 @@
        (push cons (sink-element-all-namespaces elt))
        (push cons (sink-element-new-namespaces elt))))))
 
-(defun write-attribute
+(defun/unparse write-attribute
     (local-name uri value &key suggested-prefix process-aliases)
   (check-type local-name string)
   (check-type uri string)
@@ -296,7 +306,7 @@
                                    (equal (sink-attribute-uri x) uri)))
                             (sink-element-attributes *current-element*)))))))
 
-(defun write-extra-namespace (prefix uri process-aliases)
+(defun/unparse write-extra-namespace (prefix uri process-aliases)
   (check-type prefix string)
   (check-type uri string)
   (cond
@@ -309,12 +319,12 @@
     (t
      (process-extra-namespace *current-element* prefix uri process-aliases))))
 
-(defun write-text (data)
+(defun/unparse write-text (data)
   (maybe-emit-start-tag)
   (sax:characters *sink* data)
   data)
 
-(defun write-comment (data)
+(defun/unparse write-comment (data)
   (maybe-emit-start-tag)
   ;; kludge: rewrite this in a nicer way
   (setf data (cl-ppcre:regex-replace-all "--" data "- -"))
@@ -329,7 +339,7 @@
        (every #'cxml::name-rune-p str))
        (cxml::nc-name-p str)))
 
-(defun write-processing-instruction (target data)
+(defun/unparse write-processing-instruction (target data)
   (maybe-emit-start-tag)
   (setf data (cl-ppcre:regex-replace-all "[?]>" data "? >"))
   (cond
@@ -339,6 +349,6 @@
      (xslt-cerror "PI target not an NCName: ~A" target)))
   data)
 
-(defun write-unescaped (str)
+(defun/unparse write-unescaped (str)
   (maybe-emit-start-tag)
   (sax:unescaped *sink* str))

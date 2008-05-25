@@ -150,6 +150,20 @@
 ;;;     (setf (gethash "" xpath::*extensions*) non-extensions)
 ;;;     (funcall fn)))
 
+(defstruct profile-counter calls run real)
+
+(defvar *apply-stylesheet-counter* (make-profile-counter))
+(defvar *parse-stylesheet-counter* (make-profile-counter))
+(defvar *parse-xml-counter* (make-profile-counter))
+(defvar *unparse-xml-counter* (make-profile-counter))
+
+(defmacro with-profile-counter ((var) &body body)
+  `((lambda (fn)
+      (if (and *profiling-enabled-p* ,var)
+          (invoke-with-profile-counter fn ,var)
+          (funcall fn)))
+    (lambda () ,@body)))
+
 
 ;;;; Helper functions and macros
 
@@ -524,6 +538,7 @@
     (setf (stp:document-element document) new-document-element)
     (stp:append-child new-document-element new-template)
     (stp:append-child new-template literal-result-element)
+    (setf (stp:base-uri new-template) (stp:base-uri literal-result-element))
     new-document-element))
 
 (defun parse-stylesheet-to-stp (input uri-resolver)
@@ -1216,6 +1231,8 @@
             (*instruction-base-uri* (stp:base-uri <template>)))
         (with-import-magic (<template> env)
           (dolist (template (compile-template <template> env i))
+            (setf (template-stylesheet template) stylesheet)
+            (setf (template-base-uri template) (stp:base-uri <template>))
             (let ((name (template-name template)))
               (if name
                   (let* ((table (stylesheet-named-templates stylesheet))
@@ -1375,22 +1392,23 @@
     (object &optional node-set)
   (let ((instruction-base-uri *instruction-base-uri*))
     (lambda (ctx)
-      (let* ((object (funcall object ctx))
-             (node-set (and node-set (funcall node-set ctx)))
-             (base-uri
-              (if node-set
-                  (document-base-uri (xpath::textually-first-node node-set))
-                  instruction-base-uri)))
-        (xpath-sys:make-node-set
-         (if (xpath:node-set-p object)
-             (xpath:map-node-set->list
-              (lambda (node)
-                (%document (xpath:string-value node)
-                           (if node-set
-                               base-uri
-                               (document-base-uri node))))
-              object)
-             (list (%document (xpath:string-value object) base-uri))))))))
+      (with-profile-counter (*parse-xml-counter*)
+        (let* ((object (funcall object ctx))
+               (node-set (and node-set (funcall node-set ctx)))
+               (base-uri
+                (if node-set
+                    (document-base-uri (xpath::textually-first-node node-set))
+                    instruction-base-uri)))
+          (xpath-sys:make-node-set
+           (if (xpath:node-set-p object)
+               (xpath:map-node-set->list
+                (lambda (node)
+                  (%document (xpath:string-value node)
+                             (if node-set
+                                 base-uri
+                                 (document-base-uri node))))
+                object)
+               (list (%document (xpath:string-value object) base-uri)))))))))
 
 
 (defun build-key-index (document key-conses)
@@ -1588,71 +1606,74 @@
    The specified @code{navigator} will be passed to XPath protocol functions.
 
    @see{parse-stylesheet}"
-  (when (typep stylesheet 'xml-designator)
-    (setf stylesheet
-          (handler-bind
-              ((cxml:xml-parse-error
-                (lambda (c)
-                  (xslt-error "cannot parse stylesheet: ~A" c))))
-            (parse-stylesheet stylesheet :uri-resolver uri-resolver))))
-  (with-resignalled-errors ()
-    (invoke-with-output-sink
-     (lambda ()
-       (let* ((*uri-to-document* (make-hash-table :test 'equal))
-              (*root-to-document*
-               ;; fixme? should be xpath-protocol:node-equal
-               (make-hash-table :test 'equal))
-              (xpath:*navigator* (or navigator :default-navigator))
-              (puri:*strict-parse* nil)
-              (*stylesheet* stylesheet)
-              (*empty-mode* (make-mode))
-              (*default-mode* (find-mode stylesheet nil))
-              (global-variable-chains
-               (stylesheet-global-variables stylesheet))
-              (*global-variable-values*
-               (make-variable-value-array (length global-variable-chains)))
-              (*uri-resolver* uri-resolver)
-              (source-document
-               (if (typep source-designator 'xml-designator)
-                   (cxml:parse source-designator (stp:make-builder))
-                   source-designator))
-              (xpath-root-node
-               (make-whitespace-stripper
-                source-document
-                (stylesheet-strip-thunk stylesheet)))
-              (ctx (xpath:make-context xpath-root-node))
-              (document (make-source-document
-                         :id 0
-                         :root-node xpath-root-node)))
-         (when (pathnamep source-designator) ;fixme: else use base uri?
-           (setf (gethash source-designator *uri-to-document*) document))
-         (setf (gethash xpath-root-node *root-to-document*) document)
-         (map nil
-              (lambda (chain)
-                (let ((head (car (variable-chain-definitions chain))))
-                  (when (variable-param-p head)
-                    (let ((value
-                           (find-parameter-value
-                            (variable-chain-local-name chain)
-                            (variable-chain-uri chain)
-                            parameters)))
-                      (when value
-                        (setf (global-variable-value
-                               (variable-chain-index chain))
-                              value))))))
-              global-variable-chains)
-         (map nil
-              (lambda (chain)
-                (funcall (variable-chain-thunk chain) ctx))
-              global-variable-chains)
-         ;; zzz we wouldn't have to mask float traps here if we used the
-         ;; XPath API properly.  Unfortunately I've been using FUNCALL
-         ;; everywhere instead of EVALUATE, so let's paper over that
-         ;; at a central place to be sure:
-         (xpath::with-float-traps-masked ()
-           (apply-templates ctx :mode *default-mode*))))
-     (stylesheet-output-specification stylesheet)
-     output)))
+  (with-profile-counter (*apply-stylesheet-counter*)
+    (when (typep stylesheet 'xml-designator)
+      (with-profile-counter (*parse-stylesheet-counter*)
+        (setf stylesheet
+              (handler-bind
+                  ((cxml:xml-parse-error
+                    (lambda (c)
+                      (xslt-error "cannot parse stylesheet: ~A" c))))
+                (parse-stylesheet stylesheet :uri-resolver uri-resolver)))))
+    (with-resignalled-errors ()
+      (invoke-with-output-sink
+       (lambda ()
+         (let* ((*uri-to-document* (make-hash-table :test 'equal))
+                (*root-to-document*
+                 ;; fixme? should be xpath-protocol:node-equal
+                 (make-hash-table :test 'equal))
+                (xpath:*navigator* (or navigator :default-navigator))
+                (puri:*strict-parse* nil)
+                (*stylesheet* stylesheet)
+                (*empty-mode* (make-mode))
+                (*default-mode* (find-mode stylesheet nil))
+                (global-variable-chains
+                 (stylesheet-global-variables stylesheet))
+                (*global-variable-values*
+                 (make-variable-value-array (length global-variable-chains)))
+                (*uri-resolver* uri-resolver)
+                (source-document
+                 (if (typep source-designator 'xml-designator)
+                     (with-profile-counter (*parse-xml-counter*)
+                       (cxml:parse source-designator (stp:make-builder)))
+                     source-designator))
+                (xpath-root-node
+                 (make-whitespace-stripper
+                  source-document
+                  (stylesheet-strip-thunk stylesheet)))
+                (ctx (xpath:make-context xpath-root-node))
+                (document (make-source-document
+                           :id 0
+                           :root-node xpath-root-node)))
+           (when (pathnamep source-designator) ;fixme: else use base uri?
+             (setf (gethash source-designator *uri-to-document*) document))
+           (setf (gethash xpath-root-node *root-to-document*) document)
+           (map nil
+                (lambda (chain)
+                  (let ((head (car (variable-chain-definitions chain))))
+                    (when (variable-param-p head)
+                      (let ((value
+                             (find-parameter-value
+                              (variable-chain-local-name chain)
+                              (variable-chain-uri chain)
+                              parameters)))
+                        (when value
+                          (setf (global-variable-value
+                                 (variable-chain-index chain))
+                                value))))))
+                global-variable-chains)
+           (map nil
+                (lambda (chain)
+                  (funcall (variable-chain-thunk chain) ctx))
+                global-variable-chains)
+           ;; zzz we wouldn't have to mask float traps here if we used the
+           ;; XPath API properly.  Unfortunately I've been using FUNCALL
+           ;; everywhere instead of EVALUATE, so let's paper over that
+           ;; at a central place to be sure:
+           (xpath::with-float-traps-masked ()
+             (apply-templates ctx :mode *default-mode*))))
+       (stylesheet-output-specification stylesheet)
+       output))))
 
 (defun find-attribute-set (local-name uri &optional (stylesheet *stylesheet*))
   (or (gethash (cons local-name uri) (stylesheet-attribute-sets stylesheet))
@@ -1712,6 +1733,7 @@
         :mode mode)))))
 
 (defvar *apply-imports*)
+(defvar *profiling-enabled-p* nil)
 
 (defun apply-applicable-templates (ctx templates param-bindings finally)
   (labels ((apply-imports (&optional actual-param-bindings)
@@ -1724,7 +1746,9 @@
                           (lambda (x)
                             (<= low (template-import-priority x) high))
                           templates))
-                   (invoke-template ctx this actual-param-bindings))
+                   (if *profiling-enabled-p*
+                       (invoke-template/profile ctx this actual-param-bindings)
+                       (invoke-template ctx this actual-param-bindings)))
                  (funcall finally))))
     (let ((*apply-imports* #'apply-imports))
       (apply-imports param-bindings))))
@@ -1863,7 +1887,11 @@
   mode-qname
   params
   body
-  n-variables)
+  n-variables
+  ;; for profiling output only:
+  unparsed-qname
+  stylesheet
+  base-uri)
 
 (defun expression-priority (form)
   (let ((step (second form)))
@@ -1969,7 +1997,9 @@
                              :apply-imports-limit *apply-imports-limit*
                              :params param-bindings
                              :body outer-body-thunk
-                             :n-variables n-variables))))
+                             :n-variables n-variables
+                             ;; record unparsed `name' for profiler output:
+                             :unparsed-qname name))))
          (when match
            (mapcar (lambda (expression)
                      (let* ((compiled-pattern
