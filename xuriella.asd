@@ -18,6 +18,7 @@
     :components
     ((:file "package")
      (:file "trace")
+     (:file "early-profile")
      (:file "unparse")
      (:file "xslt")
      (:file "instructions")

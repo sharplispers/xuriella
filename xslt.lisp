@@ -150,20 +150,6 @@
 ;;;     (setf (gethash "" xpath::*extensions*) non-extensions)
 ;;;     (funcall fn)))
 
-(defstruct profile-counter calls run real)
-
-(defvar *apply-stylesheet-counter* (make-profile-counter))
-(defvar *parse-stylesheet-counter* (make-profile-counter))
-(defvar *parse-xml-counter* (make-profile-counter))
-(defvar *unparse-xml-counter* (make-profile-counter))
-
-(defmacro with-profile-counter ((var) &body body)
-  `((lambda (fn)
-      (if (and *profiling-enabled-p* ,var)
-          (invoke-with-profile-counter fn ,var)
-          (funcall fn)))
-    (lambda () ,@body)))
-
 
 ;;;; Helper functions and macros
 
@@ -1733,7 +1719,6 @@
         :mode mode)))))
 
 (defvar *apply-imports*)
-(defvar *profiling-enabled-p* nil)
 
 (defun apply-applicable-templates (ctx templates param-bindings finally)
   (labels ((apply-imports (&optional actual-param-bindings)
