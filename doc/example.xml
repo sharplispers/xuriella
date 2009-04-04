@@ -1,0 +1,141 @@
+<page title="Xuriella XSLT Example">
+  <p>Example using XSLT in a Hunchentoot handler to deliver an HTML page</p>
+
+  <h3>Overview</h3>
+
+  <p>
+    Suppose you're writing a web application (say,
+    using <a href="">Hunchentoot</a>), and you would like to show
+    directory contents.
+  </p>
+  <p>
+    We do that in two steps, strictly separating the programmer-written
+    Lisp code from the XSLT stylesheet that a web designer might want to
+    tweak afterwards:
+  </p>
+  <p>
+    <ul>
+      <li>
+	First we call CL:DIRECTORY, and build a small in-memory XML
+	document listing the files.
+      </li>
+      <li>
+	In the main step, the run that XML document through an XSL
+	stylesheet to generate HTML.
+      </li>
+    </ul>
+  </p>
+
+  <h3>Hunchentoot setup</h3>
+  <p>
+    The example requires hunchentoot and xuriella:
+  </p>
+  <pre style="background-color: #eeeeee; border: 1px solid #cccccc;">
+(asdf:operate 'asdf:load-op :hunchentoot)
+(asdf:operate 'asdf:load-op :xuriella)
+</pre>
+
+  <p>
+    Let's start hunchentoot and register a handler for the example first:
+  </p>
+  <pre style="background-color: #eeeeee; border: 1px solid #cccccc;">
+(push (tbnl:create-prefix-dispatcher "/show-directory" 'show-directory)
+      tbnl:*dispatch-table*)
+(tbnl:start-server :port 4242)
+</pre>
+
+  <h3>Utility functions</h3>
+  <p>
+    Since we might want to write many different handlers using
+    stylesheets, we factor
+    the APPLY-STYLESHEET call out into a convenient macro WITH-STYLESHEET.
+    Its body is expected to provide XML, which it will send through the
+    stylesheet and return the result as a string.
+  </p>
+  <p>
+    Note the use of WITH-XML-OUTPUT and STP:MAKE-BUILDER to build the
+    intermediate XML as an in-memory document using STP.
+  </p>
+  <p>
+    (In real-world code, we could optimize this a little by compiling the
+    stylesheet ahead of time using PARSE-STYLESHEET, and building a cache out
+    of stylesheet objects in a hash table somewhere.)
+  </p>
+  <pre style="background-color: #eeeeee; border: 1px solid #cccccc;">
+(defmacro with-stylesheet ((stylesheet-pathname) &amp;body body)
+  `(invoke-with-stylesheet (lambda () ,@body) ,stylesheet-pathname))
+
+(defun invoke-with-stylesheet (fn stylesheet-pathname)
+  (xuriella:apply-stylesheet (pathname stylesheet-pathname)
+                             (cxml:with-xml-output (stp:make-builder)
+                               (funcall fn))))
+</pre>
+
+  <h3>Building the temporary XML</h3>
+  <p>
+    Now for the handler calling DIRECTORY.   We want our XML to look like
+    this:
+    <pre>
+    &lt;directory namestring="/home/jrhacker/">
+      &lt;file>hello-world.lisp&lt;/file>
+      &lt;file>mbox&lt;/file>
+      ...
+    &lt;/directory></pre>
+    which we can generate easily using WITH-ELEMENT and DOLIST:
+  </p>
+  <pre style="background-color: #eeeeee; border: 1px solid #cccccc;">
+(defun show-directory ()
+  (<b>with-stylesheet</b> ("directory.xsl")
+    (<b>cxml:with-element "directory"</b>
+      (let ((directory (user-homedir-pathname)))
+	(cxml:attribute "namestring" (namestring directory))
+	(<b>dolist (file (directory (merge-pathnames "*.*" directory)))</b>
+	  (<b>cxml:with-element "file"</b>
+	    (cxml:text (enough-namestring file directory))))))))
+  </pre>
+
+  <h3>An XSL stylesheet as a template</h3>
+  <p>
+    Finally, the XSL stylesheet that turns this into HTML for us.  Note
+    the xsl:version on the root element, which marks the literal result
+    element used as a stylesheet.
+  </p>
+  <p>
+    Since &lt;html> is the root element, the stylesheet processor will
+    turn on its HTML output method automatically, and generate HTML 4
+    rather than XML.  (Powered by Closure HTML.)
+  </p>
+  <p>
+    To keep the example short and simple, our HTML is not very fancy.
+  </p>
+  <pre style="background-color: #eeeeee; border: 1px solid #cccccc;">
+&lt;html xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+      xsl:version="1.0">
+  &lt;head>
+    &lt;title>
+      &lt;xsl:value-of select="/directory/@namestring"/>
+    &lt;/title>
+  &lt;/head>
+
+  &lt;body>
+    &lt;h1>
+      Index of &lt;xsl:value-of select="/directory/@namestring"/>
+    &lt;/h1>
+    
+    &lt;ul>
+      &lt;xsl:for-each select="/directory/file">
+	&lt;li>
+	  &lt;xsl:value-of select="."/>
+	&lt;/li>
+      &lt;/xsl:for-each>
+    &lt;/ul>
+  &lt;/body>
+&lt;/html>
+</pre>
+
+  <h3>Try it!</h3>
+  <p>
+    That's it.  If you open <tt>http://localhost:4242/show-directory</tt>
+    in a browser, you should see a listing of your home directory.
+  </p>
+</page>

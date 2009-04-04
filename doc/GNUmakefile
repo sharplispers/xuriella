@@ -1,9 +1,10 @@
 USER=dlichteblau
 
-all: index.html installation.html
+all: index.html installation.html example.html
 
 %.html: %.xml index.xsl
 	xsltproc index.xsl $< >$@.tmp
+	rm $@
 	mv $@.tmp $@
 	chmod -w $@
 

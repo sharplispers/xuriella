@@ -94,8 +94,7 @@
 	    </ul>
 	  </li>
 	  <li>
-	    <a href="examples.html"><strike>Examples</strike></a>
-	    (to be written)
+	    <a href="example.html">Example</a>
 	    <br/>&#160;
 	  </li>
 	  <li>
