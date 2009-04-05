@@ -5,8 +5,8 @@
 
   <p>
     Suppose you're writing a web application (say,
-    using <a href="">Hunchentoot</a>), and you would like to show
-    directory contents.
+    using <a href="http://www.weitz.de/hunchentoot/">Hunchentoot</a>),
+    and you would like to show directory contents.
   </p>
   <p>
     We do that in two steps, strictly separating the programmer-written
@@ -20,7 +20,7 @@
 	document listing the files.
       </li>
       <li>
-	In the main step, the run that XML document through an XSL
+	In the main step, we run that XML document through an XSL
 	stylesheet to generate HTML.
       </li>
     </ul>

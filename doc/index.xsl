@@ -98,7 +98,7 @@
 	    <br/>&#160;
 	  </li>
 	  <li>
-	    <a href="atdoc/pages/xuriella.html">API documentation</a>
+	    <a href="atdoc/index.html">API documentation</a>
           </li>
 	</ul>
       </div>

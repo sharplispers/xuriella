@@ -2,10 +2,8 @@
 
   <h3>Download</h3>
   <p>
-    <strike>
-      Download a
-      <a href="#tbd">tarball</a>.
-    </strike>
+    Download a
+    <a href="http://common-lisp.net/project/xuriella/download">tarball</a>.
   </p>
   <p>
     Get it from git://repo.or.cz/xuriella.git

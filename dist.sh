@@ -46,4 +46,5 @@ ln -sf ${name_and_date}.tgz.asc ~/clnet/project/xuriella/public_html/download/xu
 
 echo done
 exit 0
-rsync -av ~/clnet/project dlichteblau@common-lisp.net:/
+rsync -av ~/clnet/project/xuriella/public_html \
+    common-lisp.net:/project/xuriella/

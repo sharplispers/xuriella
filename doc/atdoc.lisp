@@ -3,9 +3,10 @@
 (let* ((base (asdf:component-pathname (asdf:find-system :xuriella)))
        (atdoc-directory (merge-pathnames "doc/atdoc/" base)))
   (ensure-directories-exist atdoc-directory)
-  (atdoc:generate-documentation
+  (atdoc:generate-html-documentation
    '(:xuriella)
    atdoc-directory
    :index-title "Xuriella XSLT API reference"
    :heading "Xuriella XSLT"
-   :css (merge-pathnames "doc/atdoc.css" base)))
+   :css (merge-pathnames "doc/atdoc.css" base)
+   :single-page-p t))
