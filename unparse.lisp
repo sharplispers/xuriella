@@ -78,6 +78,22 @@
     (sax:unparsed-internal-subset *sink* internal-subset))
   (sax:end-dtd *sink*))
 
+(defstruct sink-element
+  local-name
+  uri
+  suggested-prefix
+  all-namespaces
+  new-namespaces
+  used-prefixes
+  attributes
+  actual-qname)
+
+(defstruct sink-attribute
+  local-name
+  uri
+  suggested-prefix
+  value)
+
 (defun maybe-emit-start-tag ()
   (let ((elt *current-element*))
     (when (and elt (not *start-tag-written-p*))
@@ -175,22 +191,6 @@
               "xmlns"
               (concatenate 'string "xmlns:" prefix))
    :value uri))
-
-(defstruct sink-element
-  local-name
-  uri
-  suggested-prefix
-  all-namespaces
-  new-namespaces
-  used-prefixes
-  attributes
-  actual-qname)
-
-(defstruct sink-attribute
-  local-name
-  uri
-  suggested-prefix
-  value)
 
 (defparameter *initial-unparse-namespaces*
   '(("" . "")

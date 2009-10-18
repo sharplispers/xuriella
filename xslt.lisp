@@ -1210,6 +1210,25 @@
                   (funcall (variable-value-thunk-setter var))))
               chains)))))
 
+
+(defstruct template
+  match-expression
+  compiled-pattern
+  name
+  import-priority
+  apply-imports-limit
+  priority
+  position
+  mode
+  mode-qname
+  params
+  body
+  n-variables
+  ;; for profiling output only:
+  unparsed-qname
+  stylesheet
+  base-uri)
+
 (defun parse-templates! (stylesheet <transform> env)
   (let ((i 0))
     (do-toplevel (<template> "template" <transform>)
@@ -1859,24 +1878,6 @@
            sax-target)
           (t
            (make-auto-detect-sink (make-combi-sink) method-key)))))))
-
-(defstruct template
-  match-expression
-  compiled-pattern
-  name
-  import-priority
-  apply-imports-limit
-  priority
-  position
-  mode
-  mode-qname
-  params
-  body
-  n-variables
-  ;; for profiling output only:
-  unparsed-qname
-  stylesheet
-  base-uri)
 
 (defun expression-priority (form)
   (let ((step (second form)))
