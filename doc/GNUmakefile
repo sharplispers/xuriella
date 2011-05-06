@@ -4,7 +4,7 @@ all: index.html installation.html example.html
 
 %.html: %.xml index.xsl
 	xsltproc index.xsl $< >$@.tmp
-	rm $@
+	rm -f $@
 	mv $@.tmp $@
 	chmod -w $@
 
