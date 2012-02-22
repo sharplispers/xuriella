@@ -197,8 +197,8 @@
     (let ((sorted-base-uris
 	   (sort (loop
 		    for base-uri being each hash-key
-		    using (hash-value id)
 		    in base-uris
+		    using (hash-value id)
 		    collect (cons id base-uri))
 		 #'<
 		 :key #'car)))
